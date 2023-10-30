@@ -60,7 +60,7 @@
   acoustical field is far more complicated than anything we have grappled with 
   in previous sections. 
 
-  \samsection{A. Introducing the fluid dynamics of air-jet instruments} 
+  \textbf{A. Introducing the fluid dynamics of air-jet instruments} 
 
   We can get a first idea of how flute-like instruments work, and 
   simultaneously gain some insight into the complications, by looking at 
@@ -74,6 +74,12 @@
   instruments work. For the purposes of the flow visualisation, some carbon 
   dioxide is also injected to give a density contrast with the air and allow 
   the imaging process to work. 
+
+  \fig{figs/fig-01c101ac.png}{Figure 1. The experimental setup used to obtain 
+  the images shown in Fig. 2. The ``recorder'' is vertical, with the flow 
+  entering from the bottom. One of the lenses of the schlieren system can be 
+  seen on the left. Image copyright Avraham Hirschberg, reproduced by 
+  permission.} 
 
   Figure 2 shows a sequence of images spread through a single cycle of periodic 
   oscillation, when the “recorder” is playing a steady note. Note the 
@@ -131,6 +137,12 @@
   instability pattern in which they generate vortices on alternate sides before 
   the jet reaches the labium. 
 
+  \fig{figs/fig-20eca420.png}{Figure 4. A copy of Fig. 8 from section 11.2, 
+  showing a schlieren image of a wide air-jet interacting with a sharp edge in 
+  the upper right of the picture. It shows unstable vortex growth of the shear 
+  layers on either side of the jet. Images created by Bram Wijnands, Sylvie 
+  Dequand and Avraham Hirschberg, and reproduced by permission.} 
+
   If the Reynolds number of the air-jet is higher, either because the flow is 
   faster or the jet is longer, the jet becomes turbulent before it reaches the 
   labium. Flue organ pipes are commonly designed like this, for example. The 
@@ -174,7 +186,7 @@
   transient predictions relating to the subtle things players do to start notes 
   in particular ways. 
 
-  \samsection{B. The influence of cork position in a transverse flute} 
+  \textbf{B. The influence of cork position in a transverse flute} 
 
   But before we plunge into simulation results, we need to say a few words 
   about the easy part of the problem, the linear acoustics of the tube. For all 
@@ -192,6 +204,13 @@
   opposite direction to the main playing length, with the fingerholes. The 
   effective acoustical length of this closed tube is determined by the position 
   of a tight-fitting cork, which can be adjusted. 
+
+  \fig{figs/fig-069b63f4.png}{Figure 5. Schematic diagram of a transverse 
+  flute, showing the closed tube to the left of the embouchure hole and the 
+  adjustable cork that determines the acoustical length of that tube. The 
+  embouchure hole is shown as a ``chimney'': its effective length is a 
+  combination of the actual thickness of material, plus end corrections at both 
+  ends.} 
 
   The influence of this closed tube is significant. The black dashed curve in 
   Fig.\ 6 shows the measured input admittance of a modern Boehm flute for the 
@@ -217,6 +236,12 @@
   difference to the frequency response, but the simple model has captured this 
   difference very well. 
 
+  \fig{figs/fig-73841a55.png}{Figure 7. The measured admittance from Fig. 6 
+  (black dashed curve) compared to predictions using a straight tube (red 
+  dotted curve, as in Fig. 6) and from a model including the effect of the 
+  closed tube with a suitable cork position (red curve). In the model, the cork 
+  is placed 18~mm from the embouchure hole.} 
+
   Figure 8 shows what the simple model predicts if we move the cork, to change 
   the length of the closed tube. The red curve is the same as in Fig.\ 7, while 
   the blue and green curves (displaced vertically in the plot for clarity) show 
@@ -225,6 +250,12 @@
   effect clearly. The admittance peaks fade away to zero at a frequency that 
   depends on the cork position: making the closed tube shorter raises the 
   frequency, making it longer reduces the frequency. 
+
+  \fig{figs/fig-eab70349.png}{Figure 8. The effect on input admittance of 
+  varying the cork position. The red and black curves are the same as in Fig. 
+  7. The blue curve is the prediction for a cork position 10~mm behind the 
+  embouchure hole, the green curve for a distance 25~mm. The blue and green 
+  curves have been displaced vertically by 40~dB for clarity.} 
 
   The effect was discussed by Benade [6], and we can illustrate his explanation 
   with some computed examples of the pressure distribution inside the tube of 
@@ -235,6 +266,17 @@
   portion of the flute, from embouchure hole to the open end, is indicated by 
   blue curves, while the short portion inside the closed tube is plotted in 
   red. All the curves have been scaled to the same peak amplitude. 
+
+  \fig{figs/fig-22ce438d.png}{Figure 9. The predicted admittance as in Fig. 7, 
+  annotated to mark the peaks that are examined in Fig. 10.} 
+
+  \fig{figs/fig-8d6a8434.png}{Figure 10. The computed pattern of pressure along 
+  the tube, at the set of frequencies marked by green circles in Fig. 9. The 
+  first four tube resonances are shown, then a group of three in the run-up to 
+  the ``dead zone'' around 4.5~kHz, and finally one peak above that dead zone. 
+  In each case, the pressure is plotted in red in the closed tube and in blue 
+  for the rest of the tube. Each shape has been normalised to the same 
+  amplitude.} 
 
   The first four curves, at the top in Fig.\ 10, correspond to the four lowest 
   resonances of the tube. The pressure distributions show more or less what we 
@@ -284,7 +326,11 @@
   admittance fade away to zero at this frequency, then grow again once the 
   wavelength is shorter. 
 
-  \samsection{C. Simulation results} 
+  \fig{figs/fig-7f8d5b5f.png}{Figure 11. A zoomed view of Fig. 10, showing just 
+  the region of the tube near the embouchure hole so that the join of the red 
+  and blue regions can be seen more clearly.} 
+
+  \textbf{C. Simulation results} 
 
   We are ready to combine the jet-drive model set out in section 11.8.1 with 
   measured input admittance, to run some simulations. We need to choose an 
@@ -324,6 +370,12 @@
   normalised frequency roughly equal to 2: the “recorder” has overblown to the 
   octave. This line also slopes gently upwards. 
 
+  \fig{figs/fig-6e11b7dd.png}{Figure 13. Playing frequency deduced from 
+  simulations using a set of jet speeds in steps of 0.1~m/s, using the input 
+  admittance shown in the red curve of Fig. 12. Each frequency has been 
+  normalised by the nominal fundamental frequency, and plotted against the jet 
+  speed.} 
+
   The curious cascades of frequencies at low jet speeds are related to an 
   advanced flute-playing technique known as “Aeolian tones”. To see what is 
   going on in the model to produce these tones, it is useful to plot the data 
@@ -332,7 +384,7 @@
   distance from the slot to the labium. This delay time is simply determined by 
   the jet speed and the distance to the labium: in recorder terminology, this 
   is the width of the mouth. The disturbances do not travel exactly at the jet 
-  speed, but within this simplified model they travel at 40% of that speed. 
+  speed, but within this simplified model they travel at 40\% of that speed. 
 
   The resulting plot is shown in Fig.\ 14. It is important to note that by 
   using delay rather than jet speed on the axis, we have reversed the order of 
@@ -342,6 +394,15 @@
   immediately be seen that the plotted points cluster around particular values 
   of this normalised delay: there are columns of clustered points near the 
   values $\frac{1}{4}$, $1 \frac{1}{4}$, $2 \frac{1}{4}$etc. 
+
+  \fig{figs/fig-825650fd.png}{Figure 14. The same frequency data as plotted in 
+  Fig. 13, but now plotted against the delay time for perturbations of the jet 
+  as they travel from slot to labium. Note that this reverses the direction of 
+  the axis, so that the ``normal'' notes which appeared towards the right-hand 
+  side of Fig. 13 now appear clustered on the left. The delay time has been 
+  normalised as a fraction of the period of each separate note, and the 
+  ``normal'' fundamental and octave notes both appear with this normalised 
+  delay approximately equal to 1/4.} 
 
   The explanation of this pattern is given in the earlier side link, section 
   11.8.1. For any note that can be played at a frequency close to a peak of 
@@ -357,6 +418,9 @@
   clear that the four columns of points evident in Fig.\ 14 correspond to the 
   values $n=0,1,2,3$. The ``normal'' fundamental and octave notes both appear 
   in the $n=0$ column. 
+
+  \fig{figs/fig-e8dff14c.png}{Figure 15. Sketches of the jet configuration 
+  corresponding to different allowed values of the delay} 
 
   Aeolian tones like this can really occur on flutes or recorders, but the 
   details of them predicted by this model should be taken with a generous pinch 
@@ -393,6 +457,17 @@
   in the admittance, and the small differences of peak frequencies, heights and 
   bandwidths, all seem to make rather little difference to the outcome. 
 
+  \fig{figs/fig-cd2f4338.png}{Figure 16. Normalised playing frequency plotted 
+  against jet speed in the same format as Fig. 13, computed using the 
+  admittance shown as the blue curve in Fig. 12. The green and blue circles 
+  mark cases for which waveforms are plotted in Figs. 18 and 19 respectively.} 
+
+  \fig{figs/fig-b448c04f.png}{Figure 17. Normalised playing frequency plotted 
+  against normalised jet delay in the same format as Fig. 14. The frequency 
+  data is the same as in Fig. 16, computed using the admittance shown as the 
+  blue curve in Fig. 12. The green and blue circles mark cases for which 
+  waveforms are plotted in Figs. 18 and 19 respectively.} 
+
   The circles in these two plots pick out a case playing the fundamental (i.e. 
   $C_5$) and a case playing the octave ($C_6$), The detailed waveforms for 
   these two cases are shown in Figs.\ 18 and 19. In each group, the top plot 
@@ -404,6 +479,16 @@
   labium. (Specifically, in terms of the model set out in section 11.8.1, this 
   plot shows the combination $\tanh \left( \dfrac{\eta(w,t)-y_0}{b} \right)$ 
   that appears in equation (6).) 
+
+  \fig{figs/fig-2ad44b5a.png}{Figure 18. Waveforms from the simulation run 
+  marked with green circles in Figs. 16 and 17. The top plot shows the acoustic 
+  pressure just inside the mouthpiece, the middle plot shows the acoustic 
+  volume flow rate inwards through the embouchure hole, and the bottom plot 
+  indicates the jet position as described in the main text.} 
+
+  \fig{figs/fig-f72f505b.png}{Figure 19. Waveforms plotted in the same format 
+  as Fig. 18, for the simulation run marked with blue circles in Figs. 16 and 
+  17.} 
 
   Apart from the octave difference in frequency, the waveforms are recognisably 
   similar. The jet is switching in and out the tube once every cycle, and the 
@@ -436,6 +521,13 @@
   the lowest notes on the instrument, and to avoid overblowing to the octave, 
   but it is not supposed to be completely impossible! 
 
+  \fig{figs/fig-24910bac.png}{Figure 20. Normalised frequency as a function of 
+  jet speed, in the same format as Figs. 13 and 16, for simulations based on 
+  the input admittance shown as a dashed black line in Fig. 12.} 
+
+  \fig{figs/fig-0cfe37c7.png}{Figure 21. The frequency data as in Fig. 20, 
+  plotted as a function of jet delay in the same format as Figs. 14 and 17.} 
+
   We can perhaps guess what the problem is. We can see whereabouts in Fig.\ 20 
   we would expect the “normal” playing regime at the fundamental to sit, but in 
   this range of jet speed the model is choosing instead to play Aeolian tones 
@@ -459,6 +551,14 @@
   experiment is enough to confirm that by suppressing some Aeolian tones that 
   are never in practice heard, it becomes possible for the model to produce 
   this fundamental note. 
+
+  \fig{figs/fig-807411b2.png}{Figure 22. Normalised playing frequency as a 
+  function of jet speed, exactly as in Fig. 20 except that only the first 4 
+  resonances of the tube are included in the calculations.} 
+
+  \fig{figs/fig-00621567.png}{Figure 23. The normalised frequency data from 
+  Fig. 22, plotted as a function of jet delay in the same format as earlier 
+  plots.} 
 
   We have seen the crucial role of the delay, the time taken for disturbances 
   to travel along the jet from slot (or lips) to labium. In a recorder, the 

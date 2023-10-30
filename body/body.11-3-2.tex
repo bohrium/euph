@@ -62,6 +62,12 @@
   appropriate to a semi-infinite tube of the same diameter. (With the decibel 
   scale of the plot, this illustrates Skudrzyk's theorem: see section 5.3.2.) 
 
+  \fig{figs/fig-f1c60553.png}{Figure 1. The scaled input impedance $Z/Z_t$ of a 
+  clarinet-like cylindrical tube, normalised by the characteristic impedance. 
+  The red curve shows the result according to the method described in section 
+  11.1.1, the blue curve shows a modified version with increased damping at 
+  higher frequencies.} 
+
   Although this increase of damping is entirely artificial, something of the 
   kind happens in a real clarinet because of the influence of the bell. The 
   efficiency of sound radiation at the bell rises with frequency, so that the 
@@ -86,6 +92,9 @@
   pattern then repeats, with alternating negative and positive pulses getting 
   gradually lower and more rounded. 
 
+  \fig{figs/fig-37a64b13.png}{Figure 3. Impulse response of an idealised 
+  clarinet tube, obtained by inverse FFT of the blue impedance from Fig. 1.} 
+
   If we process the impedance with equation (4) to obtain the reflection 
   coefficient, then take the inverse FFT of that, we obtain the result shown in 
   Fig.\ 4. This is the reflection function we need for the simulation model. It 
@@ -98,6 +107,10 @@
   viscous boundary layers in the tube affect the wave speed as well as the 
   damping, causing wave dispersion and leading to an asymmetric pulse. For 
   details, see for example Fletcher and Rossing [1], section 8.2. 
+
+  \fig{figs/fig-78a02e24.png}{Figure 4. Reflection function corresponding to 
+  the impulse response in Fig. 3, obtained by processing the impedance with 
+  equation (4) then taking an inverse FFT.} 
 
   For this reflection function, we find numerically that 
 

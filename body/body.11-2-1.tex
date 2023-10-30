@@ -1,5 +1,6 @@
   This section will make extensive use of vector calculus concepts and 
-  notation: if you are a bit rusty on that, check \tt{}section 4.1.4\rm{} first. 
+  notation: if you are a bit rusty on that, check \tt{}section 4.1.4\rm{} 
+  first. 
 
   The governing equations for fluid flow involve two rather different 
   ingredients. First, we will use universal laws of physics: Newton's law and 
@@ -19,6 +20,8 @@
   position $\underline{r}=(x,y,z)$ and sides of length $\delta x$, $\delta y$ 
   and $\delta z$ aligned with the $x,y,z$ axes of a Cartesian coordinate 
   system. This element has volume $\delta V= \delta x \delta y \delta z$. 
+
+  \fig{figs/fig-30d0c10a.png}{Figure 1. A small element of volume} 
 
   The rate of change of mass inside the volume is approximately 
 
@@ -330,6 +333,10 @@
   generate vorticity, and equation (30) indicates that vorticity may then 
   diffuse out into the flow pattern. 
 
+  \fig{figs/fig-0eeccaa5.png}{Figure 2. Flow over a fixed surface, with a 
+  boundary layer profile. A material element in the boundary layer, shown in 
+  dark blue, experiences differential flow speed and hence has net rotation.} 
+
   There is another, more vigorous, way that non-zero circulation can appear in 
   a flow. It still involves boundary layers, but rather than diffusion, the 
   process involves vortex shedding. It will be relevant to several aspects of 
@@ -343,6 +350,9 @@
   look a little like this sketch. There are two stagnation points, marked by 
   red rings: the streamlines joined to these points are the ones that separate 
   flow that passes above the wing from flow that passes below it. 
+
+  \fig{figs/fig-f78b9c18.png}{Figure 3. Sketch of flow round an airfoil 
+  immediately after motion has started.} 
 
   But there is a big problem with this flow. The trailing edge of the wing has 
   a sharp edge, marked by the green ring. The flow speed close to this sharp 
@@ -360,6 +370,9 @@
   thus satisfy Kelvin's theorem, there is equal and opposite net circulation 
   around the wing. 
 
+  \fig{figs/fig-aa65cca0.png}{Figure 4. The airfoil as in Fig. 3, forming a 
+  ``separation bubble'' near the trailing edge.} 
+
   The result is as shown (schematically again) in Fig.\ 5. The vortex which was 
   shed is ``left behind on the airfield''. The wing then has just the right 
   amount of clockwise circulation (indicated by the red arrow) that the rear 
@@ -371,6 +384,11 @@
   slowed down. Bernoulli then tells us that the pressure is lower on the top 
   surface than on the bottom surface, and it is this difference of pressures 
   that lifts the aircraft off the ground. 
+
+  \fig{figs/fig-cd4b7009.png}{Figure 5. The airfoil as in Figs. 3 and 4, after 
+  a vortex has been shed and left behind. The flow near the trailing edge is 
+  now smooth, the there is net circulation round the wing as indicated by the 
+  red arrow.} 
 
   Any flow interacting with a sharp corner is likely to lead to vortex 
   shedding, and this is relevant to many problems, including some involving 

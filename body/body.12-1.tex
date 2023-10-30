@@ -1,4 +1,4 @@
-  \samsection{A. Why do things bounce?} 
+  \textbf{A. Why do things bounce?} 
 
   If you have been following the pattern of chapters so far, you might be 
   expecting an “underpinnings” chapter next. Well, the next topic doesn’t need 
@@ -25,6 +25,8 @@
   speed that the moving ball had before the collision. The second ball swings 
   out and then returns, and the process repeats in the opposite direction. 
 
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-08324ccb-00.png }&\vidframe{ 0.30 }{ vids/vid-08324ccb-01.png }&\vidframe{ 0.30 }{ vids/vid-08324ccb-02.png } \end{tabular}\caption{Figure 1. Two identical steel balls, bouncing in the toy known as ``Newton's cradle''}\mooendvideo
+
   A variant of this example is shown in Fig.\ 2. This shows the same toy as in 
   Fig.\ 1, but now there are five identical balls. We drop a ball at one end, 
   and the ball at the opposite end flies off — but apparently without the balls 
@@ -38,6 +40,8 @@
   way along the chain, however many balls we had, until the last ball is 
   launched. This one doesn’t have another one to hit, so it flies off, swings 
   upwards, returns, and repeats the process in reverse. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-8ea64739-00.png }&\vidframe{ 0.30 }{ vids/vid-8ea64739-01.png }&\vidframe{ 0.30 }{ vids/vid-8ea64739-02.png } \end{tabular}\caption{Figure 2. The more usual behaviour of Newton's cradle, with a row of identical balls.}\mooendvideo
 
   One way to think about the result of the first impact seen in Fig.\ 1 is that 
   we have used a mass (the right-hand ball) to strike a pendulum. This caused 
@@ -87,6 +91,13 @@
   purposes of a simple model we can replace this by a contact spring joining 
   two rigid balls, as sketched in Fig.\ 4. 
 
+  \fig{figs/fig-ab4a4929.png}{Figure 3. Close-up of the region near the contact 
+  point, when the steel balls from Fig. 1 collide. Contact stiffness is 
+  provided by small deformations of the steel in the region shaded red.} 
+
+  \fig{figs/fig-5e7d999f.png}{Figure 4. The two colliding spheres from Fig. 3, 
+  with the deforming region replaced by a contact spring.} 
+
   During contact, we now have the two rigid masses linked by a spring. This 
   combination will produce a resonance frequency, as usual — it is called a 
   contact resonance. At the moment when contact begins, the balls are moving 
@@ -99,6 +110,13 @@
   during a single impact should follow a half-cycle of the sinusoidal wave, as 
   shaded in red in Fig.\ 5. 
 
+  \fig{figs/fig-26e78589.png}{Figure 5. The force between two colliding 
+  objects, allowing for their mass and for a linear contact spring as in Fig. 
+  4. The force would follow a half-cycle of a sinusoidal waveform at the 
+  frequency determined by the ratio of contact stiffness to mass, until 
+  bouncing occurred when that sinusoidal force would need to go negative. 
+  (Figure reproduced from Fig. 1 of section 2.2.6.)} 
+
   We can find the corresponding spectrum of the contact force by calculating 
   the Fourier transform of this half-cycle of sine wave: the details were given 
   in section 2.2.6. Two typical examples are shown in Fig.\ 6, reproduced from 
@@ -109,6 +127,12 @@
   cases this effective bandwidth is a bit more than twice the contact resonance 
   frequency, something to bear in mind for later in this section. 
 
+  \fig{figs/fig-a14bbc70.png}{Figure 6. The spectrum of the hammer force from 
+  Fig. 5, for two different contact resonance frequencies: 300~Hz in red; 
+  1500~Hz in black. The vertical scale is logarithmic, expressed in decibels 
+  (dB): each interval of 20~dB means the force has changed by a factor of 10. 
+  (Figure reproduced from Fig. 3 of section 2.2.6.)} 
+
   The resonance frequency is determined, as usual, by the ratio of the contact 
   stiffness to the mass. So a low stiffness or a high mass tends to give a low 
   resonance frequency, and correspondingly low bandwidth. A low mass or a high 
@@ -117,7 +141,7 @@
   while a light, hard one gives a crisper, brighter sound: exactly as every 
   percussionist knows. 
 
-  \samsection{B. The missing ingredients} 
+  \textbf{B. The missing ingredients} 
 
   So far, so good: the simple model gives us some plausible and useful 
   information. However, there are four separate reasons why it is incomplete, 
@@ -150,7 +174,7 @@
   mathematical modelling of more realistic collisions are given in the next 
   link. 
 
-  \samsection{C. Simulation results for hitting a rigid surface} 
+  \textbf{C. Simulation results for hitting a rigid surface} 
 
   To explore the influence of these various factors we will look at a simple 
   model system, vaguely resembling a percussion instrument like a cymbal being 
@@ -164,6 +188,12 @@
   insights by varying the model parameters to get an impression of, for 
   example, the circumstances that will lead to multiple impacts between the 
   plate and the drumstick. 
+
+  \fig{figs/fig-49e67006.png}{Figure 7. The idealised system to be used to 
+  investigate bouncing. A thin rectangular plate (the ``instrument'', shown in 
+  blue) is struck by a beam (the ``drumstick'', shown in dark red), hinged at 
+  the far end. During contact, a spring (in bright red) provides the contact 
+  force.} 
 
   The relevant vibration behaviour of the plate and the drumstick will be 
   adjusted by specifying the total mass and the lowest vibration resonance 
@@ -181,6 +211,13 @@
   waveform of contact force for a particular choice of the stick mass and 
   contact stiffness. It does indeed show the expected shape, a half-cycle of a 
   sine wave before a clean bounce occurs and contact is lost. 
+
+  \fig{figs/fig-1675b962.png}{Figure 8. The computed force pulse when both 
+  stick and plate are effectively rigid, computed for a linear contact spring 
+  (red curve) and for a Hertzian spring (blue curve). The mass of the drumstick 
+  was 0.1~kg, the linear spring stiffness was $k_c =88.6~~ \mathrm{kN/m}$, and 
+  the stiffness of the Hertzian spring was chosen to give approximately the 
+  same contact time (the value was $k_H = 695 ~ \mathrm{kN/m}^{3/2}$).} 
 
   The blue curve in Fig.\ 8 shows what happens if we replace the linear contact 
   spring with a nonlinear Hertzian spring, with a stiffness chosen to give more 
@@ -203,6 +240,11 @@
   heights decrease more rapidly (a consequence of the more gentle start and end 
   of the pulse). 
 
+  \fig{figs/fig-71ad8be4.png}{Figure 9. Frequency spectra of the two force 
+  pulses shown in Fig. 8, shown with the same plot colours. The spectrum 
+  magnitude is shown on a dB scale normalised to the value zero at low 
+  frequency, as in Fig. 6} 
+
   It is useful to see a broader view of how things change when the drumstick 
   properties are varied. If we take a range of values of the mass and contact 
   stiffness, we can compute a grid of cases and then show the results in 
@@ -213,6 +255,12 @@
   of 100, a logarithmic scale has been used on the vertical axis.) The colours 
   show a curving pattern, which for this preliminary case simply follows the 
   contour lines of the contact resonance frequency. 
+
+  \fig{figs/fig-4398e773.png}{Figure 10. Contact time, for drumsticks of a 
+  range of masses and tip stiffnesses impacting on an effectively rigid 
+  surface. A linear contact spring is assumed here, with a stiffness varying 
+  from 10~kN/m to 1000~kN/m on a logarithmic scale. The green circle marks the 
+  case shown in red in Figs. 8 and 9.} 
 
   Figure 11 gives an indication of how the force spectrum varies over the same 
   grid of simulated cases. The colours here show the spectral centroid, which 
@@ -226,6 +274,9 @@
   an essentially rigid surface. Shortly, we will relax this assumption and hear 
   some sound examples. 
 
+  \fig{figs/fig-0d60b5cb.png}{Figure 11. Spectral centroid of the force pulse 
+  waveform, for the same grid of simulations as in Fig. 12.} 
+
   Figures 12 and 13 show corresponding plots with a Hertzian contact spring. 
   This time we do not have a simple mathematical result for how the contact 
   force behaves, but in fact both plots look broadly similar to Figs.\ 10 and 
@@ -234,7 +285,15 @@
   mapped out by the colour shading. Provisionally, then, the nature of the 
   contact spring doesn’t make a huge difference to the predicted behaviour. 
 
-  \samsection{D. Simulations with flexible plates} 
+  \fig{figs/fig-81e13e16.png}{Figure 12. Contact time for a similar grid of 
+  simulations to Fig. 10 except that the linear contact spring has been 
+  replaced by a Hertzian spring. The green circle marks the case shown in blue 
+  in Figs. 8 and 9.} 
+
+  \fig{figs/fig-f150fa4b.png}{Figure 13. Spectral centroid of the force pulse 
+  for the same grid of simulations as in Fig. 12.} 
+
+  \textbf{D. Simulations with flexible plates} 
 
   If make our plate or our drumstick (or both) have more realistic dynamic 
   behaviour, things immediately get more complicated. As a first step we will 
@@ -278,6 +337,22 @@
   threshold frequency cover a very wide range, logarithmic scales have been 
   used on both axes. 
 
+  \fig{figs/fig-8753f68a.png}{Figure 14. Sketch of the vibrating plate used to 
+  illustrate the approximate calculation of a threshold contact resonance 
+  frequency. The plate is rectangular, with aspect ratio 1.55:1, total mass 
+  200~g and a lowest resonance frequency 100~Hz. It has ``hinged'' boundaries 
+  all around its edge: the plate cannot move at the edge, but near the edge it 
+  is free to rotate about the edge line. The four tapping positions to be shown 
+  in Fig. 15 are indicated by stars, coloured to match the curves in Fig. 15. 
+  They all lie on a line, and the proportional distances from the left-hand 
+  edge are respectively 0.05, 0.2, 0.3 and 0.5.} 
+
+  \fig{figs/fig-043167b6.png}{Figure 15. Threshold contact resonance frequency 
+  for the vibrating plate, as a function of the mass of the ``hammer'' hitting 
+  the plate. The four curves correspond to the four excitation points shown in 
+  Fig. 14: from left to right the curves are coloured red, blue, green and 
+  black matching the stars in Fig. 14.} 
+
   All four curves show a falling trend — a heavier hammer means that the 
   threshold frequency is lower. Three of the tapping positions give rather 
   similar results (the blue, green and black curves), but the position close to 
@@ -300,6 +375,20 @@
   section 4.2.4 for some detailed analysis of this difference of modal 
   density). 
 
+  \fig{figs/fig-ff34f8d3.png}{Figure 16. Sketch of a vibrating beam used to 
+  illustrate the approximate calculation of a threshold contact resonance 
+  frequency. The beam has total mass 200~g and a lowest resonance frequency 
+  100~Hz. It has free boundaries, like a marimba bar. The four tapping 
+  positions to be shown in Fig. 17 are indicated by arrows, coloured to match 
+  the curves in Fig. 17. The proportional distances from the left-hand edge are 
+  respectively 0, 0.03, 0.1 and 0.4.} 
+
+  \fig{figs/fig-3f2c6b00.png}{Figure 17. Threshold contact resonance frequency 
+  for the vibrating beam, as a function of the mass of the ``hammer'' hitting 
+  the plate. The four curves correspond to the four excitation points shown in 
+  Fig. 16: from left to right the curves are coloured red, blue, green and 
+  black matching the arrows in Fig. 16.} 
+
   The other contrast with Fig.\ 15 lies in the position of the red curve 
   relative to the others. Again this red curve is associated with tapping near 
   the edge of the structure — in fact, right at the edge in this case. For the 
@@ -310,6 +399,10 @@
   the beam is free at its ends. So now the red curve is the result of tapping 
   at a position where the structure “feels” most floppy. This makes it harder 
   to avoid multiple impacts. 
+
+  \fig{figs/fig-91d17972.png}{Figure 18. Map of contact time in the same format 
+  as Fig. 10, for a case in which the plate mass is 2~kg. The contact spring is 
+  linear, and all other parameters are the same as for Fig. 10.} 
 
   Now we are ready to see some simulation results for the plate system. If the 
   total mass of the plate is set to 2~kg, with a first resonance frequency at 
@@ -323,6 +416,20 @@
   was a single, clean bounce and in colours where a multiple impact of some 
   kind occurred. These multiple impacts occur throughout the region that looked 
   different in Fig.\ 19. 
+
+  \fig{figs/fig-d7a8597e.png}{Figure 19. Map of contact time in the same format 
+  as Figs. 10 and 18, for a case in which the plate mass is 200~g. The contact 
+  spring is linear, and all other parameters are the same as for Fig. 10. The 
+  green circle marks the case shown in detail in Fig. 21, and the black circle 
+  marks the case shown in Fig. 22.} 
+
+  \fig{figs/fig-beff6899.png}{Figure 20. Map showing single impacts (black) and 
+  multiple impacts (colour) for the same set of simulations shown in Fig. 19. 
+  The colour scale indicated the ratio of the contact stiffness to the 
+  threshold value calculated by the approximate argument: the threshold given 
+  by the approximate argument is marked by the boundary of the region of white 
+  pixels. The green and black circles are as in Fig. 19, while the blue circles 
+  mark the remaining cases illustrated with sound examples.} 
 
   The colour scale in Fig.\ 20 indicates the ratio of the contact stiffness to 
   the threshold value calculated by the approximate argument, as in Fig.\ 15. 
@@ -348,6 +455,12 @@
   have guessed: a double-humped shape, but not quite losing contact in between 
   to give multiple impacts. 
 
+  \fig{figs/fig-f7d4f144.png}{Figure 21. The pulses of contact force for 
+  parameter values corresponding to the green circle in Fig. 15, for the three 
+  cases so far analysed: the red curve shows the rigid plate as in Fig. 10, the 
+  blue curve shows the 2~kg plate from Fig. 14, and the green curve shows the 
+  0.5~kg plate from Fig. 15.} 
+
   Figure 22 shows corresponding results for the pixel marked by a black circle 
   in Figs.\ 19 and 20. The red and blue pulses in this plot show a shorter 
   contact time than the corresponding ones in Fig.\ 21, as expected with the 
@@ -359,6 +472,12 @@
   plate to come back and hit it before it was thrown off, away from any further 
   impacts. 
 
+  \fig{figs/fig-6d330bb4.png}{Figure 22. The pulses of contact force for 
+  parameter values corresponding to the black circle in Fig. 19, for the three 
+  cases: the red curve shows the rigid plate as in Fig. 10, the blue curve 
+  shows the 2~kg plate from Fig. 18, and the green curve shows the 200~g plate 
+  from Fig. 19. The green curves shows obvious multiple impacts.} 
+
   Figures 23 and 24 show the corresponding frequency spectra to Figs.\ 21 and 
   22 respectively, plotted in the matching colours. In both cases we see that 
   as the impacted plate gets lighter, the dips in the spectrum get shallower. 
@@ -368,6 +487,12 @@
   behaviour, which is perhaps not too surprising. We will come back to these 
   observations in a bit — they have implications for measurements using an 
   impulse hammer. 
+
+  \fig{figs/fig-15df465b.png}{Figure 23. Frequency spectra for the three pulses 
+  shown in Fig. 21, plotted in the corresponding colours.} 
+
+  \fig{figs/fig-5aef3b17.png}{Figure 24. Frequency spectra for the three pulses 
+  shown in Fig. 22, plotted in the corresponding colours.} 
 
   You may be wondering what these simulated plate impacts sound like. Some 
   examples are given in Sounds 1—5, corresponding to the five cases marked by 
@@ -403,7 +528,7 @@
   the black circle you can escape the white region either by moving left or by 
   moving down. 
 
-  \samsection{E. Simulations with a flexible drumstick} 
+  \textbf{E. Simulations with a flexible drumstick} 
 
   Now we can add the final ingredient to the model, by allowing the “drumstick” 
   to have vibration resonances in the frequency range of interest. We want to 
@@ -431,6 +556,21 @@
   other colours now tracks the white region in very much the same way as found 
   earlier. 
 
+  \fig{figs/fig-843bb089.png}{Figure 25. Plot in the format of Fig. 20, using 
+  the same plate as in that figure but now allowing for a flexible drumstick 
+  with a lowest resonance frequency at 1~kHz when the mass is 30~g. For other 
+  masses, the lowest frequency is scaled to represent the fact that the 
+  material of the stick remains the same, but the diameter has been changed to 
+  vary the mass. The threshold value of contact stiffness based on the 
+  approximate argument has been calculated using only the modes of the plate, 
+  as in Fig. 20.} 
+
+  \fig{figs/fig-d8929dac.png}{Figure 26. Plot of the same data as in Fig. 25, 
+  except that now the modes of the ``drumstick'' have been included in the 
+  calculation of the threshold value of contact stiffness. The green circle 
+  marks the case shown in Figs. 27 and 28, and in Sound 6. The black circle 
+  marks the case shown in Figs. 29 and 30, and in Sound 8.} 
+
   We deduce that the vibration of the drumstick makes multiple contacts more 
   likely, especially if the stick is quite light. To see the consequences, two 
   cases have been chosen to show in detail. They are marked with circles in 
@@ -442,12 +582,24 @@
   shows a clear double peak, although it does not lose contact in between so it 
   is not strictly a double bounce. 
 
+  \fig{figs/fig-bf8275d3.png}{Figure 27. The force waveform corresponding to 
+  the case marked with a green circle in Fig. 26 (red curve, flexible 
+  drumstick), and the corresponding case from Fig. 20 (blue curve, rigid 
+  drumstick).} 
+
   Figure 28 shows the frequency spectra of these two force pulses, and it also 
   shows the spectrum of the resulting plate velocity in the two cases. The 
   colours match Fig.\ 27: both spectra for the flexible drumstick are shown in 
   red, and both for the rigid drumstick are in blue. The smooth curves show the 
   force spectrum, and the obviously jagged curves show the plate velocity, with 
   peaks at all the resonance frequencies. 
+
+  \fig{figs/fig-33ac46b4.png}{Figure 28. Frequency spectra corresponding to the 
+  case shown in Fig. 27 and marked by a green circle in Fig. 26. Red curves 
+  correspond to the case with a flexible drumstick (Fig. 26), black curves to 
+  the case with a rigid drumstick (Fig. 20). For each, the smooth curve shows 
+  the spectrum of the contact force, while the jagged curve shows the spectrum 
+  of the plate velocity at the contact point.} 
 
   This comparison of spectra tells an interesting story. Look first at the two 
   smooth curves. Near the drumstick resonance at 1~kHz, the red curve has a 
@@ -470,6 +622,18 @@
   consequence of this complicated shape. The force spectrum for the flexible 
   stick (smooth curve in red) shows a dip around the resonance frequency at 
   1~kHz, very similar to the case shown in Fig.\ 27. 
+
+  \fig{figs/fig-4fd3371b.png}{Figure 29. The force waveform corresponding to 
+  the case marked with a black circle in Fig. 26 (red curve, flexible 
+  drumstick), and the corresponding case from Fig. 20 (blue curve, rigid 
+  drumstick).} 
+
+  \fig{figs/fig-b4e3759a.png}{Figure 30. Frequency spectra corresponding to the 
+  case shown in Fig. 29 and marked by a black circle in Fig. 26. Red curves 
+  correspond to the case with a flexible drumstick (Fig. 26), black curves to 
+  the case with a rigid drumstick (Fig. 20). For each, the smooth curve shows 
+  the spectrum of the contact force, while the jagged curve shows the spectrum 
+  of the plate velocity at the contact point.} 
 
   The conclusion is that the first resonance of the drumstick has a 
   surprisingly consistent effect on the two cases. The obvious next question 
@@ -509,7 +673,12 @@
   for influencing the timing of multiple bounces, and thus affecting the sound 
   of the struck object. 
 
-  \samsection{F. Coda: implications for impact hammer testing} 
+  \fig{figs/fig-0b413d46.png}{Figure 31. Measured vibration modes of two 
+  drumsticks, taken from Wagner [1] and reproduced by permission. The 
+  measurements were made with each stick supported by a soft clamp at its 
+  fulcrum point, which is the recommended place for a drummer to hold a stick} 
+
+  \textbf{F. Coda: implications for impact hammer testing} 
 
   So far, the discussion of bouncing has mainly been in the context of the 
   sound of a struck percussion instrument. However, the modelling and analysis 
@@ -567,6 +736,12 @@
   shown in Fig.\ 24, which has a lot of small dips --- these will not 
   necessarily be deep enough to cause big problems with a frequency response 
   measurement. 
+
+  \fig{figs/fig-5a3089b9.png}{Figure 32. Idealised example of a symmetrical 
+  double strike from an impulse hammer} 
+
+  \fig{figs/fig-191b2f88.png}{Figure 33. The frequency spectrum of the 
+  idealised force shown in Fig. 32} 
 
   The conclusion is that double bounces from an impact hammer might or might 
   not be tolerated in a measurement, depending on the noise floor of the 

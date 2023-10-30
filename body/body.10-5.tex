@@ -32,10 +32,6 @@
   the hammer tap is never lost. But as soon as we have some damping, the motion 
   decays away. 
 
-  \fig{figs/fig-7317127c.png}{Figure 1. Free vibration response of a simple 
-  mass-spring oscillator. Red: undamped; black: damped with Q=100; blue: Q=33; 
-  green: Q=10.} 
-
   The decay rate depends on the level of damping, which we can characterise by 
   the damping factor, or its inverse the Q-factor. The remaining curves in 
   Fig.\ 1 show the behaviour with three different levels of damping, with 
@@ -53,10 +49,6 @@
   undamped system, goes off the top of the plot and continues (in theory) to 
   infinity. But all the others have peaks with a finite height. As the damping 
   increases (i.e. as the Q-factor goes down), the peak height reduces. 
-
-  \fig{figs/fig-f236e974.png}{Figure 2. Accelerance for the four oscillators 
-  from Fig. 1, with the same colour code. The red curve runs off the top of the 
-  plot to infinity in the absence of any damping.} 
 
   The “sharpness” of the peak also reduces. The usual way to characterise this 
   is via the “half-power bandwidth”. You find the points on either side of the 
@@ -79,22 +71,12 @@
   stuck underneath, at the right-hand end (you can see the red cable leading 
   from it). 
 
-  \fig{figs/fig-efc68e6d.png}{Figure 3. The metal ruler used for the 
-  experimental data shown in this section. It was tapped with the miniature 
-  impulse hammer shown. The red cap on the hammer tip is to soften and prolong 
-  the impact, to concentrate energy into lower frequencies. Vibration was 
-  observed with a small accelerometer fixed under the right-hand end.} 
-
   Figure 4 shows a sample of the results. The three curves correspond to 
   tapping points numbers 1, 6 and 9, counting from the left-hand end. The 
   plotted frequency range covers the first four bending resonances of the 
   ruler, which show up as the obvious strong peaks. It is the mode shapes of 
   these bending resonances that we will try to visualise from the set of 10 
   measured frequency responses. 
-
-  \fig{figs/fig-8b5fe126.png}{Figure 4. Measured accelerance of the steel 
-  ruler, for tapping positions 1, 6 and 9 counting from the left in Fig. 3. The 
-  amplitude of each accelerance $Y$ is plotted here, on a decibel scale.} 
 
   As an aside, you may be wondering about the smaller peaks that can be seen in 
   this plot. They have two sources. Very sharp features at multiples of 50~Hz 
@@ -161,13 +143,6 @@
   at particular frequencies governed by the resolution of our measurement — in 
   this case, that resolution is 0.5~Hz. 
 
-  \fig{figs/fig-5cd9eaa4.png}{Figure 6. The data from Fig. 5 plotted as real 
-  part versus imaginary part, for the frequency range 343--364~Hz, around the 
-  fourth resonance of the ruler. The colours are the same as in previous 
-  figures. The measured data points are shown as stars, connected by lines 
-  purely as a guide to the eye. Dashed lines show best-fitted circles in each 
-  case.} 
-
   The dashed line shows the computer’s “best-fitted” circle in each case. The 
   reason behind the appearance of these circles is explained in the next link, 
   along with some other mathematical details. But notice where the circles are 
@@ -201,9 +176,6 @@
   fitted circles to predict the true height, and hence the true modal amplitude 
   factor: it is given by the diameter of the corresponding circle. 
 
-  \fig{figs/fig-aa186ace.png}{Figure 7. A plot corresponding to Fig. 6, for a 
-  frequency range 35.4~Hz--44~Hz around the lowest mode of the ruler.} 
-
   Modal analysis software takes advantage of things like circle-fitting, and 
   more sophisticated processing to take account of the influence of other 
   modes. But we can close this preliminary account with a graphic which gives a 
@@ -222,25 +194,12 @@
   by Fig.\ 7, the frequency resolution was made finer by a factor of 4 using 
   FFT-based interpolation with zero-padding, mentioned in section 10.4.2.) 
 
-  \fig{figs/fig-939baccf.png}{Figure 8. 3D plot of the imaginary parts of the 
-  10 measured frequency responses (blue curves), spread out in their spatial 
-  order. Red circles mark the peaks corresponding to the lowest resonance, 
-  green ones mark the second resonance, and yellow ones mark the third 
-  resonance. These three colours map out the corresponding mode shapes. Thanks 
-  to George Stoppani for the idea of this graphic.} 
-
   The red, green and yellow points correspond rather convincingly to the mode 
   shapes we are expecting for our ruler, which is a free-free bending beam as 
   discussed back in section 3.2.1. To remind you, animations of those three 
   modes are shown in Fig.\ 9(a)—(c). The measured shapes are not quite 
   symmetrical, unlike the theoretical ones. This is not an error: it shows the 
   influence of the mass of the accelerometer attached at one end of the beam. 
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-c18a3404-00.png }&\vidframe{ 0.30 }{ vids/vid-c18a3404-01.png }&\vidframe{ 0.30 }{ vids/vid-c18a3404-02.png } \end{tabular}\caption{Figure 9(a). The lowest mode of an ideal free-free beam.}\mooendvideo
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-795942a7-00.png }&\vidframe{ 0.30 }{ vids/vid-795942a7-01.png }&\vidframe{ 0.30 }{ vids/vid-795942a7-02.png } \end{tabular}\caption{Figure 9(b). The second mode of a free-free beam.}\mooendvideo
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-cb62f69a-00.png }&\vidframe{ 0.30 }{ vids/vid-cb62f69a-01.png }&\vidframe{ 0.30 }{ vids/vid-cb62f69a-02.png } \end{tabular}\caption{Figure 9(c). The third mode of a free-free beam.}\mooendvideo
 
   Having seen how experimental modal analysis works through that simple 
   example, we can look at some results for instrument bodies. Yet again, I will 
@@ -252,9 +211,6 @@
   and the tailpiece). He has a single accelerometer fixed to the cello, and he 
   is tapping with his impulse hammer over a grid of points covering the body. 
 
-  \fig{figs/fig-abdcd53a.png}{Figure 10. George Stoppani doing a modal test on 
-  a cello.} 
-
   George Bissinger’s measurements are made by the reciprocal method: his hammer 
   always taps on the bridge, and he uses a scanning laser vibrometer to measure 
   the response at many points in turn. For both of them, the resolution of the 
@@ -263,8 +219,6 @@
   of points! George Bissinger’s set of measurement points can be seen in Fig.\ 
   11, for a violin. 
 
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-ec22bd2a-00.png }&\vidframe{ 0.30 }{ vids/vid-ec22bd2a-01.png }&\vidframe{ 0.30 }{ vids/vid-ec22bd2a-02.png } \end{tabular}\caption{Figure 11. The grid of measurement points used by George Bissinger for his modal tests on violins.}\mooendvideo
-
   I will first show three different representations of the signature mode A0, 
   the “air resonance”. Figure 12 shows a still image of the motion of the top 
   and back plates of the violin in this mode, as measured by George Stoppani. 
@@ -272,14 +226,6 @@
   Figure 14 shows a George Bissinger measurement of the same mode (on a 
   different violin). This video is reproduced from the \tt{}web site of the 
   Strad3D project\rm{}. 
-
-  \fig{figs/fig-74e5f539.png}{Figure 12. The signature mode A0 of a violin 
-  body, measured by George Stoppani. The top and the back are both viewed from 
-  outside the instrument. Blue colours denote inward movement relative to the 
-  body cavity, orange colours denote outward movement. Image copyright George 
-  Stoppani, reproduced by permission.} 
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-397c209d-00.png }&\vidframe{ 0.30 }{ vids/vid-397c209d-01.png }&\vidframe{ 0.30 }{ vids/vid-397c209d-02.png } \end{tabular}\caption{Figure 13. An animation of the mode A0 of a violin, measured by George Stoppani. Image copyright George Stoppani, reproduced by permission.}\mooendvideo
 
   We can learn a number of things by comparing these images. The first thing 
   that strikes you, probably, is the different style of graphics. The Bissinger 
@@ -361,12 +307,6 @@
   the body, so it has virtually no net volume change, and therefore it is not a 
   good radiator of sound. 
 
-  \fig{figs/fig-24b12361.png}{Figure 15. The signature mode CBR of a violin 
-  body, measured by George Stoppani, in the same format as Fig. 12. Image 
-  copyright George Stoppani, reproduced by permission.} 
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-bc8e51f3-00.png }&\vidframe{ 0.30 }{ vids/vid-bc8e51f3-01.png }&\vidframe{ 0.30 }{ vids/vid-bc8e51f3-02.png } \end{tabular}\caption{Figure 16. The signature mode CBR of a violin body, measured by George Stoppani, in the same format as Fig. 13.  Image copyright George Stoppani, reproduced by permission.}\mooendvideo
-
   Figures 18, 19 and 20 show the same three visualisations of the mode B1-, and 
   Figures 21, 22 and 23 show the related mode B1+. These two modes are 
   sometimes called “baseball modes”: Figs.\ 18 and 21 reveal that in both cases 
@@ -386,18 +326,6 @@
   bridge, which allows them to be driven effectively by forces from the bowed 
   string. Indeed, especially in the case of B1+, the bridge motion can be so 
   strong that a wolf note is caused (see section 9.4). 
-
-  \fig{figs/fig-f68aa741.png}{Figure 18. The signature mode B1- of a violin 
-  body, measured by George Stoppani, in the same format as Fig. 12. Image 
-  copyright George Stoppani, reproduced by permission.} 
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-e5ffb37c-00.png }&\vidframe{ 0.30 }{ vids/vid-e5ffb37c-01.png }&\vidframe{ 0.30 }{ vids/vid-e5ffb37c-02.png } \end{tabular}\caption{Figure 19. The signature mode B1- of a violin body, measured by George Stoppani, in the same format as Fig. 13.  Image copyright George Stoppani, reproduced by permission.}\mooendvideo
-
-  \fig{figs/fig-b41602e8.png}{Figure 21. The signature mode B1+ of a violin 
-  body, measured by George Stoppani, in the same format as Fig. 12. Image 
-  copyright George Stoppani, reproduced by permission.} 
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-c4c513bb-00.png }&\vidframe{ 0.30 }{ vids/vid-c4c513bb-01.png }&\vidframe{ 0.30 }{ vids/vid-c4c513bb-02.png } \end{tabular}\caption{Figure 22. The signature mode B1+ of a violin body, measured by George Stoppani, in the same format as Fig. 13.  Image copyright George Stoppani, reproduced by permission.}\mooendvideo
 
 
 

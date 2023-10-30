@@ -4,12 +4,6 @@
   admittances were plotted in Fig.\ 8 of section 5.1. Here is a repeat of that 
   figure: 
 
-  \fig{figs/fig-d71e4d29.png}{Figure 1. A repeat of Fig. 8 from section 5.1: 
-  scaled bridge admittance magnitude, for three different stringed instruments. 
-  Red curve: a violin; purple curve: a classical guitar; blue curve: a banjo. 
-  The frequency scale is expressed in semitones, starting from the lowest tuned 
-  note of each instrument. Successive octaves are indicated by ticks.} 
-
   Before launching into a more detailed interpretation of these curves, we 
   should have a look at the responses of more than one instrument of each type, 
   to get an idea of which features are general, and which are special to a 
@@ -18,15 +12,6 @@
   respectively. Because these plots are not mixing different instruments, it is 
   possible here to show absolute scales of frequency and admittance, as well as 
   the non-dimensional scales of Fig.\ 1. 
-
-  \fig{figs/fig-e086871a.png}{Figure 2. Measured bridge admittance, in the same 
-  format as Fig. 1, for 7 violins: two by Stradivari, one by Guarneri `del 
-  Gesu', and four by modern makers.} 
-
-  \fig{figs/fig-cef1796d.png}{Figure 3. Measured bridge admittance, in the same 
-  format as Figs. 1 and 2, for eight acoustic guitars. The set includes 
-  classical, flamenco and steel-strung guitars; makers include Fleta, Smallman, 
-  Ramirez and Fylde.} 
 
   In both cases, some famous makers are included in the mix. Stradivari and 
   Guarneri `del Gesu' are represented among the violins. No maker in the guitar 
@@ -108,14 +93,6 @@
   stripes) run off the edges of the top plate, and reappear in more or less the 
   same places on the back plate. The motion is truly three-dimensional. 
 
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-5623ae89-00.png }&\vidframe{ 0.30 }{ vids/vid-5623ae89-01.png }&\vidframe{ 0.30 }{ vids/vid-5623ae89-02.png } \end{tabular}\caption{Figure 5a. A measured signature mode of a violin, usually called A0, at 272 Hz. Image copyright George Stoppani, reproduced by permission.}\mooendvideo
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-956e1f26-00.png }&\vidframe{ 0.30 }{ vids/vid-956e1f26-01.png }&\vidframe{ 0.30 }{ vids/vid-956e1f26-02.png } \end{tabular}\caption{Figure 5b. A measured signature mode of a violin, usually called CBR, at 407 Hz. Image copyright George Stoppani, reproduced by permission.}\mooendvideo
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-91e8dbeb-00.png }&\vidframe{ 0.30 }{ vids/vid-91e8dbeb-01.png }&\vidframe{ 0.30 }{ vids/vid-91e8dbeb-02.png } \end{tabular}\caption{Figure 5c. A measured signature mode of a violin, usually called B1-, at 462 Hz. Image copyright George Stoppani, reproduced by permission.}\mooendvideo
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-94a2e206-00.png }&\vidframe{ 0.30 }{ vids/vid-94a2e206-01.png }&\vidframe{ 0.30 }{ vids/vid-94a2e206-02.png } \end{tabular}\caption{Figure 5d. A measured signature mode of a violin, usually called B1+, at 551 Hz. Image copyright George Stoppani, reproduced by permission.}\mooendvideo
-
   There has been a long history of researchers trying to visualise and 
   understand these modes, and this has resulted in a rather non-intuitive set 
   of labels that are commonly used to describe the modes. The first mode, Fig.\ 
@@ -196,8 +173,6 @@
   and speech perception in general, is too complicated to go into detail here; 
   to learn more, look at the \tt{}Wikipedia article\rm{}. 
 
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-50ed3f9e-00.png }&\vidframe{ 0.30 }{ vids/vid-50ed3f9e-01.png }&\vidframe{ 0.30 }{ vids/vid-50ed3f9e-02.png } \end{tabular}\caption{Figure 6.  Schematic example of formants. The red lines mark the harmonics produced by a singer, performing a one-octave chromatic scale starting at $G_3$ (196 Hz). The dashed line shows a schematic version of the frequency response of the vocal tract, in a configuration corresponding to a particular vowel. As the pitch of the note changes, the filter shape is still `dotted out' by the heights of the harmonic peaks, so that your brain is able to perceive which vowel is being sung.}\mooendvideo
-
   We now want to apply this idea of formants to musical instruments. The 
   interpretation is slightly different in that context. The example in Fig.\ 6 
   shows a series of peaks, which sketch out the shape of a larger-scale 
@@ -218,10 +193,6 @@
   horizontal dashed line. The lower plot shows the phase response, and this 
   does something very dramatic in the same frequency range: the phase drops 
   systematically towards $-90^\circ$. 
-
-  \fig{figs/fig-b57c853e.png}{Figure 7. The bridge admittance of a typical 
-  violin, this time showing the phase (lower plot) as well as the magnitude 
-  (upper plot).} 
 
   To understand what is going on, it helps to look at a simpler system. Instead 
   of the complicated violin body, we can imagine a system which has regularly 
@@ -244,10 +215,6 @@
   while the phase plot shows the dramatic drop towards $-90^\circ$ that we 
   noted earlier. The formant-like nature of the amplitude plot should also be 
   obvious. 
-
-  \fig{figs/fig-3473d4d3.png}{Figure 9. Schematic sketch of an instrument body 
-  with admittance $Y_v(\omega)$, being driven through a simple mass-spring 
-  oscillator.} 
 
   It is useful to find a way to see the shape of the underlying formant `hill' 
   without the distracting details of the individual body modes. This can be 
@@ -281,11 +248,6 @@
   magnitude (because it is a decibel plot). Really, this agreement is quite 
   surprising, even if it was predicted by the theory! 
 
-  \fig{figs/fig-18e7981f.png}{Figure 10. The violin admittance from Fig. 7, 
-  with blue dashed lines added to show the result of a linear average with 
-  bandwidth 1000 Hz and a Hanning window, to estimate the direct field 
-  contribution.} 
-
   So the `bridge hill' in the violin seems to be the result of driving the body 
   through some kind of resonant system. But when you look at a violin you see 
   no obvious sign of the mass and spring from Fig.\ 9. There is a kind of 
@@ -295,10 +257,6 @@
   rather flexible region of the top plate between the f-holes. The strings sit 
   on the top curve of the bridge, and when a string is bowed the force applied 
   to the bridge is predominantly in the side-to-side direction. 
-
-  \fig{figs/fig-01223da7.png}{Figure 11. The `island' area of a violin. Out of 
-  sight inside the body, the bassbar passes underneath the left-hand bridge 
-  foot, and the sound post is close to the right-hand foot.} 
 
   The bridge tends to rock in response to this force. Now, if the bridge was 
   removed from the violin and its feet clamped in a vice, a typical violin 
@@ -345,11 +303,7 @@
   a final version of the comparison of the scaled admittances: this time, the 
   three averaged curves have been added. 
 
-  \fig{figs/fig-a71f0d40.png}{Figure 13. A final comparison of the admittances 
-  of the three instruments from Fig. 1, this time including the result of 
-  averaging as in Fig. 10. Blue: banjo; red: violin; black: guitar.} 
-
-  \samsection{The violin (and cello)} 
+  \textbf{The violin (and cello)} 
 
   The violin (red curves) has just been discussed. At low frequency it has the 
   set of signature modes shown in Fig.\ 5. The air resonance A0 shows as a 
@@ -364,10 +318,6 @@
   violin, in a higher frequency range. This one is associated with `bouncing' 
   motion of the bridge and island, rather than rocking: Fig.\ 14 shows a 
   sketch. 
-
-  \fig{figs/fig-3389a198.png}{Figure 14. A violin bridge,with a sketch of the 
-  `bouncing' resonance, occurring around 6 kHz when the feet are rigidly 
-  clamped.} 
 
   It is worth inserting a brief comment here about the behaviour of the cello. 
   The cello, with its very different bridge design, has been studied far less 
@@ -384,15 +334,11 @@
   first two bridge resonances sketched in Fig.\ 15, modified by the behaviour 
   of the top plate in the island area as we saw for the violin. 
 
-  \fig{figs/fig-1a4b33f9.png}{Figure 16. Bridge admittance of two cellos, 
-  scaled by the impedance of the top string as in earlier figures. The average 
-  curves for both are shown as dashed lines.} 
-
   Whether or not they think in these terms, violin and cello makers manipulate 
   both the signature modes and the bridge hill formant(s). Both play important 
   roles in aspects of the sound quality and `playability' of an instrument. 
 
-  \samsection{The guitar} 
+  \textbf{The guitar} 
 
   We now return to a discussion of Fig.\ 13. The guitar admittance shows two 
   large peaks corresponding to the first two signature modes shown in Fig.\ 4. 
@@ -429,7 +375,7 @@
   equivalent in the guitar world of the research literature devoted to the 
   bridge hill in the violin. 
 
-  \samsection{The banjo} 
+  \textbf{The banjo} 
 
   Like the other instruments, the banjo has well-defined modes at low 
   frequency, of course. We already know what they look like: they are 
@@ -443,12 +389,6 @@
   vibrometer measurements were made with the resonator back of the banjo 
   removed in order to access both sides of the membrane. This changes the 
   frequencies a little, as discussed earlier. 
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-294cff97-00.png }&\vidframe{ 0.30 }{ vids/vid-294cff97-01.png }&\vidframe{ 0.30 }{ vids/vid-294cff97-02.png } \end{tabular}\caption{Figure 17. A mode (or, strictly, an operating deflection shape) of the banjo, at 297 Hz}\mooendvideo
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-5600e0ad-00.png }&\vidframe{ 0.30 }{ vids/vid-5600e0ad-01.png }&\vidframe{ 0.30 }{ vids/vid-5600e0ad-02.png } \end{tabular}\caption{Figure 18. A mode (or, strictly, an operating deflection shape) of the banjo, at 500 Hz}\mooendvideo
-
-\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-25e51848-00.png }&\vidframe{ 0.30 }{ vids/vid-25e51848-01.png }&\vidframe{ 0.30 }{ vids/vid-25e51848-02.png } \end{tabular}\caption{Figure 19. A mode (or, strictly, an operating deflection shape) of the banjo, at 716 Hz}\mooendvideo
 
   But Fig.\ 13 reveals something else: the averaged curve for the banjo shows a 
   large formant-like feature, peaking around semitone 33 (1 kHz). It also 
@@ -522,11 +462,6 @@
   the admittance that would be relevant to string vibration in the plane 
   parallel to the banjo head. 
 
-  \fig{figs/fig-fdacbb39.png}{Figure 20. Scaled admittance measured at three 
-  different positions on the banjo bridge, with averaged curves shown in 
-  dashes. Red: near the top string as in previous plots; black: near the middle 
-  string; blue: horizontally on the side of the bridge.} 
-
   The three measurements are very different from each other. The second peak we 
   noted in the previous measurement appears far more strongly in the blue 
   curves. The third formant shows up most prominently in the black curve. To 
@@ -539,20 +474,6 @@
   the three legs so that the feet rotate (see Fig.\ 22); the higher one, around 
   semitone 62, involves a bending resonance of the bridge rather like the first 
   mode of a free-free beam as seen in Fig.\ 1 of section 3.2 (see Fig.\ 23). 
-
-  \fig{figs/fig-216aba9d.png}{Figure 21. A close-up of the banjo bridge. The 
-  white patches are reflective tape, used for the laser vibrometer 
-  measurements.} 
-
-  \fig{figs/fig-e4a96241.png}{Figure 22. Image from the computer model showing 
-  the predicted motion of the banjo membrane and bridge at the peak of the 
-  lower ``bridge hill'' around 3 kHz. Image copyright Hossein Mansour, 
-  reproduced by permission.} 
-
-  \fig{figs/fig-eed5eee2.png}{Figure 23. Image from the computer model showing 
-  the predicted motion of the banjo membrane and bridge at the peak of the 
-  higher ``bridge hill'' around 5 kHz. Image copyright Hossein Mansour, 
-  reproduced by permission.} 
 
   In section 5.5, among the various sound examples will be some that illustrate 
   the audible effect of these high-frequency formants. But before we are ready 

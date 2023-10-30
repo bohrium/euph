@@ -62,12 +62,6 @@
   this example the sine waves are at 200 Hz and 203 Hz, so the beat frequency 
   is 3 Hz. You can hear the waveform in Sound 1. 
 
-  \fig{figs/fig-59d6e8b2.png}{Figure 1. A sine wave at 200 Hz added to another 
-  sine wave at 203 Hz with the same amplitude, leading to a pattern of beats. 
-  The upper trace shows a 3 s segment, which you can listen to in Sound 1. The 
-  lower trace shows a zoomed view, to show the underlying sinusoidal 
-  variation.} 
-
   If the two amplitudes are not equal, a weaker version of the same phenomenon 
   occurs. An example is shown in Fig.\ 2, where the second sine wave has 1/10 
   the amplitude of the first one. You can hear the waveform in Sound 2. The 
@@ -75,13 +69,6 @@
   the sound. This is the effect which can interfere with an experiment to probe 
   masking. Basically, we might be using a different feature detector to notice 
   the beats, not the one the experimenter is trying to exercise. 
-
-  \fig{figs/fig-e02e3030.png}{Figure 2. A sine wave at 200 Hz added to another 
-  sine wave at 203 Hz with an amplitude 1/10 of the first one, leading to a 
-  modulation pattern that is less strong than in Fig. 1, but still clearly 
-  visible. The upper trace shows a segment 3 s long, which you can listen to in 
-  Sound 2. The lower trace shows a zoomed view, to show the underlying 
-  sinusoidal variation.} 
 
   It is better to use random noise of some kind for the masking signal, to 
   avoid this issue of the subject detecting the test sound via beats. In this 
@@ -107,8 +94,6 @@
   to their centre frequency. But at lower frequency this relative bandwidth 
   gets wider. 
 
-  \fig{figs/fig-c4a8c2cd.png}{Figure 3. Five examples of auditory filters.} 
-
   The bandwidth of each auditory filter defines an important quantity known as 
   the critical bandwidth. Roughly, any two frequency components falling within 
   a critical bandwidth of each other are too close to be resolved on the 
@@ -132,9 +117,6 @@
   scale of distance along the basilar membrane: 1 ERB corresponds to about 0.9 
   mm. 
 
-  \fig{figs/fig-19384dc4.png}{Figure 4. The bandwidth of auditory filters, 
-  represented by the ERB, as a function of centre frequency.} 
-
   Armed with the set of auditory filters, we can construct something important. 
   For any given sound input, be it a sine wave or a Beethoven symphony, we can 
   use the set of filters to map out the pattern of motion of the basilar 
@@ -157,9 +139,6 @@
   spectrogram of a violin note, being played with vibrato. The spectrogram is 
   repeated as Fig.\ 6, and the associated sound appears as Sound 3. 
 
-  \fig{figs/fig-8a6ceb14.png}{Figure 6: A spectrogram of a note on a violin, 
-  played with vibrato} 
-
   We can analyse the same sound as a time-varying excitation pattern. To 
   achieve this, we can take advantage of an approximate form of the auditory 
   filters, called \tt{}gammatone filters\rm{} [3]. These have a neat 
@@ -170,12 +149,6 @@
   scale which is not very different from a logarithmic scale. Time runs 
   vertically upwards. The excitation magnitude is indicated by colour, on a 
   decibel scale shown in the sidebar. 
-
-  \fig{figs/fig-aacb878e.png}{Figure 7. A time-varying excitation pattern 
-  plotted in a similar format to Fig. 6. The frequency scale is based on ERBs, 
-  and thus on distance along the basilar membrane. Time runs vertically 
-  upwards. The magnitude of the excitation pattern is represented by colour, on 
-  a decibel scale given in the sidebar.} 
 
   The harmonics of the violin note can be seen, but they are much more blurred 
   than the version in Fig.\ 6. The ``wobble'' caused by vibrato is still 
@@ -219,8 +192,6 @@
   aspects of these different perceptions; although we can see nothing very 
   obvious associated with the sense of ``roughness''. 
 
-  \fig{figs/fig-3706f430.png}{Figure 8. Auditory spectrogram of Sound 4.} 
-
   What we have seen is that the excitation pattern captures some aspects of 
   sound perception, although by no means all. There is a striking success story 
   related to loudness. In section 6.3 we saw a bit of the complexity of 
@@ -246,27 +217,27 @@
 
   A clear example of this comes from something that you may have been wondering 
   about. A typical ERB is a few semitones, when expressed in musical jargon 
-  (remember that a semitone is a frequency ratio of about 6%). Music as we 
+  (remember that a semitone is a frequency ratio of about 6\%). Music as we 
   understand it would hardly be possible if we could not distinguish two sounds 
   a semitone apart! In fact, our ability to discriminate pitch between two 
   steady periodic sounds with different periods is far more acute than the ERB. 
 
   This acuity of pitch perception is usually expressed in terms of cents: a 
   cent is a hundredth of an equal-tempered semitone, so 1 cent corresponds to a 
-  frequency ratio of about 0.06%. Well, we cannot discern a difference as small 
-  as 1 cent, but under the best conditions people can discern pitches about 5 
-  cents different. (Strictly, I am speaking rather loosely here: what I mean is 
-  ``people can discern a pitch difference between two frequencies differing by 
-  about 5 cents''.) This value is (approximately) the threshold for pitch 
-  discrimination when two sounds are heard one after another. If the two sounds 
-  are heard simultaneously, we may be even more acute to ``out-of-tuneness'', 
-  because the phenomenon of beats comes into play again. So when you are tuning 
-  your violin, or playing or singing in an ensemble, you need to get pitches 
-  remarkably accurate, as all musicians (and parents of budding musicians) know 
-  only too well. 
+  frequency ratio of about 0.06\%. Well, we cannot discern a difference as 
+  small as 1 cent, but under the best conditions people can discern pitches 
+  about 5 cents different. (Strictly, I am speaking rather loosely here: what I 
+  mean is ``people can discern a pitch difference between two frequencies 
+  differing by about 5 cents''.) This value is (approximately) the threshold 
+  for pitch discrimination when two sounds are heard one after another. If the 
+  two sounds are heard simultaneously, we may be even more acute to 
+  ``out-of-tuneness'', because the phenomenon of beats comes into play again. 
+  So when you are tuning your violin, or playing or singing in an ensemble, you 
+  need to get pitches remarkably accurate, as all musicians (and parents of 
+  budding musicians) know only too well. 
 
   How do we manage to distinguish two pitches as close as 5 cents (i.e. a 
-  frequency ratio of about 0.3%)? There has been much debate and controversy 
+  frequency ratio of about 0.3\%)? There has been much debate and controversy 
   about that question over the years. The answer almost certainly involves the 
   interplay of two factors. One is the one we have already been talking about: 
   there is relatively coarse segregation in frequency already present on the 

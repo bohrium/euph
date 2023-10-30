@@ -18,6 +18,12 @@
   involves an alternation of Helmholtz motion, with the familiar sawtooth 
   waveform, and double-slipping motion. 
 
+  \fig{figs/fig-71fc78b5.png}{Figure 1. Measured waveform of bridge force 
+  during a wolf note played on a cello C string.} 
+
+  \fig{figs/fig-4600f193.png}{Figure 2. Zoomed view of the portion outlined in 
+  black of the bridge force waveform in Fig. 1.} 
+
   The physics behind the wolf note is yet another thing that was first 
   explained correctly by Raman [1]. Testing Raman’s explanation was an early 
   target for the computer model described in section 9.2, and we can give a 
@@ -43,6 +49,9 @@
   the phenomenon: a cyclical warbling waveform, when bowing a note with a 
   fundamental frequency matching a strong resonance of the instrument body. 
 
+  \fig{figs/fig-6e809913.png}{Figure 3. Bridge force from a computer-simulated 
+  wolf note} 
+
   We can use the simulated results to generate a plot corresponding to Raman's 
   original measurement. He made simultaneous observations of the string motion 
   and the motion of the cello body, and this gave the basis for his explanation 
@@ -50,6 +59,12 @@
   simulated example: the red curve shows the string velocity, while the blue 
   curve shows the ``body'' motion. The alternation of Helmholtz motion and 
   double-slipping motion is very clear in the red curve. 
+
+  \fig{figs/fig-6971fe65.png}{Figure 4. Further results from the same simulated 
+  wolf note as in Fig. 3. The red line shows the string velocity at the bowed 
+  point (shifted upwards for clarity). The blue trace shows the corresponding 
+  velocity of the ``body'', consisting of a single resonator: it has been 
+  scaled by a factor 20 so that it can be seen clearly.} 
 
   The single resonator representing the ``body'' shows a cyclical growth and 
   decay during the ``warble'' cycle. The explanation of the behaviour we see in 
@@ -107,6 +122,8 @@
   similar scaled admittance when we talked about plucked strings, back in 
   Chapter 5: see for example Fig.\ 8 of section 5.1. 
 
+  \fig{figs/fig-e6640213.png}{Figure 5. The bridge admittance of a cello} 
+
   Figure 6 shows the predicted minimum bow force, computed by the procedure 
   described in the previous link. The frequency axis here denotes the 
   fundamental frequency of a played note. For each of the four strings, a range 
@@ -119,6 +136,11 @@
   $\beta$, and the friction coefficient of rosin. But all these things only 
   contribute to an overall scale factor: the extent of variation from note to 
   note and between the four strings should be reliably represented in the plot. 
+
+  \fig{figs/fig-91405380.png}{Figure 6. Calculated minimum bow force for the 
+  cello from Fig. 5. The four strings are indicated in colours from red to 
+  blue. On each string a range of 3 octaves from the open string is shown. 
+  Vertical lines show semitones: Cs in yellow, other notes in grey.} 
 
   The curves for the different strings are identical apart from a scaling 
   factor relating to the impedance of the string. It is immediately clear that 
@@ -138,6 +160,10 @@
   note is that it is what can happen if that coupling gets a bit too strong. 
   Figure 7 shows the same scaled cello admittance as in Fig.\ 5, and it also 
   shows the corresponding scaled admittance for two violins (in blue curves). 
+
+  \fig{figs/fig-98cf61ac.png}{Figure 7. The cello admittance from Fig. 5 (red) 
+  compared with corresponding scaled admittances for two different violins (in 
+  blue).} 
 
   The frequency scale based on semitones above the lowest tuned note of the 
   instrument allows these different instruments to be compared directly. This 
@@ -213,7 +239,8 @@
   “wolf” peak, without having much effect on the rest of the playing range of 
   the instrument. Somewhat unusually in the world of musical instrument 
   acoustics, this is a familiar approach to vibration problems in many other 
-  areas of engineering: it is usually called a “\tt{}tuned mass damper\rm{}” or a “tuned absorber”. 
+  areas of engineering: it is usually called a “\tt{}tuned mass damper\rm{}” or 
+  a “tuned absorber”. 
 
   The trick is to fix another oscillator of some kind to the structure you want 
   to control, with a resonance frequency tuned so that it exactly matches the 
@@ -272,6 +299,11 @@
   the body mode and thus reducing the height of the peak in the scaled 
   admittance without making significant difference to the body response at 
   other frequencies. 
+
+  \fig{figs/fig-5bdd95d3.png}{Figure 11. A wolf note eliminator (the brass 
+  cylinder) in position on the afterlength of the G string of a cello. Image: 
+  no machine-readable author provided. Mdd4696 assumed (based on copyright 
+  claims). Public domain, via Wikimedia Commons.} 
 
   There are also devices that work on the same principle but are glued to the 
   underside of the cello soundboard to make a permanent installation. A virtue 

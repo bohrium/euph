@@ -7,7 +7,7 @@
   will give some technical background about how the subject can be approached 
   mathematically. 
 
-  \samsection{A. Laminar and turbulent flow} 
+  \textbf{A. Laminar and turbulent flow} 
 
   So far our only contact with the world of fluid dynamics has been through the 
   very special case of linear acoustics. However, we will need to go beyond 
@@ -18,12 +18,22 @@
   complicated turbulent flow at the bottom. The smooth initial flow is known as 
   “laminar flow”. 
 
+  \fig{figs/fig-2dd6d52f.png}{Figure 1. A small waterfall illustrates the 
+  contrast between laminar flow (over the lip of the fall and during the 
+  descent) and turbulent flow (in the churning water at the bottom).} 
+
   Figure 2 shows another example. This is a schlieren image of the plume of hot 
   air rising from a candle flame. At the bottom the flow is laminar, but there 
   is a rather abrupt transition to turbulent flow in the middle of the image, 
   without anything obvious happening there to trigger the transition (nothing 
   analogous to the waterfall edge, for example). This is a spontaneous 
   transition to chaotic behaviour, in the sense discussed in section 8.4. 
+
+  \fig{figs/fig-84f2f746.png}{Figure 2. A schlieren image of the plume rising 
+  from a candle flame. The flow is laminar in the lower half of the image, but 
+  exhibits a spontaneous transition to turbulence higher up. Image: Gary 
+  Settles, CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0), via 
+  Wikimedia Commons.} 
 
   Chaotic behaviour like this can only occur in nonlinear systems, although if 
   you recall the example of the double pendulum from section 8.4 you will 
@@ -39,7 +49,7 @@
   simplify the mathematics under certain circumstances and allow us to make 
   some progress with understanding the physics behind fluid behaviour. 
 
-  \samsection{B. Incompressible flow} 
+  \textbf{B. Incompressible flow} 
 
   We have already met one approximation: when we derived the linear wave 
   equation back in section 4.1.1, we assumed that all relevant quantities like 
@@ -76,7 +86,7 @@
   towards the lay. We will see in section 11.3 that this is an important 
   ingredient of how a reed mouthpiece works. 
 
-  \samsection{C. Viscosity} 
+  \textbf{C. Viscosity} 
 
   There is another physical property of fluids we need to think about, called 
   viscosity. Figure 3 shows a familiar sight, honey running slowly off a spoon. 
@@ -84,6 +94,9 @@
   would be quite different: almost all the water would fall off the spoon as 
   soon as you tip it up. This contrasting behaviour happens because the 
   viscosity of honey is far greater than the viscosity of water. 
+
+  \fig{figs/fig-d45a563f.png}{Figure 3. Honey running slowly off a spoon, to 
+  illustrate the concept of viscosity.} 
 
   But you may have noticed that I said “almost all water would fall off the 
   spoon”. Actually, a few drops of water continue to fall, after most of it has 
@@ -107,6 +120,9 @@
   the force necessary to move the plate, at a given speed and with a layer of 
   given thickness and area. 
 
+  \fig{figs/fig-7f24e0eb.png}{Figure 4. Illustration of shear deformation of a 
+  layer of fluid between two rigid plates} 
+
   So now come back to our spoonful of water. What happens when you tip the 
   spoon? The force of gravity acts in the same way on every particle of the 
   water, so it all “wants” to move downhill at the same speed. But the water in 
@@ -115,6 +131,11 @@
   near the spoon surface. Most of the water flows down at the same velocity, 
   but a thin layer near the surface experiences shearing motion, which is 
   resisted by the viscosity of the water. 
+
+  \fig{figs/fig-717bbebb.png}{Figure 5. Tipping water out of a spoon: sketch, 
+  and closeup showing the formation of a very thin boundary layer against the 
+  surface of the spoon. The thin black lines and red arrows show the velocity 
+  profile.} 
 
   The result is a velocity profile of the kind sketched, featuring a boundary 
   layer: a layer very close to the solid surface in which significant shear 
@@ -135,7 +156,7 @@
   internal wall of the tube is very smooth, but if that surface is rough then 
   the boundary layer is likely to be thicker, and the damping increased. 
 
-  \samsection{D. Reynolds Number (and its relatives)} 
+  \textbf{D. Reynolds Number (and its relatives)} 
 
   Two effects we have described, nonlinearity and viscosity, are each described 
   by one term in the governing Navier-Stokes equation (see the previous link). 
@@ -171,7 +192,7 @@
   flows have low Mach Number, and a supersonic flow has a Mach Number bigger 
   than 1. 
 
-  \samsection{E. Flow separation and vortices} 
+  \textbf{E. Flow separation and vortices} 
 
   Another phenomenon that can occur is that the shape of the solid object may 
   create the conditions for the boundary layer to separate from the wall at 
@@ -179,6 +200,12 @@
   example, in a wind-tunnel image of flow past a wing cross-section. The flow 
   below the wing remains in contact with the surface, but above the wing it 
   separates and produces a complicated wake structure. 
+
+  \fig{figs/fig-96d85249.png}{Figure 6. Flow visualisation from a wind tunnel, 
+  showing an airfoil wing section. The boundary layer on the upper surface 
+  separates, and gives rise to a wake structure. Image: DLR, CC-BY 3.0, CC BY 
+  3.0 DE https://creativecommons.org/licenses/by/3.0/de/deed.en, via Wikimedia 
+  Commons} 
 
   Under some circumstances this separation process varies cyclically with time, 
   giving rise to a strikingly beautiful ``Kármán vortex street'', like the 
@@ -188,6 +215,12 @@
   direction perpendicular to the flow. If the object is something like a 
   stretched string or a power cable, this force can set it into vibration. This 
   is the underlying mechanism of the Aeolian harp, for example. 
+
+  \fig{figs/fig-7b1e3156.png}{Figure 7. A Kármán vortex street, generated by 
+  flow past a cylindrical body. The boundary layer separation point oscillates, 
+  shedding vortices in alternating directions. Image: Jürgen Wagner -- 
+  Self-photographed, CC BY-SA 4.0, 
+  https://commons.wikimedia.org/w/index.php?curid=39746847} 
 
   Another phenomenon involving vortices is more directly relevant to musical 
   wind instruments. If a jet of air is blown out of a slot, as in a recorder 
@@ -205,8 +238,15 @@
   alternating pattern. The image is taken from the doctoral thesis of Sylvie 
   Dequand [1]. 
 
+  \fig{figs/fig-42960824.png}{Figure 8. Schlieren image of a wide air-jet 
+  entering from a slot (the end of it is visible on the left), interacting with 
+  a sharp edge in the upper right of the picture. It shows unstable vortex 
+  growth of the shear layers on either side of the jet. Image copyright Sylvie 
+  Dequand, reproduced by permission.} 
+
 
 
   \sectionreferences{}[1] Sylvie Dequand, “Duct aeroacoustics: from 
   technological applications to the flute”, Doctoral dissertation, Eindhoven 
-  University of Technology (2001), \tt{}https://pure.tue.nl/ws/portalfiles/portal/3429613/445111.pdf\rm{} 
+  University of Technology (2001), 
+  \tt{}https://pure.tue.nl/ws/portalfiles/portal/3429613/445111.pdf\rm{} 

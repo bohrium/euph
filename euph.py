@@ -48,6 +48,7 @@ def clean_post(s):
              .replace('&lt;', '<')
              .replace('&amp;', '\\&')
              #
+             .replace('%', '\\%')
              )
 
 user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
@@ -132,8 +133,8 @@ def process_para(groupdict):
         assert False
 
 text = '<p>(?P<text>[^\n]*)</p>'
-figu = '<figure[^>]*><img( [a-z]+(="[^"]*")?)* src="(?P<figurl>[^"]*)"[^>]*>(</image>)?<figcaption>(?P<figcap>[^<]*)</figcaption></figure>'
-vide = '<figure[^>]*><video( [a-z]+(="[^"]*")?)* src="(?P<vidurl>[^"]*)"[^>]*>(</video>)?<figcaption>(?P<vidcap>[^<]*)</figcaption></figure>'
+figu = '(<div [^>]*>)?<figure[^>]*><img( [a-z]+(="[^"]*")?)* src="(?P<figurl>[^"]*)"[^>]*>(</image>)?<figcaption [^>]*>(?P<figcap>[^<]*)</figcaption></figure>'
+vide = '(<div [^>]*>)?<figure[^>]*><video( [a-z]+(="[^"]*")?)* src="(?P<vidurl>[^"]*)"[^>]*>(</video>)?<figcaption [^>]*>(?P<vidcap>[^<]*)</figcaption></figure>'
 para = '|'.join((text, figu, vide))
 
 def tex_from(url, texname):
@@ -142,7 +143,8 @@ def tex_from(url, texname):
     with open(texname, 'w') as f:
         f.write(tt)
 
-urls = '<p[^>]*>(?P<sectnum>[0-9]+(.[0-9]+)*) <a [^>]*href="(?P<url>[^"]*)"[^>]*>(?P<title>[^<]*)</a></p>'
+
+urls = '<p[^>]*>(<mark [^>]*>Chapter )?(?P<sectnum>[0-9]+(.[0-9]+)*)(</mark>)? <a [^>]*href="(?P<url>[^"]*)"[^>]*>(?P<title>[^<]*)</a></p>'
 
 bb = get_headlines('https://euphonics.org/homepage/', urls)
 
@@ -151,8 +153,9 @@ filenm_from_sn = lambda sectnum : 'body/body.{:s}.tex'.format(sectnum.replace('.
 def make_input(b):
     sn = b['sectnum'].replace('.', '-')
     title = b['title']
+    level = sn.count('-')
     return (
-        ('\\sampart' if sn.count('-')<=1 else '\\samsection') +
+        {0:'\\sampart', 1:'\\samsection', 2:'\\sampassage'}[level]+
         '{{{:s} \\quad {:s}}}'.format(sn, b['title']) +
         '\\renewcommand{{\\whichsect}}{{{:s}}}'.format(sn) +
         '\\input{{{:s}}}'.format(filenm_from_sn(sn))
@@ -173,7 +176,8 @@ def correct_typo(sectnum, before, after):
     fnm = 'body/body.{:s}.tex'.format(sectnum.replace('.','-'))
     with open(fnm, 'r') as f:
         t = f.read()
-        t = re.sub(before, after, t)
+        t = t.replace(before, after)
+        #t = re.sub(before, after, t)
     with open(fnm, 'w') as f:
         f.write(t)
 
@@ -183,11 +187,14 @@ def correct_all(sectnum, before, after):
         correct_typo(sn, before, after)
         #correct_typo(sn, '<a [^>]*>', r'\\tt{}')
 
+#print(bb)
 if __name__=='__main__':
     make_all_inputs('all-input.tex')
 
     make_all_bodies()
 
+    #correct_typo('4.3', r'frequency 10% below critical' ,
+    #                    r'frequency 10\% below critical' )
     correct_typo('5.5', r'admittances are plotted in Fig.\ 15}.',
                         r'admittances are plotted in Fig.\ 15.'  )
     correct_typo('6.4', r'Technical Report #1998-010,' ,

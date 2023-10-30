@@ -1,4 +1,4 @@
-  \samsection{A: Philosophy} 
+  \textbf{A: Philosophy} 
 
   Making decent measurements is a skill of a similar kind to making a decent 
   instrument. Doing it by recipe is like making a violin from instructions in a 
@@ -18,7 +18,7 @@
   simpler than one that involves absolute admittance levels, which requires a 
   fully calibrated force and velocity measurement system. 
 
-  \samsection{B: Digital choices} 
+  \textbf{B: Digital choices} 
 
   You will no doubt use some kind of FFT package, which can sample your signals 
   and turn them into frequency spectra. In any of these packages, there are a 
@@ -37,12 +37,6 @@
   see that something remarkable has happened: the red stars do indeed dot out a 
   sine wave, but it is at the wrong frequency, a much lower frequency than it 
   should be. 
-
-  \fig{figs/fig-3b7db1e7.png}{Figure 1. An illustration of aliasing. A sine 
-  wave at frequency 4.5~kHz is shown in black. The red stars are the result of 
-  sampling this sine wave at a frequency of 5~kHz. They dot out a sine wave 
-  with the much lower frequency 500~Hz, which is 5000-4500~Hz: the sampling 
-  frequency minus the sine wave frequency.} 
 
   Specifically, the frequency marked by the red stars is 500~Hz, which is the 
   difference between the sampling rate and the true frequency of the sine wave. 
@@ -80,9 +74,6 @@
   levels by 0.5~s, and if this is the complete data sample, the resolution will 
   be 2~Hz. 
 
-  \fig{figs/fig-627f0190.png}{Figure 2. The response from an accelerometer 
-  attached to the bridge of a banjo, following a hammer tap.} 
-
   Now you have to consider a trade-off. Higher resolution seems desirable 
   because it leads to smoother plots, but it requires you to store a larger 
   amount of data, and more insidiously there are implications for the amount of 
@@ -113,7 +104,7 @@
   on the actual noise level in your measurement. But as a rule of thumb, the 
   amount plotted in Fig.\ 2 feels about right for the minimum sampling time. 
 
-  \samsection{C: What could possibly go wrong?} 
+  \textbf{C: What could possibly go wrong?} 
 
   C.1: Support fixtures 
 
@@ -139,9 +130,6 @@
   suitable holding arrangement is shown in Fig.\ 3. This treble viol is resting 
   on soft foam on its end block, and is supported by a foam-lined ``hand'' on 
   the neck. 
-
-  \fig{figs/fig-c7af4f8c.png}{Figure 3. A treble viol being tested. Note the 
-  holding arrangement and the card for string damping} 
 
   Another approach that is often used is to suspend the instrument from some 
   kind of frame using rubber bands. This approach can give good isolation of 
@@ -205,9 +193,6 @@
   been fitted with different strings, they may not have been tuned the same, 
   and so on. 
 
-  \fig{figs/fig-1dad2cd1.png}{Figure 4. Measured bridge admittance of a violin, 
-  with strings damped (blue) and undamped (red)} 
-
   However, it is important that the strings are in place and under normal 
   tension during a measurement. The violin gives a particularly clear example 
   here. The bridge is held in place by the strings, and the static stresses 
@@ -249,9 +234,6 @@
   example. In this case, the coherence suggests that the measured bridge 
   admittance is reliable up to about 6~kHz. 
 
-  \fig{figs/fig-f0939372.png}{Figure 5. The bridge admittance of a violin 
-  (blue) with the associated coherence function (red)} 
-
   There are two other checks that can be made if your measurement is of a 
   structural response, such as admittance. If you are doing a driving-point 
   measurement (tapping essentially at the same position as the sensor) then the 
@@ -290,7 +272,7 @@
   the two measurements: they should be identical (within the accuracy limits of 
   the measurement you are doing). 
 
-  \samsection{D: Reproducibility} 
+  \textbf{D: Reproducibility} 
 
   All measurements have noise and accuracy limits. To avoid over-interpreting 
   your measurements, and as a way of getting to know your particular 
@@ -386,7 +368,7 @@
   cases changing something that moves a low frequency mode will also change the 
   system at high frequencies. 
 
-  \samsection{E. Calibration} 
+  \textbf{E. Calibration} 
 
   You have now learned to make measurements that you understand and trust, at 
   least to an extent. Now you may want to compare with someone else’s 
