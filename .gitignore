@@ -1,0 +1,6 @@
+*.png
+*.mov
+*/*.png
+*/*.mov
+
+temp-out

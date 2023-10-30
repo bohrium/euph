@@ -1,0 +1,63 @@
+% author:   sam tenka
+
+\documentclass[justified]{tufte-book}
+
+%\usepackage{caption}
+%\captionsetup{compatibility=false}
+
+\usepackage[framemethod=tikz]{mdframed}
+\geometry{
+  left           = 0.90in, % left margin
+  textwidth      = 4.95in, % main text block
+  marginparsep   = 0.15in, % gutter between main text block and margin notes
+  marginparwidth = 2.30in, % width of margin notes
+                 % 0.20in  % width from margin to edge
+}
+\input{sam.sty}
+
+
+%\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+%% FONT SIZE
+%\newcommand{\moofont}{%
+%\fontsize{12}{13}\selectfont
+%}
+%\AtBeginDocument{\moofont}%
+
+% thanks to https://tex.stackexchange.com/questions/106416
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@caption}
+  {\noindent\csname fnum@#1\endcsname: \ignorespaces}
+  {}
+  {}{}
+\makeatother
+
+\newcommand{\fig}[2]{%
+    \begin{marginfigure}%
+  \includegraphics[width=\textwidth]{#1}%
+  \caption{\scriptsize{#2}}%
+\end{marginfigure}%
+}
+
+%\newcommand{\moobeginvid}{\begin{fullwidth}\centering}
+%\newcommand{\mooendvideo}{\setfloatalignment{b}\end{fullwidth}}
+
+\newcommand{\moobeginvid}{\begin{figure}[h]\centering}
+\newcommand{\mooendvideo}{\end{figure}}
+
+
+\newcommand{\vidframe}[2]{%
+\includegraphics[width= #1 \textwidth]{#2}%
+}
+
+
+\newcommand{\sectionreferences}{\pagebreak\samsection{references}}
+
+
+
+\begin{document}\samtitle{%
+  EUPHONICS, by Jim Woodhouse}
+
+  \input{out}
+\end{document}
