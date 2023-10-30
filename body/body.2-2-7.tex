@@ -1,0 +1,144 @@
+  One aspect of vibration behaviour which was made explicit by the transfer 
+  function formula (11) of section 2.2.5 is that natural frequencies correspond 
+  to resonances, in the sense that a small applied force at or near such a 
+  frequency causes a large response. Unfortunately, the formula predicts 
+  infinite response when the forcing frequency matches a natural frequency 
+  exactly. This obviously unphysical prediction is the result of the fact that 
+  we have ignored energy dissipation. If some energy dissipation, or damping, 
+  is included in the analysis, the prediction of infinite response is reduced 
+  to one of a large but finite response level. 
+
+  This problem of infinite response at resonance was already seen in section 
+  2.2.2, for the simple mass-spring oscillator without damping. That model can 
+  easily be extended as sketched in Fig.\ 1, to include a mechanism for energy 
+  dissipation: the usual way to do this is to add a third component to the 
+  system, called a dashpot. The symbol in the diagram is meant to indicate a 
+  loose-fitting piston in a cylinder, like the shock absorbers of a car or the 
+  devices sometimes seen on the backs of doors so that they close without 
+  slamming. When the piston is moved in the cylinder, fluid flow around it 
+  causes energy loss via viscosity. In the idealised version suitable for our 
+  linear system, the resisting force associated with this fluid flow is assumed 
+  to be proportional to the relative velocity of piston and cylinder, with a 
+  constant of proportionality called $c$ here. 
+
+  \fig{figs/fig-1cb82063.png}{Figure 1: Idealised mass-spring-dashpot 
+  oscillator.} 
+
+  The equation of motion of this modified system is 
+
+  $$m \ddot{x}+c\dot{x} +kx=f(t) \tag{1} $$ 
+
+  when driven by an external force $f(t)$. But we first examine free motion, 
+  with $f=0$. To find the solution, we can try substituting $x(t)=e^{i \alpha 
+  t}$ in the hope of solving for possible values of $\alpha$. Equation (1) then 
+  requires 
+
+  $$[-\alpha^2 m +i \alpha c + k] e^{i \alpha t} =0. \tag{2} $$ 
+
+  The exponential factor can be cancelled, leaving a quadratic equation for 
+  $\alpha$ which can be solved with the usual formula: 
+
+  $$\alpha = \dfrac{ic \pm \sqrt{-c^2 + 4 m k}}{2m}. \tag{3}$$ 
+
+  Provided the damping is light, in the sense that $c^2 \ll 4mk$, this reduces 
+  to 
+
+  $$\alpha \approx \pm \sqrt{\frac{k}{m}} + \frac{ic}{2m}. \tag{4} $$ 
+
+  Now note that $\sqrt{\frac{k}{m}}=\Omega$, the natural frequency of the 
+  undamped oscillator found in section 2.2.2. It is convenient to define a 
+  dimensionless quantity $\zeta$ so that 
+
+  $$\frac{c}{2m} = \zeta \Omega \tag{5} $$ 
+
+  which requires 
+
+  $$\zeta=\frac{c}{2\sqrt{km}}. \tag{6} $$ 
+
+  Then 
+
+  $$e^{i \alpha t} \approx e^{\pm i \Omega t} e^{-\zeta \Omega t}. \tag{7} $$ 
+
+  This gives us our general solution for free motion of the damped oscillator: 
+  in a similar form to eq. (5) of section 2.2.2 it is 
+
+  $$x(t) \approx R \cos(\Omega t + \phi) e^{-\zeta \Omega t} \tag{8} $$ 
+
+  so that the motion consists of oscillation at frequency $\Omega$ with initial 
+  amplitude $R$ and phase offset $\phi$, but the effect of the damping is to 
+  make the oscillations die away exponentially with time. 
+
+  The rate of decay is governed by the value of $\zeta$, called the damping 
+  ratio. But this is not the only quantity used to characterise damping: two 
+  related quantities are worth mentioning straight away. The loss factor, often 
+  denoted $\eta$, is for this simple problem related by $\eta=2\zeta$. The 
+  quality factor or Q-factor is another commonly-used measure of damping, 
+  defined by $Q=1/\eta=1/2\zeta$. Low damping is associated with high Q-factor: 
+  the name comes from the field of electrical engineering, where for example a 
+  ``high-quality'' quartz crystal oscillator is one with very low damping so 
+  that it gives an accurate frequency reference for your computer's internal 
+  clock. 
+
+  To understand the link between damping and accuracy of a frequency reference, 
+  we need to look at the response of the damped oscillator to sinusoidal 
+  excitation. The calculation is very similar to the one in section 2.2.2. If 
+  $f(t)=F e^{i \omega t}$, the response must also be sinusoidal at the same 
+  frequency: $x(t) = Xe^{i \omega t}$. Substituting in eq. (1) and cancelling 
+  the exponential factor gives 
+
+  $$[-\omega^2 m + i \omega c +k]X=F \tag{9}$$ 
+
+  so that the frequency response function is 
+
+  $$G(\omega) = \frac{X}{F} = \frac{1}{k+i \omega c -- \omega^2 m} \tag{10} $$ 
+
+  which can be re-written in the alternative forms 
+
+  $$G(\omega) = \frac{1/m}{\Omega^2+2i \omega \zeta \Omega -- \omega^2 }= 
+  \frac{1/k}{1+2i \zeta [\omega/\Omega] -- [\omega/\Omega]^2 }. \tag{11} $$ 
+
+  The response function $G(\omega)$ is now complex, and we recall that the 
+  physical answer is given by the real part of this complex expression. 
+
+  Both amplitude and phase shift now vary with frequency: some examples are 
+  plotted in Fig.\ 2, for different values of $\zeta$. The amplitude is plotted 
+  on a dB scale, in normalised form such that the value at zero frequency (DC) 
+  is unity, or 0 dB. The frequency scale shows the ratio $\omega/\Omega$. The 
+  phase lag $\phi$ is plotted in degrees. The blue curves show the undamped 
+  result: the amplitude goes off to infinity on this dB scale, and the phase 
+  switches abruptly at the resonant frequency from zero (in phase) to 
+  $-180^\circ$ (opposite phase). The other curves all show non-zero values of 
+  $\zeta$. The amplitude at resonance becomes finite, and the peak value 
+  reduces as $\zeta$ rises. The phase curves have the abrupt jump smoothed out, 
+  over an increasing wide frequency range as $\zeta$ increases. 
+
+  A simple calculation reveals a useful formula for the bandwidth associated 
+  with damping. At the frequencies $\Omega(1 \pm \zeta)$, the amplitude has 
+  fallen from the peak value by a factor $1/\sqrt{2}$, while the phase is 
+  $90^\circ \pm 45^\circ$. These two frequencies are called the half-power 
+  points: the energy in the oscillator is proportional to the square of the 
+  amplitude, so it has reduced to 50% of its peak value at these two 
+  frequencies. The difference of these two frequencies is the half-power 
+  bandwidth. The half-power bandwidth tends to zero as damping tends to zero, 
+  or as Q-factor tends to infinity. This is the reason that a high-Q oscillator 
+  can define a very precise resonant frequency. 
+
+  To give an intuitive feel for the meaning of the damping ratio, some familiar 
+  systems illustrating different orders of magnitude are as follows: 
+
+  The last one gives an impression of being quite highly damped, but $\zeta_n 
+  \approx 0.1$ is still a sufficiently small number for the purposes of the 
+  ``small damping'' assumption that underlies the simple approach to damping 
+  used here. ``Small damping'' is the rule, not the exception. 
+
+  Turning to the more general problem, a simple strategy to incorporate some 
+  damping into the response of systems with many degrees of freedom is to add 
+  some damping to each modal oscillator separately, drawing inspiration from 
+  the damped harmonic oscillator just discussed. Thus, we modify eq. (11) of 
+  section 2.2.5 to 
+
+  $$G(j,k,\omega) \approx \dfrac{q_k}{F}=\sum_n 
+  \dfrac{u_j^{(n)}u_k^{(n)}}{\omega_n^2+2i\omega \omega_n \zeta_n-\omega^2}. 
+  \tag{12}$$ 
+
+  where the $\zeta_n$ are dimensionless numbers called modal damping ratios. 

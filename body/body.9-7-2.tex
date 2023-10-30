@@ -1,0 +1,56 @@
+  A simple model of the bouncing frequency of a bow was presented by Askenfelt 
+  and Guettler [1]. We used this model to plot Fig.\ 4 of section 9.7, to show 
+  how the bouncing frequency varies depending on the bow-string contact 
+  position. The model can easily be derived: the arrangement is shown 
+  schematically in Fig.\ 1. The bow stick with its tip and frog is treated as a 
+  rigid frame, holding the bowhair which has tension $T$. This frame is pivoted 
+  at one end, indicated by the blue circle in Fig.\ 1, and it is assumed to 
+  have moment of inertia $I$ about this point. 
+
+  \fig{figs/fig-b2fed42a.png}{Figure 1. Schematic sketch of the bouncing bow 
+  model} 
+
+  At a given moment, the frame has rotated by a small angle $\theta$ about the 
+  pivot. At a distance $x$ along the bowhair from the frog, the hair is in 
+  contact with a string. The string is assumed to have a much higher tension 
+  than the bowhair, so that for a first approximation it can be treated as 
+  rigid. This rigid string has pressed into the bowhair by a distance $y 
+  \approx x \theta$. This generates a restoring force 
+
+  $$F \approx T \frac{y}{x} +T \frac{y}{L-x} \approx T \theta + T \frac{x}{L-x} 
+  \theta = T \theta \frac{L}{L-x} . \tag{1}$$ 
+
+  Now taking moments about the pivot we obtain the governing equation: 
+
+  $$Fx \approx T \theta \frac{Lx}{L-x} =-I \ddot{\theta} . \tag{2}$$ 
+
+  This is the simple harmonic equation, so we deduce immediately that the 
+  frequency $\omega$ of bouncing motion satisfies 
+
+  $$\omega^2=\frac{T}{I}~\frac{Lx}{L-x} . \tag{3}$$ 
+
+  Of course, the string is not really rigid, so that in practice the frequency 
+  will be a little lower than this estimate. 
+
+  This very simple model of bow bouncing has been extended by Gough [2], using 
+  a combination of finite-element computation and measurements on real bows. 
+  Needless to say, the full pattern of behaviour is revealed to be more 
+  complicated. However, for the purposes of qualitative description it is 
+  reassuring to find that the plot shown in Fig.\ 4 of section 9.7 is changed 
+  only very slightly for bow-string contact positions up to the point indicated 
+  as the ``typical spiccato position''. 
+
+  But there is a more important effect for actual ricochet or spiccato playing. 
+  This model has assumed that the bow remains in contact with the string 
+  throughout the motion, but the whole point of these bowing techniques is that 
+  the bow bounces off the string for a short time in each cycle, then makes 
+  contact again to start the next note. This ``flying time'' will add to the 
+  period of the bouncing as we have just calculated it, by an amount depending 
+  on details of the player's gesture. 
+
+  \sectionreferences{}[1] Anders Askenfelt and Knut Guettler, “The bouncing 
+  bow: an experimental study”, Catgut Acoustical Society Journal \textbf{3}, 6, 
+  3—8 (1998) 
+
+  [2] Colin E. Gough, ``Violin bow vibrations'', Journal of the Acoustical 
+  Society of America \textbf{131}, 4152--4163 (2012). 

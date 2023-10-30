@@ -1,0 +1,131 @@
+  In this section we look at the effect of a single tone-hole, of the kind 
+  examined in section 11.1.2, on the resonance frequencies of a cylindrical 
+  pipe of finite length, open at both ends. The pipe has total length $L$ and 
+  cross-sectional area $S$, and the tone-hole of area $C$ and effective length 
+  $h$ is located a distance $X$ from the end of the pipe. Define $L_1=L-X$ as 
+  the length of tube from the excitation end to the tone-hole. We expect that 
+  for a sufficiently large tone-hole the effective length of the tube with the 
+  open hole will be just a little larger than $L_1$, but if the hole size is 
+  reduced the effective length should tend towards $L$. We will calculate an 
+  end correction based on the length $L_1$. 
+
+  The procedure will be to calculate the input impedance of the tube with the 
+  open tone-hole, then locate resonances of an open-ended tube (like a flute) 
+  by finding the zeros of this impedance. The first step is to repeat the 
+  calculation from section 11.1.1, but allowing the tube to be terminated in a 
+  general impedance $Z_L(\omega)$. The only change is to the boundary condition 
+  in equation (6) of that section. With the general impedance, we require 
+
+  $$Z_L = \dfrac{Z_0}{S}\dfrac{Ae^{-ikL_1} + B e^{ikL_1}}{Ae^{-ikL_1} -- B 
+  e^{ikL_1}} \tag{1}$$ 
+
+  with all notation the same as in section 11.1.1. Rearranging gives 
+
+  $$B=A e^{-2ikL_1}\dfrac{Z_L -- Z_0/S}{Z_L + Z_0/S} \tag{2}$$ 
+
+  in place of equation (7). The rest of the calculation is unchanged, and the 
+  resulting input impedance is 
+
+  $$Z(\omega) = \dfrac{Z_0}{S}\dfrac{Z_L \cos kL_1 + i(Z_0/S) \sin kL_1}{iZ_L 
+  \sin kL_1 + (Z_0/S) \cos kL_1} . \tag{3}$$ 
+
+  It is reassuring to see that the earlier result for an open tube can be 
+  immediately recovered from this expression by setting $Z_L=0$. 
+
+  The terminating impedance $Z_L(\omega)$ is the combined result of the 
+  tone-hole and the remaining length $X$ of tube. These are both open-ended 
+  tubes, so their separate input impedances at the position of the three-way 
+  junction are given by the result from section 11.1.1: for the tone-hole we 
+  have 
+
+  $$Z_1=i\dfrac{Z_0}{C} \tan kh \tag{4}$$ 
+
+  while for the tube we have 
+
+  $$X_2=i\dfrac{Z_0}{S} \tan kX . \tag{5}$$ 
+
+  To see how to combine the two into a single impedance $Z_L$, we simply need 
+  to note that at the junction of the tubes, the pressure is the same in both, 
+  but the total volume flow rate into the mouths of the two tubes is the sum of 
+  the separate flow rates. It follows that the impedances add like electrical 
+  resistors in parallel, so that 
+
+  $$Z_L=\dfrac{Z_1 Z_2}{Z_1 + Z_2} = \dfrac{i Z_0 \tan kh \tan kX}{S \tan kh + 
+  C \tan kX} . \tag{6}$$ 
+
+  Once we find the solutions for $k$ of this equation, the corresponding 
+  frequencies will be given by $\omega=ck$. Substituting, we require 
+
+  $$\tan kL_1 = \dfrac{iZ_L S}{Z_0} = -\dfrac{S\tan kh \tan kX}{S \tan kh + C 
+  \tan kX} . \tag{7}$$ 
+
+  One way to see how the solutions of equation (7) behave is to take a 
+  graphical approach: plot the left and right hand sides of the equation, and 
+  see where the curves cross. An example is shown in Fig.\ 1. This plot assumes 
+  a pipe of length 1~m with internal diameter 20~mm (the same as the example 
+  from section 11.1.1). The tone-hole is placed at position $X=0.1\mathrm~m$. 
+  Three different hole diameters are illustrated: the three blue curves, from 
+  top to bottom, correspond to diameters 20~mm, 6~mm and 2~mm. The horizontal 
+  axis has been scaled to show frequencies in Hz directly. 
+
+  The qualitative behaviour revealed by this figure is exactly as we expected. 
+  The resonances of a tube cut off at the position of the tone-hole would be 
+  given by the zeros of the red curve, at $kL_1=n \pi$ for $n=1,2,3...$, and so 
+  $f_n=cn/2L_1$. With the extra tube and the open tone-hole, the frequencies 
+  are all lower than this, corresponding to a longer tube or equivalently a 
+  positive end correction. For the upper blue curve, with a tone-hole diameter 
+  matching the pipe diameter, the effect is small. But as the tone-hole size is 
+  reduced, the frequencies fall progressively lower. 
+
+  We can obtain approximate results that reveal what is going on more directly. 
+  For any tone-hole we expect $kh \ll 1$. If we also assume that the tone-hole 
+  is close to the end of the tube so that $kX \ll 1$ we can obtain a simplified 
+  version of equation (7): 
+
+  $$\tan kL_1 \approx -\dfrac{khX}{h+ \lambda X} \tag{8}$$ 
+
+  where $\lambda = C/S$ is the area ratio we introduced in section 11.1.2. 
+
+  Now if we let $kL_1=n\pi + \epsilon_n$ where $\epsilon_n \ll 1$, we can 
+  approximate the tan function by $\tan kL_1 \approx \epsilon_n$ because the 
+  slope is the same near each of the zeros. Solving equation (8) for 
+  $\epsilon_n$ then gives 
+
+  $$\epsilon_n \approx -\dfrac{n \pi h X}{L_1(h+\lambda X) +hX}. \tag{9}$$ 
+
+  Now if we want to express the result in terms of an end correction $\Delta_n$ 
+  we must satisfy 
+
+  $$\omega_n \approx \frac{c(n \pi +\epsilon_n)}{L_1} \approx \dfrac{n \pi 
+  c}{L_1 + \Delta_n} \tag{10}$$ 
+
+  so that 
+
+  $$\Delta_n \approx \dfrac{L_1 h X}{L_1(h+ \lambda X) +hX} \tag{11}$$ 
+
+  if we ignore the product $\epsilon_n \Delta_n$. Within this linearised 
+  approximation, the end correction is independent of $n$, so the resonances 
+  are predicted to remain harmonically spaced. But it is clear from Fig.\ 1 
+  that the approximation breaks down for smaller tone-holes, and then different 
+  resonances will have different effective end corrections and the harmonic 
+  relations will be perturbed. 
+
+  As a check, if we set $\lambda = 0$ in equation (11) so that the tone-hole 
+  vanishes, we obtain 
+
+  $$\Delta_n \approx \dfrac{L_1 X}{L_1 + X} \approx X \tag{12}$$ 
+
+  because we are assuming $X \ll L_1$. This is exactly what we expected: 
+  without the tone-hole, the tube has length $L_1+X$. 
+
+  But surely that result should not rely on any approximations? Sure enough, if 
+  we go back to equation (7) and set $C=0$, the equation reduces to 
+
+  $$\tan k L_1 =-\tan kX . \tag{13}$$ 
+
+  Recalling the trigonometric identity 
+
+  $$\tan(A+B)=\dfrac{\tan A + \tan B}{1-\tan A \tan B} \tag{14}$$ 
+
+  we can see that this is exactly the condition for the solutions to satisfy 
+  $\tan k(L_1+X)=0$. 

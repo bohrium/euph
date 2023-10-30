@@ -1,0 +1,167 @@
+  It is worth showing a little detail on linear vibration theory, because this 
+  leads to a formula which will repeatedly be useful as we look at the 
+  behaviour of musical instruments. For simplicity, we will show the results 
+  for a discrete vibrating system: one that has only a finite number of 
+  variables (or degrees of freedom). This is not an important restriction: 
+  continuous systems like stretched strings or wooden plates can always be 
+  approximately described by discrete systems, provided we allow enough 
+  variables. For example, we might do the equivalent of sampling the string 
+  motion at regularly spaced points. If those points are close enough together 
+  then we won't be missing anything important in the gaps between the points. 
+  Another way to approximate a continuous system by a discrete system is to 
+  build a finite element model of it, perhaps using a commercial software 
+  package. The details of that method do not matter here, the important thing 
+  is that the bit of theory we are about to look at, for general discrete 
+  systems, would apply automatically to any of these approximate treatments of 
+  continuous systems. 
+
+  The rest of this discussion will be quite technical, but the end result is 
+  very important. If the detail is too much, then skip to eq. (11) and its 
+  discussion. All you really need to know is that $u_j^{(n)}$ represents the 
+  amplitude of the $n$th vibration mode, at a position labelled by $j$, and 
+  that $\omega_n$ is the natural frequency of that mode. But here is the fuller 
+  discussion. Suppose we have a system with $N$ degrees of freedom, described 
+  by parameters (called ``generalised coordinates'') $q_1,q_2,\dots,q_N$. The 
+  first step is to calculate approximate expressions for the potential energy 
+  $V$ and the kinetic energy $T$ in terms of the $q$s and their time 
+  derivatives, $\dot{q}$s, assuming that the motion is small as outlined in 
+  section 2.2.3. The result for the potential energy can be written 
+
+  $$V=\dfrac{1}{2}\sum_j \sum_k K_{jk} q_j q_k, \tag{1} $$ 
+
+  a quadratic expression involving a matrix $K$ whose terms are $K_{jk}$, 
+  called the stiffness matrix. (The notation $\sum_j(\dots)$ means ``add up the 
+  terms $(\dots)$ for all the values of $j$.'') We can always choose the values 
+  so as to make $K$ symmetric. The total kinetic energy $T$ is the sum of terms 
+  like ``$\frac{1}{2}mv^2$'' for each bit of mass making up the system. It 
+  follows that it will be described by a quadratic expression 
+
+  $$T=\dfrac{1}{2}\sum_j \sum_k M_{jk} \dot{q}_j \dot{q}_k . \tag{2}$$ 
+
+  Again, we can always choose to make the matrix $M$, whose terms are $M_{jk}$, 
+  symmetric. It is called the mass matrix. 
+
+  Now we can use Lagrange's equations: for free motion of the system, 
+
+  $$\dfrac{d}{dt}\left( \dfrac{\partial T}{\partial 
+  \dot{q}_j}\right)+\dfrac{\partial V}{\partial q_j}=0 \tag{3}$$ 
+
+  so that 
+
+  $$\sum_k M_{jk} \ddot{q}_k + \sum_k K_{jk} q_k =0. \tag{4}$$ 
+
+  These are linear equations, representing a set of coupled mass-spring 
+  oscillators. Finding the vibration modes allows us to uncouple them. A 
+  vibration mode is simply defined to be a solution with sinusoidal time 
+  dependence: 
+
+  $$q_j(t)=u_j e^{i\omega t}. \tag{5}$$ 
+
+  So we require 
+
+  $$-\omega^2 \sum_k M_{jk} u_k + \sum_k K_{jk} u_k =0, \tag{6}$$ 
+
+  or in matrix-vector form, 
+
+  $$K \mathbf{u}=\omega^2 M \mathbf{u}, \tag{7}$$ 
+
+  which is a standard mathematical equation called a ``generalised eigenvalue 
+  problem''. For the purposes of hand calculation, the usual solution procedure 
+  is: 
+
+  (i) solve 
+
+  $$\det[K -\omega^2 M ]=0 \tag{8}$$ 
+
+  for the natural frequencies $\omega=\omega_n$; 
+
+  (ii) for each allowed $\omega_n$, solve the simultaneous equations 
+
+  $$K \mathbf{u}^{(n)}=\omega_n^2 M \mathbf{u}^{(n)}, \tag{9}$$ 
+
+  for the mode shape $\mathbf{u}^{(n)}$. 
+
+  Because $M$ and $K$ are both symmetric, there are standard results from 
+  linear algebra which show that 
+
+  (i) the values of $\omega_n^2$ are all real, as are the eigenvectors; 
+
+  (ii) the eigenvectors are orthogonal with respect to both the mass and 
+  stiffness matrices. This means that 
+
+  $$ \mathbf{u}^{(m)T} M \mathbf{u}^{(n)} = 0 \mathrm{~~~~if~} n \ne m 
+  \tag{10}$$ 
+
+  and 
+
+  $$ \mathbf{u}^{(m)T} K \mathbf{u}^{(n)} = 0 \mathrm{~~~~if~} n \ne m 
+  \tag{11}$$ 
+
+  where $.^T$ denotes the transpose. 
+
+  Mode shapes have no built-in amplitude, they can be scaled by any factor. It 
+  is convenient to fix the scale factor using ``mass normalisation'': scale 
+  each mode so that 
+
+  $$\mathbf{u}^{(n)T} M \mathbf{u}^{(n)}=1 . \tag{12}$$ 
+
+  The archetypal vibration measurement, on a musical instrument or any other 
+  structure, is to apply a sinusoidal force to one point on a structure and 
+  observe the response at another point. Suppose we apply a sinusoidal force 
+  $F$ at frequency $\omega$ to the $j$th generalised coordinate. Now the 
+  frequency response function we want is the response at ``point'' $k$ to this 
+  forcing at ``point'' $j$. It can be expressed rather simply in terms of the 
+  mode shapes and frequencies: 
+
+  $$G(j,k,\omega)=\dfrac{q_k}{F}=\sum_n 
+  \dfrac{u_j^{(n)}u_k^{(n)}}{\omega_n^2-\omega^2}. \tag{13}$$ 
+
+  The word ``point'' was deliberately written in quotes in the sentence above, 
+  because eq. (13) applies to a much wider range of problems than is 
+  immediately apparent. We will return to that question after some qualitative 
+  comments about what eq. (13) tells us. 
+
+  The substance of eq. (13) can be described in words. First, the frequency 
+  response function for any chosen driving point $j$ and measuring point $k$ 
+  can be found once we know the mode shapes and natural frequencies: no other 
+  information is needed about the system. Modal information tells you 
+  everything. Second, the amplitude of a given modal response is given by the 
+  product of the (mass-normalised) mode shape at the driving point with the 
+  same mode at the observation point. (Those could be the same point if $j = 
+  k$, in which case it would be called a ``driving-point response''.) For the 
+  drum problem, if the measuring point is kept fixed while the drummer hits at 
+  different positions, the ``amount'' of each mode in the mixture will change 
+  in a way which is easily visualised: it simply follows the modal amplitude at 
+  the tapping point. Third, each of the separate terms inside the summation in 
+  eq. (13) looks exactly like the response of a simple mass-spring oscillator 
+  as shown in eq. (12) of section 2.2.2. Comparing the two expressions, we see 
+  that the $n$th mode has a natural frequency $\omega_n$ and an effective mass 
+  which is the inverse of the mode-shape product $u_j^{(n)}u_k^{(n)}$. 
+
+  This equivalence extends to the free motion of the system, as well. The most 
+  general free motion involves a mixture of the vibration modes, with each mode 
+  behaving just like a mass-spring oscillator, bouncing away at its own 
+  frequency quite independent of what any other modes might be doing. The total 
+  response is simply the sum of these separate modal responses. 
+
+  The components of the vector $\mathbf{u}$ are not necessarily displacements 
+  at points on the structure: they might be rotation angles if we are looking 
+  at a problem involving torsional motion, or they might be less obvious things 
+  like the coefficients in a Finite-Element model of a structure. The transfer 
+  function (13) applies equally well to all these cases, provided the correct 
+  definition is used for the ``force'' $F$. For internal consistency, this has 
+  to be the correct ``generalised force'' to appear on the right-hand side of 
+  Lagrange's equation. The definition of the generalised force $Q_j$ associated 
+  with a generalised coordinate $q_j$ is as follows. Imagine a small movement 
+  of the system in which $q_j$ increases by a small amount $\delta q_j$ while 
+  all the other generalised coordinates remain unchanged. Suppose the work done 
+  on the system by external forces during this displacement is $\delta W$: then 
+  define $Q_j$ so that 
+
+  $$\delta W=Q_j \delta q_j. \tag{14}$$ 
+
+  If $q_j$ is actually the displacement of a particular point on the system, 
+  then $Q_j$ is indeed the force applied at that point, as implied by the 
+  description during the derivation of the transfer function (13) above. If 
+  $q_j$ is the rotation angle of a system component, then $Q_j$ is the external 
+  moment applied to that component. 

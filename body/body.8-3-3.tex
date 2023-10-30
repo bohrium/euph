@@ -1,0 +1,104 @@
+  Back in section 8.2.2 we met Duffing's equation. For undamped, free motion 
+  the equation can be written: 
+
+  $$\ddot{x} +\alpha x +\mu x^3 = 0 \tag{1}$$ 
+
+  where $\alpha$ represents the stiffness of the linear spring and $\mu$ is the 
+  nonlinear coefficient. If $\mu > 0$ it is a hardening spring, if $\mu < 0$ it 
+  is a softening spring. To put this into a suitable form for looking at the 
+  phase space representation, we write it as the pair of equations 
+
+  $$\dot{x}=y \mathrm{,~~~~}\dot{y}=-\alpha x -\mu x^3 . \tag{2}$$ 
+
+  To find singular points we need to solve $\dot{x}=0$, $\dot{y}=0$ so that 
+
+  $$\alpha x +\mu x^3 = 0 \mathrm{~~and~~} y=0 \tag{3}$$ 
+
+  The solutions of the first of these equations are $x=0$, together with 
+
+  $$x^2=-\alpha / \mu \tag{4}$$ 
+
+  if the latter yields a real solution for $x$, in other words if $\alpha / \mu 
+  \le 0$. So $(0,0)$ is always a singular point, and there are also singular 
+  points at 
+
+  $$x=\pm \sqrt{\dfrac{-\alpha}{\mu}} \mathrm{,~~~} y=0 \tag{5}$$ 
+
+  if one of $\alpha$ or $\mu$ is positive while the other is negative. 
+
+  To find out what kind of singular point these are, we need to perform the 
+  linearised analysis described in section 8.3.2. For the point $(0,0)$, the 
+  linearised matrix $A$ can be written down immediately by ignoring the cubic 
+  term in eq. (2): it is 
+
+  $$A=\begin{bmatrix}0 \& 1\\ -\alpha \& 0\end{bmatrix} \tag{6}$$ 
+
+  so the trace $T=0$ as expected for an undamped oscillator, while the 
+  determinant $D=\alpha$. The results from section 8.3.2 then tell us that if 
+  $\alpha > 0$ the singular point is a centre, while if $\alpha < 0$ it is a 
+  saddle point. 
+
+  For the other singular point, we are only interested in the case $\alpha < 0$ 
+  so write $\beta = -\alpha$ with $\beta > 0$. Now write 
+
+  $$x=\pm \sqrt{\dfrac{\beta}{\mu}} + \epsilon \tag{7}$$ 
+
+  so that $\epsilon$ is small close to one of the pair of singular points. 
+  Equations (2) then read 
+
+  $$\dot{\epsilon}=y \mathrm{,~~~~} \dot{y}=\beta \left[\pm 
+  \sqrt{\dfrac{\beta}{\mu}} + \epsilon \right] -\mu \left[\pm 
+  \sqrt{\dfrac{\beta}{\mu}} + \epsilon\right]^3 \tag{8}$$ 
+
+  with the linearised approximation 
+
+  $$\dot{\epsilon}=y \mathrm{,~~~~} \dot{y} \approx \beta \left[\pm 
+  \sqrt{\dfrac{\beta}{\mu}} + \epsilon \right] -\mu \left[\pm 
+  \left(\dfrac{\beta}{\mu}\right)^{3/2} + 3\epsilon\dfrac{\beta}{\mu} \right] 
+  \tag{9}$$ 
+
+  and so 
+
+  $$\dot{\epsilon}=y \mathrm{,~~~~} \dot{y} \approx -2 \beta \epsilon . 
+  \tag{10}$$ 
+
+  The matrix $A$ is thus 
+
+  $$A=\begin{bmatrix}0 \& 1\\ -2\beta \& 0\end{bmatrix}, \tag{11}$$ 
+
+  which has trace $T=0$ and determinant $D=2\beta$, so since $\beta > 0$, both 
+  these singular points are centres. 
+
+  These results can be summarised in the bifurcation diagram shown in Fig.\ 1: 
+  this shows the positions $x$ of the singular points as a function of 
+  $\alpha$, for the case when $\mu > 0$. Stable points (centres) are indicated 
+  by solid lines, unstable points (saddles) by a dashed line. At the value 
+  $\alpha=0$ a bifurcation occurs. If you think of $\alpha$ decreasing, then at 
+  this point the single stable solution turns into three solutions, the outer 
+  pair stable and the middle one unstable. This pattern occurs in many systems: 
+  it is called a pitchfork bifurcation. 
+
+  \fig{figs/fig-7a721610.png}{Figure 1. Bifurcation diagram for Duffing's 
+  equation} 
+
+  The behaviour of Duffing's equation can also be viewed from the energy 
+  perspective. Equation (1) can be obtained by using the kinetic energy 
+
+  $$T=\dfrac{1}{2} \dot{x}^2 \tag{12}$$ 
+
+  and the potential energy 
+
+  $$V=\dfrac{\alpha}{2} x^2 + \dfrac{\mu}{4} x^4, \tag{13}$$ 
+
+  then using energy conservation in the form $\frac{d}{dt}[T+V]=0$. 
+
+  Figure 2 shows a plot of $V(x)$ for various values of $\alpha$. When $\alpha 
+  > 0$, the curves show a single minimum at $x=0$, indicating the stable 
+  centre. But when $\alpha < 0$ the curve changes shape so that it has a 
+  maximum at $x=0$, indicating the unstable saddle point, flanked symmetrically 
+  by two minima indicating the pair of centres. 
+
+  \fig{figs/fig-38fae99a.png}{Figure 2. Potential energy $V(x)$ for the Duffing 
+  equation, for the case $\mu =1$. The upper curve (yellow) corresponds to 
+  $\alpha = 1$, the middle curve (red) to $\alpha = 0.1$, the lower curve 
+  (blue) to $\alpha = -1$.} 

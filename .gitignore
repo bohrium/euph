@@ -3,4 +3,11 @@
 */*.png
 */*.mov
 
+*.out
+*.aux
+*.log
+
+*.pdf
+
 temp-out
+

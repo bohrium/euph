@@ -1,0 +1,120 @@
+  The most ingenious experiment for investigating the friction force driving a 
+  bowed string was performed by Bob Schumacher, at Carnegie-Mellon University 
+  in Pittsburgh. A regular violin E string was mounted on a rather rigid 
+  fixture, allowing it to be tensioned with a tuning peg in the usual way. This 
+  string was ``bowed'' using a glass rod which had been dip-coated in rosin 
+  from solution. The rod was fixed to a movable carriage, driven by a 
+  computer-controlled system so that a desired velocity-time profile could be 
+  reliably reproduced on every individual bow stroke. The precise height of the 
+  string's terminations could be adjusted with micrometer screws, to set the 
+  normal force between rod and string. 
+
+  At both ends of the string, force-measuring sensors were built in to the 
+  holding fixture. These allow the forces exerted by the vibrating string on 
+  the terminations to be monitored, without interfering in any way with the 
+  string's vibration. The two force signals were collected by a digital 
+  data-logger at a high sampling rate. As will now be explained, these signals 
+  can be combined to give an estimate of the velocity at the friction force at 
+  the bowed point on the string. 
+
+  We can now make use of some equations from section 9.2.1. We define incoming 
+  and outgoing velocity waves on the two sides of the bowed point by 
+  $v_1^{(i)}(t), v_1^{(o)}(t), v_2^{(i)}(t)$ and $v_2^{(o)}(t)$: these are 
+  illustrated schematically in Fig.\ 1, in a format we have used before. The 
+  string velocity $v(t)$ at the bowed point is given by two equivalent 
+  expressions: 
+
+  $$v=v_1^{(i)}+v_1^{(o)}=v_2^{(i)}+v_2^{(o)} . \tag{1}$$ 
+
+  We can also relate the friction force to these velocity waves. The outgoing 
+  wave on one side is given by the incoming wave from the other side, plus the 
+  new contribution arising from the friction force $f(t)$, so that 
+
+  $$v_1^{(o)} = v_2^{(i)} + \dfrac{f}{2Z_0} \mathrm{~~~ and~~~} v_2^{(o)} = 
+  v_1^{(i)} + \dfrac{f}{2Z_0} . \tag{2}$$ 
+
+  Rearranging, we obtain two equivalent expressions 
+
+  $$f=2Z_0(v_1^{(o)}-v_2^{(i)})=2Z_0(v_2^{(o)}-v_1^{(i)}). \tag{3}$$ 
+
+  The conclusion is that if we can estimate the current values of the four 
+  velocity waves, we can construct two different estimates of $v(t)$ and 
+  $f(t)$. 
+
+  \fig{figs/fig-139b71f1.png}{Figure 1. Schematic diagram of the incoming and 
+  outgoing velocity waves at the bowed point on a string} 
+
+  For the simplest case of an ideal string with no bending stiffness, no 
+  damping, and with rigid terminations, this is very easy. First we recall that 
+  the force exerted by the string at a rigid termination is given by $2Z_0$ 
+  times the incident velocity wave at the termination. Referring to Fig.\ 1, we 
+  thus see that $v_1^{(i)}$ is simply given by the measured bridge force at the 
+  point in the diagram labelled A, scaled by $1/2Z_0$ and delayed by the travel 
+  time to the bowed point. The other three velocity waves are given similarly 
+  in terms of the measured bridge force at the points labelled B, C and D. In 
+  the case of points B and D, the signal is advanced rather than delayed: we 
+  deduce the outgoing waves at the bow by looking at future values of bridge 
+  force. 
+
+  Of course, the real string does not exactly satisfy the three assumptions we 
+  have just made. However, it turns out that only one we need to worry about 
+  for this particular experiment is the effect of bending stiffness. The rig is 
+  designed with rather rigid terminations, and energy loss in the string is 
+  very small during the very short travel times involved in this argument. But 
+  we do need to think about the consequences of bending stiffness, which means 
+  that different frequency components in the velocity waves travel at somewhat 
+  different speeds: higher frequencies, or shorter wavelengths, travel a little 
+  faster. High frequencies are important for this reconstruction process, 
+  because the transitions between sticking and slipping happen very fast, and 
+  that automatically means that they are influenced by very high frequencies. 
+
+  We can see the effect of this bending stiffness in the results shown in Fig.\ 
+  2. This shows the two measured force waveforms, not when the string is bowed 
+  but when it is set into vibration by a wire-break pluck at the position where 
+  the bow will be placed. Look at the early part of the blue curve, showing the 
+  force at the end of the string further from the bow. There is an initial flat 
+  portion , then a big downward jump marking the moment when the main 
+  ``corner'' from the pluck arrives at the sensor. But before that jump there 
+  is a wiggly ``precursor''. This is the effect of bending stiffness: the high 
+  frequency components of the jump have arrived a little earlier because they 
+  travel faster. If you look carefully, you can see that the frequency is 
+  changing through this precursor: highest at the front, then falling a little 
+  until the main jump occurs. 
+
+  \fig{figs/fig-f86c7707.png}{Figure 2. The two measured bridge force waveforms 
+  following a wire-break pluck at the point where the ``bow'' will be placed.} 
+
+  The good news is that there is an approximate mathematical expression for 
+  this effect of frequency-dependent wave speed. We can use pluck responses 
+  like the ones in Fig.\ 2 to determine the parameters of that expression, and 
+  then use it as a basis for digital filters to remove the effect from our four 
+  velocity wave estimates. The gory details can be found in reference [1]. 
+
+  We can now show an example of the reconstruction procedure in action. The 
+  following plots all refer to the same section of data used to generate Figs.\ 
+  2 and 3 of section 9.6. First, Fig.\ 3 here shows the original measured 
+  bridge forces at the two ends of the string during the bow stroke. They have 
+  been separated vertically to make the plot easier to see. Both waveforms show 
+  the characteristic Helmholtz sawtooth shape. 
+
+  \fig{figs/fig-d105d72b.png}{Figure 3. The two measured bridge force 
+  waveforms, for the same segment of data shown in Figs. 2 and 3 of section 
+  9.6. The plots are offset for clarity.} 
+
+  From these, following the procedure outlined above, we can compute two 
+  estimates of the string velocity $v(t)$ and the friction force $f(t)$. These 
+  are shown in Fig.\ 4 and 5. There is not perfect agreement between the two, 
+  but they are close enough to be reassured that the method is working 
+  reasonably well. The average of each pair of waveforms then gives our final 
+  best estimate, and those averages are what was used for the plots in section 
+  9.6. 
+
+  \fig{figs/fig-938973ba.png}{Figure 4. The two versions of reconstructed 
+  string velocity, from the data of Fig. 3.} 
+
+  \fig{figs/fig-08112f36.png}{Figure 5. The two versions of reconstructed 
+  friction force, corresponding to the velocities in Fig. 4.} 
+
+  \sectionreferences{}[1] J. Woodhouse, R. T. Schumacher and S. Garoff, 
+  “Reconstruction of bowing point friction force in a bowed string”;  Journal 
+  of the Acoustical Society of America  \textbf{108} 357–368 (2000). 

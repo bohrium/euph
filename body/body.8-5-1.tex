@@ -1,0 +1,58 @@
+  Van der Pol's equation [1] for the displacement $x(t)$ of a nonlinear 
+  oscillator is 
+
+  $$\ddot{x}-\mu (1-x^2) \dot{x} + x =0 \tag{1}$$ 
+
+  for free motion. The term scaled by the constant coefficient $\mu$ describes 
+  a kind of nonlinear damping effect: it is intuitively clear that if $\mu > 
+  0$, that term describes a kind of negative damping if $x < 1$, but that it 
+  switches to positive damping when $x > 1$. The full behaviour is more 
+  complicated than that simple description suggests, because of the nonlinear 
+  nature of the term $x^2 \dot{x}$, but the argument conveys the correct 
+  flavour insofar as trajectories starting with small values of $x$ tend to 
+  spiral outwards (because of the negative damping) while trajectories starting 
+  with large $x$ tend to spiral inwards. 
+
+  For small values of $x$, the linearised version of the equation is simply 
+
+  $$\ddot{x}-\mu \dot{x} + x \approx 0 \tag{2}$$ 
+
+  which describes a linear oscillator with damping coefficient $-\mu$. The only 
+  singular point of eq. (1) is at $x=0$, $\dot{x}=0$, and we can deduce 
+  immediately from the linearised equation (2) that this is a centre if 
+  $\mu=0$, a stable spiral if $ \mu < 0$ and an unstable spiral if $\mu > 0$. 
+
+  You can find more information about the Van der Pol equation from the 
+  \tt{}Wikipedia page\rm{}. One of the things revealed there, and expanded in 
+  other pages linked from there, is that the equation played a role in the 
+  early developments leading to chaos theory. Electrical engineers testing 
+  circuits of the kind Van der Pol was originally interested noticed that they 
+  did interesting things when driven with an external sinusoidal signal. This 
+  would appear in eq. (1) as a forcing term $A \cos \omega t$ on the right-hand 
+  side, for forcing with amplitude $A$ at frequency $\omega$. 
+
+  When driven close to the frequency of the limit cycle, they found that the 
+  oscillator was sometimes entrained: the oscillation frequency was ``pulled'' 
+  to match the drive frequency. Something a bit similar can happen if two 
+  pendulum clocks or two metronomes are sitting on the the same flexible table, 
+  or hanging from the same non-rigid wall: the two clocks or metronomes may, 
+  after a while, synchronise with each other if their separate frequencies were 
+  already fairly close. This phenomenon was first reported by the 17th-century 
+  Dutch astronomer and scientist \tt{}Christiaan Huygens\rm{}, and it is often 
+  know by the term ``Huygens' clocks''. 
+
+  Coming back to the electrical engineers, they noticed that for some ranges of 
+  parameter values there was a kind of background noise accompanying the 
+  periodic sound of the limit cycle. Initially they blamed flaws in the 
+  equipment, but in 1945 the British mathematicians Mary Cartwright and J. E. 
+  Littlewood [2] were able to show that the effect was predicted by Van der 
+  Pol's equation. It was an early example of ``deterministic chaos''. 
+
+  \sectionreferences{}[1] Van der Pol, B., ``On relaxation-oscillations'', \tt{}The London, 
+  Edinburgh and Dublin Philosophical Magazine \& Journal of Science\rm{}, 
+  \textbf{2}(7), 978–992 (1926). 
+
+  [2] \tt{}Mary 
+  Cartwright\rm{} and \tt{}J. E. Littlewood\rm{} 
+  (1945) ``On Non-linear Differential Equations of the Second Order'', \tt{}Journal 
+  of the London Mathematical Society\rm{} 20: 180 \tt{}doi\rm{}:\tt{}10.1112/jlms/s1-20.3.180\rm{} 

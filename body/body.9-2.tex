@@ -1,0 +1,400 @@
+
+
+  There is a problem with Helmholtz motion, in the idealised form we described 
+  in the previous section. There is apparently nothing a player can do to vary 
+  the details of the sawtooth waveform, apart from adjusting the amplitude. But 
+  surely violinists can make tonal variations by changing their bowing, or by 
+  playing the same note on different strings? That intuition is perfectly 
+  correct, as can readily be verified by measurement. Figure 1 shows two 
+  examples of the Helmholtz sawtooth waveform: the red curve is measured on the 
+  open E string of a violin, while the blue curve shows the same note played 
+  high on the G string. 
+
+  \fig{figs/fig-a81fc57e.png}{Figure 1. Measured bridge force waveforms of the 
+  note E$_5$ (660~Hz) played on the open E string of a violin (red curve), and 
+  as a fingered note high on the G string (blue curve)} 
+
+  Perhaps the difference between these two waveforms looks rather subtle and 
+  unimportant? By no means: look at Fig.\ 2, which shows the frequency spectra 
+  of these two waveforms. The blue curve, for the G string, shows only 6 
+  harmonics with significant amplitudes, confined to the frequency range below 
+  about 5~kHz. But the red curve, for the E string, shows strong peaks 
+  extending way beyond the range of human hearing, up to some 50~kHz! It is 
+  hardly surprising that we hear a strong difference of “brightness” between 
+  the sounds of these two notes. Indeed, your dog or your cat might complain 
+  about the sound of the E-string note. 
+
+  \fig{figs/fig-96f11108.png}{Figure 2. Frequency spectra of the two bridge 
+  force waveforms from Fig. 1: red curve for the E string, blue curve for the G 
+  string. The arrows give an indication of the upper limit for hearing of 
+  humans, dogs and cats.} 
+
+  We can see something else interesting in Fig.\ 2. Notice that the first few 
+  harmonics show peaks of essentially the same height in both red and blue 
+  curves. These heights fall with frequency in a smooth and regular pattern. 
+  This pattern is dictated by the Fourier series of an ideal sawtooth wave, for 
+  which the $n$th harmonic has an amplitude proportional to $1/n$ (we proved 
+  that in section 2.2.1). The blue curve starts to fall away from this pattern 
+  by the 5th harmonic, but the red curve continues to follow it for a lot 
+  longer. Above about 10~kHz the pattern of peaks looks different, for reasons 
+  we will come back to in section 9.3. We showed the progression of the ideal 
+  sawtooth Fourier series in Fig.\ 1 of section 2.2, but it is worth repeating 
+  it here: see Fig.\ 3. 
+
+  \fig{figs/fig-6ef60827.png}{Figure 3. The successive stages of building up a 
+  sawtooth wave from its Fourier series, repeated from Fig. 1 of section 2.2} 
+
+  This plot reminds us that the sharpness of the “flyback” portion of the 
+  sawtooth depends upon how many harmonics are included. This is the clue to 
+  understanding the difference between the two waveforms in Fig.\ 1: the 
+  Helmholtz corner is rather rounded in the note on the G string, but much 
+  sharper in the note on the E string. This insight, and its consequences for a 
+  violinist, were first explored by Lothar Cremer in the late 1960s. Cremer 
+  (1905--1990) was a leading acoustician of the mid-20th century, famous 
+  particularly for his work in architectural acoustics (he was the acoustical 
+  consultant for the Berliner Philharmonie concert hall). He was also a keen 
+  amateur viola player, and had a lifelong interest in the acoustics of the 
+  violin and its relatives. Figure 4 shows him in 1974, talking to another 
+  luminary of the violin acoustics world, Carleen Hutchins. 
+
+  \fig{figs/fig-b8cc0c51.png}{Figure 4. Lothar Cremer (right) in conversation 
+  with Carleen Hutchins in 1974} 
+
+  Cremer thought about what happens to the Helmholtz corner during a cycle of 
+  Helmholtz motion. Starting from the moment when the corner leaves the bow 
+  heading towards the player’s finger, the effects of propagation along the 
+  string, reflection from the finger, and propagation back again all tend to 
+  make an initially sharp corner more rounded. Particularly for a stopped note, 
+  the mechanical properties of the player’s fingertip will result in 
+  significant energy loss during wave reflection: the difference in sound 
+  between an open string and a stopped note when played pizzicato demonstrates 
+  this effect very directly. 
+
+  The returning Helmholtz corner then passes the bow, and triggers a transition 
+  from sticking to slipping friction. If we ignore for the moment the finite 
+  width of the ribbon of bow-hair, this transition must happen at a definite 
+  moment: the string sticks to the hair until limiting friction is reached, 
+  then releases rather abruptly. That abruptness has the effect of sharpening 
+  up the rounded corner. The corner then travels to the bridge and back, 
+  becoming somewhat more rounded, then passes the bow again triggering the 
+  opposite frictional transition and getting sharpened up. We will shortly 
+  illustrate this process in graphical form, once we have covered a bit more 
+  background material. 
+
+  Competing effects of corner-rounding and corner-sharpening happen during each 
+  cycle, and the shape of the periodic waveform is determined by a balance of 
+  the two effects. The rounding effects depend on the physical properties of 
+  the string and the details of its terminations. For a thin, flexible, 
+  lightly-damped string like a violin E string these rounding effects are 
+  rather weak, especially for an open string without the influence of a finger. 
+  But for a thicker string like the G string, the bending stiffness is higher 
+  and the string damping is higher, both contributing to extra rounding. If the 
+  string is also stopped by a finger, the rounding effect is even stronger. 
+  These are the reasons for the contrast seen in Figs.\ 1 and 2. 
+
+  The corner-sharpening effect is determined by the frictional interaction 
+  between the string and the rosin-coated bow hair. It is crucially dependent 
+  on how hard the player presses down with the bow, so-called “bow force”: 
+  pressing harder makes the effect stronger. Thus higher bow force shifts the 
+  balance in favour of corner-sharpening, and this provides the player with a 
+  way to vary the sound. We will see some computer-simulated examples of this 
+  effect shortly, and more detailed results on the effect in the next section. 
+
+  Cremer used simple analytical calculations to explore the balance of 
+  corner-rounding and corner-sharpening, but he was a scientist from the 
+  pre-computer age. Reading his paper [1], it became apparent to scientists of 
+  the next generation that he had in fact described the essential stages of a 
+  time-stepping numerical simulation of the bowed string. The result was the 
+  development of the first “digital waveguide” simulations of a bowed string. 
+  The method is closely related to the description we gave in section 8.5, of a 
+  model for self-excited oscillation of a simplified clarinet. Just like the 
+  clarinet model, it involves two variables linked by a feedback loop, as 
+  sketched in Fig.\ 5. This time the variables are the sliding speed $v(t)$ of 
+  the string at the bowed point, and the friction force $f(t)$ acting at that 
+  point. 
+
+  \fig{figs/fig-55384ee3.png}{Figure 5. Schematic diagram of the simplest model 
+  of a bowed string, in the same format as Fig. 4 of section 8.5 for the 
+  clarinet model.} 
+
+  Simulations based on this model started to be performed in the late 1970s, 
+  allowing Cremer’s mechanism for the influence of bow force on tone quality to 
+  be investigated in quantitative detail. However, the simulation model does 
+  much more than that because it opens the door to the investigation of 
+  transient motions of the string: these include initial transients from a 
+  given bow gesture, transitions between oscillation regimes when bifurcation 
+  events occur, and the curious transient interaction that sometimes occurs 
+  between bowed-string vibration and the motion of the instrument body, known 
+  as a “wolf note”. We will look at all these topics in subsequent sections. 
+
+  This early model was based on the same model of friction that we have already 
+  met: what we can call the ``friction curve model'' because it assumes that 
+  the friction force during sliding is determined by a nonlinear function of 
+  the sliding speed. Figure 6 shows the results of some measurements of 
+  friction force during steady sliding of a surface coated with violin rosin, 
+  together with a curve fit to those measurements that can be used in the 
+  computer simulation model. The plot also shows the vertical portion where the 
+  string and the bow are sticking, and the mirror-image portion that would 
+  apply if the string were to slip in the opposite direction across the bow. 
+  This red curve plays the same role in the model as the nonlinear mouthpiece 
+  characteristic in the clarinet model, as shown in Fig.\ 7 of section 8.5. We 
+  will assume the Amontons-Coulomb ``law'' that the friction force is 
+  proportional to the bow force. The plot in Fig.\ 6 takes advantage of that 
+  assumption by showing the result in the form of the coefficient of friction, 
+  the friction force divided by the bow force. Coefficient of friction is 
+  normally described using the Greek letter $\mu$ (``mu''). 
+
+  \fig{figs/fig-6fcb56be.png}{Figure 6. Blue stars show measurements of the 
+  coefficient of friction for a rosin-coated surface during steady sliding at 
+  different speeds. The red curve is a curve fit to those measurements, 
+  together with the vertical portion relevant to sticking friction, and the 
+  mirror image portion relevant to slipping in the opposite direction.} 
+
+  The details of the bowed-string model are described in the next link. Just as 
+  in the clarinet model, the new values of $v(t)$ and $f(t)$ at each time step 
+  are found where the friction-force curve intersects with a straight line. The 
+  curve for friction force is obtained by taking the curve from Fig.\ 6, and 
+  scaling it by the bow force. Figure 7 shows the result, for two different 
+  values of the bow force: the solid line has a higher bow force while the 
+  dashed line has a lower one. The slope of the straight line is determined by 
+  the properties of the string. The horizontal position of the line is 
+  determined by the sum total of reflected waves arriving back at the bowed 
+  point from the two sides of the string, which can be computed using a pair of 
+  “reflection functions” like Fig.\ 10 of section 8.5: one for the length of 
+  string between bow and bridge, the other for the length between bow and 
+  finger. 
+
+  \fig{figs/fig-681c38f5.png}{Figure 7. The friction curve from Fig. 6, 
+  together with three possible positions of the sloping blue line whose 
+  intersection with the curve determines the new values of $v(t)$ and $f(t)$. 
+  Friction force is plotted for two different values of the bow force: 10~N 
+  (solid curve) and 1~N (dashed curve).} 
+
+  Figure 7 shows three possible positions of this line. All three positions 
+  correspond to slipping friction with the lower value of bow force (the dashed 
+  curve). The position marked `a' corresponds to slipping friction for the 
+  higher bow force (solid curve), but the position `b' indicates sticking 
+  friction, and we can see that the vertical portion of the friction curve 
+  causes no difficulty: there is a perfectly well-defined intersection with the 
+  sloping line. The position `c' is somewhat problematic for the higher bow 
+  force: there are three intersections with the friction curve. However, for 
+  the lower bow force this ambiguity cannot arise, because the slope of the 
+  straight line is lower than the maximum slope of the friction curve. When the 
+  ambiguity arises, how do we know which of the three intersections to choose? 
+
+  The answer is the same as we found when facing a similar problem with 
+  Duffing's equation, back in section 8.2 and illustrated in Fig.\ 4 there. The 
+  string chooses to stay as long as it can on the branch of the curve it is 
+  already following, until it is forced to make a jump. The result is a 
+  hysteresis loop, illustrated in Fig.\ 8 for the case when the bow force is 
+  the same as the higher value in Fig.\ 7. If the string is slipping, and the 
+  line enters the ambiguous range from the left, it continues to slip until the 
+  sloping line reaches the right-hand position in the figure, whereupon the 
+  system jumps (following the dark green arrow) to the sticking branch. Once it 
+  is sticking, it continues on that branch until such time as the sloping line 
+  reaches the left-hand position in the figure, whereupon it is forced to make 
+  a jump to the slipping branch following the longer dark green arrow. 
+
+  \fig{figs/fig-64d2ffbf.png}{Figure 8. The friction curve and sloping straight 
+  lines as in Fig. 7, illustrating the hysteresis loop that arises because of 
+  the possibility of multiple intersections between the red curve and the 
+  moving blue line.} 
+
+  To see the significance of this hysteresis behaviour, we can look at a first 
+  example of computer simulation. We will choose a deliberately simplified 
+  model, ignoring many aspects of the behaviour of real strings, in order to 
+  bring out one particular phenomenon in the clearest possible way. (Remember 
+  the “physics agenda”? This is a good example. We will gradually add in the 
+  complicating factors ignored here, in the course of subsequent sections.) We 
+  will assume for the moment that the two reflection functions for the two 
+  sections of the string are the same, with a simple symmetrical shape like the 
+  one used in the clarinet model (see Fig.\ 10 of section 8.5). 
+
+  We will start the system off with an ideal, sharp Helmholtz corner, and then 
+  track it through the first few stages of corner-rounding and 
+  corner-sharpening. These are shown in Fig.\ 9, but you will have to look 
+  backwards and forwards between the two halves of this plot in order to follow 
+  the story. The dashed line in the left-hand plot shows the original ideal 
+  Helmholtz corner. We are plotting waveforms of string velocity, so this 
+  appears as an abrupt jump downwards from the bow speed (assumed here to be 
+  0.1~m/s) to the slipping speed (assumed here to be $-1$~m/s). The jump is 
+  downwards, so this plot corresponds to the moment of release, when the string 
+  starts to slip. 
+
+  The corner then travels to the violin bridge and back, and it returns rounded 
+  and inverted. This new shape appears in the right-hand plot, as the blue 
+  curve. Now it interacts with the friction force at the bow. We have chosen a 
+  bow force high enough that the hysteresis effect of Fig.\ 8 operates. The 
+  string is initially slipping, so we are on the lower branch of the hysteresis 
+  cycle. The string follows round the curve until it reaches the point where it 
+  must make a relatively small jump across to the sticking part of the curve: 
+  this is the moment of capture of the string by the bow. The result is the 
+  waveform shown in green in the right-hand panel of Fig.\ 9. You can see that 
+  this follows the blue curve quite closely for a while, but then rises above 
+  it and commences sticking with a sharp corner in the waveform. This is 
+  “corner-sharpening” in action. 
+
+  The new shape of Helmholtz corner then travels down to the player’s finger 
+  and back, which results in more rounding and another inversion. It arrives at 
+  the bow as the blue curve in the left-hand panel of Fig.\ 9. Now it interacts 
+  again with the friction force, and this time we are following the upper part 
+  of the hysteresis cycle. The result is the green curve in this left-hand 
+  panel: the string continues to stick for a long time, then makes a big jump 
+  down to rejoin the blue curve: this is the moment of release of the string by 
+  the bow. 
+
+  That is the end of one complete cycle, and the process then repeats in the 
+  same sequence. The Helmholtz corner travels to the bridge and back, then 
+  interacts with friction again, to produce the red curve in the right-hand 
+  panel. Then to the finger and back and another frictional interaction, to 
+  produce the red curve in the left-hand panel. These two red curves look very 
+  similar to the two corresponding green curves, except for one thing: there is 
+  a time shift. The effect of the hysteresis cycle is that the round-trip time 
+  is a little longer than we expected. 
+
+  The period of the motion is systematically lengthened relative to the natural 
+  period of the free string. In musical terms, hysteresis means that the note 
+  plays flat. The extent of hysteresis increases when bow force increases, as 
+  Fig.\ 7 showed. The result is that if bow force is slowly increased after a 
+  Helmholtz motion has been established, the note may play progressively flat. 
+  This is an effect that can be readily demonstrated on a real bowed 
+  instrument. The scope for flattening is determined by how rounded the 
+  Helmholtz corner is: each stick-slip transition must occur somewhere within 
+  the range of the rounded corner, and so the corner width puts a limit on the 
+  possible extent of flattening. As a result, the flattening effect occurs most 
+  strongly when playing in a high position on a thicker string, as in the blue 
+  curve in Fig.\ 1. From the perspective of a player, the effect may feel more 
+  like pitch instability rather than flattening as such: violinists are used to 
+  fine-tuning the pitch of each note, but when the flattening effect is strong 
+  the pitch may ``waver'' in response to changes in bow force, for example if 
+  the bow is bouncing slightly on the string. 
+
+  Figure 10 shows the hysteresis cycle during the simulation shown in Fig.\ 9. 
+  This plot shows the regions of the friction curve traversed during the 
+  capture process in red, and during the release process in blue. It should be 
+  clear how this plot relates to Fig.\ 8. 
+
+  \fig{figs/fig-a7b4cec6.png}{Figure 10. The friction curve used in the 
+  simulation shown in Fig. 9, illustrating the hysteresis cycle: the portions 
+  of the curve accessed in the left-hand panel of Fig. 9 are shown in blue, and 
+  those accessed in the right-hand panel are shown in blue.} 
+
+  Figures 11 and 12 show plots corresponding to Fig.\ 9 and 10, but using a 
+  much lower bow force. It is low enough that hysteresis does not occur, as can 
+  be seen directly in Fig.\ 12. Comparing Figs.\ 9 and 11, we can see several 
+  important differences. This time, the two red curves do not show a time delay 
+  compared to the two green curves. Without hysteresis, the pitch-flattening 
+  effect does not occur. However, this time the shapes of the red and green 
+  curves are quite different from each other. The effects of corner-sharpening 
+  due to the frictional interaction are now much weaker, so, exactly as 
+  Cremer’s original argument told us, the effects of corner-rounding become 
+  more significant. We have only followed the Helmholtz corner for two cycles, 
+  starting from an ideal sharp jump. That is not enough time for the effects of 
+  corner-rounding to take full effect: the Helmholtz corner would continue to 
+  get more and more rounded for a few more cycles, but we haven’t included them 
+  in this plot. 
+
+  \fig{figs/fig-00c7b67a.png}{Figure 12. The friction curve used in the 
+  simulation of Fig. 11, plotted in the same format as Fig. 10.} 
+
+  There is another consequence of rounding of the Helmholtz corner, which we 
+  haven’t mentioned yet. With a rounded corner, each velocity transition from 
+  sticking to slipping, or the reverse, takes a finite time, as illustrated in 
+  Figs.\ 9 and 11. During that time, if the friction-velocity characteristic 
+  curve is still being followed, the force cannot be constant as in Raman's 
+  original argument. Instead, there will be a pulse of extra friction force, 
+  and this will excite some additional motion of the string. There will be two 
+  of these pulses per cycle, generated by the processes of capture and release. 
+  John Schelleng (who we will meet in the next section) called the resulting 
+  features in the waveform of friction force “rabbit ears”. 
+
+  These force pulses will send outgoing waves along the string in both 
+  directions. The wave travelling in the same direction as the Helmholtz corner 
+  creates the effect we have already discussed: this is precisely the origin of 
+  the corner-sharpening effect we have already seen. But the other outgoing 
+  wave will travel off in the opposite direction. Figure 13 might help to 
+  visualise what then happens. This diagram shows time running horizontally, 
+  and distance along the string running vertically. 
+
+  \fig{figs/fig-44b90cc8.png}{Figure 13. Diagram to show the origin of the 
+  pattern of ``Schelleng's ripples''. Time runs horizontally and distance along 
+  the string runs vertically. The red line shows the path of the Helmholtz 
+  corner, and the horizontal line marks the bowing position. Blue lines show 
+  the first few bounces of the secondary waves generated when a rounded 
+  Helmholtz corner interacts with friction at the bow during stick-slip 
+  transitions.} 
+
+  The Helmholtz corner, bouncing back and forth along the string, traces out 
+  the zig-zag line shown in red. The position of the bow is indicated by the 
+  horizontal line. This is shown solid during the sticking intervals, and 
+  dotted during the slipping intervals. This change of line type is meant to 
+  indicate an important effect. While the string is sticking to the bow, if any 
+  perturbing velocity hits the bow it will be reflected: the sticking bow acts 
+  like a fixed end of the string. But during slipping, the bow is almost 
+  transparent to any such additional perturbation (this is a consequence of the 
+  friction curve being almost flat near the slipping velocity). 
+
+  The blue lines indicate what happens to the additional waves generated by 
+  Schelleng’s “rabbit ears”. Each force pulse produces a corresponding pulse of 
+  velocity, which travels along the string. The solid blue zig-zag shows the 
+  first three bounces of one of these pulses, generated at a slip-to-stick 
+  transition (where the dotted line turns into a solid line). It is confined 
+  between the bow and the bridge, because it hits the bow during sticking and 
+  so is reflected. The dashed blue zig-zag shows the corresponding set of three 
+  bounces of a velocity pulse generated at a stick-to-slip transition. This 
+  time it is trapped between the bow and the player’s finger. 
+
+  The solid blue zig-zag shows extra activity accompanying the Helmholtz 
+  motion, and because it is on the bridge side of the bow it will show up in a 
+  measurement of bridge force. Look back at Fig.\ 1: this effect accounts for 
+  the fact that neither waveform is a perfect sawtooth. The path in Fig.\ 13 
+  shows that pulses at the bridge are expected, with a spacing determined by 
+  the position of the bow on the string: bowing closer to the bridge makes the 
+  spacing tighter. The result was described as ``ripples'' by Schelleng, and 
+  ``secondary waves'' by Cremer. The pattern is particularly clear in the red 
+  curve of Fig.\ 1: it shows up as a series of peaks following the flyback of 
+  the sawtooth, with a magnitude that steadily decreases because the secondary 
+  waves are affected by the same corner-rounding effects we have already 
+  discussed, but they do not have any compensating corner-sharpening mechanism 
+  because they always hit the bow during an episode of sticking. 
+
+  To see this effect in action, we can again use the simulation model. Figure 
+  14 shows the resulting bridge force for three cases with different values of 
+  bow force. The red curve has the lowest force, the black one the highest. The 
+  pattern of ``Schelleng ripples'' is clear: as expected it gets more marked as 
+  the bow force increases. The spacing of the ripples is governed by the 
+  assumed position of the bow on the string. That position is usually described 
+  by a parameter $\beta$ (``beta''), which is the bow-bridge distance as a 
+  fraction of the total vibrating length of the string. From Fig.\ 13, we 
+  expect to see roughly $1/\beta$ ripples in each cycle. For these particular 
+  simulations, the value of $\beta$ was 0.083, so $1/\beta \approx 12$. You can 
+  indeed count about 12 ripples in each period. Some other key parameter values 
+  for these simulations are as follows. The string corresponds to the open D 
+  string of a cello, with fundamental frequency 147 Hz and string impedance 
+  $Z=0.55$ Ns/m. It is bowed at a speed of 5 cm/s, with the three values of bow 
+  force 0.03 N, 0.1 N and 0.6 N. 
+
+  \fig{figs/fig-3aac38b4.png}{Figure 14. Simulated bridge-force waveforms for a 
+  highly idealised model of a bowed string, for three different values of bow 
+  force. The red curve has a very low force, the blue curve is higher, and the 
+  black curve is close to the limit at which Helmholtz motion ceases to be 
+  possible. The curves are separated vertically for clarity.} 
+
+  Figure 15 shows the corresponding waveforms of string velocity, which can be 
+  compared with the shapes seen in Figs.\ 9 and 11. The red curve, with the 
+  lowest bow force, shows a very rounded shape, and as the force increases the 
+  velocity pulse gets progressively more square. If you look carefully at the 
+  black curve, you can see that the shape of the pulse is not quite 
+  symmetrical, as a result of the hysteresis effect. In fact, this black curve 
+  shows a bow force that is close to the limit, beyond which Helmholtz motion 
+  ceases to be possible. This gives us a neat link to the next section, where 
+  the limits on bow force will be discussed in some detail. 
+
+  \fig{figs/fig-3da58726.png}{Figure 15. Waveforms of string velocity for the 
+  same three simulations shown in Fig. 14.} 
+
+
+
+  \sectionreferences{}[1] Lothar Cremer; ``Influence of bow pressure on 
+  self-excited vibrations of stringed instruments'', Acustica, \textbf{30}, 
+  119--136 (1974). 

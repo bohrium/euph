@@ -1,0 +1,324 @@
+
+
+  Before looking at specific tuned percussion instruments, it is useful to meet 
+  some simple idealised systems that will form building blocks for real 
+  instruments, and indeed for the vibration behaviour of many other engineering 
+  structures. We have already looked at the stretched string --- but stringed 
+  instruments are not usually regarded as percussion instruments. Instead, 
+  these often consist of curiously-shaped pieces of metal or wood. Before 
+  plunging into the complication associated with the curious shapes, there are 
+  some idealised ``textbook'' cases that can be used to give insights into the 
+  physics of vibration, and also to generate sound examples so we can start to 
+  hear the consequences. These idealised cases come in a hierarchy of 
+  increasing complication: beams, flat plates, and curved plates or shells. 
+  There is one other idealised system relevant to musical instruments: the 
+  stretched membrane, as in a drum or a banjo. We will defer that for the 
+  moment, and look at it in Section 3.6 when we examine tuned drums. 
+
+  The simplest of these systems is a slender bar, more usually called a beam in 
+  the context of vibration. The behaviour of such beams is based on bending. 
+  The restoring force for the vibration comes from the fact that if a beam is 
+  made to bend a little, it will try to straighten out again. If you picture 
+  the beam as built out of a bundle of fibres running along the length, the 
+  result of bending the beam is that fibres on one side are stretched while the 
+  ones on the other side are squashed. This produces forces of tension and 
+  compression on the two sides, and hence a bending moment tending to 
+  straighten the beam. Of course, if you bend a beam too vigorously it may 
+  break or stay bent: but this is not what you want to happen when using it to 
+  play music. The amplitude of vibration is small enough that the beam springs 
+  back each time it is bent, then overshoots because of its inertia, and 
+  repeats this process so that vibration occurs. 
+
+  The simplest model for bending vibration of beams is called Euler-Bernoulli 
+  theory. It is a linear model, appropriate for long, thin beams. As explained 
+  in the next link, this approach can be used to find the vibration modes and 
+  corresponding natural frequencies of something like a xylophone bar, for 
+  which both ends are free: there is no external force or moment applied at the 
+  ends. The first few mode shapes are shown in Fig.\ 1. These modes are 
+  appropriate to a bar with a uniform cross-section, like the metal bars of a 
+  toy xylophone. We will think about bars with varying cross-sections in the 
+  next section. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-3abd40ef-00.png }&\vidframe{ 0.30 }{ vids/vid-3abd40ef-01.png }&\vidframe{ 0.30 }{ vids/vid-3abd40ef-02.png } \end{tabular}\caption{Figure 1.  The first three modes of a free-free bending beam. The movie shows one cycle of the fundamental mode, alongside the second and third modes at the correct relative frequencies. Because the second and third modes do not have a period matching the fundamental mode, their animations will ``jump'' when the display loops. This simply a display artefact.}\mooendvideo
+
+  Figure 2 shows how the natural frequencies of the free-free beam modes vary 
+  with mode number. They are shown as ratios to the frequency of the lowest 
+  mode. In order to check whether overtones fall close to harmonics of the 
+  fundamental, it is useful to see these in numerical form: the first few are 
+  1.00, 2.76, 5.40, 8.93, 13.34. We immediately see that they do not do so: 
+  none of the ratios are very close to whole numbers. The other thing we can 
+  see from these frequency ratios, and from Fig.\ 2, is that the modes are much 
+  more sparse than we saw for the simple model of a vibrating string. There, 
+  the $n$th overtone occurred at $n$ times the fundamental frequency, indicated 
+  by the black dashed line in the plot. For the beam, as explained in the link 
+  above, the approximate formula for the $n$th overtone frequency contains a 
+  factor $(n+1/2)^2$ rather than $n$ so the spacing between adjacent 
+  frequencies gets wider and wider. 
+
+  \fig{figs/fig-88692804.png}{Figure 2. Frequencies of the first 10 modes of a 
+  free-free beam, expressed as ratios to the fundamental frequency (red). Blue 
+  stars show the effect of rounding each ratio to the nearest whole number: see 
+  main text for explanation. The black dashed line shows the corresponding 
+  result for an ideal stretched string as examined in section 3.1.1.} 
+
+  From a given vibration fingerprint --- a recipe of modal frequencies, 
+  amplitudes and decay rates --- it takes only a very simple computer program 
+  to create a sound: this process is called additive synthesis and is the basis 
+  of one kind of electronic musical instrument. We have already seen how to use 
+  a computer for the reverse process: to record a sound, then use the FFT to 
+  analyse it into its component sine waves to find out which frequencies are 
+  present and how they relate to each other. Additive synthesis can be applied 
+  to the results of such an analysis, to recreate a version of the sound and 
+  find out if it really does sound similar to the original. More relevant to 
+  the present purpose, the method can be used to make a sound based on 
+  theoretical predictions of frequencies and mode shapes. The link below gives 
+  some detail of how these sound examples were computed. 
+
+  Sound 1, below, allows you to listen to a short computer-synthesised scale 
+  based on the ideal beam frequencies given above. To generate these sounds, a 
+  choice has to be made of modal damping factors. We will explore the effect of 
+  changing the damping shortly, but for now a low level of damping has been 
+  selected, giving a rather ``metallic'' sound. Specifically, we use 
+  $\zeta=0.001$, corresponding to a Q-factor of 500 --- the same value is used 
+  for all modes. (Greek letter $\zeta$, pronounced ``zeta''.) We will generally 
+  use Q-factors to describe the damping levels in future examples: it is 
+  perhaps simpler to appreciate the difference between Qs of 300 and 500, than 
+  between $\zeta$ values of 0.0017 and 0.0010. 
+
+  We can use this beam example to explore a bit of ``virtual vibration 
+  engineering''. We can modify the frequencies in the computer to make the 
+  relations between overtones more harmonic, make a new sound file, and listen 
+  to the effect. In this way, we get a first test of the idea that ``more 
+  harmonic means more musical''. Sound 2 demonstrates the effect of rounding 
+  each frequency ratio to the nearest whole number, so that all the overtones 
+  fit exactly to a harmonic series. Everything else is identical to Sound 1. 
+  The blue stars in Fig.\ 2 show the effect of this rounding: on that plot it 
+  looks like a small change, but you probably find that the sound is very 
+  significantly different. 
+
+  Is Sound 2 ``more musical''? But perhaps less complex and ``interesting'' 
+  than Sound 1? The impression made by Sound 1, to my ears at least, is that I 
+  can tell immediately that a scale is being played. However, comparing with 
+  Sound 2 reveals that I wasn't as certain as I thought I was about the pitch 
+  of each individual note in the scale. The notes of Sound 2 have exactly the 
+  same fundamental frequencies as those of Sound 1, but the impression is that 
+  all the notes sound lower in pitch. For Sound 2 the pitch of each note is 
+  absolutely clear: I could hum them with confidence. Listening more closely to 
+  Sound 1, I can hear different `pitches' within each note, including the 
+  fundamental which, I reluctantly admit, does indeed sound the same as the 
+  pitch of Sound 2. 
+
+  What is going on? We can make a guess. Probably, the progressively wider 
+  spacing of the overtones of Sound 1, as shown in Fig.\ 1, gives your brain a 
+  challenge. It recognises that the change from one note to the next is playing 
+  a familiar musical scale, so it expects ``musical'' notes. It therefore tries 
+  to fit the non-harmonic frequencies into some kind of best approximation to a 
+  harmonic series. It is perhaps using some kind of average spacing between 
+  adjacent frequencies as the basis for hearing a ``pitch'', and because in 
+  this case all the spacings are wider than the fundamental, you detect a 
+  ``pitch'' which is higher. The details are, no doubt, complicated: almost 
+  certainly the ``best approximation'' will depend on the relative loudness of 
+  the various overtones. But it also depends on which aspect of the sound you 
+  choose to concentrate on. It would not be surprising to discover that it is 
+  different for different listeners: age, natural hearing acuity and training 
+  probably all make a difference. 
+
+  Now listen to a similar comparison pair of sound files for a different 
+  theoretical structure: first with the actual set of frequencies, and then 
+  with each frequency rounded to the nearest whole-number multiple of the 
+  fundamental. These are computed from our second idealised system, a flat 
+  plate, to be described shortly. The difference in sound is far bigger than 
+  for the previous example. Sound 3 is very ``unmusical''. In fact, it is 
+  somewhat reminiscent of the sound of the child's saucepan lids --- although 
+  you can still hear that a scale is being played, even though the individual 
+  notes do not give any clear sensation of a definite pitch. Sound 4 is 
+  startlingly different. It certainly has notes with clear pitches, but it 
+  doesn't really sound like a percussion instrument of any kind, it sounds more 
+  like a plucked string. 
+
+  The vibration of a thin, flat plate is essentially a two-dimensional version 
+  of the bending beam. Bending or twisting of the plate generates appropriate 
+  restoring moments. The theory is a little more complicated than for the beam: 
+  it is outlined in the next link. There are very few special cases of plate 
+  vibration that can be solved easily by hand. By far the simplest of these is 
+  the one that has been used to generate Sounds 3 and 4. A rectangular plate is 
+  assumed to have hinged or simply-supported boundaries all the way round. The 
+  mode shapes are then rather simple: two dimensional versions of the shapes we 
+  saw in section 3.1 for the vibrating string. The mode shape is sinusoidal in 
+  both directions: it can have 1,2,3,... half-wavelengths of deformation 
+  parallel to one edge of the plate, and, independently, 1,2,3... 
+  half-wavelengths parallel to the other edge. As you might expect, the lowest 
+  mode has a single half-wavelength in both directions, and higher frequencies 
+  involve progressively shorter wavelengths. 
+
+  \fig{figs/fig-ab5beecb.png}{Figure 3. Frequencies of the first 50 modes of a 
+  simply-supported rectangular plate, expressed as ratios to the fundamental 
+  frequency (red). Blue stars show the effect of rounding each ratio to the 
+  nearest whole number, in the same way as shown in Fig. 2. The black dashed 
+  line shows the corresponding result for an ideal stretched string.} 
+
+  Based on this special case, a plot similar to Fig.\ 2 can be generated: it is 
+  shown in Fig.\ 3. The plate has a lot more modes than the beam had, and the 
+  plot shows a trend that follows a rather straight line. This straight line 
+  means that the modal density, the average number of modes within a given 
+  frequency band, is approximately constant. This is a general result for plate 
+  vibration, not dependent on this special case of a simply-supported 
+  rectangular plate. An outline of the proof of that claim is given in the next 
+  link. It is the generality of this pattern of natural frequencies which 
+  allows us to use the simple rectangular case to illustrate the sound of a 
+  tapped plate. Within reason, any other shape of plate, with any other 
+  boundary conditions, would show behaviour that was statistically similar to 
+  this special case, and would tend to sound somewhat similar. 
+
+  As in Fig.\ 2, the blue stars show the frequency shifts necessary to make 
+  each overtone frequency an exact harmonic of the fundamental frequency. The 
+  shifts look small on this plot, but we have already heard that the effect on 
+  the sound is profound. In this case, the denser set of natural frequencies 
+  means that most of the possible harmonics are represented in the altered 
+  sound. Perhaps this is why it sounds rather like a plucked string, which also 
+  has a sound containing most of the harmonics (or at least, almost harmonics, 
+  as we will see in section 5.4.3.) 
+
+  Before leaving beams and plates, we can use these two idealised systems to 
+  illustrate two important effects: how the sound changes if the assumed modal 
+  damping is changed, or if the hardness of the tapping hammer is changed. 
+  Sound 5 is the same as Sound 1 (for the beam), except that the modal 
+  Q-factors are now all set to 100 rather than 500. Sound 6, on the other hand, 
+  keeps the original Q-factors but assumes a softer hammer, with a contact time 
+  10 times longer than before. Sounds 7 and 8 give the same pair of 
+  comparisons, starting from the plate case from Sound 3 and then changing 
+  either the Q-factors or the hammer hardness. 
+
+  For both cases with the softer hammer the sound becomes more mellow, as you 
+  would expect. The softer impact concentrates the energy in a smaller number 
+  of modes at low frequency. The change of Q-factor is more difficult to 
+  characterise. You may find that it gives an impression of an object made of a 
+  different material. A Q-factor of 500, as in the original sounds, is in the 
+  range expected for metallic objects. A Q-factor of 100 is towards the high 
+  end of the range for wooden objects. In the case of the beam (Sound 5), we 
+  are used to hearing the sound of wooden xylophone or marimba bars, and 
+  perhaps that is what you are reminded of. 
+
+  For the plate, though, the sound is less clearly ``wooden''. That is, at 
+  least in part, because the sound we are accustomed to hearing from a real 
+  wooden plate is influenced by added damping associated with holding a 
+  structure up while you tap it. In the xylophone or marimba, the bars are 
+  supported rather carefully near the nodal points of the first two modes, so 
+  that rather little energy dissipation occurs at the supports. For the plate, 
+  the sound we usually hear involves many more modes and it is not possible to 
+  support a plate in a way that falls near a node of all these modes. The 
+  result is extra dissipation from the supports, so that the actual Q-factors 
+  of a typical wooden plate will be significantly lower than the value 100 
+  assumed here. 
+
+  The final type of structure to be mentioned here involves curved plates, 
+  usually called shells. Such shells are very common: in church bells or the 
+  body of a violin, for example, but also in body panels for cars or 
+  aeroplanes. This time, the detailed theory governing the vibration is too 
+  complicated to go into here, but there are a few qualitative things about 
+  shell vibration that are well worth outlining. 
+
+  It is easy to get an idea of why shell theory is intrinsically more 
+  complicated than beam or plate theory. We can start by thinking about the 
+  beam. We have talked about bending vibration, but there is another way that a 
+  beam can vibrate. If an axial force is applied, the beam can stretch and 
+  shrink, and the corresponding dynamic behaviour would be axial or 
+  longitudinal vibration. The same is true of a flat plate: as well as 
+  out-of-plane bending and twisting motion, it could also undergo in-plane 
+  stretching vibration. 
+
+  But for a straight beam or a flat plate, these two types of vibration are 
+  completely independent. The reason is a rather deep one, to do with symmetry. 
+  The beam and plate both have an invisible plane of symmetry running through 
+  the middle: it is often called the ``middle surface'' for the plate case. Now 
+  think about this plane as a mirror, and imagine how the two types of motion 
+  would appear in that mirror. Stretching motion would be completely the same 
+  as its reflection: the motion is symmetrical in the plane. But bending motion 
+  would reverse in the mirror, and go in the opposite direction: bending motion 
+  is antisymmetric in the plane. So in both cases we have a symmetric 
+  structure, capable of both symmetric and antisymmetric motion. It is a 
+  fundamental principle of physics that these must be independent. 
+
+  Now think of a curved beam, or a curved thin shell. The curvature means that 
+  the structure no longer has the plane of symmetry. A physicist would say that 
+  ``the symmetry is broken by the curvature''. The argument that stretching and 
+  bending motion are independent goes out of the window. The general theory of 
+  vibration of such shells involves coupled bending and stretching motion, and 
+  that inevitably makes everything much more complicated. 
+
+  A simple example may help to make this seem more clear (with acknowledgement 
+  to Lord Rayleigh, who used this neat example when making a similar point). 
+  Think about corrugated roofing sheet. It is made from a sheet of metal or 
+  plastic with uniform thickness, but because of the pattern of corrugations it 
+  bends much more easily across the corrugations than along them. You can 
+  easily visualise what happens when you bend the sheet in the stiff direction: 
+  it behaves like a bending plate, but one that is much thicker than the 
+  original sheet. The effective thickness is governed by the corrugation depth. 
+  What is happening locally during this bending is that material on the peaks 
+  of the corrugations is being stretched, while material in the dips is being 
+  compressed (or vice versa when you bend the other way). So the total 
+  deformation of the curved sheet involves a mixture of bending and stretching. 
+
+  But there is an interesting special case: the corrugated sheet may be quite 
+  floppy when you bend it parallel to the corrugations. Why is this different? 
+  The reason is that corrugated sheet has a very special pattern of curvature: 
+  it is called a developable surface, meaning that you can deform flat sheet 
+  into the corrugated pattern without any stretching. For example, you could 
+  easily make a corrugated pattern like that from a sheet of paper, without 
+  tearing it. If you now bend the corrugated sheet parallel to the 
+  corrugations, the extra deformation is still developable. Such motion is 
+  called inextensional. There is no additional stiffening associated with local 
+  stretching of the material, every element of material experiences only 
+  bending motion. 
+
+  The reason this makes such a big difference to the floppiness of the sheet is 
+  that stretching deformation of a thin shell is intrinsically much stiffer 
+  then bending deformation. Think of kitchen foil: you can bend it with ease in 
+  your fingers, but it is very hard to stretch it (provided your piece is flat, 
+  and not wrinkled). The thinner the sheet, the bigger is this disparity 
+  between stretching and bending stiffness. The main reason is that the 
+  stretching stiffness is proportional to the thickness $h$, but the bending 
+  stiffness, as we have seen previously, is proportional to $h^3$. As you make 
+  $h$ smaller, the bending stiffness decreases at a far higher rate than the 
+  stretching stiffness. 
+
+  For certain vibration problems, we can make use of this idea to understand 
+  the low-frequency vibration behaviour. If a shell is geometrically capable of 
+  inextensional deformation, then you would expect the lower vibration modes to 
+  take advantage of that kind of deformation. The reason is to be found in 
+  something called Rayleigh's principle, explained in the next link. Among 
+  other things, Rayleigh's principle says that the lowest-frequency vibration 
+  mode shape is the one which minimises the potential energy of deformation, 
+  for a given level of kinetic energy in the motion. Well, the total potential 
+  energy in a shell is simply the sum of a bending term, proportional to $h^3$, 
+  and a stretching term, proportional to $h$. When $h$ is small, $h^3$ will be 
+  much smaller than $h$. If inextensional motion is possible, it is therefore 
+  bound to be associated with particularly low potential energy. 
+
+  A familiar example is a wine glass, of the roughly hemispherical kind. A 
+  hemispherical shell with a free top edge is indeed capable of inextensional 
+  motions, involving behaviour with angle $\theta$ round the circumference like 
+  $\cos 2 \theta$, $\cos 3 \theta$, etc. (The Greek letter $\theta$, pronounced 
+  ``theta'', is often used to denote an angle like this.) The note you hear if 
+  you tap a wine glass with a pencil corresponds to the case with $\cos 2 
+  \theta$: the circular rim becomes slightly oval as shown (with exaggerated 
+  scale) in Fig.\ 4. Of course, it is also possible for the glass to vibrate 
+  with angular variation $\sin 2 \theta$. As we saw in Section 2.2.4 when 
+  looking at the behaviour of a drum, these two can be combined to produce the 
+  same sinusoidal pattern rotated to any orientation, provided the glass is 
+  perfectly circular. (You take advantage of this when you make a wine glass 
+  sing by running a wet finger round the rim. Your moving finger drags a nodal 
+  point around with it!) 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-8c5356ca-00.png }&\vidframe{ 0.30 }{ vids/vid-8c5356ca-01.png }&\vidframe{ 0.30 }{ vids/vid-8c5356ca-02.png } \end{tabular}\caption{Figure 4.  The pair of modes, with identical natural frequencies, giving rise to the note you hear when you tap a wineglass.}\mooendvideo
+
+  As an aside, something similar happens with a coffee mug, but here the $\cos 
+  2 \theta$ and $\sin 2 \theta$ modes occur at slightly different frequencies, 
+  because the circular symmetry is broken by the handle of the mug. Find a mug 
+  that rings nicely when tapped, then go round it tapping with a pencil every 
+  $45^\circ$ starting from the handle. You should hear two different notes, 
+  alternating as you go round. If you tap at other positions, you will excite 
+  both modes simultaneously and it may be harder to hear clearly what is 
+  happening. You should be able to see what is happening from the animations in 
+  Fig.\ 4. 
+

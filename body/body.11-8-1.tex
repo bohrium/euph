@@ -1,0 +1,317 @@
+  In this section I will summarise the simplest model for the behaviour of an 
+  air-jet instrument like the recorder or flute. It is known as the ``jet-drive 
+  model'', and my account will closely follow the descriptions by Auvray et al. 
+  [1] and Fabre [2]. We can define the geometry of the problem via an idealised 
+  recorder mouthpiece, sketched in Fig.\ 1. Air is blown from a slot of height 
+  $h$. The open ``mouth'' of the recorder has length $w$, after which there is 
+  a sharp edge, the ``labium''. The edge is a distance $y_0$ below the 
+  centre-line of the slot. 
+
+  The mouth is open to the atmosphere on its upper surface, while its lower 
+  surface opens into the tube of the instrument. The pressure just inside the 
+  mouth is $p(t)$, and there will be a net volume flow rate into the tube that 
+  we will call $v(t)$ as we did in the case of the clarinet mouthpiece back in 
+  section 11.3.1. This pressure and volume flow rate are linked via the linear 
+  acoustics of the tube, characterised by its input admittance 
+  $Y(\omega)=V(\omega)/P(\omega)$ where $P$ and $V$ are the Fourier transforms 
+  of $p$ and $v$. (Recall that for an open-ended tube like a recorder, the 
+  resonances are marked by peaks of admittance. This contrasts with a 
+  closed-ended tube like the mouthpiece end of a clarinet, where resonances 
+  appeared as peaks of impedance as we saw in earlier sections.) 
+
+  Key ingredients of the model are illustrated in cartoon form in Fig.\ 2. The 
+  air emerging from the slot forms a jet, outlined in orange. This jet is 
+  assumed to remain laminar over the distance to the labium. The jet is 
+  perturbed by the air flow associated with the acoustic response of the pipe, 
+  creating a sinuous disturbance that is convected along the jet, growing as it 
+  travels. We will denote the downward displacement of the centre-line of the 
+  jet (shown as a dotted line) by $\eta(x,t)$ where $x$ is distance measured 
+  horizontally from the end of the slot. 
+
+  When the jet reaches the labium, the sharp edge acts as a ``splitter'' so 
+  that part of the jet flow is diverted into the tube while the rest is 
+  deflected outside. This splitting action exerts a force on the fluid, and 
+  that force acts as a dipole sound source (as explained in section 11.7.1), 
+  exciting the acoustic response of the tube. So the feedback loop is closed: 
+  sound pressure creates volume flow via the tube admittance, the flow triggers 
+  perturbations on the jet, and those perturbations interact with the labium to 
+  create the sound pressure. We need to look carefully at each of these stages, 
+  to approximate the physics by a set of equations that can be combined to give 
+  a complete simulation model. This is not a simple exercise: each stage 
+  involves teasing through tricky physics to find simple approximations that 
+  capture enough of the essence to give simulations that are at least 
+  qualitatively plausible. 
+
+  The first step is to understand that if the air had no viscosity, the flow 
+  pattern would be completely different. As was explained back in section 
+  11.2.1, any flow without viscosity will be an example of ``potential flow'', 
+  which among other things means that the streamline pattern is reversible: if 
+  the flow went the other way, the streamlines would be exactly the same (with 
+  the arrows reversed). Figure 3 gives an indication of how the streamlines 
+  would behave as the air comes out of the slot. They fan out in all directions 
+  at the end of the slot, a pattern that is easier to imagine if you think of 
+  reversing it. If instead of blowing, you sucked air from the mouthpiece, flow 
+  would be gathered from all directions into the slot (as happens at the nozzle 
+  of your vacuum cleaner). 
+
+  The biggest difference between Figs.\ 2 and 3 occurs at the sharp corners at 
+  the end of the slot. In the potential flow, there is a singularity at any 
+  sharp edge like this: the fluid acceleration and velocity would tend to 
+  infinity. Near such a point, even very low viscosity will have a strong 
+  influence on flow. The result is boundary layer separation, indicated by the 
+  two circles in Fig.\ 2. This is how the air jet forms. The resulting flow is 
+  definitely not reversible: you cannot make a jet by sucking, only by blowing. 
+  (The reversed ``vacuum cleaner'' flow would still involve boundary layer 
+  separation at the sharp corners, but this would affect the flow inside the 
+  slot rather than outside it.) 
+
+  There is another effect of viscosity on the flow, illustrated in Fig.\ 4. 
+  This shows how the profile of flow speed across the width of the jet evolves 
+  as the jet travels. At the entry to the slot, the flow is driven by uniform 
+  pressure in the player's mouth, so the flow speed is the same at all 
+  positions in the jet. This gives a ``top hat'' profile as illustrated on the 
+  left-hand side of the figure. 
+
+  As the jet travels through the slot, viscous drag on the walls generates a 
+  boundary layer on each side of the jet. The boundary layer thickness 
+  increases with distance through the slot, as indicated by the dashed lines. 
+  By the time the jet reaches the exit of the slot, the speed profile has been 
+  rounded off on both sides as shown. If the slot had been longer, or the flow 
+  had been slower, the boundary layers would have increased further in 
+  thickness, to the extent that they might meet in the middle. The flow profile 
+  would then tend towards a parabolic shape known as ``Poiseuille flow''. 
+
+  Once the jet passes the sharp corners so that boundary layer separation 
+  occurs, the jet profile continues to evolve in a slightly different way 
+  because it is no longer in contact with the hard walls. The influence of 
+  viscosity means that it ``entrains'' some air flow from the surrounding space 
+  as indicated in the sketch. By the time the jet reaches the labium (provided 
+  it remains laminar) the profile might have turned into a smooth humped shape 
+  like the sketch on the right-hand side of the figure. In order to obtain 
+  simple model equations, we will shortly use a convenient mathematical 
+  function to describe a humped profile of this general form. 
+
+  One way to describe the profile evolution shown in Fig.\ 4 is in terms of 
+  vorticity, making use of results from section 11.2.1. As soon as the flow 
+  enters the slot, it has regions that exhibit shear: differential velocity at 
+  different vertical heights in the jet. Shear motion automatically implies 
+  local rotation of the fluid, which is described by the vorticity. In the 
+  absence of viscosity, we learned in section 11.2.1 that vorticity is 
+  conserved along streamlines. But when viscosity is present, the vorticity 
+  diffuses, rather like heat. It is this diffusion of vorticity away from the 
+  walls of the slot that leads to progressive thickening of the boundary 
+  layers. Further diffusion in the free jet after separation leads to a 
+  progressively broader and smoother humped profile. 
+
+  Vorticity is important for two ingredients of the model we are trying to 
+  build. The classical analysis of the instability of a single shear layer, or 
+  of a pair of mirror-image shear layers defining the sides of a jet, is 
+  phrased in terms of vorticity. (You can find an account of this analysis in 
+  section 10.3.2 of reference [2].) A small vorticity perturbation tends to 
+  travel along the shear layer or the jet, growing as it goes. We will need a 
+  description of this travel speed and growth rate. 
+
+  But we also need to consider how the vorticity perturbation is applied to the 
+  jet in the first place. Remember that without viscosity, vorticity is 
+  conserved. So if we want to inject a vorticity perturbation associated with 
+  the acoustic flow (perpendicular to the jet), we are most likely to be able 
+  to achieve this at the point where viscosity has its most significant 
+  influence. We already know where this happens: at the sharp corners of the 
+  slot exit, where the boundary layer separation occurs. 
+
+  Putting these two things together, and adding some semi-empirical estimates 
+  of functional forms and the values of certain constants, the first governing 
+  equations for our model describe the motion of the jet centre-line: 
+
+  $$\eta(x,t)=e^{\alpha x} \eta_0(t-x/c_p) \tag{1}$$ 
+
+  where the growth rate 
+
+  $$\alpha \approx \dfrac{0.3}{h}, \tag{2}$$ 
+
+  the propagation speed of disturbances on the jet is 
+
+  $$c_p \approx 0.4 u_0 , \tag{3}$$ 
+
+  and 
+
+  $$\eta_0(t)=\dfrac{h}{u_0} u(t) \tag{4}$$ 
+
+  where $u_0$ is the nominal speed of the injected air and $u(t)$ is the 
+  acoustic velocity, related to the volume flow rate by 
+
+  $$v=u w d \tag{5}$$ 
+
+  where $d$ is the width of the mouth in the direction perpendicular to the 
+  diagrams in Figs.\ 1--4 so that $wd$ is the mouth area. 
+
+  To complete the model, we need a relation between the jet motion, the 
+  acoustic velocity, and the pressure inside the mouthpiece. According to 
+  Auvray et al. [1] we can approximate this relation in terms of two 
+  components. First, there is the component arising from the acoustic source 
+  created by the jet interacting with the labium. The suggested relation 
+  involves the rate of change of the fraction of the jet volume flow that 
+  passes underneath the labium, into the tube. Assuming an idealised expression 
+  for the jet flow profile (known as a ``Bickley profile''), they give the 
+  resulting contribution to the pressure jump across the mouth in the form 
+
+  $$\Delta p_{source}=\dfrac{\rho_0 \delta_d u_0 b}{w} \dfrac{d}{dt} \left[ 
+  \tanh \left( \dfrac{\eta(w,t)-y_0}{b} \right) \right] \tag{6}$$ 
+
+  where 
+
+  $$b \approx \dfrac{2h}{5} \tag{7}$$ 
+
+  describes the effective half-width of the jet profile, and 
+
+  $$\delta_d \approx \dfrac{4}{\pi}\sqrt{2 h w} \tag{8}$$ 
+
+  describes the effective separation of a pair of acoustic sources above and 
+  below the labium: they combine to constitute the dipole source. 
+
+  The second contribution to the internal pressure comes from interaction of 
+  the acoustic flow with the labium. Figure 5 shows in sketch form how the flow 
+  through the mouth would behave in the absence of viscosity. This is a 
+  potential flow pattern. The flow accelerates as it approaches the sharp edge, 
+  then decelerates symmetrically on the other side. As a result, Bernoulli 
+  tells us that the pressure decreases, then increases back to the original 
+  level.<br> 
+
+  Figure 6 shows, again in sketch form, what happens with non-zero viscosity. 
+  Just as we saw with the flow from the slot, the sharp edge creates a 
+  singularity in the potential flow, so that in reality boundary layer 
+  separation occurs at this point. A jet is formed on the downstream side, 
+  which then shrinks to a slightly narrower configuration due to the vena 
+  contracta effect. Now, the pressure falls as the flow approaches the edge, 
+  but it does not recover on the other side. The result is a pressure 
+  difference across the mouth, associated with a loss of energy further 
+  downstream as the jet degenerates into turbulence. We can estimate the 
+  pressure drop using Bernoulli's principle, just as we did for the clarinet 
+  mouthpiece. The result is 
+
+  $$\Delta p_{loss} = -\dfrac{1}{2} \rho_0 \dfrac{u^2 \mathrm{sign}(u)}{C^2} 
+  \tag{9}$$ 
+
+  where $C$ is a vena contracta coefficient with a value of the order of 0.6 as 
+  before. 
+
+  The outside of the mouth is open to the atmosphere at ambient pressure, and 
+  as usual we neglect the small contribution from radiated sound and assume 
+  that the fluctuating component of pressure is zero there. So the pressure 
+  inside the mouthpiece is given by the sum of the two contributions: 
+
+  $$p(t)=\Delta p_{source} + \Delta p_{loss} . \tag{10}$$ 
+
+  We can learn something interesting from these equations if we look at the 
+  threshold case when the pressure and volume flow signals are small and 
+  quasi-sinusoidal: 
+
+  $$p \approx \bar{p}e^{i \omega t}, v \approx \bar{v}e^{i \omega t} . 
+  \tag{11}$$ 
+
+  The two complex amplitudes $\bar{p}$ and $\bar{v}$ are linked by 
+
+  $$\dfrac{\bar{v}}{\bar{p}} = Y(\omega) . \tag{12}$$ 
+
+  We are only going to be interested in the phases of the various complex 
+  quantities in this calculation, so we will ignore the effect of the growth 
+  factor $\alpha$ and the labium offset $y_0$. The approximate version of 
+  equation (1) then says 
+
+  $$\eta \approx \eta_0(t-\tau) \tag{13}$$ 
+
+  where 
+
+  $$\eta_0 \approx \dfrac{h}{u_0 w d} \bar{v} e^{i \omega t} \tag{14}$$ 
+
+  and the delay 
+
+  $$\tau=w/c_p, \tag{15}$$ 
+
+  so that 
+
+  $$\eta \approx \dfrac{h}{u_0 w d} \bar{v} e^{i \omega (t-\tau)} . \tag{16}$$ 
+
+  Now we turn to equation (6). We are assuming that the amplitude of $\eta$ is 
+  small, so we can use the familiar approximation $\tanh \theta \approx \theta$ 
+  to simplify the equation to the form 
+
+  $$\Delta p_{source} \approx \dfrac{\rho_0 \delta_d u_0 b}{w} i \omega 
+  \dfrac{\eta}{b} \approx \dfrac{\rho_0 \delta_d u_0 h}{w^2 u_0 d} i \omega 
+  \bar{v} e^{i \omega (t-\tau)} . \tag{17}$$ 
+
+  The term $\Delta p_{loss}$ is second order in $\bar{v}$ so we can neglect it 
+  and deduce that $p \approx \Delta p_{source}$. Substituting into equation 
+  (12) and cancelling the amplitude $\bar{v}$, we obtain something of the form 
+
+  $$(\mathrm{constants})i Y(\omega) e^{i \omega (t-\tau)} \approx e^{i \omega 
+  t} \tag{18}$$ 
+
+  where $(\mathrm{constants})$ denotes a collection of real, positive 
+  quantities. In order for the phases of these complex quantities to balance, 
+  we must have 
+
+  $$e^{[i \pi/2 +i \arg(Y) -i \omega \tau]} = 1 \tag{19}$$ 
+
+  where we have used the identity $i = e^{i \pi/2}$, so finally we require 
+
+  $$\arg(Y) + \pi/2 -- \omega \tau = 2m \pi \tag{20}$$ 
+
+  where $m$ could be any positive or negative integer (including zero). If we 
+  express this phase balance result in terms of the frequency $f=\omega/2 \pi$, 
+  we can deduce an expression for the delay $\tau$ as a fraction of the period 
+  length: 
+
+  $$\tau f= \dfrac{\arg Y(\omega)}{2 \pi} + \dfrac{1}{4} -m . \tag{21}$$ 
+
+  This tells us something important. If our ``recorder'' is producing a note at 
+  a frequency close to one of the peaks of $Y$, then $\arg (Y)$ will be 
+  approximately zero: admittance is real and positive near each peak. So the 
+  player must adjust their jet speed (and the length $w$ in the case of a 
+  transverse flute) in order to achieve a delay which is approximately a 
+  quarter-period for $m=0$, or approximately 5/4, 9/4, 13/4,... periods for 
+  other values of $m$. 
+
+  Section 11.8 showed some results of simulations using this model. In order to 
+  check the coding, the first case studied was an attempt to duplicate the 
+  results shown by Auvray et al. [1] in their Fig.\ 6(a) and (b). The parameter 
+  values were: $w=4 \mathrm{~mm}$, $h=1 \mathrm{~mm}$, $y_0=0.1 \mathrm{~mm}$ 
+  and $d=10 \mathrm{~mm}$. The jet speed $u_0$ was varied over the range 
+  1--56~m/s. The input admittance was a three-mode approximation to 
+  measurements on a particular note of a recorder: the parameter values were 
+  given by Auvray et al., and a plot was shown in Fig.\ 12 of section 11.8. 
+
+  In reference [1], the data was extracted from single long simulations in 
+  which the jet speed was slowly ramped up or down. Instead, the results shown 
+  here use a separate transient for each value of the jet speed, in steps of 
+  0.1~m/s. Each transient was ``seeded'' with a small non-zero value of the IIR 
+  filter representing the lowest mode, in a similar way to results in earlier 
+  sections on reed and brass instruments. Each run gave a 1~s length of 
+  simulated waveforms at a sampling rate of 100~kHz. These waveforms were 
+  post-processed to extract amplitude and frequency information. 
+
+  Figures 7 and 8 show the results, plotted in the same format as Fig.\ 6 of 
+  Auvray et al. [1]. The horizontal axis is a normalised version of the jet 
+  speed, the inverse of a standard dimensionless number known as the Strouhal 
+  Number which is often used in flow-induced vibration studies. This inverse 
+  Strouhal Number is equal to $u_0/\omega w$, where $\omega$ is the playing 
+  frequency (expressed in radians/s). Both figures are gratifyingly similar to 
+  the corresponding plots by Auvray et al. [1], although there are some 
+  differences of detail which probably arise from the different computational 
+  strategy adopted here. 
+
+  In reference [1], the authors show a corresponding pair of plots computed 
+  using the discrete-vortex method. This alternative model shows qualitatively 
+  similar behaviour, but is different in a number of quantitative details. The 
+  authors suggest that the jet-drive model is most suitable for values of the 
+  inverse Strouhal Number above 5, whereas below that value the discrete-vortex 
+  model is better. 
+
+  \sectionreferences{}[1] Roman Auvray, Augustin Ernoult, Benoît Fabre and 
+  Pierre-Yves Lagrée, “Time-domain simulation of flute-like instruments: 
+  Comparison of jet-drive and discrete-vortex models”, Journal of the 
+  Acoustical Society of America \textbf{136}, 389—400 (2014) 
+
+  [2] Antoine Chaigne and Jean Kergomard; “Acoustics of musical instruments”, 
+  Springer/ASA press (2013): see Chapter 10, ``Flute-like instruments'', by 
+  Benoît Fabre. 

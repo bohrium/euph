@@ -1,0 +1,75 @@
+  If we have measured the bridge admittance $Y(\omega)$ of a particular cello, 
+  we can use that in an enhanced version of the Raman-Schelleng calculation of 
+  minimum bow force, set out in section 9.3.1. As before, we start by assuming 
+  that the string is executing Helmholtz motion. If the bow speed is $v_b$, the 
+  string has tension $T$, length $L$ and impedance $Z_0$,the bowing position is 
+  $\beta$ and the fundamental frequency is $f_0$ Hz, then the sawtooth waveform 
+  of bridge force can be written as a Fourier series in the form: 
+
+  $$f_{br}(t)=\sum_{n=1}^\infty{a_n \sin 2 \pi n f_0 t} \tag{1}$$ 
+
+  with 
+
+  $$a_n = (-1)^{n+1} \dfrac{Tv_b}{n \pi f_0 \beta L} . \tag{2}$$ 
+
+  The displacement response at the bridge can then be written in terms of $Y$ 
+  and the real part of a complex form of the Fourier sine series as 
+
+  $$\Re \sum_{n=1}^\infty{\dfrac{(-1)^n Z_0v_b}{n^2 \pi^2 f_0 \beta} Y(2 n \pi 
+  f_0) e^{2n \pi i f_0 t}} . \tag{3}$$ 
+
+  We can now use the same approximation as in section 9.3.1 to deduce the 
+  perturbation force at the bow, by assuming that $\beta$ is small so that we 
+  can approximately treat the section of string between bow and bridge as being 
+  straight: 
+
+  $$f_{pert}(t)=\dfrac{T}{\beta L}\Re \sum_{n=1}^\infty{\dfrac{(-1)^n 
+  Z_0v_b}{n^2 \pi^2 f_0 \beta} Y(2 n \pi f_0) e^{2n \pi i f_0 t}} + K$$ 
+
+  $$=\dfrac{2 v_b Z^2_0}{\pi^2 \beta^2}\Re \sum_{n=1}^\infty{\dfrac{(-1)^n 
+  }{n^2} Y(2 n \pi f_0) e^{2n \pi i f_0 t}} + K \tag{4}$$ 
+
+  where $K$ is a constant. Its value is determined in the same way as before, 
+  by requiring that $f_{pert}(\pm 1/2f_0)=0$, so that 
+
+  $$K=-\dfrac{2 v_b Z^2_0}{\pi^2 \beta^2}\Re \sum_{n=1}^\infty{\dfrac{Y(2 n \pi 
+  f_0)}{n^2} } . \tag{5}$$ 
+
+  We can immediately deduce the new expression for the minimum bow force: the 
+  criterion is that this perturbation force is just sufficient that, at some 
+  stage in the cycle, it takes the friction force up to the limiting value. The 
+  result is 
+
+  $$f_{min}=\dfrac{2 v_b Z^2_0}{\pi^2 \beta^2 (\mu_s -- \mu_d)} \times \left[ 
+  \Re \sum_{n=1}^\infty{\dfrac{Y(2 n \pi f_0)}{n^2} } \right.$$ 
+
+  $$\left. -- \max \left\lbrace \Re\sum_{n=1}^\infty{\dfrac{(-1)^n }{n^2} Y(2 n 
+  \pi f_0) e^{2n \pi i f_0 t}} \right\rbrace \right] \tag{6}$$ 
+
+  where ``max'' means the maximum value of this function of time, taken over a 
+  complete cycle of the periodic waveform. 
+
+  This expression looks very complicated, but we can relate it back to 
+  Schelleng's original formula by looking at an important special case. In our 
+  study of the wolf note, we were mainly interested in a single body resonance, 
+  and in the case where the cellist bows the note coinciding exactly with that 
+  resonance. Suppose this resonance is described in terms of an oscillator with 
+  mass $m$, stiffness $k$ and dashpot strength $c$. The admittance then takes 
+  the simple form 
+
+  $$Y(\omega)=\frac{i \omega}{k + i \omega c -- \omega^2 m} . \tag{7}$$ 
+
+  At the resonance frequency, $k=\omega^2 m$ so that $Y=1/c$. Furthermore, 
+  looking at the two Fourier series summations in equation (6) we see that, 
+  with the factor $1/n^2$, they both converge very rapidly. So we probably get 
+  a reasonable approximation to this resonant case if we simply keep the 
+  fundamental term $n=1$. Equation (6) then reduces to 
+
+  $$f_{min} \approx \dfrac{2 v_b Z^2_0}{\pi^2 \beta^2 (\mu_s -- \mu_d)} \max 
+  \left\lbrace Y(2 \pi f_0) (1+e^{2 \pi i f_0 t} \right\rbrace$$ 
+
+  $$ = \dfrac{4 v_b Z^2_0}{c \pi^2 \beta^2 (\mu_s -- \mu_d)} . \tag{8}$$ 
+
+  This looks exactly like Schelleng's formula (equation (9) of section 9.3.1), 
+  with $c$ in place of his assumed resistance $R$, and a numerical factor 
+  $8/\pi^2 \approx 0.8$. 

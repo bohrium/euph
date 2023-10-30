@@ -1,0 +1,102 @@
+  We can approximate the acoustical behaviour of the mouthpiece of a typical 
+  brass instrument by the simplified Helmholtz resonator model sketched in 
+  Fig.\ 1. The cup has volume $V$, and the neck and backbore are idealised as a 
+  cylinder of length $L$ and cross-sectional area $S$. The player injects a 
+  volume flow rate $qe^{i \omega t}$ via their lips. The corresponding flow 
+  rate through the exit tube is $q_1e^{i \omega t}$. From now on, for clarity I 
+  will omit the factors $e^{i \omega t}$ on everything. The pressure inside the 
+  cup is $p_1$, the pressure just outside the neck, at the entry to the 
+  instrument tube, is $p_2$, and the instrument tube presents an input 
+  impedance 
+
+  $$Z(\omega)=p_2/q_1 \tag{1}$$ 
+
+  at that point. Our aim is to determine the modified input impedance 
+
+  $$Z_{in}(\omega)=p_1/q \tag{2}$$ 
+
+  at the player's lips, on the dotted line in the figure. 
+
+  The net mass flow into the volume $V$ is $\rho_0 (q-q_1)$, where $\rho_0$ is 
+  the mean density of air. This is balanced by a density perturbation $\rho'$ 
+  inside the cup. For our harmonic signal, this gives 
+
+  $$\rho_0(q-q_1)=i \omega V \rho' = i \omega V \dfrac{p_1}{c^2} \tag{3}$$ 
+
+  using the relation between density and pressure via the speed of sound $c$. 
+  Now we apply Newton's law to the mass of air in the exit tube, treating it as 
+  if it were rigid just as we did when we looked at the Helmholtz resonator in 
+  section 4.2.1: 
+
+  $$(p_1-p_2) S = L S \rho_0 \dfrac{\partial u}{\partial t} \tag{4}$$ 
+
+  where $u$ is the flow speed. But $q_1 = Su$, so for harmonic response 
+
+  $$L \rho_0 i \omega \dfrac{q_1}{S}=p_1-p_2 = p_1 -Zq_1 \tag{5}$$ 
+
+  using equation (1). 
+
+  Eliminating $q_1$ using equation (3) we obtain 
+
+  $$p_1=\left[ Z+\dfrac{i \omega L \rho_0}{S} \right] \left[ q-\dfrac{i \omega 
+  V p_1}{\rho_0 c^2} \right] \tag{6}$$ 
+
+  and so 
+
+  $$Z_{in} =\dfrac{p_1}{q}=\dfrac{Z+i \omega L \rho_0/S}{1+ \dfrac{i \omega V 
+  Z}{\rho_0 c^2} -- \omega^2 \dfrac{LV}{Sc^2}} . \tag{7}$$ 
+
+  Now we can recall from section 4.2.1 that the resonance frequency $\omega_m$ 
+  of an isolated Helmholtz resonator is given by 
+
+  $$\omega_m^2 =\dfrac{c^2S}{VL} . \tag{8}$$ 
+
+  If we introduce non-dimensionalised versions of the impedances defined by 
+
+  $$X=\dfrac{i \omega V}{\rho_0 c^2}Z \mathrm{~~~and~~~} X_{in}=\dfrac{i \omega 
+  V}{\rho_0 c^2}Z_{in} \tag{9}$$ 
+
+  we can simplify equation (7) into the form 
+
+  $$X_{in}=\dfrac{X-\omega^2/\omega_m^2}{X+1-\omega^2/\omega_m^2}. \tag{10}$$ 
+
+  Finally, recognising the term $1-\omega^2/\omega_m^2$ in the denominator as a 
+  form of the usual resonant denominator for the response of a single degree of 
+  freedom oscillator, we can insert a factor to take account of the damping of 
+  the Helmholtz resonator. If the Q-factor of the mouthpiece alone is $Q_m$, we 
+  can write 
+
+  $$X_{in} \approx \dfrac{X-\omega^2/\omega_m^2}{X+1+i \omega/\omega_m 
+  Q_m-\omega^2/\omega_m^2}. \tag{11}$$ 
+
+  We can get an idea of what equation (10) or (11) predicts about resonance 
+  frequencies if we think about the undamped version, for which $X(\omega)$ is 
+  a purely real function. The original resonances of the tube are given by the 
+  poles of $X$, while the new ones are given by the zeros of the denominator of 
+  equation (10). In other words, they occur at frequencies satisfying 
+
+  $$X(\omega)=\dfrac{\omega^2}{\omega_m^2}-1. \tag{12}$$ 
+
+  We can represent this equation graphically, as indicated schematically in 
+  Fig.\ 2. 
+
+  The graph of $X$, shown in blue, looks a bit like an upside-down version of 
+  the tangent function. The original resonance frequencies are marked by the 
+  vertical dotted lines, where $X$ goes off to infinity. Now we superimpose a 
+  graph of the function $\omega^2/\omega_m^2 -- 1$, in red. This curve crosses 
+  the blue curve at the points circled in green. It is immediately obvious that 
+  there must be one of these green circles in every gap between an adjacent 
+  pair of tube resonances. 
+
+  For the purposes of the simulation results shown in section 11.5, parameter 
+  values for a particular trombone mouthpiece were used. According to Campbell 
+  et al. [1], the Denis Wick 7AL mouthpiece has a cup volume $V=12 \times 
+  10^3\mathrm{~mm^3}$, and a direct measurement of the mouthpiece in isolation 
+  gives a Helmholtz resonance frequency 535~Hz and a Q-factor of 23. However, 
+  when the mouthpiece is plugged into the trombone tube the end correction will 
+  be bigger than in free space, and a better fit to the impedance was given by 
+  assuming that the relevant Helmholtz resonator frequency was reduced to 
+  460~Hz. 
+
+  \sectionreferences{}[1] Murray Campbell, Joël Gilbert and Arnold Myers, “The 
+  science of brass instruments”, ASA Press/Springer (2021) 

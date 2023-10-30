@@ -1,0 +1,371 @@
+
+
+  So far in this chapter we have been following the “physicist’s agenda”, using 
+  simplified models to look at one phenomenon at a time to build up a picture. 
+  But what about the “musician’s agenda”? How much have we learned that will be 
+  interesting to a player of the violin or cello? If we are honest, the answer 
+  is ``only a rather limited amount''. Schelleng’s diagram is relevant, 
+  particularly to beginners. Wolf notes can be of direct interest to all 
+  players, but they are somewhat of a niche interest since they only affect 
+  particular notes. 
+
+  But what players really care about, and spend a lot of time on, relates to 
+  transients. Hours of practice are devoted to mastering different bowing 
+  techniques, each associated with a particular way to start a note or to 
+  transition between notes. If an instrument had some subtle feature which made 
+  a particular tricky bowing gesture just a little easier or more reliable, it 
+  seems a good guess that a player would describe that instrument as being 
+  “easier to play”. This possibility opens an interesting avenue of study, 
+  using computer simulation models of the kind we have been talking about. 
+
+  The earliest computer models date from the 1970s. A decade later, the 
+  increasing power of computers allowed these early bowed-string simulation 
+  models to be used to start exploring transient effects systematically [1,2]. 
+  How quickly, if at all, is the Helmholtz motion established after a given bow 
+  gesture? How does the transient length vary if you change parameters in the 
+  model that are relevant to a player, or an instrument maker? This early work 
+  established some useful methodology, but we needn’t look at the detailed 
+  results because the studies suffered from major flaws that only became 
+  apparent later: we will meet them in the course of this section and the next. 
+
+  The people we have mentioned so far, like Raman, Cremer and Schelleng, have 
+  all been scientists or engineers with an interest in music. But the hero of 
+  this section was a musician who developed a strong interest in science. Knut 
+  Guettler was a virtuoso player and teacher of the double bass. He got 
+  interested in whether theoretical models and computer simulations could tell 
+  him things that would be useful in his teaching. Double bass players have a 
+  particular problem: some of the notes they play have such low frequencies 
+  that they can’t afford a bowing transient that takes 10 or 20 period lengths 
+  to settle into Helmholtz motion: a short note may be over by then! So 
+  Guettler set himself the task of understanding what kind of bow gesture a 
+  player needed to perform in order to get a “perfect start” in which the 
+  Helmholtz sawtooth waveform was established right from the first slip of the 
+  string over the bowhair. 
+
+  Guettler's initial step was to point out the first of the major flaws in the 
+  early computer studies: the transients used in those studies were all 
+  physically impossible! In the computer, it is easy to simulate “switch-on” 
+  transients in which the bow speed or force suddenly changes. But any physical 
+  transient cannot have jumps in either quantity: it must start with either the 
+  bow force or the speed (or both) equal to zero. If the bow is already in 
+  contact with the string with non-zero normal force, the speed must start from 
+  zero. On the other hand, if the bow is already moving when the bow makes 
+  contact with the string, as in a string-crossing gesture, then the normal 
+  force must build up from zero. 
+
+  This realisation led Guettler to study a more realistic family of transient 
+  gestures. The bow starts in contact with the string, and the force is held 
+  constant while the bow is accelerated from rest with a chosen value of 
+  acceleration. Guettler then used the simplest available model of bowed string 
+  motion to pursue his agenda of finding the conditions under which a “perfect 
+  start” was possible from one of these constant-acceleration gestures. He 
+  assumed an ideal “textbook” string, terminated in mechanical resistances or 
+  “dashpots”. This simple model is yet another thing that goes back to Raman, 
+  and it is essentially the same model that Schelleng used in his discussion of 
+  bow force limits for steady Helmholtz motion. Some mathematical details of 
+  this “Raman model” are given in the next link. 
+
+  A virtue of this simple model is that it allowed Guettler to follow how the 
+  string motion develops during the early stages of a transient. The string is 
+  initially sticking to the bow, and it is pulled to one side as the bow moves. 
+  The first interesting thing to happen is that, sooner or later, the string 
+  releases from the bow. As sketched in Fig.\ 2, this release will give a 
+  similar effect to plucking the string. As we saw back in section 5.4, a pair 
+  of corners will then be created, travelling away from the bow symmetrically 
+  in both directions. One of these (the one travelling towards the bridge) 
+  looks very much like the Helmholtz corner we want, but the other one has the 
+  wrong sign. As Schelleng first pointed out [3], in order for a perfect start 
+  to occur, the “good” corner must survive and develop into the Helmholtz 
+  corner while the other one needs to disappear. 
+
+  In a tour de force of analysis, Guettler was able to track the behaviour 
+  through the first few period-lengths after the first release, and he 
+  identified four things that might go wrong with the desired sequence of 
+  events [4]. For each of the four, he was able to find a criterion that would 
+  decide success or failure. The details of the calculation are quite messy, 
+  and we need not go into them, but we can show the key results in graphical 
+  form. All four criteria take the form of a critical value of the ratio of bow 
+  force to bow acceleration. For two of them, the ratio must be bigger than the 
+  critical value, while for the other two it must be less than the critical 
+  value. As an aside, Galluzzo [5] has generalised Guettler's result with an 
+  argument that suggests that any threshold relating to bowed-string transients 
+  within the Raman model would be expected to take a similar form, as a 
+  critical ratio of force to acceleration. 
+
+  There is a simple way to represent the result, illustrated in Fig.\ 3. Each 
+  criterion corresponds to a straight line in the acceleration—force plane. The 
+  slopes of these lines are determined by the four critical values. So there 
+  are four radial lines in that plane, and for a perfect start we need to be 
+  above two of these lines (shown in blue), and below the other two (shown in 
+  red). Unless the criteria are inconsistent, the result is a wedge-shaped 
+  region in the plane (shaded yellow here) within which a perfect start might 
+  be possible. Such plots are now known, naturally enough, as ``Guettler 
+  diagrams''. This particular example is computed using the frequency and 
+  typical impedance of a violin G string (196~Hz and 0.363~Ns/m respectively), 
+  and the string is assumed to be undamped. The assumed friction coefficients 
+  are taken from the measurement shown in Fig.\ 6 of section 9.2. The chosen 
+  bow position has $\beta=0.13$ (recall that this parameter “beta” specifies 
+  the position of the bowed point as a fraction of the string length). 
+
+  All four of Guettler's boundary lines move in a rather complicated way when 
+  the bow position $\beta$ changes. An example of the variation of the slopes 
+  of the four lines is plotted in Fig.\ 4, using the same line colours and 
+  types as in Fig.\ 3. Logarithmic scales have been used for both axes here, to 
+  highlight an intriguing parallel with the Schelleng diagram. The Schelleng 
+  diagram shows that for a given bow speed, there are limits on the bow force 
+  in order for Helmholtz motion to be possible. If $\beta$ is decreased, both 
+  limits increase, and they get closer together and eventually meet. The new 
+  diagram says that for a given bow acceleration, there are limits on the bow 
+  force in order for a perfect start to be possible. These limits, too, 
+  increase as $\beta$ decreases, and get closer together and eventually meet. 
+  The pattern is more complicated than the Schelleng diagram, because there are 
+  two criteria for each of the upper and lower limits (shown in solid and 
+  dashed lines), and the lines cross so that all four play a role in 
+  determining the allowed region for some values of $\beta$. 
+
+  Just as we did with Schelleng's diagram, we can compare Guettler's 
+  predictions with measurements using the Galluzzo bowing machine described in 
+  section 9.3.2. For each value of $\beta$, the machine bowed the open D string 
+  of a cello 400 times, in a $20\times 20$ grid in the Guettler plane. The 
+  bridge force from each note was recorded, and analysed using an automated 
+  procedure that attempted to find the length of transient before Helmholtz 
+  motion was established (if it ever was established, of course). This 
+  automated analysis is fallible, there is no doubt about that, but the same 
+  routine has been used in all cases (and will be used again when we come to 
+  compare with simulated results) so the comparison between cases should be 
+  fair. 
+
+  Figure 5 shows the results, for 6 particular values of $\beta$. It is 
+  immediately clear that the results give at least qualitative support for 
+  Guettler's predictions. There are not very many perfect starts (which appear 
+  as white pixels), but the successful transients (shown in colours other than 
+  black) are confined in each case to a vaguely wedge-shaped region. As $\beta$ 
+  increases, the boundaries rotate downwards and the wedge tends to get broader 
+  (although in the bottom left-hand plot it seems to have got narrower again). 
+  For the smallest value of $\beta$ shown here, there are very few coloured 
+  pixels. For even smaller values of $\beta$ the results were not worth 
+  showing, because they show virtually no coloured pixels at all. The left-hand 
+  plot in the bottom row shows a lot of black pixels within the wedge region. 
+  The main reason for this is something we saw earlier: with this particular 
+  value of $\beta$ the string often chooses to vibrate with S-motion rather 
+  than Helmholtz motion. 
+
+  We can see and hear a few sample waveforms. They are all drawn from one 
+  particular column of the right-hand Guettler diagram in the middle row of 
+  Fig.\ 5, corresponding to $\beta=0.0899$. Figure 6 shows three waveforms, 
+  corresponding to pixels 2, 9 and 17 of the 9th column of that figure, 
+  counting everything from the bottom left-hand corner. The value of bow 
+  acceleration is 1.39~m/s$^2$, and the three force values are 0.55~N, 1.58~N 
+  and 2.76~N respectively. At the top, plotted in black, is the waveform for 
+  the highest force. It appears as a black pixel in Fig.\ 5, but it looks as if 
+  it is close to settling into the Helmholtz sawtooth by the end of the time 
+  shown here. You can hear it in Sound 1: it has a rather ``scratchy'' sound. 
+  In the middle, plotted in red, is a ``perfect start'' which you can hear in 
+  Sound 2. At the bottom, plotted in blue, is a case with a slow transient, 
+  settling into double-slipping (``surface sound''). You can hear it in Sound 
+  3. All the sounds are very short, only 1/4~s for each one. You should be able 
+  to hear noticeable differences between all three, although the quality 
+  difference between the second and third sounds may not come across very 
+  clearly. Bear in mind that these are not the actual sounds made by the cello 
+  when the body vibrates and radiates: they are just waveforms of force acting 
+  at the bridge. These waveforms are recognisable as a bowed-string sounds, but 
+  they lack the extra interest generated by the body response. 
+
+  To harness the full potential of theoretical bowed-string models for 
+  exploring issues of playability, qualitative agreement with measurements is 
+  not enough. We would like to use computer models to find out how transient 
+  lengths change as a result of changing parameters relevant to players and 
+  instrument makers. Well, in order for that agenda to be possible, the model 
+  must be sufficiently complete and realistic that it contains all those 
+  parameters. It must also be reliable enough to capture the influence of 
+  changing them. A first step would be to demonstrate quantitative agreement 
+  with measurements. As we will see, this proves to be a tall order. 
+
+  What might we need to include in such a model? We have already met several 
+  factors that proved to be significant when looking at plucked strings, and it 
+  seems a fair bet that those will all be relevant to bowed strings too: the 
+  effect of the string’s bending stiffness and its intrinsic damping; the 
+  effect on frequencies and damping of coupling to the instrument body; the 
+  influence of the second polarisation of string motion, perpendicular to the 
+  bowing direction. These factors can indeed all be included [6]: the next link 
+  gives some technical details. 
+
+  In addition, there is a new factor that was not relevant to plucked strings. 
+  Transverse string vibration is not the only thing to be driven by the force 
+  that a violin bow applies to the string. That force is applied tangentially 
+  to the surface of the string, so it can also excite torsional motion of the 
+  string, as sketched in Fig.\ 7 and explained in more detail in the next link. 
+  Such torsional string motion probably isn’t directly responsible for a lot of 
+  sound from the instrument, but it can still be very important because of the 
+  way it interacts with transverse motion. It can be incorporated in the 
+  simulation model with no difficulty, although at some cost in complication 
+  [7]. 
+
+  To see an important example of this interaction, think what happens when the 
+  string is sticking to the bow. If we only consider transverse motion, as in 
+  the discussion up to now, that means that the string just under the bow must 
+  be moving at the speed of the bow. But when torsional motion is also allowed, 
+  the string can roll on the sticking bow. This means, for example, that 
+  Schelleng ripples which were previously “trapped” on the finger side of the 
+  bow (see Fig.\ 13 of section 9.2) can now “leak” past the sticking bow and 
+  show up in the bridge force: see the previous link for more detail. 
+
+  There is just one context where torsional string vibration is directly 
+  relevant to a violinist. Some violins are prone to a phenomenon called the 
+  ``E string whistle''. Occasionally, when playing the open E string, a 
+  high-pitched sound is obtained at a pitch unrelated to the expected note at 
+  660~Hz: it occurs at a frequency more like 5~kHz. This is the expected 
+  fundamental frequency of the first torsional mode of an E string, and Bruce 
+  Stough [8] has convincingly demonstrated that the whistle is indeed caused by 
+  torsional motion. Most violin strings have rather high damping of torsional 
+  modes, and the player's finger will contribute further damping in a stopped 
+  note. But the E string of a violin is usually a steel monofilament, with no 
+  over-wrapping. So for an open E string, neither of these factors is present, 
+  and torsional modes can have very low damping. This allows torsional 
+  vibration to be directly excited by bowing. Some string manufacturers now 
+  offer E strings with a layer of over-wrapping, specifically to add torsional 
+  damping in order to suppress the whistle. 
+
+  There is one more layer of potential complications in a realistic simulation 
+  model, associated with the details of a conventional violin or cello bow. The 
+  ribbon of bow hair has a finite width in contact with the string, rather than 
+  the single-point contact we have been assuming. Both the hair and the stick 
+  of a bow have vibration behaviour of their own, and those might influence the 
+  behaviour of the bowed string. But we can duck all those issues for the 
+  moment: the Galluzzo experiment deliberately used a rosin-coated rod in place 
+  of a conventional bow, and we will first try to match those results. In 
+  section 9.7 we will have a careful look at how things might change with a 
+  real bow. 
+
+  For the particular cello string used in the Galluzzo measurements, we have a 
+  fairly complete set of measured properties relating to its transverse and 
+  torsional vibration behaviour. This means that we can formulate a computer 
+  simulation based on reliable, calibrated values of all the relevant 
+  parameters [5,6]. We can also incorporate a reasonably realistic model of the 
+  cello body, by extending the approach used for the wolf note in section 9.4 
+  to include more body resonances. 
+
+  Putting all this together, we can assemble a simulation model that includes a 
+  good representation of the behaviour of the cello and its string. We can 
+  “bow” this simulated string with the same friction curve we have used before, 
+  derived from the steady-sliding measurements and shown in Fig.\ 6 of section 
+  9.2. We can then run a set of Guettler transients, with the same set of bow 
+  forces and accelerations as the measured set we saw in Fig.\ 5. We can 
+  process the result using the same automatic classification routine that we 
+  used for the experiments. 
+
+  A typical result, compared with the corresponding measurement, is shown in 
+  Fig.\ 8, and it is very disappointing! No aspect of the simulated pattern 
+  gives a convincing match to the measurement. This simulated string would be 
+  far harder to play than the real cello: there are fewer coloured pixels, and 
+  many of them are scattered around in a speckly pattern rather than coalescing 
+  to give broad areas of bright yellow such as we see in the measurement. The 
+  only continuous patch of pale-coloured pixels is a narrow wedge running 
+  diagonally across the plot. This wedge is indeed reminiscent of Guettler's 
+  prediction, but we see no trace of a directly corresponding feature in the 
+  measurement. We will explore some of the reasons for this in the subsequent 
+  discussion. 
+
+  To see a little more detail of how the simulation model behaves, Fig.\ 9 
+  shows the results of some model variations. The top row shows results without 
+  including the effect of the string's bending stiffness, while the bottom row 
+  has it included. The left-hand column omits the effect of torsional motion in 
+  the string, while the right-hand column includes it. So the top left plot is 
+  without bending stiffness or torsion, while the bottom right plot includes 
+  both, and is the case shown in Fig.\ 8. 
+
+  To glimpse what lies behind these results, Fig.\ 10 shows a set of simulated 
+  waveforms for one particular pixel of these Guettler plots. Counting from the 
+  bottom left-hand corner, it is the 9th pixel in the horizontal direction 
+  corresponding to acceleration 1.39~m/s$^2$, and the 6th pixel in the vertical 
+  direction corresponding to force 1.14~N. This is a bright yellow pixel in the 
+  bottom right-hand Guettler plot of Fig.\ 9 and a slightly darker colour in 
+  the upper right-hand plot. These correspond to the waveforms plotted in black 
+  and red respectively. It appears as a black pixel in the two left-hand 
+  diagrams, and we can see why in the two waveforms plotted in blue and green. 
+  The blue curve, corresponding to the case with neither torsion nor bending 
+  stiffness, settles into regular double-slipping motion rather than Helmholtz 
+  motion. The green curve, with bending stiffness but no torsion, does 
+  something similar, but the waveform shows more persistent irregularity from 
+  cycle to cycle. 
+
+  Figure 9 tells us several interesting things. First, none of the plots look 
+  anything like the measured case. They all look too “speckly” for comfort: 
+  even for cases where a particular transient gave a satisfactory transient 
+  leading quickly to Helmholtz motion, there are often neighbouring pixels that 
+  are either black, or at least dark red. The interpretation is that if the 
+  player tried to do the same gesture twice, they are likely to get very 
+  different results because of inevitable tiny differences between the two 
+  gestures. 
+
+  This “twitchy” behaviour should sound familiar, if you remember the 
+  discussion of chaotic systems in Chapter 8. It looks very much as if all four 
+  cases explored in Fig.\ 9 are exhibiting “sensitive dependence on initial 
+  conditions”, one of the hallmarks of a chaotic system. The measured Guettler 
+  diagram also has some evidence of “twitchiness”, with occasional black pixels 
+  in the middle of the bright yellow patch, but the effect seems far less 
+  extreme. 
+
+  Indeed, sensitive dependence in the measured responses can be demonstrated 
+  directly. Paul Galluzzo made repeat measurements of the Guettler plane under 
+  nominally identical conditions, and 9 examples of these are illustrated in 
+  Fig.\ 11. Although the qualitative picture remains the same, individual 
+  pixels change between takes. 
+
+  We can hazard a guess about where the twitchiness is coming from in the 
+  simulated results. When we looked at the phenomenon of chaos in section 8.4, 
+  we found that sensitive dependence was intimately tied up with the presence 
+  of saddle points in the phase space: two trajectories that are initially very 
+  close together can approach a saddle point, and be sprayed apart so that they 
+  end up in very different parts of the phase space. Well, our bowed-string 
+  model contains a mechanism that could do a similar job, separating two 
+  initially similar transients so that they diverge. 
+
+  Figure 12 shows a copy of Fig.\ 8 from section 9.2, and it reminds us of the 
+  abrupt jumps that are inevitably generated by using this friction curve. We 
+  can imagine two transients which start out similar, and then come close to 
+  one of the critical points at which a jump is triggered. If one transient 
+  falls just short of the critical point but the other one passes it, one will 
+  have a jump and the other will not, and their subsequent development might be 
+  quite different. This idea points us towards the second major flaw in the 
+  early computer models: in the next section we will have a critical look at 
+  this “friction curve model” and discover that the actual frictional behaviour 
+  of a rosin-coated violin bow does not follow any single friction--velocity 
+  curve: it is all much more complicated! 
+
+  Before that, we should note something else about Fig.\ 9. At least for these 
+  particular cases, we see that both bending stiffness and string torsion have 
+  a significant effect on the results: including torsion makes things better 
+  (more coloured pixels), while including bending stiffness makes things worse. 
+  The extent of these differences is perhaps another manifestation of “chaotic 
+  twitchiness”: as well as sensitive dependence on details of the bowing 
+  transient, we are also seeing sensitive dependence on changes to modelling 
+  details, by including or excluding various effects. 
+
+
+
+  \sectionreferences{}[1] J. Woodhouse; ``On the playability of violins, Part 
+  II minimum bow force and transients''; Acustica \textbf{78}, 137--153 (1993). 
+
+  [2] R. T. Schumacher and J. Woodhouse, ``The transient behaviour of models of 
+  bowed-string motion''; Chaos \textbf{3}, 509--523 (1995). 
+
+  [3] J. C. Schelleng; ``The bowed string and the player'', Journal of the 
+  Acoustical Society of America \textbf{53, }26–41 (1973). 
+
+  [4] Knut Guettler, ``On the creation of the Helmholtz motion in bowed 
+  strings''; Acta Acustica united with Acustica, \textbf{88}, 970--985 (2002). 
+
+  [5] Paul M. Galluzzo; On the playability of stringed instruments, \tt{}PhD Dissertation\rm{}, University of Cambridge 
+  (2003). See section 6.1. 
+
+  [6] Hossein Mansour, Jim Woodhouse and Gary P. Scavone, ``Enhanced wave-based 
+  modelling of musical strings, Part 1 Plucked strings''; Acta Acustica united 
+  with Acustica, \textbf{102}, 1082--1093 (2016). 
+
+  [7] Hossein Mansour, Jim Woodhouse and Gary P. Scavone, ``Enhanced wave-based 
+  modelling of musical strings, Part 2 Bowed strings''; Acta Acustica united 
+  with Acustica, \textbf{102}, 1094--1107 (2016). 
+
+  [8] Bruce Stough, “E string whistles”; Catgut Acoustical Society Journal 
+  (Series II), \textbf{3}, 7, 28—33 (1999). 

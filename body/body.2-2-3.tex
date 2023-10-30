@@ -1,0 +1,82 @@
+  The justification for treating small vibration by linear theory lies in 
+  Lagrangian mechanics. The equations of vibration of any system can be derived 
+  from expressions for the potential and kinetic energy in the system. For 
+  small motion, it is justifiable to make a series expansion of those energy 
+  expressions and keep only the first term that does not vanish. The result is 
+  that the kinetic energy is approximately a quadratic expression in the 
+  velocities, while the potential energy is a quadratic expression in the 
+  displacements. Applying Lagrange's equations to these approximate energy 
+  expressions leads automatically to linear differential equations describing 
+  the motion. 
+
+  Some details of this calculation will be given in section 2.2.5, but the 
+  essential idea can be illustrated using the simple harmonic oscillator 
+  discussed in section 2.2.2, by approaching that problem in terms of energy. 
+  The system is conservative (i.e. has no dissipative forces acting), so that 
+  the total energy is constant. The kinetic energy is 
+
+  $$T=\frac{1}{2} m \dot{x}^2 \tag{1}$$ 
+
+  where $\dot{x}=dx/dt$. The potential energy stored in the spring is 
+
+  $$V=\frac{1}{2} k x^2. \tag{2}$$ 
+
+  This may be seen by noting that the work done in a small displacement $\delta 
+  y$ from displacement $y$ is $ky\delta y$, and integration from zero to the 
+  desired displacement $x$ gives the expression (2). Now energy conservation 
+  requires 
+
+  $$\dfrac{d}{dt} [T+V]=0 \tag{3} $$ 
+
+  which gives 
+
+  $$m \ddot{x} +kx=0 \tag{4}$$ 
+
+  exactly as in eq. (1) of section 2.2.2, derived via Newton's laws. 
+
+  The energy approach gives a natural way to generalise this simple example to 
+  cover small vibrations of a wide range of systems. Consider any system with 
+  just one degree of freedom, in other words one whose displaced position can 
+  be completely described by a single parameter $q$ (which might, for example, 
+  describe the displacement of a point or the angle of rotation of a rigid 
+  body). It will generally be the case that the kinetic energy of the system 
+  takes a similar quadratic form to expression (1): 
+
+  $$T=\frac{1}{2} M \dot{q}^2 \tag{5}$$ 
+
+  where the constant $M$ will be a mass if $q$ describes a linear displacement, 
+  or a moment of inertia if $q$ describes a rotation. 
+
+  The potential energy is less immediately obvious, but if the system is in a 
+  position of stable equilibrium when $q~=~0$ then certainly the function 
+  $V(q)$ must have a minimum at $q~=~0$. Provided this function is reasonably 
+  well-behaved, we can expect it to be well approximated by the dominant term 
+  in its Taylor expansion provided $q$ remains sufficiently small: 
+
+  $$V(q) \approx V_0+\frac{1}{2} V_2 q^2 + \mathrm{terms~of~order~} q^3. 
+  \tag{6} $$ 
+
+  There is no linear term in this expansion by virtue of the equilibrium at 
+  $q~=~0$, and in order for that equilibrium to be stable we must have 
+
+  $$V_2 \ge 0. \tag{7} $$ 
+
+  The constant $V_0$ is of no dynamical consequence, and can be set to zero for 
+  simplicity. Provided $V_2$ is non-zero we are left with an approximate 
+  expression for the potential energy which takes the same form as that of the 
+  simple mass-spring oscillator in eq. (2). 
+
+  In some cases a similar approximation may be needed in the kinetic energy: 
+  the quantity $M$ may depend on the displacement $q$, but for the case of 
+  small displacements away from equilibrium the dominant term is obtained 
+  simply by setting $q~=~0$ within this expression. The next term in a Taylor 
+  expansion would be of order $q\dot{q}^2$, small by comparison. 
+
+  Having thus obtained approximate expressions for both kinetic and potential 
+  energy which match those of the simple spring-mass system, it follows that 
+  for any such system, provided the displacement away from equilibrium is 
+  sufficiently small, the free motion will obey a differential equation 
+  analogous to eq. (4), and the solution will take the sinusoidal form of eq. 
+  (5) of section 2.2.2, with a natural frequency 
+
+  $$\Omega=\sqrt{V_2/M}. \tag{8} $$ 

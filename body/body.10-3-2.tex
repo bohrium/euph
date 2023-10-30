@@ -1,0 +1,247 @@
+  If your wood happens to be available in the form of a rectangular panel with 
+  constant thickness, then there is a straightforward way to determine the 
+  three main stiffnesses of the wood, using vibration resonance frequencies. I 
+  will describe the measurement procedure first, then deal with the 
+  mathematical background later in the section. 
+
+  The simplest way to do this test is based on the traditional approach of 
+  Chladni patterns. The plate is set into vibration, and powder is sprinkled on 
+  it. When you excite a resonance of the plate, the powder bounces vigorously 
+  and collects at the nodal lines, thus revealing the mode shape. \tt{}Ernst 
+  Chladni \rm{}was a German scientist and musician in the 18th and early 19th 
+  centuries. He found that he could excite vibration modes of metal plates by 
+  bowing the edge. But for a controllable measurement, bowing is not very 
+  convenient: these days is better to generate sine waves and play them through 
+  a loudspeaker. 
+
+  Figure 1 shows a typical setup. The loudspeaker is fixed to the underside of 
+  a flat bench-top. It is driven by the sine-wave oscillator you can see under 
+  the bench. Next to that is a frequency counter, which tells you the frequency 
+  you are currently generating (very much like an electronic tuner that you 
+  might use to tune an instrument). In the picture, a square plate of plywood 
+  is being tested. It is showing a mode shape with a cross-shaped pattern of 
+  nodal lines: usually this is the lowest-frequency mode of a panel like this. 
+
+  \fig{figs/fig-dc1da399.png}{Figure 1. A ``shaker table'' being used to 
+  generate a Chladni pattern on a plywood plate.} 
+
+  Notice how the plate has been arranged. It is being supported by four small 
+  pieces of foam, carefully placed underneath the nodal lines. These are not 
+  easily visible in Fig.\ 1, but they are more clear in Fig.\ 2, which shows a 
+  different mode of the same plywood plate. The plate is positioned differently 
+  in the two pictures, relative to the loudspeaker. This is deliberate. You 
+  need your loudspeaker to be under an antinodal region of the mode shape, and 
+  you also want to cover the loudspeaker aperture fairly well so that your 
+  sound doesn’t all escape round the edges. In Fig.\ 2, the loudspeaker is not 
+  visible because it is under the centre of the plate. But this position would 
+  be no good for the mode in Fig.\ 1, where the centre is a nodal region. 
+  Instead, the speaker is under one corner of the plate, where the vibration is 
+  most vigorous. 
+
+  \fig{figs/fig-7c4f3b78.png}{Figure 2. Chladni pattern of another mode of the 
+  plate seen in Fig. 1.} 
+
+  Figure 3 shows computed predictions of the nodal line patterns for a few 
+  modes of a plate like this. The exact details of nodal line shape, and also 
+  the frequency order of the modes, depends on the stiffnesses we are trying to 
+  measure, but any orthotropic plate with reasonably uniform mechanical 
+  properties will have modes looking recognisably like these — with an 
+  important exception that we will come to shortly. 
+
+  \fig{figs/fig-1a380290.png}{Figure 3. Predicted nodal line patterns of a few 
+  modes of a rectangular orthotropic plate with particular values of the plate 
+  stiffnesses. The frequencies of these modes do not necessarily appear in the 
+  order shown, though: that depends on the values of the stiffnesses we are 
+  trying to measure. The exact shape of the nodal lines also varies with those 
+  stiffnesses, but you can usually find modes looking recognisably like these 
+  patterns.} 
+
+  Figure 3 tells you something else interesting. With a bit of practice, you 
+  can use the knowledge of these nodal line patterns to find at least some of 
+  the resonance frequencies by ear. Hold the plate lightly between finger and 
+  thumb on a nodal line, tap with your knuckle in a place where the vibration 
+  amplitude is large, and place your ear close to the same point. You should 
+  hear a “tap tone” that corresponds to the frequency of that mode. At least 
+  for the simplest mode shapes, this method can work very well. The 
+  complication is that the tap sound you hear contains contributions from all 
+  the modes, especially any others with a nodal line close to your holding 
+  position. You can probably hear the lowest frequency among these, but it is 
+  more difficult to “hear out” the higher ones. 
+
+  The modes we are most interested in are the three in the top row of Fig.\ 3. 
+  Figures 4, 5 and 6 show Chladni patterns of these three modes for a square 
+  spruce plate. For this particular plate, these were modes numbers 1, 2 and 5: 
+  two of the modes from the bottom row of Fig.\ 3 had frequencies lower than 
+  the mode in Fig.\ 6, involving bending along the grain. The node lines in 
+  Fig.\ 6 are somewhat distorted. This is a result of variation of mechanical 
+  properties across the plate: you can see that the spacing of the annual rings 
+  varies quite a lot. The rings are closely-spaced in the lower third of the 
+  plate, then they abruptly get wider apart. Perhaps a neighbour of this tree 
+  was felled at that time, letting more light through? But the slight 
+  distortion does not stop us identifying the mode we are after. 
+
+  \fig{figs/fig-b5a5a281.png}{Figure 4. The lowest mode of a particular spruce 
+  plate. This is a twisting mode.} 
+
+  \fig{figs/fig-afe8bd60.png}{Figure 5. The second mode of the spruce plate 
+  from Fig. 4, involving predominantly bending across the grain.} 
+
+  \fig{figs/fig-84143751.png}{Figure 6. The 5th mode of the spruce plate from 
+  Figs. 4 and 5, involving predominantly bending along the grain.} 
+
+  From the frequencies of these three modes, plus knowledge of the dimensions 
+  and weight of the plate, we can calculate stiffnesses associated with 
+  twisting, bending across the grain, and bending along the grain, 
+  respectively. We will give formulae for this shortly, together with some 
+  background theory to explain what these stiffnesses mean. But first we should 
+  deal with the exception to the claim that mode shapes like these can usually 
+  be found. 
+
+  It is probably simplest to introduce the key idea by forgetting about wood 
+  (temporarily) and thinking about a metal plate, which will have properties 
+  that are the same in all directions. Such a plate is called “isotropic”. What 
+  will happen if our metal plate is exactly square? Our first guess might be 
+  that the two modes corresponding to Figs.\ 5 and 6 will fall at the same 
+  frequency. But in fact something more interesting happens. We do indeed find 
+  two modes, fairly close in frequency, but the shapes look quite different 
+  from those pictures. Figure 7 shows computer predictions of the node line 
+  patterns of these two modes, and Fig.\ 8 shows them in a 3D view. 
+
+  \fig{figs/fig-906d6135.png}{Figure 7. Predicted nodal line patterns of two 
+  modes of a square isotropic plate. For obvious reasons, these are usually 
+  called the ``X-mode'' and the ``ring mode''.} 
+
+  \fig{figs/fig-1b23e951.png}{Figure 8. The two modes from Fig. 7, shown in a 
+  3D view.} 
+
+  These modes are often described as the “X-mode” and the “ring mode”, for 
+  obvious reasons. The best way to think about these two shapes is as the 
+  difference and the sum of the two modes we found before. These involved more 
+  or less one-dimensional bending in the two directions. Subtracting one from 
+  the other generates the diagonal node lines we see on the left in Fig.\ 7, 
+  while adding them together produces the “hill” shape that we see on the 
+  right. 
+
+  These two modes have different frequencies: usually the ring mode is higher 
+  in frequency than the X-mode. The reason is to do with something we mentioned 
+  earlier, Poisson’s ratio. Suppose we did a beam vibration test with a thin 
+  rectangular beam of metal. As it bends, the upper surface is stretched while 
+  the lower surface is compressed (or vice versa if it bends in the other 
+  direction). Think about a small volume of metal near the upper surface. It is 
+  being stretched along the beam axis, so Poisson’s ratio requires that it 
+  should shrink a little in the perpendicular directions. Conversely, a small 
+  volume of metal near the bottom surface is being compressed along the beam 
+  axis, so it is expanding a bit in the cross direction. 
+
+  So the top surface of our beam is shrinking across the width, while the 
+  bottom surface is expanding. This combination will make the beam want to bend 
+  in the cross direction, with the opposite sign to the way the main beam is 
+  bending. This effect is sometimes called “anticlastic curvature”. Now return 
+  to our X-mode and ring mode of the plate. The X-mode shows strong anticlastic 
+  curvature, but the ring mode has the opposite behaviour, “synclastic 
+  curvature”. So the X-mode is “going with the flow”, doing what Poisson’s 
+  ratio wants, whereas the ring mode is fighting against Poisson’s ratio. The 
+  effect is that Poisson’s ratio provides a bit of extra stiffness in the ring 
+  mode compared to the X-mode, and that in turn means that it has a higher 
+  frequency. 
+
+  Returning to our spruce plate, something very similar can happen. The only 
+  difference is that the plate doesn’t need to be square, it needs to be longer 
+  in the grain direction. Specifically, the aspect ratio of the spruce plate 
+  must be adjusted to match the proportions you would find if you made 
+  long-grain and cross-grain beams which had the same frequency. 
+
+  Now it is time to introduce the actual stiffness parameters for our plate, 
+  and relate them to the mode frequencies we have been talking about. We will 
+  use an energy-based approach to define a suitable set of stiffnesses. Back in 
+  section 3.3.1 we saw the expressions for energy in a vibrating beam, and we 
+  also met Rayleigh's principle. We now make use of both those ideas. The 
+  potential energy of a bending beam was proportional to the squared curvature, 
+  and the curvature is the second derivative of the displacement. 
+
+  We expect a similar expression for our plate: a quadratic expression 
+  involving second derivatives in $x$ and $y$, the coordinates along the 
+  symmetry axes of the material (and the edges of the plate). Furthermore, we 
+  expect this expression to be symmetrical if you interchange $x$ and $y$. 
+  There are just four possible expressions satisfying these conditions, so our 
+  most general expression for the potential energy must take the form 
+
+  $$ V = \dfrac{1}{2} \int{\int{h^3 \left[ D_1 \left(\dfrac{\partial^2 
+  w}{\partial x^2} \right)^2 + D_2 \dfrac{\partial^2 w}{\partial x^2} 
+  \dfrac{\partial^2 w}{\partial y^2} \right. }} $$ 
+
+  $$ \left. + D_3 \left(\dfrac{\partial^2 w}{\partial y^2} \right)^2 + D_4 
+  \left(\dfrac{\partial^2 w}{\partial x \partial y} \right)^2 \right] dx dy 
+  \tag{1}$$ 
+
+  where $w(x,y)$ is the displacement of the plate, $h$ is the thickness, and 
+  $D_1$--$D_4$ are four constants with the dimensions of stiffness. The 
+  corresponding expression for kinetic energy is much simpler: 
+
+  $$T=\dfrac{1}{2} \int{\int{ \rho h \left( \dfrac{\partial w}{\partial t} 
+  \right)^2 dx dy }} \tag{2}$$ 
+
+  where $\rho$ is the density. 
+
+  Now we can calculate three simple estimates using Rayleigh's principle, to 
+  obtain approximate expressions for the frequencies of the three modes in the 
+  top row of Fig.\ 3. The first of those three modes involves twisting motion. 
+  We can call the frequency (in Hz) $f_t$, and obtain a Rayleigh estimate using 
+  the approximate mode shape $w \approx xy .$ The result, turned round to give 
+  an expression for stiffness, is 
+
+  $$D_4 \approx 0.274 f_t^2 \rho a^2 b^2/h^2 \tag{3}$$ 
+
+  where the plate has dimensions $a \times b$. The other two modes in the top 
+  row of Fig.\ 3 involve approximately one-dimensional bending in the $x$ and 
+  $y$ directions. If we call the corresponding frequencies $f_x$ and $f_y$, we 
+  can obtain Rayleigh estimates for both by using the first mode of a free-free 
+  beam as an approximate mode shape. This gives the expressions 
+
+  $$D_1 \approx 0.0789 f_x^2 \rho a^4/h^2 \tag{4}$$ 
+
+  and 
+
+  $$D_3 \approx 0.0789 f_y^2 \rho b^4/h^2 . \tag{5}$$ 
+
+  There is a way to improve on these three simple estimates, but it involves 
+  more elaborate computation (see [1] for the details). For workshop use by a 
+  guitar maker, though, these first estimates are good enough to be useful in 
+  quantifying the stiffness properties of their stock of soundboard blanks. 
+
+  You will have noticed that we do not have an estimate for $D_2$. There is a 
+  procedure for finding that, but it involves cutting the plate to the 
+  ``magic'' proportions needed to make the X-mode and ring mode appear. Again, 
+  the details are described in [1]. But a guitar maker is unlikely to want to 
+  cut their soundboard blanks in this way, so it is fortunate that numerical 
+  studies suggest that $D_2$ is not very important, except for the special case 
+  of a plate cut with the magic proportions. 
+
+  Finally, we would surely like to relate these stiffness parameters $D_j$ to 
+  more standard things such as Young's moduli and shear moduli. The full story 
+  here is rather complicated, though. The only case which gives clear-cut 
+  answers is the ideal quarter-cut plate, in which the $x$ and $y$ axes are 
+  exactly aligned with the L and R directions in the solid timber. For that 
+  case, 
+
+  $$D_1 = E_L/12 \mu, D_2 = \nu_{LR}E_R/6 \mu = \nu_{RL}E_L/6 \mu, $$ 
+
+  $$D_3 = E_R/12 \mu, D_4 = G_{LR}/3 \tag{6}$$ 
+
+  where $E_L$ and $E_R$ are the two Young's moduli, $G_{LR}$ is the shear 
+  modulus in the LR plane, $\nu_{LR}$ and $\nu_{RL}$ are the two Poisson's 
+  ratios, and $\mu=1 -- \nu_{LR} \nu_{RL} .$ The two versions of the expression 
+  for $D_2$ make use of the reciprocal relation for Poisson's ratios. For the 
+  full gory details of more general cases, see [1]. 
+
+  Finally, as a guide what kind of numbers you might expect if you measure the 
+  $D_j$ for soundboard material, here are some measured results for spruce. A 
+  quarter-cut plate gave $D_1=1320~\mathrm{~Mpa}$, $D_2=77~\mathrm{~Mpa}$, 
+  $D_3=82~\mathrm{~Mpa}$, $D_4=227~\mathrm{~Mpa}$. For contrast, the spruce 
+  plate shown in Fig.\ 9 of section 10.3, with a ring angle close to 
+  $45^\circ$, gave $D_1=880~\mathrm{~Mpa}$, $D_2=24~\mathrm{~Mpa}$, 
+  $D_3=13~\mathrm{~Mpa}$, $D_4=229~\mathrm{~Mpa}$. 
+
+  \sectionreferences{}[1] M. E McIntyre and J. Woodhouse, “On measuring the 
+  elastic and damping constants of orthotropic sheet materials”, Acta 
+  Metallurgica \textbf{36}, 1397—1416 (1988). 

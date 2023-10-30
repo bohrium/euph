@@ -1,0 +1,122 @@
+
+
+  Probably the most familiar result of psychoacoustic testing is the chart 
+  shown in Fig.\ 1. This shows contours of equal perceived loudness, for 
+  listening to sine waves. The vertical axis shows the amplitude of the sound 
+  pressure, plotted on a decibel scale. The zero level is defined by an 
+  international convention, and is roughly the level of the quietest sine wave 
+  you can hear. Now notice the numbers on the vertical scale: it covers a range 
+  of 140 dB, and if you remember that 20 dB corresponds to a change in 
+  amplitude by a factor of 10, this means that your full range of hearing (for 
+  sine waves, remember) covers 7 factors of 10, so a total range of a factor of 
+  10,000,000. 
+
+  \fig{figs/fig-2c8fcfa4.png}{Figure 1. Contours of equal loudness for 
+  sinusoidal waveforms. Image: Lindosland, Public domain, via Wikimedia 
+  Commons} 
+
+  The lowest curve in the chart has a simple interpretation. It is labelled 
+  ``threshold'', which is probably self-explanatory: it indicates the quietest 
+  sine wave that can be detected at each frequency, by a typical healthy young 
+  adult with normal hearing. ``Young'' because as we get older our hearing 
+  deteriorates, most obviously at higher frequencies. At age 70, I can no 
+  longer detect a sine wave above about 10 kHz at any amplitude. Your personal 
+  version of this threshold curve is one of the things that is commonly 
+  measured if you are given an audiometry test to assess the state of your 
+  hearing. 
+
+  The highest curve in the plot is only ``estimated'' at frequencies above 1 
+  kHz: this is because exposure to sounds that loud can cause damage to the 
+  listener's ears, so that it is not ethically acceptable to collect the data 
+  to complete the measured curve or to map out curves at higher levels. 
+  Somewhere around a sound pressure level of 120--140 dB, we would reach the 
+  ``threshold of pain'': the level at which a sine wave becomes physically 
+  painful to the listener. This does not mean that sounds this loud are never 
+  heard, of course. Notoriously, loud sounds such as those from aircraft 
+  engines, firearms or loud amplified music commonly cause hearing damage 
+  unless precautions are taken. ``Ear defenders'' are now routinely worn by 
+  people working in noisy environments --- but not usually by party-goers or 
+  members of rock bands. 
+
+  The curves are labelled in terms of a unit of subjective loudness called the 
+  phon. The numerical value associated with each curve is defined to be the 
+  physical sound pressure level in decibels where the curve passes through 1 
+  kHz. The curious wiggles in the curves are caused by resonances in the ear 
+  canal and the middle ear: as a result of these resonances, sine waves at some 
+  frequencies are amplified before they reach the cochlea, while at other 
+  frequencies they are somewhat suppressed. 
+
+  The chart in Fig.\ 1 is often interpreted as saying that the human ear is 
+  most sensitive for frequencies around 1--5 kHz. Well, this is true in one 
+  sense, but it is the opposite of the truth in another sense. If you are 
+  thinking about detecting very quiet sounds, then it is true that your ear is 
+  at its most sensitive in this frequency range. But notice that this is also 
+  the range where the curves are widest apart: so in this range your ear is at 
+  its least sensitive to changes in loudness. In the context of listening to 
+  music, sensitivity to changes can be just as important as absolute 
+  sensitivity to whether there is a sound at all. For example, where the curves 
+  are wide apart a performer would need to make a bigger physical change in 
+  order that the listener hears a crescendo. 
+
+  It is useful to have an idea of how the charts in Fig.\ 1 were determined. In 
+  a typical experiment, a test subject would be sitting in a quiet place, with 
+  headphones on. They would be presented with a ``reference'' tone, perhaps at 
+  1 kHz, at a particular level. They would then hear a second tone at a 
+  different frequency, which would start at a random level. Their task is 
+  adjust the level of this second tone until the loudness is judged to match 
+  the reference tone. This procedure is then repeated many, many times. The 
+  frequency of the test tone will be varied to cover the entire audible range, 
+  including repeat runs with the same frequency to test for consistency of 
+  judgement. The level, and perhaps the frequency, of the reference tone will 
+  be varied. Many different test subjects will take the same test --- but will 
+  be presented with the individual loudness-matching tasks in a different 
+  random sequence. All the results are stirred together in the computer, and 
+  some statistical tests performed to tell the experimenter when they have 
+  enough results that the answer is reliable within a specified limit. 
+
+  This kind of testing is subject to many traps and pitfalls. We can see a 
+  strong hint of this in Fig.\ 1. The red curves show the current international 
+  standard, but the blue curve shows an alternative version of one of these 
+  curves, which used to be the international standard before a new set of 
+  trials were carried out. They differ by a remarkably large amount, up to 
+  about 20 dB. Both sets of experimenters knew what they were doing, and 
+  followed a very similar procedure, so how come they reached an answer that 
+  was so different? 
+
+  There are many factors that can disturb the results of an experiment like 
+  this. We will give a few examples, but for a full discussion see Moore [1]. 
+  Presenting the sounds via headphones is not the same as presenting them with 
+  loudspeakers. Even different kinds of headphones will give different results. 
+  The reasons are to do with diffraction of the sound field around the 
+  subject's head and external ears. The position at which the reference sound 
+  pressure level is measured can make a significant difference: just moving 
+  from a few millimetres outside the ear canal to a few millimetres inside it 
+  is important. Sensitivity to low-frequency sounds presented through 
+  headphones can be affected by sounds generated by your own body, especially 
+  your heartbeat and blood flow. 
+
+  Even less obviously, there are subtle sources of bias that can arise from 
+  details of the testing procedure: here is an example. For a given level of 
+  the reference tone, the test tone is initially presented at a random level, 
+  chosen from within a certain range using a random number generator. But it 
+  has been discovered that if this range of random amplitudes is not 
+  symmetrical above and below the eventual ``correct'' level which matches the 
+  loudness of the reference tone, there will be a bias in the results of the 
+  test. Of course, you don't know where the matching level will be when you 
+  start the experiment, so the testing has to be done in an iterative way. 
+  Choose a range, find out what the listeners judge to be the matching level, 
+  then if this turns out not to lie at the centre of the random range, you have 
+  to repeat the whole experiment with a new range. Then keep repeating this 
+  until you have results based on a range which is in fact symmetric about the 
+  final chosen level. 
+
+  All of this complication, and we are still only talking about hearing sine 
+  waves! Normal sounds, and real music, involve far more complicated sounds. 
+  They will involve multiple frequency components, and they will be varying in 
+  time in a complicated way. We will start to investigate how to deal with this 
+  in the next section. 
+
+
+
+  \sectionreferences{}[1] Brian C. J. Moore; ``An Introduction to the 
+  Psychology of Hearing'', Academic Press (6th edition 2013). 

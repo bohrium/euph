@@ -1,0 +1,147 @@
+  Bending vibration of a slender beam can be understood via the simplest 
+  approximation, Euler-Bernoulli beam theory. Suppose the beam is made of 
+  material with Young's modulus $E$ and density $\rho$, and that it has a 
+  uniform cross-section with area $A$. We are interested in free vibration with 
+  small transverse displacement $w(x,t)$. Consider the forces acting on a small 
+  element of the beam, as sketched in Fig.\ 1. 
+
+  \fig{figs/fig-5d96bc34.png}{Figure 1. A segment of bending beam, and a small 
+  element extracted from it with the shear forces and bending moments 
+  indicated. The vertical scale is exaggerated.} 
+
+  If you imagine a cut across the cross-section of the beam, there will be an 
+  equal and opposite pair for forces acting on the two faces of the cut, and 
+  also an equal and opposite pair of moments. The force is called the shear 
+  force, $S(x,t)$, and the moment is called the bending moment, $M(x,t)$. This 
+  force and moment act on both ends of the small element, at positions $x$ and 
+  $x + \delta x$. Within this simplest theoretical framework, the rotational 
+  inertia of the element is ignored so that the element is approximately in 
+  overall moment balance. This requires 
+
+  $$S(x,t) \delta x \approx M(x+ \delta x,t) -- M(x,t). \tag{1}$$ 
+
+  In the limit as $\delta x \rightarrow 0$ this implies 
+
+  $$S \approx \dfrac{\partial M}{\partial x} . \tag{2}$$ 
+
+  Now apply Newton's law to the transverse motion of the element: 
+
+  $$\rho A ~\delta x \dfrac{\partial^2 w}{\partial t^2} \approx S(x,t) -- 
+  S(x+\delta x,t) \tag{3}$$ 
+
+  so that as $\delta x \rightarrow 0$, 
+
+  $$\rho A \dfrac{\partial^2 w}{\partial t^2} = -\dfrac{\partial S}{\partial 
+  x}. \tag{4}$$ 
+
+  For linearised bending theory, the bending moment $M$ is proportional to the 
+  curvature of the beam: 
+
+  $$M(x,t) = EI\dfrac{\partial^2 w}{\partial x^2} . \tag{5}$$ 
+
+  The constant of proportionality is called the bending rigidity, and is the 
+  product of the Young's modulus $E$ with a quantity $I$ which is called the 
+  second moment of area of the cross-section. For a rectangular section, 
+  appropriate for our xylophone bar, there is a simple formula in terms of the 
+  width $b$ and the thickness $h$: 
+
+  $$I=\dfrac{1}{12} bh^3. \tag{6}$$ 
+
+  Now combining eqs. (2), (4) and (5) we find the equation of motion for free 
+  vibration of the beam: 
+
+  $$m \dfrac{\partial^2 w}{\partial t^2}+EI \dfrac{\partial^4 w}{\partial 
+  x^4}=0 . \tag{7}$$ 
+
+  Because this is a fourth-order differential equation in $x$, we will need two 
+  boundary conditions at each end of the beam. We are interested in the case 
+  with free ends, so we obtain boundary conditions from the fact that both the 
+  bending moment and the shear force must be zero: this requires 
+
+  $$\dfrac{\partial^2 w}{\partial x^2}=0 \mathrm{~~and~~} \dfrac{\partial^3 
+  w}{\partial x^3}=0~~\mathrm{(free~boundary).} \tag{8}$$ 
+
+  Now we are ready to find the modes of a free-free beam, the case we are 
+  interested in with both ends free. As usual, we start by looking for 
+  solutions of the form 
+
+  $$w(x,t) = u(x) e^{i \omega t} \tag{9}$$ 
+
+  so that eq. (7) requires 
+
+  $$EI\dfrac{d^4 u}{d x^4}= \rho A \omega^2 u. \tag{10}$$ 
+
+  The general solution to this equation can be written 
+
+  $$u=C_1 e^{ikx} + C_2 e^{-ikx} + C_3 e^{kx} + C_4 e^{-kx} \tag{11}$$ 
+
+  where $C_1 -- C_4$ are arbitrary constants and the wavenumber $k$ satisfies 
+
+  $$k^4 = \dfrac{\rho A}{EI}\omega^2 . \tag{12}$$ 
+
+  The terms in eq. (11) can be described physically. The terms $e^{i \omega t} 
+  e^{\pm i k x}$ describe sinusoidal waves which travel along the beam, to the 
+  left or to the right, at a speed $\omega/k$. These are directly similar to 
+  the waves found on the stretched string in section 2.1.1. The terms $e^{i 
+  \omega t} e^{\pm k x}$ describe something new. These are disturbances on the 
+  beam which do not travel, but simply decay exponentially in one direction or 
+  the other along the beam. These are known as evanescent waves or near fields. 
+
+  Equally well, instead of (11) we could write the general solution in the 
+  equivalent form 
+
+  $$u=K_1 \cos kx + K_2 \sin kx + K_3 \cosh kx + K_4 \sinh kx \tag{13}$$ 
+
+  with a different set of constants $K_1 -- K_4$. This form turns out to be 
+  more convenient for calculating the mode shapes. Applying the two boundary 
+  conditions (8) at $x=0$ leads immediately to $K_1=K_3$ and $K_2=K_4$. 
+  Enforcing the same two conditions at $x=L$ then requires 
+
+  $$K_1 (-\cos kL +\cosh kL) +K_2 (-\sin kL +\sinh kL)=0 \tag{14}$$ 
+
+  and 
+
+  $$K_1 (\sin kL +\sinh kL) + K_2(-\cos kL +\cosh kL)=0. \tag{15}$$ 
+
+  These two simultaneous equations for $K_1$ and $K_2$ both have zero on the 
+  right-hand side, so they can only have non-zero solutions if the determinant 
+  of the $2 \times 2$ matrix of coefficients is zero. This requires 
+
+  $$(\cosh kL -\cos kL)^2 = (\sinh kL + \sin kL)(\sinh kL -- \sin kL) 
+  \tag{16}$$ 
+
+  which simplifies after a little algebra to the requirement 
+
+  $$\cos kL \cosh kL =1. \tag{17}$$ 
+
+  The roots of this equation give the only possible values of $k$, which then 
+  lead to corresponding values of $\omega$ via eq. (12). These are the natural 
+  frequencies. Having found the value of $k$ for a given mode, the mode shape 
+  can be found by substituting back in the equations for the four constants 
+  $K_1 -- K_4$ from the earlier calculation. 
+
+  We cannot solve eq. (17) exactly to obtain the natural frequencies. However, 
+  we can easily obtain an approximate answer using a graphical approach. 
+  Rearrange eq. (17) in the form 
+
+  $$\cos kL =1/\cosh kL. \tag{18}$$ 
+
+  We can easily sketch the left- and right-hand side functions; intersections 
+  of the two plots will give the roots. Figure 2 shows the result. As the value 
+  of $kL$ increases, $\cosh kL$ increases rapidly so the intersections get 
+  closer and closer to the zeros of $\cos kL$. This gives an approximate 
+  expression for $n$th intersection: 
+
+  $$kL \approx (n +1/2) \pi \tag{19}$$ 
+
+  and the corresponding natural frequency is 
+
+  $$\omega_n \approx \left[ \dfrac{(n+1/2)\pi)}{L}\right]^2 
+  \sqrt{\dfrac{EI}{\rho A}} = \left[ \dfrac{(n+1/2)\pi)}{L}\right]^2 
+  \sqrt{\dfrac{Eh^2}{12 \rho}} \tag{20}$$ 
+
+  where the final expression is for the rectangular section. 
+
+  \fig{figs/fig-65ab5053.png}{Figure 2. Plots of $\cos kL$ (in red) and 
+  $1/\cosh kl$ (in blue). The intersections, shown ringed, give the solutions 
+  of eq. (17)} 

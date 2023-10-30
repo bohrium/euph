@@ -1,0 +1,90 @@
+  An enhanced model for free-reed behaviour was proposed by Millot and Baumann 
+  [1]. It adds one extra ingredient to Fletcher's model (discussed in detail in 
+  section 11.6.1), as sketched in Fig.\ 1. A tube of length $L_2$ and 
+  cross-sectional area $S_2$ is placed in between the volume $V$ and the reed. 
+  The pressure in the main volume, $p_1(t)$, might now be different from the 
+  pressure at the inner face of the reed, $p_2(t)$. The other variables remain 
+  the same as in the discussion of section 11.6.1: flow rate $u(t)$ past the 
+  reed, reed tip displacement $x(t)$, reed properties $\omega_r$, $Q_r$ and 
+  $m$, and the reed area function $F(x)$. 
+
+  Most of the equations are virtually unchanged. The Bernoulli expression 
+  relating to the flow past the reed involves the pressure $p_2$: 
+
+  $$p_2 \approx \dfrac{\rho_0 u^2}{2 C^2 F(x)^2} . \tag{1}$$ 
+
+  The same is true for the equation describing the reed dynamics: 
+
+  $$\ddot{x}+\dfrac{\omega_r}{Q_r}\dot{x}+\omega_r^2 x = K_p p_2 . \tag{2}$$ 
+
+  The equation relating the rate of change of pressure inside the chamber to 
+  the net volume flow rate of air into it obviously involves the pressure 
+  $p_1$: 
+
+  $$\dot{p_1}=\dfrac{\rho_o c^2}{V}[U_0 -u -- K_x \dot{x}] . \tag{3}$$ 
+
+  Finally, we use the ``Helmholtz resonator'' approximation to treat the 
+  ``plug'' of air in the new tube as if it was a rigid mass: Newton's law then 
+  states 
+
+  $$S_2(p_1-p_2)=\rho_0 S_2 L_2\dfrac{d}{dt}\left(\dfrac{u+K_x \dot{x}}{S_2} 
+  \right) . \tag{4}$$ 
+
+  This gives an equation linking $p_1$ and $p_2$. We can re-write it slightly 
+  by making use of the formula for the Helmholtz resonance frequency of the 
+  chamber and tube, from section 4.2.1: 
+
+  $$\omega_h^2=\dfrac{c^2 S_2}{VL_2} . \tag{5}$$ 
+
+  Equation (4) then becomes 
+
+  $$p_1-p_2=\dfrac{\rho_0 c^2}{\omega_h^2 V} \dfrac{d}{dt}\left(u+K_x \dot{x} 
+  \right) . \tag{6}$$ 
+
+  We then follow the same procedure as in section 11.6.1, setting 
+  $p_1=\bar{p_1}+ p'_1 e^{i \omega t}$ and so on. The only real change is the 
+  new equation (6), which is linear and so is easy to deal with. After a little 
+  algebra, we can reach a result that is almost identical to equation (16) from 
+  section 11.6.1: 
+
+  $$\left[ -\omega^2 + i \omega \dfrac{\omega_r}{Q_r} + \omega_r^2 \right]x' = 
+  -K_p \dfrac{i \omega D + E}{i \omega A' + B} x'$$ 
+
+  $$=-K_p \dfrac{(i \omega D + E)(-i \omega A' + B)}{\omega^2 A'^2 + B^2} x' . 
+  \tag{7}$$ 
+
+  The only difference is that the constant $A$ has been replaced by 
+
+  $$A'=\dfrac{A}{1-\omega^2/\omega_h^2}=\dfrac{V}{\rho_0 c^2 
+  (1-\omega^2/\omega_h^2)} . \tag{8}$$ 
+
+  The new condition for instability is thus 
+
+  $$\dfrac{\omega_r}{Q_r} < K_p\dfrac{EA'-DB}{\omega_r^2 A'^2 + B^2} \tag{9}$$ 
+
+  where $A'$ is evaluated at $\omega=\omega_r$, using the same approximation as 
+  before that the reed generally vibrates close to its natural frequency. The 
+  only terms in this equation which are not necessarily positive are $A'$ and 
+  $E=U_0 \dfrac{\bar{F}'}{\bar{F}}$. But notice that these terms appear as the 
+  product $A'E$, so if the signs of both are changed, the stability threshold 
+  will be exactly the same. Instability requires this product to be positive, 
+  so either an opening reed with $\omega_r < \omega_h$ or a closing reed with 
+  $\omega_r > \omega_h$. 
+
+  We can relate this pattern to Fletcher's impedance formulation of the 
+  stability condition, described at the end of section 11.6.1. The input 
+  impedance that would be measured at the reed, for the Millot model, can 
+  easily be evaluated from the equations above: the result is 
+
+  $$Z_M(\omega) = \dfrac{\rho_0 c^2}{i \omega 
+  V}\left[1-\omega^2/\omega_h^2\right] .\tag{10}$$ 
+
+  We saw in section 11.6.1 that for a closing reed, with $\bar{F}' < 0$, the 
+  imaginary part of the impedance must be positive for instability, whereas for 
+  an opening reed it must be negative. Equation (10) then shows that if 
+  $\omega_h < \omega$, a closing reed could be unstable, whereas if $\omega_h > 
+  \omega$ then the opening reed could be unstable. 
+
+  \sectionreferences{}[1] L. Millot and Cl. Baumann, “A proposal for a minimal 
+  model for free reeds”, Acta Acustica united with Acustica \textbf{93}, 
+  122—144 (2007). 

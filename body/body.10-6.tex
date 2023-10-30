@@ -1,0 +1,271 @@
+
+
+  For the final instalment of this chapter on measurements, we will give a 
+  brief summary of some ways to see sound fields and other air-flow phenomena 
+  with musical connections. There are no easy ways to do this: all the methods 
+  to be discussed involve laboratory-grade hardware, and most of them involve 
+  serious computing power as well. 
+
+  We will start with ways to visualise acoustic fields. The first is the 
+  simplest: if we have a steady source of sound, we can measure the sound with 
+  microphones at a large number of places (keeping careful track of the 
+  relative phase of all the recordings). We can then simply plot the sound 
+  pressure at all the points. In practice, we probably don’t measure every 
+  position with a separate microphone: we can use a small number of 
+  microphones, or even just a single microphone, and move them around to cover 
+  the desired measurement grid. 
+
+  Figure 1 shows an example. A trombone was driven sinusoidally, by a 
+  loudspeaker at the mouthpiece end, in an anechoic chamber to eliminate wall 
+  reflections. A vertical line of 23 microphones was used to record the sound 
+  at different distances away from the trombone bell. The lowest microphone in 
+  the line was always on the axis of the trombone bell, while the others were 
+  spaced out above it. These signals, phase-coordinated by the sinusoidal drive 
+  signal, were then combined to produce the plots. 
+
+  Four different frequencies are shown: lower ones in the top row, higher ones 
+  in the bottom row. At the lowest frequency, the contour lines of pressure in 
+  the spreading sound wave are almost quarter-circles: the wavelength is a lot 
+  longer than the diameter of the bell, and the sound field is approximately 
+  omnidirectional. As the frequency goes up, the sound is concentrated 
+  progressively into a “beam” along the axis. At the same time you can see the 
+  wavelength getting shorter. 
+
+  There is another, more sophisticated, way to make use of information from a 
+  grid of microphone measurements, called nearfield acoustic holography, or 
+  “NAH”. We are more familiar with holography applied to light waves and visual 
+  images, but sound waves obey the same mathematical wave equation and the 
+  approach carries over to acoustics. Indeed, it works better with acoustics. 
+
+  The reason is the very high frequency of light waves, compared to sound 
+  waves. It is not feasible to record light signals in enough detail to 
+  preserve the phase information. In optical holography, this problem is 
+  overcome by mixing light from the test object with a reference beam: the 
+  interference pattern conveys some phase information. But in acoustic 
+  holography, it is perfectly possible to record full information from all the 
+  microphone positions. 
+
+  A typical test setup for NAH is sketched in Fig.\ 2. There is a rectangular 
+  grid of microphone positions positioned parallel to the top plate of a 
+  guitar, a very short distance above it. Signals are recorded at all these 
+  positions when the guitar is excited. This excitation could be with an 
+  impulse hammer, a shaker, or through the strings: anything that is accurately 
+  repeatable, or measurable so that each signal can be turned into a frequency 
+  response function. 
+
+  These signals are then processed in a way that is a kind of mirror image of 
+  something we have met before. Back in section 4.3.2 we looked at the way 
+  sound is radiated from a vibrating plate. Provided the plate is flat, and 
+  surrounded by a rigid baffle, the radiated sound at any position can be 
+  calculated. Each small piece of the vibrating plate behaves like a monopole 
+  sound source, and we know exactly how the resulting sound field behaves (see 
+  section 4.3.1). All we need to do is add up these monopole contributions from 
+  each little piece of the plate, in the form of an integral called the 
+  Rayleigh integral. 
+
+  So in summary, if the motion is known at every point in a plane, we can 
+  compute the resulting sound field at any position in space. NAH takes 
+  advantage of a corresponding property: provided the sound pressure waveform 
+  is known at every point in a plane, there is an integral formula to 
+  reconstruct the sound field at other positions, and also to reconstruct the 
+  motion of the sound source, in our case the vibration of the guitar top 
+  plate. The mathematical details are a little more complicated than in the 
+  case of the Rayleigh integral: see the next link for a brief description. For 
+  the method to work at its best, the measurement plane has to be very close to 
+  the source plane: this is where the “nearfield” gets into the name, as 
+  explained in the link. 
+
+  NAH was developed around 1980, and one of the early applications was indeed 
+  to guitar vibration using a measurement setup very much like Fig.\ 2 [4]. We 
+  can show some results from this early study. A $16 \times 16$ grid of 
+  microphones was used, and the guitar was excited by driving one of the 
+  strings electromagnetically. The string’s tuning was then adjusted to give 
+  results at different frequencies. Figure 3 shows results for the 
+  reconstructed velocity over the guitar top, at a range of frequencies. One 
+  thing is immediately clear: this method of reconstructing the “plate 
+  vibration” also gives a direct visualisation of the motion of the “Helmholtz 
+  piston” in the soundhole. 
+
+  At the lowest frequencies, the images are indeed dominated by the soundhole 
+  piston. This is to be expected: the “air resonance” of a typical guitar is 
+  around 100~Hz, so this mode will dominate for all frequencies in the top row 
+  of the figure. As frequency rises we see more motion in the top plate, but it 
+  is still accompanied by significant soundhole motion over the entire 
+  frequency range explored here. 
+
+  These results link to something we saw in section 10.5. Figures 14, 17, 20 
+  and 23 in that section showed animations of modes of a violin body, which 
+  included a representation of the airflow through the f-holes. Those results, 
+  due to George Bissinger, were obtained by combining his modal tests of the 
+  mechanical parts of the violin body with NAH results from a measurement array 
+  just covering the region of the f-holes. 
+
+  Figure 4, from the same guitar study [2], illustrates another aspect of NAH 
+  reconstruction. The chosen frequency here corresponds to a strong modal 
+  response of the guitar, described by the authors as a dipole mode. It 
+  probably has a mode shape somewhat similar to the lower left plot of Fig.\ 4 
+  in section 5.3, but that figure related to a classical guitar whereas the 
+  present results are for a steel-string guitar, so the correspondence of modes 
+  may not be exact. Figure 4 shows the sound field, reconstructed at several 
+  distances away from the guitar top. The arrows show the magnitude and 
+  direction of acoustic energy flow at each point. 
+
+  The upper plot shows results on a plane perpendicular to the guitar top and 
+  aligned with the long axis of the instrument. The lower plot shows a section 
+  on a transverse plane through the bridge. The upper plot shows sound energy 
+  mainly originating at the soundhole, and radiating radially outwards. The 
+  lower plot shows something less obvious: the dipole nature of the top-plate 
+  motion results in sound energy coming out of the left half of the top, and 
+  some of it looping round and going back into the top plate on the right-hand 
+  side. This a typical near-field effect: local motion, not leading to 
+  far-field sound radiation. 
+
+  The other NAH example we will show comes from the work of Lily Wang and 
+  Courtney Burroughs [3]. They surrounded the body of a violin with four planes 
+  of holographic measurements, each consisting of a $120 \times 120$ grid of 
+  microphone positions. These results allowed them to capture the full 
+  three-dimensional sound field around the violin. The instrument was bowed by 
+  a mechanical bowing machine with an endless loop of horsehair, providing 
+  steady excitation for as long as the measurement sequence required. 
+
+  Results were analysed separately for each harmonic of the bowed-string sound. 
+  The experimental technique produces a very large amount of data, and the full 
+  three-dimensional sound field is hard to visualise, so we will look at some 
+  sample plane cross-sections through the field. Figure 5 shows some results at 
+  the fundamental frequency of the open D string. Each plot shows sound 
+  intensity vectors, reconstructed on a plane not quite touching the surface of 
+  the violin. For the left-hand plot this plane is near the top plate, for the 
+  right-hand plot it is near the back plate. 
+
+  The frequency is close to the air resonance A0, so we expect the sound 
+  radiation to be dominated by breathing of the “f-hole pistons”. In these 
+  near-field reconstructions it can indeed be seen that the strongest sound 
+  intensity comes from the central region of the top plate. In the back view, 
+  there is little sound coming direct from the plate, but we see some sound 
+  “leaking round the corner” from the front, especially in the area of the 
+  c-bouts. In the far field, we already know that the sound radiation pattern 
+  must become essentially omnidirectional because the violin body is much 
+  smaller than the wavelength of sound at this frequency. 
+
+  The next pair of images relate to the sound field at the second harmonic of 
+  the open D string. Figure 6 shows a reconstruction corresponding to the 
+  left-hand image of Fig.\ 5, on a plane not quite touching the top plate. 
+  Figure 7 shows a different section through the same sound field, on a 
+  perpendicular plane aligned on the long axis of the violin. 
+
+  Finally, Fig.\ 8 shows the sound field at a higher frequency, the third 
+  harmonic of the open A string. The figure shows the same section as in Fig.\ 
+  7, and it can be seen immediately that the sound field is much more 
+  directional. We are only seeing that field fairly close to the violin, but at 
+  this frequency of 1320~Hz the violin body is no longer small compared to the 
+  wavelength of sound, so that we can expect the far field also to exhibit some 
+  directionality. 
+
+  Now we turn to methods for visualising fluid flows, to see things that will 
+  be important in the next chapter when we look in detail at wind instruments. 
+  The oldest approach is called schlieren photography, and it pre-dates the 
+  computer era. It is an optical technique that relies on the fact that if the 
+  density of air changes, then its refractive index also changes. This is a 
+  familiar effect: one way to change the density of air is to heat it, and the 
+  optical effects of heated air give rise to shimmering heat haze, and to 
+  desert mirages. But sound waves also modify the density of air, and schlieren 
+  photography can be used to visualise some acoustical phenomena. It uses an 
+  ingenious optical setup to make the associated changes in refractive index 
+  visible as images. 
+
+  Figure 9 shows one setup for schlieren photography. A light source shines on 
+  a mirror, which turns the spreading ray pattern into a parallel beam. In the 
+  absence of any disturbance, these rays (the blue lines) would then hit 
+  another mirror and be focused back down to a point. A knife-edge is placed at 
+  this point. Now the test object is inserted into the parallel beam, at the 
+  same distance from the second mirror as the knife edge. This object may 
+  deflect some of the rays, indicated by the red lines. 
+
+  These deflected rays may or may not be able to get past the knife edge — the 
+  red dotted lines show rays that are blocked. The red rays are then collected 
+  by a camera lens and focused on the film or sensor. The brightness of the 
+  resulting image will be modulated, according to what proportion of the rays 
+  are able to get past the knife edge, leading to a grey-scale image that 
+  reveals the density variations caused by the test object. In a variation of 
+  the technique, the knife edge may be replaced by a filter with graduated 
+  colour, leading to a coloured image. See \tt{}this wiki page\rm{} for more 
+  detail about the variety of schlieren techniques, and for more images. 
+
+  It is useful to see a couple of non-musical images to illustrate the method 
+  in action. Figure 10 shows a coloured image of the heat rising above a hot 
+  soldering iron. Figure 11 takes us a step closer to our real purpose, because 
+  it is showing density variations caused by pressure changes in the air. This 
+  is a schlieren image of a speeding bullet. Because the bullet’s speed is 
+  supersonic, shock waves are generated at the leading and trailing edges, 
+  giving the obvious V-shaped patterns. Shock waves like this are the cause of 
+  the “sonic boom” you hear when a supersonic aircraft flies past you. They are 
+  also the cause of the ``crack'' of a whip: when someone cracks a whip, they 
+  launch a wave or loop that travels down the whip, and it speeds up until some 
+  part of the whip moves at supersonic speed and generates a shock wave. 
+
+  Figure 12 shows a music-related example of a shock wave, made visible by 
+  schlieren imaging. A trumpet is being driven, loudly, by a loudspeaker at the 
+  mouthpiece end. As we will see in section 11.5, a sufficiently 
+  large-amplitude wave propagating down the long tube of the trumpet can 
+  “sharpen up” and generate a shock wave. This effect is responsible for the 
+  characteristic “brassy” sound of a trumpet or trombone when played loudly. 
+  The end of the trumpet bell is visible at the extreme left of the images, and 
+  a shock wave can be seen emerging and travelling off to the right in the 
+  successive images of the set. 
+
+  Figure 13 shows an example of a different kind of music-related air flow. As 
+  we will see in section ?, the physical mechanism of sound production in 
+  instruments like the flute or recorder involves an interaction between the 
+  acoustic pressure inside the pipe, and an air jet impinging on a wedge with a 
+  sharp edge. The dynamic behaviour of such an air jet is complicated. The jet 
+  switches between the two sides of the wedge during each cycle of the 
+  oscillation, and in the process it usually sheds vortices. Both aspects of 
+  the behaviour can be seen in this sequence of schlieren images. 
+
+  Another traditional method of visualising flow patterns involves “seeding” 
+  the flow with very light particles. In a photograph with a longish exposure, 
+  the particles produce visible trails that mark out the streamlines of the 
+  flow. A modern upgrading of this approach is called particle image 
+  velocimetry, or PIV for short. If two short-exposure images are captured, 
+  separated by a very short time interval, then it is possible to process the 
+  images to reveal the magnitude and direction of the flow velocity vector at 
+  each point. 
+
+  If the particles are sparse, this can be done by tracking individual 
+  particles. More commonly, a higher density of particles is used, and the 
+  computer looks for the velocity which maximises the correlation between the 
+  two images over a small region. This is repeated over a grid of small 
+  regions, giving a map of the flow velocity. Figure 14 shows an example. The 
+  main image shows a measurement of flow at the end of a vertical pipe, driven 
+  sinusoidally by a loudspeaker. The position of the pipe exit and the top part 
+  of the pipe wall can be seen at the bottom of the plot. 
+
+  The grid of arrows show the deduced pattern of velocity. This reveals the 
+  shedding of vortices at this particular moment in the cycle of the sinusoidal 
+  response. The two smaller images show different aspects of this flow field: 
+  the left-hand image shows the streamlines (in black) and the flow speed (in 
+  colours); the right-hand image shows the vorticity of this flow. We will 
+  explain vorticity in section ?, but roughly speaking the colour scale encodes 
+  the local rotation implied by the measured velocity field: clockwise in blue, 
+  anticlockwise in red. 
+
+
+
+  \sectionreferences{}[1] J. Kemp, A. López-Carromero and D. M. Campbell, 
+  “Pressure fields in the vicinity of brass instrument bells measured using a 
+  two dimensional grid array and comparison with multimodal models”, 
+  Proceedings of the 24th International Congress on Sound and Vibration, London 
+  (2017). 
+
+  [2] W. Y. Strong, T. B. Beyer, D. J. Bowen, E. G. Williams and J. D. Maynard, 
+  “Studying a guitar’s radiation properties with nearfield holography”, Journal 
+  of Guitar Acoustics \textbf{6}, 51—59 (1982). 
+
+  [3] Lily M. Wang and Courtney B. Burroughs, “Acoustic radiation from bowed 
+  violins”, Journal of the Acoustical Society of America \textbf{110}, 543—555 
+  (2001). 
+
+  [4] A. López-Carromero, D. M. Campbell, J. Kemp and P.L. Rendon, “Validation 
+  of brass wind instrument radiation models in relation to their physical 
+  accuracy using an optical schlieren imaging setup”, Proceedings of Meetings 
+  in Acoustics, \textbf{28}, 035003 (2016). 

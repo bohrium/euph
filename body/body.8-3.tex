@@ -1,0 +1,232 @@
+
+
+  A lot of the technical literature on nonlinear systems uses an approach that 
+  allows some geometrical insight into the behaviour, at least for systems with 
+  smooth nonlinearity. This approach is based on an idea called phase space. We 
+  will give an introduction in this section, based on the simplest possible 
+  example. Suppose we have a nonlinear oscillator with a single mass, or more 
+  generally a single degree of freedom. For any such system, if you specify the 
+  position and the velocity at the moment when you set things off, that is 
+  sufficient information to determine the subsequent free motion. (The 
+  technical reason is that the motion will obey some version of Newton’s law, 
+  and so the governing equation will be of second order, requiring two initial 
+  conditions to determine a unique solution.) 
+
+  We can picture this in a two-dimensional plot, with position and velocity as 
+  the two axes, as sketched in Fig.\ 1. Our initial position and velocity, at 
+  time $t=0$ say, is represented by a dot in this plane. The subsequent motion 
+  of the system, for $t>0$, can then be plotted as a trajectory starting from 
+  that point. If we think of running time backwards, we could create the other 
+  half of the trajectory, coming from times $t<0$ and reaching our point at 
+  $t=0$. But we could have chosen a different position and velocity for our 
+  initial spot, and we could have done that anywhere in this plane. So there is 
+  a trajectory passing through every point, and there is only one. To put that 
+  in different words, the diagram must be filled up with a pattern of 
+  trajectories, and they cannot cross. This diagram is called the phase plane, 
+  or more generally phase space. The pattern of trajectories is the phase 
+  portrait of the particular system we choose to study. It captures in one 
+  picture every possible motion of the system. 
+
+  \fig{figs/fig-23fcd867.png}{Figure 1. Sketch of a trajectory in the phase 
+  plane} 
+
+  A good example to illustrate the idea is the pendulum discussed in section 
+  8.2.1 and shown again here in Fig.\ 2. Its angle of swing is described by an 
+  angle $\theta$ (Greek ``theta'', remember). We will use this angle for the 
+  horizontal axis of our phase portrait, and its rate of change $d\theta / dt$ 
+  as the corresponding ``velocity'' on the vertical axis. 
+
+  \fig{figs/fig-80063d6c.png}{Figure 2. A pendulum} 
+
+  The phase portrait for the pendulum appears in Fig.\ 3. This plot doesn't 
+  show arrows on the trajectories, but it is easy to work out where the arrows 
+  need to point. When we are above the middle of the plot, that means that the 
+  velocity $d\theta / dt$ is positive. In other words, the angle $\theta$ is 
+  increasing, so all the arrows would point towards the right. In the lower 
+  half, $d\theta / dt$ is negative so $\theta$ is decreasing and all the arrows 
+  would point to the left. 
+
+  \fig{figs/fig-29844698.png}{Figure 3. Phase portrait of a pendulum} 
+
+  The values marked on the horizontal axis may be confusing if you aren't used 
+  to thinking of angles in radians, but the code is very simple. One complete 
+  revolution of the pendulum takes $\theta$ through an angle of $2\pi$ radians. 
+  The value $\theta=0$ corresponds to the pendulum hanging vertically 
+  downwards. The values $-2\pi$, $2\pi$ and so on are simply further 
+  representations of the same position, after a whole number of rotations. The 
+  values $\theta = -3\pi,-\pi,\pi,3\pi$ and so on all indicate the 
+  vertical-upwards position. 
+
+  Figure 3 shows trajectories of two different shapes. Along the middle of the 
+  plot there are closed-loop trajectories, whereas in the upper and lower 
+  portions there are undulating lines that cross the entire plot. These 
+  correspond to the two types of motion you should expect for a pendulum. The 
+  closed loops show oscillation, back and forth about the position at the 
+  bottom of the swing. The undulating lines in the upper part (with ``arrows of 
+  time'' pointing to the right, remember) show the pendulum continuously 
+  rotating, in the direction of increasing $\theta$ and so anticlockwise in the 
+  view of Fig.\ 2. The undulating lines in the lower half have $\theta$ 
+  decreasing, so they describe clockwise rotation. These three types of motion 
+  are summarised in Fig.\ 4. 
+
+  \fig{figs/fig-70b6a0d6.png}{Figure 4. The three types of qualitatively 
+  different motion of the pendulum, indicated in the phase plane. They are 
+  separated by curves emanating from saddle points. Such a curve is called a 
+  separatrix.} 
+
+  The curves that separate motion of different types are obviously important. 
+  These curves are trajectories with a very special property, but to see what 
+  that is we should first back off a little and address a more general issue. 
+  There are a few points in Fig.\ 3 which are special, because they correspond 
+  to possible equilibrium positions of the pendulum. The pendulum has two 
+  equilibrium positions. The obvious one is at $\theta=0$, where the pendulum 
+  can hang vertically downwards without any motion. But there is another, where 
+  the pendulum sits vertically upwards. In principle the pendulum could balance 
+  in that position without moving, but in practice you don’t see it doing so 
+  because this equilibrium position is unstable: you only have to tweak the 
+  position away from the perfect vertical by the smallest amount, and it will 
+  topple and start to swing. The mathematics behind stability and instability 
+  of the pendulum is explained in the next link. 
+
+  These equilibrium positions each appear multiple times in Fig.\ 3, because we 
+  have “unwrapped” the angle $\theta$ to allow for the possibility of rotating 
+  motion. The stable equilibrium corresponds to the point at the centre of each 
+  of the sets of closed loops: at $\theta=0,2\pi,4\pi$ and so on, on the 
+  mid-line of the plot where $d\theta/dt=0$ because the pendulum is stationary. 
+  The unstable equilibrium also occurs on that mid-line, at the positions 
+  $\theta=-\pi,\pi$ and so on. These are the only points in the plot where we 
+  seem to have trajectories that cross. But I said earlier that this couldn’t 
+  happen, so what is going on? We will see in a moment that they don’t in fact 
+  cross, but they are important for another reason. 
+
+  The behaviour of the phase portrait in the vicinity of an equilibrium point 
+  can be analysed — at least for a system like this one where the nonlinearity 
+  is smooth. The details are explained in the next link, but the main result 
+  can be shown in pictures. For an undamped system like our pendulum, there are 
+  only two types of behaviour that can occur near an equilibrium point (also 
+  called a singular point by the mathematicians). The two corresponding phase 
+  portraits are shown, in a rather general form, in Fig.\ 5. On the left, we 
+  see what is called a centre: it features a set of closed loops, and describes 
+  oscillation around the equilibrium point. Behaviour roughly like this will 
+  always occur near a stable equilibrium point of any undamped system. On the 
+  right we see a saddle point, which is the generic behaviour near any unstable 
+  equilibrium point. 
+
+  We can immediately recognise these two patterns in Fig.\ 3. Now look closely 
+  at the right-hand plot of Fig.\ 5, for the saddle point, and pay close 
+  attention to the pattern of arrows. The plot does indeed seem to show a pair 
+  of trajectories crossing in the middle, but the arrows tell a different 
+  story. One of these lines has inward-pointing arrows either side of the 
+  “crossing”, while the other has outward-pointing arrows. In the context of 
+  our pendulum, we can describe what is happening. The two inward-point arrows 
+  indicate the trajectories in which you propel the pendulum upwards with just 
+  enough energy that it approaches the unstable equilibrium, but never quite 
+  gets there. You could do that either from the left-hand side or from the 
+  right-hand side: these are the two inward-pointing segments. The 
+  outward-pointing pair show the converse behaviour: the pendulum toppling 
+  either to the right or to the left, after an infinitesimally small nudge away 
+  from the unstable equilibrium. So what we have is four trajectories, not two, 
+  and there is no crossing. The equilibrium point at the centre is a trajectory 
+  all by itself. 
+
+  Now look back at Fig.\ 4: the curves dividing the different types of 
+  behaviour are precisely the trajectories we have just been talking about, 
+  coming into and out of the saddle points marking the unstable equilibrium of 
+  the pendulum. Such a trajectory is known in the jargon of the subject as a 
+  separatrix, precisely because they always have this property of separating 
+  behaviour with different qualitative descriptions. We begin to see the power 
+  of the phase portrait: it gives a way to encapsulate everything the system is 
+  capable of doing, and it has a built-in method for sorting out regions with 
+  interestingly different behaviour. 
+
+  We can take our pendulum example a little further. What happens if we 
+  introduce some damping to our pendulum, so that the motion will eventually 
+  die away? The phase portrait must change to reflect this fact. Nothing much 
+  happens near the saddle points: they are still unstable, and the qualitative 
+  behaviour stays the same. But the centre that previously described the 
+  behaviour near the stable equilibrium turns into a stable spiral. The 
+  corresponding phase portrait is illustrated in general form in Fig.\ 6: it 
+  should be pretty much what you were expecting, showing trajectories 
+  spiralling in towards the equilibrium point. 
+
+  \fig{figs/fig-c7e4f900.png}{Figure 6. Phase portrait of a stable spiral} 
+
+  A portion of the phase portrait of the damped pendulum is shown in Fig.\ 7. 
+  Only one ``cell'' of the repeating pattern is shown, because you need to be 
+  able to see the pattern clearly enough to follow some of the trajectories. It 
+  remains true that all arrows in the upper half point to the right, and all 
+  arrows in the lower half point to the left. Now look carefully to see what 
+  has happened to the separatrix coming out of the saddle point in the middle 
+  of the left-hand side of the plot. Instead of heading towards the next saddle 
+  point, as it did in Fig.\ 3, it spirals inwards. That is exactly what we 
+  expect on physical grounds. Without damping, if you nudge the pendulum very 
+  gently away from the unstable equilibrium, it has just enough energy to do 
+  one complete revolution and come (more or less) back to the vertical 
+  position. But with damping, it loses energy as it moves so that it doesn't 
+  have enough to get back to the vertical. It swings back and forth with 
+  gradually decreasing amplitude. 
+
+  \fig{figs/fig-16320d6a.png}{Figure 7. Portion of the phase portrait of a 
+  pendulum with some damping added} 
+
+  So what about the claim that the separatrices (that's the plural of 
+  ``separatrix'') divide regions with different qualitative behaviour? Well, 
+  you have to think rather carefully about what Fig.\ 7 would look like if we 
+  extended it to include more ``cells'' of the repeating pattern in the phase 
+  plane. There is a string of saddle points, and each one issues a separatrix 
+  heading upwards and rightwards in the top half of the plot. But these no 
+  longer look as if they join up as they did in Fig.\ 4: instead, they nest 
+  inside each other. In the region of the phase plane between two successive 
+  separatrices of this type, you might describe the motion as ``doing two 
+  complete anticlockwise rotations before spiralling in''. The next region 
+  above this would do three complete rotations, then four, and so on. There is 
+  a matching set of nesting separatrices in the lower half of the phase plane, 
+  and of course those mark out regions with two, or three, or four clockwise 
+  rotations before spiralling in. 
+
+  Finally, it is interesting to return to the Duffing equation, discussed in 
+  section 8.2, and look at its phase portrait. The mathematical details are 
+  given in the next link, but the key thing to remember is that this equation 
+  describes an oscillator with a spring that has a cubic term added to the 
+  linear term describing a linear Hooke's law spring. For the case with a 
+  hardening spring, the phase portrait is rather boring: the only equilibrium 
+  point is at the origin in the phase plane, and the whole plane is filled with 
+  closed loops characteristic of a centre. Figure 8 shows a plot. 
+
+  \fig{figs/fig-ae432bad.png}{Figure 8. Phase portrait of the Duffing equation, 
+  with a positive linear spring and a hardening nonlinear term.} 
+
+  But if we allow the linear component of the spring to have negative 
+  stiffness, something dramatic happens. There are now three equilibrium 
+  points: a saddle point and two centres. The resulting phase portrait is 
+  illustrated in Fig.\ 9. The two centres represent stable equilibrium, but the 
+  saddle point is an unstable equilibrium. Now, you may think this is a silly 
+  example because negative springs are non-physical. You would be right, if you 
+  are thinking purely about mechanical systems. But if you allow the system to 
+  include magnets, you can easily make something that behaves like this. 
+  Imagine a pendulum with a magnet at the bottom, swinging over a table which 
+  has a second, repelling, magnet fixed to it, right underneath the pivot of 
+  the pendulum. The magnetic repulsion acts like a negative spring, and if it 
+  is strong enough the pendulum can't hang vertically downwards. But it can sit 
+  either to the left or to the right, and it could oscillate about either of 
+  those positions: just what Fig.\ 9 suggests. 
+
+  \fig{figs/fig-8ca64f88.png}{Figure 9. Phase portrait of the Duffing equation 
+  with a negative linear spring and a hardening nonlinear term} 
+
+  We can learn something interesting about the behaviour in Figs.\ 8 and 9 if 
+  we plot a graph of the position of the equilibrium points against the 
+  stiffness of the linear component of the spring. The result is plotted in 
+  Fig.\ 10. When the spring stiffness is positive, there is only one solution 
+  as we saw in Fig.\ 8. When it is negative there are three, as we saw in Fig.\ 
+  9. The outer pair are stable, shown in solid lines. The middle one, shown as 
+  a dashed line, is the unstable equilibrium associated with the saddle point. 
+  At the centre of the plot we see the transition between the two. This pattern 
+  is called, reasonably enough, a pitchfork bifurcation. Plots like Fig.\ 10 
+  are called bifurcation diagrams, and they are often useful to summarise the 
+  different regimes that a nonlinear vibrating system can show. 
+
+  \fig{figs/fig-4f33b713.png}{Figure 10. Bifurcation diagram for the Duffing 
+  equation. Stable equilibria are shown as solid lines, unstable equilibria by 
+  a dashed line.} 
+

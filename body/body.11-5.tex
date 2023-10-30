@@ -1,0 +1,685 @@
+
+
+  We now turn our attention to brass instruments (bearing in mind that they are 
+  by no means always made of brass — the name is simply a convenient label for 
+  this family of instruments). You might imagine that we will need to develop 
+  new modelling to describe the physics of these instruments: they seem to be 
+  quite different from the reed instruments. But there is a surprise. When we 
+  come to computer simulations of brass instruments, we will find that a simple 
+  model can be made with only a tiny change to the program we have already used 
+  for reed instruments: just a single minus sign has to be introduced. 
+
+  \samsection{A. What do brass players do with their lips?} 
+
+  But this minus sign makes a crucial difference, and we should begin our 
+  discussion of brass instruments with this. We need to understand what a brass 
+  player does with their lips, in order to make the instrument sound. Figure 1 
+  shows a repeat of an earlier sketch, of the cup mouthpiece of a brass 
+  instrument with the player’s lips pressed against it. Figure 2 is another 
+  reminder, of the mouthpiece of a reed instrument like the clarinet, discussed 
+  extensively in earlier sections. 
+
+  For the clarinet, we were never in any doubt about the fact that, because the 
+  reed faces into the player’s mouth, the reed tends to blow shut when the 
+  player blows hard. What is the corresponding description of the lips of a 
+  brass player? The mechanical behaviour of lips, made of squashy flesh, seems 
+  less clear-cut than the behaviour of a small cantilever made of cane. Indeed, 
+  the scientific literature on brass instruments contains considerable 
+  discussion on this matter. But the consensus is that (for a reasonable first 
+  approximation, most reliable at lower frequencies) lips behave rather as 
+  indicated in Fig.\ 1: when they vibrate as the player ``buzzes'' them, they 
+  open into the mouthpiece, away from the player’s mouth, and if the player 
+  blows harder, the lips tend to open further rather than closing like a 
+  clarinet reed. This is where our crucial minus sign comes in. 
+
+  Having made this decision, the simplest model for how the lips behave is 
+  exactly the same as the clarinet model set out in section 11.3.1, apart from 
+  this change of sign. Figure 3 shows the result. The dashed red curve is the 
+  now-familiar nonlinear valve characteristic of a reed mouthpiece, and the 
+  blue curve is what we need for a model of brass playing. It is exactly the 
+  same curve, flipped over. I have shown the two curves as completely 
+  identical, for didactic purposes, but of course the parameter values relevant 
+  to lips (mass, stiffness and so on) will be somewhat different from those of 
+  a reed mouthpiece. So the functional form of the curve will be the same as 
+  for the reed, but the details will a little different. The specific lip 
+  parameters used here are taken from Table II of Velut et al. [1]. 
+
+  But now, if you can remember as far back as section 8.5 when we first 
+  explored the clarinet, you should spot a major snag. Figure 4 reminds you of 
+  three diagrams from that section. If a note is to get started on the clarinet 
+  from a gentle initial transient, it must grow from small amplitude. To 
+  visualise that, we thought about the tangent to the curve. As the player 
+  increases blowing pressure, the “operating point” on the valve curve moves to 
+  the left. All the time the tangent at this operating point has a negative 
+  slope, as in the first two diagrams in Fig.\ 4, the reed curve simply 
+  contributes extra energy dissipation. 
+
+  But when the operating point moves over the hump of the curve, as in the 
+  third diagram, the tangent line then slopes the other way, and it behaves 
+  like a source of energy rather than dissipating energy. When that energy 
+  source is strong enough to overcome the physical energy dissipation inside 
+  the clarinet tube, the note will start — this is the threshold condition, 
+  forming the lower edge of the wedge-shaped regions in most of the 
+  pressure-gap diagrams from sections 11.3 and 11.4. (The exception was where 
+  we noted evidence of an ``inverse bifurcation'', allowing a note to be 
+  sustained in a region where it would not be possible to start it from a 
+  gentle transient.) 
+
+  Returning to the blue curve in Fig.\ 3, we can see that this reversal of 
+  slope will never happen! The tangent to the curve always slopes the same way, 
+  so it will always be a source of energy dissipation. So how does a brass 
+  player ever get a note to start? Well, I cheated in the description I just 
+  gave of the clarinet, because I failed to mention an important assumption. 
+  The argument relied on the fact that the reed would displace in the same 
+  direction as the force acting on it from the pressure difference on the two 
+  sides. That seems intuitively obvious, but in fact it is only true at 
+  frequencies below the resonance frequency of the reed or lips. 
+
+  We need to recall something we saw way back in section 2.2, when we looked at 
+  the very simplest vibrating system: a mass on a spring, as sketched in Fig.\ 
+  5. If we apply a sinusoidal force to the mass, indicated by the arrow, then 
+  if the frequency of the force is below the resonance frequency, the effect of 
+  the spring dominates over the effect of the mass, and the mass moves in phase 
+  with the force. But the resonance frequency is determined by the condition 
+  that the effects of the spring and the mass are exactly equal. For a forcing 
+  frequency higher than that, the effect of the mass now dominates. The mass 
+  then moves in the opposite direction to the force: the phase has reversed. 
+
+  This phase reversal is the key to understanding what brass players do with 
+  their lips. We have seen that the slope of the tangent to the nonlinear valve 
+  characteristic is always negative. But if the player can arrange that their 
+  lip resonance is a little lower than the note they are trying to play, the 
+  negative sign of the tangent slope is “cancelled out” by the phase reversal. 
+  The negative slope then behaves like a source of energy, and the note can 
+  grow. So the physics suggests that brass players probably constantly adjust 
+  the tension in their lip muscles, to change the resonance frequency of the 
+  lips to lie just below each note they are trying to play. (Of course, that 
+  isn't how a player would describe the feeling of playing: they cannot be 
+  directly aware of the lip resonance frequency, only of the ``tightness'' of 
+  embouchure.) This, at least, is our working hypothesis. We will want to put 
+  it to the test by seeing some simulated examples. 
+
+  \samsection{B. Input impedance and the role of the mouthpiece} 
+
+  But before we start to look at simulation results, there are some important 
+  aspects of the acoustics of a typical brass instrument tube that we should 
+  look at. We have already said a bit about the mode shapes and resonance 
+  frequencies of such tubes, back in section 4.2. The shape of a typical brass 
+  instrument is sufficiently complicated that there is no equivalent of the 
+  super-idealised models we used when we started to look at the clarinet and 
+  the saxophone. We need to resort to computation, and Fig.\ 15 of section 4.2 
+  showed the result of a numerical solution of the “Webster horn equation”, 
+  with a bore profile chosen to resemble a brass instrument like a trumpet or 
+  trombone, with a cylindrical section followed by a gently flaring section, 
+  and finally an abruptly flaring bell. 
+
+  Those computed modes can be plugged directly into the formula derived in 
+  section 11.4.1, to estimate the input impedance. Our first step should be to 
+  check whether the result gives a reasonable match to a direct measurement of 
+  input impedance. We will look at the example of a trombone (with the slide in 
+  first position). The red curve in Fig.\ 6 shows the result of applying the 
+  procedure just described, and the blue curve shows a measurement on a real 
+  trombone (without its mouthpiece -- we come to that in a moment). The blue 
+  curve has been displaced downwards by 40~dB for clarity, but Fig.\ 7 shows a 
+  comparison of the same two impedances zoomed to the low-frequency range, 
+  superimposed without a shift. 
+
+  Figure 6 shows that both the real trombone and the simulated version have 
+  many resonances: the peaks are still going strong at the limit of the 
+  measured frequency range, 4~kHz. Figure 7 shows that the simulated version 
+  does a pretty good job of matching the measurement: the general level is 
+  accurately matched, the peaks line up reasonably well, and the peak-to-valley 
+  excursions are matched well, apart from the first few modes. For these low 
+  modes, the simulated version shows higher peaks and deeper valleys, compared 
+  to the measurement. 
+
+  Part of the reason for this discrepancy may be connected to inaccuracies in 
+  the impedance measurement at very low frequency, and also to the assumed 
+  damping in the simulated version. The model from section 4.2 gave undamped 
+  mode shapes and frequencies. In order to convert to a realistic impedance, 
+  the damping model described in section 11.1.1 has been used. This model 
+  represents energy losses associated with viscous and thermal losses along the 
+  walls of the pipe. The specific formula is widely quoted in the literature: 
+  as is shown in the next link it gives a good approximation to the correct 
+  damping factors, but of course there are small deviations in the details. 
+
+  Now we need to add a mouthpiece to the trombone. The shape of a typical brass 
+  mouthpiece is sketched in Fig.\ 8, and we can see in Fig.\ 9 that such a 
+  mouthpiece has a profound influence on the input impedance. Concentrate for 
+  the moment on the blue curve, a direct measurement of the same trombone as 
+  the blue curve in Fig.\ 6, now fitted with a mouthpiece. Instead of peaks 
+  extending all the way to high frequencies, we now see only a dozen or so 
+  strong peaks, after which the curve smooths out to a rather featureless 
+  shape. 
+
+  To see why this has happened, we turn to our simulated trombone and add a 
+  mouthpiece model to that. We can’t use the Webster equation directly for the 
+  mouthpiece, by simply changing the bore profile near the end of the tube. The 
+  reason is that the Webster equation is based on an approximation which 
+  assumes that the bore only varies slowly along the length of the instrument. 
+  But the mouthpiece bore profile, from Fig.\ 8, changes dramatically over just 
+  a few centimetres. 
+
+  So we use a different approach. The mouthpiece sketched in Fig.\ 8, once it 
+  has been closed at the left-hand side by the player’s lips, should remind you 
+  of something we saw earlier: the Helmholtz resonator, from section 4.2. The 
+  cup traps a volume of air, and the backbore makes a narrow entrance to that 
+  volume. The result will be a resonance frequency governed by the balance of 
+  the stiffness of the enclosed air, and the mass of the air in the backbore. 
+  For low frequencies, while the wavelength of sound is very long compared to 
+  the dimensions of the mouthpiece, the acoustical behaviour should be well 
+  approximated by a simple model based on this effective mass and stiffness. 
+  The next link described how such a model can be coupled to the input 
+  impedance of the tube without mouthpiece. The result of that calculation is 
+  the red curve in Fig.\ 9, and it can be seen that it looks reassuringly 
+  similar to the measured blue curve. 
+
+  The Helmholtz resonance frequency in this case was set at 460~Hz, and it is 
+  clear from the plot that it is above this frequency that the resonance peaks 
+  in the admittance begin to fade away: the mouthpiece imposes a “cutoff 
+  frequency”. What is happening is that above the Helmholtz resonance frequency 
+  the mass associated with air in the backbore starts to dominate the 
+  behaviour. That mass is less and less willing to move as frequency rises 
+  above the resonance. The result is that sound waves in the tube are reflected 
+  by this immobile mass, so that the pressure variation cannot reach the 
+  player’s lips on the other side of the cup volume. This automatically reduces 
+  the heights of the impedance peaks to create the cutoff effect. 
+
+  The simple Helmholtz resonator model tells us how the resonance peaks should 
+  be affected by adding the mouthpiece. The model predicts that below the 
+  mouthpiece resonance frequency the frequencies are all reduced, while their 
+  Q-factors are slightly increased. Above the resonance frequency, the 
+  Q-factors are decreased. The frequencies continue to decrease, but the rate 
+  of reduction slows down and each frequency tends towards the frequency of the 
+  next-lowest of the original frequencies. Something of this pattern can be 
+  seen directly in Fig.\ 10, which shows the measured impedance with and 
+  without the mouthpiece, over the low-frequency range. Each peak in the blue 
+  curve lies lower in frequency than the corresponding peak of the black curve, 
+  and the first few peaks are a bit taller and narrower because of the 
+  increased Q-factor. 
+
+  We can see this behaviour in action by processing the various impedance 
+  functions to extract modal parameters. Figure 11 shows one aspect of the 
+  behaviour that is revealed. This plot shows the “effective fundamental 
+  frequency” of each mode, calculated by dividing each frequency by the mode 
+  number. The two lines at the top, in black and red, show the results without 
+  the mouthpiece, from the impedances in Fig.\ 6. The measured results (in 
+  black) are, predictably, a little less regular than the idealised synthetic 
+  values (in red). But the general pattern of both curves is the same: all 
+  frequencies except the lowest lie close to a horizontal line, demonstrating 
+  that the frequencies are very close to the pattern of an ideal harmonic 
+  series. For reasons explained earlier (see section 4.2) the fundamental 
+  frequency does not follow this pattern: it is always far too low to fit into 
+  the harmonic pattern. 
+
+  The other lines in Fig.\ 11, with points marked by circles rather than stars, 
+  show results with the mouthpiece. The magenta line shows the pattern of 
+  frequencies from the measured impedance in Fig.\ 9, and the green line shows 
+  the results for the computed model with the mouthpiece, the red curve in 
+  Fig.\ 9. The blue line shows a halfway house between these: it shows the 
+  results of applying the Helmholtz resonator model to the measured admittance 
+  without mouthpiece. The green and blue lines lie very close together, both 
+  showing frequencies reduced relative to the no-mouthpiece results. The 
+  magenta line shows a similar pattern but with a larger reduction of 
+  frequency. 
+
+  Figure 12 shows the frequency plotted against the Q-factor, for the 
+  synthesised impedances with and without mouthpiece. The colours and symbols 
+  match Fig.\ 11. Looking carefully at this plot, you can see the pattern 
+  described above. The two curves cross near the mouthpiece resonance 
+  frequency. Below that crossing, each green circle is a little higher and to 
+  the left of the corresponding red star: the frequency has been reduced, while 
+  the Q-factor has been increased. Above the crossing point, the Q-factors on 
+  the green curve fall away to significantly lower levels. The frequencies 
+  always fall in the gaps between the frequencies marked by the red stars: one 
+  green circle per gap. 
+
+  Figure 13 shows the same comparison involving measured results — again with 
+  colours and symbols matching Fig.\ 11. The black and blue curves show a very 
+  similar pattern to the curves in Fig.\ 12. The magenta curve, showing the 
+  measured results with mouthpiece, shows a similar pattern to the blue curve 
+  but the drop-off of Q-factors above the mouthpiece resonance is even more 
+  marked. The deviation between the blue and magenta curves here is probably a 
+  result of the Helmholtz resonator approximation becoming inadequate as 
+  frequency rises, and wavelength reduces. 
+
+  Before we move on to look at simulation results for the trombone, it is 
+  interesting to compare the results of Fig.\ 11 with corresponding results for 
+  other instruments. Figure 14 shows a plot in the same format as Fig.\ 11, but 
+  now including measured frequencies from the clarinet and the saxophone from 
+  section 11.4, and for a cornetto that we will come to later in this section. 
+  (The cornetto is an early instrument which is played with a brass-type 
+  mouthpiece but which is made of wood and has finger-holes. You can see a 
+  picture of one a bit later, in Fig.\ 23.) For the clarinet, the “effective 
+  fundamental frequency” has been calculated by dividing the frequencies by the 
+  numbers 1,3,5,… rather than by 1,2,3,… based on the behaviour of an ideal 
+  cylindrical tube. 
+
+  The trombone, with or without its mouthpiece, is the only one of these 
+  instruments to produce an essentially horizontal line of points in Fig.\ 14, 
+  showing that it has the most “harmonic” set of tube resonances. This seems 
+  slightly paradoxical. All the other instruments are based on cylindrical or 
+  conical pipes, which in their idealised “textbook” versions give harmonic 
+  overtones naturally. In contrast, the flaring trombone only achieves the 
+  effect by dint of careful acoustical engineering. But in the world of real 
+  instruments, the effect seems to be the other way round. 
+
+  In fact we should not be too surprised. The trombone is the only one of these 
+  instruments that makes direct, musical use of at least 7 or 8 of the tube 
+  resonances, to play notes which the player hopes will be in tune. All the 
+  others have finger-holes, so that players have more options for changing 
+  notes, by opening and closing holes. When they use a higher mode of the tube 
+  as the basis of a note, by playing in a higher register, they normally use a 
+  register hole, which will slightly change the tuning of the resonances. So 
+  when an instrument maker is designing and voicing such an instrument so that 
+  it plays in tune, they can adjust the position, size and detailed shape of 
+  these finger-holes and register holes. But a brass instrument designer must 
+  put all their effort into shaping the bore profile, because that is the only 
+  thing that determines the relative frequency tuning of the resonances (apart 
+  from the influence of the player's lips and vocal tract, which we are 
+  ignoring in this preliminary discussion). 
+
+  \samsection{C. Simulation results for the trombone} 
+
+  We now have all the ingredients in place to simulate some notes on the 
+  trombone. First, we can look at periodic waveforms predicted by the model, 
+  once the transient has run its course: a selection is shown in Fig.\ 15. In 
+  each case, the pressure inside the mouthpiece is shown by the top curve, in 
+  red; the volume flow rate through the lips is shown in the middle, in blue; 
+  and the motion of the “reed”, in other words of the player’s lips, is at the 
+  bottom, in black. The figure shows examples of a note in the first, second, 
+  third and fourth registers. 
+
+  The plots reveal an interesting parallel with the ``Helmholtz motion'' of the 
+  clarinet, discussed back in section 11.3. The simulated clarinet waveforms 
+  were all recognisably related to an ingenious argument by Raman, which 
+  suggested that the pressure waveform should always be, approximately, a 
+  symmetrical square wave. Once the amplitude is high enough that the reed 
+  closes during part of the cycle, this square wave involves an alternation 
+  between two states. Either the reed is shut, so there is no flow, or else the 
+  pressure inside the mouthpiece is rather close to the mouth pressure, so that 
+  again there is rather little flow. 
+
+  There is no argument as simple as Raman’s that applies directly to the 
+  trombone, but nevertheless Fig.\ 15 shows that the periodic motion adjusts 
+  itself into a rather similar state. Each of the four cases plotted in that 
+  figure shows a similar pattern involving the lips closing completely, once 
+  per cycle of the oscillation. Almost all the time, either the lips are shut 
+  (indicated by horizontal lines in the lower two waveforms), or else the 
+  pressure is almost constant at a value close to the mouth pressure (indicated 
+  by a near-horizontal line in the upper plot, lying near the mouth pressure 
+  indicated by the dashed line). 
+
+  The result is that the flow rate through the lips is always rather small — 
+  small enough that you can see a bit of “digital noise” in the blue curve of 
+  the top left set, arising from the finite resolution of the simulation model. 
+  There is another indication of how small that air flow must be: during the 
+  intervals when the lips are open, you can hardly discern the deviation of 
+  pressure from the dashed line in the top plot for each note --- even though 
+  it is this difference of pressure that causes the volume flow shown in the 
+  middle plots. 
+
+  We are ready for a more systematic use of simulation. For the reed 
+  instruments, we selected mouth pressure and reed gap as two key parameters 
+  for a player, and we used simulation to populate the pressure-gap diagram to 
+  give an indication of “playability”. For the trombone, mouth pressure is 
+  still an important parameter, but rather than reed gap we will choose lip 
+  resonance frequency as the most natural second parameter. So we will generate 
+  a “pressure-lip resonance” diagram. Figure 16 shows an example, based on 
+  modal simulations using the measured input impedance shown in Fig.\ 9. 
+
+  The nominal pitch of the tenor trombone with the slide in first position is 
+  $B\flat_1$ (58.3~Hz), so the colour shading in Fig.\ 16 as based on this 
+  nominal pitch. For cases that produced a note rather than silence, the colour 
+  indicates the playing frequency normalised by 58.3~Hz. It is immediately 
+  clear that there are horizontal bands of colour corresponding approximately 
+  to the values 1,2,3 up to 8. Each band requires a certain threshold mouth 
+  pressure in order to start, and this threshold gets progressively higher for 
+  the higher registers. The green circles mark the cases shown in Fig.\ 15, 
+  lying in the middle of the first four bands, at the highest mouth pressure 
+  considered here. The horizontal blue lines mark the impedance peak 
+  frequencies --- but note that for these, the left-hand scale should be read 
+  as actual frequency rather than lip resonance frequency. 
+
+  Figure 17 sheds a little more light on the playing frequency: it shows the 
+  same set of simulations, this time colour-shaded to indicate the frequency 
+  deviation in cents away from the relevant harmonic multiple of the nominal 
+  pitch. The lowest band has turned largely black in this plot: those notes 
+  play at least a semitone flat. But the higher bands all have a stripe of dark 
+  red in their lower portion, connoting something close to the desired 
+  frequency. 
+
+  A different view of these variations of playing frequency is given by Fig.\ 
+  18, which shows in graphical form the right-most column of Fig.\ 16. The 
+  vertical axis shows frequency on a logarithmic scale, and the horizontal 
+  dotted lines mark equal-tempered semitones. Once again, blue lines mark the 
+  peak frequencies of the impedance (blue curve in Fig.\ 9). Examining this 
+  graph closely, you can see that the second band produces a frequency very 
+  close to the value 2, running along the corresponding semitone marker line 
+  until it turns abruptly upwards. The next band repeats the pattern, starting 
+  by following the semitone marker line at the value 3. All the higher bands 
+  have a similar pattern: with a carefully chosen mouth pressure, this 
+  simulated trombone seems to be capable of playing in-tune notes for harmonics 
+  2—8 of the nominal frequency. 
+
+  However, the lowest band is quite different. The playing frequency varies 
+  from 2 semitones below the nominal pitch to some 5 semitones above it, before 
+  the symbols jump up to the second register. This is a consequence of the fact 
+  that the lowest resonance of the trombone tube lies nowhere near the nominal 
+  fundamental frequency, as Fig.\ 11 showed. Indeed, the blue line that would 
+  have marked that resonance frequency cannot be seen because it is off the 
+  bottom of the plot. It is perfectly possible to sound a note down in this low 
+  register, but the tube provides very little help in setting the correct 
+  pitch: the player can “lip” this note up or down over a wide range. As an 
+  aside, this regime is the basis for a trombone-player’s party trick: it is 
+  possible for a skilled player to hold a fixed note in this register, while 
+  sliding the slide in and out with apparently no effect! 
+
+  In Sound 1 you can hear the four notes shown in Fig.\ 15 and marked by 
+  circles in Fig.\ 16. The first note is indeed conspicuously flat compared to 
+  the harmonic series of the other three sounds. 
+
+  Figure 19 shows a different view of these playing frequencies. This time, 
+  they are normalised by the lip resonance frequency, and the plot confirms 
+  something we anticipated: the playing frequency always lies above the lip 
+  resonance frequency, so that the values in the plot are all bigger than 1. 
+  Comparing this plot with Fig.\ 18, we can understand the pattern. Concentrate 
+  first on the second band of frequencies. In Fig.\ 18 we saw a horizontal 
+  portion close to the desired frequency, followed by a sharp rise. Figure 19 
+  shows the converse pattern: the playing frequency gets nearer and nearer to 
+  the lip resonance frequency, but when it gets very close the curve flattens 
+  out because the playing frequency has to remain above the lip frequency. So 
+  the rising portion in Fig.\ 18 shows the playing frequency tracking upwards 
+  with the lip frequency. 
+
+  Next, we can look at the transient behaviour of these simulations. Figure 20 
+  shows a version of the same pressure—lip resonance diagram but now 
+  colour-shaded to indicate transient length. For the value of lip resonance 
+  frequency marked by the horizontal green line, Fig.\ 21 shows four examples 
+  of waveforms. The first case is for the first coloured pixel on the line, and 
+  shows a very long transient. The remaining cases correspond to alternate 
+  pixels along that row. The transient gets progressively quicker, as Fig 20 
+  indicates. But for all these cases of “cold start” transients, the model is 
+  very slow to speak. Trombonists need to do articulatory tricks in order to 
+  create more abrupt starts to notes. 
+
+  There is one more important comment to be made about the trombone. The 
+  simulations in Sound 1 capture a vaguely brass-like sound, but you may have 
+  thought that they do not entirely convey the impression of a trombone played 
+  loudly — even though the simulations used a very high mouth pressure. There 
+  is a characteristic sound of a trumpet or trombone playing a crescendo: the 
+  sound is initially fairly mellow, but as the level grows there is a gradual 
+  transition to what is often described as “brassy” sound. The sound gets 
+  brighter, indicating a marked increase in high-frequency content. 
+
+  The explanation of this effect does not lie in the pressure waveform inside 
+  the mouthpiece, which is what we have been concentrating on so far. As first 
+  demonstrated by Hirschberg et al. [2], the form of pressure wave changes 
+  during its rather long journey along the tube, before it emerges from the 
+  bell as audible sound. There is a nonlinear process which happens with 
+  large-amplitude waves of various kinds, called “steepening”. 
+
+  The most familiar example is what happens to surface waves on water as they 
+  approach a shelving beach. There is a viscous drag force near the ground, 
+  which has the effect of slowing down the troughs of the travelling wave. But 
+  the wave crests are further away from the ground and do not feel this drag. 
+  The result is that the wave crests travel a bit faster than the troughs. The 
+  wave might have been initially almost sinusoidal, but the front face steepens 
+  as the crest catches up with the trough. This is the effect that surfers take 
+  advantage of. Eventually the crest overtakes the trough, and the wave breaks. 
+
+  Something similar happens when a high-intensity sound wave travels down a 
+  straight tube, like the section of a trombone up to the end of the slide. The 
+  speed of sound is sensitive to temperature. The sound wave is approximately 
+  adiabatic, so the air is warmer near the points of maximum compression, and 
+  cooler near the troughs of the pressure waveform. The louder the sound, the 
+  bigger these temperature changes. So, like the water wave, the crests travel 
+  a bit faster than the troughs and the wave steepens. If the tube is long 
+  enough, it reaches a critical point. But instead of the wave breaking, it 
+  forms a shock front: an abrupt jump in pressure. (A similar shock front is 
+  responsible for the “sonic boom” when a supersonic aircraft passes overhead.) 
+
+  We have already seen the result, back in section 10.6: Fig.\ 12 from that 
+  section is reproduced here as Fig.\ 22. It shows schlieren flow visualisation 
+  of a shock wave emerging from the bell of a trumpet driven at high amplitude 
+  by a loudspeaker. A similar thing happens in response to normal playing at 
+  fortissimo level. The abrupt pressure jump across the shock front guarantees 
+  that the sound spectrum contains a lot of high-frequency content, and this is 
+  responsible for the “brassy” sound. 
+
+  This effect is mainly confined to instruments like the trumpet and trombone. 
+  The reason is that the steepening effect needs a sufficiently long stretch of 
+  cylindrical tube in order to build up enough to form a shock. If the tube is 
+  flaring, spreading of the wave-front reduces the amplitude, and the nonlinear 
+  steepening effect is reduced. So instruments like the euphonium have too much 
+  flare, while instruments like the clarinet have a tube that is too short. 
+  This idea can be captured by a formula: Campbell, Gilbert and Myers [4] in 
+  section 6.1.4 define a “brassiness potential parameter”, and in Fig.\ 6.11 of 
+  that section they plot values of this parameter for brass instruments of 
+  different kinds. This plot indeed shows that trumpets and trombones are more 
+  likely to show “brassiness” than instruments like euphoniums or saxhorns. 
+
+  \samsection{D. Simulation results for the cornetto} 
+
+  For a contrasting style of “brass” instrument, we will show a few results for 
+  the cornetto. The cornetto, in various forms, was used throughout the 
+  medieval, renaissance and baroque eras and nowadays it is usually encountered 
+  in period ensembles. The typical instrument, like the one shown in Fig.\ 23, 
+  has a slightly curved tube with a conical bore. It is usually made of wood 
+  covered with thin leather, and it has a small brass-style cup mouthpiece and 
+  is played using finger holes. 
+
+  The measured input impedance of a cornetto with all finger-holes closed is 
+  shown in Fig.\ 24. Comparing with Fig.\ 9, we can guess that the Helmholtz 
+  resonance frequency for the mouthpiece must be a bit above 1~kHz: beyond that 
+  frequency we see the same kind of high-frequency cutoff of peak heights that 
+  we saw for the trombone. We have already seen the frequencies resulting from 
+  a modal fit to this impedance, in the green curve in Fig.\ 14. 
+
+  In order to run simulations based on this impedance, we need parameter values 
+  for the lip model. In the case of the trombone, we were able to use values 
+  from the literature. However, there is virtually no acoustical literature 
+  about the cornetto, so we are reduced to a bit of guesswork. Because the 
+  mouthpiece is so small, it seems reasonable that the width of the opening and 
+  the effective mass of the lips might both be significantly smaller than for 
+  the trombone case. For the purpose of the simulations to be shown here, a 
+  width 6~mm has been used. It then turned out that the simulation would not 
+  play notes with reasonable mouth pressures until the effective mass per unit 
+  area of the lips was reduced substantially below the trombone value 
+  (9~kg/m$^2$). The results to be shown here use the value 0.6~kg/m$^2$. 
+
+  Figure 25 shows some typical periodic waveforms given by the resulting model: 
+  one in the first register, the other in the second register. The cornetto is 
+  not normally played in higher registers than that, because most note changes 
+  are effected using the finger-holes. Indeed, as we will see in a moment, it 
+  may not be possible for human lips to achieve a resonance frequency high 
+  enough to excite the third register — although the computer has no such 
+  difficulty, of course. Comparing these waveforms with the ones in Fig.\ 15, 
+  we see strong similarities. Again, the lips close completely for part of 
+  every cycle, although perhaps for a smaller proportion of the cycle than was 
+  the case with the trombone. Again, the volume flow rate through the lips is 
+  either zero (because the lips are closed) or rather small (because the 
+  pressure inside the mouthpiece is close to the mouth pressure). 
+
+  Figure 26 shows the pressure—lip resonance diagram. It shows regions 
+  corresponding to the first three registers, but there is much more black in 
+  this picture than in Fig.\ 16 for the trombone. If this model is to be 
+  believed, the cornetto player has to place their lip resonance frequency with 
+  some precision in order to get a note to sound, especially in the first 
+  register where the band of colour is quite narrow. 
+
+  Figure 27 shows the frequency deviation from the nominal value, similar to 
+  Fig.\ 17 for the trombone. Figure 28, similar to Fig.\ 18, shows the 
+  normalised playing frequency along the right-hand column of Fig.\ 26, with 
+  horizontal lines marking equal-tempered semitones. Between them, these two 
+  plots show that in the first register, the cornetto is much more well behaved 
+  than the trombone. The playing frequency only varies a little either side of 
+  the nominal (220~Hz), so that the player should have relatively little 
+  difficulty in playing the note in tune. The second register (and the third) 
+  tends to play sharp, by a fraction of a semitone. But don’t forget that this 
+  instrument has finger-holes, and we are only looking at a single note here. 
+  The intonation of the instrument as a whole will be determined mainly by the 
+  skill of the instrument maker in placing and shaping the finger-holes. The 
+  blue lines in these two plots show that the playing frequencies fall rather 
+  close to impedance peaks (Fig.\ 28), while the lip resonance frequency 
+  generally needs to be rather well below those impedance peak frequencies 
+  (Fig.\ 27). 
+
+  Figure 29 shows the playing frequency normalised by the lip frequency. As 
+  with the trombone, the plotted values are always greater than 1 — but here 
+  they don’t even come very close to 1. That is why we didn’t see the lines in 
+  Fig.\ 28 turning upwards as they did for the trombone. As the lip resonance 
+  frequency is increased, the note ceases to sound rather than entering a 
+  regime where the playing frequency is “carried upwards” by the lip resonance. 
+
+  Figure 30 shows a typical transient waveform from a simulated note in the 
+  first register: in fact, it is exactly the same note that was shown in the 
+  left-hand plot of Fig.\ 25, corresponding to the lower of the two green 
+  circles in Fig.\ 26. The behaviour of the volume flow rate (blue curve) 
+  should be noted. Early in the transient, the flow rate through the lips is 
+  quite high, but once the point is reached where the lips begin to close at 
+  some point in the oscillation cycle the flow rate reduces conspicuously. The 
+  pattern is strikingly reminiscent of the clarinet transients shown in Figs.\ 
+  23 and 25 of section 11.3: the Raman model prediction from Fig.\ 25 in that 
+  section is reproduced here as Fig.\ 31, as a reminder. 
+
+  Finally, Fig.\ 32 shows the influence of two key parameters of the lip model. 
+  In the left-hand plot, the effective mass per unit area has been increased to 
+  1~kg/m$^2$. The notes still play in all registers, but the threshold blowing 
+  pressures have increased. A similar effect, but significantly stronger, is 
+  seen in the right-hand plot. This shows the influence of halving the Q-factor 
+  of the lip resonance to 7. 
+
+  \samsection{E Back to the trombone} 
+
+  In the last two subsections we have seen some simulation results for a 
+  trombone and a cornetto, using a very simple model of the action of the 
+  player’s lips. This model gave qualitatively plausible behaviour, but if we 
+  want to get somewhere close to quantitative agreement with the behaviour of 
+  real instruments, we need to look a bit harder at this model. We will explore 
+  in the context of the trombone rather than the cornetto, because the trombone 
+  has been far more extensively studied. 
+
+  For a first step, we can look at the influence of a parameter we haven’t said 
+  much about: the assumed damping of the lip resonance. The trombone results we 
+  have shown so far have all assumed a value 15 for the Q-factor of the lip 
+  resonance. Figure 33 shows what happens if that value is halved to 7 or 
+  doubled to 30. With the lower value, the threshold mouth pressures for all 
+  notes tend to rise, and the 7th and 8th notes do not play at all within the 
+  range of mouth pressure explored here. When the Q-factor is increased, the 
+  opposite trends are seen. The threshold pressures all reduce, and at the very 
+  top of the plot you can see a hint that the 9th note starts to sound. 
+
+  Now, a Q-factor as high as 30 sounds totally implausible for a resonance of 
+  squashy flesh in the lips --- surely a vibrating lip could not ``ring'' for 
+  30 cycles or more? Even the value 15 seems too high for plausibility. It is 
+  not at all easy to obtain direct measurements of this Q-factor by measuring 
+  real lips. There is a published study by Doc, Vergez and Hannebicq [5] 
+  estimating lip parameters for trumpet playing which suggests Q-factors of the 
+  same order we been using — but they do it by comparing measured thresholds 
+  from a test rig using artificial lips with simulations using essentially the 
+  same model used here. Their results suggest that as players increase lip 
+  tension to raise the resonance frequency in order to play higher notes, the 
+  Q-factor also increases. This trend seems quite plausible, but there are as 
+  yet very little in the way of direct physiological measurements to test 
+  whether the actual values of Q-factor apply to real lips. 
+
+  What evidence there is (see for example Figure 3.30 of Campbell, Gilbert and 
+  Myers [4]) suggests that human lips have a significantly lower Q factor than 
+  the artificial lips (which consist of sausage-shaped balloons filled with 
+  water). So we have a challenge: can we tweak the simulation model to be 
+  capable of predicting that notes could be played at realistic threshold 
+  pressures using lips with a Q-factor as low as 1? 
+
+  Before we start exploring enhancements to the model, it is useful to review 
+  the (rather sparse) set of known facts about trombones played by human lips. 
+  These provide the “ground truth” against which simulation results must be 
+  tested. The first source of information comes from the experience of 
+  trombonists. For a given slide position, a trombonist expects to be able to 
+  elicit notes forming (more or less) a harmonic series. They will have to 
+  adjust their lips and blowing pressure to achieve these different notes. So 
+  far, so good: we have already captured that aspect of behaviour, 
+  qualitatively at least, in our pressure-lip resonance diagrams. 
+
+  But there is an important aspect of a trombonist’s experience that we have 
+  not reproduced. Figure 18 showed a plot of the predicted playing frequency as 
+  a function of the lip resonance frequency, for a particular set of 
+  simulations. The playing frequency in every case was near to the 
+  corresponding tube resonance, or above that frequency. In trombonist’s 
+  language, the simulated trombone notes could be “lipped up” to a higher pitch 
+  by adjusting embouchure, but they could not be “lipped down” to a lower 
+  pitch. But in reality, trombonists report that notes can be lipped down just 
+  as easily as they can be lipped up. 
+
+  It would obviously be useful to have some quantitative information about 
+  played trombone notes, but published information is very sparse. Our main 
+  resource will be a set of measurements by Boutin, Smith and Wolfe [6]. A 
+  professional trombonist played three versions of a single note: one normal, 
+  one lipped down and one lipped up. Using a combination of sensors and 
+  high-speed video recordings, the authors measured a variety of waveforms for 
+  each of these notes, including the pressure inside the mouthpiece, the volume 
+  flow rate into the tube, the trajectories of the tips of upper and lower 
+  lips, and the area of the lip opening. For all three of their measured notes, 
+  the player’s blowing pressure was around 1~kPa. 
+
+  Conveniently, the note chosen for those measurements is one already included 
+  in our simulation results: the second natural note with the trombone slide in 
+  first position, $\mathrm{B}\flat_2$ (nominally 116.5~Hz). To see how our 
+  simulation model is doing before we start enhancing it, we can make a first 
+  comparison of their normally-played note with the simulation marked by a 
+  green circle in Fig.\ 33. This is the correct note, played with the correct 
+  pressure which puts it just above the threshold for the particular model used 
+  for Fig.\ 33. 
+
+  A comparison of waveforms is shown in Fig.\ 34. The level of agreement is 
+  encouraging, but perhaps rather surprising given the crudeness of the 
+  simulation model being used here. This case used a Q-factor of 7, surely too 
+  high for human lips. But Fig.\ 33 suggests an immediate problem if we were to 
+  reduce the Q-factor in the simulation model. It shows that threshold 
+  pressures go up as the Q-factor is reduced, and we are already near the 
+  threshold at this blowing pressure with $Q=7$. If we are to find playable 
+  notes at a blowing pressure near 1~kPa with a far lower value of the 
+  Q-factor, something will have to change in the model to reduce the threshold 
+  pressure for this note. 
+
+  We can draw inspiration from Boutin, Smith and Wolfe [6]: they highlighted 
+  some effects not included in the current simulation model, and suggested that 
+  these might have a big influence on the energy balance, and hence on 
+  thresholds. First, as also observed in earlier work by Copley and Strong [7], 
+  they found that the horizontal and vertical components of the lip motion are 
+  not in phase: the tips of the upper and lower lip each trace out a loop in 
+  space. Figure 35 shows these loops, for the same note shown in Fig.\ 34. They 
+  also pointed out effects associated with an additional component of the flow 
+  into the tube caused by the forwards-and-backwards motion of the lips. 
+
+
+
+  \sectionreferences{}[1] Lionel Velut, Christophe Vergez, Joël Gilbert and 
+  Mithra Djahanbani, “How well can linear stability analysis predict the 
+  behaviour of an outward-striking valve brass instrument model?”, Acta 
+  Acustica united with Acustica \textbf{103}, 132–148 (2017) 
+
+  [2] A. Hirschberg, J. Gilbert, R. Msallam and A. P. J. Wijnands, “Shock waves 
+  in trombones”, Journal of the Acoustical Society of America \textbf{99}, 
+  1754–1758 (1996). 
+
+  [3] A. López-Carromero, D. M. Campbell, J. Kemp and P.L. Rendon, “Validation 
+  of brass wind instrument radiation models in relation to their physical 
+  accuracy using an optical schlieren imaging setup”, Proceedings of Meetings 
+  in Acoustics, \textbf{28}, 035003 (2016). 
+
+  [4] Murray Campbell, Joël Gilbert and Arnold Myers, “The science of brass 
+  instruments”, ASA Press/Springer (2021) 
+
+  [5] J.-B. Doc, C. Vergez and J. Hannebicq, “Inverse problem to estimate lips 
+  parameters values of outward-striking trumpet model for successive playing 
+  registers”, Journal of the Acoustical Society of America \textbf{153}, 
+  168—178 (2023). 
+
+  [6] Henri Boutin, John Smith and Joe Wolfe, “Trombone lip mechanics with 
+  inertive and compliant loads (‘lipping up and down’)”, Journal of the 
+  Acoustical Society of America \textbf{147}, 4133—4144 (2020) 
+
+  [7] D. C. Copley and W. J. Strong, “A stroboscopic study of lip vibrations in 
+  a trombone”, Journal of the Acoustical Society of America \textbf{99}, 
+  1219–1226, (1996). 

@@ -1,0 +1,168 @@
+  The idea of complex numbers starts with a mathematical fiction that seems 
+  quite bizarre, but it leads to something remarkably powerful and useful, so 
+  it is worth getting grips with. You will already know that you can take the 
+  square root of any positive number, but whenever you square an ordinary 
+  number you get a positive result, so there is no way to calculate the square 
+  root of a negative number like $-1$. Well, suppose you could do it --- let us 
+  see what happens if we define a symbol $i$ to be the square root of $-1$, so 
+  that 
+
+  $$i^2=-1 . \tag{1}$$ 
+
+  (Some people call this $j$ rather than $i$, but I will always use $i$.) 
+
+  Don't worry about what this thing $i$ might mean: just bear with me for a bit 
+  as we play some mathematical games to see if it can do anything useful. The 
+  next step is to introduce combinations of ordinary numbers and $i$, called 
+  complex numbers: for example $5+3i$ or $2-2i$. The jargon is that $i$ is an 
+  ``imaginary number'', as is $3i$ or $-2i$. These are the ``imaginary parts'' 
+  of the complex numbers $5+3i$ and $2-2i$, while the $5$ and the $2$ are the 
+  corresponding ``real parts''. 
+
+  As a first step to see if anything makes sense, let's try multiplying these 
+  two complex numbers together. We can treat $i$ just as if it was a 
+  mathematical variable like $x$, and expand out the brackets as usual: 
+
+  $$(5+3i)(2-2i) = 10 +6i -10i -6 i^2=10 -4i +6 = 16-4i \tag{2}$$ 
+
+  where we have used equation (1) to get rid of $i^2$. So the result of 
+  multiplying two complex numbers is another complex number --- very 
+  reassuring. 
+
+  Next, we should recall that any square root could actually have a $\pm$ sign 
+  in front of it: for example $\sqrt{4}=\pm2$. So $-i$ must also be a square 
+  root of $-1$. This suggests that the two complex numbers $x+iy$ and $x-iy$ 
+  might be closely related: we have just reversed the sign of $i$, to make the 
+  other choice for the square root of $-1$. These two complex numbers are 
+  called complex conjugates of each other. Now see what happens when we 
+  multiply the two together: 
+
+  $$(x+iy)(x-iy)=x^2 +ixy -ixy -i^2 y^2 = x^2 + y^2. \tag{3}$$ 
+
+  This result has a simple geometrical interpretation, in a useful graphical 
+  representation of complex numbers called the ``Argand diagram''. If we take 
+  the complex number $x+iy$, we can treat $x$ and $y$ as the Cartesian 
+  coordinates of a point, and plot it as in Fig.\ 1. The horizontal axis shows 
+  $x$, the real part of the complex number, so it is called the ``real axis''. 
+  The vertical axis shows the imaginary part $y$, so it is called the 
+  ``imaginary axis''. The complex conjugate of our complex number is also shown 
+  in the figure: it is the mirror-reflection of $z$ in the real axis. 
+
+  But we don't always use Cartesian coordinates --- it is sometimes useful to 
+  use polar coordinates $r$ and $\theta$ such that 
+
+  $$x=r \cos \theta, \mathrm{~~~} y=r \sin \theta. \tag{4}$$ 
+
+  This polar representation of our complex number is indeed useful. The radius 
+  $r$ is called the ``magnitude'' of the complex number, and the angle $\theta$ 
+  is called its ``argument'' or its ``phase''. Now notice that we can 
+  reinterpret equation (3) as saying that a complex number multiplied by its 
+  complex conjugate gives the square of the magnitude. In symbols, if we denote 
+  the complex number by $z=x+iy$ and the complex conjugate by $z^*=x-iy$, then 
+
+  $$z z^* =r^2 =|z|^2 \tag{5}$$ 
+
+  where $|z|$ is another common notation for the magnitude $r$ of the complex 
+  number. 
+
+  We can use this result to complete our toolkit for elementary manipulations 
+  of complex numbers. We have already seen how to multiply two complex numbers 
+  --- but what about dividing? So suppose we have complex numbers $a$ and $b$, 
+  and we want $a/b$. All we need to do it multiply on the top and bottom of the 
+  fraction by the complex conjugate of $b$: 
+
+  $$\dfrac{a}{b}=\dfrac{a b^*}{b b^*}=\dfrac{a b^*}{|b|^2}. \tag{6}$$ 
+
+  The denominator is now an ordinary ``real number'' $|b|^2$, so we can see 
+  that the ratio $a/b$ is indeed just another complex number, which we could 
+  work out. 
+
+  There is one more really important result involving complex numbers that we 
+  will need, and it relates to the combination $\cos \theta + i \sin \theta$ 
+  that appears in the polar expression 
+
+  $$z=x+iy=r(\cos \theta +i \sin \theta) . \tag{7}$$ 
+
+  To get to this result we need a short digression on ``Taylor series'' or 
+  ``power series''. It is often useful to express a function like cosine in 
+  terms of a sum of powers: is it possible to write 
+
+  $$\cos \theta =\sum_{n=0}^\infty{a_n \theta^n} \tag{8}$$ 
+
+  where the coefficients $a_0$, $a_1$, $a_2,...$ are constants? Well, if we put 
+  $\theta =0$ in this equation, the left-hand side is $\cos(0)=1$, while the 
+  right-hand side is simply $a_0$ because all the other terms disappear. So we 
+  must have $a_0=1$. Now what happens if we differentiate equation (8)? We get 
+
+  $$-\sin \theta = \sum_{n=1}^\infty{n a_n \theta^{n-1}} \tag{9}$$ 
+
+  and now if we set $\theta=0$ we find 
+
+  $$a_1 = -\sin(0)=0. \tag{10}$$ 
+
+  Differentiating again and setting $\theta=0$ we find 
+
+  $$a_2 = -\dfrac{\cos(0)}{2} = -\dfrac{1}{2}, \tag{11}$$ 
+
+  and we can continue this process to find the power series 
+
+  $$\cos \theta = 1-\dfrac{\theta^2}{2}+\dfrac{\theta^4}{2 \times 3 \times 
+  4}-\dfrac{\theta^6}{2 \times 3 \times 4 \times 5 \times 6} +...\tag{12}$$ 
+
+  If we go through the same process starting with the function $\sin \theta$, 
+  we find that the corresponding power series is 
+
+  $$\sin \theta = \theta -\dfrac{\theta^3}{2 \times 3} + \dfrac{\theta^5}{2 
+  \times 3 \times 4 \times 5}+... \tag{13}$$ 
+
+  Finally, we can repeat the process with the exponential function $e^x$ and 
+  find 
+
+  $$e^x = 1+x+\dfrac{x^2}{2}+\dfrac{x^3}{2 \times 3}+\dfrac{x^4}{2 \times 3 
+  \times 4}+... \tag{14}$$ 
+
+  Now comes the magic. If we substitute $x=i\theta$ into equation (14), we find 
+
+  $$e^{i \theta} = 1+i \theta-\dfrac{\theta^2}{2}-i\dfrac{\theta^3}{2 \times 
+  3}+\dfrac{\theta^4}{2 \times 3 \times 4}+... \tag{15}$$ 
+
+  Alternate terms are real and imaginary, and if we collect those real and 
+  imaginary terms together into two separate series, we recognise both of them 
+  from equations (12) and (13): we have the very striking result 
+
+  $$e^{i \theta} = \cos \theta + i \sin \theta . \tag{16}$$ 
+
+  Notice that this allows us to rewrite equation (7) in the compact form 
+
+  $$z=x+iy=r e^{i \theta}. \tag{17}$$ 
+
+  We will make extensive use of the result (16) in the development of the 
+  theory of vibration ( sections 2.2.2 and 2.2.7 are the first important 
+  examples), but to close this section I will just give one example of the 
+  power of the result to derive some useful results in trigonometry. Suppose we 
+  have two angles $A$ and $B$, and we multiply together the two results 
+  corresponding to equation (16): 
+
+  $$e^{iA} e^{iB} = (\cos A +i \sin A)(\cos B +i \sin B). \tag{18}$$ 
+
+  Multiplying out the brackets and using familiar properties of the exponential 
+  function, this becomes 
+
+  $$e^{i(A+B)} = \cos A \cos B -\sin A \sin B +i(\sin A \cos B+\cos A \sin B) 
+  \tag{19}$$ 
+
+  But 
+
+  $$e^{i(A+B)} = \cos (A+B) + i \sin (A+B) \tag{20}$$ 
+
+  so equating the real parts and the imaginary parts of equation (19) we can 
+  deduce immediately that 
+
+  $$\cos (A+B)= \cos A \cos B -\sin A \sin B \tag{21}$$ 
+
+  and 
+
+  $$\sin (A+B) = \sin A \cos B+\cos A \sin B . \tag{22}$$ 
+
+  These results can, of course, be proved by trigonometry without using complex 
+  numbers, but it takes far, far longer than this simple calculation! 

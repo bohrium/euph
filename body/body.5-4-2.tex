@@ -1,0 +1,66 @@
+  The displacement $w(x,t)$ of an ideal string with tension $T$ and mass per 
+  unit length $m$ satisfies the differential equation 
+
+  $$\frac{\partial^2w}{\partial x^2}= \frac{1}{c^2} \frac{\partial^2w}{\partial 
+  t^2}\tag{1}$$ 
+
+  where $c=\sqrt{T/m}$ is the wave speed, from eq. (5) of section 3.1.1. We can 
+  make a change of variables: define 
+
+  $$p=x+ct,\mathrm{~~~~}q=x-ct. \tag{2}$$ 
+
+  Now use the chain rule repeatedly: 
+
+  $$\frac{\partial w}{\partial x}=\frac{\partial w}{\partial p}\frac{\partial 
+  p}{\partial x}+\frac{\partial w}{\partial q}\frac{\partial q}{\partial x}$$ 
+
+  $$=\frac{\partial w}{\partial p}+\frac{\partial w}{\partial q}$$ 
+
+  so 
+
+  $$\frac{\partial^2 w}{\partial x^2}=\frac{\partial^2 w}{\partial 
+  p^2}+2\frac{\partial^2 w}{\partial p \partial q}+\frac{\partial^2 w}{\partial 
+  q^2} . \tag{3}$$ 
+
+  Similarly 
+
+  $$\frac{\partial w}{\partial t}=c \frac{\partial w}{\partial p} -c 
+  \frac{\partial w}{\partial q}$$ 
+
+  so that 
+
+  $$\frac{\partial^2 w}{\partial t^2}= c^2 \left[ \frac{\partial^2 w}{\partial 
+  p^2} -- \frac{\partial^2 w}{\partial p \partial q} \right]-c^2 \left[ 
+  \frac{\partial^2 w}{\partial p \partial q} -\frac{\partial^2 w}{\partial q^2} 
+  \right] . \tag{4}$$ 
+
+  Substituting eqs. (3) and (4) into eq. (1) thus gives 
+
+  $$\frac{\partial^2 w}{\partial p^2}+2\frac{\partial^2 w}{\partial p \partial 
+  q}+\frac{\partial^2 w}{\partial q^2} = \frac{\partial^2 w}{\partial 
+  p^2}-2\frac{\partial^2 w}{\partial p \partial q}+\frac{\partial^2 w}{\partial 
+  q^2}$$ 
+
+  which reduces to 
+
+  $$4\frac{\partial^2 w}{\partial p \partial q}=0.\tag{5}$$ 
+
+  This equation can be integrated immediately. But we have to remember that 
+  these are partial derivatives, not ordinary derivatives. So instead of 
+  picking up arbitrary constants of integration, we pick up arbitrary 
+  functions. For example, from the equation 
+
+  $$\frac{\partial w}{\partial p}=0$$ 
+
+  we would deduce that $w$ could be any arbitrary function of $q$. So the 
+  general solution of eq. (5) is 
+
+  $$w(p,q) = f(p) +g(q)$$ 
+
+  where $f$ and $g$ are arbitrary functions. The final result is that the free 
+  motion of the string must be of the form 
+
+  $$w(x,t) = f(x+ct) + g(x-ct),\tag{6}$$ 
+
+  in other words the sum of a wave of any shape travelling leftwards at speed 
+  $c$ and another wave of any shape travelling rightwards at speed $c$. 

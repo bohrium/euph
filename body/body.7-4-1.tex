@@ -1,0 +1,164 @@
+  Transverse vibration of a string inevitably causes an increase in length of 
+  any small element of the string, leading to a change in local tension and to 
+  excitation of longitudinal vibration. In this section we will derive a simple 
+  approximate equation governing the process, then use it to explore the 
+  consequences for the frequency content of a plucked note. As in previous 
+  derivations of governing equations, we will look at the balance of forces on 
+  a small element of the string, sketched in Fig.\ 1. The transverse 
+  displacement is $w(x,t)$, and we now also allow longitudinal displacement 
+  $\xi(x,t)$. Because of the longitudinal stretch, the tension may also vary: 
+
+  $$T(x,t) = T_0 +EA\epsilon(x,t) \tag{1}$$ 
+
+  where $E$ is the Young's modulus of the string, $A$ is the cross-sectional 
+  area, $\epsilon$ is the longitudinal strain and $T_0$ is the original string 
+  tension. 
+
+  \fig{figs/fig-ceaadbaa.png}{Figure 1. Sketch of an element of the string. 
+  Longitudinal displacement is indicated in blue, tension is indicated in red.} 
+
+  This element of string originally had length $\delta x$. Denoting the 
+  stretched length by $\delta s$, Pythagoras' theorem gives 
+
+  $$\delta s^2 \approx (\delta x + \delta \xi)^2 + \delta w^2 \tag{2} $$ 
+
+  where $\delta \xi=\xi(x + \delta x) -- \xi(x)$ and $\delta w=w(x + \delta x) 
+  -- w(x)$, so that 
+
+  $$\delta s \approx \delta x \left[ \left(1 + \dfrac{\partial \xi}{\partial 
+  x}\right)^2 + \left(\dfrac{\partial w}{\partial x}\right)^2 \right]^{1/2} . 
+  \tag{3}$$ 
+
+  We are most interested in the case of very small longitudinal motion $\xi$ 
+  driven by fairly small transverse displacement $w$. With those 
+  approximations, we can expand using the binomial theorem to see that the 
+  leading-order contribution to string stretching is given by 
+
+  $$\delta s \approx \delta x \left[ 1 + \dfrac{\partial \xi}{\partial x} + 
+  \dfrac{1}{2}\left(\dfrac{\partial w}{\partial x}\right)^2 \right] . \tag{4}$$ 
+
+  It follows that the strain is 
+
+  $$\epsilon \approx \dfrac{\delta s -- \delta x}{\delta x} \approx 
+  \dfrac{\partial \xi}{\partial x} + \dfrac{1}{2}\left(\dfrac{\partial 
+  w}{\partial x}\right)^2 \tag{5}$$ 
+
+  and the tension at position $x$ is 
+
+  $$T \approx T_0 + EA\left[\dfrac{\partial \xi}{\partial x} + 
+  \dfrac{1}{2}\left(\dfrac{\partial w}{\partial x}\right)^2 \right] . \tag{6}$$ 
+
+  Now we can apply Newton's law to the net horizontal motion of the small 
+  element of string: 
+
+  $$m \delta x \dfrac{\partial^2 \xi}{\partial t^2} \approx T(x+\delta x) -- 
+  T(x) \tag{7}$$ 
+
+  where $m$ is the mass per unit length of the string, and the angles 
+  $\theta_1$ and $\theta_2$ are assumed to be small. It follows that 
+
+  $$m \dfrac{\partial^2 \xi}{\partial t^2} \approx \dfrac{\partial T}{\partial 
+  x} \approx EA\left[ \dfrac{\partial^2 \xi}{\partial x^2} + \dfrac{1}{2} 
+  \dfrac{\partial}{\partial x} \left(\dfrac{\partial w}{\partial x}\right)^2 
+  \right] \tag{8}$$ 
+
+  so that finally the governing equation we want is 
+
+  $$m \dfrac{\partial^2 \xi}{\partial t^2} -- EA \dfrac{\partial^2 
+  \xi}{\partial x^2} \approx \dfrac{EA}{2} \dfrac{\partial}{\partial x} 
+  \left(\dfrac{\partial w}{\partial x}\right)^2 . \tag{9}$$ 
+
+  This is the usual linear wave equation for longitudinal motion, with a source 
+  term on the right-hand side determined by a quadratic function of the 
+  transverse motion of the string. We can immediately see what the frequency 
+  content of longitudinal motion must consist of. In terms of the usual jargon 
+  for solving differential equations, it could involve a mixture of a 
+  ``complementary function'' and a ``particular integral''. The complementary 
+  function consists of solutions of the wave equation without the forcing term: 
+  in other words, a linear combination of the longitudinal resonances of the 
+  string. 
+
+  The particular integral is the forced part of the motion, arising directly 
+  from the right-hand side forcing term. The quadratic nature of that term 
+  tells us what possible frequencies will be present. The slope $\partial 
+  w/\partial x$ is a linear function of the transverse motion, so it must 
+  consist of a linear combination of the transverse resonance frequencies of 
+  the string. This linear combination is then squared, but other than that only 
+  linear operations are involved. So to find the possible frequencies, it is 
+  sufficient to look at a squared combination of the form 
+
+  $$\left[\sum_j{a_j \sin \omega_j t} \right]^2 \tag{10}$$ 
+
+  where $\omega_j$ is the $j$th transverse resonance frequency. We can ignore 
+  the effects of damping for this qualitative discussion. This squared sum will 
+  involve terms like 
+
+  $$\sin^2 \omega_j t = (1 -- \cos 2 \omega_j t)/2 \tag{11}$$ 
+
+  and 
+
+  $$\sin \omega_j t \sin \omega_k t = [\cos (\omega_j -\omega_k)t -- \cos 
+  (\omega_j +\omega_k)t]/2 . \tag{12}$$ 
+
+  So the particular integral must consist of a linear combination of sinusoidal 
+  terms with frequencies which are either frequency-doubled transverse 
+  frequencies ($2 \omega_j$) or else sums and differences of pairs of 
+  transverse frequencies ($\omega_j \pm \omega_k$). 
+
+  For an ideal flexible string the sum in Eq. (10) would involve 
+  harmonically-related frequencies, so it would look like a Fourier series. All 
+  possible frequency doublings or sum and difference frequencies would also be 
+  harmonics of the fundamental frequency: they would automatically give results 
+  that exactly matched other frequencies in the series. However, for the real 
+  string the effect of bending stiffness produces non-harmonic frequencies. It 
+  is useful to look at explicit results for the resulting combination 
+  frequencies. We showed in section 5.4.3 that 
+
+  $$\omega_j \approx j \omega_1 (1+\alpha j^2) \tag{13}$$ 
+
+  where $\alpha=\frac{EI\pi^2}{2T_0 L^2}$ in terms of the string length $L$ and 
+  the bending stiffness $EI$. So, for example, the frequency-doubled version of 
+  $\omega_3$ will be $6 \omega_1 (1+9 \alpha)$. Unless $\alpha = 0$, this is a 
+  different frequency from $\omega_6 = 6 \omega_1 (1+36 \alpha)$. Similarly, 
+  the sum $\omega_3 + \omega_4$ will be $3 \omega_1 (1+9 \alpha) + 4 
+  \omega_1(1+16 \alpha) = \omega_1 (7 + 91 \alpha)$, which is a different 
+  frequency from $\omega_7 = 7 \omega_1 (1+49 \alpha)$. The ``phantom 
+  partials'' generated by the square law inside Eq. (9) will not match any of 
+  the original frequencies $\omega_j$. This accounts for the complicated 
+  patterns of peaks revealed in Figs.\ 5 and 6 of section 7.4. 
+
+  Finally, our interest is not directly in the longitudinal string motion as 
+  such, but in the force exerted on the soundboard, which then produces sound 
+  radiation and contributes to the sound of the plucked note. For that, we need 
+  to look back at Eq. (6). Apart from the steady tension $T_0$, there are two 
+  terms. One involves $\partial \xi/\partial x$, and will consist of the 
+  frequency components we have just described. The final term involves the 
+  squared slope of the transverse string shape, at the termination point on the 
+  soundboard. This is another quadratic combination of the transverse motion, 
+  so it will involve the same set of possible frequency components, but with a 
+  different pattern of amplitudes. 
+
+  This distinction turns out to be important for the harp, and also for the 
+  piano. The term involving $\partial \xi/\partial x$ will always be present, 
+  but the final term involving the transverse motion will depend on a detail we 
+  have ignored up to now when discussing stretched strings. The stiff-string 
+  equation involves a fourth derivative in $x$, so that it requires two 
+  boundary conditions at each end of the string, rather than just one as was 
+  the case for the ideal string. 
+
+  The extra condition is familiar from thinking about bending beams (see 
+  section 3.2.1). For a string, anchored at the ends, there are two standard 
+  choices: a pinned boundary has no bending moment at the end, so that it 
+  allows a non-zero slope $\partial w/\partial x$ at the end, and so the final 
+  term in Eq. (6) can contribute. On the other hand, a clamped boundary imposes 
+  a condition of zero rotation, so that this slope is zero and the final term 
+  in Eq. (6) is also zero. The termination of a real string will probably be 
+  somewhere in between these two textbook cases, depending on small details of 
+  how the instrument maker has adjusted the bridge/string interaction at the 
+  termination. 
+
+  The two cases produce different patterns of phantom partials. Comparison with 
+  measurements on both the piano and the harp gives a strong suggestion that 
+  the real boundary condition is closer to clamped than pinned. This has an 
+  audible consequence for the sound of both instruments. Some sound examples 
+  for the harp are included in Section 7.4. 

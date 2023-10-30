@@ -1,0 +1,52 @@
+  In order to have a model for banjo synthesis with full control over the model 
+  parameters, a very simple model has been developed based on results for a 
+  rectangular membrane. It might seem odd to use the rectangular shape, when we 
+  have relatively easy expressions for the mode shapes and natural frequencies 
+  of a more realistic circular membrane (see section 3.6.1). However, it turns 
+  out that a model giving realistic sound needs to pay careful attention to 
+  damping, including the damping of the membrane due to sound radiation. There 
+  are no simple expressions for this radiation damping of a circular membrane, 
+  but Leppington et al. [1] have provided simple formulae for the rectangular 
+  case. These approximate expressions were calculated by an asymptotic method, 
+  but they give sufficiently accurate results for this application. 
+
+  The datum membrane is chosen to have the same area, tension and mass per unit 
+  area as the head of the Deering banjo. Specifically, it has tension 5.33 
+  kN/m, mass per unit area 308 g/m$^2$, and dimensions $249 \times 226$ mm in 
+  the directions normal and parallel to the strings, respectively. An allowance 
+  is made for the added mass resulting from the air in contact with the 
+  membrane, as we discussed briefly in section 3.6 in the context of the 
+  kettledrum. It is done using a result for an infinite membrane (see reference 
+  [2] for details). 
+
+  Radiation damping of the membrane is modelled using the formulae of 
+  Leppington et al. [1], as explained above. These formulae are calculated 
+  using the Rayleigh integral, which we met in section 4.3.2. They assume an 
+  infinite baffle around the membrane, which is of course not physically 
+  accurate for a banjo. However, comparisons of admittance computed from the 
+  model with the measured admittance of the real banjo gives reasonably good 
+  agreement. A constant ``background structural damping'' with loss factor $4 
+  \times 10^{-3}$ is added to suppress unrealistically high modal Q-factors. A 
+  final detail concerning damping of this datum case will be discussed in 
+  section 5.5.2. 
+
+  The ``bridge'' is modelled as a concentrated mass of 1.5 g, with a footprint 
+  $10 \times 10$ mm centred at position (105,80) in mm relative to a corner of 
+  the rectangle. An additional stiffness 20 kN/m is applied to the bridge to 
+  represent the combined effect of the axial stiffness of the strings, a 
+  similar stiffness contributed by in-plane stretching of the head membrane, 
+  and also an effect associated with the string tension. All these stiffness 
+  components are sensitive to the break angle over the bridge. Finally, a 
+  ``dashpot'' (mechanical resistance) with impedance 1 Ns/m is added, to 
+  increase the damping of the strongest resonances to a level comparable with 
+  the measurements. Reference [2] gives a detailed discussion of the effect of 
+  these successive additions, and of the choice of parameter values. 
+
+  \sectionreferences{}[1] F. G. Leppington, E. G. Broadbent and K. H. Heron, 
+  “The acoustic radiation efficiency of rectangular panels”. Proceedings of the 
+  Royal Society of London Series A-Mathematical Physical and Engineering 
+  Sciences, \textbf{382}, 245–271 (1982). 
+
+  [2] Jim Woodhouse, David Politzer and Hossein Mansour. ``Acoustics of the 
+  banjo: theoretical and numerical modelling'', Acta Acustica\textbf{5}, 16 
+  (2021). The article is available here: \tt{}\rm{}\tt{}https://doi.org/10.1051/aacus/2021008\rm{} 

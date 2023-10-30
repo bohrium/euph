@@ -1,0 +1,509 @@
+
+
+  We turn to the final family of wind instruments, the air-jet instruments like 
+  the flute, recorder and flue organ pipe. Looking back over previous sections 
+  of this chapter, the logic behind the organisation should now become clear: 
+  we started with the best-understood instruments, and we have progressively 
+  moved to the ones where physical understanding is more challenging, and 
+  therefore more rudimentary. 
+
+  For reed instruments like the clarinet, we were able to construct a fairly 
+  simple physical model with quantitative experimental support for all aspects. 
+  The pipe acoustics was anchored in measured input admittance which could be 
+  interpreted via simple theory, while the nonlinear characteristics of the 
+  reed mouthpiece were based on uncontroversial theory with some direct 
+  measurements in support. The result was a simulation model with some claims 
+  to realism. This could be used to explore questions about how the player 
+  might control the instrument to maximise the range of musical options, and 
+  also how the instrument maker might help by “playability” improvements. 
+
+  Moving on to the brass instruments, our understanding of tube acoustics was 
+  still supported by direct measurements of input impedance, but the model for 
+  the lip dynamics was less convincing. We started with essentially the same 
+  model as for the reeds, except for a reversal of sign to reflect the 
+  opening-reed behaviour of lip vibration as opposed to the closing-reed 
+  character of the reed woodwinds. This super-simple model, with just a single 
+  degree of freedom, can only be expected to give a rather crude representation 
+  of the vibration of the squashy flesh of lips. We then explored a rather ad 
+  hoc extension of the model in order to incorporate at least some aspects of 
+  the vibration of real lips. The resulting simulation models gave 
+  qualitatively plausible results, correctly reflecting many aspects of the 
+  behaviour of this family of instruments. 
+
+  When we moved to the free reed instruments, things got more complicated. This 
+  time, the behaviour of the reeds themselves was reasonably uncontroversial, 
+  but it was far from clear what additional physics needed to be included in 
+  order to model the excitation mechanism with any claim to realism. For some 
+  problems, with strong acoustical feedback from a well-characterised system, 
+  it was easy to complete a model in the same style as the original clarinet 
+  model and obtain quite convincing agreement with experiments. 
+
+  But in other cases we met snags of two different kinds. First, no impedance 
+  measurements appear to have been made on instruments like the concertina, let 
+  alone on the harmonica for which the player’s vocal tract is a significant 
+  part of the system. Second, we saw strong hints that acoustical feedback is 
+  not always the predominant excitation mechanism, suggesting that something 
+  more complicated is needed. Initial modelling efforts have been made, based 
+  on idealised analysis of the fluid flow in the immediate vicinity of a 
+  vibrating reed, but the story is by no means complete. 
+
+  Now we turn to the air-jet instruments, and we are squarely faced with 
+  problems involving non-trivial fluid dynamics. These instruments have no 
+  moving parts analogous to reeds or brass-player’s lips. The behaviour of the 
+  instrument is determined by the interaction of the internal acoustics of the 
+  instrument tube with air-flow from a mouthpiece slot or from a flute-player’s 
+  lips. The tube acoustics can be characterised by measured input impedance (or 
+  its inverse, input admittance: as we saw back in section 11.1, an air-jet 
+  instrument is expected to play notes determined by peaks of admittance, or 
+  antiresonances of impedance). But the fluid dynamics governing how an air jet 
+  interacts with the solid part of a mouthpiece and with the internal 
+  acoustical field is far more complicated than anything we have grappled with 
+  in previous sections. 
+
+  \samsection{A. Introducing the fluid dynamics of air-jet instruments} 
+
+  We can get a first idea of how flute-like instruments work, and 
+  simultaneously gain some insight into the complications, by looking at 
+  examples of flow visualisation. Figure 1 shows a kind of rectangular organ 
+  pipe, or one-note recorder. It has a transparent section in the pipe wall to 
+  allow schlieren imaging (look back at section 10.6 for an account of how the 
+  schlieren system works). Air is injected from the bottom, passes through a 
+  slot, and the emerging jet then interacts with a sharp edge. It is this 
+  interaction between the air jet and the edge (known as the ``labium'' in the 
+  terminology of recorders) which is the key to understanding how such 
+  instruments work. For the purposes of the flow visualisation, some carbon 
+  dioxide is also injected to give a density contrast with the air and allow 
+  the imaging process to work. 
+
+  Figure 2 shows a sequence of images spread through a single cycle of periodic 
+  oscillation, when the “recorder” is playing a steady note. Note the 
+  orientation: the resonating pipe lies below the labium, in the lower part of 
+  each figure --- exactly as in the normal configuration for playing a 
+  recorder. To interpret these images, we will need to invoke some of the 
+  fluid-dynamical concepts outlined in section 11.2: we can see both laminar 
+  and turbulent flow, we can see flow separation at the sharp edges of the 
+  labium and of the slot, we can see vortices being formed. 
+
+  For this particular geometry and blowing pressure, the jet emerging from the 
+  slot (at the left of each image) remains laminar long enough to reach the 
+  sharp edge. But just a little further downstream, you can see that the jet 
+  becomes turbulent. Looking more carefully at the sequence of images, during 
+  this cycle of oscillation the jet “switches” from one side of the labium to 
+  the other. Look particularly at the fourth image in the sequence (right-hand 
+  column, second from the top). The jet is still lying predominantly above the 
+  labium (in other words, outside the pipe), but in the gap between the slot 
+  and the sharp edge (the “mouth” of the recorder) you can see that the jet is 
+  bending downwards. By the next picture in the sequence, it has switched to 
+  the lower side (but you can still see the residual turbulence left behind on 
+  the upper side). The final image in the sequence shows the opposite 
+  transition: the jet has bent upwards, and is in the process of switching back 
+  to the upper side. 
+
+  This switching process involves two physical phenomena. The one we can see 
+  some evidence of in the images is instability of the jet: when the jet is 
+  perturbed, a disturbance travels along the jet and it grows as it travels. 
+  What is causing the perturbation is the second phenomenon, not directly 
+  visible in these images. The “recorder” is playing a note with a frequency 
+  close to the lowest resonance of the tube, and the tube is open at the mouth, 
+  so there is an acoustic air flow in and out through the mouth. This 
+  acoustical flow interacts with the jet, triggering a disturbance in the jet 
+  near the slot. The disturbance grows as it is carried along by the jet, and 
+  ultimately causes switching from one side of the labium to the other. 
+
+  Each time the jet switches past the sharp edge, it sheds a vortex. We can see 
+  vortices even more clearly in Fig.\ 3, which shows a similar sequence of 
+  schlieren images, but this time they show the very early stages of a 
+  transient after the air supply has been abruptly turned on. The first two 
+  images in this sequence show a very clear mushroom-shaped vortex being 
+  generated from the sharp edges of the slot on the left-hand side. When this 
+  vortex reaches the labium, it interacts to generate more complicated vortex 
+  structures. 
+
+  The images in Fig.\ 2 illustrate a regime of vibration which is generally 
+  accepted to form the basis for “normal” playing on a recorder or a transverse 
+  flute. However, this is not true for all instruments, or for all playing 
+  techniques. In Fig.\ 2 we see a relatively short, relatively thin jet which 
+  is laminar throughout the region of most interest. This thin jet tends to 
+  move as a whole, in a sinuous motion. But sometimes we might have a laminar 
+  jet which is wider, in which case a different-looking fluid-mechanical 
+  phenomenon occurs, illustrated in Fig.\ 4 (reproduced from section 11.2). The 
+  two separate shear layers on each side of the wide jet show a classic 
+  instability pattern in which they generate vortices on alternate sides before 
+  the jet reaches the labium. 
+
+  If the Reynolds number of the air-jet is higher, either because the flow is 
+  faster or the jet is longer, the jet becomes turbulent before it reaches the 
+  labium. Flue organ pipes are commonly designed like this, for example. The 
+  jet may still be able to interact in a way that gives a periodic movement of 
+  the jet centre-line, but the sound of this periodic oscillation will be 
+  accompanied by a significant component of “wind noise” generated by the 
+  interaction of the turbulence with the edge. The result is a more “breathy” 
+  sound quality, desirable in some instruments (such as the Japanese 
+  shakuhachi). 
+
+  Jets that show different combinations of short or long, narrow or wide, 
+  laminar or turbulent would require different theoretical modelling. Only for 
+  a few of these combinations have credible models been developed that can 
+  allow simulations of the kind we have shown for the other wind instruments. 
+  We will confine our attention to just one of these cases, the one illustrated 
+  in Fig.\ 2. For this type of problem, a procedure known as the “jet-drive 
+  model” has been found to give reasonably good results. The approach was 
+  pioneered by John Coltman back in the 1960s [1,2]. This model has three main 
+  ingredients: the time delay and exponential growth associated with a 
+  travelling, growing perturbation on the jet; a simplified form of how the 
+  acoustical air-flow from the resonant tube perturbs the jet; and a dipole 
+  sound source from the interaction of the switching jet with the labium, which 
+  generates acoustical pressure that completes the feedback loop. Some details 
+  of this model are given in the next link, based on the descriptions given by 
+  Auvray, Ernoult, Fabre and Lagrée [3], and by Fabre in chapter 10 of Chaigne 
+  and Kergomard [4]. 
+
+  There is only one other case for which a simple model suitable for simulation 
+  has been developed and validated against experiments. This is the case 
+  illustrated in Fig.\ 4, for which a “discrete vortex model” has been 
+  presented in the same two references [3,4], building on pioneering work by 
+  Holger, Wilson and Beavers in the 1970s [5]. This oscillation regime has some 
+  relevance to musical performance, but it seems to be rather marginal compared 
+  with the jet-drive model, which relates to the most common playing regime on 
+  the recorder or transverse flute. So we will concentrate on the jet-drive 
+  model, keeping in mind that it involves major simplifications to the messy 
+  fluid mechanics seen in Fig.\ 2 — and it doesn’t even attempt to describe 
+  transient behaviour like Fig.\ 3, since the model assumes that the jet is 
+  ``already there'' when the note starts. As a result, we can hope to predict 
+  some qualitative patterns of behaviour but we should not expect quantitative 
+  transient predictions relating to the subtle things players do to start notes 
+  in particular ways. 
+
+  \samsection{B. The influence of cork position in a transverse flute} 
+
+  But before we plunge into simulation results, we need to say a few words 
+  about the easy part of the problem, the linear acoustics of the tube. For all 
+  these instruments, whether it is a flute, recorder or flue organ pipe, we 
+  have a more-or-less cylindrical tube, open at both ends (or stopped at the 
+  far end, in the case of a stopped organ pipe). For the recorder or the organ 
+  pipe, we already know more or less how the input admittance will behave: it 
+  will resemble the example shown back in section 11.1, in Fig.\ 14 there. 
+
+  But the transverse flute brings in another ingredient, which has a 
+  consequence similar in some ways to the mouthpiece of a brass instrument, 
+  discussed in section 11.6. As shown schematically in Fig.\ 5, the embouchure 
+  hole of a flute is not right at the end of the tube, like the mouth of a 
+  recorder. Instead, there is a short length of closed tube extending in the 
+  opposite direction to the main playing length, with the fingerholes. The 
+  effective acoustical length of this closed tube is determined by the position 
+  of a tight-fitting cork, which can be adjusted. 
+
+  The influence of this closed tube is significant. The black dashed curve in 
+  Fig.\ 6 shows the measured input admittance of a modern Boehm flute for the 
+  note $C_4$, 262~Hz, with all but the last fingerhole closed. The red curve 
+  shows the predicted input admittance for an ideal double-open tube, with a 
+  suitable length corresponding to the distance from embouchure hole to tube 
+  end. We will see in a moment that when we correct for the extra closed tube, 
+  this length of plain tube will produce more or less the same set of resonance 
+  peaks as the measurement, although at this stage they are all a little too 
+  high. But the most striking disparity between the two curves concerns the 
+  peak heights rather than their frequencies. It can be seen that the first few 
+  peak heights are rather similar to the measurement, but the measured 
+  admittance dies away rapidly in amplitude while the theoretical curve carries 
+  on with strong peaks. (The measurement only extended up to 4~kHz.) 
+
+  Figure 7 shows the effect of adding the extra closed tube to the calculation, 
+  as explained in the next link. The red curve from Fig.\ 6 is included as a 
+  dotted line, for comparison. Using a carefully-selected cork position (in 
+  other words, a length for the closed tube), the result is an excellent match 
+  to the measurement. The peak frequencies and amplitudes are well captured for 
+  the first nine or so resonances. Above that, we start to see small 
+  deviations. The inclusion of the closed tube has clearly made a crucial 
+  difference to the frequency response, but the simple model has captured this 
+  difference very well. 
+
+  Figure 8 shows what the simple model predicts if we move the cork, to change 
+  the length of the closed tube. The red curve is the same as in Fig.\ 7, while 
+  the blue and green curves (displaced vertically in the plot for clarity) show 
+  the effect of a shorter and a longer tube, respectively. The differences here 
+  are far larger than a player or flute-maker would normally make, to show the 
+  effect clearly. The admittance peaks fade away to zero at a frequency that 
+  depends on the cork position: making the closed tube shorter raises the 
+  frequency, making it longer reduces the frequency. 
+
+  The effect was discussed by Benade [6], and we can illustrate his explanation 
+  with some computed examples of the pressure distribution inside the tube of 
+  the flute. Figure 9 shows the theoretical admittance from Figs.\ 7 and 8, and 
+  a selection of the resonance peaks have been marked. At each of these 
+  frequencies, making use of the analysis described in the previous link, the 
+  pressure distribution along the tube has been plotted in Fig.\ 10. The main 
+  portion of the flute, from embouchure hole to the open end, is indicated by 
+  blue curves, while the short portion inside the closed tube is plotted in 
+  red. All the curves have been scaled to the same peak amplitude. 
+
+  The first four curves, at the top in Fig.\ 10, correspond to the four lowest 
+  resonances of the tube. The pressure distributions show more or less what we 
+  expect: successively one, two, three and four half-wavelengths fitted in to 
+  the length of the tube. At the open end (at the right) the simple model 
+  imposes a nodal point of pressure. But this is not quite true at the 
+  embouchure hole. The hole is smaller than the bore of the tube, and there is 
+  a small but non-zero mass of air in the short “chimney” sketched in Fig.\ 5. 
+  The combined effects of these two things is that the pressure inside the tube 
+  does not fall to zero at the hole. 
+
+  The red portions of the curves, inside the closed tube, show different 
+  behaviour. At the closed end the pressure variation must have a horizontal 
+  tangent, corresponding to the fact that the volume flow rate must be zero 
+  there. The pressure rises towards the closed end, but for these modes at low 
+  frequency the rise is very slight, barely visible in the figure. This is as 
+  we expect: at frequencies such that the length of the closed tube is very 
+  short compared to the wavelength of sound, the pressure must be more or less 
+  constant. (We used the same approximation when we talked about the Helmholtz 
+  resonator back in section 4.2.1, and we used it again when discussing the 
+  effect of the mouthpiece volume in conical woodwind instrument like the 
+  saxophone, in section 11.3, part F.) 
+
+  The next group of three plots correspond to three resonance peaks in Fig.\ 9 
+  which are approaching the “dead zone” where the admittance shows no peaks. 
+  The final plot in Fig.\ 10 corresponds to a peak beyond this dead zone. For 
+  all four of these frequencies, Figure 10 shows rather similar behaviour. The 
+  red portion of each curve joins rather smoothly on to the blue portion, and 
+  the combined pressure variation looks very much like what we would see if the 
+  embouchure hole was blocked, so that we had a closed-open tube with no 
+  side-hole. The shapes look sinusoidal, with an antinode at the closed end and 
+  a node at the open end. 
+
+  Now look closely at the pattern of the joins between the red and blue curves 
+  — you may find it helpful to look at Fig.\ 11, which shows a zoomed view of 
+  Fig.\ 10 concentrating near the region of the join at the embouchure hole. 
+  For the lower four plots, in the vicinity of the dead zone, we see a 
+  systematic pattern of behaviour. If you look at the position of the first 
+  nodal point of pressure, you will see that it moves closer and closer to the 
+  red-blue join as the dead zone is approached. Then in the lowest plot, above 
+  the dead zone, the nodal point has moved into the red portion of the curve. 
+  Now we can see that the centre of the dead zone is determined by the 
+  condition that there is exactly a quarter-wavelength fitted into the closed 
+  tube. The embouchure hole then falls exactly at a nodal point of pressure, so 
+  at that frequency it is not possible to excite the internal tube resonance 
+  from the embouchure hole. That is the reason the peaks heights in the 
+  admittance fade away to zero at this frequency, then grow again once the 
+  wavelength is shorter. 
+
+  \samsection{C. Simulation results} 
+
+  We are ready to combine the jet-drive model set out in section 11.8.1 with 
+  measured input admittance, to run some simulations. We need to choose an 
+  input admittance: the three cases to be used here are shown in Fig.\ 12. The 
+  lowest plot, shown in a black dashed line, is the flute measurement we have 
+  already seen in Figs.\ 6, 7 and 8. But we will not start with that, for 
+  reasons that will emerge shortly. The top curve, shown in red, is a 
+  three-mode approximation to the measured admittance of a recorder, as used in 
+  reference [1]. In order to check the simulation code, we will start with a 
+  run matching that reference --- more details of this comparison, including 
+  the parameter values used in the simulations, are given in the first link, 
+  section 11.8.1. After that we will look at a comparable note on a modern 
+  transverse flute, shown in the blue curve in Fig.\ 12. 
+
+  In reference [3], the results for playing frequency and amplitude were 
+  extracted from single long simulations in which the jet speed was slowly 
+  ramped up or down. Instead, the results shown here use a separate transient 
+  for each of a set of steady values of the jet speed, in steps of 0.1 m/s. We 
+  do not expect this model to give accurate results for initial transients, for 
+  reasons explained above, so we are mainly interested in the possible pattern 
+  of steady notes that can be produced on this ``recorder''. To focus on this 
+  question, each transient was “seeded” with a small pressure fluctuation in 
+  the lowest mode, as was done by Auvray et al. [1], and also as we sometimes 
+  did in earlier sections on reed and brass instruments. 
+
+  Figure 13 shows a first set of results. The playing frequency has been 
+  normalised by the nominal fundamental frequency to give what we earlier 
+  called the “correlation harmonic number”. For in-tune notes, this should take 
+  values close to 1, 2, 3 etc. This quantity is plotted against the jet speed, 
+  and the resulting plot is surprisingly complicated. At least as predicted by 
+  this crude model, the frequency jumps all over the place, especially with 
+  very slow jet speeds. The “normal” playing regime for this note corresponds 
+  to the flattish portion of the plot for jet speed in the range 16—32 m/s. The 
+  line can be seen to slope slightly uphill: the frequency of the note is close 
+  to the nominal fundamental, but it increases slightly as the jet speed 
+  increases. At higher speed we see another flattish portion with the 
+  normalised frequency roughly equal to 2: the “recorder” has overblown to the 
+  octave. This line also slopes gently upwards. 
+
+  The curious cascades of frequencies at low jet speeds are related to an 
+  advanced flute-playing technique known as “Aeolian tones”. To see what is 
+  going on in the model to produce these tones, it is useful to plot the data 
+  in a different way. Instead of using the jet speed on the horizontal axis, we 
+  can use the delay time for disturbances on the jet, as they travel the 
+  distance from the slot to the labium. This delay time is simply determined by 
+  the jet speed and the distance to the labium: in recorder terminology, this 
+  is the width of the mouth. The disturbances do not travel exactly at the jet 
+  speed, but within this simplified model they travel at 40% of that speed. 
+
+  The resulting plot is shown in Fig.\ 14. It is important to note that by 
+  using delay rather than jet speed on the axis, we have reversed the order of 
+  the points: the left-most clusters of points here correspond to results on 
+  the right-hand side of Fig.\ 13, and vice versa. The delay time has been 
+  expressed as a fraction of the period length of each note, and it can 
+  immediately be seen that the plotted points cluster around particular values 
+  of this normalised delay: there are columns of clustered points near the 
+  values $\frac{1}{4}$, $1 \frac{1}{4}$, $2 \frac{1}{4}$etc. 
+
+  The explanation of this pattern is given in the earlier side link, section 
+  11.8.1. For any note that can be played at a frequency close to a peak of 
+  admittance, the normalised delay needs to be in the vicinity of 
+  $n+\frac{1}{4}$, where $n$ could take the values 0, 1, 2,… The normal playing 
+  regime on a flute or recorder corresponds to $n=0$, while the Aeolian tones 
+  correspond to higher values of $n$. What is happening is illustrated in 
+  sketch form in Fig.\ 15: the disturbance on the jet needs to be in a 
+  particular phase when it reaches the labium, and this can only be achieved by 
+  fitting certain numbers of quarter-wavelengths into the width of the mouth. 
+  With a fast jet speed, only the longest wavelength option can be achieved, 
+  but with a slow jet it is possible to fit extra wavelengths in. It is then 
+  clear that the four columns of points evident in Fig.\ 14 correspond to the 
+  values $n=0,1,2,3$. The ``normal'' fundamental and octave notes both appear 
+  in the $n=0$ column. 
+
+  Aeolian tones like this can really occur on flutes or recorders, but the 
+  details of them predicted by this model should be taken with a generous pinch 
+  of salt. In reality a jet with these extra wiggles will tend to break up into 
+  separate vortices, which is the case addressed by the discrete-vortex model, 
+  which we will not go into here. According to \tt{}this web site\rm{} 
+  (addressing non-standard flute performance techniques) “Aeolian sounds are 
+  colored air sounds ~with no normal flute tone. The~air stream across the 
+  embouchure produces an airy pitch resonance in the~first octave~only, low B- 
+  middle D\#”. We can perhaps attribute the ``airy'' sound to the fact that the 
+  jet is more likely to become turbulent under these conditions, generating 
+  ``wind noise'' when it interacts with the labium. The statement that the 
+  effect is only found in the lowest octave agrees with the experimental 
+  findings of Auvray et al. [3]: they were able to obtain an Aeolian tone with 
+  their artificially-blown model recorder corresponding to the fundamental 
+  pitch with $n=1$, but not for higher overtones or higher values of $n$. So it 
+  appears that the jet-drive model is considerably over-predicting the 
+  occurrence of Aeolian tones. 
+
+  The next step is to see what changes if we use input admittance measured from 
+  a transverse flute. The blue curve in Fig.\ 12 shows a measurement from 
+  \tt{}Joe Wolfe’s website\rm{}, for a modern Boehm flute with B foot, fingered 
+  in a manner that he says flautists use for both $C_5$ and $C_6$, adjusting 
+  the speed, length and shape of the air jet to choose between these two notes. 
+  On a recorder, the only one of these available for a player to vary is the 
+  jet speed. The transverse flute allows extra degrees of freedom, as the 
+  player can shape the lip opening and vary the distance from the edge as well 
+  as adjusting flow speed. 
+
+  Figures 16 and 17 show equivalent plots to Figs.\ 13 and 14, keeping the same 
+  parameter values as those runs so that this could be thought of as a 
+  transverse flute played using a recorder mouthpiece. It is immediately clear 
+  that the results are very similar. In this case, the inclusion of extra modes 
+  in the admittance, and the small differences of peak frequencies, heights and 
+  bandwidths, all seem to make rather little difference to the outcome. 
+
+  The circles in these two plots pick out a case playing the fundamental (i.e. 
+  $C_5$) and a case playing the octave ($C_6$), The detailed waveforms for 
+  these two cases are shown in Figs.\ 18 and 19. In each group, the top plot 
+  shows the acoustic pressure inside the mouthpiece and the middle plot shows 
+  the acoustic volume flow rate through the mouth (or embouchure hole). The 
+  bottom plot shows an indication of the jet position: a value approaching $-1$ 
+  indicates that the jet is fully above the labium and outside the tube, while 
+  a value approaching $+1$ indicates the converse with jet fully below the 
+  labium. (Specifically, in terms of the model set out in section 11.8.1, this 
+  plot shows the combination $\tanh \left( \dfrac{\eta(w,t)-y_0}{b} \right)$ 
+  that appears in equation (6).) 
+
+  Apart from the octave difference in frequency, the waveforms are recognisably 
+  similar. The jet is switching in and out the tube once every cycle, and the 
+  acoustic volume flow rate is broadly following the jet position. The pressure 
+  waveforms show a pair of main peaks in every cycle, one up and the other 
+  down. To estimate the sound radiated from the embouchure hole by these 
+  waveforms, we can note that the hole is very small compared to the 
+  wavelength, so (from the analysis in section 11.7.1) the radiated sound 
+  pressure will be proportional to the rate of change of the volume flow rate 
+  through the hole. The resulting sound of the two simulations from which 
+  Figs.\ 18 and 19 were extracted can be heard in Sound 1. Do these sound 
+  recognisably like a flute? Not really, it must be admitted. There are two 
+  main reasons. First, the main body of each sound is accurately periodic, with 
+  none of the “wind noise” that accompanies a real flute note, and none of the 
+  subtle modulation (such as vibrato) that a human player would add. Second, 
+  although each note here has a starting transient, it is not one that we have 
+  any great confidence in because of the limitations of the model. 
+  Nevertheless, perhaps these sounds capture something a bit flute-like? 
+
+  Now, finally, we can look at some results based on the input admittance for 
+  the Boehm flute fingered for the note $C_4$, the black dashed curve in Fig.\ 
+  12 and the one we used earlier when we were looking at the influence of the 
+  cork position. Using the same parameter values as the previous simulations, 
+  this admittance leads to the behaviour shown in Figs.\ 20 and 21 in the same 
+  format as earlier plots. The general pattern is recognisable based on the 
+  earlier discussion, but the model is predicting that the fundamental tone is 
+  never produced. The clusters of points for Aeolian tones and for “normal” 
+  tones show normalised frequencies close to 2, 3, 4 up to 7, but never 1. As 
+  is well known, beginners on the flute often struggle to achieve good tone on 
+  the lowest notes on the instrument, and to avoid overblowing to the octave, 
+  but it is not supposed to be completely impossible! 
+
+  We can perhaps guess what the problem is. We can see whereabouts in Fig.\ 20 
+  we would expect the “normal” playing regime at the fundamental to sit, but in 
+  this range of jet speed the model is choosing instead to play Aeolian tones 
+  at high frequency. But we already know that this jet-drive model seriously 
+  over-estimates the prevalence of Aeolian tones. We can test this idea with a 
+  simple numerical experiment. We can take the same input admittance, but only 
+  use the first 4 resonances and ignore the higher ones. Without those higher 
+  resonances, it should not be possible for the associated Aeolian tones to be 
+  produced. 
+
+  Figures 22 and 23 show the result, keeping all other details the same as in 
+  Figs.\ 20 and 21. By suppressing the possibility of Aeolian tones higher than 
+  the 4th harmonic, we have opened a gap in the range of jet speed previously 
+  filled with Aeolian tones. Figure 22 shows that this gap is populated in part 
+  by extending the range when the octave is played (normalised frequency around 
+  2), but it also now includes a short interval in which the fundamental is 
+  played (normalised frequency around 1). Figure 23 confirms that this short 
+  interval is indeed associated with values of the delay around a 
+  quarter-period, in other words with $n=0$. This model is, of course, 
+  artificial: the higher resonances really are there in the admittance. But the 
+  experiment is enough to confirm that by suppressing some Aeolian tones that 
+  are never in practice heard, it becomes possible for the model to produce 
+  this fundamental note. 
+
+  We have seen the crucial role of the delay, the time taken for disturbances 
+  to travel along the jet from slot (or lips) to labium. In a recorder, the 
+  geometry is fixed by the instrument maker, and the only way the player can 
+  influence this delay is by changing the jet speed. But in a transverse flute, 
+  the player has extra degrees of freedom. For the low note we were considering 
+  in the last example, rather a long delay is needed for normal tone. In the 
+  simulations, the distance has been kept fixed, and the appropriate delay was 
+  achieved in a narrow range of rather slow jet speeds. 
+
+  On a transverse flute, the same delay could be achieved with a faster jet and 
+  a correspondingly longer distance: the player can roll the embouchure hole 
+  away from the lips, while blowing harder. But this combination of changes 
+  will also increase the Reynolds Number, and make it more likely that the jet 
+  will become turbulent. Possibly the player can counteract this tendency, to 
+  an extent, by careful shaping of the lips to tailor the details of the flow 
+  leaving the mouth. The act of rolling the tube so the embouchure hole is less 
+  covered will also affect the intonation of the note, by changing the end 
+  correction at the hole. All this gives a hint of the subtleties that a 
+  flautist must learn to master. But to represent such effects in a simulation 
+  lies beyond the reach of the very simple model we are using here. Indeed, it 
+  is far from clear that any simple model could be constructed that would 
+  capture such effects accurately. This challenging task is a topic for future 
+  research. 
+
+
+
+  \sectionreferences{}[1] John W. Coltman, “Sounding mechanism of the flute and 
+  organ pipe,” Journal of the Acoustical Society of America \textbf{44}, 
+  983–992 (1968). 
+
+  [2] John W. Coltman, “Jet drive mechanisms in edge tones and organ pipes,” 
+  Journal of the Acoustical Society of America \textbf{60}, 725–733 (1976). 
+
+  [3] Roman Auvray, Augustin Ernoult, Benoît Fabre and Pierre-Yves Lagrée, 
+  “Time-domain simulation of flute-like instruments: Comparison of jet-drive 
+  and discrete-vortex models”, Journal of the Acoustical Society of America 
+  \textbf{136}, 389—400 (2014) 
+
+  [4] Antoine Chaigne and Jean Kergomard; “Acoustics of musical instruments”, 
+  Springer/ASA press (2013) 
+
+  [5] D.K. Holger, T. A. Wilson and G. S. Beavers: “Fluid mechanics of the 
+  edgetone'', Journal of the Acoustical Society of America \textbf{62}, 
+  1116—1128 (1977). 
+
+  [6] Arthur H. Benade; “Fundamentals of Musical Acoustics”, Oxford University 
+  Press (1976), reprinted by Dover (1990). See chapter 22. 

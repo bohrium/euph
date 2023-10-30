@@ -1,0 +1,66 @@
+  Consider a plane wave at frequency $\omega$ propagating on an infinite 
+  isotropic plate and driving the motion of air on one side of the plate. The 
+  plate motion is governed by this equation, from section 3.2.3: 
+
+  $$\rho h \dfrac{\partial^2 w}{\partial t^2}+EK \left[\frac{\partial^4 
+  w}{\partial x^4}+2\frac{\partial^4 w}{\partial x^2 \partial y^2} 
+  +\frac{\partial^4 w}{\partial y^4} \right]=0\tag{1}$$ 
+
+  for a plate of thickness $h$, with a constant $K$ given by 
+
+  $$K=\frac{h^3}{12(1-\nu^2)} \tag{2}$$ 
+
+  where $E$ is Young's modulus, $\rho$ is density and $\nu$ is Poisson's ratio. 
+  If the wave takes the form $w=e^{i \omega t -- i k x}$ then eq. (1) requires 
+
+  $$EK k^4=\rho h \omega^2. \tag{3}$$ 
+
+  The speed of the wave will be given by 
+
+  $$\frac{\omega}{k} = \left( \dfrac{EK}{\rho h} \right)^{1/4} \sqrt{\omega} 
+  ,\tag{4}$$ 
+
+  rising proportional to the square root of frequency. 
+
+  Now pressure in the air above the plate will satisfy a two-dimensional 
+  version of the wave equation: 
+
+  $$\frac{\partial^2 p}{\partial t^2}= c^2 \left[ \frac{\partial^2 p}{\partial 
+  x^2} + \frac{\partial^2 p}{\partial z^2} \right] \tag{5}$$ 
+
+  where $z$ is the coordinate normal to the plate. The pressure will vary 
+  harmonically in time at the same frequency as the plate wave, and it must 
+  have a wavenumber in the $x$ direction equal to $k$, for continuity with the 
+  plate motion. What remains is to find out what happens in the $z$ direction. 
+  We can look for a solution of the form 
+
+  $$p=p_n(z) e^{i \omega t -i k x} . \tag{6}$$ 
+
+  Equation (5) then requires 
+
+  $$\omega^2 = c^2\left( k^2 -\frac{d^2 p_n}{d z^2} \right)$$ 
+
+  so that 
+
+  $$\frac{d^2 p_n}{d z^2} + (k_a^2-k^2) p_n =0 \tag{7}$$ 
+
+  where $k_a=\omega/c$ is the wavenumber of sound waves at frequency $\omega$. 
+
+  The solutions of eq. (7) depend on the sign of the bracketed term. If $k_a > 
+  k$, the term is positive and solutions are sinusoidal. In that case, waves 
+  propagate away from the plate at an angle governed by the ratio of $k$ to 
+  $\sqrt{(k_a^2-k^2)}$. If, on the other hand, $k_a < k$ then the bracketed 
+  term is negative, and the solution of interest is an exponential decay of 
+  sound pressure away from the plate. There is no propagating wave: the sound 
+  field is evanescent. Examples of these two cases were illustrated with 
+  animations in Figs.\ 11 and 12 of section 4.3. 
+
+  The crossover between the two regimes occurs when $k_a = k$, in other words 
+  when 
+
+  $$\frac{\omega_c}{c} = \left( \dfrac{\rho h}{EK} \right)^{1/4} 
+  \sqrt{\omega_c} \tag{8}$$ 
+
+  from eq. (3). It follows that this critical frequency is given by 
+
+  $$\omega_c = c^2 \left( \dfrac{\rho h}{EK} \right)^{1/2} . \tag{9}$$ 

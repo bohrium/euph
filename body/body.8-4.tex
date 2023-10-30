@@ -1,0 +1,269 @@
+
+
+  The approach of representing the behaviour of a vibrating system as a 
+  ``flow'' of trajectories in the phase plane is the starting point for the 
+  mathematician’s approach to nonlinear systems which leads to ``chaos 
+  theory''. Single-degree-of-freedom oscillators with smooth nonlinearity 
+  cannot exhibit chaotic behaviour in their free motion (although their forced 
+  motion can sometimes do so: see \tt{}the Wikipedia page on the Duffing 
+  equation\rm{} for some examples). The reason is that non-intersecting 
+  trajectories in the plane don't have enough room to manoeuvre: they cannot 
+  make patterns that are sufficiently complicated to suggest the description 
+  ``chaotic''. However, a system with more degrees of freedom can do so. 
+
+  The idea of the phase plane can be generalised to a phase space, with more 
+  dimensions. We saw in the previous section that an oscillator with a single 
+  mass needs to be represented in two dimensions (i.e. in the plane) in order 
+  to give the crucial result that trajectories cannot cross. A vibrating system 
+  with two masses can be treated in a similar way, but the corresponding phase 
+  space needs four dimensions: unfortunately that makes it virtually impossible 
+  to visualise the complete phase portrait. 
+
+  So we will cheat. I will illustrate chaotic behaviour with an example that 
+  has nothing to do with music or vibration, but one that has a 
+  three-dimensional phase space so that we can plot pictures and visualise at 
+  least part of what is going on. Three dimensions is sufficient for more 
+  complicated behaviour to be possible, compared to what can happen when 
+  confined to a plane. Trajectories can intertwine, or be tied in 
+  three-dimensional knots. In fact, that’s just the start of it: the 
+  intertwining can become almost unbelievably complicated. 
+
+  The example we will look at relates to something called the \tt{}Lorenz 
+  equations\rm{}. Edward Lorenz was a meteorologist interested in the dynamics 
+  of the Earth’s atmosphere. Way back in the 1960s, he formulated a very simple 
+  mathematical model of atmospheric convection. Computers were in their infancy 
+  back then, but he conducted computational studies based on his model, aided 
+  by his colleague Ellen Fetter. What they discovered in those studies laid the 
+  foundations for modern chaos theory. The equations seem quite innocuous (you 
+  can see them in the next link), but for some values of the parameters 
+  appearing in the equations they predict behaviour that is complicated beyond 
+  what anyone was expecting at the time. Their results have spawned a whole 
+  academic industry: hundreds of research papers and at least one book have 
+  been written about the Lorenz system. 
+
+  We can get an inkling of this complexity from a computed example. Figure 1 
+  shows the first part of a particular trajectory. The starting point is the 
+  obvious ``loose end'', low down in the plot. This trajectory curves around, 
+  then seems to fall into a plane, where it circulates round and round, 
+  spiralling slowly outwards. Nothing obviously “chaotic” here, surely? 
+
+  \fig{figs/fig-042c7948.png}{Figure 1. The early part of a particular 
+  trajectory of the Lorenz equations.} 
+
+  Figure 2 shows the same trajectory, computed for twice as long. Now what we 
+  see is that after spiralling outwards for a while, it took off into space, 
+  did a loop somewhat similar to the initial one, then dropped back onto the 
+  plane, in a different place from before, and started spiralling out again. 
+
+  \fig{figs/fig-ed2c8c5c.png}{Figure 2. The same trajectory as in Fig. 1, 
+  computed for twice as long.} 
+
+  Finally, Fig.\ 3 shows the result for the same trajectory when we follow it 
+  for 5 times as long as in Fig.\ 1. The pattern begins to look quite 
+  complicated. It involves repeated episodes of the kind of behaviour we have 
+  just seen: spiral out for a while, then leap off, do a loop or two in a 
+  different place, then drop back on to the “spiralling plane”, but in a 
+  different place every time. The pattern never repeats: this one of the 
+  hallmarks of chaotic response. Figure 4 lets you see this same trajectory in 
+  3D, with a rotating animation. This reveals that what we have called a 
+  “plane” is not in fact quite flat. It also shows that the loops on the 
+  right-hand side of the plot also map out a different “curvy plane”. 
+
+  \fig{figs/fig-10bc05d4.png}{Figure 3. The same trajectory as in Figs. 1 and 
+  2, computed for 5 times as long as Fig. 1.} 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-a85b30b5-00.png }&\vidframe{ 0.30 }{ vids/vid-a85b30b5-01.png }&\vidframe{ 0.30 }{ vids/vid-a85b30b5-02.png } \end{tabular}\caption{Figure 4. Animated version of the trajectory of Fig. 3, showing the 3D structure rotating it}\mooendvideo
+
+  A crucial characteristic of a chaotic system is “sensitive dependence on 
+  initial conditions”. We can illustrate this directly with our Lorenz example. 
+  Figure 5 shows two trajectories. The one in blue is the same as in Fig.\ 3. 
+  Its starting point had coordinates (1,~1,~1) in the (x,y,z) space of these 
+  plots. The trajectory plotted in red started from the point (1,~1.001,~1): so 
+  close to the initial value of the blue trajectory that they are 
+  indistinguishable at this plot scale. In the early part of the evolution, 
+  both trajectories remain close. Because the red one was plotted on top of the 
+  blue one, that means that you can hardly see that the blue one is there. 
+  However, it is obvious in the plot that you don't have to wait all that long 
+  before the red and blue lines are in different places, and both clearly 
+  visible. The tiny difference in starting points has been amplified, so that 
+  after a while the two trajectories look quite different. This is ``sensitive 
+  dependence'' in action. 
+
+  \fig{figs/fig-5a7f26f8.png}{Figure 5. Two nearby trajectories of the Lorenz 
+  equation. In blue is the trajectory from Fig. 3, in red is one with a 
+  starting position differing only by one part in a thousand.} 
+
+  Bearing in mind that Lorenz was a meteorologist, this kind of behaviour 
+  points towards the famous ``butterfly effect''. The traditional version is 
+  that a butterfly flaps its wings somewhere in the Amazon basin, and a few 
+  days later the weather in Europe is quite different from what it would have 
+  been without the butterfly. It is now fully accepted that the world's weather 
+  does indeed show this kind of sensitive dependence. This has led to a 
+  different strategy for computer-based weather forecasting: you must accept 
+  that no single run of a computer model, however sophisticated, will correctly 
+  capture the actual progress of the weather, because the observations on which 
+  the models are based have finite accuracy so that sensitive dependence is 
+  bound to make the predictions wrong in detail. Instead, they run the model 
+  many times with slightly different starting points, then combine the results 
+  using statistical ideas. That is why a modern weather forecast gives you a 
+  probability of rain at a particular time tomorrow, rather than a definite 
+  yes/no prediction. 
+
+  So can we get at least an idea of where this sensitive dependence comes from? 
+  We can see the beginnings of such sensitivity in the systems we looked at in 
+  section 8.3 based on the 2D phase plane, even though they are not chaotic. 
+  One key ingredient is the behaviour near a saddle point, which in mechanical 
+  terms describes an unstable equilibrium. Figure 6 reminds you of what happens 
+  near a saddle point. This plot illustrates the fact that two trajectories 
+  lying close together but on opposite sides of the separatrix heading into a 
+  saddle point will, after they have passed close to the saddle point, be 
+  widely separated into different regions of the phase plane. 
+
+  \fig{figs/fig-4c7c0b70.png}{Figure 6. A saddle point in the phase plane} 
+
+  To see the relevance to our example of the Lorenz equations, Fig.\ 7 shows a 
+  different view of the trajectory from Fig.\ 3. This time, we are looking at 
+  it from vertically above, down the z-axis. If you look in the centre of this 
+  plot, you can see the characteristic pattern of trajectories near a saddle 
+  point. An outward-spiralling trajectory will sooner or later come close to 
+  this saddle point, and that may result in it being diverted towards the 
+  second ``curvy plane''. The details of that diversion will be sensitive to 
+  exactly how close it comes to the saddle point. Now, this is a gross 
+  over-simplification of the full complexity of this system's phase portrait, 
+  but it gives an inkling. In a phase space with at least three dimensions, the 
+  separatrix itself can make its way back to the vicinity of the saddle point. 
+  In fact, it can do so repeatedly, and be distorted into very convoluted 
+  shapes: that's exactly what happens with the Lorenz system. Following this 
+  train of ideas is one route into the mathematics of chaos, but we won't try 
+  to go any deeper for the purposes of this introduction. 
+
+  \fig{figs/fig-b7caa381.png}{Figure 7. The trajectory of the Lorenz equations 
+  as shown in Fig. 3, but viewed down the z-axis. Notice the characteristic 
+  pattern of a saddle point at the centre of this pattern.} 
+
+  Systems capable of showing chaotic behaviour often share a feature in their 
+  phase space behaviour. You can think of the trajectories in phase space as if 
+  they were streamlines of a “phase fluid”. If you start with a concentrated 
+  “blob” of this fluid and then follow it forwards in time, you will often seen 
+  that the blob gets repeatedly stretched and folded. Well, repeated stretching 
+  and folding is a very good way to create intricate fine structure. A homely 
+  example is the way you make puff pastry. You start with a block of dough, and 
+  you spread butter on the top. You then fold it over, then roll it out thinner 
+  again with your rolling pin. You do that several times over. The result, most 
+  obvious once you cook the pastry, is the familiar texture of thin, crumbly 
+  layers. What has happened is that the original single layer of butter has 
+  been turned into a very large number of thin layers, separated by thin layers 
+  of pastry dough. The more times the stretching and folding is repeated, the 
+  finer the structure becomes. A cook will only do a small number of folding 
+  operations, but the mathematical system of equations does it infinitely many 
+  times. 
+
+  A more technological example of a similar process comes from traditional 
+  sword-making. The modern version of “\tt{}Damascus steel\rm{}” is made by 
+  bonding together sheets of two different types of steel, and then repeatedly 
+  heating it, folding it over and hammering out thinner. The result is a fine 
+  layered structure of harder and softer forms of steel: the hard layers will 
+  hold a very fine edge, while the softer layers make the sword blade less 
+  brittle. In recent times, Japanese traditional sword-makers have turned to 
+  making woodworking tools, so we have a tenuous musical instrument link: many 
+  violin makers will have Japanese tools in their armoury. Figure 8 shows a 
+  Japanese knife blade: the surface shows a characteristic wood-grain or 
+  watered-silk pattern. If you look carefully at the bevelled edge in the 
+  close-up, you can see layers within the thickness of the metal. 
+
+  We can use the Lorenz equations to illustrate one more qualitative 
+  phenomenon. In Fig.\ 5 we emphasised the fact that a small change in initial 
+  position leads to a drastic divergence of trajectories. But now look at Fig.\ 
+  9. This shows three trajectories (in different colours), starting from three 
+  very different positions. What we see here is that although the three 
+  trajectories remain different in detail, all three of them look remarkably 
+  similar in terms of a qualitative description. After a rather short initial 
+  phase, all three of them seem to settle in to the two “curvy planes” which we 
+  saw in the earlier examples. 
+
+  \fig{figs/fig-98c6f4f7.png}{Figure 9. Three trajectories of the Lorenz 
+  equations, with very different starting points} 
+
+  To understand this (at least in a very vague way), we need to introduce a new 
+  concept. To start, let’s go back to the simple linear oscillator, with 
+  damping. For that system, the entire phase plane is filled with the pattern 
+  of a stable spiral: Fig.\ 10 reminds you of the kind of pattern that 
+  involves. Every trajectory, whatever its starting point, spirals in towards 
+  the centre of the plot. This is simply the graphical view of something that 
+  is physically obvious: no matter how you start the oscillator off, if you 
+  wait long enough the initial energy will all be dissipated by the damping, 
+  and it will settle back towards it equilibrium position. The position (0,0) 
+  in the phase plane is called an attractor, for obvious reasons. 
+
+  \fig{figs/fig-94b59e4c.png}{Figure 10. Phase portrait of a stable spiral} 
+
+  There are other possible types of attractor. Some nonlinear systems show 
+  self-excited oscillation (we’ll be looking at that in the next section). A 
+  steady periodic oscillation makes a closed loop in phase space, usually 
+  called a limit cycle in this context. Such a limit cycle can also be an 
+  attractor : for at least some range of initial conditions, the trajectories 
+  may all move towards it, so that the system settles down into the periodic 
+  vibration pattern. We will see some examples in Fig.\ 1 of section 8.5. 
+
+  Before the work of Lorenz and Fetter, and the other pioneers of chaos theory, 
+  equilibrium points and limit cycles were the only kinds of attractors people 
+  were aware of. But Fig.\ 9 suggests that the Lorenz equations, with the 
+  particular parameter values used here, have some kind of attractor, which is 
+  neither an equilibrium point nor a limit cycle. You can sense something of 
+  the puzzlement of the pioneers when I tell you that the name they gave this 
+  kind of thing is a “strange attractor”. That piece of jargon has stuck. It is 
+  indeed the case that all (or, strictly, almost all) trajectories of the 
+  Lorenz equations with these particular parameter values tend towards a single 
+  strange attractor. This attractor is a very complicated beast: it has what 
+  the mathematicians call a fractal structure: the more you zoom in on it, the 
+  more fine details are revealed, with no limit. If you remember seeing 
+  graphics of the “\tt{}Mandelbrot set\rm{}” that would give you the right kind 
+  of impression. 
+
+  After that digression to the Lorenz equations, we can return to vibration and 
+  look at a simple system that exhibits chaotic behaviour. Back in section 8.3 
+  we looked at the behaviour of a pendulum: there was no trace of chaotic 
+  behaviour there. But we only have to extend the idea of a pendulum in a 
+  simple way to find a chaotic system. Figure 11 shows a double pendulum: two 
+  identical rods, hinged together and hung from a pivot at the top. 
+
+  \fig{figs/fig-726a2bba.png}{Figure 11. Sketch of a double pendulum} 
+
+  The equations governing the motion of a double pendulum like this are derived 
+  in the next link. Armed with those equations, it is easy to solve them in the 
+  computer to illustrate how the system behaves: Fig.\ 12 shows an example. The 
+  pendulum has been launched from a particular position and allowed to move 
+  freely. It is easy to believe, surely, that this motion might be chaotic. 
+
+  Sometimes one or other of the two component pendulums goes ``over the top'' 
+  to perform a rotation. In doing so, the system passes near to a saddle point 
+  describing the unstable equilibrium when one or other (or both together) 
+  balances in the vertical-upwards position. These saddle points are embedded 
+  in a four-dimensional phase space, so we can't easily visualise them, but the 
+  generic behaviour is similar to what we saw earlier with the Lorenz system. 
+  Provided the motion has enough initial energy that at least one of the 
+  pendulums can occasionally do a loop, nearly every motion trajectory exhibits 
+  chaotic behaviour. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-6f3972c4-00.png }&\vidframe{ 0.30 }{ vids/vid-6f3972c4-01.png }&\vidframe{ 0.30 }{ vids/vid-6f3972c4-02.png } \end{tabular}\caption{Figure 12. Example of free motion of an undamped double pendulum, simulated from the governing equations}\mooendvideo
+
+  You might be thinking ``But this is just a computer simulation: does a real 
+  double pendulum behave like that?'' Figure 13 shows an example based on 
+  measured motion of a double pendulum: this one is used in a laboratory 
+  experiment for second-year Engineering undergraduates at Cambridge. Unlike 
+  the simulated version in Fig.\ 12, the real pendulum has some energy 
+  dissipation so that if you leave it for long enough it will eventually end up 
+  hanging vertically downwards. But you can see in the figure that before that 
+  happens, the motion looks similarly chaotic. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-3a08e0da-00.png }&\vidframe{ 0.30 }{ vids/vid-3a08e0da-01.png }&\vidframe{ 0.30 }{ vids/vid-3a08e0da-02.png } \end{tabular}\caption{Figure 13. Measured motion of a double pendulum: data courtesy of Hugh Hunt}\mooendvideo
+
+  Figure 14 shows a direct demonstration of ``sensitive dependence'' using this 
+  laboratory pendulum system. The operator has launched the system three times, 
+  from approximately the same initial position. All three subsequent motions 
+  are combined in this plot. You can see that for a while the three cases move 
+  in a rather similar way, but they diverge progressively, and by the end the 
+  three cases are moving in quite different ways. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-050f1f2f-00.png }&\vidframe{ 0.30 }{ vids/vid-050f1f2f-01.png }&\vidframe{ 0.30 }{ vids/vid-050f1f2f-02.png } \end{tabular}\caption{Figure 14. Three different measured examples of motion of a double pendulum, starting from very similar initial positions: data courtesy of Hugh Hunt}\mooendvideo
+

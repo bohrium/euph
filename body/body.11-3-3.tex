@@ -1,0 +1,154 @@
+  The first step in modelling a soprano saxophone, or any other conical reed 
+  instrument, is to calculate the input impedance for a truncated cone. This 
+  will play the same role as the impedance of a cylindrical tube, which we 
+  calculated in section 11.1.1 and used when building an idealised model of the 
+  clarinet. Figure 1 shows the geometry: measured from the point of the 
+  complete cone, the two ends of the truncated cone are at positions $x_1$ and 
+  $x_2$, so the length of the tube is $L=x_2-x_1$. Although the diagram is 
+  drawn with a rapidly flaring cone, in reality the instruments we are 
+  interested in have much more gentle flares: the angle at the apex of the cone 
+  is about $4^\circ$ for a soprano saxophone, about $1.5^\circ$ for an oboe and 
+  as little as $0.8^\circ$ for a bassoon. These angles are all small, so in our 
+  analysis we will make no distinction between horizontal distance $x$ and 
+  radial distance $r$. 
+
+  We already know from section 4.1.2 that the pressure inside the tube, for 
+  sinusoidal excitation at frequency $\omega$, can be written as a sum of 
+  right-travelling and left-travelling spherical waves: 
+
+  $$p=A_R \dfrac{e^{i \omega t -ikr}}{r} + A_L \dfrac{e^{i \omega t +ikr}}{r} 
+  \tag{1}$$ 
+
+  where $A_R$ and $A_L$ are (complex) coefficients and the wavenumber 
+  $k=\omega/c$ as usual, where $c$ is the speed of sound. The particle velocity 
+  $v$ then must satisfy equation (2) from section 4.1.3, so that 
+
+  $$\rho_0\dfrac{\partial v}{\partial t}=-\dfrac{\partial p}{\partial r} 
+  \tag{2}$$ 
+
+  where $\rho_0$ is the density of air. Substituting, 
+
+  $$\rho_0 i \omega v = A_R \dfrac{e^{i \omega t -ikr}}{r^2} + A_L \dfrac{e^{i 
+  \omega t +ikr}}{r^2}$$ 
+
+  $$+ ik A_R\dfrac{e^{i \omega t -ikr}}{r}- ik A_L\dfrac{e^{i \omega t 
+  +ikr}}{r} \tag{3}$$ 
+
+  so that 
+
+  $$v=\dfrac{1}{i \omega \rho_0}\left[ \dfrac{p}{r}+\dfrac{ik}{r}\left(A_R e^{i 
+  \omega t -ikr} -- A_L e^{i \omega t +ikr} \right) \right] . \tag{4}$$ 
+
+  The tube is open at the right-hand end, so $p=0$ at $r=x_2$, giving 
+
+  $$A_R e^{-ikx_2} + A_L e^{ikx_2} = 0 \tag{5}$$ 
+
+  so that 
+
+  $$A_L=-A_R e^{-2ikx_2} . \tag{6}$$ 
+
+  Now at $r=x_1$ we have 
+
+  $$p=\dfrac{e^{i \omega t}}{x_1} A_R \left[ e^{-ikx_1} -- e^{ik(x_1-2x_2)} 
+  \right] \tag{7}$$ 
+
+  and 
+
+  $$v= \dfrac{e^{i \omega t}}{ik\rho_0 c x_1^2} A_R \left[ e^{-ikx_1} -- 
+  e^{ik(x_1-2x_2)} \right] $$ 
+
+  $$+ \dfrac{e^{i \omega t}}{i\rho_0 c x_1} A_R \left[ e^{-ikx_1}+ 
+  e^{ik(x_1-2x_2)} \right] . \tag{8}$$ 
+
+  So the input impedance $Z$, and its inverse the admittance $Y$, satisfies 
+
+  $$\dfrac{1}{Z}=Y=\dfrac{S_1v}{p}=\dfrac{S_1}{\rho_0 c} \dfrac{e^{-ikx_1} 
+  \left(1+\dfrac{1}{ikx_1}\right) + e^{ik(x_1-2x_2)} \left(1-\dfrac{1}{ikx_1} 
+  \right)}{e^{-ikx_1} -- e^{ik(x_1-2x_2)}}$$ 
+
+  $$=\dfrac{1}{Z_t}\left[ \dfrac{1+e^{-2ikL}}{1-e^{-2ikL}}+ 
+  \dfrac{1}{ikx_1}\right]=-\dfrac{i}{Z_t}\left(\cot kL + \dfrac{1}{kx_1} 
+  \right) \tag{9}$$ 
+
+  where $S_1$ is the cross-sectional area at position $x_1$ and $Z_t=\rho_0 
+  c/S_1$ is the characteristic impedance of a cylindrical tube with that area. 
+
+  This gives the input impedance expression we want, but we should also note a 
+  further approximation. For low frequencies such that $kx_1 \ll 1$, then $kx_1 
+  \approx \tan kx_1$ so that 
+
+  $$Y \approx -\dfrac{i}{Z_t}\left(\cot kL + \cot kx_1 \right) . \tag{10}$$ 
+
+  This is the ``cylindrical saxophone'' approximation: it is precisely the 
+  expression for the input admittance at distance $x_1$ from the end of a 
+  cylindrical pipe of length $x_1+L$ which is open at both ends. Using a 
+  standard trigonometric formula for $\cot A + \cot B$ we deduce that the zeros 
+  of $Y$, which are the peaks of $Z$, occur where $\sin k(x_1+L)=0$, so that 
+  they are exactly harmonically spaced. The same expression (10) (apart from 
+  needing a different constant in place of $Z_t$) gives the impedance at 
+  position $x_1$ on a string of length $x_1+L$, which is the basis of the 
+  analogy with a bowed string. 
+
+  If we want to couple our truncated cone to a mouthpiece cavity with volume 
+  $V$, we simply need to replace $Y$ from equation (9) by 
+
+  $$Y_m=Y+\dfrac{i \omega V}{\rho_0 c^2} \tag{11}$$ 
+
+  because the pressure has to be the same at the tube mouth and in the cavity, 
+  while the total volume flow rate is the sum of the two contributions, so the 
+  two admittances must be added. The expression for the admittance of the 
+  enclosed air volume follows from equations (2) and (3) of section 4.2.1. The 
+  required value of $V$ to match the volume of the missing portion of the cone 
+  is 
+
+  $$V=x_1 S_1/3 . \tag{12}$$ 
+
+  However, equation (11) is only valid at low frequency, because it relies on 
+  the assumption $kx_1 \ll 1$. At very high frequencies the influence of the 
+  mouthpiece should tend to zero, so for the purposes of computation equation 
+  (11) is replaced by an ad hoc version including a low-pass filter: 
+
+  $$Y_m=Y+\left( \dfrac{\omega_c^2}{\omega^2+\omega_c^2} \right) \dfrac{i 
+  \omega V}{\rho_0 c^2} \tag{13}$$ 
+
+  with a cutoff frequency $\omega_c$ chosen suitably: for the saxophone model 
+  discussed here this cutoff was placed at 1~kHz. 
+
+  For the purposes of simulation, we need to deduce a reflection function from 
+  the input impedance. The procedure was described in section 11.3.2. It 
+  involves using an inverse FFT, and for that purpose the damping needs to be 
+  sufficient to avoid numerical difficulties. As was done in the clarinet case, 
+  the baseline level of damping was determined by textbook expressions for 
+  visco-thermal damping, but this was enhanced in an ad hoc way at higher 
+  frequencies. The resulting input impedances are shown in Fig.\ 2, for models 
+  with and without the mouthpiece compensation. The difference between the two 
+  looks very small in this plot, but plots shown in section 11.3 demonstrate 
+  that it is big enough to have a significant effect on the results of 
+  simulations. 
+
+  The assumed level of damping was set in such a way as to resemble measured 
+  results. Figure 3 shows a measured input impedance of a soprano saxophone 
+  fingered for its lowest note, with all tone-holes closed, again taken from 
+  Joe Wolfe’s \tt{}web site\rm{}. The general level and the extent of 
+  peak-to-valley excursions at low frequencies give quite a good match to Fig.\ 
+  2. But the real instrument has far higher damping above about 2.5~kHz, 
+  largely as a result of the radiation characteristics of the bell, not 
+  included in the simplified model here. 
+
+  For comparison, Fig.\ 4 shows the “cylindrical saxophone” impedance from 
+  equation (10), as a green curve superimposed on the two impedance curves from 
+  Fig.\ 2. 
+
+  From the impedance functions shown in Fig.\ 2, it is straightforward to 
+  calculate the corresonding impulse responses and the reflection functions, as 
+  described in section 11.3.2. The results are shown in Figs.\ 5 and 6, for the 
+  models with and without the mouthpiece, using the same colour code as in 
+  Fig.\ 2. The reflection functions are more spread out in time than the 
+  corresponding result for a cylindrical tube (shown in Fig.\ 4 of section 
+  11.3.2). 
+
+  Finally, while discussing the ingredients of the saxophone simulations this 
+  is a convenient place to summarise the parameter values chosen for the reed 
+  model. The width $w$ was set at 12~mm, the reed stiffness $K_r$ was chosen to 
+  be significantly softer than the clarinet reed at 5~kPa/mm, the reed 
+  resonance frequency was set at 3~kHz, and the reed Q-factor at 2.5. 

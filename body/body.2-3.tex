@@ -1,0 +1,80 @@
+
+
+  Since one feature of human hearing has been mentioned, it is convenient to 
+  have a short digression on musical pitch and its relation to frequency. Just 
+  as we hear loudness on a logarithmic scale, so we respond to pitch on a 
+  logarithmic scale too: when a musician talks about the relation of two 
+  different notes, they use language which describes the ratio of the two 
+  frequencies. At least, this is more or less true. For the moment I will 
+  ignore quibbles of detail and tell the simple but approximate story. Our 
+  brains are wired in a way which means that we have a special liking for 
+  frequencies in simple whole-number ratios, and there are musical terms to 
+  describe these. The simplest is the ratio 2:1: two notes with frequencies in 
+  this ratio are said to be an octave apart. The ratio 3:2 describes a fifth, 
+  4:3 a fourth, 5:4 a major third, 6:5 a minor third. Notes with a frequency 
+  ratio close to one of these, but not quite accurate, are likely to sound out 
+  of tune. 
+
+  Now there is an arithmetic snag. If you choose a starting note and then go up 
+  in seven octaves and back down again in 12 fifths, you arrive back almost at 
+  the starting point, but not quite. If you are a singer or a violinist this is 
+  no problem. You can vary the pitch continuously, and it doesn't matter if 
+  these two notes are slightly different. But if you play an instrument with 
+  fixed and defined pitches (via a keyboard, for example) then you need to play 
+  the same note for both ends of this sequence. That can only be achieved by 
+  some kind of fudging of the frequencies, known as a tempering system. To tune 
+  a keyboard instrument, it is simply not possible to make all note 
+  combinations (or intervals) be perfectly in tune. Some compromise is needed, 
+  and different choices may be made depending on the style and period of music 
+  to be played. We won't go into any detail here, we will only describe the 
+  simplest and most common system, called equal temperament. 
+
+  The argument goes like this. We hear in ratios, so let's try to find a way of 
+  tuning so that the ratio from each note to the one above is the same. We will 
+  keep octaves at exactly the 2:1 ratio, so the question is: how do we 
+  subdivide the octave into a number of equal steps, so that we include 
+  reasonably good approximations to the simple ratios described above: 3:2, 4:3 
+  and so on? A bit of empirical exploring with a calculator reveals that the 
+  smallest number of subdivisions which works well enough for most purposes is 
+  12. So that is why a piano has 12 keys to the octave (ignoring any 
+  distinction between black and white keys, which are purely for ergonomic 
+  convenience of the player). In a similar way, a guitar has 12 frets to the 
+  octave. The frequency ratio needed to achieve this can easily be worked out. 
+  We need a number which when multiplied by itself 12 times ends up with the 
+  value 2 (for the octave). So we need the ``twelfth root of 2'', written 
+  $\sqrt[12]{2}$, which is equal to approximately 1.059, or about 6%. This 
+  ratio is the equal-tempered semitone. Any two adjacent notes on a piano have 
+  frequencies different by about 6%. 
+
+  Applied to the earlier example: to go up seven octaves and come back down in 
+  12 equal steps to reach exactly the starting point, each step needs to have a 
+  ratio corresponding to seven equal-tempered semitones, which is 1.498 rather 
+  than the ``perfect fifth'' ratio 1.5. Close, but slightly tweaked. For this 
+  interval, equal temperament does pretty well. Its most conspicuous failing 
+  comes with the major third: four equal-tempered semitones gives a ratio 
+  1.2599, whereas the perfectly tuned major third should have the ratio 5/4 = 
+  1.25. That sounds fairly close, but not close enough for an expert. To 
+  describe small frequency discrepancies like this, it is usual to further 
+  subdivide the semitone into 100 small intervals called cents. The most acute 
+  musical ears can discriminate about 2 cents, 1/50 of a semitone, or a 
+  frequency change of about 0.1%. But the discrepancy between 1.2599 and 1.25 
+  is about 14 cents, very clearly audible. This has consequences for the design 
+  of the piano and other fixed-pitch stringed instruments, which we will come 
+  to in Chapter ?. 
+
+  Since we will be showing a lot of graphs of things plotted along a frequency 
+  axis, it will be useful to have a translation table between musical notes and 
+  frequency in Hz. So far we have only defined ratios of frequencies, so to get 
+  an agreed pitch standard we need to adopt a convention. The usual modern 
+  convention is to tune one of the notes A to the frequency 440 Hz. This is the 
+  note the oboe will usually play before a concert starts, to allow the 
+  orchestra to tune up. Starting from this value, it is easy to work out the 
+  frequency of any other equal-tempered note. For reference, a table is given 
+  here. Musical notes are labelled with their usual names A, B, C etc. for the 
+  ``white notes'', with intervening semitones, the ``black notes'', called 
+  things like ``A sharp'' or ``B flat'', written A$\sharp$ or B$\flat$. Within 
+  equal temperament those two names mean exactly the same note, with a 
+  frequency one semitone above A and one semitone below B. The table also shows 
+  the conventional scheme for numbering the octaves, so we can refer to the A 
+  in a particular octave as, for example, A$_4$. 
+

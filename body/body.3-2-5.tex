@@ -1,0 +1,101 @@
+  Back in section 2.2.5, we looked at the general theory of linear vibration of 
+  discrete systems. In terms of a set of ``generalised coordinates'' 
+  $q_1,q_2,\dots,q_N$ we argued that the potential energy has the form of a 
+  quadratic expression 
+
+  $$V=\dfrac{1}{2}\sum_j \sum_k K_{jk} q_j q_k \tag{1}$$ 
+
+  involving a matrix $K$ whose terms are $K_{jk}$, called the stiffness matrix. 
+  Similarly, the kinetic energy was expressed as a quadratic expression in the 
+  generalised velocities $\dot{q}_1,\dot{q}_2,\dots,\dot{q}_N$ 
+
+  $$T=\dfrac{1}{2}\sum_j \sum_k M_{jk} \dot{q}_j \dot{q}_k\tag{2}$$ 
+
+  involving a matrix $M$ whose terms are $M_{jk}$, called the mass matrix. 
+  These expressions can be written compactly in terms of the vector 
+  $\mathbf{q}$ whose components are $q_i$: 
+
+  $$V=\frac{1}{2} \mathbf{q}^T K \mathbf{q},~~~T=\frac{1}{2} \mathbf{\dot{q}}^T 
+  M \mathbf{\dot{q}}\tag{3}$$ 
+
+  where $\mathbf{q}^T$ denotes the transpose of the vector $\mathbf{q}$. 
+
+  We will now give an outline proof of an important result about the ``Rayleigh 
+  quotient'' 
+
+  $$R=\frac{\mathbf{q}^T K \mathbf{q}}{\mathbf{q}^T M \mathbf{q}} .\tag{4}$$ 
+
+  Notice that the denominator is not quite the kinetic energy: the expression 
+  involves $\mathbf{q}$, not $\mathbf{\dot{q}}$. 
+
+  We want to express $\mathbf{q}$ in terms of the mode shapes 
+  $\mathbf{u}^{(n)}$, which were the solutions of eq. (7) of section 2.2.5. So 
+  write 
+
+  $$\mathbf{q}=\sum_n{\alpha_n \mathbf{u}^{(n)}} .\tag{5}$$ 
+
+  Substitute this expression into eq. (4), and take advantage of the fact 
+  (described in section 2.2.5) that any two modes $\mathbf{u}^{(n)}$ and 
+  $\mathbf{u}^{(m)}$ are orthogonal with respect to both matrices $K$ and $M$. 
+  The result simplifies down to 
+
+  $$R=\frac{\alpha_1^2 \omega_1^2 + \alpha_2^2 \omega_2^2 + \dots + \alpha_N^2 
+  \omega_N^2 }{\alpha_1^2 + \alpha_2^2 + \dots + \alpha_N^2 } .\tag{6}$$ 
+
+  Now suppose that the vector $\mathbf{q}$ is an approximation to one of the 
+  modes, say $\mathbf{u}^{(k)}$. That means that we could take $\alpha_k =1$, 
+  and all the other $\alpha_n$ will be small: 
+
+  $$\alpha_n \ll 1,~~~n \ne k .\tag{7}$$ 
+
+  Then 
+
+  $$R=\frac{\alpha_1^2 \omega_1^2 + \alpha_2^2 \omega_2^2 + \dots+ \omega_k^2 + 
+  \dots + \alpha_N^2 \omega_N^2 }{\alpha_1^2 + \alpha_2^2 + \dots + 1 \dots + 
+  \alpha_N^2 } .\tag{8}$$ 
+
+  It is obvious that $R \approx \omega_k^2$, but the result we want is stronger 
+  than that. The vector $\mathbf{q}$ differs from the exact mode shape by terms 
+  of order $\alpha_1,~\alpha_2, \dots$ but $R$ only differs from $\omega_k^2$ 
+  by much smaller terms, of the order of $\alpha_1^2,~\alpha_2^2, \dots$. 
+  Roughly, we could say that if $\mathbf{q}$ has about 10% errors, the Rayleigh 
+  quotient $R$ will approximate $\omega_k^2$ with errors only around 1%. 
+
+  We can say more: suppose that in eq. (8) we replace all the terms 
+  $\omega_2^2, \omega_3^2, \dots$ by $\omega_1^2$, where we assume we have 
+  arranged the frequencies in order so that 
+
+  $$\omega_1^2 \le \omega_2^2 \le \omega_3^2 \le \dots \le \omega_N^2 
+  .\tag{9}$$ 
+
+  Then it is obvious that we must have reduced the value of the Rayleigh 
+  quotient, whatever the values of $\alpha_1, \alpha_2, \dots$, because both 
+  numerator and denominator are sums of terms that are all positive because 
+  they are squares. So 
+
+  $$R \ge \frac{\alpha_1^2 \omega_1^2 + \alpha_2^2 \omega_1^2 + \dots+ 
+  \omega_1^2 + \dots + \alpha_N^2 \omega_1^2 }{\alpha_1^2 + \alpha_2^2 + \dots 
+  + 1 \dots + \alpha_N^2} = \omega_1^2 .\tag{10}$$ 
+
+  In a similar way, if we replace all the $\omega_j^2$ by the largest value 
+  $\omega_N^2$ we can deduce that $R \ge \omega_N^2$. 
+
+  Gathering all these results up, we can deduce that if the quantity 
+  $R=\frac{\mathbf{q}^T K \mathbf{q}}{\mathbf{q}^T M \mathbf{q}}$ is evaluated 
+  using any vector $\mathbf{q}$, the result will be 
+
+  (i) $\ge$ the smallest squared natural frequency; 
+
+  (ii) $\le$ the largest squared natural frequency; 
+
+  (iii) a surprisingly good approximation to $\omega_k^2$ if $\mathbf{q}$ is an 
+  approximation to mode $\mathbf{u}^{(k)}$. (Formally, the Rayleigh quotient 
+  $R$ is stationary near each mode.) 
+
+  The last result can be used to estimate natural frequencies from fairly crude 
+  guesses of mode shapes. As we will see in section 3.3.1, it can also be used 
+  to reveal the effect on the natural frequencies of making small changes to 
+  the system. We have demonstrated these results for discrete systems with a 
+  finite number of degrees of freedom. But, as was explained in section 2.2.5, 
+  results for discrete systems can always be extended to apply to continuous 
+  systems like beams and plates. 

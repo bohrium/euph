@@ -1,0 +1,634 @@
+  We have said a little about wind instruments in earlier chapters, but now it 
+  is time to go into more detail. It is useful to start by comparing the wind 
+  instruments with the bowed-string instruments. Both types of instrument are 
+  capable of producing sustained tones, and this automatically means that they 
+  must all involve nonlinearity in some essential way (see section 8.1). In the 
+  case of a bowed string, the main source of nonlinearity was from the 
+  stick-slip frictional interaction between bow-hair and string. In the wind 
+  instruments, the main nonlinearity is associated with things going on near 
+  the mouthpiece end, which we will discuss in detail shortly. 
+
+  An obvious difference between stringed instruments and wind instruments is 
+  that wind instruments present the player with quite different control 
+  variables: things like blowing pressure and details of what to do with the 
+  lips, teeth and mouth cavity (generically called ``embouchure''), rather than 
+  bow speed, force and position. We will try to develop ``playability 
+  diagrams'' for wind instruments involving these control variables, somewhat 
+  analogous to the Schelleng and Guettler diagrams for a bowed string (see 
+  sections 9.3 and 9.5). 
+
+  Wind instruments usually have no equivalent of the stringed instrument body, 
+  which influences the sound of the instrument by imposing an extra stage of 
+  filtering between the string motion and the radiated sound. In a stringed 
+  instrument, it is the vibrating soundboard which generates sound in the 
+  surrounding air, because the strings themselves are too small to be good 
+  sound sources. In most wind instruments, the sound is radiated directly by 
+  air motion: pressure variations inside the tube push air in and out of open 
+  tone-holes, or through the bell of a brass instrument. But in another sense 
+  the tube is the analogue of a string: it provides a set of resonances, often 
+  approximately harmonically related, which interact with the nonlinearity to 
+  produce the pitch and waveform of the played note. 
+
+  There are two other important differences between bowed strings and wind 
+  instruments. First, the resonances of air in a tube are usually much more 
+  highly damped than the resonances of a string. A violin string might have Q 
+  factors of the order of thousands, whereas tube resonances are more likely to 
+  have Q factors of the order of hundreds or less. The second thing is that the 
+  nonlinearity associated with friction is (as we saw back in Chapter 9) a very 
+  severe one, whereas wind instrument nonlinearities tend to be less vigorous. 
+
+  There is an important distinction between “smooth” and “non-smooth” 
+  nonlinearities (see section 8.2), which suggests that rather different 
+  mathematical approaches might be called for in the two cases. The big 
+  disparity in Q factors also pushes us in a similar direction. The result is 
+  that the scientific literature relating to wind instruments places a lot of 
+  emphasis on periodic regimes of oscillation, thresholds, and bifurcations 
+  between regimes. With the bowed string, we found earlier (in Chapter 9) that 
+  there was no useful concept of a threshold of vibration, where the motion is 
+  “almost sinusoidal”: a bowed string goes into strongly-nonlinear stick-slip 
+  vibration straight away, and theoretical treatment tends to rely more heavily 
+  on ``brute force'' numerical simulation. But for many wind instruments there 
+  is a clear-cut threshold of blowing pressure or air speed, when the note 
+  ``springs to life''. 
+
+  \samsection{A. Names and categories} 
+
+  The next step is to sort the enormous diversity of wind instruments into a 
+  few general categories. If you look at the wind instruments in a western 
+  symphony orchestra or wind band (see Fig.\ 1 for an example), a three-way 
+  classification seems self-evident. There are the reed instruments (clarinet, 
+  oboe, bassoon), the flute-like instruments (flute, piccolo) and the brass 
+  instruments (trumpet, trombone, French horn). But if we cast our net a little 
+  wider than the symphony orchestra, we soon find out that things are more 
+  complicated and less clear. 
+
+  For a start, by focussing on orchestral instruments we are missing one 
+  category of instrument entirely: the “free reed” instruments, like the 
+  harmonium, accordion or harmonica. This gives a four-way classification, 
+  which will turn out to allow us to pigeon-hole virtually all wind instruments 
+  (including the human voice). However, the categories are not always as 
+  distinct as you might think. It is important to be clear what the basis of 
+  the classification is. One thing that definitely does not influence the 
+  classification of instruments is the material they are made of. Despite the 
+  names, some “woodwind” instruments are made of metal while some “brass” 
+  instruments are made of wood. 
+
+  Rather, the key observation is one we have already mentioned: all wind 
+  instruments are capable of producing a sustained tone, so they must all 
+  involve nonlinearity in some essential way. The four-way classification 
+  separates instruments based mainly on the details of the nonlinearity that 
+  allows them to work. Three of the four are related, to the extent that they 
+  blur into each other at the boundaries. These are the reeds, the brass and 
+  the free reeds. The fourth member really is different, though. Flutes and 
+  their relatives are driven by an air jet interacting with a sharp edge. This 
+  excitation mechanism involves no mechanical moving parts, unlike the reeds or 
+  vibrating lips of the other three categories of wind instrument. 
+
+  \samsection{B. The four types of wind instrument} 
+
+  I will give a brief description of the characteristic features of the four 
+  categories of instruments here, but more detail will be given in separate 
+  sections on each type. Figure 2 shows a sketch of the mouthpiece end of a 
+  clarinet-like reed instrument. The player’s lips seal round the mouthpiece 
+  and reed, and then the player applies a suitable blowing pressure so that air 
+  flows through the narrow gap. As we already discussed briefly in section 8.5, 
+  a crucial feature of this kind of backward-facing reed is that the player’s 
+  blowing pressure tends to close the reed. If the pressure difference between 
+  the mouth and the inside of the mouthpiece gets too big, the reed closes 
+  completely against the rigid part of the mouthpiece (the “lay”) — or at 
+  least, almost completely. In reality there will be a bit of leakage because 
+  the reed and the lay do not meet perfectly. 
+
+  Of course, the reed has a resonance frequency of its own. Indeed, it has many 
+  resonances if we look sufficiently high in frequency, but the lowest 
+  resonance is the most important for the normal musical functioning of a 
+  clarinet. Even this lowest resonance is usually placed higher than the 
+  fundamental frequency of any played note on the instrument, so reed resonance 
+  is a relatively minor contribution to the behaviour of the instrument. Much 
+  more important are the resonance frequencies of the tube, which the player 
+  manipulates by opening and closing tone-holes. The playing frequency of any 
+  particular note is predominantly governed by these tube resonances. 
+
+  All this is in sharp contrast to our second category of instrument, which we 
+  will continue to call “brass” instruments despite the comment about materials 
+  made above. Figure 3 shows a sketch of the mouthpiece end of a typical brass 
+  instrument. The tube is terminated by a cup-shaped mouthpiece. The player 
+  presses their mouth firmly against this cup, and they “buzz” their lips. This 
+  makes the lips open and close at the frequency of the note being played, and 
+  high-speed video recordings of brass players [1] show that, when air is 
+  flowing out of the mouth into the instrument, the lips open outwards as 
+  sketched in the figure. So the lips act in a somewhat similar way to a 
+  clarinet reed insofar as they provide a kind of nonlinear valve controlling 
+  air flow into the instrument, but we will see in section 11.5 that the 
+  behaviour is crucially different because of the outward-opening motion: 
+  higher pressure in the mouth tends to make the gap get bigger, not smaller as 
+  in a clarinet. 
+
+  The tube of the instrument still has resonances, of course, but they do not 
+  dominate the playing pitch to the same extent as in a reed instrument. The 
+  brass player has to adjust their lip tension (“embouchure”) in order to 
+  achieve the correct buzzing frequency for the desired note. The tube 
+  resonances help a lot: players describe the sensation of the pitch being 
+  “slotted”. But a sufficiently skilful and forceful brass player can coax many 
+  pitches out of an instrument, especially when the resonances do not provide 
+  much support — we will explain more in section 11.5. This leads to some brass 
+  players’ party tricks: playing tunes on unlikely “instruments” such as vacuum 
+  cleaner hoses, or (particularly striking) holding a steady, unchanging note 
+  on a trombone while moving the slide in and out! 
+
+  Things are different again for the third category of instruments, the free 
+  reeds. Figure 4 shows a sketch of a reed from a harmonium or accordion. A 
+  thin cantilever beam, usually of brass, is fixed to a heavier metal plate, 
+  over a slot which is just a little bigger than the reed. As the reed 
+  vibrates, it can move through this slot. If the amplitude is large, it will 
+  move away from the plate on both sides at different stages in the cycle. As 
+  in the instruments we have already looked at, the player creates pressure on 
+  one side of the reed plate, and the moving reed provides a nonlinear valve 
+  between the two sides of the plate. But this time, that valve opens wider on 
+  both sides. In both the other cases, the valve tends to open when air flows 
+  one way, and to close when it flows the other way: the difference between the 
+  two cases lies in which way round these two things happen. 
+
+  The other big difference between a harmonium or accordion and any of the 
+  brass or reed instruments is that it has no resonating tube. The playing 
+  frequency is usually very close to the resonance frequency of the reed. But 
+  now we can see an example of blurring between these categories of instrument: 
+  many Asian “mouth organs”, like the ones seen in Fig.\ 5, do have resonating 
+  tubes. These are still formally classified as free reed instruments, but the 
+  playing pitch (and the sound spectrum) is influenced by these tubes. A 
+  related effect may be more familiar to western audiences: a harmonica player 
+  is able to “bend” notes, a particularly vital ingredient of performance 
+  technique for blues players. As will be explored in section 11.6, this is 
+  achieved by manipulating a different source of resonance: the player’s mouth 
+  cavity and vocal tract. 
+
+  Thinking of the vocal tract reminds us that there is another familiar “wind 
+  instrument”: the human voice. Where does this fit into the scheme we have 
+  been outlining? When we speak or sing, the origin of the sound is that air 
+  flow from our lungs is modulated by vibration of the vocal cords located down 
+  in the larynx at the top of the trachea. (See \tt{}this Wikipedia page\rm{} 
+  for more anatomical detail.) Figure 6 shows an animation of how the vocal 
+  cords vibrate. The motion, and the fact that the vocal cords are made of 
+  throat tissue not very different from the lips, reminds us of the brass 
+  player’s lip vibration sketched in Fig.\ 3. 
+
+  So should the human voice be classified as a brass instrument? Perhaps, but 
+  some of the other key ingredients of a brass instrument are lacking. Although 
+  the sound from the vocal cords does connect to a tube with resonances (the 
+  vocal tract), this does not serve to provide “slotted” pitches. The pitch is 
+  governed directly by the “reed resonance”, determined by how tightly your 
+  throat muscles stretch the vocal cords (and by other variables such as the 
+  pressure). In that respect, the singing voice is more like a free reed 
+  instrument. 
+
+  The vocal tract resonances are important, but not to modify the pitch. 
+  Instead, they provide spectral colouration of the sound by the time it 
+  emerges from your mouth, by amplifying some harmonics relative to others. 
+  These patterns of amplification around vocal tract resonances are the 
+  “formants” which determine your perception of vowel sounds, as mentioned back 
+  in section 5.3. This makes the voice a relatively rare example of a wind 
+  instrument involving a functional component playing a somewhat similar role 
+  to that of the body of a stringed instrument. 
+
+  Our final category describes wind instruments that depend on an edge tone of 
+  some kind. Figure 7 shows a schematic sketch of part of the mouthpiece of a 
+  recorder, or a flue organ pipe, or a referee’s whistle. Some examples of flue 
+  organ pipes are shown in Fig.\ 8: wooden pipes in the centre, flanked by 
+  metal ones. Air is blown through a slot, and emerges as a jet. A short 
+  distance away from the slot is a sharp edge, and the air jet interacts with 
+  this edge in some complicated, fluid-dynamical way. 
+
+  In the presence of acoustic resonances (tube resonances in the case of the 
+  recorder or the organ pipe, a Helmholtz resonance for the whistle) this 
+  interaction may settle into a regular, periodic pattern and thus produce a 
+  musical note. Even without an acoustic resonance, an air jet can sometimes 
+  interact with an edge to produce a periodic variation in the flow pattern. 
+  Another possibility involves resonant behaviour not of an acoustic tube, but 
+  of the structure providing the edge: this effect is used deliberately in an 
+  \tt{}Aeolian harp\rm{}, in which stretched strings are excited by the wind; 
+  it also happens accidentally when power cables “sing” or “gallop” in the 
+  wind. 
+
+  These air-jet instruments are probably the most complicated of the four 
+  categories in terms of modelling the underlying physics, but we need to 
+  understand a bit about fluid flow to make progress with all four types of 
+  wind instrument. This is the task of the next section: it will give a 
+  qualitative introduction to some key concepts and phenomena of fluid 
+  dynamics. After that, the remaining sections of this chapter will look at the 
+  four categories of instrument in more detail. 
+
+  \samsection{C. Tube basics} 
+
+  Before that, in the remainder of this section, we will deal briefly with some 
+  features held in common by several categories. First, a reminder of what we 
+  learned in section 4.2 about acoustic resonators, and especially about 
+  resonances in tubes with various bore profiles and boundary conditions. 
+  Figures 9--12 reproduce some plots from that section. 
+
+  Figure 9 shows the case of a straight pipe, open at both ends. This could be 
+  an idealised model for a flute, recorder, or flue organ pipe (as in Fig.\ 8). 
+  The fundamental mode has a half-wavelength between the ends, so its frequency 
+  corresponds to a sound wave with wavelength twice the length of the pipe. The 
+  higher modes have resonance frequencies in ratios 2, 3, 4… to this 
+  fundamental frequency, so they fill a complete harmonic series. In reality, 
+  the frequencies will all be a little lower because the pipe will “feel” a 
+  little longer than its physical length: as explained in section 4.2.1, there 
+  is an “end correction” to be added to the physical length, whose value 
+  depends on the detailed geometry around the open ends of the pipe. 
+
+  Figure 10 shows the corresponding plot for a straight pipe that is open at 
+  one end but closed at the other. This could be an idealised model for a 
+  clarinet, with the closed end at the mouthpiece, or for a “bourdon” organ 
+  pipe, which is open at the mouth but closed at the top end. This time, the 
+  fundamental mode has a quarter-wavelength between the ends, so its frequency 
+  corresponds to a sound wave with wavelength four times the length of the 
+  pipe. The higher modes have resonance frequencies in ratios 3, 5, 7… to this 
+  fundamental frequency, odd-numbered frequencies of a harmonic series. Again, 
+  for accurate frequencies it would be necessary to allow for end corrections. 
+
+  Figure 11 shows the corresponding plot for a conical tube, which could be an 
+  idealised model for an oboe or saxophone. The pressure mode shapes look 
+  superficially similar to the closed-open modes of Fig.\ 10, because the 
+  pressure waveforms all have a horizontal tangent at the left-hand end. This 
+  will happen for any closed tube, whatever the detailed shape: once the 
+  distance from the end is much smaller than the wavelength of sound, the 
+  pressure is bound to be approximately uniform in space, just as we observed 
+  when discussing the Helmholtz resonator back in section 4.2.1. Despite this 
+  resemblance to the closed-open case of a straight tube, the resonance 
+  frequencies are in fact exactly the same as for a straight open-open tube 
+  like the one seen in Fig.\ 9. One familiar consequence is that the lowest 
+  note of an oboe is about an octave higher than that of a clarinet, although 
+  both instruments have tubes of approximately the same length. 
+
+  Figure 12 shows the corresponding plot for an approximate model of a brass 
+  instrument like a trumpet. There are no simple mathematical solutions for 
+  such shapes: these mode shapes are numerically computed, as described back in 
+  section 4.2. The black vertical lines mark the positions of the “effective 
+  end point” for each mode: the position where the wave in the flaring horn 
+  switches from oscillatory to evanescent behaviour. The behaviour revealed by 
+  these lines is that the mode shapes look a bit like the ones in Fig.\ 10 for 
+  a closed-open straight tube, except that the flaring bore shape has 
+  “squashed” the lower modes into a shorter portion of the tube, while the 
+  higher modes reach progressively closer to the open end of the bell. The 
+  frequency ratios are approximately 0.7, 2, 3, 4. This is approximately a 
+  harmonic series, except that the fundamental frequency is way out of tune. 
+  This accounts for the fact that an instrument like this offers 
+  ``slotted''pitches that fill a complete harmonic series rather than just the 
+  odd terms of the series — except that the fundamental of the series is 
+  missing. 
+
+  This last comment gives a good opportunity to mention an important fact about 
+  the overtone frequencies of any wind instrument tube: they play two quite 
+  distinct roles in the musical behaviour. On the one hand, they provide 
+  resonances that can interact with the nonlinear excitation mechanism to 
+  determine the pitch of a played note. On the other hand, they influence the 
+  sound spectrum and, more subtly, the “playability” of the note. Imagine you 
+  are playing the lowest note on an oboe, with a frequency matching the lowest 
+  resonance in Fig.\ 11. The nonlinear excitation mechanism (from the reed in 
+  this case) also generates exact harmonics of the played note. If the higher 
+  resonances of the tube are close in frequency to these harmonics, as they 
+  would be for the idealised case in Fig.\ 11, they will all be resonantly 
+  excited by the nonlinear harmonics. The result will be a sound richer in 
+  those harmonic components. However, this argument only works for the lower 
+  notes of an instrument like the oboe: in the higher registers the resonance 
+  frequencies of a real tube cease to conform sufficiently accurately to a 
+  harmonic pattern. 
+
+  But also, it seems a plausible guess that the note will be made a bit easier 
+  to play. All these resonances are, as it were, in agreement about what exact 
+  pitch should be played. On the other hand, if the tube resonances were a bit 
+  out of tune, so that each was shifted a bit away from exact harmonic 
+  relations with the fundamental, surely these different modes would have 
+  slightly different views about what the played pitch “should” be. That might 
+  lead to a more sluggish transient as a compromise was “negotiated” between 
+  the different resonances. This idea, involving “cooperative regimes of 
+  oscillation”, goes back to an early study of the mechanics of wind 
+  instruments by Bouasse [2], and more recently it was persuasively argued by 
+  Benade [3]. Benade constructed a demonstration instrument he called the 
+  “tacit horn”: the resonances were deliberately mis-aligned, with the result 
+  that it was virtually impossible to sound any note on the instrument! 
+
+  These two roles of tube resonances operate differently in our different 
+  categories of instrument. In the reed and air-jet instruments, players 
+  normally use oscillation regimes based on the first three or four modes of 
+  the tube, not the higher modes. But in most brass instruments, players will 
+  use many of the resonances of the tube as the basis for varying the pitch. 
+  Indeed, in instruments like the bugle or natural horn there is no way to 
+  change the effective length of the tube, and these regimes are the only 
+  resource a player can draw on. Instruments with valves or slides are more 
+  versatile because the tube length can be changed, but players still make use 
+  of many more tube modes than a woodwind player will do. 
+
+  \samsection{D. A useful measurement: input impedance} 
+
+  There are a few more topics for us to discuss here, because they are 
+  important for wind instruments in more than one category. One thing we have 
+  already mentioned is that the standard measurement used to characterise the 
+  linear acoustics of a wind instrument tube is the input impedance. The input 
+  impedance is a frequency response function that captures the resonance 
+  behaviour of the tube. It relates two acoustic quantities, the pressure and 
+  the volume flow rate into the tube. For sinusoidal variation of both these 
+  quantities, at a given frequency, the input impedance is a ratio: the 
+  amplitude of the pressure divided by the amplitude of the flow rate. 
+
+  It is worth looking at a simple example of input impedance, corresponding to 
+  the ideal cylindrical pipes seen in Figs.\ 9 and 10. The input impedance of a 
+  cylindrical pipe, open at the far end, is easy to calculate. The details are 
+  given in the next link, and Fig.\ 13 shows an example of the result. This 
+  particular case shows a tube 1 metre long, with internal diameter 20~mm. 
+  Realistic damping has been included, using formulae from the literature: 
+  again, the details are in the side link. 
+
+  This gives us a chance to make an important observation about the 
+  interpretation of input impedance for instruments in different categories. 
+  Where do we find the resonances of the tube, by looking at a plot like this? 
+  The answer depends on the boundary condition at the end of the tube where the 
+  impedance has been measured. If the tube is closed at this end, as in Fig.\ 
+  10, there can be no air flow in and out of the stopped end, but the pressure 
+  variation can be large at a resonance. This means that pressure divided by 
+  the volume flow rate must be very large — so the resonances correspond to 
+  peaks in the input impedance. Sure enough, the peaks in Fig.\ 13 show the 
+  odd-harmonic pattern that we expect from Fig.\ 10. 
+
+  But if the tube is open at the end, as in Fig.\ 9, we have the opposite 
+  situation. Air can flow in and out of the end of the tube, but the pressure 
+  variation must be more or less zero because the open end is exposed to the 
+  outside world, with a fixed ambient pressure. So this time, at a resonance we 
+  expect very small values of the impedance, or equivalently we expect very 
+  large values of its inverse, called the input admittance. This admittance is 
+  plotted in Fig.\ 14: because of the decibel scale used here, the image is 
+  simply the same as Fig.\ 13, plotted upside down. Now the peaks fall half-way 
+  between the peaks in Fig.\ 13, and they are equally spaced in a complete 
+  harmonic series. This is exactly what we expect from Fig.\ 9. 
+
+  Finally, we look at the role played by tone-holes in the wall of the 
+  instrument tube. Most reed and air-jet wind instruments have tone-holes. Less 
+  familiarly, some “brass” instrument are played by covering tone-holes with 
+  the fingers: examples are found in older instruments such as the 
+  \tt{}cornett\rm{} (or cornetto) and the \tt{}serpent\rm{}. The purpose of 
+  tone-holes seems self-evident: making a hole in the wall of the tube is 
+  rather like cutting the tube short at that point, so that the frequencies of 
+  all the resonances go up. However, as with so many things in musical 
+  acoustics, it is a bit more complicated than that. 
+
+  \samsection{E. What does a single tone-hole do?} 
+
+  As a first step we can imagine a single tone-hole cut into an infinitely long 
+  cylindrical tube, as sketched in Fig.\ 15. We can send a sinusoidal sound 
+  wave at a chosen frequency down the tube. When this wave reaches the hole, 
+  some of its energy is reflected back, while some of it is transmitted past 
+  the hole and continues to propagate in the direction it was already 
+  travelling. This problem is analysed in the next link, by thinking about the 
+  air flow and the pressure in the small volume near the hole, shown as a 
+  dotted box. Simple expressions are found for the reflection coefficient $R$ 
+  and the transmission coefficient $T$. These depend on the geometrical 
+  dimensions of the hole and the tube bore, and they also vary with frequency. 
+
+  Figure 16 shows three examples of how the energy reflection coefficient 
+  $|R|^2$ behaves when the area of the hole is varied from zero up to the 
+  cross-sectional area of the tube, at three different frequencies. For the 
+  lowest frequency (red curve), when the hole is as big as the cross-sectional 
+  area of the tube virtually all the energy is reflected. This is the effect we 
+  were expecting: the sound wave is more or less confined to the left-hand side 
+  of the hole, just as if the tube had been cut off at that position. As the 
+  size of the hole is reduced, the reflection coefficient drops gradually, 
+  reaching zero as the hole area vanishes. Well, that is no surprise: if the 
+  hole is no longer there, of course no energy is reflected from it. 
+
+  At the two higher frequencies shown in Fig.\ 16 the reflection coefficient is 
+  systematically smaller. Even with a very large hole, a significant fraction 
+  of the energy is not reflected, but continues along the tube. As we will 
+  explore shortly, this means that what happens further down the tube from the 
+  tone-hole can have a significant impact on the behaviour at these higher 
+  frequencies. To get a different view of the frequency dependence, Fig.\ 17 
+  shows the reflection coefficient plotted against frequency. Curves are shown 
+  for flutes of three different kinds, using bore size and tone-hole dimensions 
+  measured by Wolfe and Smith [4]. All three curves show a similar trend: 
+  perfect reflection at very low frequency, falling to rather low values at 
+  2~kHz. Notice also that the three types of flute are systematically 
+  different, and they are arranged in order of age. There has obviously been a 
+  systematic evolution of flute design: we’ll come back to that in a moment. 
+
+  When our infinite tube is replaced with a finite tube, we would like to know 
+  what happens to the resonance frequencies of this tube as the single hole is 
+  gradually closed. The answer turns out to be what you might guess. With a 
+  large hole, the resonances are those of a shorter tube, cut off near the 
+  hole. When the hole is reduced to a pinhole and then vanishes altogether, the 
+  resonances are those of the full length of tube. Well, in between the 
+  resonance frequencies change smoothly between these two limits. With this 
+  rather primitive wind instrument with just a single tone-hole, the player 
+  would in principle be able to produce a pitch that can be varied over this 
+  range by using a finger to part-close (or “shade”) the hole progressively. 
+
+  The physics behind this gradual shift of resonance frequencies can be 
+  visualised in terms of an ``end correction''. With a single hole of any size, 
+  the reflection is never perfect. This means that the effective length of the 
+  tube is always longer than the distance to the centre of the tone-hole. With 
+  a large hole and a correspondingly large reflection coefficient, this extra 
+  bit of effective length is quite small, but as the reflection coefficient 
+  reduces with a reduction of hole size, the sound wave penetrates further past 
+  the hole and the end correction determining the effective length (and thus 
+  the frequency of resonance) grows. Eventually, as the hole becomes 
+  vanishingly small, this ``end correction'' reaches all the way to the end of 
+  the tube, where virtually all of the sound energy is reflected back into the 
+  tube. Some details of the calculation lying behind this description are given 
+  in the next link. 
+
+  This variation of the end correction with hole size is something that 
+  instrument makers have taken advantage of, especially in earlier instruments 
+  that rely on fingertips to cover holes, rather than using key mechanisms. 
+  There are limits to how human fingers can be spread along the tube of a wind 
+  instrument. This sometimes means that a tone-hole in the ``logical'' place 
+  would be too far away from the others to be reached by the player's finger, 
+  especially in larger instruments like the dulcian (or curtal), a predecessor 
+  of the bassoon: see Fig.\ 18. The solution was to use a smaller hole with a 
+  correspondingly bigger end correction, so that it could be placed in a more 
+  convenient position. The resulting odd-looking distribution of holes can be 
+  seen very clearly in the image. 
+
+  \samsection{F. Multiple tone-holes} 
+
+  Of course, real wind instruments have more than one tone-hole. Figure 19 
+  shows a schematic sketch of a “flute”, with a typical fingering: there are 
+  several tone-holes, the first few being covered while the remaining ones are 
+  open. This introduces several complications. The first open tone-hole is no 
+  longer in splendid isolation: not very far away are other open holes, before 
+  we reach the end of the tube. Also, the closed tone-holes affect the profile 
+  of the tube. The fingers or key-pads do not produce the same effect as not 
+  having the hole in the first place, because they add a small local volume to 
+  the tube, which can perturb the resonance frequencies a bit. 
+
+  To see what happens to the frequency response of a real instrument tube with 
+  various combinations of open and closed tone-holes we can look at some 
+  measured input impedances, taken from Joe Wolfe's comprehensive web site on 
+  flute acoustics \tt{}here\rm{}. We can look first at some results for a 
+  baroque flute, which is a relatively simple instrument not too far removed 
+  from the sketch in Fig.\ 19. It has 6 finger-holes, plus a 7th hole which is 
+  operated by a key: you can see a picture in Fig.\ 22 below. 
+
+  Figure 20 shows the input impedance for four different fingerings. Because we 
+  are looking at a flute, which is open at the mouthpiece end, we must keep in 
+  mind that the resonances of the tube are indicated in these plots by the 
+  minima, not the peaks. The first plot shows the result with all the holes 
+  closed, in the fingering for the lowest note of the instrument 
+  ($\mathrm{D}_4$, 294~Hz at the modern pitch standard, but a semitone lower on 
+  this flute at 277~Hz because it is adjusted for a pitch standard with 
+  $\mathrm{A}_4$ at 415~Hz). The plot shows an orderly sequence of peaks and 
+  minima, very reminiscent of the idealised version seen in Fig.\ 13. 
+
+  The top right plot in Fig.\ 20 shows the impedance for a fingering rather 
+  like the sketch in Fig.\ 19. It has three closed holes, then three open 
+  holes, but the very last hole is closed by the key. The pattern is much less 
+  regular. The explanation is that a baroque flute like this has relatively 
+  small tone-holes (for a reason we will come to in a moment), and so a sound 
+  wave coming from the mouthpiece end would only be partially reflected at the 
+  first open tone-hole. A significant fraction of the energy will continue down 
+  the tube and interact with the other open tone-holes as well as with the open 
+  end of the tube. This complicated interaction leads to disruption of the 
+  pattern of resonances. 
+
+  \samsection{G. Cross fingerings and key systems} 
+
+  The lower left plot shows the fingering for $\mathrm{A}\flat_4$. This one is 
+  a “fork fingering” or “cross fingering”, with closed holes coming after the 
+  first open hole. The possibility of using such fingerings to achieve 
+  intermediate chromatic notes is probably the main reason that flutes like 
+  this have rather small tone-holes. If the holes are to be closed by the 
+  player’s fingers, unaided by complicated key mechanisms, there can only be as 
+  many holes as the player has available fingers. This is not enough to offer a 
+  full chromatic scale by simply opening one more hole for each semitone step. 
+  So instruments like this one are tuned to give a diatonic scale in a 
+  particular key, and the player has to use techniques like fork fingering to 
+  sound the missing notes. Fork fingerings can only work if the reflection 
+  coefficient at the first open tone-hole is fairly small: the hole's end 
+  correction is then large enough that the influence of later closed holes can 
+  be felt. 
+
+  The final plot in Fig.\ 20 shows the result with only one tone-hole closed. 
+  This one highlights a feature of the pattern of resonances which started to 
+  show up in the previous two plots, but less clearly. There are only two 
+  strong resonances (deep dips in the plot, remember), and for all frequencies 
+  above about 1~kHz the resonances are significantly attenuated. This feature 
+  is called the “tone-hole cutoff”, and it arises from the fact that there is a 
+  fairly regular series of open tone-holes following the last closed one. An 
+  approximate formula for this cutoff frequency in terms of the tone-hole 
+  geometry was first given by Benade [5], on the assumption that the “lattice” 
+  of open tone-holes was infinitely long, and uniformly spaced. A neat 
+  derivation of the result can be found in the Appendix of reference [4]. 
+
+  It is interesting to contrast this behaviour with some corresponding plots 
+  for a modern flute, taken from the same web site and shown in Fig.\ 21. 
+  Photographs of typical baroque and modern flutes are shown in Fig.\ 22. The 
+  sketches accompanying each impedance plot show that a flute like this has 
+  many more holes than the player has fingers. A complicated and ingenious 
+  system of keys is used to open and close these holes — it was invented by 
+  \tt{}Theobald Boehm\rm{} in the mid-19th century. A key system like this 
+  frees the designer from some of the constraints of human fingers. As well as 
+  allowing more holes, the individual holes can be larger because the key-pad 
+  can be shaped to close a hole of virtually any shape. This is the explanation 
+  for the contrast in reflection coefficient seen back in Fig.\ 17: the modern 
+  flute (black line) showed much stronger reflection at all frequencies than 
+  the baroque flute (red line). 
+
+  The results of Boehm’s ingenuity can be seen in two features of the plots in 
+  Fig.\ 21. The first plot, with all the holes closed, looks very similar to 
+  the corresponding plot in Fig.\ 20. But after that, the behaviour is very 
+  different. The modern flute shows an orderly sequence of resonances for all 
+  the cases shown — there is very little of the disruption we saw in Fig.\ 20. 
+  The second thing we can see is that the tone-hole cutoff for this flute is 
+  significantly higher in frequency, up around 2~kHz. Both these features are, 
+  qualitatively at least, what we might have anticipated from the contrast seen 
+  in Fig.\ 17. Except for very high notes or some advanced playing techniques 
+  such as “multiphonics” (we’ll come to those in section 11.4), there is 
+  (almost) no need for fork fingerings on this flute. Each semitone has its own 
+  key and hole combination. 
+
+  \samsection{H. Closed holes and bore perturbations} 
+
+  Now we have dealt in some detail with open tone-holes, we should have a brief 
+  look at the perturbing effect of closed tone-holes. As we noted earlier, 
+  these create a small extra volume, which will have a similar effect to a 
+  slight bulge in the bore profile. Any perturbation to the bore will influence 
+  frequencies slightly. This might interfere with carefully-planned alignment 
+  of resonances, to improve the sound quality and playability. An instrument 
+  maker might try to counter such effects by making deliberate modifications to 
+  the bore profile. 
+
+  So for one reason and another, it is of interest to know the effect on 
+  resonance frequencies of a small change in bore profile. As explained in the 
+  next link, Rayleigh’s principle (see section 3.2.5, and the application to a 
+  marimba bar in section 3.3.1) gives us an easy way to answer this question. 
+  We can describe the result qualitatively. For any given mode of a cylindrical 
+  tube, like the ones shown in Figs.\ 9 and 10, the effect of a local 
+  enlargement in the bore is biggest near a nodal point of pressure, or near an 
+  antinode (a position of maximum pressure). An enlargement near a node 
+  (including near an open end of the tube) has the effect of increasing the 
+  frequency, whereas an enlargement near an antinode has the effect of reducing 
+  the frequency. Since different modes have their nodes and antinodes in 
+  different places, it follows immediately that the effect of a single 
+  enlargement, such as a closed tone-hole, will be different for each mode, and 
+  so it will indeed tend to interfere with the harmonic relations between 
+  frequencies. But the same theoretical expression can be used to guide an 
+  instrument maker wishing to adjust the bore to bring resonance frequencies to 
+  desired values. 
+
+  \samsection{I. Register holes} 
+
+  Our final topic for this section is to note that not all holes in the tube 
+  wall of a wind instrument function as tone-holes, to control the pitch of the 
+  note. Most instruments also have register holes, to aid the player in 
+  switching between a playing pitch based on the lowest mode of the tube, and 
+  one based on the second mode. Players describe these alternatives as 
+  different registers. Sometimes, a player can switch between registers by 
+  adjusting the details of how they blow. For example, blowing harder into a 
+  recorder or tin whistle may cause the pitch to jump to the next register, 
+  often called “overblowing”. But life is easier for a player if they have a 
+  controlled way to switch registers, and this is where register holes come in. 
+
+  Consider the example of a cylindrical tube, open at both ends, like a flute 
+  or recorder. As Fig.\ 9 reminds us, the first register is based on a pressure 
+  mode shape with one half-wavelength in the length of the tube, whereas the 
+  second register is based on a mode shape with a nodal point at the centre, 
+  and two half-wavelengths in the length of the tube. If a small hole is 
+  drilled in the tube wall near the centre, this will not affect the second 
+  mode but it will perturb the first mode (which has a pressure maximum at this 
+  position). It may shift the frequency of the first mode, and it may add some 
+  dissipation and thus reduce the height of the resonance peak. Both effects 
+  will tend to make it more difficult to play a note based on this mode, and 
+  thus to make it more likely that the player will get a note in the second 
+  register. 
+
+  This is the principle of a register hole. Why does the hole need to be small? 
+  The answer is that we don’t want to affect just one note, we would like to 
+  encourage the register switch in other nearby notes, based on different 
+  effective tube lengths because tone-holes have been opened or closed. Each of 
+  these notes will have the second-register nodal point in slightly different 
+  positions, so the hole can’t be perfectly positioned to suit them all. But if 
+  the hole is fairly small, this doesn’t matter very much. If carefully 
+  designed, it can have the desired register-changing effect on several notes. 
+
+  If we are thinking about a clarinet rather than a recorder or flute, we can 
+  make a similar argument based on the mode shapes in Fig.\ 10. The same 
+  argument applies, except that the place we need to drill our register hole is 
+  approximately 1/3 of the way down the tube from the mouthpiece, rather than 
+  in the centre — because that is where the nodal point of the second pressure 
+  mode shape occurs. 
+
+
+
+  \sectionreferences{}[1] Murray Campbell, Joël Gilbert and Arnold Myers, “The 
+  science of brass instruments”, ASA Press/Springer (2021). See section 3.1.3 
+  for examples of video recordings of a brass-player's lips. 
+
+  [2] H. Bouasse, “Instruments à Vent”, 2 volumes, Librairie Delagrave, 
+  (1929–30). 
+
+  [3] Arthur H. Benade; “Fundamentals of Musical Acoustics”, Oxford University 
+  Press (1976), reprinted by Dover (1990). 
+
+  [4] Joe Wolfe and John Smith, “Cutoff frequencies and cross fingerings in 
+  baroque, classical, and modern flutes”, Journal of the Acoustical Society of 
+  America \textbf{114}, 2263—2272 (2003) 
+
+  [5] Arthur H. Benade, “On the mathematical theory of woodwind finger holes”, 
+  Journal of the Acoustical Society of America \textbf{32}, 1591—1608 (1960) 

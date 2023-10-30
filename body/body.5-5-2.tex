@@ -1,0 +1,135 @@
+  In the main text, sound examples are given for variations of parameters of 
+  immediate interest to players and makers of banjos. However, the synthesis 
+  models also require some assumptions about internal ``housekeeping'' 
+  variables. For completeness, these are discussed now, and some sound examples 
+  are provided to illustrate the effect of these variables. There are two main 
+  topics here: representing ``sound'', and fine-tuning the treatment of 
+  damping. 
+
+  The synthesis model does not attempt to calculate radiated sound, it simply 
+  calculates the motion of the body at the bridge following a plucked note. 
+  This calculation includes the physics relevant to all the parametric 
+  variations considered here, but in order to allow perceptual judgements, 
+  sound files must be created that give a plausible approximation to the sound 
+  that would reach a listener or a microphone. 
+
+  The actual radiation of sound by the banjo, or indeed any other vibrating 
+  structure, is rather complicated. It will vary significantly with frequency, 
+  and also with position of the observing point. There is no simple, universal 
+  model for sound radiation, analogous to the general formula for structural 
+  response as a linear combination of modal contributions (as in section 
+  2.2.5). It is possible in principle to compute radiated sound pressure: some 
+  results from a detailed Finite Element and Boundary Element (FE/BE) model 
+  were presented in refs. [1,2]. An example of synthesised sound based on this 
+  model will be presented shortly, but the method is too computationally 
+  intensive to be used for wide-ranging parametric explorations. 
+
+  Measurements in which bridge response and radiated sound were simultaneously 
+  measured suggest that the trend with frequency of the sound broadly follows 
+  that of the bridge velocity. However, when synthesised sounds were made in 
+  which bridge velocity was the output variable, several different listeners 
+  concurred in thinking that the sound was not bright enough. A very simple 
+  filtering procedure was thus used to boost the high frequencies: the 
+  predicted body velocity signal is scaled by $(i \omega)^\beta$ where the 
+  power $\beta$ can be chosen for best effect. The value for the studies here 
+  is $\beta=0.4$. The effect of changing the value of $\beta$ can be heard in 
+  the sound examples below. Note that in this particular set of files, the 
+  loudness level is not preserved between examples. Changing the value of 
+  $\beta$ makes a big difference to peak levels, and so each sound file has 
+  been auto-scaled. 
+
+  Next, we give some examples of sounds based on the FE/BE model. Sound X.7 
+  uses the computed bridge admittance, plotted as the black line in Fig.\ 1, 
+  filtered with the standard power-law filter. Sound X.8 uses the same 
+  admittance filtered using the detailed FE/BE prediction. The red line in 
+  Fig.\ 1 shows the sound pressure at a typical point, and the dashed blue line 
+  shows the ratio, which gives the transfer function from bridge velocity to 
+  field pressure. This is the transfer function used to filter the sound of 
+  Sound X.8. Notice the broadly horizontal trend of this dashed curve, 
+  illustrating the comment above that sound very roughly seems to follow 
+  velocity. Sound X.9 is similar to Sound X.8, but it uses a magnitude-only 
+  version of the computed frequency response for the filtering process. 
+
+  \fig{figs/fig-cf89d973.png}{Figure 1. Computed response from the FE/BE model: 
+  bridge admittance (black) and field pressure at a typical position (red) in 
+  response to driving on the bridge at the position of the first string. The 
+  dashed blue curve shows the ratio of the two, used to filter the output 
+  signal to make Sounds X.8 and X.9.} 
+
+  There is no doubt that the FE/BE model captures many aspects of the banjo 
+  response and sound radiation far more accurately than the super-simple square 
+  banjo model. However, the results illustrate a theme we have encountered 
+  before and will encounter many more times: it is never obvious which features 
+  of a model have the most perceptual significance. In the present state of 
+  this FE/BE model, the resulting sounds do not achieve a high degree of 
+  realism. The reason is perhaps associated with transient effects arising from 
+  narrow spectral features in the computed transfer functions. This links to 
+  the topic we will turn to next: the perceptual quality of synthesised sounds 
+  can be very sensitive to details of the damping model, and these are often 
+  not amenable to theoretical prediction. 
+
+  Subsection 5.5(I) of the main text gives a general discussion of some 
+  problems associated with the treatment of damping within the synthesis 
+  models, and particularly in the square banjo model. In order to produce a 
+  datum case of that model which compared well in a visual sense with the 
+  bridge admittance of the real banjo, and which also produced a sound quality 
+  which was not marred by distracting ``zinginess'' artefacts, damping was 
+  incorporated in two different ways. Both involve a choice of parameter 
+  values, and the effect of those choices is illustrated in the remaining sound 
+  examples here. 
+
+  The first concerns the modelling of the effect of the bridge. Once a good 
+  value of the mass and the added stiffness had been chosen in order to get the 
+  low-frequency formant in about the right place, the individual peaks within 
+  that formant were still rather too pronounced for realism. So additional 
+  damping was incorporated in the form of a mechanical resistance (or 
+  ``dashpot'') at the bridge. A range of values of the dashpot coefficient are 
+  illustrated in the next set of sound examples. Sound X.10 shows the effect 
+  with no dashpot; Sound X.12 illustrates the choice of dashpot used in the 
+  datum model; Sound X.14 shows the effect of a much stronger dashpot. 
+
+  Even with this dashpot included, synthesis with the square banjo model 
+  produced distracting ``zinginess'' which has been mentioned several times. 
+  The purpose of using the square banjo model for parametric investigations is 
+  to give a useful impression of the perceived effect on sound of physical 
+  changes, for example to membrane tension or bridge mass. For that purpose, it 
+  is essential that the datum model gives an acceptably banjo-like sound, so 
+  this problem of zinginess arising from low loss at high frequency needs to be 
+  addressed. The problem arises largely because of the concentrated mass used 
+  to represent the bridge in the model. At high frequency, the admittance is 
+  dominated by the effect of this mass, and so the real part becomes very 
+  small. This is not the case in the measured admittance, largely because of 
+  the effect of the bridge hill discussed in section 5.3. This hill feature was 
+  well captured by the FE/BE model, using a detailed model of the bridge, but 
+  the simple concentrated mass used in the square banjo model cannot reproduce 
+  it. 
+
+  This issue has been addressed with an unashamed fudge. This takes its 
+  inspiration from the way measured admittance is processed. The laser 
+  vibrometer and data-logging system result in a small time delay between the 
+  two data channels, the hammer signal and the velocity response. This needs to 
+  be compensated in the computer in order to avoid a similar problem of the 
+  real part of the admittance becoming small or even negative at higher 
+  frequencies, leading to ``zinginess''. 
+
+  No such physical delay is present in the theoretical model, but it was found 
+  that if it is processed in the same way, shifting the phase to represent a 
+  very short delay of 20 $\mu$s, the mean value of the real part of the 
+  admittance is changed to have a magnitude comparable with the measured value. 
+  Being purely a phase shift, this change has no effect on the magnitude of the 
+  admittance. The result of this, admittedly non-physical, phase compensation 
+  is illustrated by the next set of sound examples. Sound X.16 in this set is 
+  based on the original prediction of the model, and illustrates the original 
+  problem. Sound X.15 makes things worse by using a 20 $\mu$s compensation with 
+  the wrong sign: the zinging sound is very much in evidence. Sound X.17 is the 
+  case used as the datum: the zinging is largely suppressed. Sounds X.18 and 
+  X.19 illustrate the effect of increasing the delay further. 
+
+  \sectionreferences{}[1] Jim Woodhouse, David Politzer and Hossein Mansour. 
+  “Acoustics of the banjo: measurements and sound synthesis”, Acta Acustica 5, 
+  15 (2021). The article is available here: 
+  \tt{}https://doi.org/10.1051/aacus/2021009\rm{} 
+
+  [2] Jim Woodhouse, David Politzer and Hossein Mansour. “Acoustics of the 
+  banjo: theoretical and numerical modelling”, Acta Acustica 5, 16 (2021). The 
+  article is available here: \tt{}https://doi.org/10.1051/aacus/2021008\rm{} 

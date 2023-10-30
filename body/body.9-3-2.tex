@@ -1,0 +1,65 @@
+  To understand the experimental results shown in section 9.3 and 9.6, it is 
+  useful to know a bit about the design and capabilities of the bowing machine 
+  used in the studies. The bow motion is provided by a linear motor, which 
+  propels a trolley carrying a system that simulates the player’s wrist. A 
+  clamp that can hold either a conventional bow or a rosin-coated perspex rod 
+  is flexibly mounted, and a vibration shaker provides an actuation force for 
+  controlling the bow force. The system can be seen in Fig.\ 1, in this case 
+  with the perspex rod in place. Strain gauge sensors monitor the force applied 
+  to the bow clamp. Through a combination of open-loop control, closed-loop 
+  feedback compensation and careful hardware design, the bowing machine can 
+  change bow acceleration with a response time of around 10 ms while 
+  maintaining constant bow force with an accuracy of $\pm3 \%$. Full details of 
+  the mechanical design, control strategy and calibration procedure for this 
+  rig can be found in [1]. 
+
+  \fig{figs/fig-e7acb058.png}{Figure 1. The bowing machine, showing the perspex 
+  rod ``bow'' extending into the distance, held by the aluminium clamping block 
+  on a supporting structure which is flexibly mounted using the steel rule 
+  visible in the foreground. The cylindrical object with the two wires attached 
+  is a vibration shaker, providing the bow force.} 
+
+  In all the experiments to be described here, this machine was used to bow the 
+  D string of a cello. The cello is held in a supporting frame, which 
+  approximately mimics how a player would hold the instrument. The cello sits 
+  on its endpin as usual, and adjustments to the projecting length of that 
+  endpin are used to set the bowing point $\beta$. The body of the cello is 
+  supported by padded clamps providing the player’s “knees” and “left hand”. 
+  The string to be bowed is aligned to be vertical, perpendicular to the line 
+  of the bow, which is pressed against it in a horizontal plane. The 
+  arrangement can be seen in Figs.\ 2 and 3. The bridge of the cello is 
+  equipped with a piezoelectric bridge-force sensor, as described in section 
+  9.1.1. 
+
+  \fig{figs/fig-426ac110.png}{Figure 2. The bowing machine with the cello in 
+  place.} 
+
+  \fig{figs/fig-867cce77.png}{Figure 3. General view of the cello in its 
+  supporting frame, with the bowing machine behind.} 
+
+  The machine is designed for bow strokes in which the bow is in contact with 
+  the string throughout: it cannot do “bouncing bow” strokes. But within that 
+  family of bow gestures, the machine can equal or exceed the capabilities of a 
+  human. For the experiments to be described here, two types of bowing gesture 
+  were used. 
+
+  For the Schelleng diagram tests, the bow speed was set to the constant value 
+  0.05 m/s, and a carefully-tailored initial bowing gesture was used to 
+  establish Helmholtz motion prior to each measurement. The force and speed 
+  were then adjusted smoothly to the desired values, and these were sustained 
+  for two seconds. Bridge force was measured for 0.1 s at the end of that time, 
+  and used to classify the string’s motion. Changes in the value of $\beta$ 
+  were made by hand, so each column of the Schelleng diagram was measured as a 
+  separate run. 
+
+  The Guettler diagram tests, to be described in section 9.6, were more 
+  straightforward. The required gesture in each case involved a constant bow 
+  force, and a bow speed starting from rest and then growing with a constant 
+  acceleration. The bridge force for the first 0.25 s of the transient response 
+  was recorded in each case. The values of force and acceleration were varied 
+  to scan the Guettler diagram, and the entire $20 \times 20$ grid of points 
+  was run in a single experiment, controlled by the computer. 
+
+  \sectionreferences{}[1] Paul M. Galluzzo and Jim Woodhouse; 
+  ``High-performance bowing machine tests of bowed-string transients'', Acta 
+  Acustica united with Acustica \textbf{100}, 139--153 (2014) 

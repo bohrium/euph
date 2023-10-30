@@ -1,0 +1,155 @@
+  For an ideal flexible string, obeying the wave equation as derived in section 
+  3.1.1, the equations governing the motion in response to bowing at a single 
+  point take a rather simple form. If the ends of the string are either rigid, 
+  or terminated by dashpots, the reflection functions used in the 
+  travelling-wave model derived in section 9.2.1 take the form of Dirac delta 
+  functions. There is no ``corner-rounding''. For a rigid end, the delta 
+  function has amplitude $-1$, whereas for a dashpot termination it has a 
+  negative magnitude $\lambda$ with $|\lambda| < 1$. The reflection coefficient 
+  $\lambda$ is determined by the impedance ratio of the string and the dashpot 
+  as we showed in equation (5) of section 5.1.2: provided the impedance ratio 
+  $Z_{0}/Z_{body} \ll 1$, $\lambda \approx -1 + 2Z_{0}/Z_{body}$. 
+
+  Now an important simplification occurs if the bowing position $\beta$ is a 
+  ratio $p/q$ of two integers. We can define a time interval $\Delta=T/(p+q)$ 
+  where $T$ is the round-trip period for transverse waves on the string. 
+  Reflections only arrive back at the bowed point at times that are multiples 
+  of $\Delta$, so both the force and velocity at the bowed point can only 
+  change at times $t=n\Delta$. In other words, provided the initial conditions 
+  are consistent with this pattern, both the force and velocity waveforms 
+  consist of steps of length $\Delta$ during which they stay constant, 
+  separated by jumps. 
+
+  We can define these constant levels to be $v_n=v(n \Delta)$ and $f_n=f(n 
+  \Delta)$. The model development then follows the general treatment in section 
+  9.2.1, but the convolution operations become very simple because both 
+  reflection functions are delta functions. If for simplicity we assume that 
+  both ends of the string have the same value of $\lambda$, then for example 
+  $(r_1 * f)_n = \lambda f_{n-p}$ and $(r_2 * f)_n = \lambda f_{n-q}$. After a 
+  little algebraic manipulation, the resulting equation can be cast into a 
+  difference equation 
+
+  $$v_n -- \lambda^2 v_{n-N} = \dfrac{1}{2Z_0} \left[f_n + \lambda f_{n-p} + 
+  \lambda f_{n-q} + \lambda^2 f_{n-N} \right] \tag{1}$$ 
+
+  where $N=p+q$. As usual, for each successive value of $n$ this equation is to 
+  be solved simultaneously with 
+
+  $$f_n = F_b \mu(v_n) \tag{2}$$ 
+
+  where $F_b$ is the bow force and $\mu(v)$ is the friction coefficient. 
+
+  The simplicity of this model allows various mathematical investigations to be 
+  carried out relatively straightforwardly. Raman was able to solve the model 
+  for simple cases of periodic solutions, working by hand in the pre-computer 
+  era [1]. Friedlander was able to study the stability of periodic solutions 
+  [2]. For the case without losses, $\lambda =-1$, he proved a striking result. 
+  He first imposed the condition that the state of steady sliding is unstable, 
+  based on the observation that it is virtually impossible to draw a bow across 
+  a string without some vibration occurring. He showed that this condition is 
+  enough to make all periodic solutions unstable! However, when $|\lambda| < 1$ 
+  so that there is some energy dissipation, it becomes possible for periodic 
+  solutions like Helmholtz motion to be stable while steady sliding is still 
+  unstable [3]. 
+
+  We can illustrate some simple periodic solutions. Suppose we look for 
+  solutions with the natural period of the string, so that $v_{n+N}=v_n$ and 
+  $f_{n+N}=f_n$ for all values of $n$. Equation (1) then becomes 
+
+  $$2 Z_0 (1 -- \lambda^2) v_n = (1+ \lambda^2)f_n + \lambda f_{n-p} + \lambda 
+  f_{n-q} \tag{3}$$ 
+
+  except that when $n-p$ or $n-q$ go outside the range $1,\cdots,N$ they are 
+  folded back into that range by adding or subtracting a suitable multiple of 
+  $N$. The result is a set of $N$ simultaneous equations that can be written in 
+  the form 
+
+  $$2 Z_0 (1 -- \lambda^2) \mathbf{v} = M \mathbf{f} \tag{4}$$ 
+
+  where $\mathbf{v}$ and $\mathbf{f}$ are length-$N$ vectors containing the 
+  values of $v_n$ and $f_n$, and the matrix $M$ is given by 
+
+  $$M=\begin{bmatrix}1+\lambda^2 \& 0 \& \cdots \& \lambda \& \cdots \& \lambda 
+  \& 0 \& \cdots \& 0\\0 \& 1+\lambda^2 \& 0 \& \cdots \& \lambda \& \cdots \& 
+  \lambda \& 0 \& \cdots \\ \vdots \& \vdots \& \vdots \& \vdots \& \vdots \& 
+  \vdots \& \vdots \& \vdots \& \vdots\\ \vdots \& \vdots \& \vdots \& \vdots 
+  \& \vdots \& \vdots \& \vdots \& \vdots \& \vdots \\\cdots \& 0 \& \lambda \& 
+  \cdots \& \lambda \& \cdots \& 0 \& 1+\lambda^2 \& 0\\0 \& \cdots \& 0 \& 
+  \lambda \& \cdots \& \lambda \& \cdots \& 0 \& 1+\lambda^2 \end{bmatrix} 
+  \tag{5}$$ 
+
+  where the diagonal bands containing $\lambda$ are spaced $p$ and $q$ places 
+  above and below the leading diagonal. 
+
+  During an interval of sticking, we know that $v_n=v_b$, the bow speed, while 
+  the corresponding $f_n$ is unknown. The situation is reversed during an 
+  interval of slipping: now $v_n$ is unknown, but $f_n$ is determined by the 
+  assumed friction curve. Under the simplest assumption in which the 
+  coefficient of sliding friction is a constant value $\mu_d$, we have $f_n=F_b 
+  \mu_d$ where $F_b$ is the bow force. So to find solutions to equation (4), we 
+  decide which values of $n$ correspond to sticking, and which to slipping. Let 
+  us seek solutions looking like Helmholtz motion: in that case, we can say 
+  that for the first $q$ values we are sticking, while for the remaining $p$ 
+  values we are slipping. Now we partition the vectors and the matrix in this 
+  $q:p$ ratio: 
+
+  $$\mathbf{v}=\begin{bmatrix} \mathbf{v_1}\\ 
+  \mathbf{v_2}\end{bmatrix},~~~\mathbf{f}=\begin{bmatrix} \mathbf{f_1}\\ 
+  \mathbf{f_2}\end{bmatrix}, M=\begin{bmatrix} A \& B \\ C \& D\end{bmatrix} 
+  \tag{6}$$ 
+
+  where $\mathbf{v_1}$ contains $q$ repeats of the value $v_b$, $\mathbf{v_2}$ 
+  contains the unknown velocities, $\mathbf{f_1}$ contains the unknown forces, 
+  and $\mathbf{f_2}$ contains $p$ repeats of the value $F_b \mu_d$. 
+
+  Expanding the partitioned problem out we obtain 
+
+  $$2 Z_0 (1 -- \lambda^2) \mathbf{v_1}=A \mathbf{f_1}+B\mathbf{f_2} \tag{7}$$ 
+
+  and 
+
+  $$2 Z_0 (1 -- \lambda^2) \mathbf{v_2}=C \mathbf{f_1}+D\mathbf{f_2} . 
+  \tag{8}$$ 
+
+  Thus the unknown values are given by 
+
+  $$\mathbf{f_1}=A^{-1} \left[ 2 Z_0 (1 -- \lambda^2) \mathbf{v_1} -- 
+  B\mathbf{f_2} \right] \tag{9}$$ 
+
+  and then 
+
+  $$\mathbf{v_2}=\dfrac{1}{2 Z_0 (1 -- \lambda^2)} \left[C 
+  \mathbf{f_1}+D\mathbf{f_2} \right] . \tag{10}$$ 
+
+  Figure 1 shows some computed examples. The first plot shows the force and 
+  velocity waveforms for the case $p=1$, $q=12$. Cases like this, where 
+  $\beta=1/(q+1)$ for some integer $q$, give the simplest possible examples. 
+  Raman and Guettler both made extensive use of such cases in their work. In 
+  order to show the effect of energy dissipation clearly, the rather 
+  unrealistic value $\lambda=-0.97$ has been chosen. The force waveform (in 
+  blue) shows the expected ``staircase'' structure, in an arch shape which is 
+  familiar to us from the discussion of the minimum bow force in section 9.3.1. 
+  The largest value of friction force occurs in the middle of the arch, and the 
+  condition that this should not be big enough to cause a second slip at that 
+  moment is what led Raman, and later Schelleng, to the criterion for minimum 
+  bow force. 
+
+  The other plots in Fig.\ 1 show cases with very similar values of $\beta$, 
+  but involving larger numbers of steps in the staircase waveforms. The top 
+  right plot shows $p=3$, $q=37$. There are now three steps in the slipping 
+  interval, and the force waveform is a little more complicated, although still 
+  showing the underlying arch shape clearly. The two plots in the bottom row 
+  show values of $\beta$ on either side of the value 1/13. It can be seen that 
+  the small changes in the slipping velocity waveform behave in opposite ways 
+  in these two cases. 
+
+  \sectionreferences{}[1] C. V. Raman: ``On the mechanical theory of the 
+  vibrations of bowed strings and of musical instruments of the violin family, 
+  with experimental verification of the results. Part I.'' Indian Association 
+  for the Cultivation of Science Bulletin \textbf{15}, 1–158 (1918). 
+
+  [2] F. G. Friedlander: ``On the oscillations of a bowed string'', Proceedings 
+  of the Cambridge Philosophical Society, \textbf{49}, 516--530 (1953). 
+
+  [3] J. Woodhouse: ``On the stability of bowed-string motion''; Acustica, 
+  \textbf{80}, 58--72 (1994). 

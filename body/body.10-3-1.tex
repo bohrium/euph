@@ -1,0 +1,104 @@
+  Given a rectangular beam made from the material to be tested, it is easy to 
+  measure the lowest resonance frequency (and perhaps some of the higher 
+  frequencies as well), and deduce the Young's modulus of the material in the 
+  direction aligned with the long axis of the beam. The theory has already been 
+  covered in section 3.2.1: we know from equation (12) there that for a beam of 
+  length $L$, width $b$ and thickness $h$ made from a material with density 
+  $\rho$ and Young's modulus $E$ the natural frequencies are given by 
+
+  $$\omega^2 = \dfrac{EI}{\rho A} k^4 \tag{1}$$ 
+
+  where $A=bh$ is the cross-sectional area, $I=b h^3/12$ is the second moment 
+  of area, and for a free-free beam the values of the wavenumber $k$ are given 
+  by the roots of the equation 
+
+  $$\cos kL \cosh kL =1 . \tag{2}$$ 
+
+  We also showed that these roots are given approximately by 
+
+  $$k_n \approx (n+1/2) \pi/L \tag{3}$$ 
+
+  where $n=1,2,3...$ labels the modes in order of resonance frequency. This 
+  approximate expression is good enough for all the modes except the one we are 
+  most interested in, with $n=1$: a more accurate expression for that mode is 
+
+  $$k_1 = 4.73/L . \tag{4}$$ 
+
+  Putting this all together, the frequency $f_1$ (in Hz) of the lowest mode is 
+  given by 
+
+  $$f_1 = \sqrt{\dfrac{E}{\rho}} \dfrac{h}{L^2} \dfrac{(4.73)^2}{2 \pi 
+  \sqrt{12}} = 1.028 \sqrt{\dfrac{E}{\rho}} \dfrac{h}{L^2} . \tag{5}$$ 
+
+  This can be turned round to give an expression for $E$: 
+
+  $$E=0.946 \rho \dfrac{f_1^2 L^4}{h^2}=0.946 \dfrac{m f_1^2 L^3}{b h^3} 
+  \tag{6}$$ 
+
+  where the final expression is expressed in terms of the total mass $m$ of the 
+  beam, rather than the density. This mass can be determined directly by 
+  weighing. 
+
+  When using this expression it is, of course, important to express all the 
+  quantities in a consistent set of units. The standard choice would be to 
+  express all lengths in metres, and the mass in kilograms: $E$ will then be in 
+  Pascals (Pa). 
+
+  So how should you set about measuring the frequency $f_1$ for your test 
+  sample? Figure 1 shows one good way to do it. A cross-grain spruce beam is 
+  being tested — in fact it is one of the ones shown in Fig.\ 3 of section 
+  10.3. You need to support the beam in a way that doesn’t interfere with the 
+  vibration mode you are interested in, and that means positioning the supports 
+  on nodal lines. For the lowest mode of a free-free beam the two nodal lines 
+  are approximately 1/4 of the way in from each end. So the beam has been 
+  supported in those positions with two thin rubber bands, threaded over a 
+  section of U-channel which allows the position of the bands to be adjusted 
+  very easily. Using thin rubber bands means that the measurement will not be 
+  affected very much if the positioning isn’t perfect, because the extra 
+  stiffness and/or mass contributed by the bands is minimal. 
+
+  \fig{figs/fig-d14cc355.png}{Figure 1. One of the spruce beams from Fig. 3 of 
+  section 10.3 being used to measure stiffness by finding the lowest resonance 
+  frequency. The beam is supported in thin rubber bands placed at the nodal 
+  points of the mode. A small microphone is placed underneath, near the 
+  centre.} 
+
+  This mode has large amplitude at the centre of the beam, so it is being 
+  tapped (with a pencil) at that position. A small microphone has been placed 
+  underneath at the same position, close to the beam but not touching it. The 
+  signal from the microphone goes off to a computer running some kind of FFT 
+  app, which will allow you to find the resonance frequency by analysing the 
+  tap sound. Alternatively, you could achieve the same effect with a phone app, 
+  with the phone’s microphone in a similar position close to the beam. 
+
+  If you would like to include a cross-check in your measurement, you can try 
+  to measure the frequencies of a few more of the vibration modes. They should 
+  all give more or less the same value of $E$, using the relevant values of 
+  $k_n$ from equation (3) to derive equations corresponding to equation (6). 
+  But you need to be careful doing these measurements. The nodal lines are 
+  different for every mode, so you need to move the rubber bands a bit nearer 
+  to the ends for successively higher modes. Also, for the even-numbered modes 
+  $n=2,4,…$ it is no good to tap and listen at the centre, because these modes 
+  all have a nodal line there. A safe place to tap is at the very end: every 
+  mode has an antinode there. But you also need to use an asymmetric position 
+  of the rubber bands so that the microphone isn’t exactly in the centre of the 
+  beam. 
+
+  Finally, as will be explained further in section 10.3.3, you can use the same 
+  measurement to determine the damping factor associated with $E$. For that, 
+  you need a bit more sophistication in your FFT app. You either need to find 
+  the decay rate of the sound of each mode following the tap, or equivalently 
+  you find the half-power bandwidth of the peak in the frequency spectrum given 
+  by the FFT. Section 2.2.7 gives the details of how that bandwidth is affected 
+  by the damping. 
+
+  You also need to be more careful with the experimental details if you want to 
+  get accurate values of damping. The rubber bands will contribute extra 
+  damping, and you want to minimise that. So try the test a few times, moving 
+  the bands slightly between tests. The lowest value of damping among these 
+  measurements should give the best estimate of the true damping of the wood. 
+  In any case, measuring damping is always tricky. You can expect to get 
+  reliable results for resonance frequencies to an accuracy around 1%, but for 
+  damping factors the accuracy is unlikely to be better than 10%. Luckily, this 
+  is good enough: we do not hear differences in damping very acutely, and it 
+  usually requires a change much bigger than 10% to be audible. 

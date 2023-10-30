@@ -1,0 +1,369 @@
+
+
+  We have looked in some detail at the vibration behaviour of stringed 
+  instrument bodies: but how important are all these details for the sound of 
+  the instrument? It is time to turn our models into something we can listen 
+  to. For the violin, that will involve understanding what happens when you bow 
+  a string, which will take us into the tricky territory of non-linear systems. 
+  We will put this off, until chapter ?. But for plucked-string instruments 
+  like the guitar and the banjo we can get a long way with linear ideas. 
+
+  What happens when you pluck a string? The simplest description is that the 
+  player pulls the string to one side (with a plectrum, fingernail or the flesh 
+  of a finger), then lets go. The string is then left to its own devices, to 
+  vibrate freely and to feed some of its energy into the instrument body. When 
+  pulled aside, the string will take up a triangular shape as sketched in Fig.\ 
+  1. The player can choose the plucking point along the string, and the 
+  orientation of the pluck. Otherwise, the only thing likely to vary is the 
+  sharpness of the corner: a small, sharp plectrum will make a very sharp 
+  corner, the flesh of a finger will make a more rounded one. 
+
+  \fig{figs/fig-d726d9ca.png}{Figure 1. Sketch of a string pluck: the string is 
+  pulled to this triangular shape by a force (the black arrow), then it is 
+  released to vibrate freely.} 
+
+  The very simplest model is to assume a perfectly sharp corner, and an ideal 
+  string without damping. We already know the mode shapes and natural 
+  frequencies for this ideal string from section 3.1.1. For this simple system 
+  there are three ways we can find the string motion following the pluck. They 
+  are all useful in their different ways so we will briefly summarise all 
+  three. 
+
+  First, we can say that after the string has been released, the ensuing free 
+  motion must consist of a linear combination of the modes, each vibrating at 
+  its own natural frequency. This statement is, after all, true of any free 
+  motion of any linear system. All we need to do is find the amplitude and 
+  phase of each modal contribution. This can be done by expressing the initial 
+  triangular shape as a Fourier series: the slightly messy mathematical details 
+  are given in the next link. 
+
+  One virtue of this approach is that it does not rely on the particular 
+  assumed shape of the pluck: it could be applied to any other initial 
+  conditions, such as a rounded corner from a finger-flesh pluck. The method 
+  would be followed in the same way, based on calculating the Fourier series 
+  representation of the initial shape. The effect of rounding off the sharp 
+  corner would be to reduce the amplitudes of the higher Fourier components. 
+  You need short wavelengths, corresponding to high-frequency modes, to 
+  represent a sharp corner, but a rounded corner will have a natural cutoff at 
+  the wavelength matching the curvature of the corner, above which the Fourier 
+  coefficients will become small. The result is a familiar one: the sound of a 
+  finger-flesh pluck is less bright than a plectrum pluck because it contains 
+  less energy at high frequency. 
+
+  We can learn something interesting about the sound of plucked strings from 
+  the result of the calculation in the previous link. We can't calculate 
+  `sound' as such from this model string with rigidly fixed ends, but we can 
+  calculate the waveform of force exerted by the vibrating string on the 
+  bridge. This is the driving force for body vibration, and so is closely 
+  related to the sound that an instrument would make. The amplitude of the 
+  $n$th harmonic of this force signal is proportional to the mode shape at the 
+  pluck point, divided by the harmonic number, and the mode shapes are simply 
+  sinusoidal as plotted in Fig.\ 1 of section 3.1. This amplitude is plotted in 
+  Fig.\ 2, against harmonic number $n$ and relative pluck position $a/L$ (where 
+  $L$ is the length of the string and $a$ is the plucking distance). 
+
+  \fig{figs/fig-8320cc8e.png}{Figure 2. The first 20 harmonic amplitudes for 
+  the waveform of force applied to the instrument bridge by an ideal plucked 
+  string, for different values of the plucking point. The plucking point is 
+  expressed as a relative fraction of the string length, so that a value 0.5 
+  means that the string is plucked at its mid-point, while a small value means 
+  that the string is plucked very close to the bridge.} 
+
+  This plot reveals several interesting features. For every plucking position, 
+  the fundamental ($n=1$) has the largest amplitude. But the value of that 
+  fundamental amplitude, for a fixed plucking force, is higher when plucking 
+  far from the bridge, and gets progressively lower as the pluck point gets 
+  nearer to the bridge. Every guitarist is familiar with the change in loudness 
+  and tone quality that results from plucking closer to the bridge: a 
+  synthesised example of the effect will be given at the end of this section. 
+
+  There is another factor contributing to this change of sound when the 
+  plucking point is varied. Figure 2 shows that the variation of amplitude with 
+  $n$ is different for each plucking point, leading to the set of curving 
+  ridges which dominates the plot. The origin of this effect is easy to 
+  understand. Look first at the line of points on the far side of the plot, for 
+  plucking at $a/L=0.5$, in other words at the mid-point of the string. The 
+  line is a zigzag, with every second amplitude falling to zero. The reason is 
+  that whenever $n$ is an even number, the corresponding mode shape has a nodal 
+  point in the centre. It is impossible to excite a mode of any system by 
+  driving at a nodal point. So a mid-point pluck can only excite the odd 
+  harmonics, $n=1,3,5,...$. This argument extends in a simple way to other 
+  plucking positions. If you pluck at the 1/3 point, every third harmonic will 
+  be missing. At the 1/4 point, every fourth will be missing, and so on. This 
+  leads directly to the pattern of curving ridges and valleys. 
+
+  The second approach to calculating the motion of our ideal string following a 
+  pluck is to notice that for this particular problem of a plucking force 
+  applied at a single point, we can short-cut some of the algebraic 
+  complication of the Fourier series approach by making use of a general 
+  formula for the step response of any linear system. We are applying a force 
+  at the chosen plucking point. That force has a constant value $F$ until the 
+  player lets go, then it then jumps down to zero. The general formula for step 
+  response can be used to find the subsequent motion. The details are given in 
+  the previous link: reassuringly, it is found to agree with the result 
+  obtained by the Fourier series method. 
+
+  A virtue of this step response method is that it can easily be extended to 
+  the case where the string is connected to the instrument body rather than 
+  rigidly fixed at both ends. Although Fig.\ 1 didn't explicitly show any body 
+  motion, the sideways pull by the player will move the bridge a little, as 
+  well as moving the string. One way to solve the coupled problem of the 
+  string-body motion after the pluck is first to find the coupled modes of this 
+  combined system. Once we know those, the step response formula can be applied 
+  directly. We will come back to this shortly. 
+
+  The third approach to finding the pluck response is very different. Rather 
+  than using modes, we can take advantage of a general solution to the 
+  differential equation governing the motion of an ideal string, due to the 
+  18th-century French mathematician Jean le Rond d'Alembert. This approach uses 
+  travelling waves: d'Alembert showed that any possible free motion of a string 
+  can be described by a combination of a wave travelling leftwards at speed 
+  $c$, and another wave travelling rightwards at the same speed. These waves 
+  can have any shape whatsoever, but to satisfy the particular starting 
+  conditions of our plucked string we need both waves to have a triangular 
+  shape. The next link gives details of d'Alembert's solution. 
+
+  Figure 3 shows an animation of the result. At the top, the two separate waves 
+  are seen, travelling in opposite directions. You could picture these waves as 
+  travelling on a string which extends off to infinity in both directions 
+  beyond the actual vibrating string. We are viewing that infinite string 
+  through a window matching the length of our actual string, so that waves 
+  appear from one side, travel across the window, and vanish off the other 
+  side. The lower plot shows the actual string motion, which is the sum of the 
+  two waves. Both ends of the string are stationary, as they are supposed to 
+  be. If you watch carefully, you will see that the red and blue travelling 
+  waves always have equal and opposite magnitudes at the two end of the string, 
+  so that when you add them together they always cancel. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-d1a992c0-00.png }&\vidframe{ 0.30 }{ vids/vid-d1a992c0-01.png }&\vidframe{ 0.30 }{ vids/vid-d1a992c0-02.png } \end{tabular}\caption{Figure 3.  An ideal plucked string. Upper plots: the left-travelling and right-travelling waves that make up the solution; lower plot: the combined waveform, showing the string response to the pluck.}\mooendvideo
+
+  Now we have a good idea how an ideal string behaves following a perfect 
+  pluck. However, this is not enough for the purpose of making an accurate 
+  synthesis of the motion of a real string on a real instrument. Several 
+  factors have been omitted in this simple analysis, and we need to put at 
+  least some of them back. 
+
+  First, real strings do not have natural frequencies that are precisely 
+  harmonic multiples of the fundamental frequency. There are two reasons. One 
+  is to do with coupling to the body of the instrument, which we deal with 
+  shortly. The other arises because any real string has some bending stiffness. 
+  This problem is easily dealt with, as described in the next link. We simply 
+  need to combine the behaviour of two systems we already know about, the 
+  string and a bending beam. Then we can use Rayleigh's principle to get a good 
+  approximation for the natural frequencies allowing for bending stiffness. 
+
+  The result is that the frequency of the $n$th overtone (we must now stop 
+  calling them `harmonics') is no longer simply an integer multiple of the 
+  fundamental. Instead, the overtones are spaced progressively wider apart than 
+  the harmonic series of the ideal string. The stronger the influence of the 
+  string's bending stiffness, the stronger is this inharmonicity effect. It has 
+  an important perceptual consequence, which we can guess from the discussion 
+  of tuned percussion instruments in chapter 3. The more accurately harmonic 
+  the frequencies are, the more precise is the resulting sense of pitch. So, 
+  for example, thin harpsichord strings will have lower bending stiffness and 
+  so be more accurately harmonic that thicker piano strings, which is one 
+  reason why harpsichordists pay so much more attention to tuning and to 
+  tempering systems. 
+
+  The effects of inharmonicity due to bending stiffness can be reduced by using 
+  over-wrapped strings. To design a string of given length with a low pitch but 
+  which does not become too slack, the string has to be heavy. The simplest way 
+  to achieve that is to choose a thicker gauge of string, but this will 
+  increase the bending stiffness. Wrapping metal wire round a core of metal or 
+  nylon fibres allows a heavier string to be made without the penalty of higher 
+  bending stiffness. This is the reason behind the familiar appearance of sets 
+  of piano strings or guitar strings: the high strings are solid monofilaments 
+  of one material or another, but the lower strings are over-wrapped. 
+
+  The modified natural frequencies can be inserted directly into a modal-based 
+  expression for the pluck response, such as the expression given by the step 
+  response method. However, the effect of bending stiffness invalidates the 
+  d'Alembert travelling-wave method. The wave speed is no longer a single 
+  constant value; instead it varies with frequency. Waves with high frequency, 
+  or equivalently with short wavelengths, travel faster than those with lower 
+  frequency or longer wavelength. The result is that the shape of the 
+  travelling triangular waves in Fig.\ 3 will change with time, because the 
+  different frequency components making up the shape travel at different 
+  speeds. The motion immediately after the pluck will still resemble Fig.\ 3, 
+  but it will gradually diverge from it as the effects of bending stiffness 
+  build up. 
+
+  But there is a more important reason that the motion of a real string will 
+  rapidly deviate from the simple animation in Fig.\ 3. In the plot the motion 
+  went on for ever, but of course in a real string it will die away as energy 
+  is lost by the string. Furthermore, the different modes of the string will 
+  decay at different rates. Usually, the high-frequency components decay more 
+  rapidly than the lower-frequency ones, so that the motion will look 
+  increasingly smooth and rounded as time goes on. Eventually, it will become 
+  more or less sinusoidal because only the fundamental mode has significant 
+  amplitude. This frequency-dependent decay pattern is an important part of the 
+  audio ``signature'' of different instruments, and of different strings or 
+  different notes on a given instrument. Some sound examples to illustrate this 
+  will be given in section 5.5. 
+
+  There are three main mechanisms for energy loss from a vibrating string. 
+  Energy loss is additive, so the total loss factor for a given mode of the 
+  string is the sum of three separate loss factors associated with the three 
+  mechanisms. One we have already seen, in section 5.1.2. Energy is lost 
+  through the bridge to the body of the instrument, and the associated loss 
+  factor is determined by the product of the string impedance and the real part 
+  of the bridge admittance of the body. This source of energy loss will be 
+  included automatically, when we couple the string to the body to perform a 
+  synthesis. 
+
+  The other two energy loss mechanisms are associated directly with the string 
+  motion itself, regardless of coupling to the body, and they need to be 
+  included explicitly in a model of the string dynamics. One source of energy 
+  loss is within the material of the string. The cyclical deformation of the 
+  string during the vibration will involve some energy loss. For a monofilament 
+  string, this loss is linked to the bending stiffness just discussed. The 
+  Young's modulus of the string is in reality a complex number: the real part 
+  is the usual elastic modulus, while the imaginary part describes energy loss 
+  during cyclical deformation. This complex modulus can be used to derive an 
+  expression for the loss factor: see the next link for details. 
+
+  For a metal string, as on a piano or steel-string guitar, the intrinsic 
+  damping of the material is usually very small, but for a nylon or gut string 
+  it will be much bigger. This is one important reason for the difference of 
+  sound between strings of different types. For a multi-layer wrapped string, 
+  additional energy loss can occur as a result of friction between the 
+  windings. The energy loss in that case will not be represented very 
+  accurately by the complex modulus model: friction is intrinsically a 
+  nonlinear process, whereas the complex modulus representation is based on 
+  linear theory. Furthermore, on an instrument like the guitar where the 
+  strings are in direct contact with the player's fingers, this loss mechanism 
+  is likely to vary with time. Contaminants from the fingers gradually build up 
+  between the windings of the string, increasing the energy dissipation rate. 
+  This seems to be the main reason for the difference in sound between new and 
+  old guitar strings [1]. 
+
+  The third mechanism for energy loss from a vibrating string is to do with the 
+  air surrounding the string: as the string moves, the associated air flow over 
+  its surface leads to losses from viscosity. A loss factor to account for this 
+  can be estimated using a classical result for flow round a circular cylinder: 
+  the details are given in the next link. 
+
+  We now have all the main ingredients for a realistic model of a vibrating 
+  string, and we are ready to couple the string to the instrument body and 
+  synthesise a version of the sound of plucking the string. One possible method 
+  of synthesis has already been mentioned: if we can describe the body motion 
+  in terms of its modes, we could compute the coupled modes of the string/body 
+  system, then use the general formula for step response to create a pluck 
+  sound. This approach is certainly possible, and we will show examples later, 
+  but there are some details that are rather fiddly to get right. We will not 
+  discuss the method further here: see [2] for more discussion. 
+
+  There is an alternative synthesis method that is faster and in many ways 
+  superior. This involves working in the frequency domain, and using an inverse 
+  FFT at the final stage to create the required time-varying transient 
+  response. This method is attractive because the string and the body are 
+  coupled together at a single point, and there is a very simple method which 
+  can be applied to any such problem: if two systems have input admittances 
+  $Y_1$ and $Y_2$ and they are then rigidly connected at the points at which 
+  these admittances are defined, then the coupled system has an admittance 
+  $Y_{coup}$ at that point satisfying 
+
+  $$\dfrac{1}{Y_{coup}}=\dfrac{1}{Y_1}+\dfrac{1}{Y_2} . \tag{1}$$ 
+
+  This result expresses the fact that at the coupling point, the two subsystems 
+  have equal velocities while the total applied force is the sum of the forces 
+  applied to the two separate subsystems. 
+
+  The body is naturally described in terms of its admittance, as already 
+  described. By calculating the corresponding admittance at the end of a 
+  string, which is derived in the next link, eq. (1) can be applied immediately 
+  to give the admittance of the strung instrument at the bridge. 
+
+  To use this method to derive a pluck response, use can be made of a general 
+  reciprocal theorem for linear vibration response. This states that if you 
+  apply a force at some point on a system, and observe the motion at another 
+  point, then you would get exactly the same response if you observed at the 
+  first point, and applied the force at the second point. This reciprocal 
+  theorem is often used when making measurements: it allows you to swap your 
+  excitation point and your measurement point if that makes the experimental 
+  details easier. The proof of this result has actually already been given: it 
+  follows directly from eq. (11) of section 2.2.5. This formula for the 
+  frequency response function is completely symmetric between the forcing point 
+  (labelled $j$) and the measurement point (labelled $k$ ). 
+
+  We wish to find the body vibration which results from a step function of 
+  force applied at a given position on the string. Reciprocally, we can 
+  consider applying the force at the bridge, and calculate the resulting motion 
+  at the relevant point on the string. To solve this reciprocal problem, we 
+  simply have to multiply two frequency response functions together. The first 
+  is the coupled admittance $Y_{coup}$ from eq. (1), which gives the velocity 
+  at the bridge when a force is applied there. The second is the dimensionless 
+  transfer function between a given displacement applied at one end of a string 
+  and the corresponding displacement at the point where the pluck is to be 
+  applied. This second transfer function is also derived in the next link. 
+
+  Performing these operations and then applying an inverse FFT, we can create a 
+  time history representing the velocity waveform at the bridge following an 
+  ideal pluck at the chosen point on the string. There are two final 
+  ingredients to be considered, to make the model a little more realistic. 
+  First, we might want to allow for a pluck that is somewhat rounded rather 
+  than perfectly sharp. We saw earlier that the effect of a rounded pluck is to 
+  reduce the high-frequency content of the string motion, and hence of the 
+  sound of the instrument. We can represent this effect in a simple way by 
+  applying a suitable low-pass filter to the computed frequency response, 
+  before doing the inverse FFT. 
+
+  The final ingredient involves thinking more carefully about the output of the 
+  synthesis. Really, we would like to compute the sound radiated by the 
+  vibrating instrument body. To do this accurately is a very complicated 
+  matter, as we glimpsed in Chapter 4. We will want to come back to the 
+  question of representing radiated sound, but for the moment we can try to 
+  find a simple way to synthesise something that gives a reasonably convincing 
+  impression of ``sounding like a guitar'' (or whichever instrument we are 
+  considering). A pragmatic approach will be used: empirically, the sound of 
+  bridge velocity is a little dull, while the sound of bridge acceleration is a 
+  bit too bright. In the frequency domain, the difference between these two 
+  things is a factor proportional to frequency. It is easy to move between 
+  these two extremes by applying a factor of ``frequency raised to some 
+  power'', choosing a power lying between 0 and 1 based on listening to some 
+  sound examples. Examples of the effect of varying this power will be shown in 
+  section 5.5, together with many other sound examples computed by this 
+  approach. 
+
+  As a taster for the usefulness of synthesis, we give a few preliminary 
+  examples here. The three sounds below were all synthesised using the 
+  frequency domain method just described. A brief snatch from an anonymous lute 
+  piece called ``The English Huntsuppe'' is ``played'' on a classical guitar. 
+  Parameter values for a typical set of nylon strings were used, together with 
+  the measured bridge admittance of a guitar. All the details of the modelling 
+  can be found in reference [1]. The middle example, Sound 2, uses the measured 
+  body admittance directly. Sounds 1 and 3 are the result of doing some 
+  ``virtual woodwork'' in the computer to modify the admittance in a controlled 
+  manner. 
+
+  First, do these sound fairly credibly like guitars? Then, how would you 
+  describe the difference between the three sounds? Can you guess what has been 
+  changed? The answer is that in Sound 1, all the natural frequencies of the 
+  body have been reduced by one semitone, whereas in Sound 3 they have been 
+  increased by one semitone. Nothing else was changed. If you want to think of 
+  a physical change to a guitar that would have roughly the same effect, then 
+  you can picture Sound 1 as coming from a guitar with a slightly larger or 
+  thinner top plate, and Sound 3 from one with a slightly smaller or thicker 
+  top plate. As we showed in section 3.2.4, the area and the thickness of a 
+  plate both affect the modal density. 
+
+  Earlier in this section, we saw in Fig.\ 2 that the plucking point on the 
+  string has a strong influence on the frequency spectrum of an ideal plucked 
+  string. The next pair of sound examples illustrate this effect via 
+  synthesised fragments of another lute piece, ``Queen Elizabeth's Galliard'' 
+  by John Dowland. All the model parameters are the same as for Sound 2, except 
+  that the plucking point has been varied. In Sound 4, the strings are plucked 
+  150 mm from the bridge, while in Sound 5 they are plucked 20 mm from the 
+  bridge. The open string length for this ``guitar'' was 650 mm, but as in a 
+  real instrument the actual vibrating length for each note varies depending on 
+  which fret is used to play the note. The difference of sound between these 
+  two examples is encouragingly familiar from real playing. 
+
+
+
+  \sectionreferences{}[1] J. Woodhouse, E.K.Y. Manuel, L.A. Smith and C. Fritz. 
+  ``Perceptual thresholds for acoustical guitar models''. Acta Acustica united 
+  with Acustica \textbf{98}, 475-486, (2012).~ DOI 10.3813/AAA.918531 
+
+  [2] J. Woodhouse ``On the synthesis of guitar plucks''.~ Acta Acustica united 
+  with Acustica \textbf{90}, 928–944 (2004). 

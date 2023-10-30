@@ -1,0 +1,87 @@
+  Back in section 8.5 we discussed a severely simplified model for a clarinet. 
+  Our model involved coupling the linear acoustics of the tube to a non-linear 
+  model of the mouthpiece and reed. We will look at wind instruments properly 
+  in Chapter 11, but we can anticipate the fact that almost all wind 
+  instruments involve a somewhat similar division between something non-linear 
+  happening in and around the mouthpiece, coupled to linear acoustics of the 
+  tube of the instrument. 
+
+  The natural frequency response function to characterise this linear acoustics 
+  is the input impedance, defined as the ratio of pressure to volume flow rate 
+  at a plane defining the junction of tube and mouthpiece. In terms of 
+  measurement, you can supply the necessary input volume flow rate with some 
+  kind of loudspeaker, and you can measure the resulting pressure with a 
+  microphone. But the definition of input impedance presents a challenge: there 
+  is no easy and reliable sensor that can measure volume flow rate at acoustic 
+  frequencies. Over the years, considerable ingenuity has been devoted to the 
+  design of measurement methods that get around this difficulty. 
+
+  In the world of wind instruments, measurements using continuous excitation 
+  are still the most usual, although we will come to an impulse-based method 
+  later. The earliest approach is illustrated in schematic form in Fig.\ 1. A 
+  loudspeaker is driven by a sine wave, and is connected to the instrument tube 
+  via a very thin capillary tube. The loudspeaker is enclosed in a robust 
+  container so that no sound escapes except into the instrument tube through 
+  the capillary. Two microphones, mounted flush with the surface, measure the 
+  pressure at the two ends of the capillary. 
+
+  \fig{figs/fig-a04c2e01.png}{Figure 1. Schematic diagram of a device to 
+  measure input impedance using a capillary tube in the drive system.} 
+
+  The significance of the capillary is that it presents a very high resistance 
+  to the acoustic flow, and this has the result that the volume flow rate is 
+  governed almost entirely by the pressure at the left-hand end, inside the 
+  loudspeaker cavity. The pressure at the other end, in the instrument tube, 
+  makes virtually no difference. This means that once the device has been 
+  calibrated, the pressure measured by the internal microphone can be converted 
+  directly into a volume flow rate entering the instrument, decoupled from the 
+  acoustic behaviour of the particular instrument being measured. The second 
+  microphone then measures the resulting pressure, and the combination of these 
+  two gives the input impedance of the instrument. 
+
+  Unfortunately, the high resistance of the capillary means that such devices 
+  only inject rather small volume flow rates into the instrument. In theory 
+  this doesn’t matter, since the input impedance is a linear quantity, 
+  independent of the excitation amplitude. However, in practice low amplitude 
+  gives a reduction in signal-to-noise ratio. So it would be better to dispense 
+  with the capillary, and this leads to the next type of impedance-measuring 
+  device, shown schematically in Fig.\ 2. This time, the loudspeaker cavity is 
+  coupled directly to the instrument tube, with a microphone near the junction. 
+
+  \fig{figs/fig-aeeb7bb6.png}{Figure 2. Corresponding schematic diagram of a 
+  device to measure input impedance, taking advantage of a measurement of 
+  pressure in the cavity behind the loudspeaker piston.} 
+
+  A second microphone is in the cavity behind the loudspeaker piston. Provided 
+  the walls of the device are sufficiently rigid, the volume flow rate into the 
+  instrument must be exactly equal and opposite to the volume flow rate into 
+  the rear cavity. This rate can be inferred from the pressure measured by the 
+  second microphone — provided a sufficiently elaborate and careful set of 
+  calibration tests has been carried out because the rear cavity will have 
+  resonances of its own which must be compensated for. It is a device of this 
+  type which is seen in use in Fig.\ 7 of section 10.4. 
+
+  Another type of measurement strategy relies on making the connecting tube 
+  between the loudspeaker and the instrument very long. This long, parallel 
+  tube can only support plane acoustic waves, travelling in one direction or 
+  the other. By placing two (or more) microphones in the wall of this tube and 
+  then doing some computer processing, it is possible to separate the 
+  contributions from left-travelling and right-travelling waves. By comparing 
+  their amplitudes and phases, it is then possible to deduce the reflection 
+  coefficient of the instrument tube. There is a standard formula linking this 
+  reflection coefficient to the input impedance, and so the impedance can be 
+  determined. 
+
+  Finally, there is a variant of this approach which we have already seen, back 
+  in section 10.2. If we drive our long connecting tube with a pulse, we can 
+  deduce the shape of the reflected pulse from the instrument. This pulse 
+  reflectometry information can be used for bore reconstruction, as we saw 
+  earlier. But it can also be processed to yield the input impedance, via a 
+  Fourier transform. 
+
+  For more detail on all these methods, see Section 4.2 of the book by 
+  Campbell, Gilbert and Myers [1], and the extensive references contained 
+  therein. 
+
+  \sectionreferences{}[1] Murray Campbell, Joël Gilbert and Arnold Myers, “The 
+  science of brass instruments”, ASA Press/Springer (2021) 

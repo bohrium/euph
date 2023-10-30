@@ -1,0 +1,201 @@
+  Whenever we need to cover technical material relating to fluid dynamics, we 
+  need the language and machinery of vector calculus, so it is useful to give 
+  an overview of the subject here. There will be no proofs or derivations in 
+  this section, but the key concepts will be introduced and I will attempt to 
+  explain how they all fit together. Vector calculus provides the essential 
+  mathematical toolkit for analysing many problems in three dimensions: not 
+  only fluid dynamics, but also areas ranging from electromagnetism to computer 
+  graphics. 
+
+  First, a reminder of what ordinary calculus is about. Newton invented 
+  calculus in order to solve problems involving gravity and the motion of 
+  projectiles or the solar system. Without the concepts of calculus we can't 
+  even begin to apply modern scientific ideas to the simplest problems in 
+  dynamics: Newton's governing equations are differential equations. So what 
+  does ordinary calculus consist of? There are three things.... 
+
+  First, differentiation: things like 
+
+  $$\dfrac{df}{dx}$$ 
+
+  which you may interpret as the slope of a graph of the function $f(x)$. 
+
+  Second, integration: things like 
+
+  $$\int_a^b{f(x) dx}$$ 
+
+  which you may interpret as the area under the graph of $f(x)$ between the 
+  points $x=a$ and $x=b$. 
+
+  The third thing is perhaps the one you did not immediately think of. There is 
+  a very important theorem which connects the first two things together: 
+
+  $$\int_a^b{\dfrac{df}{dx} dx} = [f(x)]_a^b . \tag{1}$$ 
+
+  In words, the integral of a derivative gives you the original function, 
+  evaluated on the boundaries of the region of interest. 
+
+  Vector calculus involves versions of the same three things, albeit made more 
+  complicated by working in three dimensions instead of one. 
+
+  \samsection{A. Vector differentiation: grad, div and curl} 
+
+  There are three types of vector derivative. The simplest of them is called 
+  the gradient. Suppose we have a scalar field variable, like temperature 
+  $T(\underline{r})$, where $\underline{r}$ is the position vector with 
+  components $(x,y,z)$ with respect to Cartesian axes. Then the vector 
+
+  $$\mathrm{grad~}T = \nabla T = \left[\dfrac{\partial T}{\partial 
+  x},\dfrac{\partial T}{\partial y},\dfrac{\partial T}{\partial z}\right] 
+  \tag{2}$$ 
+
+  is called the gradient of $T$. This vector has a simple physical 
+  interpretation. Its direction is towards the steepest rate of increase of 
+  temperature, and its magnitude is the rate of increase. One interpretation of 
+  this equation is that we have a vector operator 
+
+  $$\nabla = \left[\dfrac{\partial }{\partial x},\dfrac{\partial }{\partial 
+  y},\dfrac{\partial }{\partial z}\right] \tag{3}$$ 
+
+  acting on the scalar field $T$ to produce the vector gradient. This operator 
+  is usually called ``del'', or sometimes ``nabla''. 
+
+  Now suppose we have a vector field variable instead of a scalar field: for 
+  example the velocity field $\underline{u}(\underline{r})$ in a fluid flow. In 
+  what sensible ways might we combine a vector operator with a vector function 
+  like this? There are only two, which correspond to the two ways to form a 
+  kind of product from two vectors. These are the scalar product (or ``dot 
+  product''), and the vector product (or ``cross product''). If we have two 
+  vectors $\underline{a}$ and $\underline{b}$, with components $(a_1,a_2,a_3)$ 
+  and $(b_1,b_2,b_3)$, the scalar product is defined by 
+
+  $$\underline{a}\cdot \underline{b} = a_1b_1+a_2b_2+a_3b_3 \tag{4}$$ 
+
+  and the vector product is defined by a $3 \times 3$ determinant: 
+
+  $$\underline{a} \times \underline{b} = \begin{vmatrix} 
+  \underline{i}\&\underline{j}\&\underline{k}\\a_1\&a_2\&a_3\\b_1\&b_2\&b_3 
+  \end{vmatrix}$$ 
+
+  
+  $$=(a_2b_3-a_3b_2)\underline{i}+(a_3b_1-a_1b_3)\underline{j}+(a_1b_2-a_2b_1)\underline{j} 
+  \tag{5}$$ 
+
+  in terms of the unit vectors $\underline{i},\underline{j},\underline{k}$ in 
+  the $x$, $y$ and $z$ directions respectively. 
+
+  So we define two vector derivatives of our vector field $\underline{u}$ in 
+  the same way. First is the divergence: 
+
+  $$\mathrm{div~} \underline{u} = \nabla \cdot \underline{u} = \dfrac{\partial 
+  u_1}{\partial x}+\dfrac{\partial u_2}{\partial y}+\dfrac{\partial 
+  u_3}{\partial z} \tag{6}$$ 
+
+  where the components of $\underline{u}$ are $(u_1,u_2,u_3)$. The second one 
+  is the curl: 
+
+  $$\mathrm{curl~} \underline{u} = \nabla \times \underline{u} =\begin{vmatrix} 
+  \underline{i}\&\underline{j}\&\underline{k}\\ \frac{\partial}{\partial 
+  x}\&\frac{\partial}{\partial y}\&\frac{\partial}{\partial z}\\u_1\&u_2\&u_3 
+  \end{vmatrix} . \tag{7}$$ 
+
+  Fluid dynamics provides good examples of physical interpretation of 
+  divergence and curl. If you inject a small blob of dye into a flowing fluid 
+  with velocity field $\underline{u}$, $\nabla \cdot \underline{u}$ determines 
+  the rate of change of the volume of the blob as it moves with the flow, while 
+  $\nabla \times \underline{u}$ (called ``vorticity'') determines the rate and 
+  axis of rotation of the blob. We will say more about this later, in section 
+  11.2.1. 
+
+  \samsection{B. Three-dimensional integration: volume, surface and line 
+  integrals} 
+
+  Integrals also become rather more complicated for 3D problems: again, there 
+  are three types that crop up naturally in different applications. First is 
+  the volume integral. What is the total mass of a car? Various materials of 
+  different densities are distributed within a defined volume. If the variation 
+  of density is $\rho(\underline{r})$, the total mass is 
+
+  $$\int{\int{\int_V{\rho(x,y,z) dx}dy}dz} = 
+  \int{\int{\int_V{\rho(\underline{r})}}dV} \tag{8}$$ 
+
+  since $\rho dV$ is the mass inside a small volume $dV$, and to find the total 
+  mass you simply need to add them all up, so the integration needs to 
+  encompass the entire volume $V$ of the car. 
+
+  Our second type of integral is a surface integral. Again, we can introduce 
+  the idea through an example. Water flows through a pipe, with some velocity 
+  profile $\underline{u}(\underline{r})$. What is the total flow rate in litres 
+  per second? We could choose any surface which spans across the pipe (it need 
+  not be a flat surface), and find the flow rate across that surface: Fig.\ 1 
+  shows a sketch. 
+
+  Flow rate through a small element of surface is given by the local velocity 
+  multiplied by the projected area parallel to the flow direction. We can 
+  define the vector area $d\underline{A}$ as a vector with magnitude equal to 
+  the area of a small element of the surface, and direction normal to the 
+  surface: then the volume flow rate through this element of area is 
+  $\underline{u} \cdot d\underline{A}$, and the total flow rate is the integral 
+  of this quantity over the surface: 
+
+  $$\mathrm{Flow~rate} = \int{\int_{\mathrm{surface}}{\underline{u} \cdot 
+  d\underline{A}}} \tag{9}$$ 
+
+  The third type of integral is a line integral. This one is most easily 
+  introduced through an electrical example. An electrically charged particle 
+  (with charge $q$) is pushed along a specified curve, through an electric 
+  field $\underline{E}(\underline{r})$, as sketched in Fig.\ 2. What is the 
+  work done? 
+
+  The force on the particle is $q\underline{E}$, so the work done as it moves 
+  along a small piece of the curve described by a line element $d\underline{l}$ 
+  is $q\underline{E} \cdot d\underline{l}$. The total work done is then given 
+  by an integral along the curve: 
+
+  $$W=\int_\mathrm{curve}{q\underline{E} \cdot d\underline{l}} \tag{10}$$ 
+
+  Notice that the vector line element is defined to point tangentially to the 
+  curve, whereas the vector area element was defined to point normal to the 
+  surface. 
+
+  \samsection{C. The connection: divergence theorem and Stokes' theorem} 
+
+  Finally, there are two theorems analogous to the ``integral of a derivative'' 
+  result. In the simplest form as I will state them here, they connect two of 
+  our three kinds of vector derivative with all three kinds of integral. The 
+  first of these is called the divergence theorem, or sometimes Gauss's 
+  theorem. The context of this one is a volume $V$ with a closed surface $S$ 
+  defining its outer boundary, as sketched in Fig.\ 3 (think of something like 
+  a potato). 
+
+  Then, for any vector field $\underline{u}(\underline{r})$, the theorem states 
+  that 
+
+  $$\int{\int{\int_V{\nabla \cdot \underline{u} \mathrm{~} 
+  dV}}}=\int{\int_S{\underline{u} \cdot d\underline{A}}} . \tag{11}$$ 
+
+  This looks far more complicated than our original theorem (1) for ordinary 
+  calculus, but if we describe it in words we can see a parallel. Equation (11) 
+  says that a triple integral of some kind of derivative (a divergence in this 
+  case) is equal to a double integral of the function ($\underline{u}$), 
+  evaluated on the boundary of the region of interest (the surface $S$). The 
+  surface integral on the right-hand side of the equation is indeed the natural 
+  way to ``evaluate on the boundary'' in the context of this three-dimensional 
+  problem. So one integral has been ``cancelled'' by a derivative 
+
+  The second theorem is called Stokes' theorem, and the context of this one is 
+  a section of surface $S$ (which may be curved), with a closed curve $C$ 
+  running round the edge, as sketched in Fig.\ 4 (think of something like a 
+  frisbee, for example). Then the theorem states 
+
+  $$\int{\int_S{\nabla \times \underline{u} \cdot d\underline{A}}} = 
+  \oint_C{\underline{u} \cdot d\underline{l}} \tag{12}$$ 
+
+  where the integral symbol on the right-hand side means that the integral is 
+  to be taken around the closed loop. 
+
+  Again we can see an analogy with equation (1). This time we have a double 
+  integral of a derivative of some kind (a curl in this case), being equal to 
+  the function evaluated on the boundary of the region, which in this case is 
+  naturally represented by a line integral round the boundary curve. So again, 
+  one integral has been ``cancelled out'' by a derivative. 

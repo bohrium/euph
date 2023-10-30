@@ -1,0 +1,120 @@
+  In order to complete our simulation model of a reasonably realistic 
+  ``one-note clarinet'' we need a suitable reflection function. In order to 
+  obtain this, we need to clarify the relationships between four different 
+  acoustical quantities that can be used to characterise the linear acoustics 
+  of a tube: the impedance, the impulse response, the reflection coefficient 
+  and the reflection function. 
+
+  Suppose we inject a sinusoidal pressure wave into the tube at the mouthpiece 
+  end. This wave travels down the tube, and generates a reflected wave 
+  travelling back in the reverse direction. As measured at the mouthpiece, we 
+  can denote these $P_R e^{i \omega t}$ and $P_L e^{i \omega t}$ respectively 
+  (we are envisaging the outgoing wave as travelling to the right, and the 
+  reflected wave travelling to the left). The two wave amplitudes are linked by 
+
+  $$P_L=R(\omega) P_R \tag{1}$$ 
+
+  where $R(\omega)$ is the reflection coefficient. Note that $P_R$, $P_L$ and 
+  $R$ may all be complex quantities, because they contain phase information as 
+  well as amplitude information. 
+
+  We can use a result from section 4.1.1 to obtain the corresponding complex 
+  amplitudes of the two travelling waves of volume flow rate: these will be 
+
+  $$V_R=P_R/Z_t,\mathrm{~~~~}V_L=-P_L/Z_t \tag{2}$$ 
+
+  in terms of the characteristic impedance of the tube, $Z_t$. Now we can write 
+  down an expression for the input impedance $Z$: 
+
+  $$Z(\omega) = \dfrac{P_R+P_L}{V_R+V_L}=\dfrac{Z_t(P_R+P_L)}{P_R-P_L}=Z_t 
+  \dfrac{1+R}{1-R}. \tag{3}$$ 
+
+  Inverting this relation gives 
+
+  $$R=\dfrac{Z-Z_t}{Z+Z_t}. \tag{4}$$ 
+
+  Both $Z$ and $R$ are defined in the frequency domain. The inverse Fourier 
+  transforms of these two quantities are both of some interest to us. We know 
+  from section 2.2.8 that the inverse transform of any input-output frequency 
+  response of a linear system is the corresponding impulse response: the 
+  response of the output variable when the input is a unit delta function 
+  $\delta(t)$. So the inverse transform of the impedance is the impulse 
+  response $g(t)$, the pressure response at the mouthpiece to a pulse of volume 
+  flow. The inverse transform of the reflection coefficient is the reflection 
+  function $r(t)$ that we need: the reflected pressure wave when a pressure 
+  spike is injected into the tube. 
+
+  It is time to see examples. The starting point is the impedance of a 
+  clarinet-like tube, which we can calculate as described in section 11.1.1. We 
+  choose a tube of length 0.66~m and internal diameter 15~mm, matching the 
+  dimensions of a clarinet. Strictly the length should be augmented by suitable 
+  end corrections, without which our ``instrument'' will play a bit sharp, but 
+  this is not important for the purpose of representing the essential physics 
+  of a clarinet. 
+
+  The resulting impedance is shown in the red curve of Fig.\ 1. We want to use 
+  an inverse FFT to calculate the impulse response, and in order to avoid 
+  numerical artefacts we need to reduce the amplitude by the highest frequency. 
+  This has been done in the blue curve. The damping of the tube has been 
+  artificially raised, starting at 6~kHz and increasing thereafter. The result 
+  is that the curve has settled down to a flat line at the highest frequency 
+  plotted. This flat line corresponds to the characteristic impedance $Z_t$, 
+  appropriate to a semi-infinite tube of the same diameter. (With the decibel 
+  scale of the plot, this illustrates Skudrzyk's theorem: see section 5.3.2.) 
+
+  Although this increase of damping is entirely artificial, something of the 
+  kind happens in a real clarinet because of the influence of the bell. The 
+  efficiency of sound radiation at the bell rises with frequency, so that the 
+  impedance does indeed tend to flatten out. Figure 2 shows an illustration. 
+  This is a measured input impedance of a clarinet fingered for its lowest 
+  note, with all the tone-holes closed, taken from Joe Wolfe's \tt{}web 
+  site\rm{}. (We should mention a small complication: the measurement is on a 
+  $B\flat$ clarinet, which is a transposing instrument. The note in question is 
+  written as $E_3$, but it sounds at $D_3$, 147~Hz.) This measured impedance 
+  shows peaks reducing in amplitude by the highest frequency plotted here, 4 
+  kHz. This real effect is far more drastic than the artificial one imposed in 
+  Fig.\ 1. 
+
+  Taking the inverse FFT of the impedance plotted in blue in Fig.\ 1 gives the 
+  impulse response shown in Fig.\ 3. The initial delta function can be seen, 
+  appearing as a single digital sample of height 1 in this discrete-time 
+  representation. The initial pulse travels down the tube and returns, inverted 
+  by the reflection at the end. It then reflects at the mouthpiece end and 
+  travels off down the tube again, not inverting at this reflection because the 
+  mouthpiece is a closed end. After another delay, it returns after another 
+  inversion at the far end so that it now appears as a positive pulse. The 
+  pattern then repeats, with alternating negative and positive pulses getting 
+  gradually lower and more rounded. 
+
+  If we process the impedance with equation (4) to obtain the reflection 
+  coefficient, then take the inverse FFT of that, we obtain the result shown in 
+  Fig.\ 4. This is the reflection function we need for the simulation model. It 
+  is clear from the plot that the processing has had the desired effect: the 
+  multiple reflections have all been removed, just leaving the single negative 
+  pulse representing a single reflection. This is the function used in the 
+  simulations described in section 11.3. One thing to note: the pulse seen in 
+  Fig.\ 3 is symmetrical, but in reality this would not quite be true because 
+  of a factor neglected in this analysis. Interactions with the thermal and 
+  viscous boundary layers in the tube affect the wave speed as well as the 
+  damping, causing wave dispersion and leading to an asymmetric pulse. For 
+  details, see for example Fletcher and Rossing [1], section 8.2. 
+
+  For this reflection function, we find numerically that 
+
+  $$\int_0^\infty{r(t) dt}=-0.966$$ 
+
+  so that it does not satisfy the unit-area condition given in equation (5) in 
+  section 8.5.3. In section 11.3 we also showed simulations done with a 
+  corresponding Raman model, and it is now easy to describe how that model was 
+  created. Raman's model has a delta-function reflection function 
+
+  $$r_{Raman}(t)=-\lambda \delta(t-\tau)$$ 
+
+  with amplitude $\lambda \le 1$ and delay $\tau$. So to create a Raman model 
+  similar to the reflection function in Fig.\ 4, we choose $\tau$ to match the 
+  timing of the (negative) peak response, and $\lambda=0.966$ to match the 
+  area. In section 11.3 we also showed some results with the lossless version 
+  of the Raman model: that model uses the same delay, but with $\lambda=1$. 
+
+  \sectionreferences{}[1] Neville H Fletcher and Thomas D Rossing; “The physics 
+  of musical instruments”, Springer-Verlag (Second edition 1998) 

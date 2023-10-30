@@ -1,21 +1,28 @@
-# author: samtenka
-# change: 2023-10-28
-# create: 2023-10-28
-# descrp: scrape [ euphonics.org ] and assemble to book
+# author:   samtenka
+# change:   2023-10-30
+# create:   2023-10-28
+# descrp:   scrape [ euphonics.org ] and assemble to book
 # to use:
+#   PREREQS Make directories `fig`, `vid`, and `body`.  Also make sure you have
+#           `main.tex` and `sam.sty`.  This project depends also on `ffmpeg`
+#           and its sister `ffprobe`; on python libries `urllib` (and to a tiny
+#           extent `numpy` and `tqdm`).
+#
+#   STITCH  Then run `python3 euph.py`.  This will download text, images,
+#           videos from euphonics.org, take a few frames from each video to
+#           make more images, and create a file `all-inputs.tex` and a
+#           bunch of file `body/*.tex`.
+#
+#   TYPESET Then run `pdflatex main.tex`.  This should create `main.pdf`, which
+#           you open and enjoy.
 
 import urllib.request
 import re
 import numpy as np
-import datetime
 import tqdm
-
-#-------  _  ------------------------------------------------------------------
-
-GREEN = '\033[01m\033[32m'
-LIME  = '\033[22m\033[32m'
-GRAY  = '\033[90m'
-UP    = '\033[1A'
+import hashlib
+import glob
+import os
 
 #-------  _  ------------------------------------------------------------------
 
@@ -26,7 +33,6 @@ def clean_pre(s):
              )
 
 def clean_post(s):
-    #return s
     return (s.replace('&#x27;' , '`')
              .replace('&#039;' , '\'')
              .replace('&#8220;', '``' )
@@ -36,8 +42,12 @@ def clean_post(s):
              .replace('&#8211;', '--')
              .replace('&nbsp;', '~')
              .replace('&#8212;', '---')
-             #.replace('<strong>', '\\sampassage{')
-             #.replace('</strong>', '}')
+             #
+             .replace('&#8230;', '...')
+             .replace('&gt;', '>')
+             .replace('&lt;', '<')
+             .replace('&amp;', '\\&')
+             #
              )
 
 user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
@@ -49,7 +59,6 @@ def get_headlines(url, pattern):
     response = urllib.request.urlopen(request, timeout=2.)
     html = clean_pre(response.read())
     html = clean_post(html.decode('utf-8'))
-    html = html.replace('_', '\\_')
     return [mm.groupdict() for mm in re.finditer(pattern, html)]
 
 def wrap_col(text, line_width=80, indent='  '):
@@ -64,10 +73,6 @@ def wrap_col(text, line_width=80, indent='  '):
         col += l
     return formatted
 
-import hashlib
-import glob
-import os
-
 def process_para(groupdict):
     gd = groupdict
     text = gd['text']
@@ -81,13 +86,13 @@ def process_para(groupdict):
         #
         if text.startswith('[1]'):
             text = '\\sectionreferences{}'+text
-        elif text.startswith('<strong>'):
-             text = (text.replace('<strong>', '\\samsection{')
-                         .replace('</strong>', '}'))
+        #elif text.startswith('<strong>'):
+        #     text = (text.replace('<strong>', '\\samsection{')
+        #                 .replace('</strong>', '}'))
         text = (text.replace('<strong>', '\\textbf{')
                     .replace('</strong>', '}'))
         #
-        text = re.sub('<a rel[^>]*>', r'\\tt{}', text)
+        text = re.sub('<a [^>]*>', r'\\tt{}', text)
         text = re.sub('</a>', r'\\rm{}', text)
         text = text.replace('Fig. ', 'Fig.\\ ')
         text = text.replace('Figs. ', 'Figs.\\ ')
@@ -111,7 +116,7 @@ def process_para(groupdict):
             with open(temp_out) as f:
                 dur = float(f.read())
                 print('{:.2f} seconds'.format(dur))
-            #assert dur<60, 'video at {:s} too long!'.format(local_name)
+
             for i,t in enumerate(np.linspace(0., dur, num=3, endpoint=False)):
                 frame_name = 'vids/vid-{:s}-{:02d}.png'.format(h, i)
                 os.system('ffmpeg -ss {:02.2f} -i {:s} -frames:v 1 {:s} -hide_banner -loglevel error'.format(t, local_name, frame_name))
@@ -131,13 +136,64 @@ figu = '<figure[^>]*><img( [a-z]+(="[^"]*")?)* src="(?P<figurl>[^"]*)"[^>]*>(</i
 vide = '<figure[^>]*><video( [a-z]+(="[^"]*")?)* src="(?P<vidurl>[^"]*)"[^>]*>(</video>)?<figcaption>(?P<vidcap>[^<]*)</figcaption></figure>'
 para = '|'.join((text, figu, vide))
 
-bb = get_headlines('https://euphonics.org/5-3-signature-modes-and-formants/', para)
-#tt = ''
-#for link, caption in bb:
-#    tt += wrap_col('\\fig{{ {:s} }}{{ {:s} }}'.format(link, caption)) + '\n'
-tt = '\n\n'.join(map(process_para, bb))
-print(tt)
-#tt = '\n\n'.join(wrap_col(par) for par in bb if is_good_par(par))
-with open('out.tex', 'w') as f:
-    f.write(tt)
+def tex_from(url, texname):
+    bb = get_headlines(url, para)
+    tt = '\n\n'.join(map(process_para, bb))
+    with open(texname, 'w') as f:
+        f.write(tt)
+
+urls = '<p[^>]*>(?P<sectnum>[0-9]+(.[0-9]+)*) <a [^>]*href="(?P<url>[^"]*)"[^>]*>(?P<title>[^<]*)</a></p>'
+
+bb = get_headlines('https://euphonics.org/homepage/', urls)
+
+filenm_from_sn = lambda sectnum : 'body/body.{:s}.tex'.format(sectnum.replace('.', '-'))
+
+def make_input(b):
+    sn = b['sectnum'].replace('.', '-')
+    title = b['title']
+    return (
+        ('\\sampart' if sn.count('-')<=1 else '\\samsection') +
+        '{{{:s} \\quad {:s}}}'.format(sn, b['title']) +
+        '\\renewcommand{{\\whichsect}}{{{:s}}}'.format(sn) +
+        '\\input{{{:s}}}'.format(filenm_from_sn(sn))
+    )
+
+def make_all_inputs(allfilename):
+    all = '\n'.join(map(make_input, bb))
+    with open(allfilename, 'w') as f:
+        f.write(all)
+
+def make_all_bodies():
+    for b in tqdm.tqdm(bb):
+        url = b['url']
+        sectnum = b['sectnum']
+        tex_from(url, filenm_from_sn(sectnum))
+
+def correct_typo(sectnum, before, after):
+    fnm = 'body/body.{:s}.tex'.format(sectnum.replace('.','-'))
+    with open(fnm, 'r') as f:
+        t = f.read()
+        t = re.sub(before, after, t)
+    with open(fnm, 'w') as f:
+        f.write(t)
+
+def correct_all(sectnum, before, after):
+    for b in bb:
+        sn = b['sectnum']
+        correct_typo(sn, before, after)
+        #correct_typo(sn, '<a [^>]*>', r'\\tt{}')
+
+if __name__=='__main__':
+    make_all_inputs('all-input.tex')
+
+    make_all_bodies()
+
+    correct_typo('5.5', r'admittances are plotted in Fig.\ 15}.',
+                        r'admittances are plotted in Fig.\ 15.'  )
+    correct_typo('6.4', r'Technical Report #1998-010,' ,
+                        r'Technical Report \#1998-010,' )
+    correct_typo('11.8',r'middle D#',
+                        r'middle D\#' )
+
+
 

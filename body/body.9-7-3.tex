@@ -1,0 +1,245 @@
+  There are several possible ways to extend the bowed-string simulation model 
+  to allow for a finite-width bow. The model used here is based on one 
+  developed by Roland Pitteroff [1]. We assume some number of separate, 
+  discrete “bow-hairs”, spread over a chosen total width as sketched in Fig.\ 
+  1. These “hairs” are not assumed to be rigid: instead, measured behaviour of 
+  individual strands of horsehair is used to deduce an approximate model 
+  consisting of a parallel spring-dashpot combination. This model is expressed 
+  in terms of values per unit width across the bow by assuming the total number 
+  of “active” hairs in potential contact with the string to be 50, representing 
+  a single layer of hairs out of the total of 200 or so for a typical violin 
+  bow. The properties of each “hair” in the discrete model are then deduced by 
+  subdividing the total bow width into the chosen number. The details of all 
+  this can be found in reference [2]. 
+
+  \fig{figs/fig-b48d0faa.png}{Figure 1. Schematic sketch of a set of discrete 
+  ``bow-hairs'', regularly spaced across the chosen section of the string.} 
+
+  The model then uses a finite-difference approach to the section of string 
+  lying under the bow, combined with the digital waveguide method to represent 
+  the two sections of string outside the width of the bow. At each time step, 
+  outgoing waves from the two edges of the bow are converted into incoming 
+  waves by convolution with reflection functions as before. Both transverse and 
+  torsional waves are included. 
+
+  The short section of string under the bow is treated in the simplest possible 
+  way: transverse and torsional waves are each assumed to obey the simple wave 
+  equation, with the appropriate wave speeds. Local effects of damping and 
+  bending stiffness within this short length are ignored: but for the string as 
+  a whole they are allowed for via the reflection functions. Each wave equation 
+  can be represented approximately by a central-difference form for the spatial 
+  second derivative, involving the displacements of the “hairs” on either side 
+  of the one being considered, and by a backward-difference form for the time 
+  derivative. The spring-dashpot model for the “hairs” is also expressed in a 
+  finite-difference form. Putting all this together, the new value of 
+  displacement of string and bow-hair at each discrete “hair” can be 
+  calculated, from a knowledge of the displacement of it and its neighbours at 
+  previous time steps together with the friction force acting on that 
+  particular “hair”. Details of all this can be found in reference [1]. 
+
+  The calculation of the friction force at each “hair” involves nothing new: 
+  each “hair” is treated exactly like the single-point “bow” we have studied in 
+  earlier sections. There is only one minor twist. The particular way the 
+  Pitteroff method was implemented assumes that the friction curve is a 
+  hyperbolic function. This allows an analytic solution for the force and 
+  velocity at the next time step, rather than relying on a numerical 
+  approximation. In order to produce results that are reasonably comparable 
+  with the earlier ones, it is therefore useful to make a hyperbolic fit to the 
+  measured friction coefficient that we have seen before. The result is shown 
+  in Fig.\ 2. The explicit functional form is 
+
+  $$\mu(v) =\mu_d + \dfrac{(\mu_s -- \mu_d) v_0}{v + v_0}$$ 
+
+  with $\mu_s = 1.2$, $\mu_d =0.35$ and $v_0=0.02$. So the maximum sticking 
+  coefficient of friction and the asymptotic coefficient of sliding friction at 
+  high speed are exactly the same as before, and the only difference lies in 
+  the exact shape of the curve at intermediate speeds. (Note that, for 
+  consistency with earlier plots, the curve is shown here as a function of 
+  $-v$.) 
+
+  \fig{figs/fig-9e480a55.png}{Figure 2. Measured steady-sliding friction 
+  coefficient for violin rosin (stars), with the double-exponential curve fit 
+  used in previous sections (red) together with an approximate hyperbolic fit 
+  to the same data (blue curve).} 
+
+  We can illustrate some typical results of this model. These simulations, and 
+  the ones shown in section 9.7, use parameter values suitable for a violin G 
+  string, rather than the cello D string that was used for most of the earlier 
+  examples. The reason is a technical one, arising from the simulation method. 
+  An open cello string has a length around 680~mm, and the bow width is about 
+  13~mm. An open violin string has a length around 330~mm, and the bow width is 
+  about 10~mm: a much bigger fraction of the string length than for the cello. 
+
+  Now, the resolution for the spatial variation within the bow width obviously 
+  depends on the number “bow-hairs” used. We don’t want this number to be too 
+  small: the results here have 11 “hairs”. But having made that choice, there 
+  is a lower limit on the chosen sampling frequency (or equivalently, an upper 
+  limit on the time step length) in order to achieve numerical stability with 
+  the finite-difference method. It turns out that with cello-like parameter 
+  values, the required sampling rate becomes embarrassingly high, and the 
+  process of simulation becomes slow, unwieldy and inaccurate. Everything is 
+  much easier with violin-like parameter values. 
+
+  Some individual simulation results were shown in section 9.7, but it is 
+  useful to show some more systematic results here, to illustrate the effect of 
+  options within the model. For a first set of results, we show some columns 
+  from a simulated Schelleng diagram. Four particular values of bow position 
+  $\beta$ (referred to the centre point of the finite bow) have been selected, 
+  and for each $\beta$ value simulations have been run with 10 
+  logarithmically-spaced values of bow force. For each simulation the model was 
+  initialled with ideal Helmholtz motion, then it was run for 50 nominal 
+  period-lengths to give the motion an opportunity to settle down into a 
+  periodic state (or not, of course). Finally, we plot an extract of the bridge 
+  force waveform for the last few period-lengths. 
+
+  Figure 3 shows the results, for simulations using the friction-curve model 
+  with the hyperbolic shape plotted in Fig.\ 2. The format of the plot is 
+  similar to Fig.\ 5 of section 9.3, where we looked at a measured Schelleng 
+  diagram (for a cello D string on the Galluzzo rig). Each column shows the 
+  characteristic sawtooth waveform in the lower part, giving way to some kind 
+  of irregular motion towards the top. This transition, a version of the 
+  Schelleng maximum bow force, marks out a downward-slanting line across the 
+  set of plots, much as we expect from the earlier discussion. As the maximum 
+  bow force is approached, irregular “spikes” associated with differential 
+  slipping across the finite width of the bow become more evident: we will see 
+  more detail of this shortly. 
+
+  \fig{figs/fig-529beb3e.png}{Figure 3. Examples of bridge force waveforms for 
+  an open G string of a violin, simulated using a flat bow of width 10 mm, for 
+  some representative columns of Schelleng's diagram. The four plots correspond 
+  to columns 2, 8, 14 and 20 of the Schelleng diagrams shown in section 9.3: 
+  the $\beta$ values at the centre of the bow, from left to right, are 0.0225, 
+  0.0449, 0.0899 and 0.1800 respectively. Bow force values correspond to 
+  alternate rows of the earlier Schelleng diagrams. Each simulation was 
+  initialised with ideal Helmholtz motion. Simulations are based on the 
+  friction-curve model, with the hyperbolic friction curve plotted in Fig. 2.} 
+
+  More surprisingly, we do not see any clear example of a transition to double 
+  slipping motion at low values of bow force. Instead, the sawtooth waveform 
+  gets more and more rounded, and in the lower left of this figure they seem to 
+  be decaying slowly away. This absence of a clear example of Schelleng’s 
+  minimum bow force is probably not a consequence of the finite-width bow 
+  model, though: similar behaviour has been seen in some simplified 
+  single-point bowing models [3]. 
+
+  Most likely, it is a result of other simplifications that have been made in 
+  the development of this particular model. There are two possible candidates: 
+  there is no representation of coupling to an instrument body, and the 
+  intrinsic damping of transverse string vibration has been approximated by a 
+  simplified model representing a constant Q-factor for all modes. Both these 
+  omissions were for purposes of numerical efficiency: in particular the 
+  digital filter method of representing string damping more accurately, 
+  developed by Hossein Mansour [4], proved hard to adapt to the higher sampling 
+  rate used here. 
+
+  More interesting for the present purpose, we can produce corresponding 
+  results using the alternative friction models developed in section 9.6. By 
+  running the heat-flow calculation for each of the ``bow-hairs'' separately, 
+  we can estimate the contact temperature across the width of the bow. We don't 
+  really know the details of contact size between individual bow-hairs and the 
+  string. For the purposes of these results, I have simply assumed the same 
+  total area of contact as in the earlier single-point models, divided equally 
+  between the discrete ``bow-hairs''. We can use the computed temperature 
+  either with the original thermal model, or with the modified thermal model. 
+  Results corresponding to Fig.\ 3 for these two cases are shown in Figs.\ 4 
+  and 5, respectively. 
+
+  \fig{figs/fig-b25f0a77.png}{Figure 4. Bridge-force waveforms from Schelleng's 
+  diagram in the same format as Fig. 3, but simulated using the thermal 
+  friction model from Section 9.6.} 
+
+  \fig{figs/fig-64000b6e.png}{Figure 5. Bridge-force waveforms from Schelleng's 
+  diagram in the same format as Figs. 3 and 4, simulated using the modified 
+  thermal friction model from Section 9.6.} 
+
+  The immediate impression from these plots is that all three friction models 
+  give quite similar-looking results. However, if we look in a little more 
+  detail we can see significant differences between the three models. We will 
+  choose a particular case to illustrate: the third waveform from the top in 
+  the second column of Figs.\ 3, 4 and 5. This corresponds to $\beta=0.0449$ 
+  and bow force $1.23$~N. The following sequence of plots shows this bridge 
+  force waveform from the three different friction models, accompanied by maps 
+  to show what is going on under the bow. All cases have the stick-slip map, 
+  and the two thermal models also have a temperature map. 
+
+  \fig{figs/fig-f6894ea8.png}{Figure 6. Bridge force waveform for the chosen 
+  case, simulated with the friction curve model.} 
+
+  \fig{figs/fig-b369ff72.png}{Figure 7. The map of slipping and sticking within 
+  the bow, corresponding to Fig. 6.} 
+
+  \fig{figs/fig-2cebc965.png}{Figure 8. Bridge force waveform for the chosen 
+  case, simulated with the original thermal friction model.} 
+
+  \fig{figs/fig-a1a7e293.png}{Figure 9. The map of slipping and sticking within 
+  the bow, corresponding to Fig. 8.} 
+
+  \fig{figs/fig-19dc9edd.png}{Figure 10. The map of temperature distribution 
+  within the bow, corresponding to Fig. 8.} 
+
+  \fig{figs/fig-8485edc1.png}{Figure 11. Bridge force waveform for the chosen 
+  case, simulated with the modified thermal friction model.} 
+
+  \fig{figs/fig-596e1d0b.png}{Figure 12. The map of slipping and sticking 
+  within the bow, corresponding to Fig. 11.} 
+
+  \fig{figs/fig-e76d1998.png}{Figure 13. The map of temperature distribution 
+  within the bow, corresponding to Fig. 11.} 
+
+  Finally, we can show some transient results using the three finite-width 
+  models. Each is compared to the corresponding point-bow model --- these 
+  point-bow results are not quite the same as the ones showed in section 9.5, 
+  because they are using the parameters for a violin G string rather than a 
+  cello D string for reasons explained above. Figure 14 shows this set of 6 
+  Guettler diagrams. All cases use the bow position $\beta = 0.0899$ as in 
+  earlier figures. These are the same diagrams that were shown in section 9.7, 
+  but now each Guettler diagram is annotated with a $3 \times 3$ grid of green 
+  circles to mark the pixels corresponding to acceleration values 5, 11 and 17 
+  (counting from the left-hand side), and force values 5, 10 and 15 (counting 
+  from the bottom). The waveforms for these 9 cases are shown in Fig.\ 15, for 
+  all 6 models. The 9 panels of that figure are laid out in the same 
+  arrangement as the $3 \times 3$ grid of green circles. In each panel, results 
+  for the 6 different models are identified by plot colour. 
+
+  These waveforms show what lies behind the automatic classification in the 
+  Guettler diagrams. The black curves, for the finite-width friction-curve 
+  model, show that this model finds it very hard to settle into any kind of 
+  periodic motion. Individual sticks and slips at the separate “bow hairs” are 
+  all subject to the jumps arising from the frictional hysteresis mechanism, 
+  and probably this injects too much “sensitive dependence” into the nonlinear 
+  system, leading, often, to chaotic response. The corresponding point-bow 
+  model (blue curves) only has one place for such jumps to occur, and the 
+  behaviour is a little less wild. 
+
+  All the thermal models show some evidence of periodic motion occurring by the 
+  end of the time segment plotted here — not in every case, and not always 
+  Helmholtz motion, but often enough to suggest more benign behaviour from the 
+  perspective of a violinist. Comparing each waveform with the corresponding 
+  pixel in the Guettler diagram gives reassuring evidence that the automatic 
+  classification routine is behaving quite reliably. The only apparent anomaly 
+  is associated with the point-bow thermal model (magenta curves). In the 
+  middle row of Fig.\ 15, two of the waveforms look as if they lead to 
+  Helmholtz motion, and yet the Guettler plot shows black pixels. This is a 
+  manifestation of the “rounded bottoms” phenomenon highlighted in section 9.6: 
+  the effect is not visible when plotted at this resolution, but the waveforms 
+  are sufficiently different from a sawtooth form that they fail the “Helmholtz 
+  test” used by the classification routine. 
+
+  \sectionreferences{}[1] R. Pitteroff and J. Woodhouse, “Mechanics of the 
+  contact area between a violin bow and a string. Part II: simulating the bowed 
+  string”; Acta Acustica united with Acustica, \textbf{84}, 744—757 (1998). 
+
+  [2] R. Pitteroff and J. Woodhouse, “Mechanics of the contact area between a 
+  violin bow and a string. Part I: reflection and transmission behaviour”; Acta 
+  Acustica united with Acustica, \textbf{84}, 543—562 (1998). 
+
+  [3] J. Woodhouse; “On the playability of violins, Part II minimum bow force 
+  and transients”; Acustica \textbf{78}, 137–153 (1993). 
+
+  [4] Hossein Mansour, Jim Woodhouse and Gary P. Scavone, “Enhanced wave-based 
+  modelling of musical strings, Part 1 Plucked strings”; Acta Acustica united 
+  with Acustica, \textbf{102}, 1082–1093 (2016). 
+
+  [5] R. Pitteroff and J. Woodhouse, “Mechanics of the contact area between a 
+  violin bow and a string. Part III: parameter dependence”; Acta Acustica 
+  united with Acustica, \textbf{84}, 929—946 (1998). 

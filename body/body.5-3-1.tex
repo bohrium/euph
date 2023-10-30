@@ -1,0 +1,45 @@
+  To see the effect of driving a system through a resonant mass-spring system, 
+  we need to analyse the idealised version shown in Fig.\ 1. A force $Fe^{i 
+  \omega t}$ is applied to a mass $m$. This is connected via a spring of 
+  stiffness $k$ to the original system, which has admittance $Y_v(\omega)$ (v 
+  for `violin'). The aim is to calculate the new admittance $Y_b(\omega)$ (b 
+  for `bridge') at the forcing position. We can denote the displacement of the 
+  mass by $x_b e^{i \omega t}$ and the displacement of the underlying system by 
+  $x_v e^{i \omega t}$. For the rest of the analysis, we will drop the $e^{i 
+  \omega t}$ factors. 
+
+  \fig{figs/fig-33adb3bf.png}{Figure 1. Schematic sketch of a system driven 
+  through a mass-spring oscillator.} 
+
+  The force from the spring is $k(x_b-x_v)$: upwards at the top and downwards 
+  at the bottom. So Newton' s law for the mass states that 
+
+  $$-\omega^2 m x_b = F -k(x_b -x_v) \tag{1}$$ 
+
+  while the force and velocity on the `violin body' must satisfy 
+
+  $$i \omega x_v = k (x_b -- x_v) Y_v(\omega) . \tag{2}$$ 
+
+  We don't really want $x_v$, so we eliminate it between these two equations. 
+  From eq. (2), 
+
+  $$x_v(i \omega +k Y_v)=kY_v x_b .\tag{3}$$ 
+
+  Substituting in eq. (1) then gives 
+
+  $$-\omega^2 m x_b = F -k x_b + \dfrac{k^2 Y_v x_b}{i \omega + kY_v} 
+  .\tag{4}$$ 
+
+  We are trying to calculate 
+
+  $$Y_b(\omega) = \dfrac{i \omega x_b}{F} \tag{5}$$ 
+
+  and so using eq. (4), 
+
+  $$Y_b(\omega) = \dfrac{i \omega}{k -- \dfrac{k^2 Y_v}{i \omega +k Y_v} -- 
+  \omega^2 m}$$ 
+
+  so that after rearranging, 
+
+  $$Y_b(\omega) = \dfrac{i \omega + kY_v}{k-\omega^2 m + i \omega k Y_v} 
+  .\tag{6}$$ 

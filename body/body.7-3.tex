@@ -1,0 +1,509 @@
+
+
+  One obvious difference among the instruments presented in section 7.1 is that 
+  some instruments use a single string for each note (guitar, harp, violin, 
+  banjo) while others used pairs (lute, mandolin) or even triples (piano). In 
+  this section we tease out some of the consequences of using multiple strings. 
+  These may go some way to explain what gives each instrument its 
+  characteristic and recognisable sound. This account is inspired by a classic 
+  study of coupled piano strings by Gabriel Weinreich [1]. 
+
+  Suppose we have a pair of nominally identical strings, attached to the 
+  soundboard of an instrument at essentially the same point. Our first guess 
+  about what will happen is very simple. We imagine that the two strings are 
+  identical in every way, including being tuned to perfect unison. We also 
+  suppose that vibration of the soundboard is in one direction only, 
+  perpendicular to its surface. Under those circumstances, we can predict the 
+  behaviour without needing any detailed calculations. 
+
+  This idealised version of the system has a symmetry: imagine a mirror between 
+  the two strings, oriented normal to the soundboard. As we saw right back in 
+  Chapter 2, if a system is symmetrical like this, every mode must be either 
+  symmetric or antisymmetric in that mirror. So every string overtone splits 
+  into a pair: one is symmetric, with the two strings vibrating in unison; the 
+  other is antisymmetric, with one string going up when the other goes down. 
+  Figure 1 shows a sketch, based on the lowest string mode. The symmetric mode 
+  exerts force on the soundboard, which will vibrate in response. But the 
+  antisymmetric mode exerts precisely zero net force, because the forces from 
+  the two strings always cancel out. 
+
+  \fig{figs/fig-6d8734b5.png}{Figure 1. Idealised model of two coupled strings, 
+  tuned identically. The upper plot shows symmetrical motion, the lower plot 
+  shows antisymmetric motion with the two strings vibrating in opposite 
+  directions.} 
+
+  There are three results of this. First, the antisymmetric mode will make 
+  virtually no sound, because it does not excite vibration in the soundboard. 
+  Second, the symmetric and antisymmetric modes will have slightly different 
+  frequencies: the antisymmetric mode will be at the frequency of a string with 
+  a rigid termination at the bridge, but the symmetric mode will have a 
+  slightly different “effective length” because the bridge is moving a little. 
+  Third, the two modes will have different damping factors, and thus different 
+  decay rates. The symmetric mode is losing some energy to the soundboard, 
+  while the antisymmetric mode is not. 
+
+  The net result of all this is that the system behaves for all practical 
+  purposes as if it had a single string, with twice the mass, twice the tension 
+  and twice the impedance of the two separate strings. If that was all we could 
+  achieve, it might have been simpler to use a single, thicker string. But, in 
+  reality, the behaviour is more complicated and the story is more interesting. 
+  Something always interferes with the exact symmetry, and this can have 
+  profound consequences. The most obvious possibility from the perspective of a 
+  player or a piano tuner is that the two strings might have very slightly 
+  different tensions, and that is the case we will examine first. But the 
+  soundboard vibration may also violate the symmetry condition: the point on 
+  the bridge where the strings are attached may move in a three-dimensional way 
+  rather than purely in the normal direction. We will return to that case a 
+  little later. 
+
+  For a first view of what can happen, we will look at a simple model inspired 
+  by the sketch in Fig.\ 1. We will allow each string to have only a single 
+  “mode”, with a half-wave sinusoidal shape like the sketch. Both strings are 
+  rigidly anchored at one end, but at the other end they share an attachment to 
+  the “soundboard”, which for this purpose we will model as a single 
+  mass-spring-dashpot system, representing a single body mode. So our model has 
+  three degrees of freedom, describing the “body” motion at the bridge, and the 
+  amplitudes of motion of the two strings. We will calculate the modes of this 
+  coupled system; but the calculation will be a little more complicated than 
+  the modal problems we thought about back in chapter 2, because this time we 
+  will be particularly interested in the damping behaviour. The details of the 
+  model and the method used to compute the result are described in the next 
+  link. 
+
+  We can illustrate the range of behaviour through a case study, based 
+  approximately on the second course of a 12-string guitar. We will take a pair 
+  of steel strings with diameter 0.45~mm and length 650~mm, identical except 
+  for having slightly different tensions. They will both be tuned to 
+  frequencies near 250~Hz, but the two strings will be mistuned by a small 
+  amount, which we can characterise in cents --- remember from section 2.3 that 
+  one cent is a hundredth of a semitone. Each string resonance, in isolation, 
+  is given a Q-factor of 3000. 
+
+  The single body mode is chosen to match, approximately, one of the strong 
+  low-frequency modes of a guitar body. It will be given an effective mass of 
+  200~g, and the stiffness will be adjusted to move the resonance frequency 
+  through a range around the string frequencies. Figure 2 shows the “bridge 
+  admittance” of this single-mode guitar body, for the 6 cases we will study. 
+  The resonance has a Q-factor of 50 in each case. The string tuning is 
+  indicated by the vertical dashed line. So you can see that the first curve, 
+  labelled (a), has the body resonance placed well below the string tuning. In 
+  the second curve (b) it is closer, and in the third case (c) the body 
+  resonance is right on top of the string tuning. Cases (d,e,f) have the body 
+  resonance progressively higher than the string tuning. 
+
+  \fig{figs/fig-4bb0b299.png}{Figure 2. The bridge admittance of the 
+  single-mode ``guitar body'' used in the study of string mistuning. In all 
+  cases the effective mass is 200 g and the Q-factor is 50. The stiffness has 
+  been adjusted to 6 different values, to produce the 6 cases plotted. The 
+  labels `a'--`f' match the labelling in Figs. 3--5. The dashed vertical line 
+  marks the nominal tuning of the string investigated in those figures.} 
+
+  For each of the 6 cases, the degree of mistuning between the two strings will 
+  be varied through a range of $\pm8$ cents. The system has three degrees of 
+  freedom, so it has three modes. They will all involve motion of the strings 
+  and the body resonance, but the modes can generally be divided into two 
+  ``string modes'' and one ``body mode'' based on how the energy is shared 
+  between the degrees of freedom: we did something similar for the banjo model 
+  back in section 5.5. The frequencies, Q-factors and mode shapes have been 
+  computed at each stage, and the results for the two ``string modes'' are 
+  plotted in Figs.\ 3-5. First, Fig.\ 3 shows how the frequencies vary with the 
+  degree of mistuning. The 6 sub-plots (a--f) correspond to the 6 bridge 
+  admittances from Fig.\ 2, in order of increasing resonance frequency and 
+  labelled with matching letters. 
+
+  \fig{figs/fig-1cd0f434.png}{Figure 3. Frequencies of the two ``string modes'' 
+  as mistuning is varied over a small range, corresponding to the 6 different 
+  placements of the single body mode shown in Fig. 2.} 
+
+  Concentrate in the first instance on sub-plot (a). This shows behaviour often 
+  called ``curve veering'' or ``avoided crossing'', for reasons that are 
+  obvious in the plot. If you looked at the plot without your spectacles on, so 
+  that it was blurred, you might think that it shows two straight lines which 
+  cross in the middle of the plot --- pretty much what you might have expected, 
+  since we have varied the tuning of one string while leaving the other one 
+  fixed. But look more carefully: the lines do not cross, but instead they veer 
+  apart at the last moment. 
+
+  However hard you try, it is not possible to adjust the tuning of this pair of 
+  strings to produce exact unison, or in other words a state with no beats 
+  present in the sound. The coupling of the two strings through the bridge 
+  means that there is a minimum separation of the two frequencies. Really, we 
+  should have been expecting that from the earlier discussion. The minimum 
+  separation occurs when the strings are tuned with exactly the same tension, 
+  and the result is the symmetrical case we looked at earlier. The modes are as 
+  sketched in Fig.\ 1, and we already noted that the two frequencies will be 
+  different because one involves motion of the bridge, while the other does 
+  not. 
+
+  Now look at the other cases in Fig.\ 3. They all show a similar ``veering'' 
+  shape, but as you go through the cases the closest approach of the two curves 
+  changes. In cases (b) and (c) the two curves get progressively further apart, 
+  and then they come closer together again once you get to the second row of 
+  plots. We already know from Fig.\ 2 what is special about case (c): this is 
+  the case where the body resonance falls very close to the string tuning. 
+  Figure 3(c) shows the effect of this nearby body resonance: the two curves 
+  stay well apart throughout the range of mistuning. Again, this conclusion is 
+  not a surprise: at the point of identical tensions in the two strings the 
+  body motion is particularly large because we are near a resonance frequency, 
+  so the frequency of the symmetric mode is shifted a long way away from that 
+  of the antisymmetric mode. In cases (d--f) the body resonance is above the 
+  string tuning, and progressively further away from it. What we see in in 
+  Fig.\ 3 is that the closest approach of the two curves gets nearer and 
+  nearer. 
+
+  Figure 4 shows the corresponding behaviour of the modal Q-factors for the 6 
+  cases, and Fig.\ 5 shows the ratio of amplitudes of motion in the two 
+  strings. In both cases the colours of the curves match the ones in Fig.\ 3. 
+  Looking at the patterns in Fig.\ 4, it can be seen that the Q-factors vary 
+  sensitively with mistuning, especially in the range where the frequencies 
+  were actively veering in Fig.\ 3. In the middle of each plot, where the 
+  mistuning is zero, the two Q-factors reach their maximum and minimum values. 
+  The minimum value varies significantly across the 6 cases, with the most 
+  extreme behaviour in case (c), where the body resonance falls close to the 
+  string tuning. This is the only case where the Q-factor of a ``string mode'' 
+  comes close to the Q-factor of the ``body mode'', indicated by the dotted 
+  line. In all cases the red and blue curves come close together once the 
+  mistuning is relatively large, whether it is positive or negative. 
+
+  \fig{figs/fig-312a7597.png}{Figure 4. Modal Q-factors plotted against 
+  mistuning, for the same 6 cases as in Figs. 2 and 3. Colours correspond to 
+  Fig. 3. The black dotted line indicates the Q-factor of the ``body mode''. 
+  (Recall that Q-factor is the inverse of the loss factor we have talked about 
+  in some other sections: high Q means low damping, and slow decay; low Q 
+  conversely means high damping and rapid decay.)} 
+
+  Notice that in every panel of Fig.\ 4, the blue curve reaches a maximum value 
+  of 3000 at the point where the mistuning is zero. This is the case we talked 
+  about earlier: the two strings are identical, and the symmetry argument means 
+  that we know what the mode shapes must be. One is symmetric, the other 
+  antisymmetric. The antisymmetric case must have a Q-factor of 3000, because 
+  the strings cannot lose energy to the body mode so the mode exhibits the 
+  value we have assigned to the strings in isolation. On the other hand, the 
+  symmetric mode can lose a lot of energy to the body, leading to a low 
+  Q-value. Looking at the corresponding points in Fig.\ 5, this identification 
+  of the modes is confirmed. At that tuned point, the blue curve has the value 
+  $-1$ in every case, while the red curve has value $+1$: equal amplitudes, 
+  either with the same sign (red curves) or opposite signs (blue curves). 
+
+  \fig{figs/fig-98bec0e4.png}{Figure 5. Modal amplitude ratios between the two 
+  strings, plotted against mistuning, for the same 6 cases as in Figs. 2 and 3. 
+  Colours correspond to Figs. 3 and 4.} 
+
+  
+
+  But when the mistuning is non-zero, the mode shapes are no longer exactly 
+  ``symmetric'' or ``antisymmetric''. What we can see in Fig.\ 5 is that when 
+  the mistuning is large, the ratio of amplitudes of the two strings gets 
+  either much bigger than unity, or else much less than unity, as can be seen 
+  in Fig.\ 5. This has a simple interpretation. If the strings are sufficiently 
+  out of tune, each mode simply has one string vibrating strongly while the 
+  other hardly moves: exactly what you would expect without taking into account 
+  coupling between the strings through the body. 
+
+  However, one feature persists throughout the plots: the blue curves always 
+  describe a case in which the two amplitudes have opposite signs, while the 
+  red curves always correspond to the same signs. You can see this directly in 
+  Fig.\ 5: the blue lines are always below the x-axis, while the red curves are 
+  always above it. 
+
+  Looking back at Fig.\ 3, we can see that the red and blue curves swap places 
+  once the body resonance is above the string tuning. What is happening is that 
+  the body influence switches from ``mass-like'' to ``stiffness-like'' 
+  depending whether the string frequency is above or below the body resonance 
+  (the reason for that was explained back in section 2.2.7). This determines 
+  which of the two string modes has the lower frequency. 
+
+  Having seen the behaviour of the individual modes, we can put these together 
+  to make a kind of “pluck response” of our one-mode coupled strings. This will 
+  consist of a combination of the three modal responses, in a mixture governed 
+  by the assumed initial conditions: technical details are described in the 
+  previous link. There are two extreme cases that are illuminating to look at: 
+  either the two strings are initially excited identically, or just one string 
+  is driven. This is an idealisation of the two choices for playing a note on 
+  the piano: ordinarily the piano hammer strikes the pair or triplet of strings 
+  simultaneously, but if the una corda pedal is pressed the hammer is shifted 
+  sideways so that it only strikes one or two strings. 
+
+  The output variable we are interested in is the motion of the “soundboard”, 
+  represented here by the single body mode. This motion corresponds, in our 
+  crude model, to the source of sound from the vibrating soundboard. To bring 
+  out the most interesting aspect of the behaviour, the results will be plotted 
+  in the form of an envelope. We smooth over the individual cycles of the 
+  vibration to show how the amplitude varies in time, then plot it on a decibel 
+  scale. We can start with the most extreme case, where the body mode nearly 
+  matches the string tuning: this is case (c) in Figs.\ 2--5, the case that 
+  gave the biggest effects. 
+
+  Sub-plot (a) of Fig.\ 6 shows the envelope curves for the two excitation 
+  cases, when the strings are perfectly tuned in unison. The red curve shows 
+  the result from driving both strings, while the blue curve shows the una 
+  corda response. The main thing we see here is a pair of lines, sloping 
+  steeply downwards, parallel to one another. This is the case of perfect 
+  symmetry, in which one string mode is antisymmetric so that it does not 
+  excite the soundboard at all. We see the rapid decay associated with the 
+  symmetric string mode, which has a very low Q-factor as seen in the red curve 
+  of Fig.\ 4(c). At the start of the note, we also see some wiggles in the 
+  envelope: this is the result of transient excitation of the body mode. The 
+  only difference between the red and blue curves in this case is a vertical 
+  shift by 6~dB, arising simply because when both strings are initially driven 
+  the amplitude of the symmetric mode is twice as high as when only one string 
+  is driven. 
+
+  \fig{figs/fig-b1555ec6.png}{Figure 6. Envelope plots for the transient 
+  response of the string model, for the case corresponding to sub-plot (c) in 
+  Figs. 3, 4 and 5. Red curves show the result of driving the two strings 
+  simultaneously, blue curves show the response to driving only one of the 
+  strings. The sub-plots correspond to different levels of string mistuning: 
+  (a) 0; (b) 1 cent; (c) 3 cents; (d) 5 cents.} 
+
+  Moving to Fig.\ 6(b) we see something more complicated. The two strings are 
+  now mistuned by just 1 cent, breaking the symmetry so that both string modes 
+  are now able to excite the soundboard. Note that 1~cent is a very small 
+  difference of tuning --- surely near the limit of what guitarists or piano 
+  tuners are likely to be able to achieve. Both the curves in this plot show a 
+  characteristic double decay: a fast initial decay, giving way to a much 
+  slower decay in the tail of the note. We are seeing the effect of the very 
+  different Q-factors of the two string modes, shown in Fig.\ 4(c). Provided 
+  both modes are driven to some degree, a decay pattern like this is 
+  inevitable: the fast-decaying mode, however loud it may be initially, is 
+  bound to decay below the level of the other mode after a time, leaving that 
+  slower-decaying mode to dominate the sound. 
+
+  In piano terms, the second, slower-decaying, phase is sometimes called the 
+  ``aftersound''. The balance between the early sound and the aftersound is 
+  quite different in the red and blue curves of Fig.\ 6(b). Although the string 
+  modes are no longer exactly symmetric and antisymmetric, with this small 
+  degree of mistuning the two mode shapes have not changed a great deal. The 
+  result is that striking both strings together excites mainly the mode with 
+  the strings in the same phase, which is the one with the fast decay. It takes 
+  some time for this initially louder mode to decay enough to reveal its 
+  slower-decaying companion. 
+
+  But in the una corda case both modes are excited to similar amplitudes. This 
+  means that the aftersound takes over sooner, and is a bigger component of the 
+  overall sound. As Weinreich pointed out [1], this is probably the main 
+  function of the una corda pedal on a piano. Although it is often called the 
+  ``soft pedal'', the difference of loudness with and without this pedal is not 
+  very great. More important, probably, is the fact that the sound is less 
+  percussive and dominated by the aftersound: more ``lyrical'', perhaps. 
+
+  As we increase the mistuning, in Fig.\ 6(c,d), the pattern remains 
+  recognisably similar but the details change. The decay rate of the aftersound 
+  component gets faster, and the difference in level between the blue and red 
+  curves is somewhat reduced. At least for this special case, in this very 
+  simplified model, we get a strong hint that a skilled piano tuner might be 
+  able to exercise considerable influence over the sound by controlling very 
+  small levels of mistuning between the strings. 
+
+  Figure 7 shows a similar set of envelope curves to Fig.\ 6, for the case 
+  corresponding to case (d) of Figs.\ 2-5. Case (a), with the strings in 
+  perfect unison, looks quite similar to the previous case, except that the 
+  slope of the parallel lines is less steep because the Q-factor of the 
+  symmetric mode does not fall as low this time. The other sub-plots show 
+  rather more complicated patterns. Case (b) shows a trace of the double decay 
+  profile in the blue curve (it starts below the red curve and ends above it), 
+  but all the curves show strong wiggles. These correspond to beats between the 
+  frequencies of the two ``string modes''. These frequencies are not exactly 
+  the same as the nominal tuned frequencies of the two strings in isolation, 
+  but they are less affected by the coupling in this case because the bridge 
+  admittance at the string frequency is lower by almost 20~dB: compare the 
+  heights of the yellow curve and the purple curve where they cross the 
+  vertical dashed line. 
+
+  \fig{figs/fig-3e57f4f5.png}{Figure 7. Envelope plots for the transient 
+  response of the string model, for the case corresponding to sub-plot (d) in 
+  Figs. 3, 4 and 5. Red curves show the result of driving the two strings 
+  simultaneously, blue curves show the response to driving only one of the 
+  strings. The sub-plots correspond to different levels of string mistuning: 
+  (a) 0; (b) 1 cent; (c) 3 cents; (d) 5 cents.} 
+
+  Of course, we would like to know what this all sounds like. It is not very 
+  interesting to listen to the sounds from the simple model with just a single 
+  mode in each string: all you hear is a variety of modulated sine waves, not 
+  sounding at all like a plucked string of any kind, and therefore not suitable 
+  for making interesting musical judgements. But we can take the model of two 
+  strings coupled via a soundboard, and use the synthesis approach described 
+  back in section 5.4 to create versions of the sound of the open second course 
+  of a 12-string guitar, which motivated the model we have been looking at.~ 
+  Sound 1 illustrates the “una corda” case, where only one of the strings is 
+  plucked.~ Sound 2 is the “regular piano” case (or perhaps it is better 
+  thought of as a ``regular harpsichord'' case since we are modelling plucked 
+  strings rather than hammered strings) where both strings are plucked equally 
+  and simultaneously. In both cases you will hear three notes, corresponding to 
+  perfect unison, 1 cent mistuning, and 5 cents mistuning. The sounds are 
+  encouragingly familiar from the sounds made by a 12-string guitar: 
+  realistically, 1~cent is as accurate as any guitarist is likely to tune their 
+  strings, but 5~cents represents a serious degree of mistuning. 
+
+  These two cases may be natural for discussing the piano, but they are rather 
+  artificial in the context of a guitar. But we still learn something 
+  interesting from them, because they give an indication of the extent to which 
+  a player may be able to vary the sound by subtle details of performance 
+  technique. It is hard to guess exactly how a player will pluck a course of 
+  two strings. They probably excite both strings to some extent, but not 
+  exactly equally and not exactly simultaneously. The cases demonstrated here, 
+  which sound strikingly different from each other, give extremes from the 
+  range of possibilities. Most normal notes probably lie somewhere in between 
+  the two. 
+
+  There is one circumstance under which a note on a guitar, banjo or other 
+  stringed instrument can show the behaviour we have been looking at, even when 
+  it has only single strings. This is the case where sympathetic resonance 
+  occurs with one of the other strings of the instrument. A simple example 
+  would be to finger a note on a lower string at the same pitch as one of the 
+  open higher strings. You then have two strings, coupled at the bridge, tuned 
+  to the same nominal pitch: exactly the model we have been studying. But they 
+  are not a course, where both strings would be played together: you play one 
+  string, and the other will respond just like the una corda case, as just 
+  discussed. 
+
+  However, this is not the end of the story. Multiple strings are not the only 
+  way to get sound envelopes showing a double decay. There is another aspect of 
+  string vibration, which we have been playing down: each string mode can occur 
+  in two polarisations. In other words, the string could vibrate in two 
+  different planes. If both ends of the string were rigidly anchored in a 
+  symmetrical way, these two modes would occur at identical frequencies. What 
+  would happen then is similar to something we saw earlier, when we looked at 
+  drums. As was shown in section 2.2.4, linear combinations of this pair of 
+  string modes can be found, which would correspond to vibration in any chosen 
+  plane. 
+
+  But when the string is attached to a real instrument, things get more 
+  complicated. Motion at the bridge, and to a more limited extent at the other 
+  end of the string at the nut or the fret, leads us to expect that vibration 
+  in the plane perpendicular to the soundboard will be different from vibration 
+  parallel to the soundboard of the instrument. Instead of the plane of 
+  vibration being arbitrary, the combined system of string and instrument body 
+  will choose two particular orientations, resulting in a pair of modes with 
+  slightly different frequencies. 
+
+  At first sight it seems obvious that these orientations will be parallel and 
+  perpendicular to the soundboard. Well, that is sometimes true, especially at 
+  low frequencies, but it is not always true. The details depend on the 
+  particular instrument. Think about the guitar, as a typical example. The 
+  string positions on the bridge saddle of a guitar stand a few millimetres 
+  above the soundboard. As the soundboard vibrates, the bridge participates in 
+  that motion. But that does not necessarily mean that the top of the bridge 
+  moves purely normal to the soundboard surface. Bending modes of the 
+  soundboard can also involve rotation of the bridge, like the sketch in Fig.\ 
+  8 (showing a cross-section through the guitar body in the plane of the 
+  bridge). The strings experience more complicated three-dimensional motion, 
+  slightly different for each one: motion at the string notches associated with 
+  this mode is not purely normal to the surface. The sketch also tells us 
+  something else: through the rotational component of the bridge motion, string 
+  vibration in the plane parallel to the soundboard can excite soundboard 
+  vibration, and thus create sound radiation. 
+
+  \fig{figs/fig-63a3d7da.png}{Figure 8. Sketch of a guitar body and bridge, 
+  undergoing a vibration mode of the soundboard. The six string positions on 
+  the bridge are indicated by black dots. The combination of displacement and 
+  rotation means that each string moves in a different way during this 
+  vibration} 
+
+  Pulling these features together, we find something interesting. Each “string 
+  mode” is in fact a pair of modes, with slightly different frequencies. They 
+  will also have different damping factors, because the rate of energy loss to 
+  the soundboard will be different. Both modes can create at least some sound 
+  radiation. When the player plucks the string, they will excite some mixture 
+  of the two modes. The result will be a “double decay”, for reasons that are 
+  very similar to the earlier discussion about the modes resulting from a 
+  coupled pair of strings. The mode that couples better to the soundboard will 
+  tend to make more sound, but it will decay faster. Sooner or later, it will 
+  have decayed below the level of the other mode, with its slower decay. 
+
+  To complete the story of double decays, we can ask whether all instruments 
+  show the effect, or whether some are more prone to it than others. The 
+  physics we have just described is always present, of course. Every stringed 
+  instrument can exhibit effects of the two polarisations of motion, and any 
+  instrument with double or triple strings (or sympathetic strings) will have 
+  coupled mode behaviour similar to what has been seen here. But that does not 
+  necessarily mean that a double decay will occur at a level to be perceptible 
+  in the sound of the instrument. 
+
+  We can use information we have already developed to give a very simple 
+  criterion for the effect to be significant. The crucial factor, for both 
+  physical mechanisms of generating double decays, is that the decay rates 
+  associated with the ``early sound'' and the ``aftersound'' must be 
+  significantly different. If they are not, the envelope will not be able to 
+  show the characteristic transition that we saw in Fig.\ 6(b,c,d). To get 
+  significantly different loss factors, either for the in-phase mode of 
+  multiple strings or the favoured polarisation of a single string, the energy 
+  loss into the body must be significant in comparison with the internal loss 
+  factor of the string. 
+
+  A double-decay envelope is mainly dominated by the fundamental, or the very 
+  low overtones of the string. This is the frequency range where the string’s 
+  intrinsic damping is dominated by air viscosity effects: we gave an 
+  expression for the associated loss factor $\eta_{air}$ in section 5.4.5. 
+  (Remember $\eta$ is Greek letter ``eta''.) This is to be compared to the loss 
+  factor $\eta_{body}$ associated with energy loss to the body: in section 
+  5.1.2 we derived an expression for that in terms of the bridge admittance. So 
+  we can simply plot $\eta_{air}$ and $\eta_{body}$ on top of each other, as 
+  functions of frequency, for some representative instruments. That will tell 
+  us immediately whether the double decay effect is likely to be important for 
+  that instrument. 
+
+  The first example, shown in Fig.\ 9, is for a steel-string guitar. The green 
+  line shows $\eta_{air}$, while the red lines show $\eta_{body}$. The solid 
+  curve is for a single string, the dashed curve is for a double string like 
+  the example discussed above: the loss factor is doubled (i.e. raised by 6~dB 
+  in this plot), because the combined impedance is doubled with a pair of 
+  strings as in a 12-string guitar. The figure reveals that the red curves only 
+  rise convincingly above the green curve around strong resonance peaks. That 
+  is exactly what we found in the discussion of Figs.\ 2--7: there was a strong 
+  effect in the case where the string tuning was close to the single body 
+  resonance, but only much weaker effects otherwise. 
+
+  \fig{figs/fig-44c5b7fa.png}{Figure 9. Comparison of loss factors for a 
+  steel-string guitar, based on the second string. The solid green line shows 
+  the loss factor due to air damping, $\eta_{air}$. The solid red line shows 
+  the loss factor due to energy flow into the body at the bridge, 
+  $\eta_{body}$. The dashed red line shows the effect of turning the guitar 
+  into a 12-string instrument, to match the example studied earlier.} 
+
+  This is to be contrasted with the situation revealed in Fig.\ 10, for a 
+  piano. This time the solid curve shows the effect of the actual triple string 
+  group, while the dashed line shows what would have happened if the piano had 
+  only single strings. This time the loss factor is raised by a factor 3 with 
+  three strings. The solid red line lies above the green line over the entire 
+  frequency range, often by a substantial factor of about 20~dB. That is 
+  precisely the condition for the double decay phenomenon to occur strongly, 
+  for all notes rather than just for ones that happen to fall near a soundboard 
+  resonance. 
+
+  \fig{figs/fig-c6e4e9f8.png}{Figure 10. Loss factor comparison in the same 
+  format as Fig. 9, for a piano (the baby grand shown in Fig. 1 of section 
+  7.1), based on plain wire string triples in the mid-range of the instrument. 
+  The solid red line shows the result with three strings; the dashed red line 
+  shows how it would change with only one of the same strings.} 
+
+  In the piano, the excitation direction of the strings is controlled in a very 
+  standardised way by the piano mechanism. This means that the multiple-string 
+  effect can operate strongly, including the effect of the una corda pedal, but 
+  the effect of polarisations is probably rather minor because the strings are 
+  excited predominantly in the vertical plane. Also, there is no equivalent of 
+  the discretion a guitarist has over the exact orientation of the initial 
+  string motion. 
+
+  The final example, in Fig.\ 11, shows the corresponding plot for a banjo. The 
+  banjo has only single strings, but we have already seen in section 5.5 that 
+  they are coupled to the ``soundboard'' (which is of course a membrane in the 
+  banjo) far more strongly than occurs in a guitar. The result in Fig.\ 11 is 
+  that the red curve lies well above the green curve over most of the frequency 
+  range. So we can expect banjo notes to exhibit a strong double decay 
+  envelope: not in this case because of multiple strings, but arising from the 
+  two string polarisations. This has indeed been observed experimentally, by 
+  Stephey and Moore [2]. 
+
+  \fig{figs/fig-db3185a5.png}{Figure 11. Loss factor comparison in the same 
+  format as Fig. 9, for a banjo, based on the thickest plain steel string (the 
+  3rd string).} 
+
+
+
+  \sectionreferences{}[1] Gabriel Weinreich ``Coupled piano strings''; Journal 
+  of the Acoustical Society of America \textbf{62}, 1474--1484 (1977). 
+
+  [2] L. A. Stephey and T. R. Moore, “Experimental investigation of an American 
+  five-string banjo,” Journal of the Acoustical Society of America 
+  \textbf{124}, 3276--3283 (2008). 

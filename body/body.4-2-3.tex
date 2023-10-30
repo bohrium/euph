@@ -1,0 +1,123 @@
+  We are interested in acoustic waves in a horn with a varying cross-sectional 
+  area $S(x)$. We can give a simple derivation of the governing equation, based 
+  on assuming that the acoustic disturbance still takes the form of an 
+  approximately plane wave. This approximation is good when the section varies 
+  slowly, but for accurate answers it needs more care as the bell is approached 
+  and the horn flares more abruptly. More detail on this, and many other 
+  aspects of the acoustics of horns, can be found in the books by Fletcher and 
+  Rossing [1], and Chaigne and Kergomard [2]. 
+
+  We follow the same steps as in section 4.1.1. Consider a small element of the 
+  air inside a pipe with cross-sectional area $S(x)$, lying between positions 
+  $x$ and $x+\delta x$, as sketched in Fig.\ 1. As a result of the sound wave, 
+  the particles that were initially at the ends of this element are displaced 
+  by a small distance, to $x+\xi(x)$ and $x + \delta x + \xi(x + \delta x)$ 
+  respectively. 
+
+  \fig{figs/fig-fc032ef7.png}{Figure 1. A small element of the acoustic 
+  wavefield in a tube with varying cross-section, showing particle 
+  displacements.} 
+
+  We can apply conservation of mass to this element of air: the product of 
+  density and volume must remain constant, so 
+
+  $$\rho_0 S \delta x = (\rho_0 + \rho') \left[ S(x) \delta x -- S(x) \xi(x) 
+  +S(x+ \delta x) \xi(x+ \delta x) \right] $$ 
+
+  $$\approx (\rho_0 + \rho') \left[ S \delta x + \frac{\partial}{\partial x} 
+  \left(S \xi \right) \delta x \right] . \tag{1}$$ 
+
+  Cancelling $\delta x$ and ignoring products of small quantities, this reduces 
+  to 
+
+  $$0 \approx S \rho' + \rho_0 \frac{\partial}{\partial x} \left(S \xi \right) 
+  . \tag{2}$$ 
+
+  As before, we can assume that $p' = c^2 \rho'$ in terms of the pressure 
+  change $p'$, and so 
+
+  $$p' = -\dfrac{c^2 \rho_0}{S}\frac{\partial}{\partial x} \left(S \xi \right) 
+  . \tag{3}$$ 
+
+  We can obtain a second relation between $p'$ and $\xi$ by applying Newton's 
+  law to our small volume. The pressure acts on the two end faces, giving a net 
+  force which must be balanced by mass times acceleration. However, because of 
+  the varying cross-section there is also a contribution to the force from the 
+  pressure acting on the sloping walls of the element. This can be conveniently 
+  expressed as the mean pressure multiplied by the projected area of the 
+  element side-walls in the axial direction. The resulting equation is 
+
+  $$S(x) [p_0+p'(x)] -S(x+ \delta x) [p_0+p'(x+ \delta x)] + $$ 
+
+  $$(p_0 +p') [S(x+ \delta x) -S(x)]= \rho_0 S \delta x \frac{\partial^2 
+  \xi}{\partial t^2} \tag{4}$$ 
+
+  so that 
+
+  $$- S\frac{\partial p'}{\partial x} \approx \rho_0 S \frac{\partial^2 
+  \xi}{\partial t^2} .\tag{5}$$ 
+
+  Differentiating this with respect to $x$ and then using eq. (3), we obtain 
+
+  $$\dfrac{\partial}{\partial x} \left( S\frac{\partial p'}{\partial x} \right) 
+  = -\rho_0 \frac{\partial^2}{\partial t^2} \left[ \frac{\partial }{\partial x} 
+  (S \xi) \right]= \dfrac{S}{c^2} \frac{\partial^2 p'}{\partial t^2} \tag{6}$$ 
+
+  which is the Webster horn equation. 
+
+  We can learn something useful by making a change of variables in this 
+  equation: set $p'=\psi(x) S^{-1/2}$, and also also write the area in terms of 
+  a radius via $S(x)=\pi a^2(x)$. Finally, we are interested in modes and 
+  therefore we can assume harmonic time dependence $e^{i \omega t}$. Equation 
+  (6) can then be rearranged into a form first suggested by Benade and Jansson 
+  [3]: 
+
+  $$\dfrac{d^2 \psi}{dx^2} + \left( \frac{\omega^2}{c^2} -- \frac{1}{a} 
+  \dfrac{d^2a}{dx^2} \right) \psi = 0. \tag{7}$$ 
+
+  This is the familiar simple harmonic equation. If the term in brackets is 
+  positive, it has sinusoidal solutions which suggest local behaviour 
+  corresponding to travelling waves. However, if that bracketed term is 
+  negative, the solutions give exponential growth or decay, suggesting that the 
+  local behaviour might be evanescent in character. For a given frequency 
+  $\omega$, if this bracketed term reaches zero at some position along the 
+  tube, that gives a limit beyond which waves should not propagate. 
+
+  In order to produce the numerical example shown in the main text of section 
+  4.2, a broadly plausible bore profile $a(x)$ was chosen (based on suggestions 
+  from the literature [1]), and then a very simple finite-difference approach 
+  was used. The pressure was discretised with a chosen step length, and the 
+  derivatives on the left-hand side of eq. (6) were expressed via central 
+  differences of these discrete values. Blocked and free boundary conditions 
+  were respectively imposed at the two ends of the tube. The resulting discrete 
+  equations were used to populate a stiffness matrix, whose eigenvalues and 
+  eigenvectors were then computed. Convergence tests were used to find an 
+  appropriate step length, giving a good compromise between accuracy and 
+  conditioning of the matrix. 
+
+  The specifics of the chosen bore profile are as follows. A straight tube of 
+  length 0.5 m and radius 1 cm was joined to a second 0.5 m length of tube in 
+  which the radius varied according to a power law with distance from the bell 
+  (a so-called Bessel horn [1]). The chosen power was -0.85, so that the 
+  behaviour was a little less extreme than a hyperbola. The function was 
+  truncated 5 mm before the singularity to give a finite bell of 
+  plausible-looking shape. With these parameters, the fundamental frequency was 
+  around 122 Hz. 
+
+  The function $\frac{1}{a} \frac{d^2a}{dx^2}$ appearing in eq. (7) was, of 
+  course, zero throughout the straight section of pipe. Then, after a blip at 
+  the junction with the flaring pipe, it was monotonically increasing all the 
+  way to the bell. This function was used to compute the critical position 
+  along the bore based on the natural frequency of each mode, corresponding to 
+  the transition of behaviour of eq. (7). These are the positions plotted as 
+  vertical lines in Fig.\ 15 of section 4.2. The systematic variation of these 
+  lines with mode number is a direct consequence of the monotonic function. 
+
+  \sectionreferences{}[1] Neville H Fletcher and Thomas D Rossing; ``The 
+  physics of musical instruments'', Springer-Verlag (Second edition 1998) 
+
+  [2] Antoine Chaigne and Jean Kergomard; ``Acoustics of musical instruments'', 
+  Springer/ASA press (2013) 
+
+  [3] Arthur H. Benade and Erik V. Jansson; On plane and spherical waves in 
+  horns with nonuniform flare, Acustica \textbf{31}, 80--98 (1974). 

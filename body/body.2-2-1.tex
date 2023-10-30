@@ -1,0 +1,102 @@
+  Mathematically, the Fourier series works like this. Suppose the periodic 
+  function you start with is $f(t)$, repeating with a period $T$. Then it can 
+  be expressed by 
+
+  $$f(t)=a_0+\sum_{n=1}^\infty \left( a_n \cos \dfrac{2n\pi t}{T} + b_n \sin 
+  \dfrac{2n\pi t}{T} \right) \tag{1}$$ 
+
+  where 
+
+  $$a_0=\dfrac{1}{T}\int_0^T f(t) dt, a_n=\dfrac{2}{T}\int_0^T f(t)\cos 
+  \dfrac{2n\pi t}{T} dt \tag{2}$$ 
+
+  and 
+
+  $$b_n=\dfrac{2}{T}\int_0^T f(t)\sin \dfrac{2n\pi t}{T} dt. \tag{3}$$ 
+
+  Alternatively, there is a neater form in terms of complex numbers: 
+
+  $$f(t)=\sum_{n=-\infty}^\infty c_n e^{2in\pi t/T} \tag{4}$$ 
+
+  where 
+
+  $$c_n=\dfrac{2}{T}\int_0^T f(t)e^{-2in\pi t/T} dt. \tag{5}$$ 
+
+  The two versions of the Fourier series are related in a very simple way, via 
+  the real and imaginary parts of the complex numbers $c_n$: 
+
+  $$a_n=\Re (c_n), \mathrm{~~~~}b_n=\Im (c_n) \tag{6}$$ 
+
+  We have written all the integrals in equations (2), (3) and (5) over the 
+  range from $t=0$ to $t=T$, but we could equally well have chosen any other 
+  complete range of length $T$, since the function $f(t)$ is periodic. 
+
+  If the function $f$ is not periodic, like the hammer pulse discussed in the 
+  main text, then instead of a sum over discrete harmonic frequency components 
+  we need an integral: 
+
+  $$f(t)=\int_{-\infty}^\infty F(\omega) e^{i \omega t} dt \tag{7}$$ 
+
+  where 
+
+  $$F(\omega)=\dfrac{1}{2\pi}\int_{-\infty}^\infty f(t) e^{-i \omega t} 
+  d\omega. \tag{8}$$ 
+
+  $F(\omega)$ is called the Fourier transform of $f(t)$. 
+
+  You should note that not everyone chooses to put the factor $2 \pi$ in 
+  exactly the same place as it appears in equation (8). The factor always 
+  appears somewhere, in either or both of equations (7) and (8), but there are 
+  several possible ways to do it. These are all self-consistent, but lead to 
+  slightly different definitions of the transform. I will always use the 
+  convention shown here, but you may find alternative usage in textbooks or 
+  other web sites. 
+
+  The FFT algorithm gives a way to calculate a Fourier series for a sampled 
+  function, where we only know the values of the function at times $t_n=nh$ 
+  where $h$ is the chosen time step, the inverse of the sampling rate. So for 
+  example a typical audio file with a sampling rate of 44.1 kHz has an interval 
+  $h = 1/44100$ s = 22.7 $\mu$s. Although it is called the Fast Fourier 
+  Transform, this is misleading: a computer can only ever handle a finite 
+  number of sampled values, and what the FFT gives you is the set of (complex) 
+  Fourier series coefficients based on harmonics of the frequency which is the 
+  inverse of the total length of the sampled segment in seconds. 
+
+  An important result, the \tt{}Nyquist-Shannon sampling theorem\rm{}, tells us 
+  that the FFT contains frequency components only up to the Nyquist frequency, 
+  which is half the sampling frequency (e.g. 22.05 kHz for the audio file). If 
+  the original signal contained frequency content higher than this frequency it 
+  will be represented in a misleading way in the FFT result, a phenomenon known 
+  as aliasing. We will have more to say about aliasing, with an audio demo, in 
+  section 10.4. 
+
+  The example of a Fourier series plotted in Fig.\ 1 of section 2.2 is for the 
+  sawtooth wave. This has been chosen deliberately, because we will be very 
+  interested in the sawtooth wave when we come to examine the motion of a bowed 
+  violin string in Chapter 9. So as an example of the calculation, we will 
+  derive the explicit form of this Fourier series. If we want a sawtooth wave 
+  with period $T$ and peak amplitude of 1, we can define 
+
+  $$f(t) = \dfrac{2t}{T} \tag{9}$$ 
+
+  within the range $-T/2 \le t \le T/2$, and then repeating periodically. 
+
+  It is simplest to calculate the complex form of the series: 
+
+  $$c_n=\dfrac{4}{T^2} \int_{-T/2}^{T/2}{t e^{-2in \pi t/T} dt} \tag{10}$$ 
+
+  where we have chosen the integration range to match the way the function was 
+  defined. 
+
+  So, using integration by parts, 
+
+  $$\dfrac{T^2 c_n}{4} = \left[ -t \dfrac{e^{-2in \pi t/T}}{(-2in \pi /T)} 
+  \right]_{-T/2}^{T/2} -- \dfrac{T}{2in \pi} \int_{-T/2}^{T/2}{e^{-2in \pi t/T} 
+  dt} \tag{11}$$ 
+
+  $$=\dfrac{T}{2in \pi} \left\lbrace \dfrac{T}{2} e^{-in \pi} + \dfrac{T}{2} 
+  e^{in \pi} \right\rbrace = \dfrac{T^2 (-1)^n}{2in \pi} \tag{12}$$ 
+
+  because the integral in equation (11) is zero. So finally 
+
+  $$c_n = \dfrac{2(-1)^n}{in \pi} . \tag{13}$$ 

@@ -1,0 +1,32 @@
+  Energy loss from a vibrating string due to viscosity in the surrounding air 
+  can be estimated using a classical analysis going back to Stokes. The 
+  associated loss factor for a string mode at angular frequency $\omega_n$ is 
+  given by Fletcher and Rossing [1] in the form 
+
+  $$\eta_{air} \approx \dfrac{\rho_a}{\rho} \dfrac{2 \sqrt{2} M+1}{M^2} 
+  \tag{1}$$ 
+
+  where $\rho_a$ is the density of air, and 
+
+  $$M=\dfrac{d}{4} \sqrt{\dfrac{\omega_n}{\eta_a}} \tag{2}$$ 
+
+  where $\eta_a$ is the kinematic viscosity of air. Textbook values can be 
+  used: $\rho_a = $1.2 kg/m$^3$ and $\eta_a = 1.5\times 10^{-5}$ m$^2$/s. In 
+  the light of tests on many musical strings covering a wide range of string 
+  gauges, it has been found that this formula does not quite capture the 
+  variation with diameter to best accuracy: it slightly underestimates the 
+  damping of thick strings and overestimates that of thin strings. It has been 
+  found that the measurements can all be approximated well enough for the 
+  present purpose by applying an ad hoc correction factor $(d+0.2)$ to 
+  $\eta_{air}$, with the string diameter $d$ expressed in mm. 
+
+  To see more clearly how this damping contribution varies with frequency, it 
+  may be noted that for most musical strings the value of $M$ is fairly large, 
+  so that 
+
+  $$\eta_{air} \approx (d+0.2) \dfrac{\rho_a}{\rho} \dfrac{2 \sqrt{2}}{M} = 
+  (d+0.2) \dfrac{8 \sqrt{2} \rho_a}{\rho d} \sqrt{\dfrac{\eta_a}{2 \pi f_n}} . 
+  \tag{3}$$ 
+
+  \sectionreferences{}[1] Neville H Fletcher and Thomas D Rossing; ``The 
+  physics of musical instruments'', Springer-Verlag (Second edition 1998) 

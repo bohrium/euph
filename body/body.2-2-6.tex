@@ -1,0 +1,81 @@
+  There is a simple way to get an idea of the force waveform of a hammer tap, 
+  and its corresponding frequency response. This is relevant to a drum, but it 
+  is also important for more formal experimental vibration testing because an 
+  instrumented hammer is a very common way to excite a structure for testing. 
+  The hammer has a certain mass, $m$ say. While it is in contact with the drum 
+  (or other structure), there is a contact force tending to make it bounce off. 
+  This restoring force can be modelled as a spring with stiffness $k$. That 
+  stiffness is made up of two components: the intrinsic stiffness of the 
+  hammer, and the stiffness provided by the drum membrane or whatever else is 
+  being struck. A hard drumstick will be stiffer than a soft beater. But also, 
+  a drum membrane will present a lower stiffness than a structure like a piano 
+  soundboard or a ship's hull. 
+
+  During contact, this ``tip spring'' will be compressed, by an amount $x$ say. 
+  The equation of motion of the hammer mass is then exactly the same as the 
+  simple harmonic oscillator examined in section 2.2.2: 
+
+  $$m \dfrac{d^2 x}{dt^2}+kx=0. \tag{1}$$ 
+
+  The solution is thus 
+
+  $$x=A \cos(\Omega t + \phi) \tag{2}$$ 
+
+  where $\Omega=\sqrt{k/m}$, and $A$ and $\phi$ are constants determined by the 
+  initial conditions: at the moment of first making contact, $x=0$ and the 
+  velocity $\dot{x}$ is equal to the speed with which the hammer is moving. 
+
+  The force applied to the structure is $f=kx$: but this description only 
+  applies while that force is positive. As soon as the solution suggests that 
+  the force should go negative, the hammer will bounce off the structure 
+  because it can't apply a tensile force (unless the hammer tip is sticky). So 
+  the waveform of applied force is as sketched in Fig.\ 1: a half-cycle of a 
+  cosine wave, at the (radian) frequency $\Omega$. 
+
+  The frequency spectrum of this hammer force is found by calculating the 
+  Fourier transform $F(\omega)$ of the force $f(t)$: see section 2.2.1. To do 
+  this calculation, it is convenient to choose $t=0$ to lie at the centre of 
+  the force pulse, which then extends symmetrically from $t=-\pi / (2 \Omega)$ 
+  to $t=+\pi / (2 \Omega)$. Then 
+
+  $$F(\omega) = \dfrac{kA}{2 \pi} \int_{-\pi/2 \Omega}^{\pi/2 \Omega} \cos 
+  \Omega t~e^{-i \omega t} dt \tag{3}$$ 
+
+  $$ = \dfrac{kA}{4 \pi} \int_{-\pi/2 \Omega}^{\pi/2 \Omega} \left[ e^{i \Omega 
+  t} + e^{-i \Omega t} \right]~e^{-i \omega t} dt $$ 
+
+  $$= \dfrac{kA}{4 \pi} \left[ \dfrac{e^{i (\Omega -- \omega) t}}{i (\Omega -- 
+  \omega)} -- \dfrac{e^{-i (\Omega + \omega) t}}{i (\Omega + \omega)} 
+  \right]_{-\pi/2 \Omega}^{\pi/2 \Omega} $$ 
+
+  $$= \dfrac{kA}{2 \pi} \left[ \dfrac{\sin \frac{\pi}{2} \left(1 -- 
+  \frac{\omega}{\Omega} \right)}{\Omega -- \omega} + \dfrac{\sin \frac{\pi}{2} 
+  \left(1 + \frac{\omega}{\Omega} \right)}{\Omega + \omega} \right].$$ 
+
+  But $\sin (\pi/2 + \alpha) = \cos \alpha$ and $\sin(\pi/2 -- \alpha)= \cos 
+  \alpha$, so 
+
+  $$F(\omega) = \dfrac{kA}{2 \pi} \cos \dfrac{\pi \omega}{2 \Omega} \left[ 
+  \dfrac{1}{\Omega -- \omega} + \dfrac{1}{\Omega + \omega} \right] $$ 
+
+  and finally, 
+
+  $$F(\omega) = \dfrac{kA \Omega}{\pi} \dfrac{\cos \frac{\pi \omega}{2 
+  \Omega}}{\Omega^2 -- \omega^2}. \tag{4}$$ 
+
+  To see what this means, two plots are given below. Figure 2 is a 
+  ``universal'' plot of the prediction of eq. (4), with the ratio $\omega / 
+  \Omega$ on the horizontal axis. The vertical axis shows the absolute value of 
+  $F(\omega)$, normalised by its DC value $F(0)$. It is plotted on a decibel 
+  scale (defined by $20\log_{10}|F|$, so that 20 dB corresponds to a factor of 
+  10 in amplitude). The plot reveals that the force imparted by the hammer tap 
+  is concentrated in the frequency range below about $2.5 \Omega$. 
+
+  To see what this might mean for using different drumsticks to hit a drum, 
+  Fig.\ 3 shows two versions of the frequency spectrum of the force, this time 
+  on a frequency scale in Hz. The red curve is the result for a soft, heavy 
+  beater with the frequency $\Omega$ corresponding to 300 Hz, while the black 
+  curve is for a lighter and harder stick with $\Omega$ corresponding to 1500 
+  Hz. This hard stick can excite the drum to far higher frequency, resulting in 
+  a ``sharper'' sound. The soft beater will give a mellow, ``boomy'' sound just 
+  as you would expect. 

@@ -1,0 +1,72 @@
+  There is a standard procedure for examining the stability of an equilibrium 
+  position, and the pendulum gives a good illustration of it. We already know 
+  the governing equation, from section 8.2.1: 
+
+  $$\ddot{\theta} = -\dfrac{g}{L} \sin \theta . \tag{1}$$ 
+
+  For equilibrium, $\ddot{\theta}=0$ and so we need $\sin \theta =0$. The two 
+  relevant solutions are $\theta=0,\pi$. Now we take those in turn, and make 
+  use of a Taylor series expansion to linearise the governing equation very 
+  close to the equilibrium. Near $\theta =0$ we simply use the familiar result 
+  $\sin \theta \approx \theta$ to obtain 
+
+  $$\ddot{\theta} \approx -\dfrac{g}{L} \theta . \tag{2}$$ 
+
+  This is the simple harmonic equation, and its general solution takes the form 
+
+  $$\theta = A \cos \Omega t + B \sin \Omega t \tag{3}$$ 
+
+  where $\Omega^2=g/L$ and $A$ and $B$ are arbitrary constants. Whatever small 
+  perturbation we make around the equilibrium position, and thus whatever the 
+  values of $A$ and $B$, $\theta$ remains small because sine and cosine never 
+  have a magnitude greater than unity. So the equilibrium is stable: any small 
+  perturbation results in the pendulum remaining close to the equilibrium for 
+  all later times. 
+
+  For the case $\theta = \pi$, we first change variable so that we have a small 
+  parameter available for the purposes of expansion: so let $\theta = \pi + 
+  \alpha$. Now we need to remember, from the properties of the sine function, 
+  that $\sin (\pi + \alpha) = -\sin \alpha$. So the approximate governing 
+  equation this time is 
+
+  $$\ddot{\alpha} = \dfrac{g}{L} \sin \alpha \approx \dfrac{g}{L} \alpha = 
+  \Omega^2 \alpha. \tag{4}$$ 
+
+  This time the general solution takes the form 
+
+  $$\alpha = A e^{\Omega t} + B e^{-\Omega t} \tag{5}$$ 
+
+  where $A$ and $B$ are again arbitrary constants. This time, virtually any 
+  small perturbation away from the equilibrium position will produce a non-zero 
+  value of $A$. However small that value may be, eventually the growing 
+  exponential will make that term large. We conclude that the equilibrium is 
+  unstable: a small perturbation does not remain small. This analysis does not 
+  mean that the actual motion of the pendulum grows exponentially for all 
+  subsequent time: remember that we have obtained this solution by assuming 
+  that $\alpha$ is small. All we can deduce is that it does not remain small, 
+  so that eventually the approximation must break down. 
+
+  For the undamped pendulum case, there is an alternative approach based on an 
+  energy argument. The potential energy, relative to the position $\theta =0$, 
+  is 
+
+  $$V=mgL(1- \cos \theta) \tag{6}$$ 
+
+  and the kinetic energy is 
+
+  $$T=\dfrac{1}{2} m L^2 \dot{\theta}^2 \tag{7}$$. 
+
+  A position of stable equilibrium corresponds to a minimum of potential 
+  energy, because any perturbation away from that position requires energy, and 
+  thus reduces the kinetic energy. But near a maximum of potential energy, any 
+  perturbation releases energy and increases kinetic energy, leading to an 
+  unstable runaway. It is obvious from visualising the graph of $1-\cos \theta$ 
+  that $\theta = 0$ is a minimum of energy, while $\theta = \pi$ is a maximum, 
+  leading to the same result obtained above. 
+
+  As a footnote, energy also provides an easy way to graph the phase portrait 
+  of an undamped system. Any possible motion must conserve total energy 
+  $E=T+V$, or in other words trajectories must be contour lines of constant 
+  energy. So all we need to do is compute $E$ at a grid of points in the phase 
+  plane and then draw a contour map: this is how Fig.\ 3 of section 8.3 was in 
+  fact computed. 

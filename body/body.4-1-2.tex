@@ -1,0 +1,87 @@
+  The wave equation, derived in section 4.1.1, can be written in terms of 
+  spherical polar coordinates $(r,\theta,\phi)$: the pressure field $p$ must 
+  satisfy 
+
+  $$\frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial 
+  p}{\partial r} \right) + \frac{1}{r^2 \sin \theta} \frac{\partial}{\partial 
+  \theta} \left(\sin \theta \frac{\partial p}{\partial \theta} \right) $$ 
+
+  $$+ \frac{1}{r^2 \sin^2 \theta} \frac{\partial^2 p}{\partial \phi^2} = 
+  \frac{1}{c^2} \frac{\partial^2 p}{\partial t^2}. \tag{1}$$ 
+
+  If we look for a spherically-symmetric solution of the form $p(r,t)$, eq. (1) 
+  requires 
+
+  $$\frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial 
+  p}{\partial r} \right) = \frac{1}{c^2} \frac{\partial^2 p}{\partial t^2}. 
+  \tag{2}$$ 
+
+  But this equation can be rearranged into the form 
+
+  $$ \frac{\partial^2 (rp)}{\partial r^2} = \frac{1}{c^2} \frac{\partial^2 
+  (rp)}{\partial t^2}, \tag{3}$$ 
+
+  so that the combination $rp$ satisfies the one-dimensional wave equation. Two 
+  possible solutions would be 
+
+  $$rp=Ae^{i \omega t \pm i k x} \tag{4}$$ 
+
+  where $A$ is a constant amplitude and, as usual, the physical solutions would 
+  be obtained by taking the real part of this complex expression. When the 
+  $\pm$ sign is $+$, this solution describes a spherical wave travelling 
+  inwards from infinity towards the origin: this solution is not of physical 
+  interest. The solution we want is thus 
+
+  $$p=\frac{A}{r} e^{i \omega t -- i k r} \tag{5}$$ 
+
+  which describes a wave radiating outwards, with amplitude decaying 
+  proportional to $1/r$. The quantity $k$ is called the wavenumber: it is 
+  related to the wavelength $\lambda$ by $k=2 \pi /\lambda$, and to the 
+  frequency $\omega$ via the speed of sound: $k=\omega /c$. 
+
+  The next step is to find the particle motion associated with this pressure 
+  field. The motion will be purely radial, with displacement $\xi(r) e^{i 
+  \omega t}$, and it must obey eq. (16) of section 4.1.1, and so 
+
+  $$- \omega^2 \rho_0 \xi e^{i \omega t} = -\frac{\partial p}{\partial r} = 
+  A\left( \frac{1}{r^2} + \frac{ik}{r}\right) e^{i\omega t -- ikr} \tag{6}$$ 
+
+  or 
+
+  $$\xi e^{i \omega t} = -- \frac{A}{\rho_0 \omega^2 r} \left( \frac{1}{r} 
+  +\frac{i \omega}{c} \right) e^{i\omega t -- ikr} . \tag{7}$$ 
+
+  If this sound field is being created by small-amplitude pulsation of a sphere 
+  of radius $a$, then the amplitude $A$ is determined by requiring that the 
+  particle displacement matches that of the sphere at $r=a$. If the modulated 
+  sphere radius takes the form $a+a' e^{i \omega t}$, then 
+
+  $$A=-\dfrac{a' a \rho_0 \omega^2 e^{i \omega a/c}}{\left( \frac{1}{a} 
+  +\frac{i \omega}{c} \right)} . \tag{8}$$ 
+
+  The pressure on the surface of the sphere is then 
+
+  $$p(a,t)=-\dfrac{a' \rho_0 \omega^2}{\left( \frac{1}{a} +\frac{i \omega}{c} 
+  \right)} e^{i \omega t}. \tag{9}$$ 
+
+  The term in the denominator here means that the relative phase of the 
+  pressure and displacement is frequency-dependent. At high frequency the term 
+  $i \omega /c$ dominates, while at low frequency or when $a$ is small, the 
+  term $1/a$ dominates. The turnover point between these two limits is governed 
+  by the ratio of the magnitudes of these two terms: $\omega a/c = ka$. This 
+  parameter is called a Helmholtz number: it characterises the size of the 
+  sound source in wavelength terms. 
+
+  Similar behaviour arises from the bracketed term in eq. (7), and this time 
+  the turnover point between limiting regimes is governed by the dimensionless 
+  ratio $\omega r/c = kr$, which describes the distance of the observer in 
+  wavelength terms. For large values of this parameter the observer is in the 
+  far field of the sound source, and the behaviour is dominated by the term $i 
+  \omega /c$. For small values, the observer is in the near field of the 
+  source, where the behaviour is dominated by the term $1/r$. However, this 
+  near-field region only exists if the Helmholtz number is also small, 
+  otherwise it is not possible for $r$ to get small enough. So the Helmholtz 
+  number governs whether the sound field involves a near field, or whether the 
+  far field essentially starts immediately from the surface of the sphere. If 
+  there is a near field, the parameter $kr$ determines how far out this regime 
+  extends. 

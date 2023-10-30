@@ -1,0 +1,127 @@
+  A string of tension $T$ and mass per unit length $m$ has length $L$, and is 
+  fixed at the two ends $x=0$ and $x=L$. A transverse force $F$ is applied to 
+  the string at position $x=a$, as sketched in Fig.\ 1. Static equilibrium of 
+  the forces, assuming that the displacement is small, requires 
+
+  $$F \approx T \dfrac{X}{a}+ T \dfrac{X}{L-a} \tag{1}$$ 
+
+  where $X$ is the displacement at the pluck point. This equation is based on 
+  small-angle approximations for the two angles between the string segments and 
+  the x-axis: note that Fig.\ 1 uses an exaggerated vertical scale so that the 
+  angles may not look small. We can deduce from eq. (1) that 
+
+  $$X=\dfrac{Fa(L-a)}{TL}. \tag{2}$$ 
+
+  \fig{figs/fig-c8310a4a.png}{Figure 1. The string is pulled into a triangular 
+  shape by a force $F$ before release.} 
+
+  We already know that the mode shapes on the string are sinusoidal, and that 
+  the natural frequencies are integer multiples of a fundamental frequency 
+  $\Omega = \pi c/L$, where $c=\sqrt{T/m}$ is the wave speed on the string. The 
+  motion following the release can be expressed as a linear combination of 
+  modal contributions: 
+
+  $$w(x,t)=\sum_n{c_n u_n(x) e^{i \omega_n t}}=\sum_n{c_n \sin \dfrac{n \pi 
+  x}{L} e^{in \Omega t}} \tag{3}$$ 
+
+  where $c_n$ is the `amount' of the $n$th mode involved in the vibration. 
+  Since $c_n$ may be complex, because it contains phase information as well as 
+  amplitude information, it is convenient to write it explicitly as 
+
+  $$c_n=a_n +i b_n \tag{4}$$ 
+
+  so that 
+
+  $$w(x,t)=\sum_n{\left[ a_n \cos n \Omega t -b_n \sin n \Omega t \right] \sin 
+  \dfrac{n \pi x}{L}} \tag{5}$$ 
+
+  after taking the real part. 
+
+  The constants $a_n$ and $b_n$ are determined from the initial conditions. At 
+  $t=0$ the string is at rest in the shape sketched in Fig.\ 1. So 
+
+  $$w(x,0) = \left\{ \begin{array}{ll} \dfrac{xX}{a} \mathrm{~~~for~~~} 0\le 
+  x\le a \\ \dfrac{X(L-x)}{L-a} \mathrm{~~~for~~~} a\le x\le L \end{array} 
+  \right. \tag{6}$$ 
+
+  and 
+
+  $$\dfrac{\partial w(x,0)}{\partial t}=0 . \tag{7}$$ 
+
+  The second condition (7) requires 
+
+  $$\sum_n{n \Omega b_n \sin\dfrac{n \pi x}{L}}=0 \tag{8}$$ 
+
+  for all values of $x$. This is only possible if $b_n=0$ for all values of 
+  $n$. 
+
+  Now the condition (6) requires 
+
+  $$ \sum_n{a_n \sin \dfrac{n \pi x}{L}} = \left\{ \begin{array}{ll} 
+  \dfrac{xX}{a} \mathrm{~~~for~~~} 0\le x\le a \\ \dfrac{X(L-x)}{L-a} 
+  \mathrm{~~~for~~~} a\le x\le L \end{array} \right. \tag{9}$$ 
+
+  In other words, we must express the initial deflected shape as a Fourier sine 
+  series with coefficients $a_n$. This can be done using the standard formula 
+  for Fourier coefficients: 
+
+  $$a_n= \dfrac{2}{L} \left\lbrace \int_0^a{ \left[ \dfrac{xX}{a} \right] \sin 
+  \dfrac{n \pi x}{L} dx } + \int_a^L{\left[ \dfrac{X(L-x)}{L-a} \right] \sin 
+  \dfrac{n \pi x}{L} dx } \right\rbrace . \tag{10}$$ 
+
+  Integration by parts gives 
+
+  $$a_n=\dfrac{2X}{La} \left\lbrace \left[ -x \dfrac{\cos (n \pi x/L)}{n \pi/L} 
+  \right] _0^a + \dfrac{L}{n \pi} \int_0^a{\cos \dfrac{n \pi x}{L} 
+  dx}\right\rbrace $$ 
+
+  $$+\dfrac{2X}{L(L-a)} \left\lbrace \left[ -(L-x) \dfrac{\cos (n \pi x/L)}{n 
+  \pi/L} \right]_a^L -- \dfrac{L}{n \pi} \int_a^aL{\cos \dfrac{n \pi x}{L} 
+  dx}\right\rbrace $$ 
+
+  $$ = \dfrac{2}{n \pi}\left\lbrace \dfrac{X}{a}\left( -a \cos \dfrac{n \pi 
+  a}{L}\right) +\dfrac{LX}{n \pi a}\sin \dfrac{n \pi a}{L} \right. $$ 
+
+  $$\mathrm{~~~~~~~~~~~}\left. +\dfrac{X}{L-a}\left[ (L-a) \cos \dfrac{n \pi 
+  a}{L} +\dfrac{L}{n \pi}\sin \dfrac{n \pi a}{L}\right] \right\rbrace $$ 
+
+  $$= \dfrac{2XL}{n^2 \pi^2} \left( \dfrac{1}{a}+\dfrac{1}{L-a}\right) \sin 
+  \dfrac{n \pi a}{L}$$ 
+
+  so finally 
+
+  $$a_n= \dfrac{2XL^2}{n^2 \pi^2 a(L-a)} \sin \dfrac{n \pi a}{L}= 
+  \dfrac{2LF}{n^2 \pi^2 T} \sin \dfrac{n \pi a}{L} \tag{11}$$ 
+
+  using eq. (2). The motion of the string is thus described by 
+
+  $$w(x,t)= \sum_n{\dfrac{2LF}{n^2 \pi^2 T} \sin \dfrac{n \pi x}{L} \sin 
+  \dfrac{n \pi a}{L} \cos n \Omega t } \tag{12}$$ 
+
+  from eq. (5) 
+
+  There is an alternative approach to deriving this result, making use of a 
+  general formula for the step response of a linear system. For any system with 
+  mode shapes $u_n(x)$ and corresponding natural frequencies $\omega_n$, the 
+  response to this kind of downward step input is given by the general formula 
+
+  $$w(x,t)= F \sum_n{\frac{u_n(x) u_n(a) \cos(\omega_n t)}{\omega_n^2}}. 
+  \tag{13}$$ 
+
+  Applying this to the particular modes and natural frequencies of the ideal 
+  string, the motion following the pluck is given by 
+
+  $$w(x,t)= \frac{2F}{mL} \sum_n{\frac{1}{ n^2 \Omega^2} \sin \frac{n \pi x}{L} 
+  \sin \frac{n \pi a}{L} \cos n \Omega t} \tag{14}$$ 
+
+  The factor $2/mL$ arises because the mode shapes have to be normalised 
+  according to eq. (10) of section 2.2.5. Applied to the string, this requires 
+
+  $$\int_0^L{m u_n^2(x) dx}=1 \tag{15}$$ 
+
+  so that 
+
+  $$u_n(x) = \sqrt{\frac{2}{mL}} \sin \frac{n \pi x}{L}. \tag{16}$$ 
+
+  Substituting the value $\Omega= \pi c/L$, eq. (14) gives exactly the same 
+  result as eq. (12). 

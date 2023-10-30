@@ -1,0 +1,230 @@
+  Stringed instruments come in many forms: a few are illustrated in Fig.\ 1. 
+  This chapter will largely be concerned with plucked-string instruments 
+  (because we are sticking as long as we can with linear theory: remember that 
+  idea from section 2.1?). But we will give a broad description of how an 
+  acoustic stringed instrument works, and for that purpose all stringed 
+  instruments have some things in common, whether plucked, hammered or bowed. 
+  The process of bowing a string is definitely nonlinear (we will come back to 
+  it in Chapter ?), but the body vibration and sound radiation characteristics 
+  of a violin or cello are essentially linear. 
+
+  The musician devotes virtually all their effort and skill towards making the 
+  strings of their instrument vibrate in particular ways: at the right pitch, 
+  at the right time, and with subtle control over the initial transient and the 
+  tonal balance. But, as was explained in section 4.3, a vibrating string 
+  cannot radiate much in the way of sound waves into the surrounding air. Most 
+  strings are only around 1 mm in diameter, whereas the wavelength of sound in 
+  the mid-audio range is of the order of hundreds of millimetres, and even at 
+  the very highest frequency audible to humans, around 20 kHz, it is about 17 
+  mm. Air simply flows around a vibrating string, making it a very weak dipole 
+  sound source. 
+
+  In order to make sound that is loud enough to be useful, some of the energy 
+  in the vibrating string must be used in one way or another to cause vibration 
+  of something bigger, comparable in size to the wavelengths of interest. In an 
+  electric instrument, this larger vibrating object is the loudspeaker cone, 
+  set into vibration electrically by an amplifier. But in an acoustic 
+  instrument, it is usually woodwork of some kind. 
+
+  As the string vibrates, the end in contact with the instrument body at the 
+  bridge will have a time-varying angle of contact. The string is, of course, 
+  under tension, and this varying angle means that a component of the tension 
+  is exerted on the bridge, perpendicular to the string in its plane of 
+  vibration. This force drives the body into vibration, and the vibrating 
+  structure will radiate sound waves into the surrounding air. Figure 2 gives a 
+  sketch to illustrate what is going on, for the situation where the string 
+  vibrates in a plane perpendicular to the soundboard, so that the time-varying 
+  angle lies in that plane. 
+
+  There is a complication. For definiteness, it will be described in the 
+  context of the guitar. A string can indeed vibrate in the plane perpendicular 
+  to the soundboard as sketched in Fig.\ 2, but it could also vibrate in the 
+  plane parallel to the soundboard, or anywhere in between. If the string 
+  vibrates in the plane parallel to the soundboard, the force on the bridge is 
+  also parallel to the soundboard and this is not an efficient way to make the 
+  soundboard vibrate. Vibration perpendicular to the soundboard is much better: 
+  the force is now oriented in the best way to make the soundboard vibrate, and 
+  the sound is likely to be louder. This difference lies behind the guitarist's 
+  techniques known as apoyando and tirando: these different ways to pluck a 
+  string with the fingers make a difference to the plane of vibration of the 
+  string. An apoyando stroke (sometimes called a rest stroke) produces more 
+  string vibration in the plane perpendicular to the soundboard, and gives a 
+  louder and fuller sound. 
+
+  Now most of the bowed instruments have a problem. As will be seen in Chapter 
+  9, a bowed string vibrates, mainly, in the plane of the bow-hair. In order to 
+  be able to access the strings without the bow hitting the body, in most bowed 
+  instruments (like the violin) this means bowing approximately parallel to the 
+  soundboard. But we have just seen that this is not a recipe for making a loud 
+  sound. This is the reason that a violin or cello needs the familiar high 
+  bridge, quite different from the squat bridge of a guitar. The string exerts 
+  a force at the top of the bridge, approximately parallel to the soundboard, 
+  as sketched in Fig.\ 3. This force is translated by a rocking action of the 
+  bridge into forces at the bridge feet that are perpendicular to the 
+  soundboard. 
+
+  But there is still a problem. If a violin was as symmetrical internally as it 
+  appears to be from the outside, this rocking action would tend to excite 
+  motion of the top plate with no net volume change, as indicated schematically 
+  by the red line in the left-hand plot. This would lead to poor sound 
+  radiation at low frequency. But there are two important structures inside a 
+  violin which destroy the symmetry. One is the soundpost, a wooden rod wedged 
+  between the top and back plates, near one foot of the bridge by the highest 
+  string. The second internal structure is the bassbar, a wooden beam running 
+  approximately 3/4 of the length of the top plate, passing beneath the other 
+  foot of the bridge. Both are indicated in the right-hand plot. At low 
+  frequency the presence of the soundpost inhibits motion of the top plate, 
+  leading to deformation as indicated schematically by the new red line, 
+  involving net volume change and hence monopole radiation. 
+
+  Some bowed instruments escape these problems. In the Chinese erhu, for 
+  example, the bow is threaded between the two strings and they are bowed 
+  perpendicular to the ‘soundboard’ (which is actually a stretched snakeskin 
+  membrane in this particular instrument). There is no need for a high bridge: 
+  the erhu has a low bridge more like a guitar bridge, and it is quite loud. 
+  Figure 4 shows an example. 
+
+  There is an important consequence of the sequence of events just described, 
+  and illustrated in Fig.\ 2. To a good first approximation, all interaction 
+  between the string and the body occurs at a single contact point: the string 
+  notch on the bridge. So to characterise the vibration behaviour of the body 
+  in so far as it affects the string motion, what is needed is a measurement of 
+  the frequency response function at this point. 
+
+  Such a measurement was illustrated in Fig.\ 4 of section 2.2, and Fig.\ 5 of 
+  that section showed some results for the toy drum. A (very) small hammer can 
+  be used to tap the bridge by the string notch, and the response can be 
+  measured with a laser vibrometer or an attached sensor with very low mass. 
+  The waveform of force is measured by a built-in sensor in the hammer. The two 
+  signals, force and response, are recorded into a computer, and the FFT is 
+  used to convert them into frequency spectra. The output spectrum (FFT of the 
+  response) is divided by the input spectrum (FFT of the force waveform), and 
+  the result is the frequency response function we are seeking. The most common 
+  version is based on an output signal proportional to the velocity at the 
+  measurement point, and is called the bridge admittance or bridge point 
+  mobility. 
+
+  Figure 5 shows a typical setup, on a banjo. Figure 6 shows a slightly 
+  modified procedure being used on a violin. As mentioned above, violin strings 
+  vibrate predominantly in the plane of the bow-hair. To measure the most 
+  relevant bridge admittance the force has to be applied in the bowing 
+  direction, rather than perpendicular to the soundbox, and the response needs 
+  to be similarly measured. It is easier in practice to measure the response 
+  from the corner of the bridge on the other side, on the right in this 
+  picture. This means that the result is not strictly a point admittance, but 
+  provided the top portion of the bridge moves without deforming, it is a good 
+  approximation to it [1]. 
+
+  As with all measurements, there are some tricks of the trade for getting best 
+  results. It is prudent to collect several sets of data, and use an averaging 
+  procedure to combine them into a best estimate of the bridge admittance. Some 
+  details of the process are given in the next link. A side effect of the 
+  procedure is something called the coherence function, which gives a very 
+  helpful measure of data quality: an example is shown in the link. We will 
+  come back to a more general discussion of measuring frequency response 
+  functions in section 10.4. 
+
+  The hammer is held in a pendulum fixture to guarantee that it hits the same 
+  spot every time. We want to characterise the body behaviour separately from 
+  the strings, in order to couple them together in a controlled way later (see 
+  section 5.4). So for the admittance measurement the strings are damped to 
+  suppress their vibration: in this case using a piece of paper woven through 
+  the strings. But we don't want to remove the strings entirely: on instruments 
+  like the banjo or the violin, the tension of the strings is needed to hold 
+  the bridge in place. A more subtle effect of the strings is that the body 
+  vibration can be affected significantly by the stiffness of the strings along 
+  their length: especially for metal strings, this stiffness can be quite high. 
+
+  There is a final step: in order to obtain a bridge admittance that is 
+  quantitatively correct, some kind of calibration procedure is needed. The 
+  measurement must be repeated on some system for which the answer is already 
+  known, so that a suitable scaling factor can be determined. The most common 
+  approach is to weigh a mass, then hang it as a pendulum. Applying the 
+  hammer/laser measurement method to this, we should obtain a result that 
+  agrees with Newton's law: force=mass$\times$acceleration. We know the mass, 
+  so we can deduce the true value of acceleration/force, and compare it with 
+  the measured value to obtain a calibration factor. 
+
+  It is time to see some examples. A typical measured and calibrated admittance 
+  is shown in Fig.\ 7, for a violin. We will say something about what it shows 
+  in a moment, but first it is helpful to convert it to a different form. In 
+  the course of this chapter we will use three contrasting instruments to 
+  illustrate the range of possibilities: a classical guitar, a violin and a 
+  banjo. How can we make a fair comparison between instruments of different 
+  types, employing different strings and tuned to different pitches? To give a 
+  good answer to that question we need one more piece of background 
+  information. For reasons explained in the next link, the strength of coupling 
+  between a string and the instrument body is determined by the product of the 
+  admittance we have measured and a property of the string called its wave 
+  impedance or characteristic impedance. This impedance is defined as 
+
+  $$Z_0=\sqrt{T m}$$ 
+
+  where $T$ is the string tension and $m$ is its mass per unit length. 
+
+  To show the most useful comparison between different instruments, we can 
+  scale the bridge admittance by the impedance of a typical string: we will use 
+  the top string. We can also adapt the frequency scale to take account of the 
+  different tunings: we will show a scale in semitones, starting from the 
+  fundamental frequency of the lowest string. The result, for the three chosen 
+  instruments, is shown in Fig.\ 8. The frequency scale covers 5 octaves, a 
+  frequency ratio of $2^5=32$. The scaled admittance needs no units: it is a 
+  dimensionless quantity. It directly describes the rate at which energy from 
+  the vibrating string can `leak' through the bridge into the instrument body. 
+  An informal description would be that the higher the level in the plot, the 
+  louder the played note is likely to be. Some relevant parameters for these 
+  three instruments are listed in Table 1. 
+
+  The three curves in Fig.\ 8 all show a pattern of peaks and dips. At low 
+  frequencies, there is a very simple interpretation of the peaks: they 
+  correspond to individual vibration modes of the respective instruments. 
+  However, things get more complicated at higher frequencies. Recall from 
+  section 2.2.7 that each mode contributes a peak with a characteristic 
+  bandwidth determined by its level of damping. It is usually characterised by 
+  the half-power bandwidth, the frequency range between the two points where 
+  the amplitude falls to $1/\sqrt{2}$ of the peak value. Energy is proportional 
+  to the square of amplitude, so these correspond to the points where the 
+  energy involved in the vibration has halved. On a decibel plot like the ones 
+  shown here, these points occur where the amplitude has fallen by 
+  approximately 3 dB (because $20 \log_{10} (1/\sqrt{2}) = -3.01$). In terms of 
+  the modal Q-factor which we have used to characterise damping, this 
+  half-power bandwidth is equal to the peak frequency divided by the Q-factor. 
+
+  Now we can learn something interesting by combining two facts that have been 
+  mentioned earlier. For any plate-based structure, like a guitar or a violin, 
+  the spacing between adjacent modal frequencies is, on average, constant (see 
+  section 3.2.4). On the other hand, it is an empirical observation that the 
+  modal damping of such structures usually shows, approximately, a constant 
+  Q-factor for all modes. So, roughly, the peaks are uniformly spaced along the 
+  frequency axis, while the half-power bandwidth of each peak increases 
+  approximately proportional to its centre frequency. The result is that the 
+  first few resonant peaks may be well separated, because the spacing is large 
+  compared to the bandwidth, but as we look higher in frequency, the spacing 
+  stays the same while the bandwidth increases, so the peaks begin to overlap. 
+  Eventually, there may be several modes with resonance frequencies within the 
+  half-power bandwidth of each separate mode: this number is called the modal 
+  overlap factor. 
+
+  Once modal overlap becomes significant like this, the admittance function at 
+  any particular frequency is influenced by several modal contributions. But 
+  these will all be in different phases, so that interference will occur. We 
+  can no longer rely on the fact that a peak corresponds to a resonance: peaks 
+  will occur where several overlapping modes have responses that combine 
+  constructively because of their phase relations. 
+
+  Returning to Fig.\ 8, all three of the curves show this pattern. (The 
+  argument given above doesn't apply directly to the banjo, which is not 
+  plate-based, but it was shown in section 4.2.4 that the modal density for a 
+  membrane increases with frequency, so the modal overlap increases even more 
+  rapidly than in a plate-based system.) There is a great deal that can be 
+  learned from the details in Fig.\ 8: so much so that we will need to take it 
+  in easy stages. A detailed look at the similarities and differences of the 
+  three instruments will be deferred until section 5.3. First, we will look at 
+  a deceptively simple question, often asked of stringed instrument makers: ``I 
+  like this instrument, but can you make it louder?'' 
+
+
+
+  ~[1] A. Zhang and J. Woodhouse, ``Reliability of the input admittance of 
+  bowed-string instruments measured by the hammer method'' ~ Journal of the 
+  Acoustical Society of America \textbf{136}, 3371-3381, (2014). 

@@ -1,0 +1,62 @@
+  We have already seen a derivation of the modal density for bending modes of a 
+  plate, in section 3.2.4. But there is a neat argument due to Weinreich [1] 
+  which shows how this result can be generalised to a range of systems of 
+  interest to us. Figure 1 shows a repeat of Fig.\ 1 from section 3.2.4, 
+  indicating the modes of a rectangular plate in 2D wavenumber space: they mark 
+  out a regular grid. But something very similar can be said for many other 
+  systems. The modes of a stretched string or a pinned-pinned bending beam 
+  correspond to points that are regularly spaced in wavenumber, along a line 
+  (i.e. in 1D wavenumber space). An acoustic volume, on the other hand, has 
+  points that form a regular grid filling 3D wavenumber space, according to eq. 
+  (6) of section 4.2. 
+
+  \fig{figs/fig-3d9226ce.png}{Figure 1. Modes of a rectangular plate of 
+  dimensions $0.6 \times 0.4$ m, plotted in wavenumber space (red stars). The 
+  blue curve encloses the set of modes with natural frequencies below a chosen 
+  frequency.} 
+
+  If we now want to ask how many modes have natural frequencies below some 
+  chosen value $\omega$, we first convert this into a limit of wavenumber $k$ 
+  using the equation of motion of the system in question. For any system 
+  satisfying the wave equation, in 1D, 2D or 3D, the answer is that wavenumber 
+  is simply proportional to frequency. But for bending problems, either for 
+  beams or for plates, the relation is that frequency is proportional to the 
+  square of wavenumber. So for all these systems, we can say that 
+
+  $$k \propto \omega^\alpha \tag{1}$$ 
+
+  where $\alpha=1$ for the wave equation and $\alpha = 1/2$ for bending 
+  problems. 
+
+  Now to find out the number of modes below $\omega$ we have to count the 
+  number of points on the wavenumber grid lying within a distance $k$ of the 
+  origin. The points are uniformly distributed over the line/plane/space, so 
+  for high frequencies this mode count is approximately proportional to the 
+  enclosed length/area/volume, depending on whether the dimension $d$ is 1, 2 
+  or 3. The result for the mode count $N(\omega)$ is that 
+
+  $$N(\omega) \propto k^d \propto \omega^{\alpha d} . \tag{2}$$ 
+
+  Now the modal density $n(\omega)$, which is the inverse of the mean spacing 
+  between adjacent modes, is given by the derivative of $N(\omega)$, so that 
+
+  $$n(\omega) \propto \omega^{\alpha d -1} . \tag{3}$$ 
+
+  The results can be collected in a table: 
+
+  A stretched string and an acoustic pipe both have constant modal density on 
+  average, and they share this behaviour with a bending plate. A bending beam 
+  has modal density that decreases as frequency increases. A membrane (like a 
+  drum or the head of a banjo) has modal density increasing proportional to 
+  frequency, and an acoustic volume has modal density increasing proportional 
+  to the square of frequency, as seen in Fig.\ 17 of section 4.2. 
+
+  The strictly regular grid in wavenumber space corresponds to particular 
+  special cases for each type of system. However, as was argued for the plate 
+  in section 3.2.4, the fact that the points cover the relevant wavenumber 
+  space in a statistically uniform manner remains true for the general case of 
+  all these systems. 
+
+  \sectionreferences{}[1] G. Weinreich, section 3.1.7 of ``Mechanics of musical 
+  instruments'', ed. A. Hirschberg, J. Kergomard and G. Weinreich; CISM Courses 
+  and Lectures no. 355, Springer-Verlag (1995) 

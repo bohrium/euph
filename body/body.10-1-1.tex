@@ -1,0 +1,186 @@
+  We will illustrate the idea of dimensional analysis by working through an 
+  example. Back in section 3.2.1 we found that the vibration of a bending beam 
+  is governed by the equation 
+
+  $$m \dfrac{\partial^2 w}{\partial t^2}+EI \dfrac{\partial^4 w}{\partial 
+  x^4}=0 \tag{1}$$ 
+
+  where $w(x,t)$ is the beam displacement at position $x$ and time $t$, and $m$ 
+  is the mass per unit length. The term $EI$ is called the ``bending rigidity'' 
+  or ``bending stiffness'', and is the product of the Young's modulus $E$ with 
+  a quantity $I$ which is called the second moment of area of the 
+  cross-section. For the particular case of a rectangular section there is a 
+  simple formula in terms of the width $b$ and the thickness $h$: 
+
+  $$I=\dfrac{1}{12} bh^3. \tag{2}$$ 
+
+  For any particular problem, there will be boundary conditions at the ends of 
+  the beam. These mean that the length $L$ of the beam enters the problem. So 
+  in total we have just three physical parameters: $EI$, $m$ and $L$. 
+
+  We are interested in how a particular resonance frequency $\Omega$ depends on 
+  these three parameters. It must some function 
+
+  $$\Omega = F(EI,m,L) . \tag{3}$$ 
+
+  We will try to find an expression for this function as a product of powers of 
+  the three parameters, because that is the only way that quantities with 
+  different units, or dimensions, can be combined: so try 
+
+  $$\Omega=A (EI)^\alpha m^\beta L^\gamma \tag{4}$$ 
+
+  where $A$ is a dimensionless scale factor, and $\alpha$, $\beta$ and $\gamma$ 
+  are the three powers we want to find. 
+
+  Next, we need the dimensions of the three parameters. The length $L$ is 
+  trivial: it is indeed a length. We will write this fact as $[L] = 
+  \mathrm{L}$, where the square brackets denote ``the dimensions of...'', and 
+  we write L, M and T for the dimensions length, mass and time. The mass per 
+  unit length satisfies $[m] = \mathrm{M} \mathrm{L}^{-1}$. We have to work a 
+  little harder to find the dimensions of $EI$. Young's modulus is measured in 
+  Pa: it has the same dimensions as pressure, i.e. force per unit area. So $[E] 
+  = \mathrm{M} \mathrm{L} \mathrm{T}^{-2} \times \mathrm{L}^{-2} = \mathrm{M} 
+  \mathrm{L}^{-1} \mathrm{T}^{-2}$. The second moment of area satisfies $[I] = 
+  \mathrm{L}^4$, as is obvious for equation (2). Combining these, $[EI] = 
+  \mathrm{M} \mathrm{L}^3 \mathrm{T}^{-2}$. Finally, $\Omega$ is a frequency, 
+  measured in radians per second, so $[\Omega] = \mathrm{T}^{-1}$. 
+
+  Now we put all these into equation (4), and insist that the left- and 
+  right-hand sides are dimensionally consistent. 
+
+  For that, we require 
+
+  $$\mathrm{T}^{-1} = (\mathrm{M} \mathrm{L}^3 \mathrm{T}^{-2})^\alpha 
+  (\mathrm{M} \mathrm{L}^{-1})^\beta \mathrm{L}^\gamma \tag{5}$$ 
+
+  Now we simply equate the powers of M, L and T on the two sides of the 
+  equation. This gives the three equations 
+
+  $$0=\alpha + \beta \tag{6}$$ 
+
+  $$0 = 3 \alpha -- \beta + \gamma \tag{7}$$ 
+
+  and 
+
+  $$-1=-2 \alpha \tag{8}$$ 
+
+  which can immediately be solved to give $\alpha = 1/2$, $\beta = -1/2$ and 
+  $\gamma= -2$. So equation (4) now says 
+
+  $$\Omega=A (EI)^{1/2} m^{-1/2} L^{-2} = \dfrac{A}{L^2} \sqrt{\dfrac{EI}{m}} . 
+  \tag{9}$$ 
+
+  For the particular case of a beam with a rectangular cross-section, we can 
+  simplify further. If the density of the material is $\rho$, then $m=\rho b h$ 
+  so that, using equation (2), 
+
+  $$\Omega= \dfrac{Ah}{12 L^2} \sqrt{\dfrac{E}{\rho}} . \tag{10}$$ 
+
+  The constant $A$ will depend on the particular boundary conditions, and on 
+  which modal frequency we are looking at. But in terms of the dependence on 
+  the parameters with dimensions, equation (10) gives a completely explicit 
+  description, valid for all modes and all boundary conditions. 
+
+  It is easy to see how this argument would generalise to other problems. In 
+  other areas of physics we might have to take account of extra dimensions, 
+  such as temperature and electric charge, but for a mechanical problem in 
+  which M, L and T are the only dimensions we need to take into account, we 
+  will always get three equations analogous to equations (6), (7) and (8). If 
+  the problem has no more than three parameters with dimensions, we will 
+  usually get an explicit solution as we saw here. 
+
+  But if there are more than three dimensioned parameters, there will never be 
+  enough equations for the number of unknowns. We can extend the beam example 
+  to give a simple example of what happens. Suppose that our beam of length $L$ 
+  has an additional concentrated mass $M$ attached to it, at a position $x=a$. 
+  The two parameters $M$ and $a$ must be added to the three we already had, and 
+  of course they have dimensions $[M] = \mathrm{M}$ and $[a] = \mathrm{L}$. We 
+  extend equation (4) to try 
+
+  $$\Omega=A (EI)^\alpha m^\beta L^\gamma M^\delta a^\epsilon \tag{11}$$ 
+
+  with two extra constants $\delta$ and $\epsilon$. We substitute the 
+  dimensions, enforce dimensional consistency, and obtain three equations 
+  analogous to (6), (7) and (8) which read 
+
+  $$0=\alpha + \beta + \delta \tag{12}$$ 
+
+  $$0 = 3 \alpha -- \beta + \gamma + \epsilon \tag{13}$$ 
+
+  and 
+
+  $$-1=-2 \alpha. \tag{14}$$ 
+
+  We can solve these for $\alpha$, $\beta$ and $\gamma$, leaving $\delta$ and 
+  $\epsilon$ undetermined: 
+
+  $$\alpha = 1/2, \beta = -1/2 -\delta, \gamma= -2 -- \delta -\epsilon . 
+  \tag{15}$$ 
+
+  Equation (11) can then be written 
+
+  $$\Omega= A \sqrt{\dfrac{EI}{m}} m^{-\delta} L^{-2 -\delta -\epsilon} 
+  M^\delta a^\epsilon $$ 
+
+  $$= \dfrac{A}{L^2} \sqrt{\dfrac{EI}{m}} \left(\dfrac{M}{mL} \right)^\delta 
+  \left(\dfrac{a}{L} \right)^\epsilon . \tag{16}$$ 
+
+  The result is the same expression we had before, with the addition of two 
+  terms involving undetermined powers $\delta$ and $\epsilon$. Those terms only 
+  make sense if what is inside the brackets in both cases is dimensionless --- 
+  otherwise arbitrary powers would cause havoc with our dimensional 
+  consistency. But in this simple example, it is obvious that both terms are 
+  indeed dimensionless: $M/mL$ is the ratio of the added mass to the total mass 
+  of the beam, and $a/L$ is the position of the extra mass as a fraction of the 
+  beam length. 
+
+  This example illustrates something known as the ``Buckingham Pi theorem''. If 
+  you have $N$ dimensions and $P > N$ variables in the problem, you expect to 
+  find $P-N$ dimensionless groups of parameters popping up, just as we have 
+  seen here. There are exceptions, and the full version of the theorem has some 
+  small print, but this simplified version is good enough for our needs here. 
+  For a bit more detail, see \tt{}this Wikipedia page\rm{}. 
+
+  In section 10.1, the example was given of scale models for wind-tunnel 
+  testing. The design of such tests relies on controlling a particular 
+  dimensionless parameter relevant to fluid flow, called the Reynolds Number. 
+  We can give a brief description of the derivation and relevance of this 
+  number. We will look at the case of flow of an incompressible fluid with 
+  density $\rho$, viscosity $\mu$, pressure $p$. The velocity field of the flow 
+  is written $\underline{u}$, and the gravitation acceleration is 
+  $\underline{g}$. The flow is governed by the Navier-Stokes equation: 
+
+  $$\rho \left(\dfrac{\partial \underline{u}}{\partial t} + (\underline{u} 
+  \cdot \nabla) \underline{u} \right) = \mu \nabla^2 \underline{u} -- \nabla p 
+  + \rho \underline{g} . \tag{17}$$ 
+
+  The Reynolds Number gives an order-of-magnitude estimate of the ratio of two 
+  of the terms in this equation: the inertia term $\rho (\underline{u} \cdot 
+  \nabla) \underline{u}$ and the viscosity term $\mu \nabla^2 \underline{u}$. 
+  If the flow has a typical speed $U$ and a typical length scale $L$, then 
+
+  $$\rho (\underline{u} \cdot \nabla) \underline{u} \sim \rho U^2 / L 
+  \tag{18}$$ 
+
+  and 
+
+  $$\mu \nabla^2 \underline{u} \sim \mu U / L^2. \tag{19}$$ 
+
+  The ratio is then 
+
+  $$R = \dfrac{\rho U L}{\mu}, \tag{20}$$ 
+
+  which is the Reynolds Number. When $R$ is very large, inertia effects 
+  dominate over viscous effects, and viscosity can be ignored. On the other 
+  hand when $R$ is small, viscosity dominates and inertia can be neglected. 
+  These two limits lead to flows with very different character. 
+
+  To get an impression of the difference, think about swimming in water. When 
+  humans swim, the Reynolds number is large, but for a swimming micro-organism 
+  the length scale is much smaller and the Reynolds Number becomes very small. 
+  Humans are aware of inertia effects in the water as they swim, but they are 
+  hardly aware of viscous drag. If you tried to swim in treacle, you would 
+  enter the regime of a micro-organism because the viscosity is much higher so 
+  the Reynolds Number becomes small. In the treacle, the moment you stopped 
+  moving your arms and legs you would stop moving: in order to ``coast'' 
+  through the water you rely on inertia. 

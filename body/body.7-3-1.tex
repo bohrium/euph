@@ -1,0 +1,222 @@
+  So far, we have treated damping in a rather cavalier, way, simply by 
+  analysing undamped systems, then finding a suitable damping factor or 
+  Q-factor to assign to each individual mode. For most purposes this is all 
+  that is required. However, occasionally it is necessary dig a little deeper, 
+  and the problem of coupling two strings via a soundboard mode is one of those 
+  occasions. The underlying issue is that, taken by themselves, the string 
+  modes and the body mode will have very different Q-factors: especially for 
+  metal strings, the strings will have far higher Q-factors (or far lower 
+  damping) than the body mode. When we want to analyse how things change when 
+  we couple these together, this difference of damping levels will play a 
+  significant role in the behaviour. We will first develop the basic theory, 
+  then apply it to the coupled-string problem. 
+
+  There is no completely general mathematical model of damping. This is in 
+  strong contrast to the behaviour of mass and stiffness for small vibration of 
+  any system. As we showed back in section 2.2.5, there are very strong reasons 
+  to expect any undamped system to be described by a mass matrix and a 
+  stiffness matrix, capturing the dominant behaviour of the potential energy 
+  and the kinetic energy of the system, respectively. However, a good 
+  indication of the behaviour to be expected from damped systems can be gained 
+  from a particular damping model. We showed in section 2.2.5 that undamped 
+  vibration of a system with $N$ degrees of freedom can be represented by the 
+  equation 
+
+  $$M \ddot{\mathbf{q}} + K \mathbf{q}= 0, \tag{1}$$ 
+
+  where $\mathbf{q}$ is a vector of generalised coordinates, $M$ is the mass 
+  matrix and $K$ is the stiffness matrix. Both matrices have dimensions $N 
+  \times N$. Physically, these equations can be interpreted as representing $N$ 
+  coupled harmonic oscillators. It seems very natural to extend this to damped 
+  systems by adding a new term by analogy with the expression for a damped 
+  harmonic oscillator derived in section 2.2.7, to represent $N$ coupled, 
+  damped oscillators: 
+
+  $$M \ddot{\mathbf{q}} + C \dot{\mathbf{q}} + K \mathbf{q}= 0, \tag{2}$$ 
+
+  where $C$ is the damping matrix or dissipation matrix. Damping governed in 
+  this way by the generalised velocities $\dot{\mathbf{q}}$ is called viscous 
+  damping. 
+
+  Now recall from section 2.2.5 that the undamped equation (1) can be derived 
+  from Lagrange's equations, and that the mass and stiffness matrices can be 
+  assumed symmetric because they arise from the quadratic expressions for the 
+  kinetic and potential energy respectively. A similar argument can be used to 
+  deduce that the damping matrix can also be assumed symmetric. Multiplying eq. 
+  (2) by $\dot{\mathbf{q}}^t$ (where $t$ denotes the transpose of the vector) 
+  gives 
+
+  $$\dot{\mathbf{q}}^t M \ddot{\mathbf{q}} + \dot{\mathbf{q}}^t C 
+  \dot{\mathbf{q}} + \dot{\mathbf{q}}^t K \mathbf{q}= 0$$ 
+
+  $$\therefore \dot{\mathbf{q}}^t C \dot{\mathbf{q}} = -\dfrac{d}{dt}\left[ 
+  \dfrac{1}{2}\dot{\mathbf{q}}^t M \dot{\mathbf{q}} + \dfrac{1}{2}\mathbf{q}^t 
+  C \dot{\mathbf{q}}\right] = -\dfrac{d}{dt}\left[ \mathrm{total~energy} 
+  \right] \tag{3}$$ 
+
+  making use of the fact that both $K$ and $M$ are symmetric. This makes it 
+  clear that the function 
+
+  $$F= \dfrac{1}{2} \dot{\mathbf{q}}^t C \dot{\mathbf{q}} \tag{4}$$ 
+
+  known as the Rayleigh dissipation function, is half the rate of dissipation 
+  of energy. This is another quadratic expression, in which we can choose the 
+  entries in the matrix to be symmetric. Working back via Lagrange's equations, 
+  with a generalised force 
+
+  $$Q_j=\dfrac{\partial F}{\partial \dot{q_j}} \tag{5}$$ 
+
+  representing the damping force, we arrive back at eq. (2). 
+
+  For the undamped system (1) we would find modes by calculating the 
+  eigenvalues and eigenvectors from 
+
+  $$K \mathbf{u}^{(n)}=\omega_n^2 M \mathbf{u}^{(n)} . \tag{6}$$ 
+
+  When we change to modal variables, or ``normal coordinates'', both $M$ and 
+  $K$ are diagonalised. It is not possible to do this for the system of eq. (2) 
+  — it is not in general possible to find a change of variables which 
+  diagonalises three matrices simultaneously. There are special cases for which 
+  it is possible, for example if 
+
+  $$C= \alpha M + \beta K \tag{7}$$ 
+
+  where $\alpha, \beta$ are constants (so-called ``Rayleigh damping''). This 
+  special form is often assumed for convenience, e.g. in Finite Element 
+  packages, but there is usually no physical justification whatever for this 
+  assumption. If the damping in a system is modelled by a physically sensible 
+  matrix $C$, standard modal analysis will usually not work. We need a 
+  different mathematical formalism to find what has become of the modes. 
+
+  A useful approach, which is also widely used to analyse systems in control 
+  theory, is to reformulate the governing equations as a set of $2N$ 
+  first-order equations, rather than the $N$ second-order equations we have at 
+  present. This change is simply an algebraic trick, with no physical 
+  significance. Define a new vector 
+
+  $$\mathbf{y} = \begin{bmatrix}\mathbf{q}\\ 
+  \dot{\mathbf{q}}\end{bmatrix},~~~\dot{\mathbf{y}} = 
+  \begin{bmatrix}\dot{\mathbf{q}}\\\ddot{\mathbf{q}}\end{bmatrix} . \tag{8}$$ 
+
+  Then 
+
+  $$\dot{\mathbf{y}} = \begin{bmatrix}0 \& I\\ -M^{-1}K \& 
+  -M^{-1}C\end{bmatrix} \begin{bmatrix}\mathbf{q}\\ 
+  \dot{\mathbf{q}}\end{bmatrix} = A \mathbf{y} \tag{9}$$ 
+
+  where $0$ denotes the $N \times N$ matrix of zeros, $I$ denotes the $N \times 
+  N$ identity matrix, and the final matrix $A$ is a $2N \times 2N$ matrix. 
+
+  The top half of this set of equations simply says 
+  $\dot{\mathbf{q}}=\dot{\mathbf{q}}$, while the bottom half says 
+
+  $$\ddot{\mathbf{q}} = -M^{-1} K \mathbf{q} -- M^{-1} C \dot{\mathbf{q}} 
+  \tag{10}$$ 
+
+  which is a rearranged version of eq. (2). 
+
+  We can now look for ``modal'' solutions of eq. (9): try 
+
+  $$\mathbf{y} = \mathbf{u} e^{\lambda t} . \tag{11}$$ 
+
+  Then we require 
+
+  $$A \mathbf{u} = \lambda \mathbf{u} \tag{12}$$ 
+
+  which is a standard matrix eigenvalue-eigenvector problem. It is difficult to 
+  solve by hand for problems of any realistic size, but it is very easy to 
+  compute answers. 
+
+  Note that the matrix $A$ is not symmetric, so the eigenvalues $\lambda$ will 
+  in general be complex. From eq. (11), the imaginary part of $\lambda$ will 
+  give the frequency. The real part will be negative, equal to minus the decay 
+  rate. Also, we no longer expect the useful result that eigenvectors are 
+  orthogonal. There are, however, equivalent (but more complicated) relations 
+  between the eigenvectors, which allow things like step response and impulse 
+  response to be calculated in a similar way that we did earlier. We will not 
+  go into the full details here, we will simply use the results: see for 
+  example Chapter 8 of Newland [1]. 
+
+  We can now apply the approach to the coupled-strings problem. We have two 
+  strings of length $L$, with tension $T_j$, mass per unit length $m_j$ and 
+  Q-factor $Q_j$, where $j=1,2$. At position $x=0$ both strings are rigidly 
+  anchored, while at $x=L$ they are both attached to a mass $m$, which is 
+  itself attached to a fixed base through a parallel combination of a spring of 
+  stiffness $k$ and a dashpot of strength $c$. We will only consider the first 
+  resonance of each string, considered in isolation. So suppose that the 
+  displacement of string $j$ is given approximately by 
+
+  $$w_j(x,t) = b_j(t) \sin \dfrac{\pi x}{L} + a(t)\dfrac{x}{L} \tag{13}$$ 
+
+  where $a(t)$ is the displacement of the oscillator representing the body 
+  mode. 
+
+  We now calculate the potential and kinetic energies of the system, and deduce 
+  the mass and stiffness matrices for the three degree-of-freedom system 
+  parameterised by the vector $\mathbf{q} = [a~b_1~b_2]^t$. The potential 
+  energy is given by 
+
+  $$V = \frac{1}{2} k a^2 +\sum_j{\dfrac{1}{2}T_j \int_0^L{\left( 
+  \dfrac{\partial w_j}{\partial x} \right)^2 dx}} $$ 
+
+  $$= \frac{1}{2} k a^2 +\sum_j{\dfrac{1}{2}T_j \int_0^L{\left( \dfrac{b_j 
+  \pi}{L} \cos \dfrac{\pi x}{L}\right)^2 dx}} $$ 
+
+  $$= \frac{1}{2} k a^2 +\sum_j{\dfrac{\pi^2 T_j b_j^2}{4L}} \tag{14}$$ 
+
+  so that the stiffness matrix is 
+
+  $$K =\begin{bmatrix}k \& 0 \& 0\\ 0 \& \frac{\pi^2 T_1}{2L} \& 0 \\ 0 \& 0 \& 
+  \frac{\pi^2 T_12}{2L}\end{bmatrix} . \tag{15}$$ 
+
+  The kinetic energy is given in a similar way, by 
+
+  $$T = \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j \int_0^L{\dot{w}_j^2 
+  dx}} $$ 
+
+  $$= \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j \int_0^L{\left[\dot{b}_j 
+  \sin \dfrac{\pi x}{L} + \dfrac{\dot{a}x}{L}\right]^2 dx}} $$ 
+
+  $$= \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j \left\lbrace \dot{b}_j^2 
+  \dfrac{L}{2} + \dfrac{\dot{a}^2}{L^2} \dfrac{L^3}{3} + \dfrac{2 \dot{a} 
+  \dot{b}_j}{L} \int_0^L{x \sin \dfrac{\pi x}{L} dx}\right\rbrace }$$ 
+
+  $$= \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j \left\lbrace \dfrac{L}{2} 
+  \dot{b}_j^2 + \dfrac{L}{3} \dot{a}^2 + \dfrac{2 \dot{a} \dot{b}_j}{L} 
+  \dfrac{L^2}{\pi}\right\rbrace } \tag{16}$$ 
+
+  after using integration by parts on the final term. It follows that the mass 
+  matrix is 
+
+  $$M =\begin{bmatrix}m+L(m_1+m_2)/3 \& m_1 L /\pi \& m_2 L/\pi\\ m_1 L /\pi \& 
+  m_1 L /2 \& 0 \\ m_2 L /\pi \& 0 \& m_2 L /2\end{bmatrix} . \tag{17}$$ 
+
+  Finally, we need the damping matrix. The rate of energy dissipation in the 
+  body dashpot is $c \dot{a}^2$, so 
+
+  $$C = \begin{bmatrix}c \& 0 \& 0 \\ 0 \& c_1 \& 0 \\ 0 \& 0 \& c_2 
+  \end{bmatrix} \tag{18}$$ 
+
+  where the equivalent dashpot strengths of the two string modes are given by 
+
+  $$c_j = \dfrac{\pi \sqrt{T_j m_j}}{2 Q_j} . \tag{19}$$ 
+
+  We can then assemble the $6 \times 6$ matrix $A$ from eq. (9), and compute 
+  its eigenvalues and eigenvectors. There, will of course, be 6 of them: but 
+  surely we are only expecting to see 3 modes for this system? The answer to 
+  that puzzle is simple. Each mode appears twice, related to each other by 
+  being complex conjugates. The matrix $A$ is real, so we can deduce from eq. 
+  (12) that if $\mathbf{u}$ is an eigenvector with eigenvalue $\lambda$ then 
+  $\mathbf{u}^*$ must also be an eigenvector with eigenvalue $\lambda^*$. 
+
+  Finally, we can calculate the ``pluck response'' using the formula from 
+  Newland [1]. For the una corda case where only one string is initially 
+  excited, we apply a step function of generalised force to $b_1$ and calculate 
+  the transient response $a(t)$. To obtain the case where both strings are 
+  excited equally, we first calculate the corresponding response when a step 
+  function of generalised force is applied to $b_2$, then add the result to the 
+  previous case. We are still dealing with a linear system, so we can use 
+  superposition to obtain the combined response. 
+
+  \sectionreferences{}[1] David E. Newland; ``Mechanical Vibration Analysis and 
+  Computation'', Longman Scientific and Technical, Harlow (1989). 

@@ -1,0 +1,60 @@
+  To obtain an index of merit for the selection of a material for a soundboard, 
+  we can combine two things that are covered elsewhere on this site. The aim is 
+  to maximise the typical level of the bridge admittance of our soundboard, 
+  keeping the plan dimensions of the soundboard fixed but adjusting the 
+  thickness in order to keep the natural frequencies in roughly their usual 
+  position. Specifically, we can keep the modal density fixed. We already know 
+  from section 3.2.4 that the modal density of a rectangular plate of sides $a 
+  \times b$ and thickness $h$ made from isotropic material with Young's modulus 
+  $E$, Poisson's ratio $\nu$ and density $\rho$ is 
+
+  $$n= \dfrac{ab}{2 \pi h} \sqrt{\dfrac{3 \rho (1-\nu^2)}{E}} . \tag{1}$$ 
+
+  We are keeping $a$ and $b$ fixed, and we will ignore the small influence of 
+  $\nu$. The conclusion is that to keep the modal density constant for 
+  different materials we want to scale 
+
+  $$h \propto \sqrt{\dfrac{\rho}{E}} . \tag{2}$$ 
+
+  We now need a formula for the typical level of the admittance of the plate, 
+  when driven at a point representing the bridge. We can make use of a result 
+  that will be described properly a little later on, in section 5.3.2. It is 
+  based on a general result called ``Skudrzyk's mean value method'', which says 
+  that the mean value of the decibel plot of the plate admittance is exactly 
+  the same as the admittance of an infinite plate with the same thickness and 
+  material properties. This infinite-plate admittance has a simple closed-form 
+  solution, given in eq. (2) of section 5.3.2: 
+
+  $$Y_\infty=\frac{1}{4h^2} \sqrt{\frac{3(1-\nu^2)}{E \rho}} . \tag{3}$$ 
+
+  This gives us what we want, a simple measure of the typical level of the 
+  admittance which captures its dependence on the material properties. 
+  Substituting for $h$ from eq. (1), the index of merit that we wish to 
+  maximise is thus proportional to 
+
+  $$\dfrac{E}{\rho} \times \sqrt{\dfrac{1}{E \rho}} = \sqrt{\dfrac{E}{\rho^3}} 
+  . \tag{4}$$ 
+
+  Since the square root is a monotonic function, we will obtain the same answer 
+  by maximising the combination $E/\rho^3$. 
+
+  We can write the quantity from eq. (4) in a different way. The speed of sound 
+  in the material is given by 
+
+  $$c=\sqrt{\dfrac{E}{\rho}}\tag{5}$$ 
+
+  so that we can write 
+
+  $$ \sqrt{\dfrac{E}{\rho^3}} = \dfrac{c}{\rho}. \tag{6}$$ 
+
+  The final step is to take account of the fact that wood is by no means 
+  isotropic. An orthotropic material has two different Young's moduli $E_1$ and 
+  $E_2$ in two perpendicular directions: in the case of wood these would be 
+  ``along the grain'' and ``across the grain''. The full details of orthotropic 
+  plate vibration are more complicated: we will return to it later (see section 
+  ?). But for now, it is good enough to use a standard approximation. We get 
+  roughly the right answer if we replace $E$ everywhere in this section by the 
+  combination $\sqrt{E_1E_2}$. This geometric mean of the two moduli has a very 
+  simple representation on the logarithmic axes of the Ashby plots: it falls at 
+  the mid-point of the two separate moduli, in much the same way that an 
+  arithmetic mean would fall at the midpoint on a linear scale. 

@@ -1,0 +1,110 @@
+  In this section we derive the expressions for minimum bow force and maximum 
+  bow force used in Schelleng's diagram. These build on earlier work by Raman, 
+  but for brevity I will call them ``Schelleng's'' limits. 
+
+  The first step is to calculate the slipping speed $v_s$ during an ideal 
+  Helmholtz motion. If the bow speed is $v_b$ and the bowing point is at 
+  position $\beta L$ on a string with vibrating length $L$, we can calculate 
+  $v_s$ easily from the condition that the integral of the string velocity over 
+  a complete period must be zero, in order that the string has no net sideways 
+  displacement. In an ideal Helmholtz motion with period $P$, the string is 
+  sticking for time $(1-\beta) P$ and slipping for time $\beta P$ in every 
+  cycle. So the condition is 
+
+  $$v_b (1-\beta) P + v_s \beta P = 0 \tag{1}$$ 
+
+  so that 
+
+  $$v_s=-v_b \left(\dfrac{1-\beta}{\beta} \right)=-v_b \left(\dfrac{1}{\beta} 
+  -1 \right) \tag{2}$$ 
+
+  and the velocity jump from sticking to slipping is $v_b-v_s = v_b/\beta$. 
+
+  \fig{figs/fig-0797953f.png}{Figure 1. Coefficient of friction against string 
+  velocity, for a case with bow speed $v_b=0.1$ m/s, illustrating the condition 
+  for the maximum bow force when the Helmholtz slip speed $v_s=1$ m/s.} 
+
+  Schelleng's formula for the maximum bow force now follows immediately from 
+  the graphical construction relating to frictional hysteresis, explained in 
+  section 9.2. In order for Helmholtz motion to be possible under the 
+  constraints of the hysteresis rule, the slip speed $v_s$ must be outside the 
+  range of the hysteresis. The limiting case is illustrated in Fig.\ 1, for a 
+  case with $v_b=0.1$ m/s and $v_s =1$ m/s. The sloping line passes through the 
+  point corresponding to $v_s$, and if it were any further to the left, $v_s$ 
+  would be inaccessible. We thus obtain the force criterion for the maximum bow 
+  force $f_{max}$ by equating two slopes: 
+
+  $$\dfrac{f_{max} (\mu_s -- \mu_d)}{v_v/\beta}=2 Z_0 \tag{3}$$ 
+
+  so that 
+
+  $$f_{max}=\dfrac{2Z_0 v_b}{\beta (\mu_s -- \mu_d)} \tag{4}$$ 
+
+  where $Z_0$ is the characteristic impedance of the string, $\mu_s$ is the 
+  maximum coefficient of friction during sticking (1.2 for the case plotted in 
+  Fig.\ 1) and $\mu_d$ is the coefficient of sliding friction at the slip speed 
+  $v_s$. 
+
+  The condition for minimum bow force needs to take energy dissipation into 
+  account. Schelleng modelled the body as a mechanical resistance (or 
+  ``dashpot'') with impedance $R$, assumed to be much greater than the 
+  impedance of the string, $Z_0 = \sqrt{Tm}$ where $T$ is the tension and $m$ 
+  the mass per unit length. This dashpot is driven into motion by the force at 
+  the bridge. For ideal Helmholtz motion, we know that this is a sawtooth wave. 
+  From the geometry, we can deduce the details: for a note with fundamental 
+  frequency $f_0$ it is a ramp with slope $Tv_b/\beta L$, interrupted by jumps 
+  of magnitude $-Tv_b/\beta L f_0=-2v_b Z_0/\beta$ using the standard formula 
+
+  $$f_0=\dfrac{1}{2L}~\sqrt{\dfrac{T}{m}} . \tag{5}$$ 
+
+  The body dashpot will respond to this force with a velocity waveform of the 
+  same shape, divided by the factor $R$. We can integrate this to give the 
+  displacement at the bridge: one cycle can be written in the form 
+
+  $$y=\dfrac{T v_b t^2}{2 \beta L R} + K, \mathrm{~~~~~}-\dfrac{1}{2f_0} < t < 
+  \dfrac{1}{2f_0} \tag{6}$$ 
+
+  where $K$ is a constant of integration. We have chosen an interval of time 
+  which makes the displacement waveform symmetrical, by choosing $t=0$ to occur 
+  in the middle of one ramp phase of the Helmholtz sawtooth. This ensures that 
+  successive cycles of the displacement waveform join up neatly, with a 
+  discontinuity of slope but no discontinuity of displacement. 
+
+  This displacement at the bridge creates additional force at the bow. 
+  Schelleng used a simple approximation at this stage, by assuming that the 
+  bowed point is close to the bridge. The short section of string between 
+  bridge and bow can then be treated quasi-statically, because it is 
+  approximately straight for nearly all the time. It follows that the 
+  perturbing force at the bow is given by 
+
+  $$f_{pert} \approx \dfrac{Ty}{\beta L} = \dfrac{T^2 v_b t^2}{2 \beta^2 L^2 R} 
+  + \dfrac{TK}{\beta L} . \tag{7}$$ 
+
+  The constant of integration is determined by noting that the perturbing force 
+  must be (approximately) zero during slipping because the total force is then 
+  uniquely determined by the friction curve. Slipping occurs at the moment when 
+  the displacement waveform has its slope discontinuity, corresponding to the 
+  flyback of the sawtooth, so we set $f_{pert}=0$ at $t=1/2f_0$. The result is 
+
+  $$\dfrac{TK}{\beta L} \approx -\dfrac{T^2 v_b}{8f_0^2 \beta^2 L^2 R}= 
+  -\dfrac{Z_0^2 v_b}{2 \beta^2 R} . \tag{8} $$ 
+
+  For the Helmholtz motion to be possible, the force $f_{pert}$ must evoke an 
+  equal and opposite component of the friction force, which from equation (7) 
+  will be a parabolic arch with peak value $-TK/\beta L$ at time $t=0$. So 
+  finally, the condition for minimum bow force is that this value, added to the 
+  steady friction force $f_b \mu_d$, just reaches the limiting value $f_b 
+  \mu_s$. Thus 
+
+  $$f_{min} \approx \dfrac{Z_0^2 v_b}{2 R \beta^2 (\mu_s-\mu_d)} . \tag{9}$$ 
+
+  This is Schelleng's result. 
+
+  Combining this with equation (4), we can deduce 
+
+  $$\dfrac{f_{max}}{f_{min}}=4 \beta \dfrac{R}{Z_0} . \tag{10}$$ 
+
+  It follows that, within these approximations, there is a value $\beta=Z_0/4R$ 
+  below which the minimum bow force is bigger than the maximum bow force. In 
+  other words, there should be a limit to how near the bridge the bow can be 
+  placed, if Helmholtz motion is to be possible. 

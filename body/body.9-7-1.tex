@@ -1,0 +1,87 @@
+  The concept of Centre of Percussion is relevant to many problems in 
+  mechanics, not only to violin bows. One very clear example is that it defines 
+  the ``sweet spot'' of a baseball bat or cricket bat. Figure 1 shows a sketch 
+  of the situation we are interested in, illustrated with a baseball bat. The 
+  bat is pivoted about a point P, and is free to swing in a plane, displaced by 
+  an angle $\theta$. The centre of mass G lies a distance $L_{\mathrm{G}}$ from 
+  P. The bat has total mass $M$, and its moment of inertia about G is 
+  $I_{\mathrm{G}}$. The moment of inertia about P can then be found by the 
+  parallel axis theorem: 
+
+  $$I_{\mathrm{P}}=I_{\mathrm{G}}+ML_{\mathrm{G}}^2. \tag{1}$$ 
+
+  \fig{figs/fig-3b1ce65b.png}{Figure 1. Sketch of a swinging baseball bat} 
+
+  Initially, the bat is hanging vertically at rest. A horizontal impulse $F$ is 
+  then applied at a point a distance $x$ from the pivot P. There will in 
+  general be an impulsive reaction at the pivot, $R$. We are interested in the 
+  angular velocity $\dot{\theta}$ immediately after the impulse: call this 
+  $\Omega$. 
+
+  The equation ``impulse equals change in momentum'' applied to horizontal 
+  motion gives 
+
+  $$F+R=M L_{\mathrm{G}} \Omega \tag{2}$$ 
+
+  since the horizontal velocity of G is $L_{\mathrm{G}} \Omega$ immediately 
+  after the impulse. We can also take moments about P, and write down the 
+  angular version of the same general equation: 
+
+  $$Fx=I_{\mathrm{P}} \Omega . \tag{3}$$ 
+
+  Eliminating $\Omega$ between these two equations gives 
+
+  $$ F+R=\frac{ML_{\mathrm{G}}Fx}{I_{\mathrm{P}}} . \tag{4}$$ 
+
+  Now the centre of percussion is defined to be the position $x$ which gives 
+  $R=0$. From equation (4), this position is given by 
+
+  
+  $$x=\frac{I_{\mathrm{P}}F}{ML_{\mathrm{G}}F}=\frac{I_{\mathrm{P}}}{ML_{\mathrm{G}}}. 
+  \tag{5}$$ 
+
+  Using equation (1), we can deduce that 
+
+  $$x=\frac{I_{\mathrm{G}}+ML_{\mathrm{G}}^2}{ML_{\mathrm{G}}} = 
+  L_{\mathrm{G}}+\frac{I_{\mathrm{G}}}{ML_{\mathrm{G}}}. \tag{6}$$ 
+
+  Since the final term in this equation is always positive, we see that the 
+  centre of percussion is always further from the pivot than G. 
+
+  For the particular case of a uniform rod of length L, pivoted at one end, we 
+  have $L_{\mathrm{G}}=L/2$ and $I_{\mathrm{G}}=ML^2/12$, so that equation (6) 
+  gives $x=2L/3$. This tells us roughly where to expect to find the centre of 
+  percussion for a violin bow, since the bow stick is not so very different 
+  from a uniform rod. With the pivot point at the frog, the extra mass of the 
+  frog makes relatively little difference. 
+
+  If you want to find the centre of percussion experimentally, a direct 
+  determination would involve a force sensor to measure the reaction $R$. But 
+  there is an easier way, requiring no special equipment (and thus suitable for 
+  a bow-maker to use in their workshop). Returning to Fig.\ 1, we can easily 
+  write down the governing equation for free swinging of the bat or bow about 
+  P: 
+
+  $$I_{\mathrm{P}} \ddot{\theta} = -MgL_{\mathrm{G}} \sin\theta \tag{7}$$ 
+
+  where $g$ is the acceleration due to gravity. It follows that 
+
+  $$\ddot{\theta} =-\frac{g}{x} \sin \theta \tag{8}$$ 
+
+  from equation (5). Now compare this with the corresponding equation for the 
+  swinging of a simple pendulum of length $L$, which we saw in section 8.2.1: 
+
+  $$\ddot{\theta} =-\frac{g}{L} \sin \theta. \tag{9}$$ 
+
+  So $x$ is the length of a simple pendulum which swings in exact synchrony 
+  with the object we are interested in. The measurement can thus be done in the 
+  way shown in Fig.\ 2. The bow is hung from the same pivot rod as a simple 
+  pendulum made from a heavy object (a steel nut in the picture) and a length 
+  of thread. You set the two things swinging and adjust the length of the 
+  thread until they swing together. The only pitfall to watch out for is that 
+  the vibration described by equations (8,9) is nonlinear: the swing period 
+  will get longer when the amplitude is bigger. So the two amplitudes should be 
+  kept the same. 
+
+  \fig{figs/fig-44169b76.png}{Figure 2. Measuring the position of the centre of 
+  percussion of a violin bow by comparing the swing with a simple pendulum.} 

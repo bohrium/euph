@@ -1,0 +1,93 @@
+  It is useful to understand exactly how a temperature-based friction model can 
+  be incorporated into the simulation approach described in section 9.2. This 
+  sheds some light on the different behaviour of alternative choices of model. 
+  First, a reminder of how the original friction-curve model is dealt with. At 
+  each time step, the new values of friction force and string velocity are 
+  found by the geometric construction illustrated in Fig.\ 1, which is a repeat 
+  of Fig.\ 7 from section 9.2. 
+
+  The history of the string motion allows us to compute the current value of 
+  the variable we called $v_h$, and this determines the position of a sloping 
+  straight line. We then have to find the intersection of that straight line 
+  with the curve representing friction force as a function of velocity, 
+  including the vertical segment which represents the range of possible values 
+  of force during sticking. Three possible positions of the straight line are 
+  shown, and two versions of the friction-velocity curve corresponding to 
+  different values of the bow force. For the solid red friction curve, the blue 
+  line labelled c indicates an ambiguity, which is resolved by a hysteresis 
+  loop involving jumps of force and velocity, as illustrated in Fig.\ 2 (which 
+  is another repeat of an earlier figure). 
+
+  The original thermal friction model is based on the assumption that the the 
+  friction force is proportional to the normal bow force, and that the 
+  coefficient of friction is a function $\mu(T)$ of temperature $T$ alone. In 
+  order to ensure that the friction force always opposes the direction of 
+  sliding motion, the friction force $f$ must then take the form 
+
+  $$f=-F_b \mu(T) \mathrm{sgn}(v) \tag{1}$$ 
+
+  where $F_b$ is the bow force, and $\mathrm{sgn}(v)$ denotes the sign 
+  function, equal to $\pm1$ depending on whether $v$ is positive or negative. 
+  What this means for the simulation is that at each time step we first 
+  calculate the temperature, and hence obtain $\mu$, then to deal with the 
+  $\mathrm{sgn}(v)$ term we solve a version of the graphical construction 
+  illustrated in Fig.\ 3. This function has a vertical portion representing the 
+  state of sticking, but during sliding the function is simply constant, so 
+  there can be no jumps and no hysteresis loop. 
+
+  There is another possible temperature-based friction model we could have 
+  explored. The measurements on the bulk properties of rosin shown in Fig.\ 8 
+  of section 9.6 suggest that over most of the relevant temperature range rosin 
+  behaves predominantly as a viscous liquid. That would suggest a friction law 
+  taking the general form 
+
+  $$f=-F_b \zeta(T) v . \tag{2}$$ 
+
+  The function $\mathrm{sgn}(v)$ has been replaced by simple proportionality to 
+  $v$, because a viscous shear force is proportional to shear rate. This factor 
+  $v$ achieves the desired effect of reversing direction according to the sign 
+  of the sliding velocity, but it has a very drastic effect on the predicted 
+  behaviour. Figure 4 shows the graphical representation equivalent to Figs.\ 1 
+  and 3. This time, there is no barrier whatever representing ``sticking'' 
+  behaviour. Simulations based on such a model will regularly show ``forward 
+  slipping'', something that is never (or virtually never) seen in 
+  measurements. 
+
+  A viscous-based model like this is clearly not, therefore, a good candidate 
+  for the true friction law. The explanation for this apparent conflict with 
+  the measured properties of rosin lies in the particular conditions of those 
+  measurements. The rheometer tests used extremely small strains and strain 
+  rates, in order to keep the behaviour in the linear range. But the bowed 
+  string motion we are interested in involves intervals of gross sliding. This 
+  will take the material well outside the range of the rheometer tests. 
+
+  For an extension of the original thermal model to allow the possibility of an 
+  initial jump in velocity (and hence in measured bridge force) we need to look 
+  for something different. There is a very simple, if entirely ad hoc, approach 
+  to that question which is motivated by Figs.\ 1 and 3. We can replace the 
+  function $\mathrm{sgn}(v)$ in equation (1) by something like the function 
+  plotted in Fig.\ 5. The middle one of the three blue lines shows that this 
+  function can exhibit multiple intersections, and therefore sometimes predict 
+  jumps and hysteresis. But note that the range of velocity plotted here is 
+  much wider than in Fig.\ 1: the red curve here has a falling shape which is 
+  much gentler than the original friction curve. 
+
+  For this example I have used a hyperbolic shape to replace the flat portion 
+  of the function $\mathrm{sgn}(v)$. It has a horizontal asymptote at the value 
+  1, and it is then fully defined by two parameters: a vertical asymptote at a 
+  speed $v_{as}$, and a value $k_{lim}$ as the sliding speed tends to zero. The 
+  equation of the curve then takes the form 
+
+  $$(f-1)(v-v_{as})=-v_{as} (k_{lim}-1) . \tag{3}$$ 
+
+  The particular function plotted here has $v_{as}=0.8$ m/s and $k_{lim}=2$, 
+  which are the parameter values used for the simulation examples shown in 
+  section 9.6. 
+
+  With this modified model, we can still calculate a form for the required 
+  temperature-dependent friction coefficient by requiring that the simulated 
+  results for steady sliding agree with the original measurements. The result, 
+  when the term $\mathrm{sgn}(v)$ in equation (1) is replaced by the particular 
+  function plotted in Fig.\ 5, is shown in Fig.\ 6: it is still broadly in line 
+  with expectations based on the rheometer tests and glass transition range of 
+  violin rosin. 

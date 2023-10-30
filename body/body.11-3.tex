@@ -1,0 +1,1090 @@
+
+
+  Having covered some background material relevant to a wide range of musical 
+  wind instruments, it is time to turn to a more detailed look at the main 
+  families of instruments. We will begin with the reed instruments, starting 
+  with the clarinet because this is arguably the most-studied member of the 
+  family. We will find some surprisingly close analogies with the behaviour of 
+  a bowed string, which we studied in Chapter 9. Later in this section we will 
+  look at the soprano saxophone, as an example of an instrument with a conical 
+  bore rather than a cylindrical bore like the clarinet. This too will have an 
+  analogy with bowed string behaviour. If you have read Chapter 9 before 
+  reaching this point, these analogies will make immediate sense to you. But if 
+  you have dipped in at this point without knowing much about bowed strings, 
+  you might find it helpful to break off here and take a look at the next link 
+  before continuing this section. It gives a short, non-technical summary of 
+  some key points of bowed-string behaviour. 
+
+  We have already looked at some aspects of the linear acoustics of wind 
+  instrument tubes, in section 11.1, so the main emphasis in this section will 
+  be on the excitation mechanism of reed instruments, and the consequences of 
+  that for sound and playing behaviour. For an immediate impression of how 
+  important the excitation mechanism is, look at \tt{}this rather amusing 
+  video\rm{}. In it, Joe Wolfe demonstrates what happens if you swap the 
+  mouthpieces of a flute and a clarinet. The clear conclusion is that any 
+  roughly cylindrical instrument played with a clarinet mouthpiece sounds very 
+  much like a clarinet, while one played with a flute mouthpiece sounds like a 
+  flute. 
+
+  For both the clarinet and the saxophone examples, we will use computer 
+  simulations based on an idealised model to produce diagrams somewhat 
+  analogous to the Schelleng diagram for a bowed string (see the previous link 
+  for an explanation). These give an indication of how a player might perceive 
+  the variation of behaviour, depending on how they control the way they blow 
+  into the instrument. 
+
+  \samsection{A. Simplest model of the clarinet} 
+
+  We have already given a schematic description of how a clarinet mouthpiece 
+  works, back in section 8.5. That description was qualitatively correct, but 
+  now we can look at a version based on explicit modelling. Figure 1 shows a 
+  sketch. The reed is a tapered, flexible piece of natural cane or synthetic 
+  material, which is clamped against the rigid tube wall. The player seals 
+  their lips around the mouthpiece and reed, and they blow air in. As indicated 
+  in the sketch, there is a concentrated air jet in the narrow gap, then inside 
+  the mouthpiece it breaks up into turbulent eddies and dissipates the kinetic 
+  energy. (Look back at Figs.\ 1 and 2 in section 11.2 for a reminder about 
+  laminar and turbulent flows: the concentrated air jet is laminar in the 
+  narrow gap past the reed tip.) For the purposes of this simple description, 
+  we will assume that the pressure inside the player's mouth is simply 
+  constant. This is not always true, though, in real performance: expert 
+  players may manipulate the resonances of their vocal tract to make subtle 
+  adjustments. 
+
+  We get a reasonable approximation to the physical effects if we assume that 
+  the simplest form of Bernoulli’s law applies to the jet in the region where 
+  it passes over the reed surface. The high speed of the jet produces a reduced 
+  pressure compared to the mouth pressure acting on the lower face of the reed. 
+  This pressure difference tends to draw the reed inwards, and eventually to 
+  close it against the “lay”, the rigid lip and side plates of the mouthpiece. 
+  As explained in the next link, this gives an explicit formula for the volume 
+  flow rate of air through the gap, as a function of the pressure difference 
+  between the player’s mouth and the inside of the mouthpiece. 
+
+  This function is plotted in Fig.\ 2, using parameter values appropriate for a 
+  clarinet reed. The exact shape depends on a small number of parameters: the 
+  width and height of the initial gap between reed and lay, and the stiffness 
+  of the reed. Of course, the reed has resonances — the previous link show how 
+  to include the lowest resonance in our modelling. We will come back to this a 
+  little later, at which time the resonance frequency and damping factor will 
+  need to be added to the list of parameters. But for the moment we will assume 
+  that the playing frequency is well below the reed’s first resonance, in which 
+  case the reed will behave like a simple spring. 
+
+  Figure 2 also reminds us of another key ingredient of the model developed in 
+  section 8.5. In a simulation of the transient response, at each time step we 
+  first calculate the incoming pressure wave, returning down the clarinet tube 
+  after reflecting from the tone-holes and bell. This incoming pressure 
+  determines the position of a sloping straight line: two examples of possible 
+  positions are shown in Fig.\ 2. The pressure and volume flow rate at the next 
+  time step are determined by finding the intersection between the straight 
+  line and the nonlinear curve. The details governing the position and slope of 
+  the straight line were set out in section 8.5.3. 
+
+  The plot in Fig.\ 2 shows the volume flow rate as a function of the pressure 
+  difference between the inside and the outside of the mouthpiece. However, for 
+  a model of the sound generation inside the instrument we want to express it 
+  is a function of the actual pressure $p(t)$ just inside the mouthpiece. To 
+  achieve this, we simply need to add the player’s mouth pressure. (Remember 
+  that for this introductory account we are regarding this mouth pressure as 
+  being constant: we are neglecting the effect of resonances inside the 
+  player's mouth.) As the player increases their mouth pressure, the curve is 
+  shifted progressively to the right, as shown in Fig.\ 3. 
+
+  We have already talked about the result of this shift, back in section 8.5. 
+  When the mouth pressure is low, as in the red curve in Fig.\ 3, the 
+  mouthpiece behaves like a mechanical resistance, tending to dissipate the 
+  energy associated with any pressure variation inside the tube. But once the 
+  pressure is high enough to shift as far as the blue curve, the tangent to the 
+  curve where it crosses the vertical axis starts to slope in the opposite 
+  sense, and the mouthpiece then behaves like a negative resistance, tending to 
+  amplify disturbances. This is the threshold condition for the clarinet to 
+  start to make sound. Blowing harder still can produce the green curve, and 
+  then the black curve. In both these cases the tangent is sloping steeply and 
+  the amplification effect is very strong. 
+
+  Blowing harder and shifting a little further, the vertical axis would pass 
+  through the horizontal section of the curve where the reed is fully closed. 
+  The tangent is horizontal, and there is no amplification. Under those 
+  conditions, the instrument is likely to remain silent: it is ``choked'' by 
+  blowing too hard. However, we will see shortly that things are a little more 
+  complicated than that. With some kinds of initial articulation transient by 
+  the player, it is perfectly possible to produce sound from the instrument 
+  with a mouth pressure high enough to be in this region. This is a first hint 
+  of ``playability'' issues in our model clarinet, something we return to in 
+  more detail later. 
+
+  Figure 4 illustrates possible effects on the nonlinear valve characteristic 
+  of varying two other key parameters in the model. The datum for comparison is 
+  the green curve, which is the same as the green curve in Fig.\ 3. The blue 
+  curve shows the effect of the player choosing a stiffer reed — reeds are sold 
+  in various grades of “hardness”. The stiffer reed, set to the same initial 
+  gap, requires a bigger pressure difference before it closes, so the curve is 
+  higher. The red curve shows the effect of setting the stiffer reed with its 
+  tip closer to the lay so that the closure pressure remains the same as in the 
+  green curve. The curve is lower, because the volume flow is reduced through 
+  the narrower gap. 
+
+  Referring back to Fig.\ 1, we can see that the player might have some 
+  influence on these two parameters during performance. The player can choose 
+  the precise contact position of lip/teeth with the reed, and also how hard to 
+  “bite”. Biting harder will reduce the gap, and the lip/teeth contact will 
+  influence the effective stiffness of the reed. It will also change the reed 
+  resonance frequency, and its damping factor. 
+
+  \samsection{B. Why is a clarinet like a violin?} 
+
+  Now we can start to draw interesting parallels with a bowed violin string. 
+  The simplest model of a bowed string, discussed in section 9.2, involves a 
+  very similar set of ingredients to the clarinet model just outlined. There is 
+  a nonlinear function, the “friction curve”, and in a transient simulation the 
+  values of force and string velocity at the next time step are determined by 
+  the intersection of this curve with a straight line. The position of the 
+  straight line is determined by incoming reflected waves on the string. 
+
+  Furthermore, a violinist can influence the friction curve through two of 
+  their main control variables: the effects are illustrated in Fig.\ 5. Look 
+  first at the red curve, which shows the typical shape of a friction curve. 
+  The player can change this to the blue curve by increasing their bow speed, 
+  or alternatively they can change it to the green curve by reducing the bow 
+  force. Comparing this figure with Figs.\ 3 and 4, we see obvious parallels. 
+  Bow speed behaves like mouth pressure, shifting the nonlinear curve sideways. 
+  Bow force behaves a bit like the two effects explored in Fig.\ 4: the 
+  nonlinear function stays a similar shape, but the peak value can be increased 
+  or decreased. 
+
+  So two of the violinist’s control variables have clear analogues in the 
+  clarinet. However, this is not true of the third major variable, the bow 
+  position on the string. Schelleng’s diagram (see the first side link above, 
+  and section 9.3) showed us that the bow position has a very strong influence 
+  on how a violin string behaves. But the mouthpiece of a clarinet is not 
+  plugged into the tube at an intermediate point, analogous to the position of 
+  a violin bow. Instead, it drives the tube at one end. 
+
+  There is an analogue in the bowed string, but it is a very extreme and 
+  unusual case: a clarinet behaves rather like a string bowed at its exact 
+  centre. The comparison is illustrated in the sketches in Fig.\ 6. The bowed 
+  string will respond with symmetrical motion in the two halves. If the wave 
+  speeds are the same on the string and in the clarinet tube, it is easy to see 
+  that the fundamental pitches agree. The clarinet will have a quarter-wave in 
+  the length, while the string will have a half-wave in a length which is twice 
+  as long. 
+
+  This comparison tells us something very interesting. When we first started 
+  looking at the behaviour of bowed strings, we described the work of Helmholtz 
+  and Raman. Well, the descriptions we used can be carried over directly to the 
+  clarinet problem. First, we have Helmholtz’s observation of how a bowed 
+  string moves. For the special case of bowing at the mid-point, the Helmholtz 
+  motion will have a pair of “Helmholtz corners” travelling in opposite 
+  directions on the string, to give the required symmetrical motion in the two 
+  halves. At the bowed point there will, as usual, be an alternation between 
+  sticking and slipping, once per cycle. The resulting waveform of string 
+  velocity at the bowed point will be a symmetrical square wave, which is the 
+  relevant special case of the usual rectangular pulse waveform. 
+
+  Raman’s argument, explained in section 9.1.2, gives an explanation of this 
+  waveform for the idealised case with no dissipation. We will phrase the 
+  description in terms of the clarinet example, but it is exactly the same as 
+  described previously for the bowed string. If the tube has no damping, then 
+  the only way it is possible to have steady, periodic oscillation of the 
+  internal pressure is if the forcing, from the waveform of volume flow 
+  injected at the mouthpiece, is exactly constant. If it were not constant, it 
+  would contain Fourier components at the resonant frequencies of the tube, and 
+  in the absence of damping these would evoke a response which would grow 
+  without limit, contradicting the assumption of steady motion. 
+
+  The result is that the volume flow can only switch between two values, 
+  positioned on a horizontal level on the nonlinear valve curve. For the 
+  clarinet, the pressure waveform (analogous to the string velocity waveform in 
+  the bowed string) will be a symmetrical square wave, so the pair of points 
+  must have equal and opposite pressure. Figure 7 illustrates what must happen: 
+  this shows the same four curves as Fig.\ 3, and three of them are annotated 
+  with circles in corresponding colours showing where the pair of points must 
+  lie. But for the curve with the lowest mouth pressure, the red curve, it not 
+  possible to find such a pair. We conclude that the clarinet version of ideal 
+  Helmholtz motion is possible with mouth pressures corresponding to the blue, 
+  green and black curves, but not for the red curve. 
+
+  As a reminder of the corresponding argument for the bowed string, Fig.\ 8 
+  shows a copy of Fig.\ 1 from section 9.1.2. This illustration is not for a 
+  mid-point bow but for a more normal bow position close to one end of the 
+  string. The Helmholtz motion then involves a rectangular velocity waveform 
+  alternating between two speeds, but it is not a symmetrical square wave. 
+  Instead, the proportions of time spent sticking and slipping are in the same 
+  ratio as the position of the bowing point as a fraction of the string length. 
+  But it would be easy to find a different horizontal level on this plot, with 
+  a symmetrical pair of intersections on either side of the vertical axis. That 
+  line would define the velocities and friction force level for mid-point 
+  bowing of a string with no energy dissipation, directly analogous to the 
+  clarinet case shown in Fig.\ 7. 
+
+  The analogy with the bowed string continues: we can go beyond the 
+  super-simplified Raman model by using an equivalent approach to the one 
+  described in section 9.2, in which the Helmholtz corner was allowed to become 
+  rounded, rather than being ideally sharp. In fact, we can do that more 
+  systematically for the clarinet than we were able to do for the violin 
+  string. There is a mathematical trick, described in the next link, that 
+  allows a measured or simulated input impedance to be processed to reveal the 
+  “reflection function” needed for an accurate simulation. 
+
+  For the purposes of this section, we will use a sort of “one-note clarinet”: 
+  a cylindrical tube of the right length and bore diameter for a clarinet, but 
+  without finger holes (either open or closed). We can calculate the input 
+  impedance of such a tube, with plausible damping, in the way described in 
+  section 11.1.1. The details are given in the link, with some plots. The 
+  result of simulations using this reflection function should give a reasonably 
+  good representation of the lowest note of a clarinet --- certainly good 
+  enough to bring out some interesting aspects of the physics. 
+
+  For a first example, we can look at (and listen to) three simulated notes 
+  based on the blue, green and black curves in Fig.\ 3, using three different 
+  mouth pressures while keeping everything else fixed. Each note was 
+  synthesised using a very gentle initial transient, in which the pressure and 
+  flow velocity history inside the tube were initialised to values close to the 
+  intersection of the curve with the vertical axis. This means that the note 
+  builds up very slowly when the mouth pressure is only just above the 
+  threshold, as in the blue curve of Fig.\ 3. This can be seen very clearly in 
+  Fig.\ 9, which shows the synthesised pressure inside the mouthpiece for the 
+  three notes: the first note has a very long initial transient, much longer 
+  than the other two notes. An artificial exponential decay to silence has been 
+  imposed on each note, in order to separate them. You can hear the sequence of 
+  three notes in Sound 1. (A side note: Fig.\ 3 is the first of many waveform 
+  plots in this section and the next. To help avoid confusion if you flip back 
+  and forth between these, every caption ends with a brief statement of which 
+  model you are looking at.) 
+
+  Waveform details cannot be seen at the resolution of Fig.\ 9, but the 
+  envelope shape of each note is very clear. Figure 10 shows a zoomed view of 
+  the periodic parts of the three waveforms, using the same colour code as the 
+  corresponding curves in Fig.\ 3. It is immediately clear that all three 
+  waveforms have a recognisable similarity to the square wave predicted by 
+  Raman’s argument. It is also clear that the amplitude increases as the mouth 
+  pressure increases, as suggested by the circle markers in Fig.\ 7. But the 
+  waveforms do not only differ in amplitude: the blue curve, corresponding to 
+  mouth pressure just above threshold, is much more rounded than the other two. 
+  This more rounded appearance is associated with a smaller amplitude of the 
+  higher harmonics, compared to the amplitude of the fundamental. The result is 
+  a reduction of brightness of the sound, as you should be able to hear clearly 
+  in the first note of Sound 1, compared to the other two. 
+
+  We can easily perform a corresponding synthesis using the Raman model in 
+  place of the realistic reflection function for the “one-note clarinet”. (The 
+  previous link gives details of how this was done.) The results, in the same 
+  format as we have just seen, are shown in Figs.\ 11 and 12, and Sound 2. 
+  Comparing Fig.\ 11 with Fig.\ 9, the amplitudes and envelope shapes look 
+  quite similar in the two cases. But the results certainly do not sound the 
+  same, and we can immediately see why by comparing Fig.\ 12 with Fig.\ 10. The 
+  only periodic waveform that can be produced by the Raman model is a perfectly 
+  sharp square wave. So the three notes only differ in amplitude and length of 
+  initial transient: the final periodic waveforms are all equally rich in 
+  higher harmonics, and they sound identical apart from a difference in 
+  loudness. 
+
+  Next, we look at similar synthesised notes for the three variations of the 
+  nonlinear valve characteristic plotted in Fig.\ 4. Each group of three notes 
+  illustrates the green curve, the red curve, and the blue curve, in that 
+  order. The results are plotted in Figs.\ 13—16, in the same format as the 
+  ones we have just seen, using the realistic synthesis model and then the 
+  Raman model. Again, you can hear the corresponding sounds of the pressure 
+  waveforms inside the mouthpiece in Sounds 3 and 4. This time, the amplitudes 
+  of the three notes in each group are very similar because the mouth pressure 
+  is the same in all cases. For the realistic model, you can hear subtle 
+  difference of tone quality, while for the Raman model the sounds are 
+  virtually indistinguishable. 
+
+  \samsection{C. The pressure--gap diagram} 
+
+  We have seen in the preceding plots, and heard in Sounds 1 and 3, that the 
+  mouth pressure and the details of the valve characteristic both have audible 
+  effects on the sound of our synthesised clarinet. We learn some interesting 
+  things by taking a more systematic look at this. The mouth pressure is 
+  obviously a key control parameter for the player, and we noted a bit earlier 
+  that the “bite strength” might be another. The most obvious effect of a 
+  player biting harder on the reed is to decrease the gap between the reed and 
+  the lay. We can use these two physical parameters — mouth pressure and reed 
+  gap — to make a plot that plays a somewhat similar role to the Schelleng 
+  diagram for bowed strings. The first published version of a plot in this 
+  form, as far as I have been able to find, is in a paper by Almeida, George, 
+  Smith and Wolfe [2]. They used this format to present the results of 
+  measurements on a real clarinet, using a test rig that allowed controllable 
+  variation of pressure and bite force. 
+
+  We can approach this in much the same spirit as our bowed-string studies back 
+  in Chapter 9, by doing what the nonlinear dynamics folk sometimes call 
+  “carpet bombing”. We can take a grid of points in the pressure—gap plane, 
+  perform a simulation for each grid point, then analyse the results and plot 
+  some interesting quantity in this plane, to see how it varies. Figure 17 
+  shows an example. The horizontal axis shows mouth pressure, while the 
+  vertical axis shows the gap. This vertical axis is being regarded as a 
+  surrogate for the bite force, so the values of the gap have been plotted 
+  decreasing upwards, so that the bite force increases upwards as in the plots 
+  by Almeida et al. [2]. At the very top of the plot, the bite has got so hard 
+  that the reed is closed completely. 
+
+  Each simulation has first been analysed to test whether it produced “note” or 
+  “silence”: black pixels mark points where there was no significant amplitude 
+  of the pressure waveform at the end of the simulated time span. The coloured 
+  pixels show where a note was obtained, and they have been coloured to 
+  indicate something about the frequency content of the last few periods of the 
+  pressure waveform. The scale, indicated in the colour bar, shows how high up 
+  the series of harmonics you need to go before the level drops to 10~dB below 
+  that of the ideal square wave. So bright colours indicate bright sound, and 
+  dull reds indicate “mellow” or “muted” sound. (Ignore the various coloured 
+  lines for the moment --- they will be explained shortly.) 
+
+  The qualitative resemblance between Fig.\ 17 and the Schelleng diagram is 
+  quite striking. In a plane with axes showing two key control variables for 
+  the player, acceptable notes are only produced within a wedge-shaped region. 
+  Within that wedge the high-frequency content, and hence the brightness of the 
+  sound, varies significantly — albeit in a different pattern to the variation 
+  within the Schelleng diagram. The two diagrams encapsulate important aspects 
+  of violin and clarinet playing, which a beginner struggles to master and an 
+  expert learns to use with great subtlety. 
+
+  Figure 18 shows a different plot based on the same set of simulations. This 
+  time, the colour shading indicates the frequency of the final waveform. The 
+  variations are not large in this case, but there is a definite tendency for 
+  the note to play progressively flat as conditions move down the middle of the 
+  wedge towards the bottom right-hand corner. The measurements of real clarinet 
+  behaviour by Almeida et al. [2] show a similar (but far stronger) tendency to 
+  flattening, in the same region of the diagram. 
+
+  The physical origin of this flattening phenomenon in our idealised example is 
+  far from clear. The two effects we already know about, which might have 
+  produced such an effect, are absent in this example. The resonances of our 
+  cylindrical tube are accurately harmonic, apparently ruling out 
+  “Benade-style” effects arising from collaborative regimes between inharmonic 
+  frequencies. However, such effects might well have been present in the 
+  measurements by Almeida et al. [2], potentially explaining why they saw a 
+  much bigger effect. The second possible effect takes us back to the bowed 
+  string. In section 9.2 we saw that when the straight line crosses the 
+  friction curve in more than one place, the result is a hysteresis loop which 
+  causes the pitch of the note to flatten (see especially Fig.\ 9 in that 
+  section). But Fig.\ 2 in the present section shows that the corresponding 
+  straight line is too steep to cross the nonlinear valve characteristic in 
+  more than one place, so the effect cannot arise. 
+
+  Naturally, we want to know what determines the shape and position of the 
+  wedge-shaped region in these plots. We get a useful clue from Fig.\ 19, which 
+  shows another pair of plots like Figs.\ 17 and 18. The only difference is 
+  that this time each simulation was started with a more vigorous initial 
+  transient, giving a “kick” to get oscillation started. We see that this has 
+  expanded the region of possible notes. There is still a wedge-shaped region, 
+  but the top edge of the wedge has moved upwards. Roughly speaking, the wedge 
+  in Figs.\ 17 and 18 was confined between the lowest (magenta) line and the 
+  solid cyan line, but in Fig.\ 19 it extended upwards towards the top line 
+  (which is actually a solid red line and a dashed white line, very close 
+  together). 
+
+  Those coloured lines were not drawn on the plots simply in order to follow 
+  the data. Instead, they represent thresholds between different types of 
+  behaviour of the simple clarinet model, which have been calculated by 
+  Dalmont, Gilbert, Kergomard and Ollivier on the basis of bifurcation studies 
+  [3]. We can describe them all in words. The magenta line is the one we 
+  already knew about, from the discussion in section 8.5. This is the threshold 
+  of oscillation, which occurs when the mouth pressure is big enough for the 
+  tangent slope on the vertical axis to change sign. The plotted line is simply 
+  the condition for the maximum of the valve characteristic to lie in that 
+  position: when there is energy dissipation, pixels that spontaneously 
+  generate a note must lie at least a little above this line. 
+
+  The dashed green line represents the condition Dalmont et al. [3] called the 
+  “beating reed threshold”. Below this line, the reed remains open throughout 
+  the vibration cycle, but above the line the reed is closed for part of the 
+  time. The line is based on their analysis, calculated using the Raman model, 
+  but it should give a good guide to the behaviour in the more realistic model, 
+  as we will see shortly. 
+
+  The solid cyan line represents the condition Dalmont et al. [3] called the 
+  “inverse oscillation threshold”: it shows when the mouth pressure, for a 
+  given gap, is just enough to close the reed completely against the lay. It is 
+  easy to see why this line gives an upper limit in the case of a very gentle 
+  initial transient, as in Figs.\ 17 and 18: beyond this line, the mouth 
+  pressure is high enough that the reed is closed initially, and the gentle 
+  transient means that the internal pressure is initialised with the same 
+  pressure — so the reed stays closed for ever after, and no note is produced. 
+
+  But with a more vigorous transient, as in Fig.\ 19, the reed has a chance to 
+  open after the initial closure. For a pixel lying not too far above the cyan 
+  line, it is possible for a note to get going, and then to be sustained. 
+  However, for a pixel above the highest (red) line there is simply no possible 
+  solution (at least within the simplification of the Raman model, which 
+  Dalmont et al. [3] used to derive the condition). This line represents what 
+  they call the “extinction threshold”. The dashed white line, lying very close 
+  to the red line, is what they called the ``saturation threshold''. This is 
+  the condition for the pressure amplitude to be a maximum, because (within the 
+  Raman model) the pressure and volume flow rate when the reed is open fall 
+  exactly at the peak of the nonlinear valve characteristic of Fig.\ 2. 
+
+  In approximate summary, it may be possible to achieve a note anywhere between 
+  the magenta and red/white lines, but above the cyan line it is also possible 
+  to get silence — so the player has to use the right kind of articulatory 
+  gesture to achieve a note. The space between the cyan and red/white lines is 
+  dangerous territory where note production may feel unreliable, especially to 
+  a beginner. Indeed, the advice for a beginner would be similar to the 
+  corresponding advice to a violinist based on the Schelleng diagram: learn to 
+  stay near the middle of the wedge-shaped region in order to get reliable 
+  notes every time, and only explore towards the boundaries of the region when 
+  you have built up a bit of experience. 
+
+  It is instructive to see comparable pressure—gap diagrams based on the Raman 
+  model. Figure 20 shows a pair of diagrams directly comparable to the ones in 
+  Fig.\ 19. The region within which a note is achieved is rather similar in the 
+  two cases, confined between the magenta and red/white lines as just 
+  explained. But the figures are much less pretty with the Raman model! If a 
+  note is achieved, it always has a square-wave pressure waveform, rich in 
+  harmonics, and it always has exactly the same frequency. So the colour 
+  shading is completely uniform in both plots. 
+
+  Figure 21 shows Raman model simulations comparable to Figs.\ 17 and 18, with 
+  a very gentle initial transient. Again, the region in which notes are found 
+  is quite similar with both models, but now it stops at the cyan line for the 
+  reason explained above. Towards the bottom of the plots, both models show 
+  quite a few black pixels above the magenta line, more than in Figs.\ 19 and 
+  20. The reason for this is simple: these pixels lie only just above the 
+  threshold of excitation, and the initial transient is so gentle that the 
+  growth is very slow. The pressure amplitude does not get sufficiently high by 
+  the end of the simulations to qualify as a “note”. 
+
+  Finally, Figure 22 shows what happens with the lossless version of the Raman 
+  model. “Notes” now extend beyond the red/white line, all the way off the top 
+  of the plot. This behaviour is exactly what the theory predicts (see 
+  reference [2]). The red/white line here is entirely misleading: it has been 
+  plotted in the same position as the other plots, to guide the eye when 
+  comparing, but the two thresholds represented by these lines move “to 
+  infinity” when there is no energy dissipation. There is no upper threshold, 
+  exactly as the simulation results suggest. Notice, by the way, that the lower 
+  limit of “notes” is slightly different than in Fig.\ 20. Non-black pixels now 
+  extend right down to the magenta line, rather than stopping just above it. 
+  That is exactly what we expect from the original discussion of the threshold 
+  of oscillation: with no losses, the threshold lies at the peak of the 
+  nonlinear characteristic, rather than just beyond the peak. 
+
+  \samsection{D. Transients of the clarinet model} 
+
+  Up to now, as we have developed the clarinet model we have been finding 
+  surprisingly close analogies with the behaviour of a bowed string. But when 
+  we turn to examine transient behaviour, we will find a strong contrast. 
+  Figure 23 shows the transient waveforms of pressure and volume flow rate, for 
+  one of the cases used to make up Figs.\ 17 and 18. Specifically, this case 
+  has mouth pressure 3~kPa and reed gap 0.4~mm. Comparing with Fig.\ 17 reveals 
+  that this puts it in the middle of the wedge region, above the beating reed 
+  threshold (dashed green line). This is a case with a gentle initial 
+  transient, and it can be seen that the pressure variations start small, and 
+  grow quite slowly. But after a few period-lengths it settles to a periodic 
+  waveform looking recognisably like a square wave. 
+
+  Figure 24 shows the same information, plotted (in red) on top of the 
+  nonlinear valve characteristic. This shows what part of that characteristic 
+  is used by this particular note. It can be seen that the red line extends 
+  only a rather short distance along the flat portion, where the reed is 
+  closed. This fits in with what we learned by looking at Fig.\ 17: we are 
+  above the beating reed threshold, but not very far above it. 
+
+  Now compare Fig.\ 23 with Figs.\ 25, which shows the corresponding transient 
+  computed with the Raman model. The pressure waveform is very square, as we 
+  expect from the Raman model, but it shows a very close resemblance to the 
+  pressure waveform in Fig.\ 23. The waveforms of volume flow rate look more 
+  different at first sight, but actually they are about as similar as they 
+  could be, as I will now explain. 
+
+  The Raman model jumps abruptly between different vales of pressure and volume 
+  flow rate, whereas in the more realistic model they both vary smoothly and 
+  continuously. The result is made particularly clear in Fig.\ 26, which is the 
+  equivalent of Fig.\ 24: the points on the nonlinear characteristic are 
+  sparse, rather than forming a solid red line. By the end of this portion of 
+  transient, the Raman model is simply alternating between two points, which 
+  are the leftmost and rightmost of the red stars in Fig.\ 26. This means that 
+  the waveform of volume flow in Fig.\ 25 is a square wave, whereas the 
+  corresponding waveform in Fig.\ 23 has to go up and over the hump of the 
+  curve each time the pressure switches from high to low. This produces a pair 
+  of “rabbit ears” in each cycle of the blue waveform in Fig.\ 23. If you 
+  ignore those, the waveform looks much more recognisably like the one in Fig.\ 
+  25. 
+
+  These examples demonstrate two things that appear to be typical: the 
+  transients of this model clarinet are always rather “simple”, and the Raman 
+  model usually matches the more realistic model quite well. Both these things 
+  are far from being true for bowed-string transients! Bowed-string transients 
+  are usually complicated, and the details are highly sensitive to everything 
+  you can think of — the player’s gesture, the details of the model of the 
+  linear system (string and instrument body), and also the details of the 
+  nonlinear model used to describe the friction force. In particular, switching 
+  to Raman's model completely changes everything. 
+
+  As a reminder of some of the discussion of this issue from sections 9.5—9.7, 
+  Fig.\ 27 shows a repeat of Fig.\ 6 from section 9.5. This shows three 
+  measured transients, differing only in the normal force between bow and 
+  string. The middle plot (in red) is the only one that echoes the simplicity 
+  of the clarinet transients. The upper plot (black) shows a “scratchy” 
+  transient featuring irregular string motion before eventually settling into a 
+  periodic waveform; the lower one (blue) shows a transient that leads to an 
+  entirely different periodic regime of string vibration (“double-slipping 
+  motion”). Neither of these phenomena has any obvious parallel within the 
+  clarinet model, and it seems that there is no need to look for an analogue of 
+  the Guettler diagram (see section 9.5). 
+
+  What makes the clarinet so different from a bowed string in terms of 
+  transient behaviour? There are three factors that probably contribute. First 
+  is the nature of the nonlinearity. The reed valve characteristic is more 
+  ``benign'' than the rather vigorously nonlinear friction curve. However, we 
+  saw in section 9.6 that the friction-curve model is probably not realistic. A 
+  different model is needed to give a satisfactory account of the frictional 
+  behaviour of violin rosin, and the thermal models that were discussed in that 
+  section behave in a more benign way than the original friction-curve model. 
+  So it is not clear how important this factor might be for real bowed-string 
+  transients. 
+
+  The second factor is a disparity of damping between a clarinet tube and a 
+  violin string. The Q-factor of the fundamental mode of our model clarinet 
+  tube is 26, whereas the Q factor of the fundamental of a typical 
+  finger-stopped violin string is of the order of 300. Damping has a 
+  stabilising influence on self-excited vibrations, and this factor of 10 
+  difference may well help to make a bowed violin string more “twitchy” than 
+  the clarinet. 
+
+  But the third factor is probably the most important. The clue to this lies in 
+  Raman’s argument. Raman originally formulated this argument in response to 
+  published measurements showing a range of possible vibration waveforms of a 
+  bowed string. In the simplest version of his argument, he imagined the bowed 
+  point dividing the string length in a ratio $1:n$, where $n$ is a whole 
+  number. Any possible periodic motion of the string, within his idealised 
+  model, will then have $n$ segments of constant velocity per period. The 
+  argument leading to Fig.\ 8 above means that the velocity within each of 
+  these segments can only take one of two possible values. Raman used this as 
+  the basis for a classification scheme for all possible motions of a 
+  (lossless) bowed string. He showed that there are indeed many possibilities. 
+
+  But our clarinet model corresponds to bowing a string at its mid-point. In 
+  the lossless case, each cycle of a periodic motion at the fundamental 
+  frequency can then only have two segments of velocity. So there is only one 
+  possible way to have a two-velocity solution: it must be the kind of square 
+  wave we have been looking at. The lossless clarinet, or the mid-point bowed 
+  string, simply does not allow other periodic solutions (unless they have 
+  different periods, for example following a “period-doubling bifurcation” to 
+  give a note an octave lower). So one major aspect of the discussion of 
+  playability of bowed-string transients does not arise for the clarinet. We do 
+  not need to ask whether a given gesture leads to Helmholtz motion or to some 
+  other periodic regime like double-slipping motion, because there are no such 
+  alternative regimes! 
+
+  \samsection{E. Influence of the reed resonance} 
+
+  We haven’t finished with clarinet models yet. So far, everything has been 
+  based on the simplest mouthpiece model, in which the reed moved as if it was 
+  a simple spring. But of course the reed has its own resonance frequencies, 
+  and we already showed (back in section 11.3.1) how to incorporate the first 
+  reed resonance into a mouthpiece model. It is easy enough to incorporate this 
+  extra ingredient into a computer model, so we can look at some simulated 
+  results. For all the results to be shown here, the reed resonance frequency 
+  is chosen to be 2.8~kHz, based on a suggestion by Chaigne and Kergomard [1] 
+  (see section 9.2.2.2). The only other new parameter we need is the damping of 
+  the reed resonance. It is far from clear what value this damping should have, 
+  so we will look at results for several different values of the reed Q-factor. 
+  In practice, the reed damping is no doubt influenced by contact with the 
+  player's lip, so it may vary with changes of embouchure. 
+
+  Figure 28 gives a first example of a transient simulated with this new model. 
+  It is presented in the same format as Figs.\ 23 and 25, with the mouthpiece 
+  pressure in the top graph and volume flow rate in the lower graph. We will 
+  explain shortly which precise transient this is: for the moment, we just want 
+  to note some qualitative things about it. The pressure waveform looks quite 
+  similar to the one in Fig.\ 23, tending quite quickly to a slightly 
+  rounded-off square wave. But in the first few cycles you can see the effect 
+  of the reed resonance “ringing on” briefly after each jump in pressure. 
+
+  The lower graph in Fig.\ 28 looks a little different from its counterpart in 
+  Fig.\ 23, because the pairs of “rabbit ears” in the final periodic motion are 
+  no longer symmetrical: the second “ear” is much bigger than the first one. A 
+  different view of this phenomenon is given by Fig.\ 29, which shows the same 
+  data plotted in the pressure/flow-rate plane. The nonlinear valve 
+  characteristic that we used in the earlier models is also shown, in blue. 
+  Rather obviously, the new model shows a loop above and below this blue curve: 
+  it rarely follows the curve. 
+
+  The explanation lies in the damping of the reed resonance. When the pressure 
+  jumps abruptly in the Helmholtz-like square wave, the reed no longer responds 
+  immediately, like the quasi-static spring model we used earlier. Instead, the 
+  damping imposes a slight lag. When the reed is open before the pressure jump, 
+  it stays open a little longer than before, so that the air flow through the 
+  gap is bigger. But if the reed is closed before the pressure jump, it stays 
+  closed a little longer and the air flow is reduced. The result is a 
+  hysteresis loop, followed in an anti-clockwise direction in this plot. This 
+  loop is reminiscent of the hysteresis loop we met back in section 9.2, for 
+  the frictional behaviour of a bowed string. In the bowed string, this effect 
+  was responsible for the ``flattening effect'', so it should not come as a 
+  surprise that we will see shortly that it causes the pitch of our clarinet to 
+  fall: the note plays a little flat. 
+
+  To complete the set of plots of this example transient, Fig.\ 30 shows the 
+  corresponding displacement of the reed. Positive values here correspond to 
+  the reed moving towards the lay, and when the value reaches 0.6~mm the reed 
+  closes — because that was the choice of initial gap used in this particular 
+  example. Throughout the plot you can see some evidence of transient ringing 
+  of the reed resonance, whenever the displacement changes abruptly in response 
+  to a pressure jump in the mouthpiece. 
+
+  The natural next step is to use the new model to generate pressure-gap 
+  diagrams, to reveal the behaviour over a region of parameter space. Figures 
+  31, 32 and 33 show three examples that are directly comparable with Fig.\ 19. 
+  They use three different Q-factors for the reed: 1.25, 2.5 and 5 
+  respectively. These may all seem very low values of Q (or very high damping), 
+  but remember that the player's lip is in contact with the reed, and flesh has 
+  very high damping. All details of the plots are the same as Fig.\ 19, except 
+  that the range of behaviour encoded by the colours is different. The 
+  left-hand plot of each pair, representing the frequency content via the 
+  harmonic number that first falls 10~dB below the ideal square wave, has a 
+  scale that runs up to 25, compared to 50 in Fig.\ 19. All the waveforms from 
+  the new model tend to be less rich in higher harmonics: we will see an 
+  explicit spectrum plot in a moment. 
+
+  The right-hand image of each pair is colour-shaded to show the frequency of 
+  the final periodic waveform. In this case, the scale represented by the 
+  colours is longer than in Fig.\ 19. The right-hand plot of Fig.\ 19 did show 
+  a slight tendency to flattening towards the bottom right-hand corner, but the 
+  total range of frequencies covered by that plot was 128.8—129.1~Hz, a total 
+  range of about 1/4~Hz. The corresponding range for the new plots (all three 
+  give a similar range) is 127.9—129.0~Hz, a range of 1.1~Hz. 
+
+  To get an idea of what lies behind these plots, and how the new results 
+  relate to the earlier model, Fig.\ 34 shows the first few period-lengths of a 
+  particular transient for all the models. Specifically, it is the one in the 
+  bottom right-hand corner of the pressure-gap diagrams, marked by a blue 
+  circle in the right-hand plot of Fig.\ 33. The black curve is the result from 
+  the earlier model, where the reed was treated as a spring. The other three 
+  are drawn from the sets used to generate Figs.\ 31—33: the green curve has 
+  the reed’s $Q=1.25$, the blue curve has $Q=2.5$ and the red curve has $Q=5$. 
+  The changing damping of the reed resonance is immediately apparent in the 
+  extent of the “ringing” after each pressure jump. It is reassuring to see 
+  that the blue and red curves track quite close to the black curve --- this is 
+  a useful check on the accuracy of coding of the new computer model. The blue 
+  curve here shows exactly the same transient used to generate Figs.\ 28, 29 
+  and 30 earlier. 
+
+  To get an idea of what lies behind these plots, and how the new results 
+  relate to the earlier model, Fig.\ 34 shows the first few period-lengths of a 
+  particular transient for all the models. Specifically, it is the one in the 
+  bottom right-hand corner of the pressure-gap diagrams, marked by a blue 
+  circle in the right plot of Fig.\ 33. The black curve is the result from the 
+  earlier model, where the reed was treated as a spring. The other three are 
+  drawn from the sets used to generate Figs.\ 31—33: the green curve has the 
+  reed’s $Q=1.25$, the blue curve has $Q=2.5$ and the red curve has $Q=5$. The 
+  changing damping of the reed resonance is immediately apparent in the extent 
+  of the “ringing” after each pressure jump. It is reassuring that the blue and 
+  red curves lie quite close to the black curve. 
+
+  Even on the short time-scale of this plot, you can see the flattening effect 
+  developing. All four pressure waveforms are synchronised at the start, but by 
+  the right-hand side the black curve (from the old model, with less 
+  flattening) has already got slightly ahead of the three coloured curves. The 
+  effect is easiest to see by comparing the near-vertical lines where the 
+  pressure jumps up or down. 
+
+  All four of these transients led to a periodic waveform of pressure when the 
+  simulation was run for longer. Taking a chunk of this eventual waveform and 
+  applying the FFT, we can easily generate corresponding frequency spectra. The 
+  results are shown in Fig.\ 35, with the same colour code as in Fig.\ 34. The 
+  curves have been separated vertically for clarity, with the old model at the 
+  top, then the three cases of the new model in descending order of Q-factor. 
+
+  It is clear that the reed damping is having a significant effect on the 
+  frequency content of the note. With the old model (black curve) sharp peaks 
+  at the harmonics extend over the whole range of this plot. But with the reed 
+  resonance included in the model, the peak amplitudes die away with rising 
+  frequency — slowly with $Q=5$ (red curve), faster with $Q=2.5$ (blue curve), 
+  and very fast with $Q=1.25$ (green curve). This effect is quite audible, 
+  especially with the lowest Q-factor. Figure 36 shows a sequence of three 
+  notes from these simulations including the reed resonance, combined in the 
+  same way as in Figs.\ 9, 11, 13 and 15 (with an artificial exponential decay 
+  imposed to separate the notes). The sequence has $Q=1.25$ first, then 
+  $Q=2.5$, then $Q=5$. You can hear the resulting sound in Sound 5. 
+
+  Returning to Fig.\ 35, there is another feature we should mention. Our model 
+  clarinet tube is closed at one end and open at the other, so that the 
+  resonance frequencies match odd-numbered harmonics 1, 3, 5, 7… only. The tube 
+  has no resonances at the even-numbered harmonics. However, the nonlinear 
+  action of the reed valve can generate all harmonics, not just the 
+  odd-numbered ones. So the internal spectrum of the pressure, like the 
+  examples shown in Fig.\ 35, may contain even as well as odd harmonics. This 
+  is indeed what the plot shows. As a guide to the eye for identifying these 
+  harmonics, the blue curve has been annotated with red stars indicating the 
+  frequencies of the first few odd-numbered harmonics, and green stars marking 
+  the corresponding even harmonics. 
+
+  All four curves are dominated by odd harmonics at low frequency, but at 
+  higher frequencies the even harmonics become increasingly visible. But this 
+  plot shows the spectrum of the internal pressure, so the odd harmonics are 
+  supported and boosted by the tube resonances. The sound of the instrument, 
+  based on the external sound pressure radiated from the open end of the tube, 
+  may be significantly different. As Benade pointed out many years ago, the 
+  even-numbered harmonics correspond to antiresonances of the tube, not to 
+  resonances. At those frequencies the pressure is a maximum near the open end 
+  (or an open tone-hole), not a minimum as it is for the resonant frequencies. 
+
+  The result is that any component of the internal pressure corresponding to an 
+  even harmonic may be radiated much more efficiently than the corresponding 
+  components from the odd harmonics. This effect goes some way to compensating 
+  for the even-odd pattern of harmonic amplitudes: the sound of a clarinet may 
+  contain significant levels of some even harmonics. This is indeed found to be 
+  the case when a clarinet sound spectrum is measured: Fig.\ 37 shows just such 
+  a measurement, of the lowest note of a clarinet with all holes closed, played 
+  forte. It is taken from Joe Wolfe's \tt{}web site\rm{}. At the lowest 
+  frequencies, the odd-numbered harmonic peaks are higher than their 
+  neighbouring even-numbered peaks, but this even-odd pattern rapidly 
+  disappears as you move up in frequency. 
+
+  Looking all the way back to Fig.\ 33, there is another feature that we should 
+  comment on. Along the lower edge of the wedge-shaped region of coloured 
+  pixels is a small wedge of white pixels. One of these is highlighted by a 
+  green circle. These white pixels represent what a clarinettist would call 
+  “squeaks”: instead of eliciting the expected tone based on the tube 
+  resonances, you sometimes get a much higher, and discordant, frequency. This 
+  has more to do with the resonance of the reed than with those of the tube. 
+  Indeed, you can make a squeak with a bare mouthpiece, detached from the tube. 
+
+  A region in the pressure-gap diagram corresponding to squeaks rather than 
+  notes was found in the measurements by Almeida et al. [2]. It is rather 
+  encouraging that the simulation model produces a similar prediction, in 
+  roughly the same region of the diagram. If we take the transient marked by 
+  the green circle and assemble three notes in the same manner as Fig.\ 36 and 
+  Sound 5, we can hear the effect in action. The same sequence of reed 
+  Q-factors is used, and the assembled waveform is plotted in Fig.\ 38. You can 
+  hear the result in Sound 6. You will notice that the first note, with 
+  $Q=1.25$, shows a decaying transient rather than a sustained note --- you 
+  just hear a kind of ``thump''. The second note, with $Q=2.5$, gives a fairly 
+  normal clarinet-like tone, while the third one, with $Q=5$, gives the squeak. 
+
+  \samsection{F. Conical reed instruments} 
+
+  So far, all our effort has been devoted to the model clarinet, based on a 
+  cylindrical tube. But many reed instruments are based on tapered, conical 
+  tubes — the saxophone, the oboe and the bassoon, for example. We already know 
+  about one key difference between a conical tube and a cylindrical tube: we 
+  saw in section 4.2 that the resonance frequencies of a conical tube, tapering 
+  down to point, form a complete harmonic series. By contrast, a closed 
+  cylindrical tube like our clarinet model has resonance frequencies that are 
+  odd-numbered harmonics only. 
+
+  We will study one idealised example of a conical reed instrument, to compare 
+  with the clarinet model we have already discussed. This will be based on a 
+  soprano saxophone, which has a conical tube somewhat longer than a clarinet. 
+  The lowest note, with all tone-holes closed, is a lot higher than the 
+  corresponding note of the clarinet, though, because the lowest mode has a 
+  half-wavelength in the length of the tube, whereas a clarinet has a 
+  quarter-wavelength. 
+
+  Our model will use a similar level of simplification to the clarinet model: 
+  the aim in both cases is to bring out the essential physics of the two types 
+  of instrument with minimal complication, and draw some conclusions about the 
+  behaviour as a player might perceive it. Figure 39 shows a soprano saxophone, 
+  and immediately below it is the first stage of idealisation. With all holes 
+  closed, and ignoring the bell, we can approximate the internal bore shape by 
+  a straight-sided cone. But of course the real instrument does not taper all 
+  the way to a point. Instead, it is truncated and terminated by a mouthpiece: 
+  a small cavity carrying a flexible reed rather similar to the clarinet reed. 
+
+  The third image in Fig.\ 39 shows the truncated cone, without the mouthpiece. 
+  It also shows the “completion” of the cone in a dotted red line, extending 
+  some way beyond the physical length of the instrument. The input impedance of 
+  a truncated cone like this can be calculated, as explained in the next link. 
+  The answer, slightly unexpectedly, involves the length of the “missing” 
+  portion of the cone as well as the physical length of the tube. 
+
+  The resulting formula for the impedance tells us several useful things. Its 
+  inverse, the input admittance, has resonance peaks at exactly the same 
+  frequencies as a cylinder of the same length. However, these are the 
+  resonance frequencies that would occur with both ends of the tube open. For 
+  our saxophone model the reed and mouthpiece will be like a closed end, just 
+  as in the clarinet model. The resonances are then given by the peaks of 
+  impedance, not of admittance. As we will see in some detail shortly, those 
+  peaks are not harmonically spaced — potentially bad news for our saxophone. 
+
+  The final image in Fig.\ 39 shows a rather unexpected approximation to the 
+  acoustic behaviour, known as the “cylindrical saxophone” [1,4] and explained 
+  in the previous link. When the frequency is sufficiently low that the 
+  wavelength of sound is much bigger than the length of the missing piece of 
+  cone, the formula for the impedance becomes the same as the impedance of a 
+  cylindrical tube with the same length as the completed cone, open at both 
+  ends and excited at the position where the actual cone was truncated. So we 
+  can imagine a saxophone mouthpiece plugged in to the side-wall of the 
+  cylindrical tube, as sketched in the figure. This cylindrical approximation 
+  is not accurate for the saxophone at higher frequencies, and we won’t rely on 
+  it when we come to run simulations. But it is illuminating because it tells 
+  us something qualitative about how a saxophone might behave. (Indeed, you can 
+  buy a real musical instrument based, rather loosely, on the idea of the 
+  cylindrical saxophone: the \tt{}Yamaha Venova\rm{}.) 
+
+  The important thing for our immediate purpose is that the “cylindrical 
+  saxophone” frequency response applies equally well to a string, bowed at the 
+  same intermediate position. This allows us to extend the analogy between wind 
+  instruments and a bowed string, to incorporate the main ingredient that was 
+  missing when we talked about the clarinet. In the clarinet case, the 
+  equivalence was to the very special case of a string bowed at its mid-point. 
+  But the new analogy suggests that a saxophone (or an oboe or a bassoon) might 
+  behave a bit like a string bowed at a more normal position, relatively close 
+  to one end. 
+
+  Immediately, we can make some guesses. Based on what we already know about 
+  bowed strings, the analogy suggests that the saxophone model might behave 
+  very differently from the clarinet model. First, the equivalent of the 
+  Helmholtz motion will no longer be a square wave of pressure. Instead, we 
+  expect something resembling the velocity waveform of a bowed string: a pulse 
+  wave, with the pulse occupying a proportion of each period determined by the 
+  position (as a fraction of the total tube length) of the “mouthpiece” in the 
+  bottom sketch of Fig.\ 39. 
+
+  But something more fundamental will also change. For the clarinet, or the 
+  mid-point bowed string, we argued (following Raman) that the square wave was 
+  the only possible periodic waveform at the natural period of the tube or 
+  string. But now we have a “bowing point” that divides the length unequally — 
+  for the numerical cases we will see shortly, this division is roughly in the 
+  ratio 1:8. This opens the floodgates to a wealth of alternative waveforms, 
+  just as Raman found for a bowed string. So we might expect to see far more 
+  complicated behaviour of the saxophone model, compared to the clarinet model. 
+  We will shortly see some simulation results, and we will be on the lookout 
+  for behaviour that reminds us of the response of a bowed string, such as the 
+  appearance of periodic waveforms other than the Helmholtz motion. 
+
+  There are a couple more details to mention, to complete a model of the actual 
+  (non-cylindrical) saxophone that we can use for simulation studies. One of 
+  these concerns the mouthpiece cavity, indicated by the sketch immediately 
+  below the photograph in Fig.\ 39. We have already mentioned that the 
+  impedance peaks for the truncated cone are not distributed according to an 
+  accurate harmonic series. But, at least for the first few modes, we can 
+  improve things a little by including the mouthpiece cavity in the model, and 
+  making a careful choice of its volume. 
+
+  The approximation again works best when the wavelength of sound is very long 
+  compared to the missing portion of the cone. If the cone had been complete, 
+  then of course the air trapped in that final section would have been rigidly 
+  enclosed. We already know how such a confined volume of air behaves — we 
+  thought about it when looking at the Helmholtz resonator back in section 4.2. 
+  The trapped air behaves like a simple spring, and its stiffness depends only 
+  on the total volume, not on the shape. We also know that the complete cone 
+  would have harmonically-spaced resonances, so if we choose a mouthpiece 
+  cavity with the same volume as the “lost” section of cone we should find that 
+  at least the first few resonances still have approximately harmonic spacing. 
+  Sure enough, measurements of the volumes of preferred mouthpieces for a range 
+  of conical reed instruments (including some allowance for the extra 
+  ``effective volume'' arising from the reed's flexibility) conform quite well 
+  to this predicted pattern, matching the volume lost by truncating the cone. 
+
+  The final ingredient for a simulation model is the reed. But this one is easy 
+  — a soprano saxophone reed and mouthpiece are not very different from those 
+  of a clarinet, so we can use the same model with minor adjustments to 
+  parameter values. The details of the values used here are given in the 
+  previous link, but I have used some guesswork in choosing them: published 
+  data on saxophone reeds is in far shorter supply than on clarinet reeds. But 
+  this should not matter very much, since the aim here is to bring out 
+  qualitative behaviour, not to match quantitatively the behaviour of any 
+  particular saxophone — that is a task for future research. 
+
+  So let us look at some simulation results. Figure 40 shows a successful 
+  transient, in the same format as Figs.\ 23 and 28: pressure inside the 
+  mouthpiece in the upper plot, volume flow rate through the reed in the lower 
+  one. The pressure waveform rapidly settles to a periodic state, and it is 
+  indeed a pulse wave as we anticipated from the “cylindrical saxophone” 
+  argument. The lower plot reveals that the reed closes once per cycle, for a 
+  rather short time that more or less matches the length of the pressure pulse. 
+
+  To see the other “cylindrical saxophone” prediction in action, we only have 
+  to change the mouth pressure a little. Figure 41 shows a transient with a 
+  slightly increased mouth pressure, and Fig.\ 42 shows the result after a 
+  further small increase. You can hear these three transients in Sound 7. The 
+  transient in Fig.\ 41 shows what in violin terms we would call “double 
+  slipping” or “surface sound”. The waveform settles to a periodic state 
+  involving two pulses per period, and two corresponding short episodes when 
+  the reed closes. But the sound is at the same pitch as the Fig.\ 40 note, not 
+  an octave higher. The reason is that the two pulses are not equally spaced in 
+  the cycle, so the periodicity of the note is unchanged. Pressure waveforms 
+  looking very much like this have been reported from real saxophones [5]. 
+
+  But in Fig.\ 42 we see a different pattern. This time, the early part of the 
+  transient waveform shows groups of four pressure pulses (a “quadruple slip” 
+  motion in bowed-string terms). But by the end of the plot, two of these 
+  pulses have faded away and disappeared, and the remaining two are equally 
+  spaced. The result is that the final note sounds an octave higher, at least 
+  by the end. In the early part of this note, the third note in Sound 7, you 
+  can still hear a trace of the original pitch before it moves up to the 
+  octave. 
+
+  The natural next step is to compute a pressure-gap diagram for the model 
+  saxophone: the result is shown in Fig.\ 43. I will explain the colour shading 
+  in a moment, but first we can note the wedge-shaped region of coloured 
+  pixels: the saxophone has a region of “note” rather than “silence” that looks 
+  broadly similar to what we already saw for the clarinet. The magenta and cyan 
+  lines have the same meanings as in previous pictures: they mark the threshold 
+  of vibration, and the threshold beyond which it could be possible for the 
+  reed to remain permanently closed. But the other thresholds shown in earlier 
+  pressure-gap diagrams are omitted because they have no direct counterpart 
+  here: they were derived from calculations with the Raman model, and a full 
+  set of equivalent conditions for the saxophone model has yet to be derived 
+  (but see section 9.4.8.3 of Chaigne and Kergomard [1] for some efforts in 
+  that direction). The horizontal green line in Fig.\ 43 indicates the row from 
+  which the transients of Figs.\ 40—42 were drawn. Counting from the left-hand 
+  side, these transients correspond to pixels numbers 6, 8 and 9. Pixel 6, 
+  corresponding to Fig.\ 40, is the first coloured pixel beyond the magenta 
+  threshold line. 
+
+  To relate this to the waveforms we have seen, I need to explain the colour 
+  shading. First, we should look at a bigger set of waveforms. Figure 44 shows 
+  the full set of waveforms for the coloured pixels lying along the three white 
+  lines in Fig.\ 43. Three nominal period-lengths are plotted, from the end of 
+  each individual simulation. For each of the three sets, the top line shows a 
+  pulse waveform similar to the one in Fig.\ 40 (it just looks a little 
+  different because the vertical scale has been squashed). As you go down each 
+  stack of waveforms, the pulse waveform develops into shapes with more pulses. 
+  But before you reach the bottom of each stack you see a return to pulse 
+  waveforms — but upside down compared to the ones at the top of the stacks. 
+
+  A more detailed example of one of these inverted pulse waveforms is shown in 
+  Fig.\ 45: this is from the right-most coloured pixel along the green line in 
+  Fig.\ 43. You can see what has happened: the reed opens and closes once per 
+  cycle as before, but now it is closed nearly all the time, opening only for a 
+  short pulse. This is the opposite behaviour to the case in Fig.\ 40. 
+
+  With these waveforms in mind, the colour shading of Fig.\ 43 can be 
+  explained. The last few period-lengths of each simulation were used to 
+  compute something called the autocorrelation function. The signal is 
+  multiplied, sample by sample, with another version of the same signal with a 
+  time lag, and the products are all added together. After normalising to allow 
+  for the absolute magnitude of the signal, the result is a number between $-1$ 
+  and $1$, and this number varies as the lag is changed. If the signal is 
+  periodic, then the autocorrelation reaches the value $1$ when the lag matches 
+  the period. So the period of the waveform can be deduced by looking for the 
+  smallest lag which yields a value of the autocorrelation above some chosen 
+  threshold. If the nominal period is divided by this lag, the result would be 
+  1 for any signal at the nominal frequency, 2 for a signal an octave higher 
+  (i.e. at the second harmonic), 3 for a signal at the 3rd harmonic and so on. 
+
+  This number is what has been used to colour the pixels in Fig.\ 43. If you 
+  compare with the scale in the colour bar, you can see that the chosen colours 
+  are almost invariably close to the values 1, 2, 3, 4 or 5. Now scan along the 
+  lowest of the three white lines, and compare pixel by pixel with the 
+  waveforms in the 3rd column of Fig.\ 44. The pulse waves at the start and at 
+  the end all give the dark red colour connoting the value 1: these cases all 
+  correspond to ``normal'' sound at the nominal frequency. The 4th coloured 
+  pixel along the line gives a bright red colour, connoting the value 2. Sure 
+  enough, the 4th waveform from the top shows a symmetrical “double slip”, 
+  sounding an octave higher. Continue this comparison, and the colour code 
+  should make sense. 
+
+  So why have I chosen this way to colour the diagram? The answer to that lies 
+  in the behaviour we hope for in our saxophone. We might expect to find a 
+  region of the plane where it plays the “right” note. But then adjacent to 
+  that, we would not be surprised to find a region where the pitch jumps by an 
+  octave: this would correspond to “over-blowing to the second register”. A bit 
+  more, and we might over-blow to the third register, indicated by an orange 
+  colour connoting the value 3. We see exactly this pattern if we scan 
+  downwards from the top edge of the wedge region: a broad wedge with the value 
+  1 (corresponding to “inverted” pulse waveforms like Fig.\ 45), then a thin 
+  line of red followed by a line of orange. After that it gets rather messy, 
+  because of the complicated waveforms revealed by Fig.\ 44. Near the bottom of 
+  the wedge we see another solid region of the value 1, from the pulse 
+  waveforms arranged as in Fig.\ 40. 
+
+  So this first attempt at a simulation model for the soprano saxophone’s 
+  lowest note shows encouraging behaviour. It is indeed the case that low notes 
+  on a saxophone rather readily give ``bugling'' behaviour, where the note may 
+  jump progressively from register to register. The clarinet, by contrast does 
+  not show this behaviour: exactly what our plots such as Figs.\ 31--33 
+  predict. When those plots show a note, it is always close to the expected 
+  pitch for the first register. To shift register on a clarinet, you need to 
+  open a register hole. 
+
+  But possibly you think I am glossing over the regions of the saxophone 
+  diagram where the pattern becomes complicated? Possibly so --- we simply do 
+  not have the data to know whether a real saxophone behaves in a rather messy 
+  way like these simulations, but we might suspect that the real instrument is 
+  a bit better-behaved: it is what we should expect, given that we have used a 
+  very crude model, lacking the subtlety of details that have been designed 
+  into real saxophones. 
+
+  We can get an inkling of the sensitivity of the pattern to small details of 
+  the tube impedance by comparing with another case. We can’t make our model 
+  better without a bit of effort (we'll come to that in the next section), but 
+  we can very easily make it a bit worse, and see what effect that has. We can 
+  omit the allowance for the mouthpiece volume, and simply use the acoustical 
+  behaviour of a truncated cone (as described in the previous link). This is 
+  quite a small change to the model, but as you can see from the results in 
+  Figs.\ 46 and 47 it has a significant effect. The wedge region is smaller, 
+  and a lot of the details have changed. However, Fig.\ 47 shows that the 
+  repertoire of waveforms is essentially the same: pulse waves both ways up, 
+  “double slipping”, and so on. 
+
+  If we dig a little deeper into this comparison of results with and without 
+  allowing for the mouthpiece volume, we can see an interesting example of 
+  Benade’s idea of the playing frequency being determined by a collaboration 
+  and compromise between the resonance frequencies of the tube, when these are 
+  not exactly harmonically spaced. We will compare the spectra of notes 
+  produced by the two versions of the model, for a particular case: the chosen 
+  example has the same mouth pressure and reed gap as in Fig.\ 40, 
+  corresponding to a pixel just above the threshold of excitation. The two 
+  curves in Fig.\ 48 show the spectra deduced by taking an FFT of a long 
+  stretch of simulated periodic sound, for the two cases: the black curve 
+  includes the mouthpiece, the green one is without it. Both curves show sharp 
+  peaks at the harmonics of the note, and it is immediately apparent that the 
+  two models have ``chosen'' to play at different frequencies. To see why, we 
+  need to compare them with the corresponding input impedances. 
+
+  We look first at the note simulated without allowing for the mouthpiece 
+  cavity. Figure 49 shows the green spectrum from Fig.\ 48, compared with the 
+  input impedance used in the simulation (blue curve) and also the 
+  ``cylindrical saxophone'' impedance (dashed red curve). This dashed red curve 
+  has resonances that are exactly harmonically spaced, so the blue/red 
+  comparison gives an immediate visualisation of the “imperfection” of the 
+  conical tube. Figure 49 shows that the played note has ``chosen'' a frequency 
+  to match the highest peaks in the impedance, with its 3rd and 4th harmonics. 
+  This has the result that the fundamental and the 2nd harmonic are sharp 
+  compared to the tube resonances, while the higher harmonics are flat. 
+
+  Figure 50 shows the corresponding comparison for the case allowing for the 
+  mouthpiece. The black curve is the same one as in Fig.\ 48, the blue curve 
+  shows the input impedance that has been used in the simulation, and the 
+  dashed red curve again shows the input impedance of the “cylindrical 
+  saxophone” model. Compare this carefully with the blue curve. The first two 
+  peaks are virtually identical. The third peak shows a small separation, and 
+  then the higher frequencies show increasingly drastic divergence. Making the 
+  same comparison in Fig.\ 49, the blue and red curves are separated a little 
+  more clearly. 
+
+  This difference in impedance peaks with and without the mouthpiece seems like 
+  a small effect, but now compare with the black curve in Fig.\ 50. Our 
+  “saxophone” has chosen to play at a frequency that matches the first three 
+  peaks of the impedance curve: the apparently small effect of the mouthpiece 
+  has made these peaks sufficiently close to harmonic that their combined 
+  influence is able to ``beat'' the fact that the amplitude of the first peak 
+  is relatively low. (That low amplitude of the first peak is the reason that 
+  it is notoriously difficult to start low notes on a saxophone, oboe or 
+  bassoon very quietly.) The result is a simulation with a fundamental 
+  frequency very close to the first resonance of the tube. The higher harmonics 
+  of the played note diverge progressively from the peaks of the blue curve. 
+  They continue to coincide with the peaks of the dashed red curve, because 
+  those are accurately harmonic: as in Fig.\ 49, the blue/red comparison gives 
+  a direct visualisation of the “imperfection” of the conical tube, even with 
+  the mouthpiece compensation. 
+
+
+
+  \sectionreferences{}[1] Antoine Chaigne and Jean Kergomard; “Acoustics of 
+  musical instruments”, Springer/ASA press (2013) 
+
+  [2] Andre Almeida, David George, John Smith and Joe Wolfe, “The clarinet: How 
+  blowing pressure, lip force, lip position and reed ‘hardness’ affect pitch, 
+  sound level, and spectrum”, Journal of the Acoustical Society of America 
+  \textbf{134}, 2247—2255 (2013) 
+
+  [3] Jean-Pierre Dalmont, Joël Gilbert, Jean Kergomard and Sébastien Ollivier, 
+  “An analytical prediction of the oscillation and extinction thresholds of a 
+  clarinet”, Journal of the Acoustical Society of America \textbf{118}, 
+  3294—3305 (2005). 
+
+  [4] Chaigne and Kergomard report that the ``cylindrical saxophone'' 
+  approximation was first proposed by A. Gokhshtein, ``Self-vibration of finite 
+  amplitude in a tube with a reed'', Soviet Physics --- Doklady \textbf{24}, 
+  739--741 (1979). 
+
+  [5] Tom Colinot, Philippe Guillemain, Christophe Vergez, Jean-Baptiste Doc 
+  and Patrick Sanchez, “Multiple two-step oscillation regimes produced by the 
+  alto saxophone”, Journal of the Acoustical Society of America \textbf{147}, 
+  2406–2413 (2020) 

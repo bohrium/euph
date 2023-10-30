@@ -1,0 +1,179 @@
+  A tuned-mass damper, or TMD, is a device often used to add damping to a 
+  structural resonance that is causing problems. There are many types of 
+  application. In civil engineering TMDs are used on lightweight bridges and on 
+  tall buildings, especially ones in earthquake zones. The discussion in 
+  section 9.4 described the application in archery bows. And then there is the 
+  application we are particularly interested in here, as a wolf note 
+  ``eliminator'' for cellos and other bowed-string instruments. 
+
+  For all these applications, we can get a good idea of how a TMD works and how 
+  it might best be designed from a very simple model. We can represent the 
+  underlying structural resonance by a mass-spring-dashpot oscillator with 
+  effective mass $m_1$, stiffness $k_1$ and dashpot strength $c_1$. Its loss 
+  factor (see section 2.2.7) is then $\eta_1=c_1/\sqrt{k_1 m_1}$. 
+
+  The effective mass $m_1$ is not a fixed number for a given mode of the cello 
+  body (or whatever the underlying structure may be). Instead, it depends on 
+  the mode shape at the position we choose to fit our TMD. From section 2.2.5 
+  we know that if the normalised modal amplitude at this point is $u_n$, then 
+  $m_1=1/u_n^2$. So for a location close to a node line of the mode $u_n$, the 
+  effective mass would become very large. But we would not want to fit a TMD 
+  close to a node line: it will work best when fitted at a position where the 
+  relevant mode has significant amplitude. The actual value of the effective 
+  mass then depends on the mass of the structure, via the normalisation 
+  condition (equation (12) of section 2.2.5). For the application to a cello 
+  wolf note, as a guide we would expect this to be somewhere between a quarter 
+  and a half of the mass of the top plate. 
+
+  The TMD then consists of a second mass-spring-dashpot oscillator, sitting on 
+  top of the first one, as shown schematically in Fig.\ 1. The TMD oscillator 
+  has effective mass $m_2$, stiffness $k_2$ and dashpot strength $c_2$, and its 
+  loss factor if the mass $m_1$ was held fixed would be $\eta_2=c_2/\sqrt{k_2 
+  m_2}$. 
+
+  \fig{figs/fig-44b70943.png}{Figure 1. Sketch of a two-degree-of-freedom 
+  system representing a structural mode and a TMD.} 
+
+  To see how the coupled system behaves, we can simply write down Newton's law 
+  for the two masses, to deduce 
+
+  $$m_1 \ddot{x_1} = -- k_1 x_1 -- k_2 (x_1 -x_2) \tag{1}$$ 
+
+  and 
+
+  $$m_2 \ddot{x_2} = -- k_2 (x_2 -x_1) \tag{2}$$ 
+
+  where $x_1$ and $x_2$ are the displacements of the two masses away from their 
+  equilibrium positions. We can deduce the mass, stiffness and damping 
+  matrices: 
+
+  $$M=\begin{bmatrix}m_1 \& 0\\ 0 \& 
+  m_2\end{bmatrix},~~K=\begin{bmatrix}k_1+k_2 \& -k_2\\ -k_2 \& 
+  k_2\end{bmatrix},~~C=\begin{bmatrix}c_1 \& 0\\ 0 \& c_2\end{bmatrix} . 
+  \tag{3}$$ 
+
+  The case of interest arises when the TMD is tuned to the same natural 
+  frequency as the original resonance, so we can choose to set 
+
+  $$m_2=\epsilon m_1,~~~k_2=\epsilon k_1 \tag{4}$$ 
+
+  where the mass ratio $\epsilon$ is expected to be a small number. The 
+  absolute values of $m_1$ and $k_1$ will not influence the behaviour except to 
+  set the specific value of the resonance frequency, and act as an overall 
+  scale factor in any frequency response functions. For maximum simplicity, we 
+  can treat the non-dimensionalised case with $m_1=1,~~k_1=1$ so that when we 
+  calculate the coupled natural frequencies they will be normalised by the 
+  original resonance frequency. 
+
+  The mass and stiffness matrices then take the form 
+
+  $$M=\begin{bmatrix}1 \& 0\\ 0 \& 
+  \epsilon\end{bmatrix},~~K=\begin{bmatrix}1+\epsilon \& -\epsilon\\ -\epsilon 
+  \& \epsilon\end{bmatrix} . \tag{5}$$ 
+
+  We can now calculate the undamped natural frequencies and mode shapes in the 
+  usual way (see equations (8) and (9) of section 2.2.5). The (normalised) 
+  natural frequencies satisfy 
+
+  $$\begin{vmatrix}1-\epsilon-\omega^2 \& -\epsilon \\ -\epsilon \& 
+  \epsilon-\epsilon \omega^2\end{vmatrix} =0 \tag{6}$$ 
+
+  which simplifies to the quadratic equation 
+
+  $$\omega^4 -- (2-\epsilon) \omega^2 + (1-2\epsilon) = 0 \tag{7}$$ 
+
+  so that 
+
+  $$\omega^2 = 1 -\dfrac{\epsilon}{2} \pm \sqrt{\epsilon -- \epsilon^2 /4} 
+  \approx 1 \pm \sqrt{\epsilon} \tag{8}$$ 
+
+  where the final approximation uses the fact that $\epsilon$ is small. 
+
+  Now we can deduce the ratio of modal amplitudes from equation (2): 
+
+  $$\dfrac{x_2}{x_1} = \dfrac{1}{1-\omega^2} \approx \pm 
+  \dfrac{1}{\sqrt{\epsilon}} . \tag{9}$$ 
+
+  A physical interpretation of equation (9) is that the two masses have 
+  approximately equal kinetic energy in both modes. 
+
+  Equation (8) tells us that there are two natural frequencies, one on either 
+  side of the original resonance. The bigger the mass ratio $\epsilon$, the 
+  further apart these two frequencies are split. Equation (9) tells us the 
+  corresponding mode shapes. Both of them have large motion of the TMD mass, 
+  because of the factor $1/\sqrt{\epsilon}$. The mode at lower frequency has 
+  the two masses vibrating in phase, the one at higher frequency has them in 
+  antiphase (just as we would have expected from the requirement of 
+  orthogonality of these two modes). Figure 2 shows an animation of a typical 
+  case of these two modes, for the value $\epsilon = 0.03$ so that the TMD mass 
+  is 3% of the original resonator mass. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-9b574e0f-00.png }&\vidframe{ 0.30 }{ vids/vid-9b574e0f-01.png }&\vidframe{ 0.30 }{ vids/vid-9b574e0f-02.png } \end{tabular}\caption{Figure 2. Animation of the two modes of a typical TMD system, without damping. For convenience of the animation, they are shown here as having the same frequency, but in reality the two frequencies will be slightly different.}\mooendvideo
+
+  Finally, we want to include the effects of damping, and see what influence 
+  the TMD has on the frequency response for driving on the mass $m_1$. We can 
+  write equations (1) and (2) in the frequency domain, for the case of harmonic 
+  response driven by forces $F_1 e^{i \omega t}$ on mass $m_1$ and $F_2 e^{i 
+  \omega t}$ on mass $m_2$. If $x_1 =X_1 e^{i \omega t}$ and $x_2 =X_2 e^{i 
+  \omega t}$, then 
+
+  $$[-\omega^2 M + i \omega C +K] \textbf{X} = \textbf{F} \tag{10}$$ 
+
+  where $\textbf{X}$ is the vector $[X_1~~X_2]^t$ and $\textbf{F}$ is the 
+  vector $[F_1~~F_2]^t$. The term in square brackets $[...]$ in equation (10) 
+  is called the dynamic stiffness matrix $D$. The simplest way to compute the 
+  frequency response we want is to invert it, because 
+
+  $$\textbf{X} = D^{-1} \textbf{F} \tag{11}$$ 
+
+  so that the (1,1) element of $D^{-1}$ is the frequency response we want: the 
+  displacement response of mass $m_1$ to a force $F_1$. 
+
+  Figure 3 shows some examples. The blue curve shows the original response of 
+  the resonance without the added TMD, assuming a value $\eta_1 = 0.01$. The 
+  red curves show the result of adding two alternative TMDs, both with the 
+  value $\eta_2 = 0.15$. The dashed curve has $\epsilon = 0.01$, while the 
+  solid red curve has $\epsilon = 0.03$ (the case shown in Fig.\ 2). In the 
+  solid curve, the two separate peaks are very clear. In the dashed curve, with 
+  weaker coupling, the frequencies are close enough together that the peaks 
+  overlap to give a single, slightly distorted, peak. 
+
+  \fig{figs/fig-dd57a23e.png}{Figure 3. Driving-point frequency responses on 
+  the mass $m_1$ of the system shown in Fig. 1. The blue curve shows the 
+  original system without the TMD. The two red curves show the effect of TMDs 
+  with two different mass ratios $\epsilon$.} 
+
+  This simple analysis gives a good impression of what you would need to 
+  consider when designing a practical TMD. There is an obvious advantage to 
+  making $\epsilon$ as small as possible. On paper, you can achieve a good 
+  outcome with any value of $\epsilon$, however small. But there is a snag: the 
+  smaller $\epsilon$ becomes, the larger the amplitude of vibration required of 
+  the TMD mass. There are always practical limitations on this amplitude, for 
+  two different reasons. One relates to constraints on available space: there 
+  needs to be room for this large amplitude of vibration without hitting 
+  something. But there is another reason. We have done this calculation 
+  assuming linear behaviour of the springs and dashpots. But if the TMD moves 
+  at very large amplitude, nonlinear effects are likely to become apparent. 
+  Most springs, of whatever kind, have some limit on how far they can be 
+  stretched or compressed. The combined effect of these two things is to impose 
+  a minimum practical limit on $\epsilon$. 
+
+  The examples shown in Fig.\ 3 use deliberately extreme values, to illustrate 
+  the behaviour clearly. The height of the peak is reduced by some 20 dB in 
+  both cases. This is a far bigger effect than you would need to suppress a 
+  wolf note, which is fortunate because it would be hard to achieve such a 
+  large effect with something you could realistically fit to a cello. In 
+  addition to the two constraints just described, there is another issue 
+  concerning the assumed damping. We have assumed a rather low value of the 
+  cello loss factor $\eta_1$, and a very high value of the TMD loss factor 
+  $\eta_2$. In practice these two loss factors would not be so different, and 
+  the effect of the TMD on the peak height would be reduced. 
+
+  Finally, we should note that the smaller the value of $\epsilon$, the more 
+  careful we need to be to tune the TMD frequency to match the wolf frequency. 
+  When the mass ratio is very tiny, the strength of coupling between the two 
+  oscillators is very weak. As the tuning is varied, the two coupled 
+  frequencies will go through a ``veering'' pattern (like Fig.\ 3 of section 
+  7.3). In order for the TMD to work, the tuning has to be accurate enough to 
+  achieve a state well within the veering region, and this region will be 
+  narrow when the coupling is weak. 

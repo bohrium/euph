@@ -1,0 +1,79 @@
+  The musical saw is an example of a waveguide: a system that is long in one 
+  dimension, with a cross-section that is uniform or only slowly varying along 
+  the length. Such systems may be capable of carrying waves along the length, 
+  with behaviour in the cross-sectional plane corresponding to some kind of 
+  resonance. The musical saw is an example: the behaviour in the cross-section 
+  is like a free-free bending resonance across the width of the saw blade. To 
+  give an idea of the mathematical approach to analysing such a system, we can 
+  use a simpler waveguide. We will take a bending beam, like the one analysed 
+  in section 3.2.1, but we will give it an elastic foundation, sometimes called 
+  a Winkler foundation. Instead of the beam being free to vibrate as in the 
+  earlier calculation, we assume that it is tied to fixed ground by springs 
+  uniformly distributed along the length. This is a system often used to 
+  analyse the effect of foundations under buildings or ballast underneath 
+  railway track. 
+
+  \fig{figs/fig-181f0723.png}{Figure 1. Sketch of a bending beam on an elastic 
+  foundation} 
+
+  The system is sketched in Fig.\ 1. We can assume a beam just like the one 
+  analysed in section 3.2.1, but with the addition of the foundation spring 
+  with a stiffness $K$ per unit length: the units of $K$ are thus N/m/m. It is 
+  easy to see that we need just one extra term in the governing equation 
+  compared to eq. (7) from section 3.2.1: this equation becomes 
+
+  $$\rho A \dfrac{\partial^2 w}{\partial t^2}+EI \dfrac{\partial^4 w}{\partial 
+  x^4} + K w=0\tag{1}$$ 
+
+  where the term $Kw$ represents the force from the foundation springs. We are 
+  interested in solutions to this equation that are travelling waves, so try 
+  substituting 
+
+  $$w(x,t) = e^{i k x} e^{i \omega t} .\tag{2}$$ 
+
+  Then eq. (1) requires that the wavenumber $k$ satisfies 
+
+  $$k^4 = \dfrac{\rho A \omega^2 -K}{EI} . \tag{3}$$ 
+
+  Without the presence of $K$, eq. (3) would mean that for any value of 
+  $\omega$ we can find a real solution for $k$. In physical terms, that means 
+  that on a beam without the foundation, waves can propagate at any frequency. 
+  But with the foundation term, things are different. For frequencies 
+  satisfying 
+
+  $$\omega^2 > \frac{K}{\rho A} \tag{4}$$ 
+
+  we can still find a real solution for $K$. But if 
+
+  $$\omega^2 < \frac{K}{\rho A} \tag{5}$$ 
+
+  this is no longer possible. The possible solutions take the form 
+
+  $$k=\frac{\pm 1 \pm i}{\sqrt{2}} \left[\dfrac{K -- \rho A \omega^2 }{EI} 
+  \right]^{1/4} \tag{6}$$ 
+
+  so that all possible solutions decay exponentially with $x$. Such solutions 
+  are called evanescent waves. The transition frequency $\omega = 
+  \sqrt{\frac{K}{\rho A} }$, above which travelling waves first become 
+  possible, is called the waveguide cut-on frequency (or cut-off frequency, if 
+  you are thinking about scanning downwards in frequency when you encounter 
+  it). 
+
+  Now imagine that the value of foundation stiffness $K$ varies slowly along 
+  the the length of the beam. We can obtain an analogue of the S-shaped saw by 
+  supposing that $K \propto x^2$. The extra stiffness is zero at $x=0$, then 
+  increases symmetrically as you move away from that point in either direction. 
+  If we drive the beam into vibration at some chosen frequency $\omega$ at 
+  $x=0$, waves will propagate outwards in both directions. But they cannot pass 
+  beyond the pair of points where $K=\rho A \omega^2$, so the vibration must be 
+  confined between these two points, just as we found in the musical saw. 
+
+  Of course, the saw cannot resonate at every frequency. This mechanism of 
+  reflection is part of the story, but there is another condition necessary to 
+  create a mode like the one seen in the musical saw. This is the condition of 
+  phase closure. We can track our wave as it reflects up and down the waveguide 
+  and completes a full round trip. The phase will advance steadily as the wave 
+  propagates, and the process of reflection will involve a phase change of some 
+  kind. The condition for resonance, and the formation of a mode, is that the 
+  total change of phase after a round trip must be a multiple of $2 \pi$, so 
+  that the wave ``joins up with itself''. 

@@ -1,0 +1,136 @@
+  We first look at the simplest case, of a one-dimensional sound field in which 
+  the variations of pressure, density and particle displacement all depend only 
+  on the $x$-coordinate. We will assume that the air properties are the same 
+  throughout space, and that the fluctuations in pressure and density due to 
+  the sound wave are small compared to the steady atmospheric values. For the 
+  moment, we simply look at the behaviour of sound waves propagating in empty 
+  space: we will think about sound sources and the influence of walls and 
+  obstacles a bit later. 
+
+  We can write density as $\rho_0 + \rho'(x)$ and pressure as $p_0 + p'(x)$ 
+  where $\rho_0$ and $p_0$ are the steady density and pressure of air, and the 
+  quantities with primes are the small deviations from those steady values due 
+  to the sound wave. Now consider a small element of the air, lying between 
+  positions $x$ and $x+\delta x$, sketched in Fig.\ 1 with the wave inside a 
+  pipe with cross-sectional area $A$. As a result of the sound wave, the 
+  particles that were initially at the ends of this element are displaced by a 
+  small distance, to $x+\xi(x)$ and $x + \delta x + \xi(x + \delta x)$ 
+  respectively. 
+
+  We can apply conservation of mass to this element of air: the product of 
+  density and volume must remain constant, so 
+
+  $$\rho_0 A \delta x = (\rho_0 + \rho') A [\delta x -- \xi(x) + \xi(x+ \delta 
+  x)] $$ 
+
+  $$\approx (\rho_0 + \rho') A \left[\delta x + \frac{\partial \xi}{\partial x} 
+  \delta x \right] . \tag{1}$$ 
+
+  Cancelling $A \delta x$ and ignoring products of small quantities because we 
+  want a linearised relation, this reduces to 
+
+  $$0 \approx \rho' + \rho_0 \frac{\partial \xi}{\partial x} .\tag{2}$$ 
+
+  Now we can express $\rho'$ in terms of the pressure change $p'$. At typical 
+  acoustic frequencies, sound waves fluctuate sufficiently quickly that the air 
+  behaves adiabatically (or isentropically). This means that the thermodynamic 
+  relation 
+
+  $$p V^\gamma = \mathrm{constant} \tag{3}$$ 
+
+  can be assumed for any small fluid volume $V$, where $\gamma$ is the ratio of 
+  specific heats for air, a constant with the value 1.4. In terms of density, 
+  this means 
+
+  $$p \rho^{-\gamma} = \mathrm{constant} \tag{4}$$ 
+
+  so that for our element, 
+
+  $$p_0 \rho_0^{-\gamma} = (p_0 +p') (\rho_0 + \rho')^{-\gamma} = (p_0 +p') 
+  \rho_0 ^{-\gamma} (1+ \rho'/\rho_0)^{-\gamma} \tag{5}$$ 
+
+  so that 
+
+  $$0 \approx p' -- p_0 \gamma \frac{\rho'}{\rho_0} \tag{6}$$ 
+
+  using the binomial theorem and ignoring products of small terms. Substituting 
+  in eq. (2) then gives 
+
+  $$\frac{\partial \xi}{\partial x} = -- \frac{p'}{p_0 \gamma} . \tag{7}$$ 
+
+  We can obtain a second relation between $p'$ and $\xi$ by applying Newton's 
+  law to our small volume. The pressure acts on the two end faces, giving a net 
+  force which must be balanced by mass times acceleration. So 
+
+  $$A p(x) -A p(x+ \delta x) = \rho_0 A \delta x \frac{\partial^2 \xi}{\partial 
+  t^2} \tag{8}$$ 
+
+  so that 
+
+  $$- \frac{\partial p'}{\partial x} \approx \rho_0 \frac{\partial^2 
+  \xi}{\partial t^2} . \tag{9}$$ 
+
+  Differentiating this with respect to $x$ and then using eq. (7), we obtain 
+
+  $$\frac{\partial^2 p'}{\partial x^2} = -\rho_0 \frac{\partial^2}{\partial 
+  t^2} \left[ \frac{\partial \xi}{\partial x} \right]= \rho_0 
+  \frac{\partial^2}{\partial t^2} \left[ \frac{p'}{p_0 \gamma} \right] 
+  \tag{10}$$ 
+
+  So finally, if we define a constant $c$ satisfying 
+
+  $$c^2 =\frac{\gamma p_0}{\rho_0} \tag{11}$$ 
+
+  we obtain the governing equation 
+
+  $$\frac{\partial^2 p'}{\partial t^2}= c^2 \frac{\partial^2 p'}{\partial x^2} 
+  .\tag{12}$$ 
+
+  We can recognise this as exactly the same equation we found for the ideal 
+  stretched string in section 3.1.1, and so we already know that $c$ is the 
+  wave speed, in other words in this case it is the speed of sound. Standard 
+  values for the properties of air at sea level and 15$^\circ$C are 
+  $\rho_0=$1.225 kg/m$^3$ and $p_0=$1.01 MPa, leading to $c=340$ m/s, the 
+  expected value for the speed of sound. 
+
+  It is not difficult to generalise this derivation to the general case of 
+  sound waves in three dimensions. We now consider a small rectangular element 
+  of air, with sides $\delta x$, $\delta y$ and $\delta z$. The pressure is 
+  still a scalar quantity, but the particle displacement becomes a vector 
+  $\underline{\xi}(x,y,z)$ with components $(\xi_1,\xi_2,\xi_3) $ in the three 
+  axis directions. We follow the same sequence of steps. For the equivalent of 
+  eq. (1), we need to allow for the volume change associated with each of the 
+  three pairs of faces of the fluid element: the result is 
+
+  $$\rho_0 \delta x \delta y \delta z \approx (\rho_0 + \rho') \left[1 + 
+  \frac{\partial \xi_1}{\partial x} \right] \delta x \left[1 + \frac{\partial 
+  \xi_2}{\partial y} \right] \delta y \left[1 + \frac{\partial \xi_3}{\partial 
+  z} \right] \delta z \tag{13}$$ 
+
+  and so 
+
+  $$0 \approx \rho_0 \left[\frac{\partial \xi_1}{\partial x} + \frac{\partial 
+  \xi_2}{\partial y} + \frac{\partial \xi_3}{\partial z} \right] + \rho' 
+  \tag{14}$$ 
+
+  or, in the notation of vector calculus involving the divergence operator, 
+
+  $$-\rho_0 \nabla \cdot \underline{\xi} = \rho' = \frac{p'}{c^2} \tag{15}$$ 
+
+  using eqs. (6) and (11). (If you are hazy about vector calculus, the next 
+  link gives an introduction to the main concepts.) 
+
+  To apply Newton's law to the fluid element, we simply have the equivalent of 
+  eqs. (8) and (9) for each component separately, leading to 
+
+  $$\rho_0 \ddot{\underline{\xi}} = -- \nabla p' \tag{16}$$ 
+
+  in terms of the gradient of pressure. Taking the divergence of this equation 
+  and then using eq. (15), we obtain 
+
+  $$\nabla \cdot \nabla p' = -\rho_0 \nabla \cdot \ddot{\underline{\xi}} = 
+  \frac{\partial^2}{\partial t^2} \left[ \frac{p'}{c^2} \right] . \tag{17}$$ 
+
+  The result is the wave equation in three dimensions: 
+
+  $$\frac{\partial^2 p'}{\partial t^2} = c^2 \nabla^2 p' .\tag{18}$$ 

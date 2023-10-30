@@ -1,0 +1,577 @@
+
+
+  Up until now, we have been using a particular model to describe the 
+  frictional behaviour between the bow and the string. This model is based on 
+  two assumptions: that the friction force is proportional to the normal force 
+  (i.e. the bow force), and that during sliding the friction force is a 
+  nonlinear function of the sliding speed. The time has come to look carefully 
+  at both these assumptions. What is the empirical evidence and/or theoretical 
+  understanding on which they are based? 
+
+  This turns out to be an interesting but tricky question, and it will lead us 
+  right up to a research frontier. Most things we have discussed so far are 
+  governed by physical principles like Newton’s laws, which are well 
+  established and uncontroversial. But friction is different: there is no 
+  single underlying theory that has similar status. The details can be quite 
+  different, depending on the nature of the materials in contact, and in many 
+  cases we still don’t know the full story. Most of the time engineering 
+  calculations involving friction make use of grossly simplified 
+  approximations, but these are not good enough if we want to understand 
+  bowed-string transients in detail. 
+
+  The first assumption, that friction force is proportional to bow force, we 
+  will defer for the moment. The question has an interesting history, but a 
+  discussion of it will fit more neatly into the next section when we talk 
+  about how a real bow might give different behaviour from a rigid rod. For 
+  now, we will concentrate on the second assumption, the “friction curve 
+  model”. Our starting point is the measurement we saw earlier, repeated here 
+  as Fig.\ 1. 
+
+  \fig{figs/fig-4a3cc277.png}{Figure 1. Measurement of friction force during 
+  steady sliding, showing variation with sliding speed, reproduced from Fig. 6 
+  of section 9.2.} 
+
+  Looking at this plot, it seems obvious that the friction force varies, rather 
+  dramatically, with the sliding speed. But we have to be careful to avoid a 
+  trap here. This plot shows the results of a particular type of measurement: 
+  for each separate data point, steady sliding was imposed at a particular 
+  speed, and the friction force was measured. Sliding speed is the only 
+  variable, so of course we can plot the measured forces against the speeds and 
+  we are bound to get something looking like a friction curve. 
+
+  But now suppose we do a different measurement, in which the sliding speed 
+  varies in time (as it does with the actual bowed string). Do the results from 
+  Fig.\ 1 prove that the friction force is determined, moment by moment, by the 
+  instantaneous value of the sliding speed? Absolutely not! Other factors might 
+  come in, to do with the history of the motion. Figure 1 only says that if the 
+  speed stays constant for long enough, the force should settle down to the 
+  value plotted there. To resolve this question, we need to do measurements of 
+  a different kind. 
+
+  It is not easy to observe the friction force directly during stick-slip 
+  vibration of a bowed string, or indeed of any other stick-slip system like a 
+  squealing vehicle brake. It is very difficult to insert any kind of 
+  force-measuring sensor right in the contact region, without drastically 
+  changing the behaviour. Instead, ingenuity must be exercised to design an 
+  experiment in which the friction force can be reliably inferred from 
+  measurements of some kind elsewhere on the vibrating structure. 
+
+  For the case we are interested in, when the friction is mediated by 
+  violinist’s rosin, two different experiments of this kind have been carried 
+  out. The first, by Jonathan Smith [1], made use of a cantilever-like 
+  mass-spring oscillator. Once the effective mass, stiffness and damping of the 
+  device have been found by calibration tests, the motion of the mass during a 
+  stick-slip vibration can be measured and the friction force can be 
+  reconstructed by substituting the displacement, velocity and acceleration 
+  into the equation of motion of the oscillator. 
+
+  The second experiment used an actual bowed string. Bob Schumacher designed a 
+  rig in which a violin E string was bowed by a glass rod which had been coated 
+  in rosin [2, 3]. The rosin was dissolved in a solvent, then a rod was slowly 
+  drawn up out this solution, leaving a thin film of rosin after the solvent 
+  had evaporated. At both ends of the string, force-measuring sensors of the 
+  kind described in section 9.1.1 were inserted. With a bit of ingenious 
+  processing in the computer, these two force signals can be combined to give 
+  estimates of the string velocity and the friction force at the bowed point. 
+  The next link gives a few details about how this can be done. 
+
+  The Schumacher experiment gives the most illuminating information for our 
+  purpose, so we will show some results from this rig. Figure 2 shows a few 
+  cycles of the inferred waveforms of velocity (upper plot) and friction force 
+  (lower plot). The string was executing Helmholtz motion in this example. The 
+  pulses of slipping, with negative velocities, are clear. In between, the 
+  episodes of sticking do not show a velocity that is exactly constant. Small 
+  ripples in this waveform arise because the string can roll on the “bow”, as 
+  described in sections 9.5 and 9.5.3. 
+
+  \fig{figs/fig-fa503c95.png}{Figure 2. Example waveforms of string velocity 
+  and friction force, for a case of Helmholtz motion in the ``glass bow'' 
+  experiment.} 
+
+  Now if we take these waveforms of velocity and force and we plot one against 
+  the other, we get the result seen in Fig.\ 3. There is a more-or-less 
+  vertical stripe at the right-hand side, showing the intervals of sticking. 
+  But during slipping, instead of a single friction curve we see a loop. The 
+  path around this loop moves anti-clockwise. The friction force is highest at 
+  the start of slipping (or in fact just after the start of slipping), then it 
+  falls as the slipping speed increases. But on the way back towards the 
+  sticking line, the force remains much lower than the maximum value on the way 
+  out. The details of the loop shape can vary in different bow strokes, but the 
+  qualitative behaviour is always very similar to this plot. Furthermore, 
+  Jonathan’s Smith’s experiment also gave very similar results, despite using a 
+  very different vibrating system. 
+
+  \fig{figs/fig-38a85e4a.png}{Figure 3. The results from Fig. 2, plotted in the 
+  force-velocity plane. Friction force has been normalised by the bow force. 
+  The loops during slipping are traversed in an anti-clockwise direction: 
+  friction force is high at the start of slipping, but much lower at the end. 
+  The more-or-less vertical patch of ``scribble'' on the right-hand side of the 
+  plot shows the behaviour during sticking.} 
+
+  The conclusion is that the friction force is not simply determined by the 
+  sliding speed: you get a different answer depending on whether the speed is 
+  increasing or decreasing. Rosin does not follow the kind of friction-curve 
+  model we have been assuming up to now. So what is going on? We should step 
+  back a little, and ask what is special about rosin. Why do violinists use it 
+  in the first place? Indeed, it is not only violinists: there are many 
+  bowed-string instruments around the world, and there are also other musical 
+  instruments which make use of stick-slip vibration, for example \tt{}friction 
+  drums\rm{}. Players of all these instruments coat their bowhair, or their 
+  hurdy-gurdy wheel, or in the case of friction drums their fingers, with 
+  rosin. 
+
+  Rosin is a natural material, obtained from various species of pine tree. The 
+  raw tree resin is separated using distillation or solvents into a liquid 
+  component called “spirit of turpentine” and a solid component, which is 
+  rosin. It is manufactured in industrial quantities, because it has many uses: 
+  it is used in making soaps, printing inks, paper, adhesives, and many other 
+  applications. It is also frequently used for its high friction: not only for 
+  violin bows, but also to give dancers, weightlifters or baseball players a 
+  firmer grip on things. 
+
+  Violin rosin is a clear, brittle material at room temperature: if you drop a 
+  block on the floor it is likely to shatter. But if you hold it in your 
+  fingers for a minute or two, it soon becomes sticky. It is a type of material 
+  known technically as a glass. As any glass-blower knows, if you heat ordinary 
+  glass up it does not show a sharp melting point at which it suddenly becomes 
+  a liquid (like melting ice). Instead, there is a broad range of temperatures 
+  over which the glass softens progressively. By holding the temperature in 
+  this range, the glass-blower can shape and mould it into laboratory glassware 
+  or decorative drinking glasses. 
+
+  Rosin behaves in a similar way, but the changes happen at a lower temperature 
+  than with glass. The softening range of temperatures, usually characterised 
+  by the glass transition temperature marking the middle of the range, is not 
+  very far above room temperature. What this means is that the mechanical 
+  properties of rosin change rather quickly with a relatively small rise in 
+  temperature. As the temperature rises, the rosin becomes softer, so that the 
+  force required to deform a layer of rosin goes down. This is probably the 
+  origin of the behaviour seen in Fig.\ 1. When a rosin-coated bow or rod is 
+  forced to slide across another object (such as a violin string), heat is 
+  generated. The faster the sliding, the hotter the rosin becomes, and the 
+  lower is the resulting friction force. So the friction force does vary with 
+  the sliding speed, but only indirectly. The real cause of the variation is a 
+  change of temperature. 
+
+  The idea that the friction force is strongly influenced by temperature, 
+  rather than sliding speed as such, gives an immediate qualitative explanation 
+  for the loop seen in Fig.\ 3. Heat is generated during episodes of sliding, 
+  but very little is generated during episodes of sticking. So think what will 
+  happen during a cycle of Helmholtz motion. At the end of a slip, the rosin 
+  will be relatively warm and so the friction will be low. But during the 
+  relatively long sticking interval, the heat has a bit of time to diffuse away 
+  into the body of the string and bow. So by the time the Helmholtz corner 
+  arrives back to trigger the next slip, the rosin layer has cooled down a bit, 
+  and the friction force is higher. As it slips, the rosin heats up rapidly and 
+  the friction falls. The result is a loop in the velocity—force plane, just as 
+  we saw in the measured results. 
+
+  What this description amounts to is a claim that the rosin melts a little and 
+  re-freezes during every cycle of the string’s vibration, several hundred 
+  times a second. Is that really credible? Remarkably, we can get some direct 
+  evidence for this from the Schumacher experiment. We can use one of his glass 
+  rods for just a few bow strokes in the apparatus, rotating it a bit each time 
+  so that a different part of the rosined surface is used. We can then take 
+  that rod and look at it in the scanning electron microscope, and we see 
+  visible tracks left by the string’s vibration. 
+
+  Figure 4 shows an example. The featureless grey background is the very smooth 
+  surface of the rosin coating on the glass rod. Running across this background 
+  we can clearly see three tracks, made up of a fairly regular row of little 
+  vertical lines. Each of those lines is the “footprint” of a single sticking 
+  event in the string’s vibration. The orientation of the string was vertical 
+  in this image, and the rod has been moved in the horizontal direction when 
+  performing the bow stroke. The three tracks have been created by three 
+  separate bow strokes. 
+
+  \fig{figs/fig-c14cdcb9.png}{Figure 4. Three tracks left on the glass rod 
+  ``bow'' by single bow strokes} 
+
+  Figure 5 shows a zoomed view of a portion of one of these tracks, and Fig.\ 6 
+  shows an even closer view. Each of the vertical scars in the track shows 
+  churned-up rosin. This is the result of the string rolling back and forth a 
+  little during that sticking interval. But then the string slips rapidly 
+  across the surface of the rod, and we can see very clear evidence that the 
+  rosin has been partially melted: look at the streaks on the left-hand side of 
+  Fig.\ 6. These are surely ``threads'' of hot rosin, drawn out by the string 
+  as it slipped across the surface. 
+
+  \fig{figs/fig-5a4e83a2.png}{Figure 5. Close-up of a typical track, showing 
+  two scars from episodes of sticking, separated by regions where slipping has 
+  melted the rosin} 
+
+  \fig{figs/fig-b6b08926.png}{Figure 6. Closer view of the terrain near a 
+  stick-slip transition} 
+
+  Figure 7 shows a low-angle view, to give a different perspective on the 
+  terrain revealed by these images. The churned-up texture created by the 
+  rolling string during the sticking event which caused the scar in the middle 
+  of the image is particularly clear here. 
+
+  \fig{figs/fig-cbd3736d.png}{Figure 7. Low-angle view along a typical track} 
+
+  There are standard laboratory measurements that can give information about 
+  the mechanical properties of rosin as a function of temperature. As a first 
+  step, the usual way to determine the glass transition temperature is with a 
+  device called a “differential scanning calorimeter”. This measures the amount 
+  of heat absorbed by a small sample of rosin (or whatever material is being 
+  tested), as the temperature is slowly raised. Whenever a material undergoes a 
+  phase transition from solid to liquid, or from liquid to gas, heat energy 
+  must be supplied in the critical temperature range. The resulting peak in the 
+  heat absorbtion identifies the temperature of the transition. In the case of 
+  a glass transition the peak is quite broad, but its highest point can still 
+  be used to put a number on the glass transition temperature. 
+
+  But we are most interested in mechanical properties, rather than thermal 
+  properties as such. For this, we can use a device called a “rheometer” which 
+  measures the force needed to deform a layer of the material. The specific 
+  deformation we are interested in is shear, because a sliding frictional 
+  contact requires shearing between the two surfaces. Figure 8 shows some 
+  results of measurement of the shear viscosity of two different types of 
+  commercial rosin for bowed instruments, which represent the extremes of 
+  available behaviour. The temperature has been varied slowly during the test. 
+  The red points are for violin rosin, of the kind we have been talking about 
+  so far. The blue points are for a brand of rosin aimed at double bass 
+  players. This bass rosin is supplied in a pot: unlike violin rosin, which is 
+  supplied in a solid block, the bass rosin will flow, slowly, at ordinary room 
+  temperatures so it needs to be prevented from getting away. 
+
+  \fig{figs/fig-1c3c28fd.png}{Figure 8. Measured shear viscosity of two types 
+  of commercial rosin, as a function of temperature: red points are for violin 
+  rosin, blue points for a type of double bass rosin. The glass transition 
+  temperatures for the two types of rosin, measured with a differential 
+  scanning calorimeter, are shown as vertical dashed lines in corresponding 
+  colours.} 
+
+  The glass transition temperatures of the two types of rosin are shown by 
+  vertical dashed lines in corresponding colours: $16^\circ$C for the bass 
+  rosin, and $49^\circ$C for the violin rosin. The variation of viscosity with 
+  temperature reflects this difference: the two curves have very similar 
+  shapes, but they are separated along the temperature axis by approximately 
+  the difference of these two temperatures. These plots make it rather clear 
+  why the bass rosin needs to be kept in a pot: it is already above its glass 
+  transition temperature at normal room temperature. 
+
+  There are two things to notice about this viscosity plot. First, there is a 
+  gap in the sequence of red points. This is simply because two different types 
+  of rheometer were needed to cover temperature ranges where the material was 
+  “solid” and “liquid”. But it is easy to see that the two would join up if the 
+  intermediate range of temperature could have been tested. The second thing to 
+  note is the vertical scale. A logarithmic scale is needed for the viscosity 
+  because the values have changed by almost 7 orders of magnitude over this 
+  range of temperature. When I said that the mechanical properties of rosin 
+  changed sensitively with small changes in temperature, I was not joking! 
+
+  The next step is to try to extend the computer simulation model to 
+  incorporate temperature-dependent friction. First, we need to calculate the 
+  temperature in parallel with simulating the string motion. The simplest 
+  version of such a calculation is easy to describe. Figure 9 shows a schematic 
+  close-up of the contact region of rod, string and rosin. The rod (being used 
+  as a bow as in the Galluzzo or Schumacher experiments) carries a layer of 
+  rosin. It is moved across the string, seen in cross-section in the sketch. 
+  There will be a small “contact footprint” between rod and string, with a size 
+  that depends on the diameters of rod and string, and also on the normal force 
+  (as will be discussed in the next section). In that footprint region, the 
+  rosin will be warmer than ambient temperature, indicated by the red patch. 
+
+  \fig{figs/fig-3a9c51bf.png}{Figure 9. Sketch of the contact region between 
+  rod and string. The layer of rosin is shown schematically in blue. The region 
+  shaded in red is the contact footprint: it is the temperature in this patch 
+  that needs to be computed} 
+
+  To work out the temperature in this contact patch, we can do a “heat balance” 
+  calculation. There are four effects to consider. Heat is being generated by 
+  friction, at a rate which is simply the product of the friction force and the 
+  speed of relative sliding between the two surfaces. Heat is being lost by two 
+  mechanisms. First, there is diffusion of heat by conduction into the bodies 
+  of the rod and the string. The second mechanism is associated with the moving 
+  rod: cold rosin is carried into the contact area, while warmer rosin moves 
+  out at the other end, taking some heat away with it. Finally, there is a term 
+  associated with changes in the heat stored in the red contact region: if the 
+  temperature is rising, then heat is being added; if it is falling, heat is 
+  being removed. Putting these four things together yields a governing equation 
+  that we can solve in the computer, alongside the simulation of the string's 
+  motion. In the unlikely event that you are keen to see the gory details, they 
+  are explained in reference [1] (you can find a PDF at number 61 in the list 
+  \tt{}here\rm{}). 
+
+  Now for the difficult part: we need to choose a specific model for exactly 
+  how the friction force is influenced by the temperature. So far, I have been 
+  talking as if the force will only depend on temperature, but this is rather 
+  misleading. One thing we definitely know about any friction force is that it 
+  always opposes the sliding motion. It must change sign if the sliding 
+  direction is reversed — but of course the temperature will be the same, 
+  regardless of the direction of sliding. So the friction “law” we are looking 
+  for must involve the sliding velocity as well as the temperature, in some 
+  way. We don’t really have enough experimental data to determine the correct 
+  answer, so we need to resort to a bit of guesswork and empirical exploration. 
+
+  The simplest model, and the one that has been most extensively investigated, 
+  is to assume that the coefficient of friction is a function of temperature 
+  alone [4,5]. This coefficient would be multiplied by the sign of the sliding 
+  speed ($+$ or $-$) to give the necessary reversal of friction force when 
+  sliding reverses. We can use the measurement from Fig.\ 1 to infer what the 
+  variation with temperature must be. The same computer code can be used to 
+  simulate the steady sliding experiment, and thus obtain the contact 
+  temperature as a function of sliding speed. This can be used to convert the 
+  results of Fig.\ 1 into a function of temperature: the result is shown in 
+  Fig.\ 10. These results are based on violin rosin similar to the red points 
+  in Fig.\ 8, so it probably has a similar glass transition temperature, around 
+  $49^\circ$C. It is reassuring to see that this temperature falls near the 
+  middle of the downward slope in Fig.\ 10. 
+
+  \fig{figs/fig-e0ea8d60.png}{Figure 10. Coefficient of friction as a function 
+  of temperature, inferred from the data of Fig. 1 by the procedure described 
+  in the text.} 
+
+  Armed with this function of temperature, we are ready to incorporate the 
+  thermal friction model into our bowed-string simulation. Figure 11 shows an 
+  example of a Guettler constant-acceleration transient, simulated in this way. 
+  Specifically, it is the case corresponding to the pixel (10,14) in the 
+  Guettler plots seen in section 9.5 (10th acceleration from the left, 14th 
+  force from the bottom, bow position $\beta=0.0899$). The red curve shows the 
+  new simulation, while the black curve in this figure shows the corresponding 
+  measured bridge force. In this case, both of them lead to the Helmholtz 
+  sawtooth, after a rather short transient. 
+
+  \fig{figs/fig-3ec7cb11.png}{Figure 11. A Guettler transient, measured (black) 
+  and simulated with the thermal friction model (red)} 
+
+  Figure 12 shows the corresponding computed temperature variation. The mean 
+  temperature is predicted to rise to some $70^\circ$C, and in every cycle of 
+  the final Helmholtz motion there is a fluctuation by some $30^\circ$C. This 
+  certainly seems like a big enough change to account for the appearance of the 
+  tracks on the glass rod seen in Figs.\ 5—7: the rosin looked ``melted'' 
+  during slipping, but semi-solid during sticking. 
+
+  \fig{figs/fig-4a6d0b4c.png}{Figure 12. The predicted contact temperature from 
+  the simulation shown in red in Fig. 11.} 
+
+  However, we only learn a rather limited amount by looking at a single 
+  transient like this. The next step is to use the new model to scan a family 
+  of transients and construct a Guettler diagram. Figure 13 shows an example, 
+  chosen to match the cases we saw in Fig.\ 7 of section 9.5, which is 
+  reproduced here as Fig.\ 14 for easy comparison. It is immediately obvious 
+  that the new model behaves quite differently to the friction-curve model. It 
+  has produced a fairly solid patch of colour (marking cases that led to 
+  Helmholtz motion), in contrast to the “spotty” texture of the friction-curve 
+  case. 
+
+  \fig{figs/fig-0414dd56.png}{Figure 13. An example of a Guettler diagram 
+  computed using the thermal friction model for the bowing position 
+  $\beta=0.0899$.} 
+
+  So far, so good: but the patch of colour in Fig.\ 13 is nowhere near as big 
+  as the corresponding patch in the measured Guettler diagram. A player of the 
+  friction-curve “cello” would find their job almost impossible: every pale 
+  pixel marking a good, fast transient is not far from some black pixels. This 
+  means that if the cellist tried to repeat a successful bow stroke, they are 
+  likely to be frustrated by sensitivity to small details of the gesture. The 
+  “thermal model cello” of Fig.\ 13 would be preferred: there is a region of 
+  the Guettler plane where every transient gives a successful outcome, with 
+  relatively small variations in transient length. However, the real cello 
+  would surely win hands down in this playability comparison: it offers a far 
+  larger range of transients that “work”. From the point of view of a beginner, 
+  this means that it is easier to perform a bow gesture that is not a disaster. 
+  From the perspective of an expert, the larger available area of the plane 
+  will open up a wider “sound palette” of musical possibilities. 
+
+  So can we do any better than this? In terms of improved models that are 
+  firmly based in understanding of the underlying physics, there is no good 
+  answer to that question at present. But to give a hint that better models are 
+  out there waiting to be found, I will show a few examples from a slightly 
+  enhanced version of our thermal friction model. Comparing the two waveforms 
+  in Fig.\ 11, we can see one qualitative difference at the very start of the 
+  string's vibration. Both waveforms begin with a similar rising curve. What is 
+  happening here is that the string is sticking to the bow, so it is being 
+  pulled to one side by the accelerating motion of the bow. The motion we are 
+  interested in can only begin after the first moment of release, when slipping 
+  starts. In the measured waveform (in black), that first release happens with 
+  a jump. The simulated waveform in red shows no such jump. Furthermore, as 
+  explained in the next link, this version of the thermal friction model can 
+  never show a jump. 
+
+  There is a simple (but rather ad hoc) way to enhance our friction model to 
+  allow the possibility of jumps. The argument is explained in the previous 
+  link. An example of this enhancement in action is shown in Fig.\ 15. The two 
+  waveforms from Fig.\ 11 are now followed by a third, in blue. This new 
+  waveform does indeed show an initial jump that looks broadly similar to the 
+  measurement (in black). 
+
+  \fig{figs/fig-f3e2fbaf.png}{Figure 15. The two waveforms from Fig. 11, plus a 
+  corresponding simulation (in blue) for the modified thermal friction model 
+  described in the text.} 
+
+  Using this new model to scan a range of transients, we obtain the Guettler 
+  diagram shown in Fig.\ 16. Looking back at Figs.\ 13 and 14, is this better 
+  or worse than the original thermal model? Better, surely: coloured pixels are 
+  found over a larger area of the Guettler plane than in Fig.\ 13. The terrain 
+  in both plots is a bit spotty, with black pixels dotted around, but this is 
+  not necessarily a bad thing: we have seen in section 9.5 that the real bowed 
+  cello string showed clear evidence of ``sensitive dependence'' leading to 
+  spottiness rather like this. 
+
+  \fig{figs/fig-c21b5390.png}{Figure 16. Guettler diagram in the same format as 
+  earlier figures, simulated using the modified thermal friction model.} 
+
+  It is worth digging into the details a bit more, to understand what is going 
+  on and get a sense of what a player might think about it. This particular 
+  presentation of the Guettler results certainly does not tell the whole story. 
+  It is based on an automated routine for detecting Helmholtz motion, and then 
+  establishing the length of each transient. The problem with that kind of 
+  routine is that it is drawing a hard line between “Helmholtz”and “not 
+  Helmholtz”. Sometimes, this distinction is clear, but not always: there are 
+  “nearly Helmholtz” waveforms, and placing the threshold is a matter of 
+  judgement on the part of the programmer of the automated detection routine. 
+  The result is that a gradual change from Helmholtz to nearly-Helmholtz, which 
+  might not bother a player very much, is turned into an abrupt change from a 
+  coloured pixel to a ``failed'' black one. 
+
+  If we process the results in a different way, we can get a different view of 
+  the relative merits of the various simulation models we have described. One 
+  approach is to look at the final waveform, near the end of each simulation, 
+  and simply ask how similar this is to the corresponding measured waveform: no 
+  attempt is made to classify the waveforms. Specifically, we will look at two 
+  period-lengths near the end of each measured Guettler transient. A 
+  corresponding chunk can be extracted from the simulated results, adjusting 
+  the phase of the two-period chunk to give the best match. We can then 
+  calculate a numerical measure of the difference between the two: the 
+  particular measure chosen to be plotted here is the root-mean-square (RMS) 
+  difference, after each separate waveform has been scaled to have unit RMS 
+  value. 
+
+  If we plot how this difference measure varies over the Guettler plane, we get 
+  the results shown in Figs.\ 17, 18 and 19. Figure 17 compares the 
+  measurements with the original thermal model, Fig.\ 18 with the modified 
+  thermal model, and Fig.\ 19 with the friction-curve model. The paler and 
+  ``hotter'' the colour, the more similar the waveforms are. Of the three 
+  figures, Fig.\ 18 has the hottest colours overall. Figure 17 shows a similar 
+  pattern but with less white and more yellow. Figure 19, for the friction 
+  curve model, performs the worst. Based on these plots, the modified thermal 
+  model looks the most promising. 
+
+  \fig{figs/fig-ed2c6522.png}{Figure 17. Difference plot, comparing two 
+  period-lengths at the end of each Guettler measurement with the corresponding 
+  results simulated with the original thermal model. The brighter the pixel, 
+  the more similar are the waveforms.} 
+
+  \fig{figs/fig-1489904e.png}{Figure 18. Difference plot in the same format as 
+  Fig. 17, comparing measurements with simulations using the modified thermal 
+  friction model.} 
+
+  \fig{figs/fig-79069779.png}{Figure 19. Difference plot in the same format as 
+  Figs. 17 and 18, comparing measurements with simulations using the 
+  friction-curve model.} 
+
+  To see what lies behind these plots, the next set of figures shows the 
+  detailed results for a single row of the Guettler diagram. Figure 20 shows 
+  the 20 waveform comparisons which give the difference results shown in Fig.\ 
+  21, based on the original thermal model. In each case, the measured waveform 
+  is shown in black, and the phase-matched simulation is shown in red. The 
+  first two cases of Fig.\ 20 show rather irregular string motion for both 
+  measurement and simulation. The details are quite different, so it is no 
+  surprise that the difference measure is quite big. The next 11 cases show 
+  something looking like Helmholtz motion in both measurement and simulation, 
+  and the first few of these show quite a good match. 
+
+  Cases 9--13 are interesting: the simulations appear to show Helmholtz motion, 
+  as does the measurement, but the shapes are distinctively different in the 
+  simulations. The bottom “points” of the sawtooth waveform have been rounded 
+  off, in a way that is not echoed in the measurement. These waveforms are 
+  sufficiently different from the ideal Helmholtz sawtooth wave that the 
+  automatic classification routine has rejected them: that is why the 
+  right-hand half of Fig.\ 13 was solid black. This is a good example of the 
+  difficulties of automatic classification --- but the routine has correctly 
+  identified the fact that the simulation is not a good match to the 
+  measurements, which is the question we are most interested in at the moment. 
+  The remaining cases for Fig.\ 20 show versions of double-slipping or other 
+  Raman “higher types” in both measurement and simulation. The simulations 
+  still have the characteristic rounded points, but the qualitative comparison 
+  is otherwise reasonably good. 
+
+  \fig{figs/fig-a3de2c63.png}{Figure 20. The waveform comparisons from which 
+  the difference measure was calculated, for one row of the results from Fig. 
+  17 relating to the original thermal friction model. Measured waveforms are 
+  shown in black, phase-matched simulated waveforms in red.} 
+
+  \fig{figs/fig-6472e7eb.png}{Figure 21. The row of Fig. 17 relevant to the 
+  waveforms shown in Fig. 20.} 
+
+  Figure 22 and 23 show corresponding results for the modified thermal model. A 
+  first thing to notice is that none of the simulated waveforms here show the 
+  rounded bottom points, as we noticed with the original thermal model. As in 
+  Fig.\ 20, the first two cases show irregular motion in both measurement and 
+  simulation. Cases 3, 4 and 5 show Helmholtz motion in the measurement, while 
+  the simulations either show Helmholtz motion with large Schelleng ripples, or 
+  perhaps they show S-motion. This is another example of the difficulty of 
+  automatic classification: it is far from clear how these waveforms should be 
+  labelled. 
+
+  \fig{figs/fig-d89a24e5.png}{Figure 22. Waveform comparisons in the same 
+  format as Fig. 20, for one row of results simulated by the modified thermal 
+  friction model.} 
+
+  \fig{figs/fig-e17afac7.png}{Figure 23. The row of Fig. 18 relevant to the 
+  waveforms shown in Fig. 22.} 
+
+  The middle two rows of Fig.\ 22 show Helmholtz motion in both measurement and 
+  simulation, in most cases. Case 11 is an exception: it has Helmholtz motion 
+  in the measurement but double slipping in the simulation. We need to be a bit 
+  careful in how we interpret this. We have already commented that the bowed 
+  string, both in reality and in simulation, shows some evidence of “sensitive 
+  dependence”. Back in section 9.5 we saw some results of repeat measurements 
+  of the Guettler plane, and although the qualitative picture remained the 
+  same, individual pixels could change between takes. What we are seeing in 
+  case 11 of Fig.\ 21 may be illustrating this sensitivity: perhaps the choice 
+  between Helmholtz motion and double-slipping is rather finely balanced for 
+  this case, and therefore subject to sensitivity. The disagreement between 
+  measurement and simulation is not necessarily pointing to incorrectness in 
+  the model. 
+
+  The final row of Fig.\ 22 shows some variety of double-slipping in both 
+  measurement and simulation, in all cases. There are differences of detail, 
+  leading to variations in the RMS difference measure, but actually the 
+  qualitative agreement seems rather good throughout. In some cases, the 
+  difference simply reflects a small difference in the phasing of the two 
+  slips: I would suspect that such a difference has very little influence on 
+  the perceived sound. Overall, then, the modified thermal model performs 
+  rather well in this comparison: slightly better than the original thermal 
+  model. That is not to say, by any means, that this model is perfect, but it 
+  is very encouraging. Is the agreement good enough that this model could be 
+  used reliably to do systematic simulation studies on playability differences? 
+  The answer to that question is not yet clear: I said we would reach a 
+  research frontier in this section. 
+
+  Finally, for completeness Figs.\ 24 and 25 show corresponding results for the 
+  friction-curve model. We need not go through and describe the waveforms 
+  individually. Some cases show reasonable agreement with the measurements, but 
+  it is pretty obvious that this model gives unsatisfactory results for many 
+  cases. 
+
+  \fig{figs/fig-dae4caca.png}{Figure 24. Waveform comparisons in the same 
+  format as Figs. 20 and 22, for one row of results simulated by the 
+  friction-curve model.} 
+
+  \fig{figs/fig-dd45fa7a.png}{Figure 25. The row of Fig. 19 relevant to the 
+  waveforms shown in Fig. 24.} 
+
+
+
+  \sectionreferences{}[1] J. H. Smith and J. Woodhouse,~ “The tribology of 
+  rosin”;~ Journal of the Mechanics and Physics of Solids~ \textbf{48} 
+  1633–1681 (2000). 
+
+  [2] J. Woodhouse, R. T. Schumacher and S. Garoff, “Reconstruction of bowing 
+  point friction force in a bowed string”;~ Journal of the Acoustical Society 
+  of America~ \textbf{108} 357–368 (2000). 
+
+  [3] R.T. Schumacher, S. Garoff and~J. Woodhouse, “Probing the physics of 
+  slip-stick friction using a bowed string”; Journal of Adhesion \textbf{81}, 
+  723–750 (2005). 
+
+  [4] J. Woodhouse, “Bowed string simulation using a thermal friction model”; 
+  Acta Acustica united with Acustica \textbf{89}~ 355–368 (2003). 
+
+  [5] P. M. Galluzzo, J. Woodhouse and H. Mansour, “Assessing friction laws for 
+  simulating bowed-string motion”;~ Acta Acustica united with Acustica 
+  \textbf{103}, 1080-1099, (2017).~ DOI 10.3813/AAA.919136 

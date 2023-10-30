@@ -1,0 +1,296 @@
+
+
+  Many bowed-string instruments, particularly cellos, exhibit a phenomenon 
+  called a “wolf note”. When a cellist tries to play a particular note they 
+  find that it is unusually prone to ``surface sound'', and they may get a kind 
+  of “stuttering” or “warbling” effect instead of the steady note they were 
+  expecting. This effect is fascinating to a physicist, but it makes life 
+  difficult for cellists and they may go to some lengths to control and 
+  moderate the problem. You can hear an example in Sound 1, where the player 
+  has tried to produce the effect, rather than trying to suppress it as they 
+  would usually do. The bow speed is steady and the player's left-hand finger 
+  is not moving, but you can hear the intermittent warbling sound of the wolf, 
+  and you can also hear instability of the pitch. 
+
+  Figure 1 shows an extract of a bridge force recording during a warbling wolf 
+  like this, and Fig.\ 2 shows a zoomed view of the portion outlined in black 
+  in Fig.\ 1. What these waveforms reveal is that the cycle of the wolf 
+  involves an alternation of Helmholtz motion, with the familiar sawtooth 
+  waveform, and double-slipping motion. 
+
+  The physics behind the wolf note is yet another thing that was first 
+  explained correctly by Raman [1]. Testing Raman’s explanation was an early 
+  target for the computer model described in section 9.2, and we can give a 
+  clear description of his argument using a simple simulated example. The great 
+  advantage of simulation for this purpose is that we have access to complete 
+  information about what is going on, including some things that are hard to 
+  see clearly by measurement. 
+
+  The first clue about the explanation comes from the fact that a classic cello 
+  wolf note is always associated with a particularly strong resonance of the 
+  cello body. To incorporate body resonances into the synthesis model, we need 
+  to modify the reflection function describing how a wave is modifying during 
+  travel from the bow to the bridge and back. The details of how to do this are 
+  described in the next link. For the purposes of demonstration, we need only 
+  include a single body resonance, with a frequency very close to the 
+  fundamental frequency of the bowed note. 
+
+  Figure 3 shows the resulting simulated bridge force, from one cycle of the 
+  wolf note's ``warble''. The alternation of Helmholtz motion and double 
+  slipping can be seen, although the details are not exactly the same as Figs.\ 
+  2 and 3. This simulation does not attempt to reproduce all the details of 
+  that particular cello, string and performance, but it captures the essence of 
+  the phenomenon: a cyclical warbling waveform, when bowing a note with a 
+  fundamental frequency matching a strong resonance of the instrument body. 
+
+  We can use the simulated results to generate a plot corresponding to Raman's 
+  original measurement. He made simultaneous observations of the string motion 
+  and the motion of the cello body, and this gave the basis for his explanation 
+  of the wolf phenomenon. Figure 4 shows a corresponding plot from our 
+  simulated example: the red curve shows the string velocity, while the blue 
+  curve shows the ``body'' motion. The alternation of Helmholtz motion and 
+  double-slipping motion is very clear in the red curve. 
+
+  The single resonator representing the ``body'' shows a cyclical growth and 
+  decay during the ``warble'' cycle. The explanation of the behaviour we see in 
+  Fig.\ 4 is intimately connected to the idea of minimum bow force, explored in 
+  the previous section. We found that the minimum bow force depends upon the 
+  level of energy dissipation into the body of the instrument: with no 
+  dissipation, the minimum bow force would go to zero. For this energy loss, 
+  the more the body moves, the greater is the energy dissipation rate, and the 
+  higher the resulting minimum bow force. 
+
+  Now think about what happens when you start to bow a note matching a strong 
+  body resonance. Initially the body is not vibrating, and it may be possible 
+  to start the Helmholtz motion with a relatively low bow force. The resonant 
+  response of the body will then start to grow, but as we can see in Fig.\ 4 
+  this growth takes several cycles: the timescale is determined by the damping 
+  factor of the body mode. As the motion at the bridge gradually increases, the 
+  effective minimum bow force rises with it. If the player maintains the low 
+  initial bow force, it may happen that the minimum level overtakes the actual 
+  bow force. Helmholtz motion must then give way to double-slipping motion. But 
+  such motion, especially if the two slips are rather symmetrical, produces far 
+  less excitation at the fundamental frequency, and this allows the body 
+  vibration to die away again. The effective minimum bow force will fall back 
+  until it is below the actual force, and Helmholtz motion may then be able to 
+  re-establish. The cycle repeats, and the result is the “warbling wolf”. All 
+  these stages can be followed in the two traces of Fig.\ 4. 
+
+  Having seen that the wolf behaviour is intimately linked to minimum bow 
+  force, this raises the question of whether we can extend Raman’s and 
+  Schelleng’s argument to predict the note-by-note variation in minimum bow 
+  force for a particular instrument. The original argument was explained in 
+  detail in section 9.3.1. The essential steps went like this. First, we 
+  assumed a perfect Helmholtz motion on the string, which tells us the waveform 
+  of force at the bridge. That force was used to predict the motion of the 
+  bridge. Then, assuming that the bowing point is close to the bridge, we 
+  estimated the extra force at the bow caused by that bridge motion. Finally, 
+  the minimum bow force criterion was obtained from the requirement that this 
+  extra force must not cause a second slip during the supposed sticking 
+  interval of the Helmholtz motion. 
+
+  Raman and Schelleng found the bridge motion by approximating the “body” by a 
+  dashpot. But we can do something better than that, if we have a measurement 
+  of the bridge admittance of the instrument. It is straightforward to make use 
+  of this admittance to compute the actual bridge motion in response to the 
+  Helmholtz sawtooth wave of bridge force, at any chosen frequency. The rest of 
+  the Raman—Schelleng argument then carries through without any change. The 
+  details are explained in the next link. 
+
+  We can show an example: it relates to the cello responsible for the wolf note 
+  we heard in Sound 1. Figure 5 shows the measured bridge admittance of this 
+  cello. Frequency scales are given in semitones (lower) and in Hz (upper). 
+  (American readers might call semitones ``half-steps''.) Actual values of the 
+  admittance are shown on the right-hand scale; the left-hand scale shows the 
+  result scaled by the impedance of the C string of the cello, giving the 
+  string-to-body impedance ratio for that string. You may recall that we used a 
+  similar scaled admittance when we talked about plucked strings, back in 
+  Chapter 5: see for example Fig.\ 8 of section 5.1. 
+
+  Figure 6 shows the predicted minimum bow force, computed by the procedure 
+  described in the previous link. The frequency axis here denotes the 
+  fundamental frequency of a played note. For each of the four strings, a range 
+  of 3 octaves from the open string is shown. This is rather more than you can 
+  in fact play on a cello with a fingerboard of conventional length, but it 
+  ensures that we have covered all playable notes. Vertical lines indicate 
+  equal-tempered semitones: Cs are shown in yellow, other notes in grey. The 
+  absolute numbers on the vertical axis should not be taken too seriously: the 
+  values depend on the particular chosen values of bow speed, bowing position 
+  $\beta$, and the friction coefficient of rosin. But all these things only 
+  contribute to an overall scale factor: the extent of variation from note to 
+  note and between the four strings should be reliably represented in the plot. 
+
+  The curves for the different strings are identical apart from a scaling 
+  factor relating to the impedance of the string. It is immediately clear that 
+  the minimum bow force for a given note played on the C string is 
+  significantly higher than for the other strings. The highest peak occurs at 
+  F$_3$ (174.6~Hz), and this is indeed the wolf note played (on the C string of 
+  the cello) in Sound 1. A plot like Fig.\ 6 reveals the location of the wolf 
+  note from a simple physical measurement (of the bridge admittance). It can do 
+  more than that: there are other peaks in the plot, and these serve to 
+  indicate to a luthier where other potential ``problem notes'' may occur on 
+  the cello. 
+
+  This brings us to a question you may have been wondering about: why do cellos 
+  suffer from wolf notes so much more than violins do? Plots like Fig.\ 5 give 
+  an immediate clue, because this scaled admittance is a direct measure of how 
+  strongly the string is coupled to the instrument body. One view of the wolf 
+  note is that it is what can happen if that coupling gets a bit too strong. 
+  Figure 7 shows the same scaled cello admittance as in Fig.\ 5, and it also 
+  shows the corresponding scaled admittance for two violins (in blue curves). 
+
+  The frequency scale based on semitones above the lowest tuned note of the 
+  instrument allows these different instruments to be compared directly. This 
+  comparison shows that the violins also have strong resonances at about the 
+  same place in their playing range as the peak that caused the wolf in the 
+  cello. The “signature” mode shapes responsible for these peaks were shown 
+  back in section 5.3 (see Figs.\ 5c and 5d in that section). But we see in 
+  Fig.\ 7 here that the peak in the cello is higher than the highest peak for 
+  either violin, by about 5~dB. That may not look a very big difference in the 
+  plot, but it corresponds to nearly a factor of 2 increase in the 
+  string-to-body impedance ratio. In case you think I have cheated by choosing 
+  violins with rather low peaks, I should say that the dashed curve in Fig.\ 7 
+  is for a violin that most players find loud to the point of “crudeness”. 
+
+  There is a simple reason for this difference between the cello and the 
+  violin. If you take a violin, and you scale everything in the right way to 
+  reflect the difference of tuning of the two instruments, you obtain an 
+  instrument that is significantly bigger than a conventional cello. This 
+  causes ergonomic problems for the player: the string length is uncomfortably 
+  long, and the body size is rather unwieldy. No doubt in response to comments 
+  of this kind from players, instrument makers adjusted the design, to give the 
+  smaller body and shorter string length that we are used to. 
+
+  But there is a price for this. We want the “signature mode” resonances to 
+  fall in roughly the same place in both instruments, in order that the musical 
+  qualities of the cello are rather like a “big violin”. We have already seen 
+  in Fig.\ 7 that makers have indeed evolved a design for the cello that comes 
+  quite close to achieving this objective. But in order to do so, they have had 
+  to change two things relative to the “scaled violin”. The smaller body would 
+  tend to have higher resonance frequencies, so that body (especially the top 
+  plate) is made thinner. On the other hand, the shorter strings still need to 
+  be tuned to the correct scaled notes, so the strings need to be heavier than 
+  the “scaled violin” would suggest. So we have heavier strings on a lighter 
+  body: exactly the recipe we talked about in section 5.2 to increase the 
+  loudness of an instrument by making the scaled bridge admittance bigger. But 
+  we now see that there is a down-side: this design change increases the 
+  likelihood of wolf notes. 
+
+  The idea of the “scaled violin” is not purely hypothetical: such instruments 
+  have been designed and made. The theory underlying the scaling procedure was 
+  another thing explained by John Schelleng [2], and the driving force behind 
+  building the first instruments was American luthier Carleen Hutchins, who we 
+  saw in Fig.\ 4 of section 9.2. They didn’t just build a cello-sized 
+  instrument: they made an octet of instruments, of which the conventional 
+  violin is number 3 in terms of size. You can read more, and see pictures of 
+  them, on \tt{}this web site\rm{}. 
+
+  The choice of body sizes for these octet instruments was arrived at by a 
+  compromise between complete geometric scaling and ergonomic considerations 
+  for the player [3]. The instruments larger than the violin are bigger than 
+  the usual viola, cello and bass, but a fully-scaled bass would be impossibly 
+  large for a human performer. Having chosen these body sizes, the plate 
+  thicknesses and rib heights were adjusted based on Schelleng’s scaling 
+  theory, to place the “signature modes” at corresponding frequencies to those 
+  of the violin, relative to the tuning of each instrument. The choice of 
+  strings was then made with an eye to controlling the string-to-body impedance 
+  ratio, to keep the wolf under control. 
+
+  Returning to the wolf note, there is one more topic we need to address. What 
+  can a player or an instrument maker do to reduce the impact of a wolf note? 
+  Well, there are some simple things. Fitting lighter-gauge strings to the 
+  cello will reduce the string impedance, and thus reduce the height of the 
+  peak in the scaled admittance as in Fig.\ 5 or 7. That peak could also be 
+  reduced in height by increasing the damping of the body mode: for example, 
+  players sometimes wedge something like a sock under the tailpiece. The 
+  trouble with both those “solutions” to the wolf problem is that they will 
+  influence all the notes, not just the wolf note. Players will very often 
+  regard this as too high a price to pay: skilled players often learn to live 
+  with their wolf, by careful control of bowing (and probably choosing to play 
+  that F on the G string, not high on the C string). 
+
+  But there is one kind of treatment that can add damping selectively to the 
+  “wolf” peak, without having much effect on the rest of the playing range of 
+  the instrument. Somewhat unusually in the world of musical instrument 
+  acoustics, this is a familiar approach to vibration problems in many other 
+  areas of engineering: it is usually called a “\tt{}tuned mass damper\rm{}” or a “tuned absorber”. 
+
+  The trick is to fix another oscillator of some kind to the structure you want 
+  to control, with a resonance frequency tuned so that it exactly matches the 
+  resonance that is causing a problem, in our case the wolf note. When that 
+  problem mode starts to vibrate, the additional oscillator will also vibrate 
+  strongly. If you have designed your additional oscillator so that it has 
+  quite high damping, the result will be that it will suck some energy out of 
+  the original vibrating structure: exactly the result we were hoping to 
+  achieve. The details of how such a tuned mass damper works are given in the 
+  next link. 
+
+  We will look at some non-musical examples first. Figure 8 shows the famous 
+  “wobbly bridge” in London. The Millennium Bridge was opened with much fanfare 
+  to celebrate the new millennium in 2000, but it soon had to be closed again 
+  because pedestrians became alarmed by the way the bridge vibrated in response 
+  to their walking rhythm. The problem was fixed, at considerable expense, and 
+  the bridge is now a major tourist attraction in London. Part of the fix 
+  involved installing tuned mass dampers underneath the bridge deck: you can 
+  see one in Fig.\ 9, looking very obviously like a spring-mass oscillator. 
+
+  Another rather neat example of the use of tuned mass dampers can be seen in 
+  hi-tech archery bows used in competition shooting. When an archer draws their 
+  bow back and then releases the arrow, they will excite a lot of vibration in 
+  the bow, particularly in the fundamental mode because that mode shape is very 
+  similar to the static shape of the drawn bow. This residual vibration will be 
+  felt through the archer’s hand and arm: it will contribute to fatigue and 
+  potentially lead to less accurate shooting. 
+
+  The archer would like to reduce this vibration, but they absolutely do not 
+  want to slow down the initial response of the bow when it is released, 
+  because that would slow down the flight of the arrow. Adding a tuned-mass 
+  damper is a good solution. Resonant vibration of the additional oscillator 
+  will take a little time to build up, so it will not change anything during 
+  the critical early time before the arrow is released. But the damper will 
+  suck energy out of the residual vibration, exactly what is wanted. 
+
+  You can see two competition archery bows in Fig.\ 10. It may not be 
+  immediately obvious where to look to see the tuned mass dampers. Each bow has 
+  a pair of rods, projecting from just below the hand-grip. In the picture the 
+  archer is holding the bows back-to-front: in normal use these rods would lie 
+  at an angle on either side of the archer’s left hand and arm. The thing you 
+  can't see in the picture is that each rod is attached to the bow by a 
+  flexible rubber mount. This rubber serves as both the spring and the damping 
+  of the oscillator. 
+
+  How does this idea apply to the cello? Several types of commercial “wolf note 
+  eliminator” are available. The most familiar is shown in Fig.\ 11. A brass 
+  weight is attached to one of the “afterlengths” of string, between the bridge 
+  and the tailpiece. By adjusting its position carefully, the first resonance 
+  frequency of this weighted length of string can be tuned to the wolf 
+  frequency. This tuning needs to be quite precise: a useful tip is to fit a 
+  heavy practice mute to the cello bridge to suppress the body vibration, then 
+  tap the afterlength with a pencil, and adjust the position so that the note 
+  you hear is tuned exactly to the wolf pitch. The device will then work as a 
+  tuned mass damper exactly as we described above, adding additional damping to 
+  the body mode and thus reducing the height of the peak in the scaled 
+  admittance without making significant difference to the body response at 
+  other frequencies. 
+
+  There are also devices that work on the same principle but are glued to the 
+  underside of the cello soundboard to make a permanent installation. A virtue 
+  of these is that the player does not have to adjust something carefully every 
+  time they change a string. Alternatively, an instrument maker can sometimes 
+  make use of something that is already there on the cello. The tailpiece 
+  (which holds the strings, visible at the bottom of Fig.\ 11) has several 
+  resonances. By choosing the right tailpiece and then adjusting details of its 
+  installation carefully, one of those resonant frequencies can sometimes be 
+  made to match the wolf note so that it can act as a tuned mass damper. 
+
+
+
+  \sectionreferences{}[1] C.V. Raman; ``On the `Wolf-note' of the Violin and 
+  `Cello'', Nature \textbf{2435}, 362--363 (1916) 
+
+  [2] J. C. Schelleng; ``The violin as a circuit'', Journal of the Acoustical 
+  Society of America \textbf{35}, 326--338 (1963). 
+
+  [3] C. M. Hutchins; ``Founding a family of fiddles'', Physics Today, 
+  \textbf{20}, 233--244 (1967). Available online \tt{}here\rm{}. The key 
+  diagram is \tt{}here\rm{}. 

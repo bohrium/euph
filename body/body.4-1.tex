@@ -1,0 +1,258 @@
+  So far we have talked a lot about vibrating structures, but surely music is 
+  about sound, rather than vibration as such? It is time to think about sound 
+  waves --- how they are made, and how they travel through the air and interact 
+  with the surrounding environment. Sound waves consist of fluctuations of 
+  pressure in the air. Usually, the fluctuation is a very small fraction of the 
+  ambient atmospheric pressure, and that means that, as with small-amplitude 
+  mechanical vibrations, most relevant aspects of musical sound can be 
+  understood using linear theory. 
+
+  As explained in the next link, linearised sound waves can be modelled with a 
+  differential equation which is already familiar from earlier sections, called 
+  the wave equation. We have seen the one-dimensional version of this equation 
+  for the ideal stretched string (see section 3.1.1), and the two-dimensional 
+  version for a stretched membrane (see section 3.6.1). Sound waves obey the 
+  three-dimensional version: but the one-dimensional wave equation also has a 
+  simple physical interpretation for sound waves. A plane wave is one in which 
+  the air pressure only varies along one direction, such as the $x$ coordinate 
+  direction. The molecules of air oscillate back and forth parallel to the 
+  $x$-axis, and the wave travels in the $x$ direction. Figure 1 shows an 
+  animation of the result, for a sinusoidal waveform. 
+
+  The wave equation shows that sound waves travel through air (or through 
+  water, or any other medium) at a certain speed, determined by the density, 
+  atmospheric pressure and thermodynamic properties. The speed of sound in air 
+  is somewhat dependent on the temperature and humidity, but under normal 
+  conditions it is around 340 m/s. A familiar consequence of this relatively 
+  slow speed is the delay between seeing a lightning flash and hearing the 
+  thunder: the light from the flash travels at the speed of light, so fast as 
+  to be virtually instantaneous in the context of watching a thunderstorm. 
+
+  The speed of sound tells us a very useful thing straight away: it relates the 
+  frequency of a sound wave to its wavelength, the distance between successive 
+  positions where the pressure fluctuation achieves a maximum value in a 
+  travelling sinusoidal wave. The relation is very simple: the wavelength (in 
+  metres) is given by the speed of sound (in m/s) divided by the frequency (in 
+  Hz). As we saw earlier, the lowest frequency humans perceive as a musical 
+  pitch is around 20 Hz, and this corresponds to a wavelength of 17 m. At the 
+  opposite extreme, the highest frequency we can hear is around 20 kHz (and you 
+  need to be quite young to hear that high). This corresponds to a wavelength 
+  1000 times shorter, 17 mm. Wavelength will turn out to be important in 
+  several different ways. The simplest will explain the fact, as we will see 
+  shortly, that this range of lengths encompasses the range of sizes of musical 
+  wind instruments: organ pipes, flutes, trombones and so on. Most instruments 
+  are concentrated in the middle of the range, just as most musical notes are 
+  intermediate between the extremes of pitch that we can perceive. 
+
+  As well as the plane wave, there is another simple solution to the wave 
+  equation which gives a useful component for thinking about more complicated 
+  sound fields later on. If we write the equation in spherical polar 
+  coordinates and then look for a solution that only depends on the radial 
+  distance $r$, we can obtain a spherically symmetric wave field: details are 
+  given in the next link. This solution can be used to describe a wave being 
+  sent out by a pulsating sphere, as illustrated in Fig.\ 2. The pressure 
+  varies sinusoidally with $r$, and the amplitude dies away proportional to 
+  $1/r$. 
+
+  This simple example allows a first glimpse of a characteristic feature of 
+  many acoustical problems, which often contributes to making acoustics 
+  inherently more complicated than the structural vibration we have talked 
+  about up to now. It is all to do with length scales. There are three 
+  different length scales of interest here: the radius $a$ of the pulsating 
+  sphere, the wavelength $\lambda$ of the sound, and the distance $r$ to the 
+  observer. (The Greek letter $\lambda$ is pronounced ``lambda''.) We learn 
+  something important if we express both $a$ and $r$ as multiples of the 
+  wavelength, or equivalently if we introduce non-dimensional ratios 
+  $a/\lambda$ and $r/\lambda$. 
+
+  These ratios, between them, allow the qualitative behaviour of the wave field 
+  to be classified into different regimes. The idea is similar to the use of 
+  the Reynolds number to classify qualitatively different regimes of fluid 
+  flow. The ratio $a/\lambda$ is called the Helmholtz number, or sometimes the 
+  compactness ratio. It describes in wavelength terms the size of the object 
+  making the sound: our pulsating sphere, or the body of a violin, for example. 
+  When the Helmholtz number is small, meaning that the sound source is much 
+  smaller than the wavelength, there is a useful approximate way to understand 
+  sound radiation: we will meet it in section 4.3. When the Helmholtz number is 
+  moderate, so that the size of the source is comparable with the wavelength, 
+  things get more complicated because new phenomena will come into play: we 
+  will see examples shortly. When the Helmholtz number is very large, the 
+  source is very large compared to the wavelength, and a different type of 
+  approximate analysis becomes possible, which we will also meet in section 
+  4.3. 
+
+  The second non-dimensional ratio doesn't have a standard name, but it 
+  describes the distance of the observer in wavelength terms. For many sound 
+  fields the behaviour is different when the observer (or measuring microphone) 
+  is in the far field, where this ratio is large, compared to the behaviour in 
+  the near field, where the ratio is small. This is the case in the simple 
+  sphere example we have considered here: the details are given in the previous 
+  link. For a musical application of the idea, think about a violin. The 
+  player's ears are very close to the vibrating body of the instrument: they 
+  are in the near field. A listener in the concert hall audience is likely to 
+  be many wavelengths distant, though: they are in the far field. When people 
+  talk about a violin sounding different ``under the ear'' from ``the sound in 
+  the hall'', this far field/near field distinction is a key factor. 
+
+  Now, the important thing about these two non-dimensional ratios is that they 
+  allow us to distinguish broad types of behaviour that are different. It is 
+  not the precise numerical values of these numbers that matters, so much as 
+  the distinction between ``very small'', ``moderate'' and ``very large''. So 
+  far I have defined these numbers in a particular way, based on the wavelength 
+  $\lambda$. But I have cheated a bit. When the mathematics of the approximate 
+  solutions is worked out, the natural quantities that arise are based on 
+  something called the wavenumber, usually called $k$. This is defined as the 
+  inverse of the wavelength, except that a factor $2 \pi$ comes in: $k=2 \pi / 
+  \lambda$. So the most familiar form of the Helmholtz number for the sphere 
+  problem is written $ka$: if you like, you can think of it as the ratio of the 
+  circumference of the sphere to the wavelength, because the factor $2 \pi$ 
+  cancels out. I will shortly show some particular examples, and when it comes 
+  to labelling those I will usually use values of $ka$ or $kr$ for the specific 
+  values used in the calculations. 
+
+  In the remainder of this section, we will introduce some important 
+  qualitative aspects of sound waves and their interaction with mechanical 
+  objects: the ideas of impedance, intensity, wave interference, diffraction 
+  and shadowing. First, we look at the energy carried by a travelling sound 
+  wave. As explained in the next link, the intensity of a sound wave is a 
+  vector which is the product of the pressure and the particle velocity. It 
+  describes the rate and direction at which acoustic energy crosses a unit area 
+  of space. For both the plane wave and the spherical wave discussed above, the 
+  intensity is given by the expression $\frac{1}{2} \frac{p^2}{Z}$ where $p$ is 
+  the amplitude of the sinusoidal pressure, and $Z$ is a constant called the 
+  characteristic impedance. For the spherical wave from the pulsating sphere, 
+  we saw that pressure dies away with the inverse of distance $r$, so the 
+  intensity satisfies the inverse square law, dying away proportional to 
+  $1/r^2$. This is exactly what you would expect: there is no dissipation of 
+  energy, so the total power crossing a spherical surface at any distance $r$ 
+  must be the same. The area of the surface grows with $r^2$, so the intensity 
+  must indeed decay like $1/r^2$. 
+
+  Perhaps the most characteristic property of waves of any kind, including 
+  sound waves, is called interference, or sometimes phase cancellation. The 
+  idea of wave interference was first explored by Thomas Young, at the very 
+  start of the 19th century. He demonstrated the key concept using water waves 
+  in a ripple tank, reputedly after watching the patterns of ripples on the 
+  pond in the garden of Emmanuel College, Cambridge. The pond is still there, 
+  and Fig.\ 3 shows an interference pattern on this same pond. Young went on to 
+  apply the idea to interference of light waves. 
+
+  Suppose we have two identical sound sources, sitting side by side and 
+  producing sound at the same frequency (for example, a pair of loudspeakers of 
+  a stereo system). Provided linear theory applies, the sound waves generated 
+  by the two sources each behave as if the other source was not there, and the 
+  combined sound that you would hear, or pick up with a microphone at a 
+  particular position, is simply the sum of the two. Now, if our two sound 
+  sources were to produce identical, synchronised, sound waves, the result 
+  should simply be the same sound wave with twice the amplitude. However, if 
+  the sources were in opposite phase, the sound waves would be ``equal and 
+  opposite'', and they would cancel each other out. If the match of the two 
+  fields was perfect, the combination of two sounds would be silence! It is 
+  hard to achieve perfect cancellation like this in practice, but still this 
+  effect has some very important consequences for music and musical instruments 
+  (and in many other situations involving acoustics). For example, it is how 
+  ``noise-cancelling headphones'' work, often used for listening to music in 
+  noisy environments such as on an aeroplane. 
+
+  We can investigate this effect quantitatively by combining two of the 
+  spherical sound sources just discussed. Figures 4 and 5 show the pressure 
+  fields resulting from two pulsating spheres in close proximity, vibrating 
+  with the same amplitudes either in phase (Fig.\ 4) or in opposite phases 
+  (Fig.\ 5). The Helmholtz number based on the separation of the centres of the 
+  spheres is 1.3 for this case. (Specifically, this Helmholtz number is defined 
+  as $ka$, where $a$ is the separation of the centres and $k$ is the wavenumber 
+  of the sound wave, introduced earlier and defined in terms of the wavelength 
+  $\lambda$ by $k=2 \pi/\lambda$.) Figure 4 shows a pattern which, apart from 
+  some near-field details, is virtually indistinguishable from that of a single 
+  pulsating sphere. Figure 5 is quite different. The pressure is consistently 
+  lower because of cancellation effects, and along the horizontal mid-line the 
+  cancellation is perfect and the pressure remains zero. Sound radiation is 
+  strongest in the vertical directions, either upwards or downwards, along the 
+  line of centres of the two spheres. This pattern is called a dipole field, 
+  and we will come back to it in section 4.3. 
+
+  Figures 6 and 7 show a similar comparison with a larger Helmholtz number of 
+  21. The two spheres are now several wavelengths apart, and a complicated 
+  interference pattern is seen. Bright-coloured spots occur wherever the path 
+  length difference from the two spheres results in waves arriving in phase 
+  from the two places. The two figures show very similar patterns, and there is 
+  no significant difference in the pressure levels in the two cases. The 
+  interference pattern seen in these examples could be thought of as an 
+  acoustical analogue of Thomas Young's patterns of water ripples (like the 
+  ``quilted'' pattern visible in Fig.\ 3), and of his famous \tt{}``two-slits'' 
+  experiment\rm{} in optics. Light waves obey the same wave equation as sound 
+  waves, although the wavelengths of visible light are much shorter than the 
+  typical wavelengths of sound so that the equivalent of the Helmholtz number 
+  is usually very large for macroscopic problems in optics. 
+
+  The significance of very large Helmholtz number is revealed by the next 
+  example. This concerns the phenomena of diffraction, wave scattering and the 
+  formation of shadows. We are very familiar with the fact that ``light travels 
+  in straight lines'', so that if there is an opaque object in the way then the 
+  light can't reach the other side, and the result is a shadow. But with sound 
+  waves, things are different. You can often hear something when it is round a 
+  corner, for example a radio playing in the next room. But in truth, the 
+  distinction is not so clear. Optics and acoustics obey the same laws, and the 
+  only difference comes from the Helmholtz number. At very high Helmholtz 
+  number, sound waves start to behave much more like the familiar behaviour of 
+  light, and they can be analysed using ``ray theory''. 
+
+  We will not go into much detail here, but the key effects can be illustrated 
+  by a textbook example which happens to have a closed-form mathematical answer 
+  (see section 8.1 of Morse and Ingard [1] for the details). The problem 
+  concerns the interaction between a plane sound wave and an infinitely long 
+  rigid cylinder, lying perpendicular to the direction the wave is travelling. 
+  The wave diffracts around the cylinder, with details that depend on the 
+  Helmholtz number $ka$, where $a$ is the radius of the cylinder and $k$ is the 
+  wavenumber of the sound wave as before. 
+
+  The difference between the original plane wave and the actual wavefield, 
+  including the diffraction effects, is called the scattered field. Figure 8 
+  shows plots of how this scattered field behaves for a range of values of the 
+  Helmholtz number. Each case is a polar plot, to show how the intensity of the 
+  scattered field varies with angle. The red symbol marks the origin in each 
+  case, and the radial distance from there to the blue curve is proportional to 
+  the far-field intensity of the scattered field in the corresponding 
+  direction. The scale factor is the same for all the plots, so that Fig.\ 8 
+  gives an accurate impression of how the strength of scattering varies with 
+  Helmholtz number. 
+
+  For the lowest value of Helmholtz number shown in Fig.\ 8, and indeed for any 
+  value lower than this, the scattering is weak, and confined to directions on 
+  the same side of the cylinder as the incident wave. The wavelength is long 
+  compared to the size of the cylinder, and the sound wave flows round the 
+  cylinder and carries on essentially unchanged. A little of the sound energy 
+  is reflected back, with a directional pattern forming a circle in the polar 
+  plot. 
+
+  As the Helmholtz number increases, the strength of scattering increases: more 
+  energy is reflected, and also we begin to see increasingly strong effects on 
+  the ``downstream'' side of the cylinder. By the final example plotted here, 
+  that downstream effect dominates: this is because an acoustic shadow has 
+  formed behind the cylinder. The scattered field serves to reduce the 
+  amplitude of the original plane wave; in other words, it is quieter behind 
+  the cylinder. If Helmholtz number had been increased still further, the 
+  downstream lobe describing the shadow would get longer and narrower. The 
+  scattered pattern on the ``upstream'' side would converge to a shape that can 
+  be analysed as a special case (see [1]). This case can be easily visualised 
+  from the optical analogy. We are shining a torch from a long way away, at a 
+  cylinder with a mirrored surface. A tight shadow forms behind the cylinder, 
+  while light that falls on the shiny surface is reflected in a spread of 
+  directions governed by the simple laws of geometric optics. 
+
+  For the intermediate values of Helmholtz number, shapes are seen in the polar 
+  plots which would be hard to guess. The general pattern revealed by this 
+  example is typical of many acoustical problems, either of scattering and 
+  shadowing or of sound radiation by vibrating structures like the body of a 
+  stringed instrument. The behaviour at very low and very high Helmholtz number 
+  has a relatively simple pattern, which is sometimes amenable to analysis, at 
+  least as an approximation. But the intermediate range where the wavelength of 
+  sound is of the same order as the size of the object is more complicated. 
+  Directional patterns appear with a pattern of lobes which varies rapidly with 
+  frequency. It is rare that behaviour in this regime can be calculated 
+  mathematically: either numerical computation or direct measurement is needed. 
+
+
+
+  \sectionreferences{}[1] Philip M. Morse and K. Uno Ingard; ``Theoretical 
+  acoustics'', McGraw-Hill (1968) 

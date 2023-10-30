@@ -1,0 +1,160 @@
+  When we were looking at plucked strings, we highlighted several aspects of 
+  their behaviour that proved to be important for the sound: the string’s 
+  damping behaviour and its bending stiffness, and the fact that each string 
+  mode can exist in two different polarisations which may have slightly 
+  different frequencies and damping because of interactions with the instrument 
+  body. These factors all seem likely to have some significance for bowed 
+  strings, too, so we would like to be able to incorporate them into a 
+  simulation model. 
+
+  When we discussed the simulation of plucked string sounds, we used a method 
+  based in the frequency domain. In consequence, damping and bending stiffness 
+  were described in the frequency domain (see section 5.4 and its various side 
+  links). However, for our bowed string synthesis approach we need to express 
+  these effects in the time domain via the reflection functions $r_1(t)$ and 
+  $r_2(t)$, which operate by convolution. Another way of saying this is that we 
+  want to express the stiffness and damping effects in the two sections of the 
+  string as digital filters. 
+
+  Digital filters fall into two main classes. The ones which correspond 
+  directly to the convolution integral with a reflection function are called 
+  ``Finite impulse response'' or FIR filters. A discretised version of a 
+  function like $r_1(t)$ is stored, and at each time step these values are 
+  multiplied by the appropriate values of the stored outgoing wave, and the 
+  results added up. Filters in the second class are called ``Infinite impulse 
+  response'' or IIR filters. They use a recursive algorithm of some kind, so 
+  that although a finite number of arithmetic operations are performed at each 
+  time step, the result behaves as if we had performed a convolution with an 
+  infinitely long vector. IIR filters can be very efficient, because they 
+  involve fewer arithmetic operations at each time step than corresponding FIR 
+  filters, as will become clear shortly. 
+
+  We can show an example of an IIR filter to represent the effect of a body 
+  resonance. As we saw in section 9.4.1, the simplest model of a wolf note 
+  required a single body mode. We represented this mode by a 
+  mass-spring-dashpot oscillator with mass $m$, stiffness $k$ and dashpot 
+  strength $c$, and we deduced the required the impulse response to be 
+
+  $$g(t) \approx \dfrac{1}{m} \cos (\omega_b t) e^{-\omega_b \eta_b t/2} 
+  \tag{1}$$ 
+
+  where the resonance frequency is $\omega_b = \sqrt{k/m}$ and the modal loss 
+  factor is defined by $\omega_b \eta_b \approx c/m$. 
+
+  The computation will be carried out in discrete time, so the convolution 
+  integral with a function $f(t)$ will be approximated by a sum of the form 
+
+  $$c_n=h\sum_{j=0}^{\infty}{g(jh) f_{n-j}} \tag{2}$$ 
+
+  where $h$ is the chosen time step and $f_j=f(jh)$ are the discrete values of 
+  the stored outgoing wave. The upper limit of this sum is indefinite, 
+  depending on the length of past history of the function $f$ which is 
+  available at this point in the simulation. 
+
+  Now note that we can write $g(jh)$ as the real part of a complex number, in 
+  the form 
+
+  $$g(jh) = \Re{\left[ \dfrac{1}{m} e^{(i-2\eta_b)\omega_b jh/2} \right]} = 
+  \Re{\dfrac{1}{m} \alpha^j} \tag{3}$$ 
+
+  where the complex constant $\alpha$ is given by 
+
+  $$\alpha=e^{(i- \eta_b)\omega_b h/2} . \tag{4}$$ 
+
+  It follows that our convolution integral is approximated by 
+
+  $$c_n=\dfrac{h}{m}\Re{\left[\sum_{j=0}^{\infty}{\alpha^j f_{n-j}} 
+  \right]}=\dfrac{h}{m}\Re{C_n} \tag{5}$$ 
+
+  where 
+
+  $$C_n=\sum_{j=0}^{\infty}{\alpha^j f_{n-j}}. \tag{6}$$ 
+
+  Now we see that 
+
+  $$c_{n+1}=\dfrac{h}{m}\Re{C_{n+1}}=\dfrac{h}{m} \Re{\left[f_{n+1}+\alpha 
+  C_{n} \right]} . \tag{7}$$ 
+
+  The sum of indefinite length has disappeared. All we need to do is store the 
+  current value of $C_n$, then at each time step we update it by multiplying by 
+  $\alpha$ and adding the new value of $f$. Finally, we take the real part and 
+  apply the scale factor $h/m$ to obtain the result we want. In practice, for 
+  maximum speed this IIR filter would be coded in a slightly different way to 
+  avoid going through the step of using complex arithmetic, but the form shown 
+  here illustrates particularly clearly how a simple recursive algorithm can be 
+  used to represent an impulse response with an infinitely long tail. 
+
+  There are two possible approaches to designing digital filters to represent 
+  particular physical effects in our string. Sometimes, we can use a 
+  physics-based argument to give a time-domain representation of an effect, 
+  which can be used directly as an FIR filter in a reflection function. We will 
+  see an example shortly, in relation to the effect of bending stiffness. 
+
+  But there is another approach. Digital filters are used very widely, and 
+  there are well-established techniques for designing them. We won't go into 
+  the details of digital filter design here: for a full account written from 
+  the perspective of musical applications see \tt{}this web site\rm{} by Julius 
+  Smith. There are some standard forms of filter, and the usual procedure is to 
+  choose one of these forms, choose a value of the order (the number of 
+  parameter values used to define the filter), and then run a design code to 
+  determine the corresponding digital filter which gives the best least-squares 
+  match to the desired frequency domain behaviour. 
+
+  The simulation results shown in section 9.5 were obtained using filters to 
+  represent the effects of damping and bending stiffness, designed by this kind 
+  of least-squares fitting methodology: the details are described in section 
+  2.1 of reference [1]. But it is of some physical interest to show a possible 
+  alternative approach to bending stiffness, based directly on a physical 
+  argument. The governing equation for a stiff string, without damping, is 
+  simply a combination of the equations derived earlier for a flexible string 
+  (section 3.1.1) and a bending beam (section 3.2.1): 
+
+  $$m \dfrac{\partial^2 w}{\partial t^2} =T \dfrac{\partial^2 w}{\partial 
+  x^2}-EI \dfrac{\partial^4 w}{\partial x^4} \tag{8}$$ 
+
+  where $w(x,t)$ is the displacement of the string, $m$ is its mass per unit 
+  length, $T$ is its tension and $EI$ is its bending rigidity. 
+
+  It is possible to derive a closed-form expression for the response of such a 
+  stiff string to an initial impulse. The expression is approximate, based on a 
+  mathematical technique known as matched asymptotic expansion, but it has been 
+  shown to agree quite well with measurements. The gory details can be seen in 
+  the Appendix of reference [2]. Figure 1 shows an example of the result. It is 
+  a rather extreme case based on a very long string, to show the key features 
+  clearly. The nominal arrival time for the pulse in the absence of bending 
+  stiffness would be at $t=10$~ms. The result of the bending stiffness term in 
+  equation (8) is to make waves of higher frequency travel progressively 
+  faster. This results in a ``precursor'' of the main pulse, and if you look 
+  carefully at the plot you can see the frequency gradually changing. Equation 
+  (8) becomes physically unrealistic at very high frequency, predicting a wave 
+  speed that increases no limit. In reality, there is a maximum possible speed, 
+  so the function has been filtered with a cutoff frequency to remove the very 
+  high frequencies. 
+
+  The final topic to mention here concerns the second polarisation of string 
+  vibration. Only one polarisation is directly excited by the friction force 
+  from bowing, but the other can be excited by variations of normal bow force. 
+  In any case the two polarisations are coupled together at the terminations of 
+  the string, especially at the bridge, by the three-dimensional nature of the 
+  body’s vibration response. With a little effort these effects can all be 
+  incorporated in the simulation. A second set of incoming and outgoing waves 
+  need to be introduced. They will have their own reflection functions: the 
+  damping and stiffness effects will probably be the same for both 
+  polarisations, but a more complicated treatment is needed for the reflection 
+  at the body (and perhaps at the player's finger). For full realism, this 
+  needs to be based on a measurement of the $2 \times 2$ matrix of admittances 
+  at the bridge. 
+
+  A similar approach can be used, if desired, to represent the effect of 
+  sympathetic vibration of the other strings of the instrument. Any other 
+  string that is not damped by the player's left hand will be driven to some 
+  extent via vibration of the bridge, which is shared with the string being 
+  bowed. We simply need to add more sets of incoming and outgoing waves and 
+  more reflection functions, based measuring more admittances. 
+
+  \sectionreferences{}[1] Hossein Mansour, Jim Woodhouse and Gary P. Scavone, 
+  “Enhanced wave-based modelling of musical strings, Part 1 Plucked strings”; 
+  Acta Acustica united with Acustica, \textbf{102}, 1082–1093 (2016). 
+
+  [2] J. Woodhouse; “On the playability of violins, Part I reflection 
+  functions”; Acustica \textbf{78}, 125–136 (1993). 

@@ -1,0 +1,90 @@
+  A simple model for a transverse flute, to allow us to investigate the effect 
+  of the cork position, follows straightforwardly from earlier calculations we 
+  have seen in sections 11.1.1 and 11.1.3. The geometry of interest is sketched 
+  in Fig.\ 1. Three cylindrical tubes meet at the point O, which we will use as 
+  our origin of coordinates: an open-ended tube of length $L$ and 
+  cross-sectional area $S$, a closed-ended tube of length $b$ and 
+  cross-sectional area $S$, and a short open-ended tube of length $h$ and 
+  cross-sectional area $C$ (representing the embouchure hole, including its end 
+  corrections). 
+
+  From section 11.1.1 we already know general expressions for the acoustical 
+  pressure and volume flow rate at a frequency $\omega$, in any cylindrical 
+  pipe. The total pressure $p$ in the pipe can be written 
+
+  $$p=Ae^{i(\omega t -- kx)}+Be^{i(\omega t + kx)} , \tag{1}$$ 
+
+  and the corresponding total volume flow rate is then 
+
+  $$v=\dfrac{AS}{Z_0}e^{i(\omega t -- kx)}-\dfrac{BS}{Z_0}e^{i(\omega t + kx)} 
+  \tag{2}$$ 
+
+  where $S$ is the cross-sectional area, $Z_0$ is the characteristic impedance 
+  for sound waves in air, and the wavenumber $k=\omega/c$ where $c$ is the 
+  speed of sound. Distance along the pipe is measured by $x$, and $t$ is time 
+  as usual. 
+
+  The coefficients $A$ and $B$ describe (complex) amplitudes of waves 
+  travelling in the positive and negative $x$ directions, respectively. We can 
+  use corresponding expressions for our three tubes. We can measure $x$ 
+  outwards from the origin O along each of the three tubes, and we can use 
+  coefficients $(A_1,B_1)$, $(A_2,B_2)$ and $(A_3,B_3)$ respectively, as 
+  labelled in Fig.\ 1. For the embouchure tube we replace $S$ in equation (2) 
+  by $C$. 
+
+  We now need 6 equations for these 6 unknown wave amplitudes. At the open end 
+  of the main tube we require $p=0$ at $x=L$, so 
+
+  $$A_1 e^{-ikL} + B_1 e^{ikl} =0. \tag{3}$$ 
+
+  At the closed end of the shorter tube we require $v=0$ at $x=b$, so 
+
+  $$A_2 e^{-ikb} -- B_2 e^{ikb} =0. \tag{4}$$ 
+
+  At the junction, we require several things. The pressures in all three tubes 
+  must be the same at $x=0$, so that 
+
+  $$A_1+B_1 = A_2 + B_2 = A_3 + B_3 . \tag{5}$$ 
+
+  Also, the combined volume outflow rate from O must be zero, so that 
+
+  $$\dfrac{C}{Z_0}(A_3 -- B_3) + \dfrac{S}{Z_0}(A_1 -- B_1 + A_2 -- B_2) = 0 . 
+  \tag{6}$$ 
+
+  Finally, our aim is to calculate the input admittance at the open end of the 
+  short tube representing the embouchure hole. We can impose unit pressure at 
+  this point by setting $p=1$ at $x=h$ so that 
+
+  $$A_3 e^{-ikh} + B_3 e^{ikh} =1, \tag{7}$$ 
+
+  and then the admittance $Y$ is given by the value of volume flow rate at this 
+  point: 
+
+  $$Y=\dfrac{C}{Z_0}\left( -A_3 e^{-ikh} + B_3 e^{ikh} \right) \tag{8}$$ 
+
+  where a negative sign has been introduced because for input admittance the 
+  relevant volume flow rate is into the tube, not out of it. 
+
+  After some straightforward but tedious algebra, the linear simultaneous 
+  equations (3)--(7) can be solved to give the admittance in the form 
+
+  $$Y = \dfrac{S (\cot kL -- \tan kb ) -- C \tan kh}{i Z_0 \left[ \tan kh (\cot 
+  kL -- \tan kb ) +1 \right]} . \tag{9}$$ 
+
+  In order to plot the admittance shown in Figs.\ 7, 8 and 9 of section 11.8, 
+  some parameter values were estimated to give a reasonable match to the 
+  measured admittance. The length $L$ was 0.6 m, the cork position was chosen 
+  so that $b$ was 18 mm, the main tube was assumed to be circular with internal 
+  radius 10 mm, the embouchure hole was taken to be circular with radius 5 mm, 
+  and the effective length $h$ was 12 mm. In addition, the values of $k$ used 
+  to compute the admittance were complex, allowing for wall damping in the tube 
+  using the model due to Fletcher as described in section 11.1.1. 
+
+  In order to plot the pressure distributions shown in Fig.\ 10 of section 
+  11.8, the analysis here was used in a slightly different way. At each chosen 
+  frequency, the simultaneous equations (3)--(7) were solved to obtain values 
+  for the coefficients $A_1, B_1, A_2$ and $B_2$. These were substituted in the 
+  relevant versions of equation (1) to give the pressure distributions in the 
+  long tube and the closed tube. These pressures are, of course, complex. For 
+  simplicity, the plots show the imaginary part of this complex pressure, which 
+  contains the dominant component. 

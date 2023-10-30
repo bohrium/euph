@@ -1,0 +1,301 @@
+
+
+  In the loudness test just described, the listener only ever heard one sine 
+  wave at a time. But most sounds contain many frequency components 
+  simultaneously: the separate harmonics of a complex tone, or the sounds of 
+  two instrument playing together, or the sound of someone talking in the 
+  presence of background noise. Naturally, this makes the business of 
+  understanding perception more complicated --- but it is not quite as 
+  complicated as one might have feared. 
+
+  A very important idea comes into play, based around the description we gave 
+  in section 6.2 of the behaviour of the basilar membrane within our inner ear. 
+  With a sine wave at some particular frequency, the response of the basilar 
+  membrane is strongest in a particular region --- but of course this region 
+  has a finite spread. So a range of hair cells will respond to some extent to 
+  this sine wave, and conversely a given hair cell will respond to some extent 
+  to a range of frequencies, spread around its frequency of maximum 
+  sensitivity. This leads to the idea of an auditory filter. 
+
+  The mechanical response at a certain point on the basilar membrane will have 
+  a frequency response function, similar to the ones we have looked at for 
+  musical instruments. We would expect it to have the shape of a rather simple 
+  band-pass filter, showing a peak of response at the ``resonant'' frequency, 
+  and lower response for frequencies progressively further away on either side. 
+  This might be expected to translate into some kind of frequency response 
+  related to the firing rate of the neuron attached to a hair cell at that 
+  point on the basilar membrane. 
+
+  There are various ways to map out the characteristics of these auditory 
+  filters. It is possible to insert a small electrode into a single neuron in 
+  the auditory nerve, and record directly the firing rate: if the threshold 
+  sound level to give detectable firing is measured for different frequencies 
+  of sine wave, the result is called a neural tuning curve. Such curves do 
+  indeed have the form we have anticipated, with a peak sensitivity at a 
+  frequency corresponding to the placement on the basilar membrane of the hair 
+  cell attached to the particular neuron. 
+
+  Alternatively, psychoacoustical methods of testing can be used to find a 
+  filter shape directly from listening tests. Most methods are based around the 
+  phenomenon of masking. If a loud sound and a quiet sound happen 
+  simultaneously, to what extent is the quiet sound covered up by the loud 
+  sound? This can be investigated by a rather similar experiment to the one 
+  just described for assessing loudness. A test subject, with their headphones, 
+  is exposed to a fixed sine wave at some chosen frequency, and a second sine 
+  wave at a different frequency. This time, the two sounds are simultaneous 
+  rather than being presented alternately. The goal is to measure the threshold 
+  for detecting the quiet sound. 
+
+  What is discovered is that if the frequencies of the two sounds are 
+  sufficiently different, the threshold for detecting the quiet sound is 
+  exactly the same as it would have been in the absence of the loud sound: in 
+  other words, at the level given by the threshold curve in Fig.\ 1 of the 
+  previous section 6.3. But if the two frequencies are close together, then the 
+  quiet sound is significantly masked by the loud sound. 
+
+  However, in practice using a sine wave for a masking experiment like this 
+  does not give the most useful results. The main problem is that when two sine 
+  waves at slightly different frequencies occur simultaneously, the phenomenon 
+  of beats arises. The effect is most striking for sine waves of the same 
+  amplitude, as illustrated in Fig.\ 1. The strong modulation of the amplitude 
+  is at a frequency which is the difference of the two separate sine waves. In 
+  this example the sine waves are at 200 Hz and 203 Hz, so the beat frequency 
+  is 3 Hz. You can hear the waveform in Sound 1. 
+
+  \fig{figs/fig-59d6e8b2.png}{Figure 1. A sine wave at 200 Hz added to another 
+  sine wave at 203 Hz with the same amplitude, leading to a pattern of beats. 
+  The upper trace shows a 3 s segment, which you can listen to in Sound 1. The 
+  lower trace shows a zoomed view, to show the underlying sinusoidal 
+  variation.} 
+
+  If the two amplitudes are not equal, a weaker version of the same phenomenon 
+  occurs. An example is shown in Fig.\ 2, where the second sine wave has 1/10 
+  the amplitude of the first one. You can hear the waveform in Sound 2. The 
+  modulation is still clearly visible in the plot. It is subtle but audible in 
+  the sound. This is the effect which can interfere with an experiment to probe 
+  masking. Basically, we might be using a different feature detector to notice 
+  the beats, not the one the experimenter is trying to exercise. 
+
+  \fig{figs/fig-e02e3030.png}{Figure 2. A sine wave at 200 Hz added to another 
+  sine wave at 203 Hz with an amplitude 1/10 of the first one, leading to a 
+  modulation pattern that is less strong than in Fig. 1, but still clearly 
+  visible. The upper trace shows a segment 3 s long, which you can listen to in 
+  Sound 2. The lower trace shows a zoomed view, to show the underlying 
+  sinusoidal variation.} 
+
+  It is better to use random noise of some kind for the masking signal, to 
+  avoid this issue of the subject detecting the test sound via beats. In this 
+  context ``noise'' has a technical meaning that is more specific than the 
+  colloquial usage. One thing we might do is replace the sinusoidal masking 
+  tone with narrow-band noise, which would mean adding together sine waves at a 
+  range of closely-spaced frequencies, all with the same amplitude but with 
+  random phases. There is also an ingenious technique due to Patterson [1] 
+  which uses the opposite pattern, called notched noise: a combination of sine 
+  waves at all frequencies except for a range around the test tone. 
+
+  By carrying out experiments by these various methods, auditory filter shapes 
+  can be mapped out. Some examples are shown in Fig.\ 3. For very low-level 
+  sound these filters behave approximately linearly, but for louder sounds the 
+  filter characteristics change progressively with sound level because of 
+  nonlinear effects. The filter shapes become more asymmetric, and the degree 
+  of ``tuning'' changes. Tuning is sharpest for low-level sounds: it is 
+  strongly influenced by the action of the active outer hair cells. As with so 
+  much of the subject, it is all rather complicated: for some details, see 
+  Moore [2]. Figure 3 is plotted with a logarithmic frequency scale, which 
+  reveals that the filters centred on higher frequencies tend to have very 
+  similar shapes. This means that their bandwidth is approximately proportional 
+  to their centre frequency. But at lower frequency this relative bandwidth 
+  gets wider. 
+
+  \fig{figs/fig-c4a8c2cd.png}{Figure 3. Five examples of auditory filters.} 
+
+  The bandwidth of each auditory filter defines an important quantity known as 
+  the critical bandwidth. Roughly, any two frequency components falling within 
+  a critical bandwidth of each other are too close to be resolved on the 
+  basilar membrane. We will see shortly that this has a number of perceptual 
+  consequences. The precise numerical definition of the critical band depends 
+  on exactly what definition of bandwidth is used. Historically, different 
+  authors basing their conclusions on different test procedures have used 
+  different definitions. But we need not go into these details. 
+
+  We will use one particular definition, the equivalent rectangular bandwidth 
+  or ERB. This is defined as the width of an idealised rectangular filter shape 
+  which would pass the same total power as the actual auditory filter. If, 
+  instead of the decibel plot of Fig.\ 3, the filter shapes were plotted on a 
+  linear vertical scale of squared amplitude, the ERB would simply be the width 
+  of a rectangle with the same area underneath it as the filter curve, and the 
+  same maximum height. What this means in terms of the decibel plot in Fig.\ 3 
+  is that the ERB is quite close to the 3 dB bandwidth of each peak, the same 
+  measure we used earlier for the bandwidth of resonances of mechanical 
+  systems. A plot of the ERB as a function of centre frequency is shown in 
+  Fig.\ 4. It is believed that a frequency scale based on ERBs corresponds to a 
+  scale of distance along the basilar membrane: 1 ERB corresponds to about 0.9 
+  mm. 
+
+  \fig{figs/fig-19384dc4.png}{Figure 4. The bandwidth of auditory filters, 
+  represented by the ERB, as a function of centre frequency.} 
+
+  Armed with the set of auditory filters, we can construct something important. 
+  For any given sound input, be it a sine wave or a Beethoven symphony, we can 
+  use the set of filters to map out the pattern of motion of the basilar 
+  membrane, known as the excitation pattern. If the input sound is steady this 
+  will be a fixed pattern, but for normal sounds entering your ears the pattern 
+  will vary in time. 
+
+  We will start by illustrating a steady example. The left-hand plot in Fig.\ 5 
+  shows a computed excitation pattern for a steady sawtooth wave at 440 Hz, at 
+  sufficiently low amplitude that we can use the linear approximation to the 
+  auditory filters. The first few of the successive harmonics, at multiples of 
+  440 Hz, are clearly separated, but at higher frequency the pattern blurs into 
+  a continuum. The right-hand plot shows why. The ERB at each successive 
+  harmonic frequency is plotted, normalised by the spacing between harmonics. 
+  The value reaches 1 around the 8th harmonic: above that, successive harmonics 
+  are within 1 ERB of each other, so that they are not clearly resolved in the 
+  excitation pattern. 
+
+  Next we look at a simple time-varying example. Back in section 2.4, we saw a 
+  spectrogram of a violin note, being played with vibrato. The spectrogram is 
+  repeated as Fig.\ 6, and the associated sound appears as Sound 3. 
+
+  \fig{figs/fig-8a6ceb14.png}{Figure 6: A spectrogram of a note on a violin, 
+  played with vibrato} 
+
+  We can analyse the same sound as a time-varying excitation pattern. To 
+  achieve this, we can take advantage of an approximate form of the auditory 
+  filters, called \tt{}gammatone filters\rm{} [3]. These have a neat 
+  mathematical expression, convenient for computing, and they have been shown 
+  to give a good match to the measured auditory filters. The result is shown in 
+  Fig.\ 7. It looks rather like a spectrogram, and it has been plotted in a 
+  similar way to Fig.\ 6. The horizontal axis shows an ERB-based frequency 
+  scale which is not very different from a logarithmic scale. Time runs 
+  vertically upwards. The excitation magnitude is indicated by colour, on a 
+  decibel scale shown in the sidebar. 
+
+  \fig{figs/fig-aacb878e.png}{Figure 7. A time-varying excitation pattern 
+  plotted in a similar format to Fig. 6. The frequency scale is based on ERBs, 
+  and thus on distance along the basilar membrane. Time runs vertically 
+  upwards. The magnitude of the excitation pattern is represented by colour, on 
+  a decibel scale given in the sidebar.} 
+
+  The harmonics of the violin note can be seen, but they are much more blurred 
+  than the version in Fig.\ 6. The ``wobble'' caused by vibrato is still 
+  clearly visible in the first few harmonics. However, by about the 7th 
+  harmonic it is getting hard to see the separate stripes in the plot, whereas 
+  they remained clearly visible in the spectrogram. The reason is exactly the 
+  same as the example in Fig.\ 5: this frequency is around about where the 
+  spacing between successive harmonics is comparable with the critical 
+  bandwidth so that they are not resolved in the excitation pattern. The 
+  spectrogram representation shows the underlying physics more clearly, but the 
+  ``auditory spectrogram'' of Fig.\ 7 relates much more closely to the way a 
+  human listener will perceive the sound. 
+
+  For the next example, it would be a good idea to listen (rather carefully) to 
+  Sound 4 before you know what it contains. 
+
+  What you were listening to was a pair of sine waves, with the same amplitude 
+  and gradually changing frequencies. They are always centred on 800 Hz. They 
+  start 160 Hz apart, and the two frequencies move symmetrically inwards at a 
+  steady rate until they just come together at the end of the file. How would 
+  you describe what you hear? To my ears, the two separate tones, gradually 
+  converging, are clear at the beginning. But somewhere around the middle of 
+  the file the perception changes. It is no longer clear that there are two 
+  tones, but there is gradually increasing ``roughness'' in the sound, which 
+  resolves into slowing beats right at the end. 
+
+  Figure 8 shows the excitation pattern plot generated from this sound, using 
+  the gammatone filters again. In the lower part of the diagram, two nearby but 
+  separate stripes can be seen, converging as time goes on and looking rather 
+  like a pair of trousers. Somewhere near the middle of the plot, these two 
+  stripes merge: this is not surprising, because the ERB at 800 Hz is 111 Hz. 
+  At the top of the plot, a pattern of modulation in time can be seen. It is 
+  quite fast when first visible, and gradually slows down. These are beats, 
+  exactly as shown earlier in Fig.\ 1, except that the beat frequency is 
+  changing with time. The beats are at the difference of the two frequencies, 
+  so the beat rate slows down towards zero at the end. This example illustrates 
+  two things. First, an apparently simple combination of two sine waves can 
+  produce perceptions of different kinds: from changing tones to something 
+  involving ``roughness'', and eventually clear pulsation in time. Second, we 
+  get an indication that the excitation pattern plot reveals at least some 
+  aspects of these different perceptions; although we can see nothing very 
+  obvious associated with the sense of ``roughness''. 
+
+  \fig{figs/fig-3706f430.png}{Figure 8. Auditory spectrogram of Sound 4.} 
+
+  What we have seen is that the excitation pattern captures some aspects of 
+  sound perception, although by no means all. There is a striking success story 
+  related to loudness. In section 6.3 we saw a bit of the complexity of 
+  loudness relating only to single sine waves. One might have expected many 
+  more layers of complexity with more complicated sounds, but in fact there is 
+  a very successful loudness model by Moore and Glasberg [4], which builds on 
+  the excitation pattern. For this purpose, the linear gammatone approximation 
+  is not good enough, though: the nonlinear variation of auditory filter 
+  characteristics with level must be included. The Moore/Glasberg model first 
+  calculates the excitation pattern, steady or time-varying as appropriate, 
+  then aggregates that pattern into a single measure of loudness. 
+
+  For the rather elusive concept of ``timbre'', the excitation pattern is 
+  useful, but certainly does not tell the whole story. We have already seen an 
+  example, in Sound 4 and Fig.\ 8. The impression of ``roughness'' did not 
+  correspond to anything obvious in the excitation pattern plot. But on the 
+  other hand we will see examples in the next section where analysis of 
+  excitation patterns gives strong clues about whether a small change to a 
+  sound will be audible. A summary of current understanding seems to be that if 
+  two excitation patterns are sufficiently different, the two sounds are almost 
+  certainly audibly different, but the converse is not true: two sounds can be 
+  distinct but have very similar excitation patterns. 
+
+  A clear example of this comes from something that you may have been wondering 
+  about. A typical ERB is a few semitones, when expressed in musical jargon 
+  (remember that a semitone is a frequency ratio of about 6%). Music as we 
+  understand it would hardly be possible if we could not distinguish two sounds 
+  a semitone apart! In fact, our ability to discriminate pitch between two 
+  steady periodic sounds with different periods is far more acute than the ERB. 
+
+  This acuity of pitch perception is usually expressed in terms of cents: a 
+  cent is a hundredth of an equal-tempered semitone, so 1 cent corresponds to a 
+  frequency ratio of about 0.06%. Well, we cannot discern a difference as small 
+  as 1 cent, but under the best conditions people can discern pitches about 5 
+  cents different. (Strictly, I am speaking rather loosely here: what I mean is 
+  ``people can discern a pitch difference between two frequencies differing by 
+  about 5 cents''.) This value is (approximately) the threshold for pitch 
+  discrimination when two sounds are heard one after another. If the two sounds 
+  are heard simultaneously, we may be even more acute to ``out-of-tuneness'', 
+  because the phenomenon of beats comes into play again. So when you are tuning 
+  your violin, or playing or singing in an ensemble, you need to get pitches 
+  remarkably accurate, as all musicians (and parents of budding musicians) know 
+  only too well. 
+
+  How do we manage to distinguish two pitches as close as 5 cents (i.e. a 
+  frequency ratio of about 0.3%)? There has been much debate and controversy 
+  about that question over the years. The answer almost certainly involves the 
+  interplay of two factors. One is the one we have already been talking about: 
+  there is relatively coarse segregation in frequency already present on the 
+  basilar membrane, and there are subtle features of the exact pattern of 
+  neural excitation by different hair cells that may encode a more precise 
+  estimate than the ERB would suggest. But there is a second factor. At least 
+  at lowish frequencies (up to the mid-kHz range), the firing of individual 
+  nerve fibres can be synchronised with the phase of the input sound, 
+  presumably by being phase-synchronised in some way with local motion of the 
+  basilar membrane. This means that information about the frequency is reaching 
+  your brain in this form, as well as the information coded into which hair 
+  cells are being activated. Somehow, somewhere, these two sources of 
+  information are probably being combined in your brain to allow you to 
+  discriminate pitches with the precision that is observed. 
+
+
+
+  \sectionreferences{}[1] Roy D. Patterson; ``Auditory filter shapes derived 
+  from noise stimuli'', Journal of the Acoustical Society of America 
+  \textbf{59}, 640--654 (1976). 
+
+  [2] Brian C. J. Moore; ``An Introduction to the Psychology of Hearing'', 
+  Academic Press (6th edition 2013). 
+
+  [3] The gammatone software used here is by Malcolm Slaney: ``Auditory Toolbox 
+  Version 2'', Technical Report \#1998-010, Interval Research Corporation 
+  (1998), \tt{}http://cobweb.ecn.purdue.edu/~malcolm/interval/1998-010/\rm{} 
+
+  [4] The Moore/Glasberg loudness model has developed over time, and there are 
+  many references. A key one is Brian R. Glasberg and Brian C. J. Moore; “A 
+  model of loudness applicable to time-varying sounds”, Journal of the Audio 
+  Engineering Society \textbf{50}, 331--342 (2002). 

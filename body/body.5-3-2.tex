@@ -1,0 +1,63 @@
+  It is useful to find a way to focus on a formant ``hill'' without the 
+  distracting details of the individual body modes. This can often be done by 
+  using an approach known as “Skudrzyk’s mean value method” [1]. The starting 
+  point is eq. (12) from section 2.2.7, expressing the admittance in terms of 
+  modal parameters. The relevant version of that equation is: 
+
+  $$Y(\omega) =\sum_n \dfrac{i \omega u_n^2}{\omega_n^2+2i\omega \omega_n 
+  \zeta_n-\omega^2} \tag{1}$$ 
+
+  where the $n$th mode has amplitude $u_n$ at the bridge, frequency $\omega_n$ 
+  and modal damping ratio $\zeta_n$. 
+
+  Skudrzyk was able to deduce from this equation that the height of an isolated 
+  modal peak is proportional to $1/\zeta_n$, while the level at the bottom of 
+  an antiresonance dip is proportional to $\zeta_n$. It follows that the mean 
+  level of a logarithmic plot follows the geometric mean of these two, and is 
+  thus independent of damping. If the damping were increased, the peaks and 
+  dips would blur out and all admittance curves would tend towards smooth 
+  “skeleton” curves representing the logarithmic mean of the original curves, 
+  in other words the mean trend in a decibel plot. 
+
+  There is a physically appealing way to visualise the effect of increasing the 
+  damping. When a force is applied at a point on the structure, it generates a 
+  “direct field” consisting of outward-travelling waves. In time these will 
+  reflect from the various boundaries and return. Modal peaks will occur at 
+  frequencies where the reflections combine in phase-coherent ways. 
+  Antiresonances occur when the sum of reflected waves systematically cancels 
+  the original direct field. But at an “average” frequency, where neither of 
+  these coherent phase effects occurs, the reflected waves from the various 
+  boundaries tend to arrive in random phases and to cancel each other out, 
+  leaving the direct field to dominate the response. If damping is increased, 
+  the influence of reflections decreases. In the limit of high damping, the 
+  desired skeleton of the admittance is given by the direct field alone. 
+
+  The effect is thus the same as if the boundaries had been pushed further away 
+  until the system becomes infinitely large. This gives a simple recipe to find 
+  skeleton curves for some idealised systems. For a plate-based system, we need 
+  to consider an infinite plate with the same material properties and 
+  thickness. The vibration of a point-driven infinite plate has a simple 
+  closed-form solution. If the plate has thickness $h$, and is made of 
+  isotropic material with Young's modulus $E$, Poisson's ratio $\nu$ and 
+  density $\rho$, the result is 
+
+  $$Y_\infty^{p} (\omega)=\frac{1}{4h^2} \sqrt{\frac{3(1-\nu^2)}{E \rho}} . 
+  \tag{2}$$ 
+
+  We will also look at the behaviour of the banjo, so it is useful to note the 
+  corresponding result for a membrane. But this case has a snag: if a point 
+  force is applied to an ideal membrane, the linear governing equation predicts 
+  that the response will be infinite. To avoid this issue, the force must be 
+  applied through a finite footprint. If an infinite membrane with tension $T$ 
+  and mass per unit area $\sigma$ is driven through a circular region of radius 
+  $a$, the admittance is 
+
+  $$Y_\infty^{m} (a,\omega)=\frac{ic}{2 \pi a T} \frac{H^{(2)}_0 (\omega 
+  a/c)}{H^{(2)}_1 (\omega a/c)} \tag{3}$$ 
+
+  where $c=\sqrt{T/\sigma}$ is the wave speed and $H^{(2)}_N$ is the Hankel 
+  function of order $N$, describing outgoing waves. 
+
+  \sectionreferences{}[1] E. Skudrzyk: The mean-value method of predicting the 
+  dynamic response of complex vibrators. Journal of the Acoustical Society of 
+  America \textbf{67}, 1105–1135 (1980). 

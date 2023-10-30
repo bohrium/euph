@@ -1,0 +1,834 @@
+
+
+  Frequency response functions are the “workhorse” measurement for a lot of 
+  musical acoustics research, whether they are used to characterise the 
+  vibration and sound radiation from a violin body, or to identify the acoustic 
+  signature of a clarinet or trumpet tube. We have already seen quite a few 
+  frequency response functions, and made use of them for various purposes. In 
+  this section some of this earlier material will be re-examined in the light 
+  of the specific question of how to measure a frequency response that is 
+  reliable and accurate. 
+
+  When we first introduced the idea of frequency response, back in Chapter 2, 
+  we thought about a “black box” which represented the behaviour of a linear 
+  system with a single input and a single output. Figure 1 shows a repeat of 
+  Fig.\ 2 from section 2.1 (the box is labelled “Drum” because we used a toy 
+  drum as our example system in that first discussion). There were then two key 
+  ideas. The first is the “sine wave in, sine wave out” property of any linear 
+  system. The second is Fourier analysis, which allows us to express any input 
+  or output signal as a combination of sine waves. Put together, these mean 
+  that if we understand how a system responds to sine waves at every possible 
+  frequency, we know everything there is to know about it (at least in 
+  principle). 
+
+  In earlier times, before the routine availability of computers, frequency 
+  response was measured in exactly that way. Some kind of actuator was fixed to 
+  the structure, and it was driven with a sine wave. The desired response was 
+  measured, and the frequency of the sine wave was slowly swept through the 
+  range of interest — for any musical problem, that range is usually limited to 
+  the range of human hearing, roughly 20~Hz—20~kHz. At each frequency the ratio 
+  of amplitudes of output/input was measured, and for a complete measurement 
+  the phase shift between the two was also measured. The equipment was usually 
+  large and expensive, and measurements were confined to laboratory settings. 
+  The frequency response plot was usually drawn by a chart recorder, often 
+  mechanically coupled by sprockets and a chain to the sine-wave oscillator. 
+
+  The world has changed a lot since those days! Measurements are done with the 
+  aid of a computer, and this changes every aspect of the procedure. We need 
+  not use sine waves as the input signal: we can use any convenient input 
+  signal which contains the range of frequencies we are interested in, and use 
+  Fourier analysis (the FFT) in the computer to separate the different 
+  frequency components. This opens many possibilities, which we will discuss 
+  shortly. 
+
+  The ubiquity of small but powerful computers means that measurements like 
+  this have moved out of the laboratory. Some instrument makers are making 
+  routine use of frequency response measurements in their workshops, to inform 
+  their working processes and decisions. This fact opens another area for 
+  discussion, because instrument makers are not necessarily highly trained in 
+  science. They sometimes need a little guidance to perform and interpret the 
+  measurements. I will try to provide something useful in the course of this 
+  section. 
+
+  \samsection{A. Actuators } 
+
+  A.1 Shakers 
+
+  Any measurement requires the instrument to be set into vibration somehow. For 
+  a measurement done in the traditional way, with a swept sine wave, this means 
+  attaching some kind of actuator capable of producing a continuous excitation 
+  — such things are usually called “shakers”. The most common type works on the 
+  same principle as a traditional loudspeaker, shown in Fig.\ 2 in a cutaway 
+  view taken from \tt{}this Wikipedia page\rm{}. The electrical signal is fed 
+  through a coil (2), which is close to a permanent magnet (1). Just as in an 
+  electric motor, the interaction of the electric current and the magnetic 
+  field produces a force that vibrates the cone (4), which then creates sound 
+  waves in the surrounding air. The cone and coil are supported by bellows-like 
+  structures (3) which keep things nicely lined up without interfering with 
+  vibration in the desired direction. 
+
+  A commercial vibration shaker, like the one that can be seen in Fig.\ 3, has 
+  the same features, except that it does not have a cone. Instead, there is a 
+  threaded boss attached to the coil, which can be used to connect the shaker 
+  to the object you want to vibrate. Shakers like this come in many different 
+  sizes: Fig.\ 4 shows a selection. This kind of shaker is fine for driving a 
+  relatively heavy structure, like the undergraduate experiment seen in Fig.\ 
+  3, but it is not immediately suitable for a lightweight object like a violin. 
+  If something like this was attached to a violin bridge it would act like a 
+  mute, changing the behaviour significantly by adding mass, and probably 
+  adding damping as well. 
+
+  However, moving-coil methodology was successfully used to measure frequency 
+  response functions of violins in earlier times. To solve the problem of added 
+  mass, some ingenuity was needed. One approach was to attach to the instrument 
+  just the bare coil extracted from a loudspeaker. A magnet could then be 
+  brought near, and by driving the coil electrically, a swept-sine test could 
+  be made. This was the favoured test method of \tt{}Carleen Hutchins\rm{}, the 
+  doyenne of scientific violin making in the United States in the second half 
+  of the 20th century. The converse strategy has also been used: a very light 
+  ceramic magnet can be glued to the violin bridge, and a coil brought close to 
+  it to provide the force. 
+
+  A.2 Impulse hammers 
+
+  However, neither strategy is commonly used these days in the musical 
+  instrument world. Moving-coil shakers have been almost entirely replaced by 
+  the second major type of vibration actuator, the impulse hammer. The great 
+  virtue of this kind of actuator is that once the hammer has bounced off the 
+  structure, there is nothing remaining in contact. No added mass, no added 
+  damping. 
+
+  We have already seen an impulse hammer in action, back in section 5.1. As we 
+  just saw with shakers, impulse hammers come in a variety of sizes: two are 
+  shown in Fig.\ 5. Both these hammers can be seen to have a cable leading out 
+  of them: they both have a force-measuring sensor close to the hammer tip, 
+  allowing the precise waveform of force to be measured when a structure like a 
+  violin is tapped. 
+
+  Why might we want different sizes of hammer? We already know the answer to 
+  that, from section 2.2.6 where we found the frequency spectrum of an 
+  idealised hammer pulse. That calculation showed that the frequency bandwidth 
+  of a hammer tap is inversely proportional to the time of contact during the 
+  bounce. If we want a measurement with a wide bandwidth, we need a tap with 
+  very short duration. That requires two things: the surfaces in contact during 
+  the tap need to be sufficiently rigid, and the mass of the hammer needs to be 
+  not too high. That is the reason that instrument measurements are usually 
+  done with a very light hammer like the one seen at the bottom of Fig.\ 5. But 
+  if you wanted to measure vibration of something like a railway bridge, you 
+  would need a heavier hammer in order to put enough energy into the structure 
+  to get clean results. 
+
+  Of course, you could excite a violin body into vibration by tapping with 
+  something more familiar (and cheaper), like a pencil. You can learn quite a 
+  lot from such an informal hammer test: modal frequencies and damping factors, 
+  for example. But what you can’t obtain that way is a calibrated frequency 
+  response function that can be directly compared with measurements made by 
+  someone else with a different experimental setup. For that, you need a 
+  measurement of the input force as well as the vibration response. We will 
+  come back to this question of what you can expect to measure using more and 
+  less sophisticated equipment in subsection C. 
+
+  A.3 Wire-break plucks 
+
+  We have described the two main types of vibration actuator, but we haven’t 
+  exhausted all the possibilities. There are at least three other methods that 
+  have been used for measurements on violins and other stringed instruments, 
+  and they deserve a brief mention. First is the wire-break pluck, which we met 
+  briefly back in section 7.4. You take a length of very thin copper wire, loop 
+  it round some part of the structure, and pull gently until it snaps. The 
+  method is particularly useful for stringed instruments: it can be used for a 
+  controlled string pluck, as we saw in section 7.4, and it can also be used to 
+  excite body motion by looping the wire round a string right up against the 
+  string notch in the bridge. 
+
+  This method allows the position and direction of the pluck to be very well 
+  controlled, and also gives a reliably repeatable amplitude between plucks 
+  because the wire breaks at more or less the same force every time. It can 
+  even be used, with care, to give a calibrated frequency response. The force 
+  waveform when the wire breaks will be a very sharp step. The magnitude of the 
+  step can be calibrated by hanging small weights from the wire to determine 
+  the breaking load, and the frequency spectrum of the step is then known 
+  mathematically so that even without measuring the input force, you can tell 
+  your computer a good estimate of the input spectrum. Figure 6 shows an 
+  example of this method being used to measure the frequency response of a 
+  violin, compared with the impulse hammer method. The wire used in this test 
+  had a breaking force of 1.5~N, corresponding to a breaking weight of 153~g. 
+  For more details, and examples for a cello, see Zhang and Woodhouse [1]. 
+
+  There is a snag with wire-break testing, though. You need to support the 
+  instrument sufficiently firmly that it can withstand the pull on the wire, 
+  before it breaks. However, we should note that if an instrument is being held 
+  by a player in the usual way, that generally gives a sufficiently firm 
+  support. So there is nothing intrinsically wrong or ``unmusical'' with 
+  designing a support fixture for a measurement that is similarly firm. A bit 
+  more will be said about this issue in section 10.4.2 (see subsection C.1). 
+
+  A.4 Using real playing 
+
+  The second approach is perhaps one you already thought of — why not use real 
+  playing on a stringed instrument to excite the body vibration? This has the 
+  obvious advantage that it is the “real thing”, with no complications or 
+  doubts to do with artificial actuators. The disadvantage is that you cannot 
+  ordinarily measure the input force at the instrument bridge. But if you 
+  should happen to have a bridge equipped with the kind of force sensors we 
+  have seen before (see section 9.1.1), then you can indeed use regular playing 
+  to give a calibrated frequency response function. 
+
+  An example is included in Fig.\ 6, using a one-octave glissando played on the 
+  lowest string of a violin. For more detail, and examples for a cello, see 
+  Zhang and Woodhouse [1]. Figure 6 demonstrates quite convincingly that the 
+  hammer, wire-break and bowing methods are all capable of giving very similar 
+  results: the differences between the three curves are hardly bigger than the 
+  differences you find if you repeat the same measurement with the same 
+  instrument, but on a different day. 
+
+  However, the sharp-eyed may notice that the curves in Fig.\ 6 look a little 
+  different from the violin bridge admittances we have seen previously: there 
+  isn't much evidence for a ``bridge hill'' here. The reason is an important 
+  one: the additional mass of the bridge-force sensors and their associated 
+  cables have a muting effect on the violin. So the comparison of the three 
+  excitation methods is entirely valid, but none of them gives a really good 
+  representation of how this violin would behave with its normal bridge, 
+  without the added sensors. This is the reason that the published version of 
+  this work [1] concentrated on the cello: the heavier bridge of a cello makes 
+  the added mass of the sensors much less significant. The moral is: always 
+  play the instrument with all your instrumentation in place, to check how much 
+  you might be changing the behaviour. 
+
+  Without an instrumented bridge, you can still learn something useful about a 
+  violin by playing it. One of the very earliest steps in quantifying violin 
+  response was the “Saunders loudness test”, in which every semitone was played 
+  on the instrument, trying in each case to get the loudest sound possible. A 
+  sound level meter was used to record the level. Peaks in the loudness flag up 
+  resonances. The early literature talked about the “air resonance” and the 
+  “main wood resonance” based on such tests, but this terminology highlights an 
+  interesting issue. What was then called the “main wood resonance” is now 
+  understood to be a combination of the two modes called B1- and B1+ (see 
+  section 5.3, figures 5c and 5d). The loudness test, moving in semitone steps, 
+  was too crude to resolve the two peaks. 
+
+  More recently, Oliver Rodgers investigated a large number of violins using a 
+  technique based on regular playing. As in the violin and cello measurements 
+  described above, a glissando was played on each string. This was analysed 
+  with a variant of the spectrogram, which we have seen earlier. Although the 
+  input force was not measured, and the glissando playing was never precisely 
+  repeatable, he was able to obtain clear results which revealed strong 
+  low-frequency resonances — much more clear than the Saunders loudness curves. 
+  For some examples of his results by this approach, see [2]. 
+
+  A.5 Loudspeakers 
+
+  The final approach to excitation is to use sound waves from a loudspeaker, in 
+  a similar way to making Chladni patterns (see section 10.3). An interesting 
+  application of this approach to the frequency response of a violin was 
+  developed by Gabriel Weinreich [3]. He was interested in measuring the 
+  monopole and dipole components of sound radiation from a violin as a function 
+  of frequency (see section 4.3.1). 
+
+  He measured these by taking advantage of a general reciprocal theorem (which 
+  we mentioned back in section 5.4). Instead of driving the violin with a force 
+  at the bridge and measuring the sound at many points, then averaging over 
+  directions to give the monopole component, he did the converse. A set of 
+  loudspeakers surrounding the violin all played an identical signal, giving 
+  (approximately) an omnidirectional sound field. He then measured the 
+  mechanical response at the bridge of the violin, using a phonograph pickup. 
+  The same set of loudspeakers could also be driven in ways that produced 
+  dipole sound fields in all the possible orientations, and the measurement 
+  repeated with each of those. 
+
+  There is a much more obvious application for a loudspeaker as an actuator. I 
+  have been concentrating up to now on stringed instruments, but if the 
+  frequency response you would like to measure is of a wind instrument, then 
+  some kind of loudspeaker is a natural choice. Figure 7 shows the input 
+  impedance of a saxophone being measured: the figure is reproduced from Fig.\ 
+  5 of section 8.5. The mouthpiece end of the tube is being driven by a 
+  loudspeaker inside the canister. 
+
+  \samsection{B. Sensors} 
+
+  Now we have surveyed the main options for vibration actuators, we turn to the 
+  corresponding range of sensors to register the result of excitation. Again, 
+  the possibilities range from hi-tech and expensive to simple and home-made. 
+  If we want to measure sound pressure, as in the wind instrument example we 
+  have just seen, we are bound to use a microphone of some kind as our sensor 
+  (although the actual details of the measurement seen in Fig.\ 7 need 
+  ingenuity: see the next link). 
+
+  For a stringed instrument or a percussion instrument, things are more 
+  complicated. We might be interested in the sound radiated, and thus use a 
+  microphone as our sensor. Such microphone measurements raise a number of 
+  important but tricky issues, and I will defer a discussion until section D. 
+  However, we might be more directly interested in the vibration of the 
+  structure. For that, there is a wide choice of sensors. 
+
+  B.1 Accelerometers 
+
+  Many of the options measure relative motion between two points, and so they 
+  require some kind of fixed reference position near the vibrating object. But 
+  there are exceptions. The most widespread of these is the accelerometer: some 
+  examples of accelerometers are shown in Fig.\ 8. You simply stick one of 
+  these to your structure, and it gives an electrical voltage signal 
+  proportional to the acceleration at the attachment point in a particular 
+  direction, usually perpendicular to the surface. Some accelerometer units 
+  actually include three separate sensors, aligned in perpendicular directions. 
+  Called “triaxial accelerometers”, they give three output signals so that all 
+  components of the acceleration are measured simultaneously. 
+
+  Some accelerometers are very small indeed: they are made using silicon chip 
+  fabrication technology, and they can be integrated on the chip with their 
+  supporting electronics. Such devices are called MEMS accelerometers, standing 
+  for “Micro-electro-mechanical systems”. They are all around you, although you 
+  may not be aware of it. Many mobile phones include triaxial MEMS 
+  accelerometers so that your phone can respond to motion (and can also sense 
+  gravity, so that the phone knows which way up it is). All modern cars are 
+  fitted with airbag safety systems, and these use MEMS accelerometers to 
+  detect the sharp acceleration (or, usually, deceleration) which signals a 
+  collision and so fires the airbag. There are many other types of MEMS device, 
+  for example gas sensors used to detect pollution, but this is not the place 
+  to explore them: see \tt{}this Wikipedia page\rm{} for more information. 
+
+  All accelerometers work in a similar way, taking advantage of Newton’s law. 
+  They contain a mass, attached to a force-measuring sensor. When the 
+  accelerometer is subjected to an acceleration, the mass inside it must be 
+  pushed by a force proportional to the acceleration, and this force is 
+  measured and gives the output signal. Because they have a mass supported on 
+  some kind of spring to provide the force sensor, all accelerometers have an 
+  internal resonance frequency. This governs their useful frequency bandwidth: 
+  once the frequency approaches the resonance frequency, the output is no 
+  longer simply proportional to acceleration. 
+
+  There are two main types of force sensor. Accelerometers like the ones seen 
+  in Fig.\ 8, intended for high-frequency measurement, use a piece of 
+  piezo-electric crystal. Accelerometers that are intended for very low 
+  frequencies use some kind of mechanical spring with a strain gauge attached. 
+  The key difference is that a strain gauge works down to the very lowest 
+  frequencies, and even for static deformation. This means that such 
+  accelerometers respond directly to the force of gravity. This provides a very 
+  simple way to check the calibration of the device: turn it upside down, and 
+  gravity reverses. The jump in output level will be twice the value of $g$, 
+  the acceleration due to gravity: about $9.81\mathrm{~m/s}^2$ at sea level. 
+  The down-side is that the strain-gauged sensing element will be much less 
+  stiff than a piezo-electric crystal, so such accelerometers have a rather low 
+  resonance frequency. 
+
+  We commented earlier that if you use some kind of shaker as your vibration 
+  actuator, you need to be careful about the mass this adds to your structure — 
+  especially if the structure is very light in weight, like most musical 
+  instrument bodies. Well, exactly the same consideration applies to sensors. 
+  Convenient though accelerometers are, they always add some mass. For musical 
+  instrument measurements, we usually need to use the very lightest of 
+  accelerometers. The smallest one shown in Fig.\ 8 weighs a bit under 2~g, and 
+  it is just about light enough --- but an even lighter one would be 
+  preferable. The others in that picture are far too heavy: they are designed 
+  for testing large engineering structures. Figure 9 shows one of these small 
+  accelerometers attached to the soundboard of a harp. 
+
+  B.2 Laser vibrometers 
+
+  The best cure for the added-mass problem is, of course, to use a sensor that 
+  adds no mass. This is the big virtue of a laser-Doppler vibrometer. The only 
+  thing impinging on the structure is a laser beam, which adds no mass. You can 
+  see one in use in Fig.\ 10 — in a domestic room, because this measurement 
+  took place during Covid lockdown! The laser unit on its tripod is in the 
+  lower left of the image. The red spot from the laser beam can be seen on the 
+  bridge of a banjo. A miniature impulse hammer on a pendulum fixture is 
+  striking the banjo bridge near the laser spot. Both signals are then 
+  collected by the laptop visible on the right, to be processed into the 
+  frequency response function. 
+
+  Laser vibrometers have two disadvantages. First, they are very expensive so 
+  they are usually only found in laboratory settings. Second, they are 
+  surprisingly fiddly to use — much more difficult than an accelerometer. In 
+  order to measure the Doppler shift from the vibrating structure, a 
+  sufficiently strong reflection of the laser beam must be detected by the 
+  vibrometer. This is usually helped by a small piece of retro-reflective tape, 
+  of the kind used for safety stripes on a cyclist’s clothing. But even so, it 
+  can be tricky to obtain a really high-quality signal. 
+
+  B.3 Commercial pickups 
+
+  These types of “laboratory-grade” sensors do not exhaust the possibilities. 
+  One obvious thing for a stringed instrument is to use one of the many types 
+  of commercial pickup, designed to allow a performer to add some amplification 
+  to the sound of an acoustic instrument. For example, these may be 
+  incorporated within or under the bridge, or they may be stuck to the 
+  soundboard. They will all give an electrical output that responds in some way 
+  to the vibration. The problem is that you usually don’t know exactly what the 
+  output means: pickups are designed to sound good, not to give a 
+  scientifically “clean” output signal. We will see what this means for the 
+  purposes of acoustic measurement in the next subsection. 
+
+  B.4 Magnets, coils and Faraday induction 
+
+  Another class of sensors is related to the standard pickup of an electric 
+  guitar. The principle of these is essentially like a moving-coil shaker, but 
+  run in reverse. If you vibrate a magnet close to a coil, Faraday induction 
+  will cause a voltage to appear in the coil. This can be picked up and 
+  amplified. Alternatively, you can vibrate the coil while holding the magnet 
+  still. Or, as in the guitar pickup, you keep both the magnet and the coil 
+  still, while you vibrate a metal object like a string close to them both. 
+
+  There are two sensing methods that work on this principle, which are 
+  sometimes used for musical instrument testing. The first is to sense string 
+  vibration by placing a concentrated magnet near the point you are interested 
+  in, then use the string itself rather than a coil: any string with a metal 
+  component will develop a voltage across its ends, proportional to the 
+  velocity at the magnet position. The second option is a standard phonograph 
+  pickup, which also works by Faraday induction. As we noted earlier, Weinreich 
+  used a phonograph pickup to sense the violin body vibration in connection 
+  with his reciprocal sound radiation measurement. 
+
+  B.5 Sensors and frequency bias 
+
+  There is an important consequence of using different types of sensor for a 
+  measurement. All the sensors based on Faraday induction give a signal 
+  proportional to velocity, as does a laser-Doppler vibrometer. However, an 
+  accelerometer obvious gives a signal proportional to acceleration. The two 
+  are related by the fact that acceleration is the rate of change of velocity, 
+  or in mathematical terms it is the time derivative of it. Once we move to the 
+  frequency domain to plot our frequency response function, this translates 
+  into the fact that acceleration emphasises high frequencies and de-emphasises 
+  low frequencies, relative to velocity. 
+
+  Figure 11 demonstrates the effect. Both curves show the same measurement, 
+  plotted as velocity per unit force in red, and as acceleration per unit force 
+  in blue. The red curve is a bridge admittance, of a kind we have seen in many 
+  earlier plots. The blue curve is called bridge accelerance. In this plot it 
+  has been scaled so that the two curves agree in the middle range. It is 
+  obvious that the accelerance falls to very low values at low frequency, but 
+  rises to higher levels than the admittance at high frequency. 
+
+  Indeed, we might have used a sensor that responded to displacement rather 
+  than velocity or acceleration. Such things are sometimes used: an example 
+  would be a capacitance pickup (working a bit like the touch screen of your 
+  phone). In that case, the resulting frequency response would be called 
+  receptance, and it would show the opposite trend, rising above the admittance 
+  at low frequency and falling below it at high frequency. 
+
+  Every measurement has a limited range of reliable output, governed by the 
+  background noise which is always present at some level. So the result of the 
+  distinction between receptance, admittance and accelerance is to alter the 
+  effective bandwidth of the measurement. Choosing a sensor to emphasise the 
+  frequency range you are most interested in is important when designing any 
+  measurement like this. If you use an accelerometer you must resign yourself 
+  to getting rather noisy and poor data at low frequency, but good results at 
+  high frequency. If you chose a displacement sensor you would have the 
+  opposite effect: excellent at low frequency, but very poor at high frequency. 
+
+  \samsection{C. What do you want to get from your measurement?} 
+
+  Now we know a bit about the main options for actuators and sensors, we can 
+  think about the consequences for a measurement of frequency response. The key 
+  question, and one you should always ask yourself before plunging in to a 
+  measurement project, is “What exactly do I want to know, and how accurately 
+  do I want to know it?” To focus this question, it is useful to remind 
+  ourselves of the anatomy of a typical frequency response, as we discussed in 
+  section 5.3. 
+
+  Figure 12 shows the bridge admittance from Fig.\ 11, annotated with some key 
+  details. At low frequency, we expect to see well-separated modal peaks. In 
+  the case of this violin the four peaks indicated by arrows correspond to the 
+  “signature modes” A0, CBR, B1- and B1+ which we showed earlier (see the 
+  animations in Figs.\ 5(a)—(d) in section 5.3). As we go higher in frequency, 
+  we expect the spacing of modal peaks to remain roughly constant, while the 
+  bandwidth of the individual peaks gets wider (roughly in proportion to the 
+  centre frequency). The result is that the peaks start to overlap, and by the 
+  time we reach high frequencies there may be several modes with significant 
+  amplitude at any given frequency. 
+
+  It then ceases to be productive to ask questions about individual modes, but 
+  there may be important response trends that we can still say something about. 
+  In the case of a violin, the most important trend is probably the feature 
+  indicated by the green dashed line in Fig.\ 12, the so-called “bridge hill”. 
+  Underneath the small wiggles in the admittance function, there is a broad 
+  “formant” feature. Another hill-like feature seen in many violins is 
+  indicated by the grey dashed line: it is sometimes called the “transition 
+  hill”. 
+
+  So what might you want to know, if you are trying to measure the frequency 
+  response of this violin? There is a kind of hierarchy of questions of 
+  increasing difficulty, and how you choose to go about the measurement depends 
+  critically on where you are in that hierarchy. Perhaps you just want to know 
+  the frequencies of the signature mode peaks? Perhaps you would also like to 
+  know the heights of those peaks? Perhaps you want this information purely for 
+  your own use, to compare with other instruments you have made or tested; but 
+  perhaps you want the information in a standardised form so that you can 
+  compare with measurements made by a friend with a different test setup. 
+  Perhaps you want to capture higher-frequency features like the bridge hill? 
+  The most challenging option of all is if you want the frequency response 
+  function in order to do some kind of clever processing with it, like modal 
+  analysis (see section 10.5) or the synthesised guitar and banjo sounds we 
+  heard earlier. 
+
+  If you just want to know signature mode frequencies, the simplest possible 
+  measurement is probably the best. You can tap the corner of the violin bridge 
+  (or whatever it is you are measuring) with a pencil, and capture the 
+  resulting clonk sound with a commercial pickup or a microphone, perhaps the 
+  one in your phone. An FFT of that sound will show the peaks you want. With a 
+  pencil tap, you do not of course know the exact waveform of the force, but 
+  you do know that it is a short pulse of some kind. That is enough: the 
+  frequency spectrum of any short pulse is bound to be rather smooth and 
+  featureless at low frequency, so any peaks you see in the response must come 
+  from the violin, not from the input tap. The bandwidth of those peaks should 
+  also be reliably captured, if you are interested in the damping of your 
+  signature modes. 
+
+  If you want to know something about peak heights, things are immediately more 
+  tricky. Heights are influenced by the strength of your tap, and if you are 
+  using a microphone to capture the response they are also influenced by the 
+  microphone position and distance, and also possibly by the acoustics of the 
+  room you are in. If you only want the information for your own comparison 
+  between instruments you could still get away with something quite simple, 
+  though. Instead of tapping with a pencil you might swing a small pendulum of 
+  some kind. You still aren’t measuring the input force, but with a pendulum it 
+  is quite easy to make successive swings of the same height so that the force 
+  pulse should be quite repeatable. You could still measure with a microphone, 
+  provided you always use the same one and you place it somewhere reproducible, 
+  preferably quite close to the instrument to minimise any influence of room 
+  acoustics. 
+
+  However, if you want peak heights that you can compare with someone else’s 
+  measurement, there is no avoiding some system that measures the input force, 
+  or tells you what that force must be in some other way. If you do not have 
+  access to a force-measuring hammer, this is where a wire-break pluck can be 
+  useful. If you have calibrated the breaking load of your wire, then the 
+  frequency spectrum of the input force is predictable, and with a small amount 
+  of effort with your computer you can use it to convert your output into a 
+  true frequency response measurement. But then you still have the issue of 
+  calibrating your microphone, or whatever sensor you are using. I will come 
+  back to microphones and also to calibration in general, a little later in 
+  this section. 
+
+  If you want to know about features at higher frequency, such as the bridge 
+  hill, then you need to ensure that your input force contains enough energy at 
+  all the frequencies you are interested in. If it is a hammer tap of some 
+  kind, the hammer needs to be light and its face needs to be quite hard so 
+  that the bounce happens quickly, giving a short pulse and a high bandwidth. 
+  Alternatively, the wire-break pluck is still a good option because thin 
+  copper wire breaks extremely fast so that the force jump contains a lot of 
+  high-frequency information. You also have to worry about the added mass of 
+  any kind of sensor you may fix to the instrument: the influence of mass rises 
+  inexorably with frequency (which is why a violin mute has its main effect at 
+  high frequency). 
+
+  Finally, if you want to measure something like a bridge admittance in a form 
+  that can be used for further processing then it is hard to avoid the full 
+  professional-grade procedure, with a force-measuring impulse hammer and 
+  either a very small accelerometer or a laser-Doppler vibrometer. For this 
+  final purpose, the wire-break pluck is not really good enough. The reason is 
+  that processing for modal analysis, for example, needs an accurate value of 
+  the phase of the frequency response, as well as the amplitude. It is not so 
+  easy to get accurate phase with a wire pluck, and (for a related reason) it 
+  is also not easy to do multiple takes and use averaging to improve the 
+  quality of your frequency response measurement. Similarly, a commercial 
+  pickup is not usually acceptable as a sensor, because it is hard to know 
+  exactly what the signal means. Such pickups have often been designed with 
+  features to improve the sound, by modifying the frequency-dependent amplitude 
+  and/or phase in a way that the manufacturer doesn't tell you. 
+
+  \samsection{D. The challenge of microphone measurements} 
+
+  There are some tricky issues associated with microphone measurements, but 
+  before we move on to those, there is something simple to be aware of. There 
+  are many different kinds of microphone, and you need to make a sensible 
+  choice for your measurements. The main differences concern the directional 
+  sensitivity. Technical measurements are usually made using omnidirectional 
+  microphones: the laboratory-grade version are usually called ``condenser 
+  microphones'' , and conveniently the small, cheap electret microphones fall 
+  into the same category --- these are good enough for most instrument 
+  measurements. 
+
+  The microphones you will see in use by singers on stage are usually a 
+  different kind. These are directional, most commonly with a cardioid 
+  (heart-shaped) directional pattern. These work on a different principle from 
+  condenser microphones, and give colouration features that singers like. But 
+  you do not want any complicated colouration in your measurement, nor do you 
+  want the potentiall pitfall of directional behaviour. Stick to the 
+  omnidirectional type! For more information about types of microphone, see \tt{}this Wikipedia page\rm{}. 
+
+  If you want to measure a frequency response function to characterise a 
+  stringed instrument, it seems very natural to measure the sound radiated by 
+  the instrument, using a microphone. After all, it is surely the sound of the 
+  instrument that is of most interest? However, there are interesting 
+  subtleties and snags associated with microphone measurements, and it is 
+  important to be aware of them. These have to do with physics, and even more 
+  to do with psychoacoustics and perception. “Sound”, which seems so simple, is 
+  actually a very slippery thing. 
+
+  When you listen to an instrument being played in a normal room, you probably 
+  have the impression that there is a characteristic “sound” of that particular 
+  instrument which does not change in its essential character if you move your 
+  head, or if you walk around in the room. However, as we will see shortly, 
+  this is something of an illusion, created inside your head by the formidable 
+  processing power of your hearing system. 
+
+  Your visual system does something comparable. You probably have an impression 
+  of being surrounded by a three-dimensional world full of visual details. 
+  Actually, your eyes flit around the scene you are viewing, and only a small 
+  region in the centre of your visual field has really high resolution. Your 
+  brain somehow puts together a composite image from the rapidly varying 
+  signals your eyes are supplying. 
+
+  It is not even an “image” in the sense that you might stitch together camera 
+  images in your computer to form a bigger panorama. Your visual system is 
+  doing something far more clever: it is constantly interpreting the stream of 
+  visual input in terms of recognisable components (people, clouds, trees and 
+  so on). What your brain assembles is a kind of simulation model of the world 
+  around you, made up from these components. This simulation model is the 
+  ``scene'' that you are consciously aware of. Sometimes your brain's 
+  interpretation system is fooled, and that produces what you would describe as 
+  an optical illusion. 
+
+  D.1 Effects of room acoustics 
+
+  To start thinking about the corresponding auditory system, we can do a 
+  measurement that seems intuitively sensible. If you are trying to choose a 
+  new violin, you would probably play a few candidate instruments in a suitable 
+  room — not too small, not too dead, but probably not a concert hall or a 
+  church. So let us put a violin in a room like that, and measure the frequency 
+  response from tapping the bridge with a small impulse hammer, and measuring 
+  the sound with a microphone at a typical listener’s position. Figure 13 shows 
+  two examples of such a measurement, with two different microphone positions 
+  about 2~m away from the violin, and about 1~m apart. 
+
+  Figure 13 also shows the bridge admittance of the same violin, with the three 
+  “signature modes” A0, B1- and B1+ indicated: these are the three 
+  low-frequency modes of a violin body that have the strongest sound radiation. 
+  Well, all three do show up in the microphone measurements, but they do not 
+  look like the simple peaks in the admittance plot. Instead, they look more 
+  like the “formant” features we talked about before: broad peaks “dotted out” 
+  by a lot of narrower peaks. Furthermore, the details of those narrower peaks 
+  are different for the two microphone positions. 
+
+  What is happening, as you have probably guessed, is that we are seeing 
+  evidence of the acoustics of the room, as well as the acoustics of the 
+  violin. The room acoustics is producing many, many extra peaks. Indeed, at 
+  higher frequencies the extra peaks are so dense that they cannot be resolved 
+  in this plot. Figure 14 shows a zoomed view of the same two curves, in a 
+  frequency range around 2.5~kHz. 
+
+  You might imagine that the peaks seen in Fig.\ 14 correspond to acoustic 
+  modes of the room, but you would be quite wrong. The medium-sized domestic 
+  room where this measurement was done is a bit bigger than the one that was 
+  modelled in order to generate Fig.\ 17 of section 4.2, so we can deduce that 
+  in this frequency range the room has more than 10,000 modes in every 100Hz 
+  band! But if you count the small wiggles in the red or blue curves, you see 
+  no more than about 15 in each 100~Hz band. 
+
+  Each of these wiggles is a combined result of perhaps 1000 modes of the room, 
+  which happen to conspire to produce a bigger sum total at the wiggle peak. 
+  Between the peaks, we sometimes see very sharp dips: these are frequencies 
+  where the 1000 room modes conspire to cancel at that particular microphone 
+  position. The combination of rounded peaks and sharp dips is characteristic 
+  of any system with high modal overlap, like our room. Notice that both peaks 
+  and dips fall at entirely different frequencies in the red and blue curves: 
+  another characteristic of high modal overlap. 
+
+  D.2 Reducing the influence of the room 
+
+  The conclusion seems to be that a measurement like the ones seen in Fig.\ 13 
+  is not a really good way to see the characteristics of the violin, 
+  independent of the room. There are various things we might do to improve 
+  things — but we will see that those come with their own issues, and even a 
+  hint of paradox. Two things we might try are to move the microphone closer to 
+  the violin, and to choose a room which is more “dead” in order to do the 
+  measurement. Both of those seem likely to reduce the relative influence of 
+  the room acoustics. 
+
+  Figure 14 illustrates the result of those two things. The red curve shows a 
+  measurement of the same violin in the same room, but with the microphone 
+  moved to be directly in front of the violin, at a distance corresponding 
+  approximately to the length of the top plate of the instrument. The blue 
+  curve shows a measurement with the same setup and microphone placement, but 
+  in a deader room. This is still a domestic room, but one with carpets, 
+  curtains and a lot of soft furnishing. 
+
+  It is clear from the figure that both changes have had an effect. The 
+  low-frequency peaks in both curves are much more recognisably related to the 
+  bridge admittance plot, and the blue curve is significantly smoother than the 
+  red curve. But already there is a snag we should consider. The microphone is 
+  now sufficiently close to the violin that it is definitely not in the 
+  acoustic “far field”. The sound measured in this position will not reflect 
+  accurately the way this violin will send sound energy out into a large 
+  concert hall. Of course, both ears of a violinist are at least this close to 
+  the vibrating surface of the violin body, so the player also cannot judge how 
+  the instrument will sound from a distant seat in the auditorium. 
+
+  The ultimate extension of the idea of a “dead” room is an anechoic chamber, 
+  like the one seen in the background of Fig.\ 7 above. This is a laboratory 
+  facility specifically designed to have virtually no sound reflections from 
+  floor, walls or ceiling so that a sound source will behave as if it is in 
+  empty space, radiating sound which never comes back. It achieves this effect 
+  by lining all the walls with deep wedges of foam, as you can see in the 
+  picture. So the “scientific” answer to measuring sound radiated by a violin 
+  is to place the microphone far enough away from the instrument in such an 
+  anechoic chamber. 
+
+  But this does not eliminate difficulties. As we saw back in section 4.3, a 
+  violin (or any other vibrating object) will not send sound equally in all 
+  directions except at the very lowest frequencies. As frequency goes up, the 
+  instrument becomes increasingly directional — look back at the animation in 
+  Fig.\ 9 of section 4.3, which showed the directivity pattern of a violin as a 
+  function of frequency. So it is not good enough to have a single microphone 
+  position in the anechoic chamber. Ideally, we need to surround the instrument 
+  with microphones, in order to sample the sound field in all directions. This 
+  indeed is how the animation from section 4.3 was generated: data was 
+  collected by George Bissinger using 264 microphone positions in a 
+  latitude-longitude distribution around the violin, as shown in Fig.\ 15 [4]. 
+
+  But surely we have been led to a bit of a paradox? An anechoic chamber is the 
+  worst possible place to perform music, or to listen to it. Players can’t hear 
+  themselves clearly, nor the others in their ensemble. A listener is acutely 
+  aware of the directional nature of sound from an instrument: if you walk 
+  around a violinist performing in an anechoic chamber, the sound is very 
+  different from different angles — the opposite of the common experience in a 
+  normal performance space. So to obtain a “scientific” measurement of the 
+  sound radiation behaviour of a violin, we need to test it in this least 
+  musical of environments, the exact opposite of where you would choose to 
+  judge the quality of the instrument. 
+
+  This brings us back to the nature of human perception. When we listen to a 
+  violin being played in a normal room, our brain apparently builds some kind 
+  of stable “sound image” of that instrument, in a way that is not fully 
+  understood. This allows you to walk around, quite unaware of the huge sound 
+  changes from point to point suggested by Figs.\ 13 and 14. We already know 
+  about one ingredient of the process, from section 6.2. We talked there about 
+  the “precedence effect” and the idea of “echo fusion”. Our brains are 
+  capable, at least to an extent, of recognising early echoes as being extra 
+  copies of the direct sound. The information in these echoes is combined with 
+  the information in the direct sound to build up a composite perception. Far 
+  from confusing the sound, these early echoes can fill in missing information. 
+
+  Of course, the early reflections in a typical room come from a range of 
+  directions: from the walls, floor, ceiling, and perhaps furniture. This means 
+  that these early echoes give the brain an opportunity to sample the 
+  directional sound field of the violin from several directions, and then 
+  combine these into a composite perception. This must be at least part of the 
+  underlying explanation for the “stable sound image”, compared to the 
+  situation in an anechoic chamber where the brain only has the direct sound 
+  from a single direction to work with. 
+
+  D.3 ...or embracing the effect of the room 
+
+  Our computers and measurement systems are not as clever as our brains. We do 
+  not yet know how to process measurements like the ones in Fig.\ 13 to put 
+  together a corresponding “sound image” of that violin in that room. But, 
+  naturally enough, people have tried to devise ways of doing measurements that 
+  give at least some of the benefit of a reverberant listening space. Arthur 
+  Benade advocated measuring a “room-averaged response” by deliberately moving 
+  around in the room during the measurement sequence [5]. A somewhat similar 
+  effect is sometimes achieved in noise measurements by using a microphone 
+  suspended on a swinging pendulum. 
+
+  Another variant was advocated by Erik Jansson. He made single-microphone 
+  recordings of violin music being played in a reverberation chamber, which is 
+  the opposite of an anechoic chamber: a kind of super shower cubicle, with 
+  very hard walls and minimal sound absorption. He then calculated a long-time 
+  averaged frequency spectrum from the recording [6]. The reverberation chamber 
+  allowed the microphone to sample the directional radiation of the violin very 
+  thoroughly, then the averaged spectrum gave a representation of the frequency 
+  distribution of total sound energy of that particular violin, during normal 
+  playing. 
+
+  D.4 Internal microphone measurements 
+
+  Finally, there is another way to use a small microphone to get some 
+  information about an instrument body: put the microphone in through a 
+  soundhole, and measure the internal sound in response to tapping on the 
+  bridge. The justification for this apparently odd procedure relies on some 
+  things we learned back in Chapter 4. At very low frequency the most important 
+  source of radiated sound comes from the monopole component of the motion, 
+  associated with volume change. 
+
+  That volume change is a combination of the motion of the wooden parts of the 
+  body and the motion of the invisible “Helmholtz piston(s)” in the 
+  soundhole(s): one of them for an instrument like the guitar, two of them for 
+  a violin. But we saw in section 4.2.2 that the same net volume change also 
+  governs the pressure inside the body cavity, which will be approximately 
+  uniform throughout the space when frequency is low enough that the wavelength 
+  of sound is much longer than the body dimensions. So measuring the internal 
+  pressure is a surrogate for the far-field monopole sound radiation. 
+
+  This approach has been developed into a useful measurement procedure by Colin 
+  Gough [7]. One big advantage of the approach is that it minimises the issue 
+  of room acoustics, because the inside of the body cavity is reasonably well 
+  insulated from external sound. Another advantage is for large instruments, 
+  like the double bass. It is very hard to get far enough away to be in the far 
+  field of an instrument that large, with a playing range extending to very low 
+  frequency. But the internal sound measurement is actually easier on a bass 
+  than on a violin, because the f-holes are bigger so it is easier to 
+  manipulate the microphone into the correct position inside. 
+
+  However, there are limitations to the usefulness of the method. The 
+  justification just explained relies on very long wavelength, or very low 
+  frequency. How low? From section 4.1 we know that the key condition is that 
+  the “Helmholtz number” should be small. In section 4.3 we expressed that 
+  approximately in terms of the circumference of the radiating body: the 
+  wavelength of sound needs to be significantly longer than this circumference. 
+  For a violin body, taking the circumference around the widest part of the 
+  lower bout of the body leads to the condition that frequency must be lower 
+  than about 680~Hz. That just about encompasses the three “signature modes” 
+  A0, B1- and B1+, but the argument breaks down after that. 
+
+  Something else happens at a frequency in the vicinity of B1- and B1+: the 
+  first resonance of the internal air in the cavity, which is a standing wave 
+  having approximately a half-wavelength in the length of the cavity. Gough’s 
+  procedure limits the influence of that mode by placing the microphone on a 
+  nodal line of this mode, and also on a nodal line of the first cross-wise 
+  standing wave mode. 
+
+  But higher in frequency, internal air modes come thick and fast. The inside 
+  of a violin is just like a very small room, and the density of modal 
+  frequencies will show the same rising trend that we saw in Fig.\ 17 of 
+  section 4.2. As we showed in section 4.2.4, the typical spacing between 
+  adjacent modes decreases in inverse proportion to the square of the 
+  frequency. Somewhere in the low kHz range, the number of cavity modes inside 
+  a violin will overtake the number of “wood” modes from the violin body 
+  vibration. All these modes will create a trend in the internal sound 
+  spectrum, which has very little to do with the external sound radiation of 
+  the violin, and so is potentially misleading. The conclusion is that the 
+  Gough approach is useful to study low-frequency signature modes, but it is 
+  likely to become progressively less useful at higher frequencies. 
+
+  \samsection{E. The housekeeping of frequency response measurement} 
+
+  We have discussed a range of general issues to do with measuring frequency 
+  response functions, and in the process we have found out some important 
+  things, for example about the influence of room acoustics. But if you 
+  actually want to do such measurements yourself, there are some additional 
+  details that you need to be careful about. These are probably not of much 
+  interest to the general reader, so I have tucked them away in the next link. 
+  This particular side link does not have a lot of scary mathematics, though: 
+  it simply has some warnings about potential traps, and hints on how to avoid 
+  them. It is particularly aimed at instrument makers who may want to try some 
+  acoustic measurements in their workshop, as an additional tool during the 
+  process of learning to make better and better instruments. 
+
+
+
+  \sectionreferences{}[1] A. Zhang and J. Woodhouse, “Reliability of the input 
+  admittance of bowed-string instruments measured by the hammer method” ~ 
+  Journal of the Acoustical Society of America \textbf{136}, 3371-3381, (2014). 
+
+  [2] Oliver E. Rodgers and Pamela J. Anderson, “An engineering approach to the 
+  violin making problem”, Catgut Acoustical Society Journal \textbf{4}, 2, 
+  13—19 (2000). 
+
+  [3] Gabriel Weinreich “Sound hole sum rule and the dipole moment of the 
+  violin”, Journal of the Acoustical Society of America \textbf{77}, 710—718 
+  (1985). 
+
+  [4] George Bissinger and John Keiffer: “Radiation damping, efficiency and 
+  directivity for violin normal modes below 4 kHz”, Acoustics Research Letters 
+  Online \textbf{4} (2003), DOI 10.1121/1.1524623. 
+
+  [5] Arthur H. Benade; “Fundamentals of Musical Acoustics”, Oxford University 
+  Press (1976), reprinted by Dover (1990). 
+
+  [6] E. V. Jansson “Long-time-average spectra applied to analysis of music, 
+  Part III: A simple method for surveyable analysis of complex sound sources by 
+  means of a reverberation chamber”, Acustica \textbf{34}, 275—280 (1976). 
+
+  [7] Colin Gough, “Acoustic characterisation of string instruments by internal 
+  cavity measurements”, Journal of the Acoustical Society of America 
+  \textbf{150}, 1922—1933 (2021), DOI: 10.1121/10.0006205. 

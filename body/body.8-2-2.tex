@@ -1,0 +1,144 @@
+  Duffing's equation describes a single-degree-of-freedom oscillator with a 
+  nonlinear spring. For weak nonlinearity it is reasonable to expect that the 
+  spring force-displacement relation could be expanded in a Taylor series, and 
+  that this might then be approximated by discarding higher powers of 
+  displacement. For a spring force that behaves in a symmetrical manner under 
+  tension or compression, we expect only odd powers of displacement in the 
+  Taylor expansion, so the simplest approximation is to include just a cubic 
+  term alongside the linear variation. 
+
+  We can write the resulting equation in this form: 
+
+  $$\ddot{x}+p \eta \dot{x} +p^2 x +\mu x^3 = F(t) \tag{1}$$ 
+
+  where $p$ is the angular frequency of the linear oscillator resonance, $\eta$ 
+  is the linear damping factor, $\mu$ is the nonlinear coefficient, and $F(t)$ 
+  is the externally applied excitation force. If $\mu > 0$ it is a hardening 
+  spring, if $\mu < 0$ it is a softening spring. We will consider the case of 
+  harmonic excitation with amplitude $a$ and frequency $\omega$: 
+
+  $$F(t)=a \cos \omega t . \tag{2}$$ 
+
+  We will first look at the undamped case, with $\eta =0$. The cubic spring law 
+  means that the nonlinearity generates only odd harmonics. So a simple 2-term 
+  harmonic expression to try would be 
+
+  $$x \approx \alpha \cos \omega t + \beta \cos 3\omega t . \tag{3}$$ 
+
+  Substituting in eq. (1) gives 
+
+  $$-\omega^2 \left(\alpha \cos \omega t + 9\beta \cos 3\omega t\right) + p^2 
+  \left(\alpha \cos \omega t + \beta \cos 3\omega t\right)$$ 
+
+  $$+\mu \left(\alpha \cos \omega t + \beta \cos 3\omega t\right)^3 = a \cos 
+  \omega t. \tag{4}$$ 
+
+  We now expand out the cubed term, and make use of three standard 
+  trigonometrical formulae: 
+
+  $$\cos \theta \cos \phi = \frac{1}{2} \left[\cos (\theta -- \phi) + \cos 
+  (\theta + \phi) \right], \tag{5}$$ 
+
+  $$\cos^2 \theta = \dfrac{1}{2}\left(1 + \cos 2 \theta \right) \tag{6}$$ 
+
+  and 
+
+  $$\cos^3 \theta =\frac{3}{4}\cos \theta + \frac{1}{4} \cos 3 \theta . 
+  \tag{7}$$ 
+
+  The result is a linear combination of terms in $\cos n\omega t$ for various 
+  odd-number values of $n$. We equate the coefficients of all the terms in 
+  $\cos \omega t$ to give one relation between the coefficients $\alpha$ and 
+  $\beta$, and we do the same with the terms in $\cos 3 \omega t$ to obtain 
+  another. We simply ignore the terms with $n$ values greater than 3; but if we 
+  wanted information about higher values we could extend the approach to 
+  include more terms in the initial guess (3). 
+
+  The two equations that result are: 
+
+  $$-\alpha \omega^2 + \alpha p^2 + \mu \left[\frac{3}{4}\alpha^3 + 
+  \frac{3}{4}\alpha^2 \beta +\frac{3}{2}\alpha \beta^2 \right] = a \tag{8}$$ 
+
+  and 
+
+  $$-9\beta \omega^2+ \beta p^2 + \mu \left[\frac{1}{4}\alpha^3 + 
+  \frac{3}{2}\alpha^2 \beta +\frac{3}{4} \beta^3 \right] = 0 . \tag{9}$$ 
+
+  We can make a further approximation: we expect the third harmonic generated 
+  by the nonlinearity to be small in magnitude, so that $ |\beta | \ll |\alpha 
+  |$. The terms in square brackets, which are also multiplied by the small 
+  parameter $\mu$, can thus be simplified to give 
+
+  $$\alpha (p^2 -- \omega^2) +\dfrac{3}{4} \mu \alpha^3 \approx a \tag{10}$$ 
+
+  and 
+
+  $$\beta (p^2-9 \omega^2) + \dfrac{1}{4} \mu \alpha^3 \approx 0 . \tag{11}$$ 
+
+  Equation (10) is a cubic equation for $\alpha$ for given excitation level 
+  $a$. Once $\alpha$ is found, eq. (11) gives the associated value of $\beta$. 
+
+  In principle there is a formula for the roots of a cubic equation, but for 
+  the purposes of this discussion it is simpler to compute a numerical example. 
+  Figure 1 shows a plot for a hardening spring using the parameter values 
+  $a=1$, $p=1$, $\eta =0$ and $\mu = 10^{-7}$. Damping is zero here so that 
+  both curves, linear and nonlinear, head off to infinity. The plot shows the 
+  fundamental amplitude $\alpha$ only: the third harmonic governed by $\beta$ 
+  affects the frequency spectrum of the motion, but makes little difference to 
+  the amplitude. Figure 3 of section 8.2 shows a matching case except with 
+  $\eta = 0.002$, while Fig.\ 5 of that section shows the corresponding case 
+  for a softening spring, with $\mu = -10^{-7}$. 
+
+  \fig{figs/fig-edeb97a7.png}{Figure 1. Amplitude of response to sinusoidal 
+  driving of a linear oscillator (black) and a Duffing oscillator with a 
+  hardening spring (red). Both cases are undamped.} 
+
+  The final step is to add the damping term in. For that, we need to replace 
+  eq. (3) by something involving both $\sin \omega t$ and $\cos \omega t$, 
+  because damping introduces phase shifts. Having seen how the previous 
+  calculation worked out, we can save effort by looking only at the fundamental 
+  component of the Fourier series: so this time we try 
+
+  $$x=\alpha \cos \omega t + \gamma \sin \omega t . \tag{12}$$ 
+
+  We substitute into eq. (1), and make similar use of trigonometrical 
+  identities. Ignoring all higher harmonic components, we can obtain two 
+  equations for $\alpha$ and $\gamma$ by equating coefficients of all terms in 
+  $\cos \omega t$, and all terms in $\sin \omega t$. The result is 
+
+  $$(p^2 -- \omega^2) \alpha +p \eta \gamma \omega +\frac{3}{4} \mu \alpha 
+  (\alpha^2 + \gamma^2) = a \tag{13}$$ 
+
+  and 
+
+  $$(p^2 -- \omega^2) \gamma -p \eta \alpha \omega +\frac{3}{4} \mu \gamma 
+  (\alpha^2 + \gamma^2) = 0 . \tag{14}$$ 
+
+  With a little manipulation, these two equations can be combined to yield a 
+  single equation for the amplitude $z$, defined by $z^2=\alpha^2 + \gamma^2$: 
+
+  $$\left[ \left(\omega^2 -- p^2 -- \frac{3}{4} \mu z^2 \right)^2 + (p \eta 
+  \omega)^2 \right] z^2 = a^2. \tag{15}$$ 
+
+  This cubic equation for $z^2$ was solved numerically to generate the damped 
+  response shown in Figs.\ 3, 4 and 5 of section 8.2. 
+
+  Finally, to add the blue circles indicating the ``backbone curve'' in Figs.\ 
+  3 and 5 of section 8.2 we need to find the condition that defines the 
+  ``nose'' of the leaning curves. We take our cue from the linear harmonic 
+  oscillator: the peak response occurs at the point where the motion is exactly 
+  $90^\circ$ out of phase with the excitation. In other words, we want the 
+  point where $\alpha = 0$. Substituting this into eqs. (13) and (14) and doing 
+  minor manipulations, we obtain the equation 
+
+  $$\gamma^4 +\dfrac{4p^2}{3 \mu} \gamma^2 -\dfrac{4a^2}{3 \mu p^2 \eta^2}=0 
+  \tag{16}$$ 
+
+  which is a quadratic equation for $\gamma^2$. Once $\gamma$ is known, the 
+  corresponding frequency satisfies 
+
+  $$p \eta \gamma \omega = a. \tag{17}$$ 
+
+  These two equations, evaluated with different values of $a$ representing a 
+  slow decay of the oscillation, give the blue circles shown in Figs.\ 3 and 5 
+  of section 8.2. 

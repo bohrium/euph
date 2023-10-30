@@ -1,0 +1,121 @@
+  As in section 7.2.1, we are interested in a monofilament string of circular 
+  cross-section of diameter $d$ and length $L$, under tension $T$ and made of 
+  material with Young's modulus $E$ and density $\rho$. A selection criterion 
+  related to damping can be formulated using results derived earlier. The 
+  rising trend at high frequency seen in Fig.\ 1 (reproduced from Fig.\ 2 of 
+  section 7.2) is caused by the effect of material damping, acting through the 
+  bending stiffness of the string. For the two thinner strings shown in the 
+  figure, which produced acceptable musical sounds, it can be seen that the 
+  data points run out at roughly the same value of loss factor, around 
+  $10^{-3}$. 
+
+  \fig{figs/fig-27b5a0c0.png}{Figure 1. Measured damping of three nylon 
+  strings, reproduced from Fig. 2 of section 7.2} 
+
+  This suggests that the useful bandwidth of a given plucked string might be 
+  associated with a threshold value of loss factor, and specifically of the 
+  component of loss factor associated with bending stiffness. A model for that 
+  loss factor was derived in section 5.4.4. Allowing for damping, Young's 
+  modulus becomes a complex value $E(1+i \eta_E)$, and the loss factor of the 
+  $n$th string overtone is then given by 
+
+  $$\eta_{bend}=\dfrac{EI}{T}~\left(\dfrac{n \pi}{L} \right)^2 \eta_E = 
+  \left[\dfrac{nd}{L} \right]^2 \dfrac{\pi^2 E}{64 \rho \gamma^2} \eta_E 
+  \tag{1}$$ 
+
+  after substituting the expressions for $T$ and $I$ from section 7.2.1, where 
+  $\gamma=Lf_1$ as before. The factor $n^2$ in this expression describes the 
+  rising trend. The criterion we want takes the form of a threshold value of 
+  $\eta_{bend}$, and for any particular string this will result in a threshold 
+  value of $n$ because the other factors in eq. (1) will be known. 
+
+  Of course there is not a crisply-defined threshold for damping, but for the 
+  purposes of a selection criterion with the right order of magnitude, a 
+  threshold value $\eta_{bend} \approx 2 \times 10^{-3}$ will be used. 
+  Furthermore, we will require that a ``musically acceptable'' string should 
+  have at least 10 overtones with damping lying below this threshold. The 
+  appropriateness of these choices will be confirmed shortly for the three 
+  strings shown in Fig.\ 1, and they have been further supported by a wide 
+  range of case studies described in reference [1]. The material loss factor 
+  $\eta_E$ is fixed for a given string and tuning: measurements on a range of 
+  nylon strings [1,2] suggest a value $\eta_E \approx 0.04$. 
+
+  The criterion can be expressed in graphical form. From eq. (1), it can be 
+  seen that the value of $\eta_{bend}$ for a given material depends on two 
+  parameters relevant to string choice: $nd/L$ and $\gamma$. For material of a 
+  given density, the value of $\gamma$ determines the stress: 
+
+  $$\sigma = 4 \rho \gamma^2. \tag{2}$$ 
+
+  This is important, because it was shown in reference [2] that the value of 
+  $E$ for nylon strings varies significantly with stress through the effect of 
+  strain stiffening, described in section 7.2. In other words, $E$ is a 
+  function of $\gamma$. It is straightforward to draw a contour map of 
+  $\eta_{bend}/\eta_E$ in the $(\gamma, nd/L)$ plane. The result is shown in 
+  Fig.\ 2, for nylon strings. Contours of $\eta_{bend}/\eta_E$ have been 
+  plotted at intervals of 0.01 up to the value 0.1. Beyond that value the 
+  string overtones will surely be too highly damped to be of interest: the 
+  suggested threshold value is 0.05, in the middle of the plotted range. 
+
+  \fig{figs/fig-fff59237.png}{Figure 2. Contours of $\eta_{bend}/\eta_E$ for 
+  nylon strings, plotted at intervals of 0.01 up to 0.1. Discrete symbols show 
+  results for strings from Fig. 1: for each column of points the lowest symbol 
+  shows the value for $n=1$, then above it values for $n=10,20,30...$. Squares: 
+  string of diameter 0.50~mm tuned to 327.5~Hz, plotted in black in Fig. 1; 
+  circles: string of diameter 0.96~mm tuned to 327.5~Hz, plotted in red in Fig. 
+  1; diamonds: string of diameter 1.68~mm tuned to 131~Hz, plotted in green in 
+  Fig. 1} 
+
+  Points corresponding to particular strings can be calculated and added to the 
+  plot, but because of the presence of $n$ in the quantity plotted on the 
+  $y$-axis, a given string gives a point for every relevant overtone. These 
+  overtones all have the same value of $\gamma$, so they make a regular 
+  vertical column in the plot. The open symbols show the three strings from 
+  Fig.\ 1. For each string, the lowest plotted symbol shows the fundamental 
+  $n=1$, and then to indicate the pattern without cluttering the plot with too 
+  many points, symbols are plotted above it for $n=10, 20, 30...$ 
+
+  To interpret the plot, consider first the thinnest string of the set in Fig.\ 
+  1, indicated by square symbols towards the right-hand side of Fig.\ 2. 
+  Locating the contour corresponding to $\eta_{bend}/\eta_E=0.05$, it can be 
+  seen that the closest square symbol to that contour marks the value $n=50,$ 
+  so the prediction is that this string should have about $50$ overtones with 
+  damping lower than the chosen threshold. The middle string from Fig.\ 1 is 
+  indicated by circular symbols, and because this string had the same length 
+  and the same tuning as the thinnest string, they appear at the same value of 
+  $\alpha$. However, the circular symbols are wider apart, and the 
+  $\lambda=0.05$ contour passes between the two symbols marking $n= 20$ and 
+  $30$. So for this string, roughly $25$ overtones should have damping below 
+  the threshold. Comparing the two, the prediction is that the bandwidth of 
+  lightly-damped string modes should be roughly twice as big for the thinner 
+  string. Looking at where the plotted points run out in Fig.\ 1, this 
+  prediction matches the observations quite well. Both these strings exceed the 
+  requirement of at least 10 overtones with light damping. 
+
+  The thickest string from Fig.\ 1 is indicated in Fig.\ 2 by diamond symbols, 
+  towards the left-hand side. For this string, even the symbol corresponding to 
+  $n=10$ lies above the $\lambda=0.05$ contour, so the prediction is that this 
+  string should have too few lightly-damped overtones to comply with the 
+  suggested criterion for acceptability. Furthermore, remember that the 
+  criterion underlying this plot captures only the damping due to 
+  viscoelasticity: for a very thick string like this, the damping due to air 
+  viscosity takes over at low frequency while the viscoelastic loss is still 
+  quite high, so that in fact the model predicts that this string should have 
+  no modes at all with low damping. That is exactly what the measurements in 
+  Fig.\ 1 revealed. 
+
+  Based on this information, a damping criterion can be plotted on the string 
+  selection chart developed in section 7.2. Because the vertical axis depends 
+  on $d$ rather than on $nd/L$ as in Fig.\ 2, the length $L$ will make a 
+  difference. For a given value of $L$, it is easy to take each value of 
+  $\gamma$ and use the expression for $\eta_{bend}/\eta_E$ to calculate the 
+  threshold value of $d$ for which a string of that length would have at least 
+  10 overtones with damping lower than the chosen value. This leads to the 
+  rising curving lines in the selection chart (Fig.\ 6 of section 7.2). 
+
+  \sectionreferences{}[1] J. Woodhouse and N. Lynch-Aird ``Choosing strings for 
+  plucked musical instruments''. \tt{}Acta Acustica united with Acustica 
+  \textbf{105}, 516-529, (2019)\rm{}.~ 
+
+  [2] N. Lynch-Aird and J. Woodhouse ``Mechanical properties of nylon harp 
+  strings''. \tt{}Materials \textbf{10}, 497, (2017)\rm{}.~ 

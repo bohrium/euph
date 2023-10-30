@@ -1,0 +1,611 @@
+
+
+  Some stringed instruments give the impression that they should be 
+  approximated well using linear methods, but in fact crucial details for the 
+  sound involve nonlinear effects. In this section, we dip into two examples. 
+  Both of them were included in the set of plucked-string example sounds in 
+  section 7.1: the harp and the lute. In both cases the nonlinear effects are 
+  fairly weak, and we will be able to see roughly what is going on by simple 
+  approaches. But a full discussion of nonlinear effects needs more care, and 
+  after this introductory “toe in the water”, we will give a more systematic 
+  description in the next chapter. 
+
+  If you were able to pick out the harp from the set of instruments in Section 
+  7.1, you will know that there must be something characteristic about the 
+  sound, even of a single note. Probably, though, you find it hard to put the 
+  distinctive quality into words. We can start by looking for physical features 
+  that distinguish a harp from other plucked-string instruments. First, the 
+  physical configuration is unusual. In the vast majority of plucked or struck 
+  stringed instruments, the strings lie approximately parallel to the 
+  soundboard. However, the strings of a harp meet the soundboard at an angle: 
+  Fig.\ 1 shows the small harp used in this study, where the string-soundboard 
+  angle is 35$^\circ$. 
+
+  The other conspicuous physical feature that distinguishes the harp from 
+  instruments like the guitar is that it has a separate string for each note. 
+  This means that there are usually a large number of sympathetic strings 
+  contributing to the sound of a given note, and the layout of strings also 
+  influences many aspects of performance style. Two of these will be 
+  particularly important here. Harpists normally pluck their strings closer to 
+  the centre than is usual in other instruments. They can also impose a much 
+  higher initial displacement than a guitarist is able to use, because there is 
+  no equivalent of the danger of a “fret buzz”. The amplitude is only limited 
+  by the spacing between strings, about 15~mm for the harp shown in Fig.\ 1. As 
+  we will see shortly, string motion with large amplitude is likely to bring 
+  nonlinear effects into play. 
+
+  \fig{figs/fig-c42e2a17.png}{Figure 1. The small harp used in this study, and 
+  also for the sound demonstration in Section 7.1.} 
+
+  A harp string, like all other instrument strings, can vibrate in two 
+  polarisations. One polarisation, in the plane of the strings, generates a 
+  component of force that can excite soundboard vibration efficiently. String 
+  vibration in the perpendicular plane, however, will drive the soundboard less 
+  strongly. The player will normally excite string vibration with some mixture 
+  of both polarisations, which means that harp notes might exhibit the double 
+  decay phenomenon discussed in section 7.3. However, the effect does not in 
+  fact seem likely to be a very strong one: Fig.\ 2 shows a plot similar to 
+  Figs.\ 9--11 of section 7.3, using the string properties and measured bridge 
+  admittance of the small harp. It can be seen that the red curve rarely rises 
+  above the green curve. This means that the decay rates for vibration in the 
+  two polarisations will not be significantly different. We must look elsewhere 
+  for an explanation of ``harpish'' sound. 
+
+  \fig{figs/fig-22e798ef.png}{Figure 2. Loss factor comparison for the harp in 
+  the same format as Figs. 9--11 of Section 7.1, based on the string to be used 
+  for tests later in this section. This is a nylon string with length 390~mm 
+  and diameter 1.045~mm, tuned to E$_4$ (329.7~Hz). It is the 20th string from 
+  the top of the instrument.} 
+
+  One candidate might involve longitudinal string vibration, something that is 
+  often ignored in discussions of plucked instruments. The geometric 
+  arrangement of strings and soundboard in a harp means that there is a direct 
+  coupling between transverse and longitudinal motion in the string. The harp 
+  soundboard will prefer to vibrate normal to its surface, moving the string's 
+  termination in a direction that must involve both transverse and longitudinal 
+  motion. 
+
+  This coupling can be modelled using linear methods, similar to the synthesis 
+  models described earlier (see section 5.4). The conclusion is that this 
+  effect, too, seems to be rather minor: unimportant enough, in fact, that we 
+  needn't go into details here: see [1] for the full story. Our quest for the 
+  distinctive source of ``harpish'' sound seems to be thwarted at every turn. 
+  However, we must not be too hasty. What has been mentioned and then dismissed 
+  here is longitudinal string motion driven via linear vibration. But this is 
+  where nonlinear effects start to appear: longitudinal string vibration, able 
+  to drive the soundboard efficiently because of the string-soundboard geometry 
+  of the harp, is also generated by another mechanism. 
+
+  There are two aspects of nonlinear excitation of longitudinal string 
+  vibration, and both have been shown to give audible effects in some musical 
+  instruments. They both have their origin in the fact that when a string 
+  vibrates transversely, the length of any small element of the string must 
+  increase a little as a simple consequence of Pythagoras’ theorem: this is 
+  called geometric nonlinearity. The first effect is that the small increase of 
+  the total string length causes an increase in mean tension. Higher tension 
+  raises the pitch of the transverse string vibration, of course, so during the 
+  early part of a vigorously-plucked note a “pitch glide” can occur, starting a 
+  little higher than the expected note. The pitch moves rapidly downwards as 
+  the string motion decays, allowing the tension to fall back towards its 
+  nominal level. 
+
+  We can illustrate with a spectrogram. Figure 3 shows a portion of the 
+  spectrogram of a strongly-plucked harp note: you can listen to it in Sound 1. 
+  The spectrogram contains some stripes that are approximately vertical, 
+  showing the frequency components of the note decaying away with time. But if 
+  you look carefully, you can see that the stripes all bend a bit towards the 
+  right in the bottom half of the plot. This is the pitch glide effect: in the 
+  early part of the note the tension is a little higher so that all the 
+  component frequencies are raised a bit. 
+
+  \fig{figs/fig-fd4515ce.png}{Figure 3. Spectrogram of a strongly-plucked note 
+  on a harp, showing the pitch glide effect} 
+
+  The second effect of nonlinearity is more subtle. Dynamic axial forces are 
+  generated in the string, leading to unexpected frequency components in the 
+  sound, sometimes described as “phantom partials”. These forces can also 
+  directly excite the longitudinal string resonances. Figure 3 shows examples 
+  of both effects. Notice that the pattern of stripes is not regular. Starting 
+  with the stripe around 2.7~kHz, instead of a single line there are two lines 
+  close together. The next group near 3~kHz shows a pair slightly more widely 
+  separated, and this progression of wider and wider spacing continues as you 
+  move across towards the right-hand side of the plot. We will find out in a 
+  bit how this pattern arises. 
+
+  Figure 3 also shows a bright patch at early times (bottom of the plot) around 
+  3.4 kHz. This is the frequency of the first longitudinal resonance of this 
+  particular harp string. Conklin [2] has demonstrated the importance of 
+  longitudinal string resonances for the tone of the piano, to the extent that 
+  a piano designer needs to take the effect into account to achieve the best 
+  tonal balance: some convincing sound demonstrations from Conklin's work can 
+  be found in \tt{}<mark style="background-color:rgba(0, 0, 0, 0)" 
+  class="has-inline-color has-black-color">this web link</mark>\rm{}. All these 
+  effects of nonlinearity in string vibration are usually discounted for 
+  non-metallic strings like nylon or gut harp strings, but Figure 3 
+  demonstrates that they can in fact appear strongly in plucked harp notes. 
+  They may well play a significant role in the distinctive character of harp 
+  sound. 
+
+  To investigate the pattern of phantom partials, and related nonlinear 
+  effects, we will look at some more careful measured responses. To pluck a 
+  string in the most well-controlled way, the best approach is to take a length 
+  of very thin copper wire, loop it round the string, and pull gently until it 
+  snaps. This method allows the position and direction of the pluck to be very 
+  well controlled, and also gives a reliably repeatable amplitude between 
+  plucks because the wire breaks at more or less the same force every time. 
+  This kind of wire-break pluck will not sound the same as a normal harpist’s 
+  finger pluck, of course, but it can reveal the underlying physics in the 
+  clearest form. 
+
+  To bring out the first piece of key behaviour we will look at a 
+  carefully-chosen special case. The string was plucked at its mid-point, in 
+  the direction in the plane of the strings and also in the perpendicular 
+  direction. The responses were measured by a small accelerometer fixed to the 
+  soundboard, very close to the attachment point of this string. The resulting 
+  frequency spectra are shown in Figs.\ 4 and 5, for two different frequency 
+  ranges. The pluck in the plane of the strings is shown in blue, the pluck in 
+  the perpendicular plane in red. Because the two curves are sometimes on top 
+  of each other, the positions of the main “string mode” peaks are indicated by 
+  markers in corresponding colours. 
+
+  \fig{figs/fig-5ddffa77.png}{Figure 4. Frequency spectra of soundboard 
+  acceleration following wire-break plucks at the mid-point of the string, in 
+  two perpendicular directions. The blue curve shows the direction in the plane 
+  of the strings, the red curve shows the perpendicular direction. Short 
+  horizontal markers indicate the heights of the main peaks, in the 
+  corresponding colours. This plot shows the response at low frequency: it 
+  continues in Fig. 5.} 
+
+  Look first at Fig.\ 4, and concentrate initially on the blue curve. At first 
+  glance, this shows what we expect to see: a sequence of tall and sharp peaks 
+  corresponding to “string modes”, with some wiggles at lower level resulting 
+  from the resonances of the harp body. But in fact the plot reveals a 
+  surprise. Remember that the plucks were at the mid-point of the string. As we 
+  found in section 5.4 (with details in section 5.4.1), linear theory would 
+  predict that a mid-point pluck can only excite odd-numbered modes of the 
+  string, because all the even-numbered ones have a nodal point at the centre. 
+  But Fig.\ 4 shows peaks 1, 2 and 3 with roughly similar heights. After that, 
+  mode 4 is indeed very weak, then mode 6 is moderately strong. 
+
+  How does the high peak around mode 2 arise? To understand what has happened, 
+  we need to know a bit more about the mechanics of nonlinear excitation of 
+  longitudinal vibration. An approximate theoretical model is derived in the 
+  next link. This model shows that the excitation of longitudinal motion is 
+  governed by a function involving the square of the transverse motion: this is 
+  the essential source of nonlinearity. A direct consequence of this square 
+  law, also explained in the next link, is that the longitudinal motion may 
+  contain extra frequencies compared to the transverse motion: it can involve 
+  components at double the frequency of transverse components, and also the sum 
+  and difference of pairs of transverse frequencies. 
+
+  This gives an immediate clue about the unexpected peak number 2 in Fig.\ 4. 
+  There are several ways that this frequency could be generated through the 
+  square law: or, strictly, there are several ways that frequencies close to 
+  this can be generated. If the transverse string motion consisted of perfect 
+  harmonic frequencies, we could generate the frequency ``2'' by doubling the 
+  fundamental frequency ``1'', but we could also obtain it as the difference 
+  between pairs like 3 and 1, 5 and 3, 7 and 5, and so on. But things are a 
+  little more complicated, because of the inharmonicity associated with bending 
+  stiffness. These various combination frequencies all fall close to the 
+  frequency ``2'', but they will all be slightly different from each other, 
+  leading to a cluster of frequencies. This effect is hardly visible in Fig.\ 
+  3, but a similar effect will become important shortly when we look at phantom 
+  partials at higher frequency. The previous link explains the effect in more 
+  detail. 
+
+  Figure 4 contains direct evidence that this strong peak at approximately 
+  double the fundamental frequency is caused by nonlinearly-generated axial 
+  force. The key is to compare the peak heights of the blue and red curves. For 
+  the odd-numbered peaks, the red curve is typically 10~dB lower than the blue 
+  curve. But for the even numbers, the red and blue curves have very similar 
+  heights. This is the expected pattern for nonlinear excitation. Figure~2 has 
+  already shown that coupling to body vibration makes little difference to the 
+  string damping, so the transverse string motion in the two plucks should be 
+  very similar. This means that the nonlinear excitation of longitudinal motion 
+  will also be very similar. The measurement is of soundboard acceleration. The 
+  transverse string motion in the plane of the strings will excite the 
+  soundboard more efficiently than the pluck in the perpendicular plane, giving 
+  the observed pattern of heights of the odd-numbered peaks. However, 
+  longitudinal force from both plucks will excite the soundboard identically, 
+  so that approximately matching heights for the even-numbered peaks are 
+  expected. That is exactly what the plot shows, both for the strong peak 2 and 
+  for the smaller peaks 4 and 6. 
+
+  The wire-break plucks used here were relatively weak compared to regular harp 
+  playing. Even so, the nonlinearly-generated octave peak in Fig.\ 4 is of 
+  similar height to peaks 1 and 3 which will be, at least in large part, 
+  linearly excited. The conclusion is surely that nonlinear generation like 
+  this is not a small perturbation to the sound of a harp. The special nature 
+  of the frequency content from a mid-point pluck has been obliterated by the 
+  nonlinear effect. Harp strings are indeed often plucked quite near the 
+  mid-point, and they are also commonly plucked with far larger amplitude than 
+  was the case in Figs.\ 4 and 5. Because of the square law nonlinearity, the 
+  relative importance of nonlinear excitation in the sound is likely to be even 
+  greater with more vigorous plucks. This mixture of linear and nonlinear 
+  effects is a strong candidate for imparting a recognisable “harpish” sound 
+  quality, and it may also give the harpist a way to vary the tone quality 
+  depending on the strength of the pluck, even when the plucking point remains 
+  the same. 
+
+  \fig{figs/fig-2e4b30dc.png}{Figure 5. Frequency spectra as in Fig. 4, showing 
+  the next section of the frequency range. The rounded peak labelled ``L'' is 
+  the first longitudinal mode of the string.} 
+
+  Figure 5 shows the next frequency range for the same two spectra as in Fig.\ 
+  4. This brings out some extra features: we have already seen a hint of them 
+  in the spectrogram of Fig.\ 3. Instead of a single peak 8, we see a pair 
+  labelled 8a and 8: these correspond to the close pair of lines near 2.7~kHz 
+  noted in Fig.\ 3. After that we have pairs 9a and 9, 10a and 10, and so on. 
+  The peaks labelled with an ``a'' are the phantom partials. They are generated 
+  from the transverse modal frequencies of the string by frequency doubling or 
+  by sum and difference combinations, and as we already noted these extra 
+  frequencies don't quite match the linear modal frequencies of the string 
+  because of the effect of inharmonicity from bending stiffness. 
+
+  Recall from section 5.4 that the effect of bending stiffness is to make the 
+  overtone frequencies of a stiff string progressively sharp, relative to an 
+  ideal harmonic pattern. As a result, a frequency-doubled component based on, 
+  for example, mode 5 will have a lower frequency than the actual mode 10, 
+  because mode 10 has been sharpened by the stiffness effect. These are the two 
+  frequencies we have labelled 10a and 10 in Fig.\ 5. Similarly, the sum of 
+  frequencies 4 and 5 is a little lower than the actual frequency of mode 9: 
+  these are the two frequencies labelled 9a and 9. But for our string plucked 
+  at the mid-point, mode 4 was only driven very weakly, and that is the reason 
+  that the peak 9a is very weak in Fig.\ 5: it relies on the strengths of both 
+  peak 4 and peak 5. It is shown in reference [1] that the observed pattern of 
+  peaks, including the phantom partials, can be very well explained across the 
+  whole frequency range by the effects of bending stiffness. 
+
+  Notice that all the ``a'' peaks in Fig.\ 5 show identical heights in the blue 
+  and red curves, whereas the ``non-a'' peaks are higher in the blue curve. 
+  This is the same pattern discussed earlier, for the peaks 2, 4 and 6 compared 
+  to peaks 1, 3 and 5. Peaks with equal heights in the two spectra are a 
+  hallmark of nonlinearly-generated longitudinal string motion. This suggests 
+  that to be strictly consistent we should have labelled the peaks as 2a, 4a 
+  and 6a in Fig.\ 4: for this special case of the mid-point plucks, these were 
+  all ``phantom partials''. But we didn't recognise them as such because they 
+  didn't obviously fall at unexpected frequencies. Another interesting detail: 
+  the rounded peak labelled ``L'' in Fig.\ 5 is the first longitudinal 
+  resonance of the string. It is not very prominent because it has high 
+  damping, but notice that, again, it has virtually identical levels in the 
+  blue and red curves. 
+
+  The next step is to synthesise some sounds, so we can listen and compare them 
+  with the measurements. There are several possibilities here. First, we can 
+  use a version of the linear model developed in Chapter 5, extended to allow 
+  for the string-soundboard angle of the harp, and the consequent coupling 
+  between transverse and longitudinal motion. But then we want to give at least 
+  an impression of the effect of the nonlinear coupling, generating phantom 
+  partials. But nonlinear synthesis is a complicated business, still very much 
+  an active research topic. So for the moment we will be content with the 
+  simplest approximate model, as described in the previous link. 
+
+  Even this is somewhat complicated. The procedure is first to find the 
+  transverse string motion, then to use this to calculate the nonlinear driving 
+  force for longitudinal motion. This approach involves several assumptions and 
+  simplifications. First, the method is intrinsically approximate: the 
+  governing equation derived in the previous link is based on discarding 
+  everything except the leading-order effect. Second, it only works in one 
+  direction: the transverse motion influences the longitudinal motion, but not 
+  vice versa. Among other things, this means that the method is not capable of 
+  giving the pitch glide effect. 
+
+  Third, to compute the nonlinear driving force requires knowledge of the 
+  transverse vibration at all positions on the string, not just near the 
+  bridge. But the linear synthesis method we have been using does not provide 
+  this: it only gives the motion at the bridge resulting from the combined 
+  effects of string and soundboard. So we will use a crude approximation. We 
+  saw in Fig.\ 2 that the transverse string motion in the harp is not very 
+  strongly influenced by coupling to the soundboard. That being the case, we 
+  can try using the simple closed-form response of a plucked string developed 
+  in section 5.4.1, for the case of a rigidly terminated string. We can easily 
+  extend that treatment to allow for the string’s damping and for the effect of 
+  bending stiffness. 
+
+  This approximate version of the transverse motion can now be used to 
+  calculate the nonlinear driving force, then solve the equation from the 
+  previous link for the longitudinal motion. Forces will then be exerted on the 
+  harp soundboard by both transverse and longitudinal motion, and these can be 
+  used in conjunction with the measured bridge admittance to give an estimate 
+  of the soundboard acceleration. This, finally, can be compared directly to 
+  the measurements from the wire-break plucks. 
+
+  But there is still one more twist to the story. As shown in detail in the 
+  previous link, it turns out that there are two contributions to the 
+  longitudinal force exerted on the bridge by the vibrating string. The balance 
+  between these two depends on the details of exactly how the string makes 
+  contact with the soundboard. There are two extreme cases. One has both 
+  effects fully active: this corresponds to assuming what is known as a pinned 
+  boundary condition at the end of the string. The other case has only one of 
+  the two effects, and corresponds to what is called a clamped boundary 
+  condition. We will show results for both cases: in a real harp, the answer is 
+  likely to be somewhere in between the two. 
+
+  Figure 6 shows a selection of frequency spectra for these various synthesised 
+  and measured responses, all for a pluck near the mid-point of the string. The 
+  top curve, in green, shows the result of the simplified linear synthesis. 
+  This curve shows why I chose to pluck near the mid-point, rather than exactly 
+  at that point. In the computer it is easy to be accurate, but in the 
+  measurements there is something of the order of 1~mm uncertainty about the 
+  exact plucking point. For a special case like the mid-point this makes a 
+  difference, especially when we plot results on a decibel scale showing a very 
+  large range of amplitudes. If we had plucked at the exact mid-point, in this 
+  simplified model of transverse motion, the even-numbered string modes would 
+  have been completely absent. Instead, the assumed plucking point is 1~mm away 
+  from the centre, to reflect the accuracy of the measurements and give a more 
+  representative comparison. You can still see a strong even-odd pattern of 
+  peak heights, but the even-numbered peaks are all visible to some extent in 
+  the green curve. 
+
+  The second and third curves in Fig.\ 6, in magenta and black, show the result 
+  of the approximate nonlinear model with the two different boundary 
+  conditions: pinned in magenta, clamped in black. All these synthesised curves 
+  are to be compared with the measurements in the lowest two curves. These are 
+  the same results as shown in Figs.\ 4 and 5, and the blue/red colour scheme 
+  is the same as in those previous plots. 
+
+  \fig{figs/fig-55c394eb.png}{Figure 6. Comparison of synthesised and measured 
+  spectra for a harp string plucked near the mid-point. The top (green) curve 
+  shows the result of linear synthesis. The magenta and black curves show 
+  synthesised results using an approximate model to incorporate nonlinear 
+  effects: the magenta curve assumes a pinned boundary condition at the bridge, 
+  the black curve assumes a clamped boundary there. All three synthesised 
+  results assume a plucking point 1~mm from the geometric mid-point of the 
+  string. The two curves at the bottom show the same measured responses as Fig. 
+  4 and 5, using the same colour codes: the blue line for a pluck in the plane 
+  of the strings, the red line for a pluck in the perpendicular plane.} 
+
+  We have already talked about some the main features of the measured results, 
+  especially the pattern of phantom partials. The three synthesised cases give 
+  very different results for this pattern. The linear synthesis, of course, 
+  does not show them at all. The magenta curve, for the nonlinear model with a 
+  pinned boundary condition, shows a very high peak near the position of the 
+  second string mode, as we expect from the earlier discussion. However, at 
+  higher frequency it shows far too many phantom peaks, compared to either of 
+  the measured plots. The black curve, for the clamped boundary condition, 
+  comes far closer to matching the pattern of measurements. It is by no means a 
+  perfect match --- look for example at the height around peak 4 --- but in the 
+  main it shows encouraging agreement. 
+
+  So, finally, what do these all sound like? Sounds 2--7 allow you to hear all 
+  the cases we have been talking about. Sounds 2 and 3 are the two measured 
+  wire-pluck waveforms. Don't forget that these are all giving the ``sound'' as 
+  measured by an accelerometer on the harp soundboard, so we don't expect them 
+  to sound the same as a microphone recording. The sharpness of the wire-break 
+  plucks also gives them a lot of high-frequency content, in comparison with 
+  the finger pluck in Sound 1. 
+
+  Sound 4 is the result of a linear synthesis using the method of Chapter 5, 
+  while Sound 5 gives the result of the simplified linear synthesis described 
+  above. The simplified method does not take proper account of coupling to the 
+  soundboard, so it lacks the initial ``thump'' coming from transient response 
+  of the modes of the harp body. But it does contain part of the effect of the 
+  body, because the string force has been converted into a version of the 
+  soundboard acceleration using the bridge admittance: you can see in the green 
+  curve of Fig.\ 6 some evidence of body resonances, in the low-level wiggles 
+  at low frequency in between the narrow string peaks. 
+
+  Sounds 6 and 7 give the two versions of the approximate nonlinear synthesis, 
+  with pinned and clamped boundary conditions respectively. They sound, to my 
+  ears at least, different from each other, and also clearly different from the 
+  linear syntheses on the one hand, and from the measurements on the other. 
+  What do we conclude? Perhaps that all the effects discussed in this section 
+  have some influence on sound, but that we don't yet have a fully convincing 
+  synthesis model. There is plenty of scope for further work here. 
+
+  That is as much as we will say about the harp. But we now turn to another 
+  plucked-string instrument with a distinctive sound, the lute. We will 
+  discover that a different type of nonlinearity is significant here. Figure 7 
+  shows the strings of a typical lute. This particular one has 8 courses: 
+  during the long history of the lute the number of courses gradually increased 
+  from 5 or 6 in the earliest years, up to 10 or more by the time of Bach. The 
+  top string is single, the rest are in 2-string courses. The first 4 pairs are 
+  tuned in unison, the lowest 3 in octaves. All the strings are plain 
+  monofilaments; in this case they are all synthetic polymers, but originally 
+  gut would have been used. 
+
+  \fig{figs/fig-95a704eb.png}{Figure 7. The strings and bridge of an 8-course 
+  lute} 
+
+  An intriguing puzzle is revealed by comparing the sounds of the lute and a 
+  classical guitar. The top three strings of a classical guitar are nylon 
+  monofilaments, apparently similar to the strings of the lute. A guitarist 
+  normally uses fingernails to pluck the strings, while a lutenist uses the 
+  flesh of the fingertips. When played in the usual way, both instruments make 
+  a satisfyingly bright sound, but if a guitar is played using lute technique, 
+  with finger flesh rather than nails, the result is very dull and 
+  unsatisfying. The most important physical difference between the two 
+  instruments is that the strings of the lute are thinner than the 
+  corresponding strings of the guitar. 
+
+  This poses a puzzle because of something we can deduce by putting together a 
+  few things covered in earlier chapters. If we combine information from 
+  sections 5.4.1 and 7.2.1, we can deduce that for an ideal textbook string, of 
+  the kind undergraduates are usually taught about, the diameter of the string 
+  should not make any difference whatsoever to the sound of a plucked note! 
+  Specifically, we think about a string of a given length and material, tuned 
+  to a given frequency, and plucked with a perfect step function of force like 
+  a wire-break. We then calculate the response at the bridge of the instrument, 
+  and it turns out that the string diameter simply cancels out. 
+
+  We need some data. First, let’s listen to some sounds. An experiment was done 
+  by fitting a guitar with four plain nylon strings of different diameters, all 
+  tuned to the same frequency. Three of the strings were the top three from a 
+  standard set of classical guitar strings. But all three were tuned to the 
+  usual frequency of the top string (E$_4$, 329.7~Hz). A fourth string was 
+  added, with a typical diameter for the top string of a lute, and this was 
+  also tuned to the same note. This experiment was not done using an expensive 
+  guitar! Tuning the second and, particularly, the third strings up to the top 
+  E put more stress on the guitar and its tuners than it was really designed to 
+  withstand. Fortunately, no disaster ensued. 
+
+  We will concentrate on three of these strings: the light-gauge lute string 
+  (“string 1” in what follows), the regular guitar top string (“string 2”) and 
+  the tuned-up guitar second string (“string 3”). The diameters of these three 
+  strings were respectively 0.50~mm, 0.69~mm and 0.78~mm. Sounds 8, 9 and 10 
+  give single notes on these three strings, plucked with a thumb using lute 
+  technique. As with the harp results earlier in this section, these “sounds” 
+  are actually the result of recording the output of a small accelerometer 
+  fixed to the guitar bridge. I think you will agree that there is a big 
+  difference of sound between these examples: brightest for string 1, but quite 
+  dull for string 3 even with the high-frequency boost provided by the 
+  accelerometer recording. 
+
+  Sounds 11, 12 and 13 are the result of plucking the same three strings with a 
+  breaking wire. All three of them sound brighter than the corresponding thumb 
+  plucks. Comparing Sounds 9 and 12 illustrates the lute/guitar contrast 
+  commented on at the start of this discussion. These two sounds are both based 
+  on the normal top E string of a guitar, and the difference of brightness in 
+  the sound between the two is very marked. Even with the artificial “treble 
+  boost” provided by the accelerometer recording, the thumb pluck gives a 
+  rather unsatisfactory dull sound. The fingernail of a classical guitarist 
+  will give an effect somewhere between a thumb pluck and a wire-break pluck, 
+  giving the guitar a sufficiently bright sound. 
+
+  The contrasting brightness between the thumb plucks and wire-break plucks is 
+  no surprise: this is exactly the difference predicted by linear theory. We 
+  saw in section 5.4.1 that the contribution of each mode to the pluck response 
+  of a string is found by expressing the initial shape as a mixture of the mode 
+  shapes, and for a string this amounts to expanding that initial shape as a 
+  Fourier series. The sharp corner given to the string by the wire break 
+  requires a lot of short-wavelength terms in that Fourier series. This in turn 
+  creates a lot of high frequency content in the sound. The more rounded shape 
+  from a thumb pluck only involves relatively long wavelengths, and so it 
+  excites the higher modes of the strings rather little, and produces less high 
+  frequency content in the sound. A fingernail pluck will fall somewhere 
+  between the two in terms of sharpness. 
+
+  So can we track down what is responsible for the difference of sound between 
+  strings with different diameters? Several effects we have already encountered 
+  might play a role. First, we know that strings of different diameters will 
+  have different inharmonicity, and also different damping behaviour. Both 
+  effects are associated with a difference of bending stiffness: a thicker 
+  string will have higher stiffness, leading to greater inharmonicity and also 
+  to a reduced cut-off frequency associated with damping. We have already seen 
+  some data about this damping effect in Fig.\ 2 in section 7.2, reproduced 
+  here as Fig.\ 8 to remind you. The strings shown in black and red here are in 
+  fact string 1 and string 2 of the present study. (The string shown in green 
+  is not relevant here, though. That string had diameter 1.68~mm, far thicker 
+  than any of the four strings used in the guitar experiment.) 
+
+  \fig{figs/fig-ca794de4.png}{Figure 8. A repeat of Fig. 2 from section 7.2, 
+  showing the damping behaviour of three different nylon strings. The black and 
+  red points correspond to strings 1 and 2, respectively, in this section.} 
+
+  Both these effects associated with bending stiffness can be captured 
+  accurately by linear synthesis: Fig.\ 8 reminds us that we have a good 
+  theoretical model of the damping of these strings (shown in the lines which 
+  follow the experimental points quite closely). Sounds 14, 15 and 16 give 
+  synthesised results for the three strings, corresponding to wire-break plucks 
+  at the same position as the measured responses in Sounds 11, 12 and 13. To my 
+  ears, these all sound remarkably similar. This suggests that differences in 
+  bending stiffness, inharmonicity and damping are not a very big contribution 
+  to the contrast between the three strings that we heard in Sounds. 8, 9 and 
+  10. 
+
+  Perhaps the nonlinear effects we investigated in the harp might be important 
+  in the guitar and lute as well? It is certainly true that “phantom partials” 
+  can be seen in detailed spectra of the wire-break plucks of the strings of a 
+  guitar or lute: see [3] for some examples. Sounds 17, 18 and 19 give 
+  synthesised plucks on the three strings using the approximate nonlinear 
+  approach used for the harp in Sounds 6 and 7. The three sounds are clearly 
+  different from the linear versions in Sounds 14, 15 and 16. They are also 
+  slightly different from each other, but nowhere near enough to match the 
+  differences heard in the three wire-pluck measurements, let alone in the 
+  three thumb plucks. 
+
+  So what remains? The full detective story of tracking down the evidence is 
+  explained in [3], but you may have already guessed the most likely answer 
+  after listening to Sound 8 and Sound 11. The very thin string, under rather 
+  low tension, is almost certainly hitting some other part of the structure 
+  when it vibrates. There are various possibilities, but a plausible culprit is 
+  the fret closest to the nut. The early part of the transverse string motion 
+  following a pluck will be similar to the pattern for an ideal textbook 
+  string: see the animation in Fig.\ 3 of section 5.4. After half a cycle, the 
+  string shape becomes an approximate mirror image of the initial displacement. 
+  The plucking point was 30~mm from the bridge, so the maximum displacement 
+  will occur 30~mm from the nut, fairly close to the first fret at about 37~mm. 
+  If the string hits a fret, a short force pulse is likely to occur. This would 
+  excite additional vibration, with a very important extra feature. If the 
+  original pluck was band-limited, like the thumb plucks, a fret impact could 
+  excite vibration over a far wider bandwidth, just as was heard in the sound 
+  files (and also seen in measurements: see [3]). 
+
+  The original observation, that lighter-gauge strings sound brighter, would 
+  then be explained by the simple fact that a player will naturally tend to 
+  excite a lower-tension string to larger amplitude, and thus make impacts or 
+  other nonlinear interactions more likely. In the case of wire plucks, the 
+  pluck force is explicitly kept constant, so that different amplitudes of 
+  string motion are excited. Musicians will probably not be thinking about 
+  plucking force as such, but they will be aware of the loudness of sound they 
+  wish to create. To achieve comparable loudness on strings of different 
+  tensions will require a larger vibration amplitude in a lighter string. 
+
+  A musician or instrument maker would probably describe a fret impact as a 
+  “buzz”, but that term is usually applied to cases of multiple impacts with a 
+  fret so that a sustained effect is clearly audible. Guitar makers normally go 
+  to some lengths to avoid such buzzes. But we are suggesting here that a 
+  similar effect at a low level is probably essential to the tone quality of 
+  the lute, and other early plucked-string instruments in which the flesh of 
+  the fingers is used, rather than fingernails or any kind of plectrum. The 
+  brightness and crispness of tone associated with the lute and related 
+  instruments relies on their light-gauge stringing, probably via some 
+  manifestation of the effect discussed here. 
+
+  This idea has some interesting consequences. First, certain design details of 
+  the lute are perhaps clarified. The frets on a lute (or a viol, or other 
+  stringed instruments of this early period) are not made of metal like the 
+  frets of a guitar. Instead, they are made of lengths of gut tied around the 
+  neck of the instrument. The result is softer than a modern metal fret, and 
+  this may reduce the abruptness of a string-fret contact so that the contact 
+  force is more band-limited and the sound is less obtrusive than a buzz on a 
+  guitar. In early lutes, the frets were conventionally tied with a doubled 
+  length of gut. This slightly curious feature is, perhaps among other things, 
+  a “buzz promoter”. The vibrating length of the string is probably terminated 
+  at the rear strand of the fret, but the vibrating string might buzz against 
+  the front strand to give some increased brightness to the sound. 
+
+  Another consequence is that the desired effect of a slight buzzing contact 
+  might be extremely sensitive to the set-up of the instrument. The maker is 
+  probably able to shape the sound by adjusting various small details, but it 
+  is also likely that the sound is quite sensitive to changes in temperature 
+  and humidity which may cause movement in the wood structure of the instrument 
+  body and change the set-up details. To a musician, the instrument may seem 
+  rather “twitchy” to changes in the weather, sounding harsh on some days but 
+  more mellow on others. 
+
+  There is another effect on the sound of a lute connected with humidity 
+  sensitivity, to do with the way the instrument is played. The recommended 
+  technique is to press down with the flesh of a finger pad on a string (or a 
+  pair of strings in a course), then pull sideways. The “pluck” is thus 
+  produced by frictional slipping against the skin. Now, it is well known that 
+  the coefficient of friction of human flesh is sensitive to the state of 
+  hydration: dry skin has lower friction. That means that when a player has dry 
+  skin, they will have to press down harder to increase the normal force in 
+  order to achieve the required frictional force for a pluck of a given 
+  strength. This will change the orientation of the string vibration, and the 
+  extra normal displacement may make buzzing more likely. The result is that 
+  the instrument may sound harsh. 
+
+  This fits well with the experience of players, who know that soaking their 
+  hands to hydrate the skin can have a big effect on tone quality. Once this 
+  mechanism is understood, it can be seen that players may have other choices 
+  to achieve the same effect: there are various substances available to enhance 
+  friction. Powdered rosin is one, but this makes the fingers feel undesirably 
+  sticky. A better option may the “chalk” (magnesium carbonate powder) that 
+  rock climbers use to improve friction in their finger-tips. The effect may be 
+  longer-lasting than that of hydration, if playing in a dry environment. 
+
+
+
+  \sectionreferences{}[1] J. Woodhouse, ``The acoustics of a plucked harp 
+  string'', Journal of Sound and Vibration \textbf{523}, 116669, (2022).~~DOI 
+  10.1016/j.jsv.2021.116669 
+
+  [2] H. A. Conklin, ``Generation of partials due to nonlinear mixing in a 
+  stringed instrument'' Journal of the Acoustical Society of America 
+  \textbf{105}, 536–545, (1999). 
+
+  [3] J. Woodhouse, ``Influence of damping and nonlinearity in plucked strings: 
+  Why do light-gauge strings sound brighter?'', Acta Acustica united with 
+  Acustica \textbf{103}, 1064–1079 (2017). 

@@ -1,0 +1,40 @@
+  The sound examples in this chapter were all computed by the same approach. 
+  The system is characterised by the natural frequencies $\omega_n$ and 
+  Q-factors $Q_n$ of the set of modes, up to some chosen cutoff frequency so 
+  that we only have a finite number $N$ of modes to deal with. If mode $n$ has 
+  amplitude $a_n$, the waveform we compute and save as a sound file is simply 
+
+  $$f(t)=\sum_{n=1}^N~a_n \cos(\omega_n t) e^{-\omega_n t /(2 Q_n)} \tag{1}$$ 
+
+  where $Q_n = 1/(2\zeta_n)$ in terms of the damping ratio $\zeta_n$ defined in 
+  section 2.2.7. The amplitudes are chosen by a very simple strategy. First, 
+  the ``instrument'' is assumed to be set into motion using a hammer that 
+  behaves like the simple model presented in section 2.2.6. That model has a 
+  variable that governs the ``hardness'' of the hammer: the duration of the 
+  impact, given by a half-period of the vibration frequency $\Omega$ defined in 
+  2.2.6. To represent this effect, $a_n$ includes a factor $\dfrac{\cos[\pi 
+  \omega_n/(2 Q_n)]}{(\Omega^2-\omega^2)}$. 
+
+  The second, rather ad hoc, factor included in the amplitudes is associated 
+  with the fact that we want to make sounds that are reasonably familiar. But 
+  the radiation of sound by vibrating structures is complicated (we will study 
+  it in Chapter 4). For the present purpose, none of this complication need be 
+  considered. Instead, the amplitude is simply scaled by a power of frequency, 
+  with a power $\alpha$ chosen to give an acceptable sound. The chosen value is 
+  $\alpha = -0.6$. So in total, 
+
+  $$a_n=\dfrac{\cos[\pi \omega_n/(2 
+  \Omega)]}{(\Omega^2-\omega^2)}~\omega_n^\alpha.\tag{2}$$ 
+
+  There is a final factor that could have been included, but for the moment has 
+  been ignored. If we wanted to investigate the effect of hitting an instrument 
+  at different locations, we would use the result of eq. (11) from section 
+  2.2.5 and include a factor $u_n(x)$, where $u_n$ is the nth mode shape and 
+  $x$ represents the chosen hammer position. For this purpose the mode shapes 
+  need to be normalised according to eq. (10) of section 2.2.5. 
+
+  All modes are assigned the same Q-factor $Q_n$. For cases with a ``hard'' 
+  hammer, the duration of the impact $d=\pi / \Omega$ has the value 0.1 ms, 
+  while for cases with a ``soft'' hammer, $d=1$ ms. The value of $N$ is chosen 
+  to ensure that enough modes are included to cover the frequency range over 
+  which amplitudes are significant. 

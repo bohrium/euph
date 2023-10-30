@@ -1,0 +1,99 @@
+  The starting point for the time-domain simulation approach, as applied to the 
+  simple clarinet model, is to assume that just inside the mouthpiece there is 
+  at least a short length of uniform tube. We can then use a general expression 
+  for acoustic pressure of plane waves in a parallel duct: 
+
+  $$p(x,t) = p_R(t-x/c) + p_L(t+x/c) \tag{1}$$ 
+
+  where $c$ is the speed of sound, and $p_L$ and $p_R$ denote left-travelling 
+  and right-travelling waves, respectively. We derived this expression in 
+  section 5.4.2 in the context of waves on an ideal string, but we also showed 
+  in section 4.1.1 that plane acoustic waves obey the same one-dimensional wave 
+  equation as waves on a string. 
+
+  Using results from section 4.1.1, we can also write down the corresponding 
+  contributions to the acoustic volume flow rate: these are 
+
+  $$Z_t^{-1}p_R(t-x/c) \mathrm{~~~and~~~} -Z_t^{-1}p_L(t+x/c) \tag{2}$$ 
+
+  where $Z_t$ is a constant called the wave impedance (or characteristic 
+  impedance) of the tube. It is equal to $c$ times the density of air divided 
+  by the cross-sectional area of the tube. 
+
+  The reed entrance is at $x=0$, so at that point we have 
+
+  $$p(t)=p_R(t) + p_L(t) \tag{3}$$ 
+
+  and 
+
+  $$Z_t v(t)=p_L(t) -- p_R(t) . \tag{4}$$ 
+
+  Now we introduce the linear acoustical behaviour of the clarinet tube. 
+  Suppose a pressure pulse in the form of a Dirac delta function is sent out 
+  from $x=0$ at time $t=0$. The returning pulse will be delayed, inverted and 
+  somewhat rounded, so that it looks something like Fig.\ 1. Define this 
+  ``reflection function'' to be $r(t)$. In order that there should be no 
+  permanent, steady difference of mean pressure between the inside and the 
+  outside of the tube, linear acoustics requires this function to satisfy 
+
+  $$\int_0^\infty{r(t) dt} =-1 . \tag{5}$$ 
+
+  Next we make use of a key result shown back in section 2.2.8. We can use 
+  $r(t)$ to calculate the reflected pressure wave caused by any outgoing 
+  pressure wave by the process of convolution. The result is that 
+
+  $$p_L(t)=\int_0^\infty{r(\tau) p_R(t-\tau) d \tau} \tag{6}$$ 
+
+  and for brevity we can denote this convolution expression by $p_L=r*p_R$. 
+
+  Taking the sum and difference of eqs. (3) and (4) gives 
+
+  $$p+Z_t v=2 p_L=2r*p_R \tag{7}$$ 
+
+  and 
+
+  $$p-Z_t v=2p_R . \tag{8}$$ 
+
+  These can be combined into the form 
+
+  $$p=p_h + Z_t v \tag{9}$$ 
+
+  where 
+
+  $$p_h=r*(p+Z_t v). \tag{10}$$ 
+
+  The subscript `h' here is to suggest ``history'': $p_h$ is something we can 
+  easily calculate, by the convolution integral, from a knowledge of the past 
+  history of the system. So at a given time step $t$, $p_h$ is a known 
+  constant. Equation (9) is then simply the equation of a straight line with 
+  slope $1/Z_t$, crossing the $p$-axis at position $p_h$. But we know that $p$ 
+  and $v$ are also connected via the nonlinear function plotted in Fig.\ 2. So 
+  the new values of $p$ and $v$ are found at the intersection between the 
+  straight line and the curve: three examples of possible positions of the 
+  straight line are indicated in the plot. (A detail: the curve is plotted here 
+  as a function of the pressure difference, not of the absolute pressure $p$. 
+  This means that each straight line in this plot needs to cross the $p$ axis 
+  at value $p_h-p_m$ where $p_m$ is the pressure inside the player's mouth.) 
+
+  For the particular curve plotted, and the chosen slope of the straight line, 
+  there is always just a single intersection so that the computation is very 
+  simple. But if the slope of the line had been lower, so that it was less than 
+  the maximum positive slope of the curve, multiple intersections could occur 
+  for certain values of $p_h$. We will return to that issue in section 9.2, in 
+  the context of bowed strings, where such multiple intersections have an 
+  interesting physical consequence. 
+
+  The specific parameter values used for the numerical examples of this simple 
+  clarinet model in section 8.5 are as follows. They are based on choices made 
+  in the original paper describing this method [1]. Units are used in which the 
+  characteristic impedance $Z_t=1$. The smooth portion of the nonlinear curve 
+  then has the cubic form 
+
+  $$v=0.03(p_0 -p)(p-p_0+5)(p-p_0+10) . \tag{11}$$ 
+
+  The maximum positive slope of this curve occurs at the point $p-p_0=-5$, and 
+  the value of the slope there is 0.75, so it is indeed lower than $1/Z_t$. 
+
+  \sectionreferences{}[1] Michael E. McIntyre, Robert T. Schumacher and Jim 
+  Woodhouse; ``On the oscillations of musical instruments'', Journal of the 
+  Acoustical Society of America \textbf{74}, 1325--1345 (1983) 

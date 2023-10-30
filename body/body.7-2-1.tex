@@ -1,0 +1,47 @@
+  In order to express the behaviour of a vibrating string in suitable form for 
+  the selection chart we are building up, it is useful to gather up some 
+  earlier results and write them slightly differently. We are interested in a 
+  monofilament string of circular cross-section of diameter $d$ and length $L$, 
+  under tension $T$ and made of material with Young's modulus $E$ and density 
+  $\rho$. As we found in section 5.4.3, using an argument based on Rayleigh's 
+  principle, the $n$th natural frequency $\omega_n=2\pi f_n$ satisfies 
+
+  $$\omega_n^2 \approx \dfrac{T}{m} \left[ \dfrac{n\pi}{L} \right] ^2 + 
+  \dfrac{EI}{m} \left[ \dfrac{n\pi}{L} \right] ^4 \tag{1}$$ 
+
+  where $m=\pi d^2 \rho /4$ is the mass per unit length, and the second moment 
+  of area $I=\pi d^4 /64$. 
+
+  The second term on the right-hand side of eq. (1) arises from the non-zero 
+  bending stiffness of the string. For realistic musical strings, the bending 
+  stiffness effect is relatively weak so that the fundamental frequency (i.e. 
+  $n = 1$) is always well approximated by neglecting this term: 
+
+  $$f_1^2 = \dfrac{\omega_1^2}{4 \pi^2} \approx \dfrac{T}{m}\left[ 
+  \dfrac{1}{2L} \right] ^2 . \tag{2}$$ 
+
+  We can turn this round to give an expression for $T$ in terms of the (known) 
+  fundamental frequency $f_1$: 
+
+  $$T \approx 4m(Lf_1)^2 = \pi \rho d^2 (Lf_1)^2 . \tag{3}$$ 
+
+  Another quantity of interest is the wave impedance of the string: 
+
+  $$Z_0 = \sqrt{Tm} \approx \pi d^2 \rho L f_1 /2 . \tag{4}$$ 
+
+  Notice that, for a material of given density, both these quantities are 
+  expressed in terms of $d$ and the combined parameter $\gamma=Lf_1$, so eqs. 
+  (3) and (4) allow us to plot lines of constant tension and lines of constant 
+  impedance in the $\gamma-d$ plane. 
+
+  The parameter $\gamma$ is in any case a natural one to bring in, since if 
+  bending stiffness is ignored, $\gamma$ remains constant as a given string on 
+  a guitar, say, is fingered in different positions. Using eq. (2), $\gamma 
+  \approx c/2$ where $c$ is the wave speed on the string. For material of a 
+  given density, its value determines the stress: 
+
+  $$\sigma = 4 \rho \gamma^2. \tag{5}$$ 
+
+  Ultimate failure of the string under increasing tension is determined by a 
+  threshold value of stress, so it follows that this failure condition will 
+  appear as a vertical line in the $\gamma-d$ plane. 

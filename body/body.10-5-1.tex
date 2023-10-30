@@ -1,0 +1,305 @@
+  The mathematics behind experimental modal analysis starts from an expression 
+  for frequency response functions that we discussed back in Chapter 2. A 
+  rather general expression for any mechanical frequency response function of a 
+  vibrating structure can be written in the form 
+
+  $$G(x,y,\omega) = (i \omega)^\alpha \sum_n \dfrac{u_n(x) 
+  u_n(y)}{\omega_n^2+2i\omega \omega_n \zeta_n-\omega^2} \tag{1}$$ 
+
+  where the sum is over modes labelled by $n$. 
+
+  In this formula, the $n$th mode is assumed to have mode shape $u_n$, resonant 
+  frequency $\omega_n$ and damping ratio $\zeta_n$. The damping ratio is 
+  related to the modal loss factor by $\eta_n = 2 \zeta_n$, and to the modal 
+  Q-factor by $Q_n=1/\eta_n$. The notation $u_n(x)$ is a shorthand to denote 
+  ``the amplitude of the mode shape at the excitation position $x$, in the 
+  relevant direction of the applied driving force''. In a similar way, $u_n(y)$ 
+  denotes the corresponding modal amplitude at the position and in the 
+  direction of the measuring sensor. The mode shapes must be normalised in a 
+  particular way in order for this formula to work: see section 2.2.5 for the 
+  details. The initial factor $(i \omega)^\alpha$ determines which particular 
+  frequency response function we are dealing with: $\alpha=0$ corresponds to a 
+  measurement of displacement (known as receptance), $\alpha=1$ to a 
+  measurement of velocity (i.e. admittance or mobility), and $\alpha=2$ to a 
+  measurement of acceleration (i.e. accelerance). 
+
+  We will look first at the behaviour of a single term from this modal 
+  summation: define 
+
+  $$G_n = \dfrac{(i \omega)^\alpha K_n}{\omega_n^2+2i\omega \omega_n 
+  \zeta_n-\omega^2} \tag{2}$$ 
+
+  where 
+
+  $$K_n= u_n(x) u_n(y) . \tag{3}$$ 
+
+  We can simplify this term by factorising the quadratic in the denominator, 
+  then expanding $G_n$ in partial fractions. We can write 
+
+  $$\omega_n^2+2i\omega \omega_n \zeta_n-\omega^2 = -- (\omega \mathrm{~} -- 
+  \mathrm{~} \bar{\omega}_n)(\omega + \bar{\omega}^*_n) \tag{4}$$ 
+
+  where $.^*$ denotes the complex conjugate, and the complex root 
+  $\bar{\omega}_n$ is given by 
+
+  $$\bar{\omega}_n=\omega_n (\cos \phi_n + i \zeta_n) \approx \omega_n (1 + i 
+  \zeta_n) \tag{5}$$ 
+
+  where $\phi_n$ is defined by 
+
+  $$\sin \phi_n = \zeta_n \tag{6}$$ 
+
+  and the final approximate expression is for the case of small damping 
+  $\zeta_n \ll 1$, so that $\phi_n \approx \zeta_n$ and $\cos \phi_n \approx 
+  1$. 
+
+  Now we look for an expansion in partial fractions. The details depend on the 
+  chosen value of $\alpha$, although we will see that the most important aspect 
+  of the subsequent behaviour is the same for all values of $\alpha$. For the 
+  purpose of demonstrating the method, we will analyse the case $\alpha = 1$. 
+  We then have 
+
+  $$G_n = -\dfrac{i \omega K_n}{(\omega \mathrm{~} -- \mathrm{~} 
+  \bar{\omega}_n)(\omega + \bar{\omega}^*_n)} \tag{7}$$ 
+
+  and we look for an expression of the form 
+
+  $$G_n = \dfrac{A}{\omega \mathrm{~} -- \mathrm{~} \bar{\omega}_n} + 
+  \dfrac{B}{\omega + \bar{\omega}^*_n}$$ 
+
+  $$=\dfrac{A(\omega + \bar{\omega}^*_n) + B(\omega \mathrm{~} -- \mathrm{~} 
+  \bar{\omega}_n)}{(\omega \mathrm{~} -- \mathrm{~} \bar{\omega}_n)(\omega + 
+  \bar{\omega}^*_n)} \tag{8}$$ 
+
+  where $A$ and $B$ are two constants. To make this expression agree with with 
+  equation (7), we need to satisfy the two conditions 
+
+  $$-iK_n = A + B \tag{9}$$ 
+
+  and 
+
+  $$A \bar{\omega}^*_n -- B\bar{\omega}_n = 0 . \tag{10}$$ 
+
+  Solving these simultaneous equations gives 
+
+  $$A = -\dfrac{iK_n}{2}(1+ i\tan \phi_n) \tag{11}$$ 
+
+  and 
+
+  $$B = -\dfrac{iK_n}{2}(1- i\tan \phi_n) , \tag{12}$$ 
+
+  so that 
+
+  $$G_n = -\dfrac{iK_n}{2} \left[\dfrac{1+ i\tan \phi_n}{\omega \mathrm{~} -- 
+  \mathrm{~} \bar{\omega}_n} + \dfrac{1- i\tan \phi_n}{\omega + 
+  \bar{\omega}^*_n} \right] \tag{13}$$ 
+
+  $$\approx -\dfrac{iK_n}{2} \left[\dfrac{1+ i\zeta_n}{\omega \mathrm{~} -- 
+  \mathrm{~} \bar{\omega}_n} + \dfrac{1- i\zeta_n}{\omega + \bar{\omega}^*_n} 
+  \right] \tag{14}$$ 
+
+  for small damping. 
+
+  Equation (13) or (14) tells us that our term $G_n(\omega)$ has two poles in 
+  the complex $\omega$ plane, at 
+
+  $$\omega = \bar{\omega}_n \approx \omega_n(1 + i \zeta_n) \tag{15}$$ 
+
+  and 
+
+  $$\omega = -\bar{\omega}_n^* \approx \omega_n(-1 + i \zeta_n) . \tag{16}$$ 
+
+  A pole is a place where the complex function goes to infinity, and these are 
+  both simple poles where the infinite behaviour takes the form of the inverse 
+  of a linear factor like $(\omega \mathrm{~} -- \mathrm{~} z)$, for a pole at 
+  $z$. 
+
+  Exactly the same is true for the other possible values of $\alpha$. For 
+  $\alpha = 0$, the result corresponding to equations (13) and (14) is 
+
+  $$G_n = -\dfrac{K_n}{2 \omega_n \cos \phi_n} \left[\dfrac{1}{\omega -- 
+  \bar{\omega}_n} -- \dfrac{1}{\omega + \bar{\omega}^*_n} \right] \tag{17}$$ 
+
+  $$\approx -\dfrac{K_n}{2 \omega_n } \left[\dfrac{1}{\omega -- \bar{\omega}_n} 
+  -- \dfrac{1}{\omega + \bar{\omega}^*_n} \right] . \tag{18}$$ 
+
+  For $\alpha = 2$ the equivalent result is 
+
+  $$G_n = K_n+\dfrac{K_n \omega_n}{2} \left[\dfrac{(1-2\zeta_n^2)/\cos \phi_n + 
+  2 i \zeta_n}{\omega -- \bar{\omega}_n}\right.$$ 
+
+  $$\left. -- \dfrac{(1-2\zeta_n^2)/\cos \phi_n -- 2 i \zeta_n}{\omega + 
+  \bar{\omega}^*_n} \right] \tag{19}$$ 
+
+  $$\approx K_n+\dfrac{K_n \omega_n}{2} \left[\dfrac{1 + 2 i \zeta_n}{\omega -- 
+  \bar{\omega}_n} -- \dfrac{1 -- 2 i \zeta_n}{\omega + \bar{\omega}^*_n} 
+  \right] . \tag{20}$$ 
+
+  We can now deduce the pattern of poles in the complex $\omega$ plane for our 
+  entire frequency response function $G(x,y,\omega)$: it must look something 
+  like Fig.\ 1. For the particular value $n=3$, the pair of poles are indicated 
+  by the red and blue stars, at positions that are symmetrical in the vertical 
+  axis. All the other values of $n$ contribute similar pairs, shown as green 
+  stars. Note that different scales are used for the horizontal and vertical 
+  axes, because for small damping the poles are all very close to the real 
+  (horizontal) axis. In this figure, the value $\zeta_n = 0.01$ has been used 
+  for all modes. 
+
+  \fig{figs/fig-b05b41f7.png}{Figure 1. Sketch of the positions in the complex 
+  plane of poles of the frequency response function. The red and blue stars 
+  show the pair of poles contributed by the term $G_3$, while the green stars 
+  show the corresponding pairs from other terms $G_n$.} 
+
+  Now suppose we are interested in the behaviour of the frequency response 
+  function close to one of the resonance peaks, for example for frequencies 
+  close to $\omega_3$. That means we are close to the red star in Fig.\ 1. If 
+  the damping is low enough that the peaks are well separated, that suggests 
+  that we might ignore the effect of the neighbouring poles marked by green 
+  stars. But if we are to neglect those, we can surely also neglect the pole 
+  marked by the blue star --- although it is associated with the same vibration 
+  mode as the red star, it is more remote in the complex plane than other poles 
+  we have already decided to neglect. 
+
+  Based on this argument, we can hope to obtain a good first approximation to 
+  the behaviour from a single term of the form 
+
+  $$G(\omega) \approx \dfrac{A}{\omega -- \bar{\omega}_3} \tag{21}$$ 
+
+  where $A$ is a (complex) constant. Assuming that the damping is small, we can 
+  see from equations (14), (18) and (20) that $A$ is approximately a real 
+  number for $\alpha = 0$ or $\alpha = 2$, whereas for $\alpha=1$ it is 
+  approximately a pure imaginary number. 
+
+  For simplicity, we look first at the case where $A$ is a positive real 
+  number. We also know that $\bar{\omega}_3 \approx \omega_3(1+i \zeta_3)$ from 
+  equation (5). The claim now is that if we plot the trajectory of the complex 
+  value $G(\omega)$ in the complex plane, as $\omega$ varies, we will obtain a 
+  circle. The simplest way to prove this is first to guess where the circle 
+  would have to be, then substitute into the equation for that guessed circle 
+  and verify that it is indeed satisfied. 
+
+  We can guess where the circle must be by looking at the behaviour at some 
+  particular frequencies. When $\omega=0$, $G=-A/\omega_3(1+i \zeta_3) \approx 
+  -A/\omega_3$. In other words, $G$ is approximately a negative real number. At 
+  the opposite extreme, as $\omega \rightarrow\infty$, $G \rightarrow 
+  A/\omega$. It is a small real number, tending towards zero from the positive 
+  side. Now we look at the peak value, which will occur for $\omega \approx 
+  \omega_3$. The value there is $G=iA/\omega_3 \zeta_3$: this is a pure 
+  imaginary value, and it is very large because $\zeta_3$ is small. 
+
+  So when the frequency $\omega$ is well below or well above the resonance 
+  frequency, $G$ is near the origin in the complex plane, near the real axis 
+  and on one side or the other of the origin. But at the peak, $G$ is high up 
+  along the imaginary axis. If there is a circle passing through all these 
+  points, it must surely be the one which passes through the origin and the 
+  peak value, with its centre on the imaginary axis to preserve symmetry on 
+  either side of the resonance frequency. So we might be looking for a circle 
+  of radius $R=A/2\omega_3 \zeta_3$, centred on the complex value $iR$, as 
+  sketched in Fig.\ 2. The sketch highlights the various features just 
+  mentioned: the peak, the trends as $\omega$ tends to zero and infinity, and 
+  the circle centre and radius. 
+
+  \fig{figs/fig-29e744eb.png}{Figure 2. A modal circle in the complex plane 
+  (red), labelled with some key features} 
+
+  If the real and imaginary parts of $G$ are $G=P+iQ$, the equation of that 
+  circle would be 
+
+  $$P^2 + (Q-R)^2 = R^2. \tag{22}$$ 
+
+  Well, we can easily calculate $P$ and $Q$: 
+
+  
+  $$G=\dfrac{A}{\omega-\omega_3(1+i\zeta_3)}=\dfrac{A[\omega-\omega_3(1-i\zeta_3)]}{|\omega-\omega_3(1+i\zeta_3)|^2} 
+  \tag{23}$$ 
+
+  and so 
+
+  $$P=\dfrac{A(\omega-\omega_3)}{(\omega-\omega_3)^2 + \omega_3^2 \zeta_3^2} 
+  \tag{24}$$ 
+
+  and 
+
+  $$Q=\dfrac{A\omega_3\zeta_3}{(\omega-\omega_3)^2 + \omega_3^2 \zeta_3^2} . 
+  \tag{25}$$ 
+
+  Substituting: 
+
+  $$P^2 + (Q-R)^2 = \dfrac{A^2(\omega-\omega_3)^2}{[(\omega-\omega_3)^2 + 
+  \omega_3^2 \zeta_3^2]^2}$$ 
+
+  $$+ \left\lbrace \dfrac{A\omega_3\zeta_3}{(\omega-\omega_3)^2 + \omega_3^2 
+  \zeta_3^2} -- \dfrac{A}{2 \omega_3 \zeta_3} \right\rbrace^2 $$ 
+
+  $$=\dfrac{A^2(\omega-\omega_3)^2 + A^2 \omega_3^2 \zeta_3^2-A^2 
+  [(\omega-\omega_3)^2 + \omega_3^2 \zeta_3^2]}{[(\omega-\omega_3)^2 + 
+  \omega_3^2 \zeta_3^2]^2}+R^2$$ 
+
+  $$=R^2. \tag{26}$$ 
+
+  So we see that the single-pole expression for $G(\omega)$ does indeed mark 
+  out a circle in the complex plane, exactly as sketched in Fig.\ 2. That 
+  sketch also reveals another interesting feature. We have previously said that 
+  the usual way to characterise the bandwidth of a resonance peak in a 
+  frequency response function is via the half-power points on either side of 
+  the peak. We now see that this is a very natural choice for a characteristic 
+  bandwidth: those half-power points fall at the ends of the horizontal circle 
+  diameter, perpendicular to the diameter through the peak value. The two 
+  dashed black lines are angled at $\pm45^\circ$ to the imaginary axis, and the 
+  angle between them is a right angle. (This is a well-known theorem of 
+  geometry: ``the angle in a semicircle is a right angle.'') Pythagoras' 
+  theorem then tells us that the two dashed lines both have length $\sqrt{2}R$. 
+  So the squared amplitude is indeed reduced from the peak value by a factor of 
+  2 at these points, and also the phase (given by the angles of the dashed 
+  lines) leads and lags the phase at the peak by $45^\circ$. 
+
+  All this discussion has been based on the case where the constant $A$ was a 
+  positive real number. It is easy to see what happens for other values of this 
+  constant. If it is a negative real number, the circle would go downwards from 
+  the origin rather than upwards. If $A$ is complex, the circle would be 
+  rotated. If we write $A=|A| e^{i \theta}$, then everything is multiplied by 
+  the factor $e^{i \theta}$, producing a rotation by angle $\theta$. In 
+  particular, if $A$ is a pure imaginary number, as we expect to be 
+  approximately for the case for any frequency response based on measuring 
+  velocity ($\alpha = 1$ in terms of the earlier analysis), then $\theta 
+  \approx \pm 90^\circ$ so that the circle will be aligned horizontally rather 
+  than vertically in the complex plane. 
+
+  Our approximation was based on ignoring all the other poles of the frequency 
+  response. We are far away from the resonance frequencies of all the other 
+  poles, so that their frequency response will have low amplitude, and also it 
+  will change very little over the narrow range around the peak we are looking 
+  at. The net effect, therefore, is to add a (complex) constant to the 
+  approximate expression (21), and so the main effect of these neglected poles 
+  is simply to give a slight shift in the position of the centre of the circle. 
+
+  This gives the basis for a technique for extracting modal parameters from a 
+  grid of measured frequency response functions, which was very important in 
+  the early years of experimental modal analysis when computer processing power 
+  was more limited. For any response peak that is well separated from its 
+  neighbours, a suitable narrow frequency range can be chosen so that the plot 
+  in the complex plane looks convincingly like part of a circle. The computer 
+  can then be made to best-fit a circle, with the radius and the coordinates of 
+  the centre as fitted variables. Once the circle has been found, the offset of 
+  the centre can be ignored, and the single-pole theoretical expression (21) 
+  can be best-fitted to the data points to determine the complex values $A$ and 
+  $\bar{\omega}_n$. With a grid of measured responses, $\bar{\omega}_n$ should 
+  be the same for all of them, so a single best fit using all available data 
+  will give the best estimate. The constant $A$, however, will be different at 
+  each grid point. That variation maps out the mode shape. 
+
+  These days, modal analysis software normally uses a range of more 
+  sophisticated signal processing techniques to allow the simultaneous fitting 
+  of modal parameters to several modes within a chosen frequency band. To an 
+  extent, this allows modal information to be extracted even when adjacent 
+  resonance peaks start to overlap. However, it is still a useful check on data 
+  quality to look for convincing circle plots near isolated response peaks. As 
+  modal overlap increases, the reliability of multi-mode fitting procedures 
+  decreases, and it requires experience and sophistication to judge when the 
+  result become too unreliable to be trusted. We will not delve any further 
+  into these techniques here: for more detail see for example the textbook by 
+  Maia et al [1]. 
+
+  \sectionreferences{}[1] Nuno M. M. Maia and Júlio M. M. Silva (editors), 
+  “Theoretical and experimental modal analysis”, Research Studies Press/Wiley 
+  (1997) 

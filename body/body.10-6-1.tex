@@ -1,0 +1,194 @@
+  The full mathematical and computational details of how nearfield acoustic 
+  holography works are explained in the textbook by Earl Williams [1], but I 
+  will give an outline account here to bring out some of the key features. The 
+  method fits within a very broad class of mathematical problems called 
+  ``boundary value problems'': we have a governing differential equation which 
+  we wish to solve within some region, plus enough conditions on the boundaries 
+  of that region to guarantee that there is only one possible solution. 
+
+  Mathematicians have devoted a lot of effort over the years to establishing 
+  just what is needed in terms of boundary conditions to go with particular 
+  differential equations, in order to ensure a unique solution. We will make 
+  use of one of those results --- but we won't prove the underlying uniqueness 
+  theorem here: for that, the curious reader will have to consult a textbook 
+  such as Morse and Feshbach [2]. 
+
+  An easily visualised example of a boundary value problem is to do with heat 
+  flow. Suppose we take a block of metal, and we sit it in a bath of icy water 
+  so that the bottom and the sides are all held at $0^\circ$ C. But the top 
+  surface is left out of the water, so that it is at room temperature, 
+  $20^\circ$ C. We have fixed the temperature on all the surfaces of our block, 
+  and that is enough information to determine, uniquely, the distribution of 
+  temperature inside the block after it has been left to sit for long enough 
+  for the temperature to settle to its equilibrium pattern. 
+
+  Essentially the same boundary conditions are appropriate for our acoustics 
+  problem. If we have a region containing no sound sources, the sound field 
+  within the region must satisfy the wave equation (see section 4.1.1). If the 
+  sound pressure is known at every point on the boundaries of our region, that 
+  is enough information to determine the complete internal sound field (these 
+  are called ``Dirichlet boundary conditions'' in the mathematician's jargon). 
+
+  Figure 1 shows the region of interest for NAH reconstruction. Measurements 
+  are made on a plane, shown as the solid line and labelled as the hologram 
+  plane. For the purposes of theory we will imagine that the sound pressure has 
+  been measured over this entire plane. The sound pressure distribution over 
+  this plane has been caused by our vibrating guitar top (or whatever other 
+  object is being tested). We can idealise this as a source plane, shown as the 
+  dashed line. 
+
+  We can see straight away that there is a potential ambiguity. Exactly the 
+  same sound pressure distribution would be created at the hologram plane if 
+  the source plane were swapped to be at the same distance on the opposite 
+  side. For an unambiguous reconstruction, the reconstruction method needs to 
+  know ahead of time which side the source plane is on. This knowledge is 
+  ``hard-wired'' into the algorithm: the two sides of the hologram plane need 
+  to be treated in very different ways. 
+
+  If we were only interested in reconstructing the sound field above the 
+  hologram plane in Fig.\ 1, things would be easy. The boundary value problem 
+  to be solved has the known (measured) sound pressure over the hologram plane. 
+  To define the rest of our region for the purposes of the uniqueness theorem 
+  stated earlier, we augment the plane with a very large hemisphere, shown 
+  dashed, which we imagine to be pushed out ``to infinity''. On that 
+  hemisphere, we know two things: the sound pressure tends to zero, and it 
+  consists entirely of outgoing waves. There are no sound sources out there, so 
+  no waves can be coming inwards ``from infinity''. (In the jargon, this is 
+  sometimes called the ``Sommerfeld radiation condition''.) 
+
+  We have now satisfied the conditions of the theorem, and the sound field 
+  within this region is uniquely determined. In fact, there is a 
+  straightforward way to compute it, which is a close relative to something we 
+  have already seen, back in section 4.3.2. Then, we were looking at the 
+  radiation of sound by a vibrating plate. Although we didn't mention it at the 
+  time, this was also a boundary value problem which was formally completed by 
+  a hemisphere at infinity on which the Sommerfeld radiation condition was 
+  satisfied. We showed that the resulting sound field pressure $p(\mathbf{x})$ 
+  at position $\mathbf{x}$ was given by the Rayleigh integral 
+
+  $$p(\mathbf{x}) = e^{i \omega t} \int_S{G(\mathbf{x},\mathbf{x'}) 
+  v(\mathbf{x'}) d^2 \mathbf{x'}} \tag{1}$$ 
+
+  where the integral is over the plane $S$ of the vibrating source plate with 
+  velocity $v(\mathbf{x'})e^{i \omega t}$ at position $\mathbf{x'}$, $d^2 
+  \mathbf{x'}$ is the element of area in that plane, and the function $G$ is 
+  defined by 
+
+  $$G(\mathbf{x},\mathbf{x'})= \dfrac{i \omega \rho_0}{2 \pi}\dfrac{e^{i k 
+  |\mathbf{x}-\mathbf{x'}|}}{|\mathbf{x}-\mathbf{x'}|} . \tag{2}$$ 
+
+  where $\rho_0$ is the density of air and $k=\omega/c$ is the wavenumber of 
+  sound waves in air, where $c$ is the speed of sound. Equation (1) takes the 
+  form of a convolution integral, and the function $G$ is an example of 
+  something called called a Green's function. (These are named after 
+  \tt{}George Green\rm{}, an English mathematician of the early 19th century.) 
+
+  Our hologram reconstruction problem is very similar, and it can be solved by 
+  a convolution integral of exactly the same form as equation (1), with 
+  $v(\mathbf{x'})$ replaced by $p_m(\mathbf{x'})$, the measured pressure at 
+  position $\mathbf{x'}$ in the hologram plane: 
+
+  $$p(\mathbf{x}) = e^{i \omega t} \int_H{F(\mathbf{x},\mathbf{x'}) 
+  p_m(\mathbf{x'}) d^2 \mathbf{x'}} \tag{3}$$ 
+
+  where now the integral is over the hologram plane $H$. We need a different 
+  Green's function, $F$, which is closely related to the ``free space Green's 
+  function'' $G$ of equation (2): 
+
+  $$F(\mathbf{x},\mathbf{x'})=- \dfrac{1}{2 \pi} \dfrac{\partial}{\partial 
+  z'}\left[ \dfrac{e^{i k 
+  |\mathbf{x}-\mathbf{x'}|}}{|\mathbf{x}-\mathbf{x'}|}\right] \tag{4}$$ 
+
+  where $z'$ denotes the component of $\mathbf{x'}$ in the direction 
+  perpendicular to the hologram plane. 
+
+  To reconstruct the sound field on the other side of the hologram plane, 
+  between there and the source plane, is more difficult. The source of sound 
+  waves is now on the lower plane, so we can still apply equation (3) to 
+  calculate the sound field at any position above that plane in terms of the 
+  pressure $p_s$ on the source plane: 
+
+  $$p(\mathbf{x}) = e^{i \omega t} \int_S{F(\mathbf{x},\mathbf{x'}) 
+  p_s(\mathbf{x'}) d^2 \mathbf{x'}} \tag{5}$$ 
+
+  where the integral is now over the source plane $S$. But we don't know $p_s$! 
+  Our measurement is of $p_m$, which is inside the new region. They are, of 
+  course, related by 
+
+  $$p_m(\mathbf{x}) = \int_S{F(\mathbf{x},\mathbf{x'}) p_s(\mathbf{x'}) d^2 
+  \mathbf{x'}} \tag{6}$$ 
+
+  where both $p_s$ and $p_m$ are assumed to be sinusoidal at frequency 
+  $\omega$. 
+
+  We need to invert equation (6) to obtain $p_s$ in terms of $p_m$. The key to 
+  that is to Fourier transform everything in sight, and take advantage of a 
+  mathematical result called the convolution theorem (we proved the basic 
+  version of this theorem back in section 2.2.8). That theorem states that the 
+  Fourier transform of a convolution integral is the product of the separate 
+  Fourier transforms of the input function ($p_s$ in our case) and the Green's 
+  function $F$. There may be a numerical factor as well, depending on the 
+  particular convention in use for Fourier transforms: for my convention (see 
+  section 2.2.1) there is a factor $4 \pi^2$ for the case we are interested in, 
+  which involves a two-dimensional spatial Fourier transform in the two 
+  in-plane directions (denoted $x$ and $y$), without affecting the dependence 
+  on the perpendicular direction $z$. If we denote Fourier transformed 
+  functions by a hat, then for example 
+
+  $$\hat{F}(k_1,k_2,z)=\dfrac{1}{4 
+  \pi^2}\int_{-\infty}^\infty{\int_{-\infty}^\infty{F(x,y,z)e^{i k_1 x+ik_2 y} 
+  dx}dy} \tag{7}$$ 
+
+  where $k_1$ and $k_2$ are the wavenumbers in the $x$ and $y$ directions. 
+
+  By virtue of the convolution theorem, equation (6) then becomes 
+
+  $$\hat{p}_m=4 \pi^2 \hat{F} \hat{p}_s \tag{8}$$ 
+
+  so that we can accomplish the inversion we need trivially: 
+
+  $$\hat{p}_s=\dfrac{\hat{p}_m }{4 \pi^2 \hat{F}} . \tag{9}$$ 
+
+  An inverse Fourier transform then gives the pressure distribution we need. 
+  However, there is a snag to be considered. Because of the division by 
+  $\hat{F}$, the result may become seriously inaccurate if that function 
+  becomes small for some values of the wavenumbers $k_1$ and $k_2$. This is 
+  indeed a danger, for reasons that relate to another topic we investigated 
+  earlier. 
+
+  The physical interpretation of $\hat{F}$ for particular values of $k_1$ and 
+  $k_2$ is that it describes the amplitude and phase of sound pressure at a 
+  distance from the source plane, in response to a plane wave of pressure in 
+  that source plane. The plane wave has a resultant wavenumber 
+  $\sqrt{k_1^2+k_2^2}$. This is a similar question to the one we looked at in 
+  section 4.3, with details in section 4.3.3: the sound radiated by a plane 
+  wave travelling in a plate in contact with the air. 
+
+  What we found in section 4.3 was that when the resultant wavenumber on the 
+  surface is smaller than the wavenumber $k$ for sound in air, propagating 
+  waves are generated so that on average the amplitude of sound is the same at 
+  all distances from the surface. But when the resultant wavenumber on the 
+  surface is greater than $k$, evanescent waves are generated which decay 
+  exponentially away from the surface. Figure 2 reminds us what these 
+  evanescent waves look like: it is a repeat of Fig.\ 13 from section 4.3. 
+
+  We learn three important things from this. First, high wavenumbers in the 
+  Fourier transform are indeed likely to lead to very small values of $\hat{F}$ 
+  because of the exponential decay, which gets faster as the wavenumber gets 
+  bigger. The consequence for practical implementations of NAH is that it is 
+  necessary to impose a low-pass filter on the wavenumbers used in the Fourier 
+  decomposition, before the inverse transform is performed. Second, we see why 
+  it is useful to do the measurement with the hologram plane as close as 
+  possible to the source plane. The shorter the distance over which $\hat{F}$ 
+  operates, the less scope there is for the exponential decay to produce very 
+  small values. Finally, we see why the word ``nearfield'' gets into the name 
+  of this method. To obtain maximum resolution for features in the source 
+  plane, the hologram plane needs to be deep in the nearfield of the radiated 
+  sound, so that the evanescent field components can be sampled without being 
+  overwhelmed by measurement noise. 
+
+  \sectionreferences{}[1] Earl G. Williams, “Fourier Acoustics”, Academic Press 
+  (1999). 
+
+  [2] P. M. Morse and H. Feshbach, “Methods of Theoretical Physics”, Volume I, 
+  McGraw-Hill (1953). 

@@ -1,0 +1,197 @@
+  Material damping associated with small-amplitude vibration can be analysed by 
+  making use of a result known, rather grandly, as the correspondence principle 
+  of linear viscoelasticity (see for example the textbook by Bland [1]. This 
+  principle can be described as follows. For any harmonic response problem, at 
+  a frequency $\omega$, first solve the undamped problem. Now look to see where 
+  elastic moduli enter the solution (such as Young's modulus $E$, or the plate 
+  stiffnesses $D_1$--$D_4$ introduced in section 10.3.2). The corresponding 
+  damped problem is solved simply by replacing them with suitable complex 
+  values. So, for example, you would replace $E$ with $E(1+i \eta_E)$. 
+  Naturally enough, such things are called ``complex moduli''. We have already 
+  met this idea briefly, back in section 5.4.4 when we were talking about 
+  damping in strings, but now we will use it more systematically. 
+
+  The result is that the resonance frequencies predicted by the analysis become 
+  complex numbers. So for example free vibration which for the undamped problem 
+  varied like $e^{i \omega t}$ might now vary like 
+
+  $$e^{i(\omega + i \Delta)t} = e^{i \omega t} e^{-\Delta t} \tag{1}$$ 
+
+  It is clear that this has achieved the desired effect: the oscillation at 
+  frequency $\omega$ now decays exponentially at a rate determined by the 
+  imaginary part of the frequency, $\Delta$. 
+
+  If material damping is small, as it usually is in vibration problems, we can 
+  use Rayleigh's principle together with the viscoelastic correspondence 
+  principle to find out how the damping varies from mode to mode of a system. 
+  Suppose that we know the expressions for the kinetic and potential energies 
+  of the system (without damping). Elastic moduli will usually come into the 
+  potential energy, but not into the kinetic energy. Either analytically or, 
+  more likely, numerically we calculate the first few modes of the undamped 
+  system. Now: 
+
+  (i)	The correspondence principle says that to solve the damped problem we 
+  replace elastic moduli in the expression for potential energy with complex 
+  moduli. For small damping these will only have small imaginary parts. 
+
+  (ii)	Rayleigh's principle says that given an approximation to a mode shape we 
+  can get a rather good approximation to its natural frequency by evaluating 
+  the Rayleigh quotient. The modes of the damped system will be slightly 
+  different from the modes of the undamped system, but the undamped mode shapes 
+  will still give a good approximation. So we evaluate the Rayleigh quotient 
+  using the true expression for the potential energy, with complex moduli, but 
+  with the approximate expression for mode shape from the undamped calculation. 
+  This gives a good approximation to the complex natural frequency, and hence 
+  to the modal damping factor. 
+
+  For a first example of applying this idea, think about beam vibration. We 
+  already know from section 3.3.1 that for a bending beam with displacement 
+  $w(x,t)$, bending stiffness $EI$ and mass per unit length $m$, the potential 
+  energy is 
+
+  $$ V = \dfrac{1}{2} \int{EI \left(\dfrac{\partial^2 w}{\partial x^2} 
+  \right)^2 dx} \tag{2}$$ 
+
+  and the kinetic energy is 
+
+  $$T=\dfrac{1}{2} \int{ m \left(\dfrac{\partial w}{\partial t} \right)^2 dx } 
+  . \tag{3}$$ 
+
+  The only elastic modulus entering here is Young's modulus $E$. With material 
+  damping we can replace this with $E(1+i \eta_E)$. The factor $\eta_E$ may 
+  vary with frequency, but for the purposes of this approximate calculation we 
+  can evaluate it at the undamped natural frequency $\omega_n$ corresponding to 
+  mode shape $w_n(x)$. The Rayleigh quotient, from equations (2) and (3), gives 
+
+  $$\omega^2 \approx \dfrac{E(1+i \eta_E) I \int{EI \left(\dfrac{\partial^2 
+  w_n}{\partial x^2} \right)^2 dx}}{m \int{w_n^2 dx}}=(1+i \eta_E) \omega_n^2 
+  \tag{4}$$ 
+
+  because this expression apart from the factor $(1+i \eta_E)$ is the Rayleigh 
+  quotient for the undamped problem, which is equal to $\omega_n^2$. 
+
+  So the time dependence of a free vibration in this mode is 
+
+  $$e^{i \omega_n t} e^{-\eta_E \omega_n t/2} . \tag{5}$$ 
+
+  From the definition of Q-factor, the value for this mode is 
+
+  $$Q_n \approx \dfrac{1}{\eta_E} . \tag{6}$$ 
+
+  All modes of this beam will have the same Q-factor, except that the material 
+  property $\eta_E$ may vary with frequency, but such variation is usually only 
+  slow. If you measure damping as well as frequency in a beam test like the 
+  ones described in section 10.3.1, that will immediately give the value of 
+  $\eta_E$ for the direction aligned with your beam. 
+
+  Now we can apply the approach to the damping of a wooden plate. We start from 
+  the expressions for potential and kinetic energy, from section 10.3.2: 
+
+  $$ V = \dfrac{1}{2} \int{\int{h^3 \left[ D_1 \left(\dfrac{\partial^2 
+  w}{\partial x^2} \right)^2 + D_2 \dfrac{\partial^2 w}{\partial x^2} 
+  \dfrac{\partial^2 w}{\partial y^2} \right. }} $$ 
+
+  $$ \left. + D_3 \left(\dfrac{\partial^2 w}{\partial y^2} \right)^2 + D_4 
+  \left(\dfrac{\partial^2 w}{\partial x \partial y} \right)^2 \right] dx dy 
+  \tag{7}$$ 
+
+  and 
+
+  $$T=\dfrac{1}{2} \int{\int{ \rho h w^2 dx dy }} \tag{8}$$ 
+
+  where $w(x,y)$ is the displacement of the plate, $h$ is the thickness, 
+  $D_1$--$D_4$ are the four stiffness constants and $\rho$ is the density. 
+
+  Once we introduce damping, all four of the stiffness constants become 
+  complex: 
+
+  $$D_j \rightarrow D_j(1+i \eta_j) \mathrm{,~~~~} j=1,2,3,4 . \tag{9}$$ 
+
+  Now following through the same argument based on Rayleigh's principle, we 
+  deduce that for mode $n$ the modal damping factor, the inverse of the modal 
+  Q-factor, is a simple weighted sum of the four $\eta_j$: 
+
+  $$\dfrac{1}{Q_n} \approx J_1 \eta_1 + J_2 \eta_2 + J_3 \eta_3 + J_4 \eta_4 
+  \tag{10}$$ 
+
+  where the dimensionless constants $J_1$--$J_4$ are defined as follows: 
+
+  $$J_1 = \dfrac{D_1 \int{\int{h^3 \left(\dfrac{\partial^2 w_n}{\partial x^2} 
+  \right)^2 dx dy }}}{\omega_n^2 \int{ \int{ \rho h w_n^2 dx dy }}} \tag{11}$$ 
+
+  $$J_2 = \dfrac{D_1 \int{\int{h^3 \dfrac{\partial^2 w_n}{\partial x^2} 
+  \dfrac{\partial^2 w_n}{\partial y^2} dx dy }}}{\omega_n^2 \int{ \int{ \rho h 
+  w_n^2 dx dy }}} \tag{12}$$ 
+
+  $$J_3 = \dfrac{D_1 \int{\int{h^3 \left(\dfrac{\partial^2 w_n}{\partial y^2} 
+  \right)^2 dx dy }}}{\omega_n^2 \int{ \int{ \rho h w_n^2 dx dy }}} \tag{13}$$ 
+
+  $$J_4 = \dfrac{D_1 \int{\int{h^3 \left(\dfrac{\partial^2 w_n}{\partial x 
+  \partial y} \right)^2 dx dy }}}{\omega_n^2 \int{ \int{ \rho h w_n^2 dx dy }}} 
+  . \tag{14}$$ 
+
+  It follows immediately from the Rayleigh quotient for the original, undamped 
+  plate that 
+
+  $$J_1 + J_2 + J_3 + J_4 = 1 . \tag{15}$$ 
+
+  These constants capture the partitioning of potential energy, and hence 
+  energy dissipation rate, between the four terms associated with $D_1$, $D_2$, 
+  $D_3$ and $D_4$ in equation (7). 
+
+  In terms of measurement, the position is very similar to the previous 
+  discussion of stiffness. With beam samples cut along and across the grain you 
+  can determined the loss factors associated with the two Young's moduli. With 
+  plate samples, the same three modes which gave simple estimates of $D_1$, 
+  $D_3$ and $D_4$ now give direct estimates of $\eta_1$, $\eta_3$ and $\eta_4$. 
+  The reason is that for each of those modes, one of the $J_j$ constants is 
+  approximately equal to 1, while the other three are approximately zero. 
+  Equation (10) then says that the measured loss factor (or inverse Q-factor) 
+  is essentially equal to the corresponding $\eta_j$. We found before that 
+  $D_2$ didn't play a very strong role in determining frequencies: the 
+  equivalent result is that $\eta_2$ seems to have very little influence on 
+  modal Q-factors, to the extent that it is usually not possible to determine a 
+  convincing value from measurements. 
+
+  It is useful to see some measured values of $\eta_1$, $\eta_3$ and $\eta_4$. 
+  We can show results for the same two spruce plates whose stiffness values 
+  were quoted in section 10.3.2. For the quarter-cut plate, the values were 
+  $\eta_1 = 0.0051$, $\eta_3 = 0.0216$ and $\eta_4 = 0.0164$. The corresponding 
+  results for the plate with a ring angle close to $45^\circ$ were $\eta_1 = 
+  0.0074$, $\eta_3 = 0.0212$ and $\eta_4 = 0.0139$. Note that for both plates 
+  the long-grain loss factor $\eta_1$ was significantly lower than the 
+  cross-grain loss factor $\eta_3$: by about a factor of 4 for the quarter-cut 
+  plate. This is in line with a very general trend across a wide range of 
+  materials: there is a negative correlation of loss factor with stiffness. 
+  Stiff materials like ceramics or hardened steel tend to have low damping, 
+  soft materials like lead or rubber tend to have high damping. 
+
+  Because $\eta_1$, $\eta_3$ and $\eta_4$ are significantly different, we can 
+  expect mode-to-mode variations in modal damping factors, governed by the 
+  values of $J_1$, $J_3$ and $J_4$. As an example, the values given above for 
+  the quarter-cut spruce plate were based on measuring the Q-factors of 8 
+  modes. These varied from 40 to 140, a range big enough to make very 
+  significant differences in sound. Only 3 modes were needed to determine the 
+  values of $\eta_1$, $\eta_3$ and $\eta_4$, and remaining 5 measured Q-factors 
+  could be used to cross-check the theory on which this method is based. The 
+  detailed variation from mode to mode was reproduced to very satisfactory 
+  accuracy: see [2] for details. 
+
+  Measuring values like the ones just quoted, for lightweight materials like 
+  spruce, is quite challenging. The reasons were discussed in section 10.3: it 
+  is difficult to support the test sample with adding significant extra 
+  damping, and it is also hard to fix any kind of sensor to measure the 
+  response without also adding extra damping. Furthermore, a sensor of some 
+  kind is needed here: we cannot use Chladni patterns to measure damping, we 
+  need some kind of quantitative response measurement in order to determine 
+  decay rates or half-power bandwidths in FFT results. A description of how the 
+  reported measurements were done is given in [2]. We will return to these 
+  issues in section 10.4, when we talk about measuring frequency response 
+  functions. 
+
+  \sectionreferences{}[1] D. R. Bland, “The theory of linear viscoelasticity”, 
+  Pergamon Press (1960). 
+
+  [2] M. E McIntyre and J. Woodhouse, “On measuring the elastic and damping 
+  constants of orthotropic sheet materials”, Acta Metallurgica \textbf{36}, 
+  1397—1416 (1988). 

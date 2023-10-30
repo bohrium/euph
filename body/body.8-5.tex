@@ -1,0 +1,351 @@
+
+
+  Musicians do not normally want their instruments to exhibit chaotic 
+  behaviour. Nevertheless the ideas of chaos and sensitive dependence do have 
+  some important manifestations in musical performance, and we will meet 
+  examples later. But our final topic for this chapter is far more obviously 
+  central to the business of making music. Some nonlinear systems can produce 
+  sustained vibration “out of nowhere”: self-excited vibration. The human voice 
+  is an example, and all the musical wind instruments: woodwind, brass, organ 
+  pipes and so on. All the bowed-string instruments are also examples, as are 
+  other instruments relying on friction to cause vibration. \tt{}Friction 
+  drums\rm{}, for example, have a rod attached to a drum membrane of some kind, 
+  and the player rubs the rod with rosin-coated fingers to produce a sound. The 
+  familiar singing effect produced by running a wet finger round the rim of a 
+  wineglass relies on similar behaviour. 
+
+  We will come to musical examples very shortly, but we will start this section 
+  with a non-musical example which allows us to make some links with the 
+  discussion in the previous sections, based around the phase plane 
+  representation. We will look briefly at something called the Van der Pol 
+  equation, originally proposed by a Dutch electrical engineer back in 1927 to 
+  describe the behaviour of certain electrical circuits based on valves (vacuum 
+  tubes). These circuits exhibited spontaneous oscillation: a phenomenon still 
+  crucial in many devices, such as the internal ``clock'' providing the timing 
+  signal inside every computer or mobile phone. Since the 1920s, Van der Pol’s 
+  equation has been found useful for modelling many other phenomena in physics, 
+  geophysics and biology. 
+
+  You can see Van der Pol's equation, and some extra detail about its history 
+  and behaviour, in the next link. Essentially, the equation describes a linear 
+  oscillator modified by a nonlinear damping effect. The coefficient of this 
+  nonlinear term determines the details of the behaviour. If it is zero, the 
+  system is just a linear oscillator with a single singular point at the origin 
+  in the phase plane, which is a centre as expected for an undamped oscillator. 
+  But when this nonlinear coefficient is positive, that centre turns into an 
+  unstable spiral so that any trajectory starting near the origin spirals 
+  outwards. But it doesn't continue outwards: instead, it tends to towards a 
+  closed loop in the phase plane, in other words a periodic solution or limit 
+  cycle. Furthermore, any trajectory starting outside that limit cycle spirals 
+  inwards towards it. The limit cycle is an attractor for (almost) every 
+  trajectory. 
+
+  Figure 1 shows some examples, for different values of the nonlinear 
+  coefficient. In each case four trajectories are shown: two in red starting 
+  inside the limit cycle, and two in black starting outside it. The same four 
+  starting points are used in every case. The limit cycle and its ``attractor'' 
+  behaviour is very clear. The shape of the limit cycle changes with the value 
+  of the coefficient. What this means for the waveform of displacement of the 
+  oscillator is shown in Fig.\ 2, for the same four cases. When the coefficient 
+  is small, the limit cycle is almost an ellipse and the waveform is almost 
+  sinusoidal (after a starting transient). As the coefficient grows, the 
+  waveform changes shape. It gradually acquires sharp corners, which inevitably 
+  means that the periodic solution has a significant mixture of higher 
+  harmonics in its Fourier series. The frequency of the self-excited vibration 
+  also changes, getting lower as the coefficient increases, as is clear in the 
+  lower row of plots in Fig.\ 2. 
+
+  We can now look at an example relating more directly to musical instruments. 
+  The discussion will be phrased in terms of a clarinet, but really the 
+  description to be given here would apply in general terms to any reed 
+  instrument: saxophone, oboe, reed organ pipe or whatever. Figure 3 shows a 
+  sketch of the mouthpiece end of a clarinet. The main tube of the instrument 
+  is an acoustic duct with internal resonances of the kind we met back in 
+  Section 4.2. The tube has tone-holes bored through it: the player can cover 
+  some or all of these using fingertips or key mechanisms, to modify the 
+  frequencies of the internal acoustic resonances. In a clarinet the tube is 
+  usually made of wood or plastic, in instruments like the saxophone it would 
+  be made of metal. These different material choices make very little 
+  difference to us here, because they all result in a tube that is essentially 
+  rigid. All the important action takes place in the air inside the tube. 
+
+  At the mouthpiece, a flexible reed is attached to the tube. The player puts 
+  this part in their mouth, and blows. What happens then is a matter of common 
+  empirical experience. If the player blows very gently, the only sound is a 
+  bit of rushing wind noise associated with the turbulent air flow through the 
+  mouthpiece into the tube. But if the player gradually increases the blowing 
+  pressure, at a certain point the instrument will “light up” and start to 
+  produce a musical note. If the blowing pressure is increased further, the 
+  tone quality of the note changes (and perhaps the pitch changes a little as 
+  well). The sound tends to get louder and brighter with higher blowing 
+  pressure. But if the blowing pressure is increased too far, the instrument 
+  “chokes up” and the sound stops. 
+
+  This sequence of events can be understood in a simple way. We can suppose 
+  that the player simply provides a constant pressure in their mouth, called 
+  $p_0$ in Fig.\ 3. But just inside the mouthpiece there will be a time-varying 
+  pressure which we can call $p(t)$: this is the quantity we would like to 
+  understand, since it is responsible for the sound of the instrument. There is 
+  a second time-varying quantity we need to think about: this is the flow rate 
+  of air from the player’s mouth, through the mouthpiece and into the tube. We 
+  will call this $v(t)$, to describe the volume flow rate (in cubic metres per 
+  second if we wanted to put a number to it). 
+
+  The two quantities $p(t)$ and $v(t)$ are related to each other in two quite 
+  different ways, illustrated schematically as a block diagram in Fig.\ 4. 
+  First, they are connected via the linear acoustical behaviour of the tube. We 
+  can imagine a laboratory experiment in which the instrument was supplied with 
+  a sinusoidal flow of air at its mouthpiece end by an actuator, and the 
+  pressure response inside the mouthpiece was measured by a small microphone. 
+  By varying the frequency of the sine wave, the frequency response function of 
+  the tube could be measured. This particular frequency response, with volume 
+  flow as input and pressure as output, is called the input impedance of the 
+  clarinet. 
+
+  Such measurements of input impedance are indeed routinely made on wind 
+  instruments of all kinds: Fig.\ 5 shows one being carried out on a saxophone. 
+  The measurement is being done in an anechoic chamber, a special room with 
+  sound-absorbing walls to avoid complications from room acoustics. As with 
+  other linear response measurements we have seen earlier, the test need not 
+  necessarily be done using a sinusoidal signal. Any input can be used, 
+  provided it can be measured. The input and output signals can be converted 
+  into the frequency domain using an FFT routine in the computer, just as is 
+  done when structural measurements are made using an impulse hammer. 
+  Unfortunately, measuring volume flow rate is not so easy. The actual design 
+  of a measuring rig like the one seen in Fig.\ 5 involves some ingenuity: we 
+  will come back to this later, in section 10.4.1. 
+
+  A typical measured example of the input impedance of a clarinet is shown in 
+  Fig.\ 6. The peaks in the plot correspond to the resonances of the tube. The 
+  pattern of these peaks shows them with approximately harmonic spacing, but 
+  only for the odd harmonics 1,3,5... This is as we should expect from the 
+  discussion in section 4.2: the tube of a clarinet is approximately a uniform 
+  duct, and it is effectively open at the bell end but closed at the mouthpiece 
+  end. As shown in Fig.\ 12 of section 4.2, those conditions lead naturally to 
+  odd-harmonic resonance frequencies. If it had been a tapered duct, like an 
+  oboe or the saxophone in the photograph, the impedance curve would have shown 
+  peaks near all the harmonics, with approximate frequency ratios 1:2:3:4... 
+
+  The second relation between $p(t)$ and $v(t)$ involves the mouthpiece and 
+  reed, acting as a kind of nonlinear valve. For the purposes of this initial 
+  discussion, we will use a severely simplified approximation. We will take no 
+  account of the fact that the flexible reed has resonance frequencies its own, 
+  we will simply treat it as behaving like a spring. As a first step, we won’t 
+  even allow that much: we can think about how the air flow through the 
+  mouthpiece would behave if the reed were rigid. A pressure difference could 
+  be applied across this rigid mouthpiece, and the resulting air flow rate 
+  could be measured. What we would expect to see, disregarding any subtleties 
+  of fluid mechanics such as vortices, would be something like the dashed line 
+  in Fig.\ 7. The bigger the pressure difference, the bigger the air flow. If 
+  the air flow is dominated by viscous resistance through the small gap, the 
+  behaviour would just be linear, as sketched. The dashed line is sloping 
+  downwards rather than upwards because of the sign convention we have used: a 
+  positive value of the pressure difference $p(t)-p_0$ corresponds to sucking 
+  the mouthpiece, not blowing it, so we would expect $v(t)$ to be negative. 
+
+  For very small values of the pressure difference, the actual behaviour of the 
+  mouthpiece with a flexible reed should be rather like the dashed line. But as 
+  the player tries to blow more air through, making $p(t)-p_0$ more and more 
+  negative, the reed will be pressed inwards. As a result, the flow rate $v(t)$ 
+  will be less than the dashed line would suggest. The result will be something 
+  like the solid line in Fig.\ 7: the further we move towards the left, the 
+  more the reed is closed and the more the air flow is restricted. Eventually, 
+  in an idealised situation, the reed will close completely against the rigid 
+  part of the mouthpiece (called the “lay”). There would be no air flow at all, 
+  indicated by the horizontal portion of the curve. 
+
+  If the player applies a low mouth pressure while the clarinet is not making 
+  any sound, that would correspond to shifting to a position on the curve like 
+  the red dot in Fig.\ 8. Now suppose there is a little bit of pressure 
+  variation (i.e. sound) inside the tube. This will change the pressure 
+  difference a little, in the vicinity of the red dot: the air flow will then 
+  vary in a way that follows the tangent to the curve at that point, shown in 
+  the red line. 
+
+  Such variations have a simple physical interpretation. The tangent line is 
+  down-sloping, similar to the dashed line in Fig.\ 7. But we know what that 
+  line describes: it is the response associated with a viscous resistance, and 
+  it involves energy dissipation. But now suppose the player blows a little 
+  harder, so that the operating point on the curve shifts to a position like 
+  the one shown in Fig.\ 9. Because we have gone past the peak in the curve, 
+  the tangent line now has an upward slope. That would correspond to a negative 
+  viscous resistance, and small fluctuations in pressure inside the mouthpiece 
+  will result in energy being gained, not lost. (Of course, energy has not been 
+  created from nowhere: this energy gain is actually supplied by the player’s 
+  lungs doing a little more work.) 
+
+  We can now make an intuitive leap, and guess what might happen. The tube of 
+  the clarinet is an acoustic duct, with resonances. Each of these resonances 
+  will, of course, involve some energy dissipation. Energy can be lost in 
+  several different ways: some is “lost” because it is carried away by sound 
+  waves radiating from the instrument, while some is lost within the tube, 
+  mainly by viscous and thermal interaction with the walls. It seems plausible 
+  that if for some particular resonance these losses can be compensated by the 
+  “negative resistance” effect associated with the mouthpiece, as indicated in 
+  Fig.\ 9, that resonance might become unstable. 
+
+  We saw just such an effect with the Van der Pol equation, in the plots of 
+  Fig.\ 1. The equilibrium position became unstable, leading to growing 
+  oscillations, settling down after a while into a periodic limit cycle. This 
+  is exactly what happens with our simplified model of a clarinet, and the 
+  result is the behaviour we described earlier, very familiar from real 
+  clarinets. There is a threshold of blowing pressure, at which the instrument 
+  “lights up” and starts to make sound. The phenomenon is completely dependent 
+  on the nonlinear behaviour of the mouthpiece with its flexible reed. 
+
+  There are two different approaches we can use to test whether we have guessed 
+  correctly how the clarinet model will behave. The more mathematical of the 
+  two involves applying the method of harmonic balance (introduced in section 
+  8.2.2) to the situation of Fig.\ 9. The details are described in the next 
+  link: the conclusion is that there is indeed a threshold of blowing pressure 
+  when a self-excited periodic oscillation becomes possible. 
+
+  This analysis leads to several predictions. First, the frequency will 
+  correspond to the highest peak in the input impedance, and we can see in 
+  Fig.\ 6 that this is the fundamental resonance of the clarinet tube, as we 
+  might have expected. Second, the nonlinear behaviour of the mouthpiece 
+  inevitably means that the waveform of pressure, and hence the sound of the 
+  instrument, will involve some harmonics as well as the fundamental. As the 
+  amplitude of the fundamental frequency grows, the relative amplitudes of the 
+  higher harmonics grow faster, so that the sound become richer or brighter. 
+  Finally, for the particular case of the clarinet the odd-numbered harmonics 
+  are likely to be much stronger than the even-numbered ones. But for a conical 
+  instrument like the saxophone, the even harmonics will be strongly present. 
+
+  The alternative approach is to turn directly to numerical simulation, and use 
+  the computer to explore how the model behaves. A particularly efficient way 
+  to do this involves formulating the behaviour of the linear part of the 
+  clarinet in a slightly different way: not based on a frequency response 
+  function like the input impedance, but describing the acoustic response of 
+  the duct in terms of travelling waves. Similar methods are used in other 
+  fields, such as speech synthesis, but in the context of understanding the 
+  physics of musical instruments, the approach was first developed in the 
+  context of the vibration of a bowed string, and we will explore that 
+  application in the next chapter. But the clarinet model gives a simple way to 
+  introduce the method. A pleasing name has been given to the general approach 
+  by Julius Smith: he calls it \tt{}the “digital waveguide” method\rm{}. 
+
+  Suppose a short pulse of air is injected into the mouthpiece. This will 
+  generate a pressure pulse just inside the mouthpiece, which will propagate 
+  down the tube, reflect from the bell (or perhaps from the first open 
+  tonehole), and after a delay it will arrive back at the mouthpiece. The pulse 
+  will have been inverted by the reflection, and it will have been spread out a 
+  bit by energy dissipation effects during the journey along the pipe and back. 
+  The result will look a bit like Fig.\ 10. We can call this a “reflection 
+  function”: it captures everything we need to know about the linear acoustical 
+  behaviour of the clarinet tube. Earlier, we said the same about the input 
+  impedance: the reflection function provides the same information in a 
+  different form, which happens to be very convenient for a computer simulation 
+  of the time-varying behaviour of our simple clarinet model. 
+
+  The outline of the computer synthesis algorithm is then easy to explain — the 
+  details are given in the next link. The process of synthesising sound from 
+  our “clarinet” works in “discrete time”, to produce a digital sound file 
+  sampled at a chosen regular sampling frequency, such as the standard 44.1~kHz 
+  of a normal CD. At each time step, the computer makes use of the reflection 
+  function together with knowledge of the past history of the pressure inside 
+  the mouthpiece, to calculate the value of the incoming reflected pressure 
+  wave arriving at the mouthpiece at that moment. 
+
+  This incoming wave can be combined with the nonlinear mouthpiece model from 
+  Fig.\ 7, with some assumed value of the mouth pressure $p_0$ (which could be 
+  varying in time if we wished). As shown in the link, there is a graphical 
+  interpretation of what is needed: the incoming wave determines the position 
+  of a straight line, and the intersection of that line with the nonlinear 
+  curve determines the new values of the volume flow through the mouthpiece and 
+  of the outgoing pressure wave being sent off down the tube. Figure 11 
+  illustrates the idea, with three different possible positions of the straight 
+  line. Time is then advanced by one step, and the process is repeated — for as 
+  long as we wish to compute the sound. 
+
+  We can illustrate this approach by some examples. The method just described 
+  has been used to simulate waveforms from the idealised clarinet, with a 
+  variety of values of the mouth pressure $p_0$. These range from a value just 
+  above the threshold to a value just below the limit where the reed stays shut 
+  all the time and the instrument ``chokes''. The nonlinear mouthpiece 
+  characteristic is exactly as plotted in Figs.\ 7--9, and the reflection 
+  function is the one plotted in Fig.\ 10. Pressure waveforms for 6 cases are 
+  shown in Fig.\ 12, and the corresponding volume flow waveforms in Fig.\ 13. 
+  The colours are graduated from red to blue, as the mouth pressure increases. 
+  We can notice immediately that the pressure waveform starts out with a low 
+  amplitude and a quasi-sinusoidal shape in the reddest curve, and as the mouth 
+  pressure increases the amplitude grows and the waveform develops into a 
+  rather square shape. 
+
+  With the lowest value of mouth pressure, the waveforms of both pressure and 
+  volume flow are more or less sinusoidal, as expected from the harmonic 
+  balance calculation described in section 8.5.2 above. For a different view of 
+  what is going on, Fig.\ 14 shows the region of the nonlinear characteristic 
+  curve that is ``explored'' by these waveforms. This version of the curve 
+  shows pressure, rather than pressure difference: the curve has been shifted 
+  sideways by $p_0$, so that the operating point is marked by the position of 
+  the vertical axis. As expected, for this threshold case that operating point 
+  is just to the left of the peak of the curve. 
+
+  As the mouth pressure increases, Fig.\ 12 shows that the waveform becomes 
+  progressively less sinusoidal, and its amplitude grows. In other words, the 
+  sound becomes brighter and louder, as predicted by the harmonic balance 
+  argument. Figure 15 shows a plot corresponding to Fig.\ 14 for the case with 
+  $p_0=2.2$, the third case in Figs.\ 12 and 13. More of the nonlinear curve is 
+  now involved, which is why the waveforms in Figs.\ 12 and 13 are less 
+  sinusoidal. But the red points are still confined to the smooth part of the 
+  curve, so that the harmonic balance argument should apply to this case. 
+
+  Figure 16 shows the corresponding plot for the case with $p_0=4.8$. Now the 
+  points occupy the full range of the curve, including the horizontal portion 
+  where the reed is shut so that there is no air flow into the tube. The 
+  harmonic balance argument will no longer be useful, because the non-smooth 
+  part of of the curve is involved. Notice also that the ``operating point'' is 
+  at the very end of the smooth part of the curve. A small increase in $p_0$ 
+  would shift that operating point to the flat portion, and this is the signal 
+  that the instrument will cease to sound. 
+
+  Looking back at the corresponding waveform of flow rate in Fig.\ 13, we see 
+  that for this extreme case the volume flow is approximately zero most of the 
+  time. The system spends most of the time in the positions indicated by the 
+  left-most and right-most of the three straight lines in Fig.\ 11. For the 
+  left-most line, the reed is shut because we are out on the flat portion of 
+  the curve. For the right-most position, there is no flow because the pressure 
+  inside the mouthpiece has adjusted to be the same as the mouth pressure 
+  $p_0$. The waveform of flow rate shows a pair of sharp pulses during every 
+  cycle, as a puff of air is let through while the system shifts rapidly 
+  between these two positions. The rapidity of that movement explain why the 
+  red points in Fig.\ 16 are rather sparse in the middle of the plot: the 
+  simulation is only calculating the response at discrete sampled times, so we 
+  do not see the intermediate positions marked in the plot. 
+
+  Finally, it is interesting to hear the sounds of these various simulations. 
+  These are presented in Sounds 1--6, in the order of increasing mouth 
+  pressure. Each of these examples give 2 seconds of sound, including a 
+  transient: the starting conditions are the same in every case. Sound 1 is so 
+  quiet that you have to listen carefully to hear it at all. This is the case 
+  just above the threshold: not only is it quiet, but it also has a very long 
+  transient as the sound builds up. The ``negative resistance'' effect from 
+  Fig.\ 9 is only just strong enough to overcome the energy dissipation in the 
+  linear model of the clarinet tube (described by the reflection function from 
+  Fig.\ 10), so the unstable growth of almost-sinusoidal oscillation is very 
+  slow. 
+
+  Working through the other cases, you should hear the sound getting 
+  progressively louder and brighter, as we expected from looking at the 
+  waveforms. You can also hear the transient getting shorter. Do these really 
+  sound like a clarinet? Well, to my ears the sound, and especially the 
+  progression of sounds as pressure is increased, is quite reminiscent of how a 
+  clarinet behaves. For a very first demonstration of a computer model of a 
+  nonlinear instrument, it seems quite promising. 
+
+  But the computer is not a very good clarinettist! The sounds all seem very 
+  robotic or mechanical. That is not a surprise: no effort has been made to 
+  apply subtle shaping of the mouth pressure, as a real player would do. These 
+  transient sounds simply switch on a fixed value of mouth pressure, with a 
+  rather arbitrary initial condition for the internal pressure in the tube. 
+  Furthermore, the model is also highly simplified. It omits many aspects of 
+  the physics of a real clarinet, such as the effect of the reed's own 
+  resonance and the effect of the detailed bore shape of the instrument 
+  (including any closed tone holes). Finally, all we have computed is the 
+  pressure waveform just inside the mouthpiece. This will not be the same as 
+  the sound radiated by the instrument to the outside world. But we must learn 
+  to walk before we run, and we have made a promising start. We will look in 
+  much more detail at wind instruments in Chapter 11, after we have looked at 
+  bowed-string instruments in Chapter 9. 
+

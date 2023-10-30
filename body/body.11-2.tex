@@ -1,0 +1,212 @@
+
+
+  In the following sections we will discuss models for the excitation of 
+  various kinds of wind instrument, and for that we will need to know a little 
+  about fluid flow. This section gives a qualitative overview of some important 
+  fluid phenomena and terminology, introduced through pictures. A side link 
+  will give some technical background about how the subject can be approached 
+  mathematically. 
+
+  \samsection{A. Laminar and turbulent flow} 
+
+  So far our only contact with the world of fluid dynamics has been through the 
+  very special case of linear acoustics. However, we will need to go beyond 
+  this to understand such things as how a clarinet or flute mouthpiece works. 
+  If you think about it for a moment, you already know that everyday fluid 
+  dynamics must involve nonlinear effects. Look at the small waterfall in Fig.\ 
+  1. You see smooth water coming over the lip of the fall, but it turns into 
+  complicated turbulent flow at the bottom. The smooth initial flow is known as 
+  “laminar flow”. 
+
+  Figure 2 shows another example. This is a schlieren image of the plume of hot 
+  air rising from a candle flame. At the bottom the flow is laminar, but there 
+  is a rather abrupt transition to turbulent flow in the middle of the image, 
+  without anything obvious happening there to trigger the transition (nothing 
+  analogous to the waterfall edge, for example). This is a spontaneous 
+  transition to chaotic behaviour, in the sense discussed in section 8.4. 
+
+  Chaotic behaviour like this can only occur in nonlinear systems, although if 
+  you recall the example of the double pendulum from section 8.4 you will 
+  appreciate that it may only take a rather simple-looking nonlinear system to 
+  exhibit such behaviour. The origin of the main nonlinearity in the governing 
+  equation for fluid flow (known as the “Navier-Stokes equation”) is nothing 
+  more than a quadratic term, as shown in the next link, but this is enough to 
+  allow the full complexities of turbulence. 
+
+  The possibility of turbulence is surely enough to tell us that we should not 
+  expect easy mathematical solutions to the governing equations for fluid flow. 
+  It then makes sense to explore approximations of different kinds: these can 
+  simplify the mathematics under certain circumstances and allow us to make 
+  some progress with understanding the physics behind fluid behaviour. 
+
+  \samsection{B. Incompressible flow} 
+
+  We have already met one approximation: when we derived the linear wave 
+  equation back in section 4.1.1, we assumed that all relevant quantities like 
+  pressure and flow velocity were small in some appropriate sense, and that 
+  allowed us to ignore a lot of complicating factors. However, in order to 
+  treat sound waves we certainly had to allow our fluid (usually air) to be 
+  compressible. But in the waterfall seen in Fig.\ 1, the water behaves as if 
+  it were incompressible. This turns out to make a major simplification in the 
+  governing equations, and for many problems it is a useful approximation to 
+  make. The previous link gives some details. 
+
+  You might think that the incompressible approximation would have nothing to 
+  do with the acoustics of wind instruments, since we are surely always talking 
+  about sound waves? But this would be misleading. Compressibility is indeed 
+  always important for the acoustic resonances of instrument tubes, and for the 
+  internal pressure waveform when an instrument is played. But when we are 
+  thinking about how a mouthpiece works, we are mainly concerned with a 
+  different aspect of fluid flow, associated with the air blown into the 
+  instrument by the player. We can usually get a rather good approximation to 
+  the behaviour by ignoring the compressibility of the air moving through the 
+  mouthpiece. The underlying reason for this is that the air-flow is very slow 
+  compared to the speed of sound (around 340~m/s), or in other words the Mach 
+  number is very small. This is the mathematical condition for compressibility 
+  effects to be unimportant. 
+
+  We will make use of an important result which takes its simplest form in the 
+  case of incompressible flow. This is called Bernoulli’s principle. The 
+  mathematical details are given in the previous link, but in words Bernoulli’s 
+  principle says that if you follow a laminar air-flow along its streamlines, a 
+  region where the flow speeds up is automatically associated with the pressure 
+  going down, and vice versa. So if a jet of air is squeezed through a narrow 
+  gap, for example between the reed and the lay of a clarinet mouthpiece, the 
+  pressure will be lower there. This low pressure tends to make the reed close 
+  towards the lay. We will see in section 11.3 that this is an important 
+  ingredient of how a reed mouthpiece works. 
+
+  \samsection{C. Viscosity} 
+
+  There is another physical property of fluids we need to think about, called 
+  viscosity. Figure 3 shows a familiar sight, honey running slowly off a spoon. 
+  If you imagine doing the same thing with a spoonful of water, the behaviour 
+  would be quite different: almost all the water would fall off the spoon as 
+  soon as you tip it up. This contrasting behaviour happens because the 
+  viscosity of honey is far greater than the viscosity of water. 
+
+  But you may have noticed that I said “almost all water would fall off the 
+  spoon”. Actually, a few drops of water continue to fall, after most of it has 
+  gone. All normal fluids, including water, have some viscosity. When you tip 
+  the spoon up, a thin layer of the water is reluctant to run off. It clings to 
+  the surface, and only runs down gradually — very much like the honey, except 
+  that with water it is only a very thin layer that shows the behaviour. The 
+  same thing happens when you wash up crockery: if you leave it to drain for a 
+  while, that gives the last thin layer of water time to drip off. 
+
+  So what exactly is viscosity? It is the property of a fluid that resists 
+  shear deformation. Figure 4 shows a sketch of a layer of fluid between two 
+  metal plates. (In essence, this is a sketch of an apparatus you could use to 
+  measure viscosity.) The upper plate is forced to move to the right. This 
+  plate does not slide over the fluid, it carries it along with it: fluid in 
+  contact with a solid surface is “stuck” to it by molecular forces. So the 
+  fluid at the top of the layer moves rightwards with the plate, but the fluid 
+  at the bottom is anchored to the bottom plate. Provided the motion is slow 
+  enough, the fluid in between will show a linear velocity profile as sketched: 
+  this can be described as uniform shearing flow. Now the viscosity relates to 
+  the force necessary to move the plate, at a given speed and with a layer of 
+  given thickness and area. 
+
+  So now come back to our spoonful of water. What happens when you tip the 
+  spoon? The force of gravity acts in the same way on every particle of the 
+  water, so it all “wants” to move downhill at the same speed. But the water in 
+  contact with the spoon surface is stuck to it, and cannot flow away. The 
+  result is sketched in Fig.\ 5, which shows a magnified view of a small region 
+  near the spoon surface. Most of the water flows down at the same velocity, 
+  but a thin layer near the surface experiences shearing motion, which is 
+  resisted by the viscosity of the water. 
+
+  The result is a velocity profile of the kind sketched, featuring a boundary 
+  layer: a layer very close to the solid surface in which significant shear 
+  flow occurs. The thickness of this layer is determined by a balance between 
+  the force of gravity and the viscous force resisting the shear. The lower the 
+  viscosity, the thinner the layer. It is the lower part of this boundary layer 
+  that is left behind after the washing up, to drain away slowly in your 
+  dish-drainer. 
+
+  A boundary layer related to what has just been described will form on the 
+  wall of a wind instrument when it is played. The acoustic field inside the 
+  tube involves cyclical longitudinal motion of the air. Very close to the tube 
+  wall, though, the “no-slip boundary condition” applies: the air is anchored 
+  to the wall. A viscous boundary layer is the inevitable result. Since shear 
+  motion resisted by viscosity always dissipates energy, this is one of the two 
+  main mechanisms for damping of the acoustic resonances of the pipe, as 
+  mentioned in section 11.1. The boundary layer will be at its thinnest if the 
+  internal wall of the tube is very smooth, but if that surface is rough then 
+  the boundary layer is likely to be thicker, and the damping increased. 
+
+  \samsection{D. Reynolds Number (and its relatives)} 
+
+  Two effects we have described, nonlinearity and viscosity, are each described 
+  by one term in the governing Navier-Stokes equation (see the previous link). 
+  Fluid dynamicists use a quantity called the Reynolds Number to quantify the 
+  relative importance of these two terms (we described it briefly back in 
+  section 10.1.1). This number captures the ratio of strengths of the nonlinear 
+  term to the viscosity term. The formula for Reynolds Number turns out to 
+  involve the typical flow speed, multiplied by the typical length-scale, and 
+  divided by the viscosity. 
+
+  In a flow with very low Reynolds number, nonlinear effects can be neglected. 
+  The flow will be dominated by viscosity effects, and it will be laminar 
+  because viscosity has a stabilising effect on the instabilities leading to 
+  turbulence. Examples would be our honey running off the spoon (because the 
+  viscosity is large), or the swimming of a micro-organism in water (because 
+  the length-scale is very small). A flow with very high Reynolds Number will 
+  have the opposite behaviour: viscosity can be neglected, nonlinear effects 
+  will be strong, and the flow is likely to be turbulent. Examples would be the 
+  air flow through a jet engine (because the flow speed is very high), or the 
+  swimming of a human being in water (because this time the length-scale is 
+  much bigger than for the micro-organism, and the viscosity of water is quite 
+  small). 
+
+  The effective Reynolds Number will vary with depth through a structure like a 
+  boundary layer. There will always be a viscous-dominated layer very close to 
+  the wall, but it is perfectly possible (and indeed quite common) for the 
+  outer part of a boundary layer to become turbulent. See \tt{}this video\rm{} 
+  for a striking demonstration of a turbulent boundary layer. 
+
+  Fluid dynamicists really like to use non-dimensional numbers like the 
+  Reynolds Number. Another example, which is easy to visualise, is the Mach 
+  Number. This is the ratio of the flow speed to the speed of sound: so slow 
+  flows have low Mach Number, and a supersonic flow has a Mach Number bigger 
+  than 1. 
+
+  \samsection{E. Flow separation and vortices} 
+
+  Another phenomenon that can occur is that the shape of the solid object may 
+  create the conditions for the boundary layer to separate from the wall at 
+  some position, and then give rise to a turbulent wake. Figure 6 shows an 
+  example, in a wind-tunnel image of flow past a wing cross-section. The flow 
+  below the wing remains in contact with the surface, but above the wing it 
+  separates and produces a complicated wake structure. 
+
+  Under some circumstances this separation process varies cyclically with time, 
+  giving rise to a strikingly beautiful ``Kármán vortex street'', like the 
+  example in Fig.\ 7. The image is taken from \tt{}this Wikipedia page\rm{}, 
+  where you can find more detail. In the process of shedding vortices on 
+  alternate sides, an alternating force is exerted on the solid body, in the 
+  direction perpendicular to the flow. If the object is something like a 
+  stretched string or a power cable, this force can set it into vibration. This 
+  is the underlying mechanism of the Aeolian harp, for example. 
+
+  Another phenomenon involving vortices is more directly relevant to musical 
+  wind instruments. If a jet of air is blown out of a slot, as in a recorder 
+  mouthpiece for example, each side of this air jet will be a shear layer: a 
+  sudden jump in air flow speed. Well, there is a famous mathematical result in 
+  fluid dynamics proving that an ideal shear layer is unstable. If the 
+  interface between the two flow speeds is initially straight, but is then 
+  perturbed a little, the perturbation will grow. 
+
+  With a narrow jet, the instability usually carries the whole jet up and down 
+  --- we will say more about this in section 11.8 when we discuss air-jet 
+  instruments. For now, we can see one image for a rather wide air jet, in 
+  Fig.\ 8. In this schlieren image, we can see that the two shear layers on 
+  either side of the jet have generated elegant vortex shapes, in an 
+  alternating pattern. The image is taken from the doctoral thesis of Sylvie 
+  Dequand [1]. 
+
+
+
+  \sectionreferences{}[1] Sylvie Dequand, “Duct aeroacoustics: from 
+  technological applications to the flute”, Doctoral dissertation, Eindhoven 
+  University of Technology (2001), \tt{}https://pure.tue.nl/ws/portalfiles/portal/3429613/445111.pdf\rm{} 

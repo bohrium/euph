@@ -1,0 +1,81 @@
+  In order to carry out frequency-domain synthesis of plucked strings as 
+  described in section 5.4, we need two frequency response functions related to 
+  the string: the drive-point admittance (or in fact its inverse, the 
+  impedance) at the end of the string, and also the transfer function linking 
+  motion at the end to motion at the required plucking point. 
+
+  These need to incorporate the effects of bending stiffness and damping, 
+  derived in sections 5.4.4 and 5.4.5. The same trick can be used for both 
+  functions. We first solve the problem for the ideal string without damping or 
+  stiffness: there are analytic formulae for both functions. We then expand the 
+  resulting expressions in partial fractions, interpret the terms as 
+  corresponding to the modes of the string, then adjust the complex pole 
+  frequencies to allow for stiffness and damping, without changing anything 
+  else. 
+
+  Suppose the string is fixed at position $x=0$, and that a harmonic 
+  displacement $y e^{i \omega t}$ is imposed at $x=L$. To satisfy the fixed 
+  boundary condition, the string displacement must take the form 
+
+  $$w=k \sin \frac{\omega x}{c} \tag{1}$$ 
+
+  where $k$ is a constant, and $c=\sqrt{P/m}$ is the wave speed on the string. 
+  Imposing the other boundary condition fixes the value of $k$, so that 
+
+  $$w=y \dfrac{ \sin (\omega x/c)}{ \sin (\omega L/c)} \tag{2}$$ 
+
+  This gives the first of our two frequency response functions, $w/y$. 
+
+  Now if the end motion is caused by a force $f e^{i \omega t}$ applied to the 
+  string, force balance requires 
+
+  $$f=P \left. \dfrac{\partial w}{\partial x} \right|_{x=L}=\dfrac{Py\omega 
+  \cos(\omega L/c)}{c \sin (\omega L/c)} \tag{3}$$ 
+
+  so the required end impedance is 
+
+  $$Z(\omega)=\frac{f}{i \omega y}=\frac{P}{ic} \cot \frac{\omega L}{c}=-i 
+  Z_{string} \cot \frac{\omega L}{c} \tag{4}$$ 
+
+  in terms of the string's characteristic impedance $Z_{string}=\sqrt{Pm}$. 
+
+  The impedance $Z$ has poles (resonances) where 
+
+  $$\frac{\omega L}{c} = n \pi, \mathrm{~~~for~~~}n=0, \pm 1,\pm 2,\pm 3... 
+  \tag{5}$$ 
+
+  We recognise these pole frequencies as the natural frequencies of the string, 
+  $\omega_n$. The function $Z(\omega)$ is obviously periodic, so that the 
+  coefficients, called residues, of these poles must all have the same value. 
+  This value can be found by looking at the behaviour near $\omega=0$, where 
+
+  $$\frac{P}{ic}\cot \frac{\omega L}{c} \approx \frac{P}{ic} \times 
+  \frac{c}{\omega L}=\frac{-iP}{\omega L}. \tag{6}$$ 
+
+  We can deduce that 
+
+  $$Z(\omega) = -\frac{iP}{L} \sum_{n=-\infty}^{\infty}{\dfrac{1}{\omega -- n 
+  \pi c/L}} . \tag{7}$$ 
+
+  We can add small damping with loss factor $\eta_j$ for the $j$th mode, and 
+  regroup the terms to look more like the familiar modal summation: 
+
+  $$Z(\omega) = -\frac{iP}{L} \left[ \frac{1}{\omega} + 
+  \sum_{j=0}^{\infty}{\left\lbrace \dfrac{1}{\omega -- \omega_j(1+i \eta_j 
+  /2)}+\dfrac{1}{\omega + \omega_j(1-i \eta_j /2)}\right\rbrace} \right] $$ 
+
+  $$=-\frac{iP}{L} \left[ \frac{1}{\omega} + \sum_{j=1}^{\infty}{ \dfrac{2 
+  \omega -- i \omega_j \eta_j}{\omega^2 -- i\omega \omega_j \eta_j -- 
+  \omega_j^2}} \right] \tag{8}$$ 
+
+  where we can now substitute for $\omega_j$ the approximate formula including 
+  the effect of bending stiffness, from eq. (10) of section 5.4.3. 
+
+  A similar procedure can be applied to the other frequency response function 
+  of interest, $w/y$ from eq. (2), to provide an approximation to the transfer 
+  function from the end of the string to the plucking point $x=a$, including 
+  the effects of damping and bending stiffness. The result is 
+
+  $$\frac{w}{y} \approx \frac{a}{L} + \frac{c}{L}\sum_{j=1}^{\infty}{ (-1)^j 
+  \dfrac{2 \omega \sin j \pi a/L}{\omega^2 -- i\omega \omega_j \eta_j -- 
+  \omega_j^2}} . \tag{9}$$ 

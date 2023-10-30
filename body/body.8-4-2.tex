@@ -1,0 +1,97 @@
+  Figure 1 shows a sketch of a double pendulum: two identical rods of length 
+  $2L$ and mass $m$ are freely hinged together at one end, and the linked pair 
+  is freely pivoted to a fixed support at one end. We can describe the position 
+  of the two pendulums at any instant with the two angles $\theta$ and $\phi$ 
+  as shown. 
+
+  \fig{figs/fig-b31febf6.png}{Figure 1. Sketch of the double pendulum} 
+
+  We can derive the governing equations for free motion by using Lagrange's 
+  equations. First, we need expressions for the potential and kinetic energies. 
+  In terms of Cartesian x-y axes with an origin at the fixed pivot, the centre 
+  of mass of the top pendulum is at the point 
+
+  $$[L \sin \theta, -L \cos \theta] \tag{1}$$ 
+
+  while that of the lower pendulum is at the point 
+
+  $$[2L \sin \theta + L \sin \phi, -2L \cos \theta -- L \cos \phi]. \tag{2}$$ 
+
+  We can immediately write down an expression for the potential energy, which 
+  is entirely due to gravity: 
+
+  $$V=mgL(1 -- \cos \theta) +mgL[2(1- \cos \theta) + (1-\cos \phi)] \tag{3}$$ 
+
+  where the reference configuration with $V=0$ has been taken to be the 
+  equilibrium position $\theta=\phi=0$. 
+
+  For the kinetic energy, we first need the velocities of the two centres of 
+  mass. For the top pendulum this has components 
+
+  $$L \dot{\theta} [\cos \theta, \sin \theta] \tag{4}$$ 
+
+  while for the lower pendulum the components are 
+
+  $$2L \dot{\theta} [\cos \theta, \sin \theta] + L \dot{\phi} [\cos \phi, \sin 
+  \phi]. \tag{5}$$ 
+
+  We can now write down an expression for the kinetic energy: for each pendulum 
+  separately, we can use the general rigid-body expression $(1/2)m v_G^2 + 
+  (1/2) I_G \Omega^2$ where $m$ is the mass, $I_G$ is the moment of inertia 
+  about the centre of mass, $v_G$ is the magnitude of the velocity of the 
+  centre of mass, and $\Omega$ is the angular velocity. 
+
+  The result is 
+
+  $$T=\dfrac{1}{2}mL^2 \dot{\theta}^2 (\cos^2 \theta + \sin^2 \theta) 
+  +\dfrac{1}{2}\left(\dfrac{1}{3}mL^2\right) 
+  \dot{\theta}^2+\dfrac{1}{2}\left(\dfrac{1}{3}mL^2\right) \dot{\phi}^2$$ 
+
+  $$+ \dfrac{1}{2}mL^2 \left[ \left(2 \dot{\theta}\cos \theta + \dot{\phi}\cos 
+  \phi\right)^2 + \left(2 \dot{\theta}\sin \theta + \dot{\phi}\sin 
+  \phi\right)^2 \right] \tag{6}$$ 
+
+  which, after multiplying out and simplifying, comes down to 
+
+  $$T=\dfrac{1}{2}mL^2 \left[ \dfrac{16}{3} \dot{\theta}^2 + \dfrac{4}{3} 
+  \dot{\phi}^2 + 4 \dot{\theta} \dot{\phi} \cos (\phi-\theta) \right] . 
+  \tag{7}$$ 
+
+  Now we use the Lagrange equations. Applied to the angle $\theta$, the 
+  equation is 
+
+  $$\dfrac{d}{dt}\left[ \dfrac{\partial T}{\partial \dot{\theta}} \right] -- 
+  \dfrac{\partial T}{\partial \theta} + \dfrac{\partial V}{\partial \theta} = 0 
+  \tag{8}$$ 
+
+  leading to 
+
+  $$\dfrac{d}{dt}\left[\dfrac{16}{3}mL^2 \dot{\theta} + 2mL^2 \dot{\phi} \cos 
+  (\phi -- \theta) \right] $$ 
+
+  $$-2mL^2 \dot{\theta} \dot{\phi} \sin (\phi -- \theta) + 3mgL \sin \theta = 0 
+  \tag{9}$$ 
+
+  which expands and simplifies to the final result 
+
+  $$\dfrac{16}{3}\ddot{\theta}+ 2\ddot{\phi}\cos (\phi -- \theta) -- 2 
+  \dot{\phi}^2 \sin (\phi -- \theta) + \dfrac{3g}{L} \sin \theta = 0. 
+  \tag{10}$$ 
+
+  The corresponding Lagrange equation for the angle $\phi$ gives 
+
+  $$\dfrac{d}{dt}\left[\dfrac{4}{3}mL^2 \dot{\phi} + 2mL^2 \dot{\theta} \cos 
+  (\phi -- \theta) \right] $$ 
+
+  $$+2mL^2 \dot{\theta} \dot{\phi} \sin (\phi -- \theta) + mgL \sin \phi = 0 
+  \tag{11}$$ 
+
+  which expands and simplifies to give 
+
+  $$\dfrac{4}{3}\ddot{\phi}+ 2\ddot{\theta}\cos (\phi -- \theta) + 2 
+  \dot{\theta}^2 \sin (\phi -- \theta) + \dfrac{g}{L} \sin \phi = 0. \tag{12}$$ 
+
+  Equations (10) and (12) determine the free motion of the pendulum system. 
+  Because we have two second-order differential equations, we need four initial 
+  values: the most natural things to specify are the values at time $t=0$ of 
+  $\theta$, $\dot{\theta}$, $\phi$ and $\dot{\phi}$. 

@@ -1,0 +1,518 @@
+  In a letter to Robert Hooke written in 1675, Isaac Newton famously wrote ``If 
+  I have seen further it is by standing on the shoulders of giants.'' This 
+  dictum is particularly apposite for the study of the motion of a bowed 
+  string: the subject got under way with two of the giants of 19th and early 
+  20th century science. The first of these giants is Hermann von Helmholtz 
+  (1821—1894). Helmholtz made significant contributions to several scientific 
+  fields ranging from physics to physiology: at different times in his academic 
+  career he held professorships in both disciplines. 
+
+  \fig{figs/fig-a7a0250d.png}{Figure 1. Hermann von Helmholtz in about 1894. 
+  Image: Heliogravüre by Meisenbach, Riffarth \& Co. Berlin. Scanned, image 
+  processed and uploaded by Kuebi = Armin Kübelbeck, Public domain, via 
+  Wikimedia Commons} 
+
+  In 1862 Helmholtz wrote a book, later translated into English as “The 
+  sensations of tone as a physiological basis for the theory of music” [1]. The 
+  book ranges over what we would today regard as many different disciplines: 
+  musicology, perception and psychoacoustics, the physiology of hearing, but 
+  also mathematical theories of vibration and waves, and experimental work on 
+  vibration and acoustics. In among all this, he describes an ingenious 
+  experiment to observe the motion of a bowed violin string. This led him to 
+  discover and describe mathematically the unexpected way that a bowed string 
+  normally vibrates; something now known as “Helmholtz motion” in his honour. 
+  The details appear in one of 19 Appendices to the book, which cover topics as 
+  diverse as the constructional details for what we now call Helmholtz 
+  resonators (see section 4.2.1), experiments on the production of vowel sounds 
+  (see section 5.3), the mathematical theory of the motion of plucked strings 
+  and struck piano strings, and a design of a keyboard instrument able to play 
+  in “just intonation”. 
+
+  Helmholtz’s experimental setup made use of his own improvement to the 
+  “vibration microscope” first developed by Lissajous. This involved a lens 
+  system, attached to the vibrating tine of an electrically-maintained tuning 
+  fork. The violin string was blackened, and then a bright white spot of starch 
+  was added at the point to be observed. The string was bowed, and arranged so 
+  that the vibration was perpendicular to the direction of motion of the lens. 
+  By synchronising the pitches of the bowed string and the tuning fork, and 
+  then observing the path traced by the white dot when seen through the 
+  vibrating lens, a closed loop called a “\tt{}Lissajous figure\rm{}” is seen. 
+  A bit of careful thought can then reveal how the marked point on the string 
+  must be vibrating. 
+
+  What Helmholtz discovered is something really surprising. When you see a 
+  bowed string vibrating, you see a fuzzy patch which is lens-shaped. You might 
+  well imagine that the string simply vibrates from side to side with that 
+  smooth arc-like shape. But Helmholtz found that the string is actually moving 
+  in the counterintuitive way illustrated in the top animation of Fig.\ 2. At 
+  any given moment, the string has a triangular shape: two straight portions 
+  separated by the “Helmholtz corner”. This corner shuttles back and forth 
+  between the bridge and the player’s finger. You can see a slow-motion movie 
+  of Helmholtz motion on a real bowed string in \tt{}this YouTube video.\rm{} 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-049e619e-00.png }&\vidframe{ 0.30 }{ vids/vid-049e619e-01.png }&\vidframe{ 0.30 }{ vids/vid-049e619e-02.png } \end{tabular}\caption{Figure 2.  Animation of Helmholtz motion of a bowed string, in idealised form. Top panel shows the string motion, and the moving bow. Lower panel shows the transverse force exerted on the bridge of the instrument, which is the source of body vibration.}\mooendvideo
+
+  If you look carefully in Fig.\ 2 at the point where the string crosses the 
+  moving bow, you can see that all the time the corner is making the long 
+  journey to the finger and back, the string is moving at the same speed as the 
+  bow. In other words, during that part of each cycle of vibration there is 
+  sticking friction between the bowhair and the string. But when the corner 
+  travels to the bridge and back, the string is slipping across the bow hairs: 
+  slipping friction. So this motion of the string is a stick-slip vibration, 
+  and the frequency is governed by the time-keeping role of the travelling 
+  corner. Since that corner travels at the normal wave speed on the string, 
+  this explains why the frequency of a bowed note is the same as the frequency 
+  of a plucked note on the same string. 
+
+  We will see in later sections that many aspects of the description just given 
+  are not exactly correct. There are small but important differences between 
+  real string motion and the idealised form described by Helmholtz. The corner 
+  is not really perfectly sharp; the bow does not really act at a single point 
+  on the string because the ribbon of hair on a violin bow is a few millimetres 
+  wide; the frequency of a bowed note is not always exactly the same as that of 
+  the plucked string. But we will also see that Helmholtz motion gives an 
+  excellent first approximation to what real bowed strings do. 
+
+  The key to testing that claim lies in the lower panel of the animation. 
+  Fortunately, modern electronic and computer-based measurement methods mean 
+  that we can observe string motion in a less complicated way than with 
+  Helmholtz’s vibration microscope. One way to do this is to embed a small 
+  force-measuring sensor in the top of the violin bridge, at the point where 
+  the string sits: the next link explains how that works. Such a sensor doesn’t 
+  interfere (much) with the player’s ability to perform in a normal way, so it 
+  is possible to capture waveforms of ``bridge force''. 
+
+  This bridge force is a particularly useful thing to capture, because it 
+  provides the excitation for vibration of the violin body. It gives the 
+  clearest view of what the string is doing, while also allowing us to predict 
+  the vibration and sound radiation of the instrument by making use of the kind 
+  of frequency response functions we looked at in earlier chapters (see section 
+  6.5 for some examples of such predictions). We will see many examples of 
+  bridge force waveforms in the course of this chapter. The signature of 
+  Helmholtz motion in such a measurement is a sawtooth waveform, as shown in 
+  the lower panel of Fig.\ 2. The force ramps steadily upwards (or downwards if 
+  the direction of bowing is reversed), then it jumps abruptly down (or up) at 
+  the moment when the Helmholtz corner reflects from the bridge. 
+
+  A measured example is shown in Fig.\ 3. The sawtooth shape is clearly 
+  recognisable, but we can see some details that are different from the 
+  idealised version. There are small wiggles during the ``ramp'' phase of each 
+  cycle, and if you look very carefully you can see that these wiggles are not 
+  exactly the same in every cycle, although they are very similar. We will find 
+  out in section 9.2 what causes these wiggles, and also about other details of 
+  the string motion, and what the player can do to influence them. 
+
+  \fig{figs/fig-909daa40.png}{Figure 3. Measured bridge force waveform showing 
+  Helmholtz motion, for the note D$_4$ played on the G string of a violin} 
+
+  In the decades following Helmholtz’s book, there was a surprising amount of 
+  published research on the vibration of violin strings. We get a clue about 
+  why this apparently obscure topic was being studied, from a story about Lord 
+  Rayleigh (1842—1919), who overlapped for much of his career with Helmholtz. 
+  According to a biography written by his son [2], Rayleigh sometimes worried 
+  that he might run out of physics problems of the kind he liked to study. It 
+  seems extraordinary to us today that anyone in 1900 or so might have thought 
+  that “physics was nearly all done”, because we know that just a few years 
+  later the revolutionary developments of relativity and quantum mechanics 
+  would open up new vistas of unimagined science. But, of course, they didn’t 
+  know that at the time. 
+
+  We can try to glimpse the mindset of a 19th century scientist. We get an 
+  interesting hint from Rayleigh’s classic book “The theory of sound” [3]. 
+  Volume 1, dealing with mechanical vibration, came out in 1877. Rayleigh 
+  summarised the state of knowledge in his day, including a lot of his own 
+  work. Mechanics was a high-profile science in those days, as is clear from 
+  Rayleigh’s discussion and his footnote references. All the big names of 
+  European science come into the discussion: Laplace, Lagrange, Euler, 
+  Kirchhoff. But then Rayleigh produced a second edition of the book in 1894, 
+  and the material he added is very revealing. As well as new material on 
+  mechanics (such as shell vibration: recall section 3.2), there are several 
+  new sections applying his analysis methods to the new-fangled electrical 
+  circuits that were just starting to become important. Networks of capacitors 
+  and inductances obey the same mathematical equations as networks of masses 
+  and springs, so results from mechanics can be carried over directly: but the 
+  theory was developed first in the mechanical context. This age saw the very 
+  beginnings of electronics as a discipline. 
+
+  So perhaps it is not so surprising that physics researchers shortly after 
+  Helmholtz, in search of unsolved problems in mechanics, chose to investigate 
+  the relatively obscure, but intriguing, question of the motion of a bowed 
+  violin string. Some of the published work is experimental: ingenious rigs 
+  were designed to allow strings to be bowed in a controlled and repeatable 
+  way, and the string motion was observed using photographic methods which 
+  allowed waveforms of string displacement to be captured for the first time. 
+  These observations revealed that a bowed string can vibrate in a great 
+  variety of ways, of which Helmholtz motion is just the simplest. Other 
+  researchers followed Helmholtz in giving mathematical form to these various 
+  observations. 
+
+  These threads of research were pulled together, developed and given their 
+  definitive form by our second giant, C. V. Raman (1888--1970). He would later 
+  become India’s first Nobel prize winner, for discovering an optical 
+  scattering effect leading to the important technique still known as 
+  \tt{}Raman spectroscopy\rm{}. But earlier in his scientific career he studied 
+  several problems involving musical instruments. We have already met Raman 
+  back in section 3.6, because as well as his work on bowed strings he studied 
+  the acoustics behind the characteristic sound of Indian drums. But the work 
+  that interests us here is a “blockbuster” monograph, over 150 pages long, 
+  that Raman published in 1918 [4]. It has the snappy title “On the mechanical 
+  theory of the vibrations of bowed strings and of musical instruments of the 
+  violin family, with experimental verification of the results: Part 1” (there 
+  never was a “Part 2”). 
+
+  \fig{figs/fig-b6b92919.png}{Figure 4. C. V. Raman pictured in 1930. Image: 
+  Nobel Foundation, Public domain, via Wikimedia Commons} 
+
+  In this work (and other papers published around the same date), Raman 
+  advanced the subject to the limit of what was possible before the development 
+  of electronic measurement equipment, and long before the age of computers. 
+  First, he brought order to the bewildering array of bowed-string waveforms 
+  that had been revealed by measurements. He used an ingenious argument, 
+  explained in the next link, to suggest that the velocity of the string under 
+  the bow should always alternate between two fixed values, with sudden jumps 
+  between them. He was thus able to describe all the observed waveforms based 
+  on travelling “corners” on the string. Helmholtz motion is the simplest of 
+  the family, with a single corner, but there are many other possibilities with 
+  multiple corners. The number of corners gave Raman the basis for a 
+  classification scheme for what he called “higher types” of bowed-string 
+  motion. This work of Raman’s was a very early example of detailed study of a 
+  non-linear dynamical system of sufficient complexity to show multiple 
+  solutions that are qualitatively different: probably the only such system 
+  about which more was known at this early date was the motion of the planets. 
+
+  We can see some examples of Raman’s “higher types”. They divide into two 
+  families: one family involves more than one stick-slip alternation in each 
+  cycle, while the other family is more like Helmholtz motion in that it 
+  involves only a single slipping episode per cycle. The simplest member of the 
+  first family will be very important to us in later sections. Figure 5 shows 
+  an example: for obvious reasons, it is known as “double-slipping motion”. In 
+  place of the Helmholtz sawtooth wave, we see a kind of double sawtooth shape 
+  with two abrupt “flyback” episodes. There are two travelling corners, and 
+  each generates a flyback jump when it hits the bridge during its round trip. 
+  Every time a corner passes the bow, it triggers a transition between sticking 
+  and slipping, so there are two slip episodes in every cycle. If you are 
+  interested, you can see an animation of the string motion during this kind of 
+  double-slipping motion in the previous link. 
+
+  \fig{figs/fig-778e0569.png}{Figure 5. Measured bridge force for the open G 
+  string of a violin, showing ``double-slipping'' motion} 
+
+  Figure 6 shows three examples from the second family of “Raman higher types”. 
+  They each involve an underlying sawtooth shape, but superimposed on this they 
+  have a regular pattern of large wiggles. Raman explained such waveforms in 
+  terms of a large number of travelling corners (the exact number being related 
+  to the number of the wiggles in each cycle). But most of these corners do NOT 
+  trigger a transition between sticking and slipping at the bow, because the 
+  pattern involves pairs of corners reaching the bridge simultaneously from 
+  opposite sides in such a way that their effects cancel out. In each cycle 
+  there are just two corners that pass the bow without being cancelled like 
+  this, with the result that there is just a single episode of slipping in 
+  every cycle. It turns out to be shorter than the corresponding slip for 
+  Helmholtz motion, because the corner causing slipping to start is not the 
+  same one that causes it to stop: it is a different corner, arriving at the 
+  bow before the other one has had time to travel to the bridge and back. 
+
+  \fig{figs/fig-8514471b.png}{Figure 6. Three examples of measured bridge force 
+  for the open D string of cello, showing different cases of the family of 
+  Raman ``higher types'' also known as ``S-motion''} 
+
+  This family was later rediscovered by Bo Lawergren in 1980 [5], using a 
+  completely different style of analysis from Raman’s. Lawergren called this 
+  kind of waveform “S-motion”, and we will use that convenient label. You can 
+  see an animation of the string motion during an example of S-motion in the 
+  previous link. We will find out more about S-motion, and see how these 
+  particular measured bridge-force waveforms were obtained, in section 9.3. 
+
+  That discussion will be just a small part of a larger and more complicated 
+  story to be told in the remainder of this chapter. The study of bowed-string 
+  motion over the last 50 years or so has given a kind of microcosm of 
+  classical scientific method. Progressively more sophisticated measurements 
+  have become possible, and every time a new approach has been applied to bowed 
+  strings it has revealed shortcomings in physical understanding and called for 
+  new developments in modelling. It is not so much that the old theories were 
+  wrong, but when more searching questions are asked, inadequacies in the old 
+  descriptions become obvious. The result is a series of layers of increasingly 
+  detailed descriptions, accompanied inevitably by increasing complexity. 
+
+  Within this rather complicated story, we can distinguish four different 
+  agendas. They overlap, but they have different priorities and it is worth 
+  being aware of them all. 
+
+  \samsection{The physics agenda}. What are the main phenomena, and how can we 
+  explain them, at least approximately? What ingredients must be included in a 
+  satisfactory physical model of each different phenomenon? 
+
+  \samsection{The nonlinear dynamics agenda}. This is a more mathematical 
+  outgrowth of the physics agenda. Regarding the bowed string as an example of 
+  a nonlinear dynamical system, what are the possible regimes of oscillation? 
+  Where can each regime be found in the player’s parameter space, and what is 
+  the bifurcation structure linking regimes? 
+
+  \samsection{The computer music agenda}. To make any progress at all we will 
+  need to use numerical models and simulations. This takes us near the 
+  territory of the computer music specialists. They are interested in 
+  computer-based resources for composers and performers wanting to make music. 
+  Some of the methods they use are inspired by physics-based models of 
+  traditional musical instruments, so-called “\tt{}physical modelling synthesis\rm{}”. 
+  But their mindset is different from a physicist’s. They want to make 
+  interesting sounds, in a way that can be controlled and manipulated for 
+  musical effect. They may be inspired by physical models, but they are not 
+  bound by them: from the perspective of physical models aimed at understanding 
+  how traditional instruments work, they are perfectly free to “cheat” if that 
+  gives good results. 
+
+  \samsection{The musician’s agenda}. What can models of a bowed string tell us 
+  about the practical concerns of a violinist? What is going on in the 
+  different styles of specialised bow gesture, such as spiccato, sautillé or 
+  martelé? What governs the “tonal palette” available to a player? Could the 
+  answers to these questions help a student or their teacher in the long quest 
+  to master an instrument? Then there are questions relevant to the instrument 
+  maker: what might a player mean when they describe a particular instrument, 
+  or string, or note, as being “easy to play” or “hard to play”? What could an 
+  instrument maker or adjuster do to improve “playability”? 
+
+  We can get a glimpse of how the musician’s agenda differs from the others by 
+  looking at an example of actual musical performance. Figure 7 shows a few 
+  seconds of music, played by violinist Keir GoGwilt on the G string of a 
+  violin and recorded using a bridge-force sensor. You can hear it in Sound 1. 
+  Surely the first thing that strikes the eye in Fig.\ 7 is that nothing is 
+  ever steady. We can see that even more clearly in Fig.\ 8, which shows the 
+  first half of the passage as a time-frequency spectrogram: the horizontal 
+  axis shows frequency and the vertical axis shows time, running upwards in the 
+  plot. The harmonics of each note show as a set of roughly vertical lines. 
+
+  \fig{figs/fig-1183d2a3.png}{Figure 7. A snatch of violin music, recorded with 
+  a bridge-force sensor} 
+
+  \fig{figs/fig-c1731355.png}{Figure 8. Spectrogram of the first half of the 
+  violin extract from Fig. 7 and Sound 1} 
+
+  Reading upwards from the bottom in Fig.\ 8, the first note ends with a 
+  frequency slide, progressively more obvious in the higher harmonics. The 
+  slide ends on a higher note, which is faded out, to be followed by a fresh 
+  transient on the same pitch. This next note, extending over the range 
+  1.9--3.3 s in the plot, has vibrato, showing up as wiggliness in the harmonic 
+  lines. The player has modulated this vibrato through the duration of the 
+  note, increasing and then decreasing its amplitude. This note also shows, 
+  especially in its earlier part, harmonics reaching up to roughly double the 
+  frequency of the previous notes: we will find out in sections 9.2 and 9.3 how 
+  the player might have achieved this effect. The remainder of the plot shows 
+  four short notes and ends on a longer one. The frequency content is being 
+  varied, and the pitch is continually being modulated in various subtle ways. 
+
+  In just a few seconds of music, the violinist has made use of many different 
+  aspects of bowed-string motion. Bow speed, force and position are being 
+  modulated to vary the waveform details: we will look at how that might work 
+  in section 9.3. Different note transitions and initial transients are used: 
+  in section 9.5 we will dig a little into the details of these transients. A 
+  player will not be consciously aware of all this underlying physics, but they 
+  will be aware of the audible consequences and may spend a long time 
+  practising details of the bowing and phrasing to get the passage to sound 
+  right. Asked to play the same passage on two different violins, and to 
+  comment on whether one is “easier to play” than the other, which of these 
+  details will they be most aware of? There are no easy answers to that 
+  question. The challenge to the scientist following the “physics agenda” is 
+  formidable: to try to understand enough to be able to say something useful to 
+  musicians and instrument makers. 
+
+  The main contrast between the physics agenda and the musician’s agenda is 
+  that the musician is always interested in the holistic impression of any 
+  piece of musical performance, whereas the instinct of a physicist is to pull 
+  a complicated problem apart, then try to understand each component using the 
+  simplest model that captures it. This is a good strategy for making 
+  scientific progress, but it can lead to a communication problem. You explain 
+  one particular thing to a musician using a simplified model that emphasises 
+  that particular thing, and they may react by saying “but that is hopelessly 
+  over-simplified, you are missing all these other important things….” That is 
+  a good objection if the other things are directly linked to the one you were 
+  talking about: perhaps they really do have to be treated simultaneously in a 
+  combined model. But there is always a price for a more inclusive and 
+  complicated model: it is so easy to lose sight of the wood for the trees. We 
+  should keep in mind a dictum paraphrased from something Einstein said in 
+  1933: “Models should be made as simple as possible, but no simpler”. 
+
+  The “nonlinear dynamics agenda” is somewhat more remote from the musician’s 
+  agenda. The language of “regimes of oscillation”, and “bifurcation events” 
+  where one regime transitions to another, makes an implicit assumption that we 
+  are most interested in periodic motions, like the examples plotted in Figs.\ 
+  3, 5 and 6. We will see in section 9.3 that transitions between regimes 
+  (especially between Helmholtz motion and other, less desirable, regimes) are 
+  indeed important. But the musical example highlights the fact that musicians 
+  very rarely hold anything steady for long enough to qualify as a “periodic 
+  waveform” to a mathematician. It is not at all clear how much of the 
+  musician’s agenda can be addressed by that kind of investigation. 
+
+  This distinction lies behind something you may have noticed: I didn’t include 
+  sound examples of the bowed-string waveforms from Helmholtz motion or Raman’s 
+  “higher types”. The reason is that any simple sound example, particularly 
+  with steady periodic motion, never sounds anything like a real violin or 
+  cello! Sounds 2 and 3 give some examples: they were both made by taking a 
+  single cycle of a measured bridge force waveform and repeating it to make an 
+  exactly periodic sound. Sound 2 is an example of Helmholtz motion and Sound 3 
+  is double-slipping motion (the waveform from Fig.\ 5). 
+
+  The single cycles underlying these sounds were both played on the same open G 
+  string of a violin, but they come out sounding artificial and electronic. You 
+  would probably not have recognised either as having anything to do with a 
+  real bowed string. You can certainly hear a difference between the two 
+  sounds, but you probably cannot translate this into any kind of quality 
+  judgement about violin sound: the sound world is simply too far away from 
+  real violin playing. Think all the way back to the upside-down faces in Fig.\ 
+  2 of Chapter 1: our finely-tuned perceptual abilities rely on familiarity, 
+  and it doesn’t take much in the way of novelty to throw them into confusion. 
+
+  But surely you would agree that Sound 1 did immediately sound like a violin. 
+  This tells us two things that are very important, and perhaps surprising. 
+  First, the bridge force recording captures something of the essence of 
+  “violinness”, which is missing from the periodic waveforms of Sounds 2 and 3. 
+  Now remember the sound of a backwards piano, from Sound 12 of Section 7.1. 
+  Simply playing that sound backwards was enough that it was not recognisable 
+  as a piano. Our ability to recognise which instrument is being played relies 
+  on the characteristic transient features that we have learned to associate 
+  with each particular instrument. Those characteristic bowed-string transients 
+  are present in Sound 1, but absent in Sounds 2 and 3. 
+
+  But there is something surprising here. Bowed string motion will be roughly 
+  the same on every violin, if they are fitted with the same strings and the 
+  player performs the same bowing gestures. The differences in sound between 
+  different violins, which can be associated with huge differences in price, 
+  rely entirely on the additional colouration of the sound associated with the 
+  frequency response of the violin body, as we have discussed in earlier 
+  chapters. The bridge force signal that drives the body vibration hardly 
+  involves any contribution from the particular violin body. Now listen to 
+  Sound 1 again. Yes, it sounds like a violin: but maybe not a very nice one. 
+  Perhaps the sound is rather bland, because it lacks the colouration coming 
+  from the body vibration? In fact, it is what a violin would sound like if it 
+  was designed like a hi-fi amplifier, with a flat frequency response that did 
+  not contribute any additional colouration to the sound. 
+
+  I have talked rather vaguely about “transients” and “colouration”, but can we 
+  be more explicit? Well, there is one example that is easy to describe. Figure 
+  8 has reminded us that violinists often use vibrato, modulating the 
+  fundamental frequency of the note in a roughly sinusoidal way at a frequency 
+  usually around 5~Hz. Naturally, all the harmonic frequencies are also 
+  modulated, with the same percentage change as the fundamental. Putting this 
+  information together with the things we already know about the frequency 
+  response of a violin body, we see something interesting. It is illustrated 
+  with a schematic animation in Fig.\ 9. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-2cd4f133-00.png }&\vidframe{ 0.30 }{ vids/vid-2cd4f133-01.png }&\vidframe{ 0.30 }{ vids/vid-2cd4f133-02.png } \end{tabular}\caption{Figure 9.  Frequency response of a typical violin, showing how the amplitudes of response at the first few harmonics might vary during a note played with vibrato.}\mooendvideo
+
+  The blue curve shows the bridge admittance of a violin (this particular one 
+  is a famous instrument, the “Jackson” Stradivarius). The red lines indicate 
+  the frequencies of the first few harmonics of a particular note, and the 
+  stars show where these cross the admittance curve. The extent of vibrato 
+  shown here is about 1 semitone peak-to-peak, or about $\pm3\%$ in frequency. 
+  That level of vibrato is towards the upper end of what a violinist may use, 
+  but it is a perfectly plausible level. Because I have used the bridge 
+  admittance, this animation does not strictly show anything about the sound of 
+  the violin, but it does indicate the variation through the vibrato cycle of 
+  the energy absorbed from the string by the violin body. The animation does 
+  not claim to be more than a schematic indication of what can happen, but it 
+  is immediately clear that the amplitudes of the various harmonics could show 
+  large variations during the vibrato cycle, each with a different range and 
+  phase. 
+
+  The resulting sound will be far more complicated than if vibrato had been a 
+  simple frequency modulation of a fixed waveform. But that description applies 
+  exactly to the bridge force: provided the player is producing Helmholtz 
+  motion, the force waveform will always be a sawtooth, and the only effect of 
+  vibrato is to modulate the period. However, the interaction of that force 
+  waveform with the frequency response of the body produces something far more 
+  interesting; not just in terms of physics, but also in terms of our 
+  perception of the sound. People often use words like “richness” or “fullness” 
+  when trying to describe the tonal effect of vibrato. 
+
+  The description I have just given seems so obvious that a few years ago I and 
+  some colleagues thought it would make a nice clear-cut problem for a 
+  psychoacoustical investigation. We would synthesise vibrato sounds processed 
+  through different frequency response functions, and get listeners to rate the 
+  resulting sounds for qualities like “richness” [6]. That would open the way 
+  for various investigations of how violins might differ in their 
+  responsiveness to vibrato, and what an instrument maker might be able to do 
+  to control or enhance the effect. 
+
+  We were wrong to think this would be easy! The experiments we tried were 
+  thwarted by the effect illustrated above with Sounds 1, 2 and 3. In order to 
+  control the extent of vibrato in a very careful way, we were forced to used 
+  synthesised sounds. Whatever we tried, our listeners responded to the sounds 
+  by saying “they all sound horrible, not at all like a violin”. They did not 
+  feel able to give musically-relevant judgements on qualities like “richness”. 
+  I am still certain that the effect illustrated in Fig.\ 9 really is important 
+  for the perceived tonal quality of violin notes played with vibrato, but it 
+  will need a better experiment to prove that fact to the satisfaction of a 
+  psychoacoustician. A challenge for the future. 
+
+  So finally, here is a summary of the topics to be addressed in the following 
+  sections. I will basically follow the physics agenda, but try not to lose 
+  sight of the musician’s agenda. The first stage is to see what happened in 
+  the next burst of scientific activity concerning bowed strings. This came 
+  decades after Raman’s time, but many of the key issues are pre-figured in his 
+  1918 monograph. So we aren’t by any means done with Raman yet: his name will 
+  crop up several times during the next few sections. Section 9.2 will 
+  investigate the first efforts to go beyond Helmholtz’s description, by 
+  allowing for the fact that the “Helmholtz corner” will in reality be somewhat 
+  rounded rather than being perfectly sharp. This has surprisingly profound 
+  implications for what a player is able to do to vary the sound of a bowed 
+  note. 
+
+  The next step, in section 9.3, is to start to investigate the player’s 
+  parameter space. The earliest investigation was restricted to steady string 
+  motions, and led to a famous diagram first presented by John Schelleng. 
+  Schelleng’s diagram shows what a player must do (and what they must avoid) in 
+  order for Helmholtz motion to be at least possible. Schelleng’s theoretical 
+  predictions will be compared to some experimental results, obtained by using 
+  a robotic bowing machine to scan the Schelleng diagram systematically. 
+
+  The first non-steady phenomenon to be investigated (by Raman) was the 
+  infamous “wolf note”, especially prevalent in the cello. With the advent of 
+  the first computer models of bowed-string motion, Raman’s account of the wolf 
+  note could be tested. We will see some results in Section 9.4. 
+
+  In Section 9.5 we look at initial transients associated with different bowing 
+  gestures, and start to explore the concept of “playability”. Again, we will 
+  use computer simulations to explore the validity of a diagrammatic 
+  representation of bowed-string behaviour, this time due to Knut Guettler. 
+
+  Efforts to compare the results of the computer models with quantitative 
+  measurements on real bowed strings reveal serious problems. It immediately 
+  becomes obvious that the models need to be improved. Several physical 
+  phenomena were omitted from the early models in the interests of 
+  simplification. In Section 9.6 we explore some of these: they are undoubtedly 
+  part of the complicated jigsaw puzzle that must be solved in order to tackle 
+  the musician's agenda. 
+
+  But we will find that something is still wrong with the models. All these 
+  issues were first explored based on the simple friction model that we have 
+  already seen, in which the friction force is assumed to be a nonlinear 
+  function of the instantaneous sliding speed. However, in the 1980s 
+  experiments were done to test that assumption, and they revealed that it is 
+  not an accurate physical model for rosin friction, especially when it comes 
+  to predicting details of transients. In section 9.7 we will look at this 
+  evidence, and start to explore alternative models for friction. We will see 
+  some results that suggest that a better friction model gets us at least part 
+  of the way towards agreement with measured bowed string transients. 
+
+
+
+  \sectionreferences{}[1] H. von Helmholtz: On the sensations of tone as a 
+  physiological basis for the theory of music (1862, reprinted by Dover, New 
+  York 1954) 
+
+  [2] R. J. Strutt: The Life of John William Strutt, 3rd Baron Rayleigh, Edward 
+  Arnold (1924) 
+
+  [3] J. W. S. Rayleigh:The Theory of Sound (1877, reprinted by Dover, New York 
+  1945) 
+
+  [4] C. V. Raman: ``On the mechanical theory of the vibrations of bowed 
+  strings and of musical instruments of the violin family, with experimental 
+  verification of the results. Part I.'' Indian Association for the Cultivation 
+  of Science Bulletin \textbf{15}, 1–158 (1918). 
+
+  [5] B. Lawergren: ``On the motion of bowed violin strings.'' Acustica 
+  \textbf{44}, 194–206 (1980). 
+
+  [6] ~ C. Fritz, J. Woodhouse, F. P. H. Cheng, I. Cross, A. F. Blackwell and 
+  B. C. J. Moore: ``Perceptual studies of violin body damping and vibrato''. 
+  Journal of the Acoustical Society of America \textbf{127} 513--524 (2010). 

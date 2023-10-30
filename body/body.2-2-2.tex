@@ -1,0 +1,77 @@
+  The mass-spring oscillator is easy to analyse. If the displacement of the 
+  mass away from equilibrium is denoted $x(t)$, then Newton's law requires 
+
+  $$m \dfrac{d^2x}{dt^2} + kx=0 \tag{1}$$ 
+
+  for free motion of the mass, with no external force applied. If a force 
+  $f(t)$ were to be applied, it would simply replace the zero on the right-hand 
+  side of this equation. The general solution of the equation for free motion 
+  can be written 
+
+  $$x(t)=A \cos(\Omega t) + B \sin(\Omega t) \tag{2}$$ 
+
+  where $A$ and $B$ are arbitrary constants, and 
+
+  $$\Omega^2=\dfrac{k}{m}. \tag{3}$$ 
+
+  $\Omega$ is the oscillation frequency in radians per second: it is related to 
+  the frequency $f$ in Hz by $\Omega = 2 \pi f \tag{4}$. 
+
+  This solution can be written in other forms. The sin and cos terms can be 
+  combined into a single sine wave: 
+
+  $$x(t) = R \cos(\Omega t + \phi) \tag{5}$$ 
+
+  where the amplitude 
+
+  $$R = \sqrt{A^2 + B^2} \tag{6}$$ 
+
+  and the phase shift $\phi$ satisfies 
+
+  $$\tan{\phi} = -B/A. \tag{7}$$ 
+
+  The form (5) makes it particularly clear that the most general free motion of 
+  the oscillator consists of sinusoidal oscillation at (radian) frequency 
+  $\Omega$, with arbitrary amplitude and phase. 
+
+  The solution can also be written compactly in terms of the complex 
+  representation (look back at section 2.1.2 if you are a bit hazy about 
+  complex numbers in this application): 
+
+  $$x(t)= C e^{i \Omega t} \tag{8}$$ 
+
+  where as usual we implicitly assume that the real part of this complex 
+  expression is to be taken. The complex amplitude $C$ is given by 
+
+  $$C=R e^{i \phi}. \tag{9}$$ 
+
+  Another important aspect of the behaviour of the simple oscillator is the 
+  response to a sinusoidal applied force. The easiest way to analyse this case 
+  is to use the complex representation, and assume an input $Fe^{i \omega t}$ 
+  at some chosen frequency $\omega$. From the ``sine wave in, sine wave out'' 
+  property, we know that the response $x(t)$ will also vary sinusoidally at the 
+  same frequency, so write it in the form $X e^{i \omega t}$. Equation (1) then 
+  requires 
+
+  $$m \dfrac{d^2}{dt^2}\left[X e^{i \omega t} \right] + kX e^{i \omega t}=Fe^{i 
+  \omega t} . \tag{10}$$ 
+
+  Thus 
+
+  $$(- \omega^2 m+k)X=F \tag{11}$$ 
+
+  so that the frequency response function of the oscillator, $X/F$, is given by 
+
+  $$\dfrac{X}{F} = \dfrac{1}{k-\omega^2 m}=\dfrac{1/m}{\Omega^2 -- \omega^2} 
+  \tag{12}. $$ 
+
+  For this particular linear system, the frequency response function turns out 
+  not to be complex, but it does vary with frequency $\omega$. For low 
+  frequencies $\omega < \Omega$, the result is positive so that the response is 
+  in phase with the force. For higher frequencies $\omega > \Omega$, the value 
+  is negative so that the response in the opposite phase to the force. When 
+  $\omega$ is close to the natural frequency $\Omega$, the response is very 
+  large: this is the phenomenon of resonance. When the two frequencies are 
+  exactly equal, this model predicts response which is infinite. That is 
+  obviously non-physical: we will find out how to fix this problem shortly (see 
+  sections 2.2.7 and 2.2.8). 

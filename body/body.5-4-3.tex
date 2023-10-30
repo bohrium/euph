@@ -1,0 +1,89 @@
+  To estimate the natural frequencies of a string with non-zero bending 
+  stiffness, we can use Rayleigh's principle. In order to do that we need 
+  expressions for the potential and kinetic energies of the stiff string. 
+  Because kinetic energy is conventionally denoted $T$ in textbooks, for this 
+  particular section we will denote the tension of the string by $P$ to avoid 
+  confusion. 
+
+  The kinetic energy is, as usual, the sum of ``$\frac{1}{2}m v^2$'' for all 
+  small elements of the string, so that 
+
+  $$T=\frac{1}{2}\int_0^L{m \left(\frac{\partial w}{\partial t}\right)^2} dx 
+  \tag{1}$$ 
+
+  for a string with mass per unit length $m$. 
+
+  \fig{figs/fig-5616e0f4.png}{Figure 1. A small element of deflected string 
+  (exaggerated vertical scale).} 
+
+  The potential energy is the sum of two terms, one representing the potential 
+  energy of an ideal flexible string and the other being the term we have 
+  already seen (in section 3.3.1) for a bending beam. To find the expression 
+  for the string component, consider the small element of string sketched in 
+  Fig.\ 1. This element started with length $\delta x$, but it stretches 
+  slightly to a length $\delta l$ after the string has deflected. By 
+  Pythagoras's theorem 
+
+  $$\delta l = \sqrt{\delta x^2 + \delta w^2}=\delta x [1+(\delta w / \delta 
+  x)^2]^{1/2}$$ 
+
+  $$\approx \delta x \left[1+ \frac{1}{2}\left(\dfrac{\partial w}{\partial 
+  x}\right)^2 \right]\tag{2}$$ 
+
+  by the binomial theorem. Work is done during this stretch, against the 
+  existing tension $P$ of the string. So the stored energy in this element is 
+  approximately 
+
+  $$\frac{P}{2}\left(\dfrac{\partial w}{\partial x}\right)^2 \delta x \tag{3}$$ 
+
+  and the total potential energy of the string is obtained by integration along 
+  the length. Adding in the term for the bending beam, the total potential 
+  energy of the stiff string is 
+
+  $$V=\frac{1}{2}\int_0^L{P \left(\frac{\partial w}{\partial x}\right)^2} dx + 
+  \frac{1}{2}\int_0^L{E I \left(\frac{\partial^2 w}{\partial x^2}\right)^2} dx 
+  . \tag{4}$$ 
+
+  For a monofilament string with a circular cross-section of radius $r$ made of 
+  material with Young's modulus $E$, the bending rigidity coefficient has the 
+  value 
+
+  $$EI=\dfrac{E \pi r^4}{4} \tag{5}$$ 
+
+  but for a string with multi-layer wrapped construction the factors $E$ and 
+  $I$ have no useful independent meanings, and the combined coefficient $EI$ is 
+  best regarded as a single constant, to be fitted to measurements of the 
+  behaviour of the string. 
+
+  Now to use Rayleigh's principle to estimate frequencies, we need an 
+  approximate expression for the mode shape; but the mode shapes are not much 
+  affected by stiffness, so we can simply use the ideal shapes $u_n(x)=\sin(n 
+  \pi x/L)$ for this purpose. We can then evaluate the Rayleigh quotient to 
+  obtain 
+
+  $$\omega_n^2 \approx \dfrac{\int_0^L{P \left(\frac{\partial u_n}{\partial 
+  x}\right)^2} dx + \int_0^L{E I \left(\frac{\partial^2 u_n}{\partial 
+  x^2}\right)^2} dx}{\int_0^L{m u_n^2} dx} \tag{6}$$ 
+
+  so that 
+
+  $$\omega_n^2 \approx \dfrac{P}{m} \left(\dfrac{n \pi}{L}\right)^2 + 
+  \dfrac{EI}{m} \left(\dfrac{n \pi}{L}\right)^4 . \tag{7}$$ 
+
+  For any realistic musical string, the effect of stiffness is relatively 
+  small, and in particular the fundamental frequency is always well 
+  approximated by neglecting the effect of stiffness: 
+
+  $$\omega_1^2 \approx \dfrac{P \pi^2}{mL^2} . \tag{8}$$ 
+
+  We can then approximate eq. (7) by 
+
+  $$\omega_n^2 \approx n^2 \omega_1^2 \left[1 + 2 \alpha n^2 \right] \tag{9}$$ 
+
+  so that 
+
+  $$\omega_n \approx n \omega_1 \left[1 + \alpha n^2 \right] \tag{10}$$ 
+
+  where 
+
+  $$\alpha= \dfrac{EI \pi^2}{2P L^2} . \tag{11}$$ 

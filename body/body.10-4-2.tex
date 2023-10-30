@@ -1,0 +1,497 @@
+  \samsection{A: Philosophy} 
+
+  Making decent measurements is a skill of a similar kind to making a decent 
+  instrument. Doing it by recipe is like making a violin from instructions in a 
+  book — it will work, but it probably won’t be great. Some people have more 
+  natural talent than others, but all beginners at instrument making or 
+  acoustical measurement benefit from occasional hands-on guidance from someone 
+  with more experience. In the case of measurements the issue is not so much 
+  “which buttons to press when”, but how to recognise quickly that something 
+  looks wrong, then concentrate on fixing that rather than wasting time 
+  collecting a lot of misleading data. 
+
+  As was emphasised in section 10.4B, you should always ask yourself the key 
+  questions “What do I need to know?” and “How well do I need to know it?” 
+  before starting any test project. Asking these questions can greatly simplify 
+  the selection of a test method. For example, a test which only requires 
+  tracking of resonant frequency changes or relative level changes is much 
+  simpler than one that involves absolute admittance levels, which requires a 
+  fully calibrated force and velocity measurement system. 
+
+  \samsection{B: Digital choices} 
+
+  You will no doubt use some kind of FFT package, which can sample your signals 
+  and turn them into frequency spectra. In any of these packages, there are a 
+  couple of choices you will need to make before you even collect any data: the 
+  sampling rate, and the length of time to sample for. Both have important 
+  consequences. 
+
+  The sampling rate governs the frequency range of your tests: your top 
+  frequency will be half the sampling rate, known as the Nyquist frequency. If 
+  the signal you are measuring contains significant energy at frequencies above 
+  the Nyquist frequency, you may get seriously misleading results because of a 
+  phenomenon called aliasing. Figure 1 shows an example. The black curve shows 
+  a sine wave with a frequency of 4.5~kHz. The red stars show what happens if 
+  you sample this sine wave with a sampling rate of 5~kHz. The Nyquist 
+  frequency is then 2.5~kHz, lower than the frequency of our signal. You can 
+  see that something remarkable has happened: the red stars do indeed dot out a 
+  sine wave, but it is at the wrong frequency, a much lower frequency than it 
+  should be. 
+
+  \fig{figs/fig-3b7db1e7.png}{Figure 1. An illustration of aliasing. A sine 
+  wave at frequency 4.5~kHz is shown in black. The red stars are the result of 
+  sampling this sine wave at a frequency of 5~kHz. They dot out a sine wave 
+  with the much lower frequency 500~Hz, which is 5000-4500~Hz: the sampling 
+  frequency minus the sine wave frequency.} 
+
+  Specifically, the frequency marked by the red stars is 500~Hz, which is the 
+  difference between the sampling rate and the true frequency of the sine wave. 
+  This aliasing effect is not just a mathematical artefact: you can hear it. 
+  Sound 1 is a sine wave which sweeps up in frequency from zero to 7~kHz. Sound 
+  2 is the result of sampling this same sine wave sweep at a sampling rate of 
+  5~kHz. The note rises exactly as before until it reaches the Nyquist 
+  frequency, 2.5~kHz. It then turns round and goes back down again! Eventually 
+  this aliased sound reaches zero frequency (when the true frequency reaches 
+  the sampling rate). It then turns round again and starts rising. The case 
+  plotted in Fig.\ 1 occurs shortly before this second reversal, when the sweep 
+  reaches 5~kHz and you hear a tone at 500~Hz. 
+
+  You absolutely do not want aliasing to be going on in your measurement! 
+  Frequency peaks will appear in entirely the wrong places. So you must choose 
+  a sampling rate high enough that all the frequencies making up your actual 
+  signal lie below the Nyquist frequency. But how do you know, before you have 
+  started making the measurement? There is a simple trick. Make a guess, and do 
+  a measurement at that sampling rate. Save it. Now increase the sampling rate 
+  — for example, you might double it. Repeat the same measurement, and compare 
+  the spectrum with the one you saved. Do they look different? Does the new 
+  spectrum show any significant output in the frequency range which is above 
+  the Nyquist frequency of the first measurement? If either answer is “yes”, 
+  the original sampling rate was too low. Now double the rate again, and 
+  repeat. By exploring in this way, you can quite rapidly find an acceptable 
+  sampling rate. 
+
+  Next, you have to decide how long to collect data for, or equivalently how 
+  many samples to collect. This sampling time governs the frequency resolution 
+  of your results, in a very straightforward way: the step between frequency 
+  points will be the inverse of your sampling time. So if you collect data for 
+  1~s your resolution will be 1~Hz, with 2~s it will be 0.5~Hz, and so on. 
+  Figure 2 shows a typical hammer-tap response of an instrument body (a banjo 
+  in this particular example). You can see that the response has decayed to low 
+  levels by 0.5~s, and if this is the complete data sample, the resolution will 
+  be 2~Hz. 
+
+  \fig{figs/fig-627f0190.png}{Figure 2. The response from an accelerometer 
+  attached to the bridge of a banjo, following a hammer tap.} 
+
+  Now you have to consider a trade-off. Higher resolution seems desirable 
+  because it leads to smoother plots, but it requires you to store a larger 
+  amount of data, and more insidiously there are implications for the amount of 
+  noise included in your signal. Figure 2 shows why. If you collected data for 
+  2~s, in order to increase your frequency resolution to 0.5~Hz, you would be 
+  including an extra 1.5~s in which the real signal was essentially zero. But 
+  the actual measured signal will never be zero, because there will always be 
+  some level of noise — both physical noise being picked up by your sensor, and 
+  electrical noise from your instrumentation. So the price of the increased 
+  resolution will be extra noise. 
+
+  A standard fix for this is called “zero padding”: you set a threshold level 
+  below which you think the signal will be dominated by noise, and whenever the 
+  measured signal falls below that threshold, you replace the measured values 
+  by zero. This trick is particularly important for the force signal from an 
+  impulse hammer. The real force is only non-zero for the short time when the 
+  hammer is in contact with the instrument. Outside that time the force must be 
+  zero, so it makes sense to detect that contact time via a threshold, and then 
+  zero out all the rest of the signal before you do your FFT to deduce the 
+  spectrum of the hammer force. 
+
+  Returning to Fig.\ 2, it is easy to see that there is also a minimum time for 
+  which you should collect the data. For this particular example, suppose you 
+  only collected 0.1~s of the signal. You would miss quite a significant part 
+  of the decay. This lost data will distort the frequency spectrum, as well as 
+  giving you a very low resolution of 10~Hz. You need to collect enough data to 
+  catch “most” of the decay, although the exact meaning of “most” will depend 
+  on the actual noise level in your measurement. But as a rule of thumb, the 
+  amount plotted in Fig.\ 2 feels about right for the minimum sampling time. 
+
+  \samsection{C: What could possibly go wrong?} 
+
+  C.1: Support fixtures 
+
+  There are other things you need to think about when designing your 
+  experiment. You probably need to support the instrument you are testing in 
+  some way. All support fixtures are likely to change the behaviour to a 
+  greater or lesser extent, and you should obviously seek to minimise that 
+  influence. The most realistic, of course, is to do a measurement while a 
+  player holds the instrument in the normal manner. But that is impractical for 
+  some measurements, and in any case it will introduce a source of variability 
+  if you want to compare results for many instruments, collected over a long 
+  period of time. No two players will hold the instrument in exactly the same 
+  way, and even if you use the same player there no guarantee that they will 
+  hold an instrument in precisely the same way several months apart. 
+
+  So usually people design some kind of supporting fixture. You can try to make 
+  something that mimics a player’s hold: perhaps a foam-lined support around 
+  the neck where a hand might hold it, perhaps some kind of soft grip on the 
+  chinrest of a violin… The main thing is to be alert to the issue — ideally 
+  you should try to play the instrument, at least a little, while it is in the 
+  rig and with any attached instrumentation in place. Does it sound normal, or 
+  is it muted or muffled? Is something buzzing or rattling? An example of a 
+  suitable holding arrangement is shown in Fig.\ 3. This treble viol is resting 
+  on soft foam on its end block, and is supported by a foam-lined ``hand'' on 
+  the neck. 
+
+  \fig{figs/fig-c7af4f8c.png}{Figure 3. A treble viol being tested. Note the 
+  holding arrangement and the card for string damping} 
+
+  Another approach that is often used is to suspend the instrument from some 
+  kind of frame using rubber bands. This approach can give good isolation of 
+  the instrument from the holding fixture, but it is not without its own snags. 
+  Rubber bands are basically stretched strings, and they have their own 
+  resonances. Sometimes, those resonance frequencies show up in the measured 
+  frequency response, and that can be puzzling if you don't think of the rubber 
+  bands as a possible cause. 
+
+  Another snag is that the instrument, behaving like a rigid mass, will have 
+  several modes in which it bounces or twists on the rubber bands. These are 
+  normally at very low frequency so they may not matter as resonances, but they 
+  can interfere with the measurement process because they make take a long time 
+  to settle after each hammer tap. Your next tap may miss its mark, because the 
+  instrument is still bouncing around. 
+
+  There is one further issue about support structures if you want to use the 
+  wire-break method of testing. You don't want the instrument to fall over when 
+  you pull the wire to break it! So for that kind of testing you need a rather 
+  firm support --- rubber band suspension probably won't work very well. If an 
+  instrument is being held by a player in the usual way, that generally gives a 
+  sufficiently firm support. But artificial support frames need to be a bit 
+  more robust than the one seen in Fig.\ 3. For example, the lower bouts of 
+  this viol could be held between foam-lined side supports, mirroring the way a 
+  player of this instrument would grip the body with their legs. 
+
+  C.2: String damping 
+
+  If you are testing a stringed instrument, you need to think carefully about 
+  whether you want the strings to be damped or not. It all depends on what you 
+  want to do with your measured frequency response. There is, of course, an 
+  argument in favour of leaving strings undamped, since that is what happens to 
+  the non-played strings of an instrument during normal performance. So if your 
+  aim if to characterise the sound of the instrument, in some sense, perhaps 
+  you want to include the contribution from the ringing strings. 
+
+  However, for other purposes you definitely do not want undamped strings: they 
+  are at best a nuisance and a distraction, and at worst they invalidate what 
+  you are trying to do. Think back to the synthesised guitar and banjo sounds 
+  presented in earlier chapters. Many of those used measured body response, but 
+  the strings were added in the computer program. This allowed variations in 
+  string choice and playing details to be simulated, while keeping the body 
+  response constant. In other cases, variations were made in the body response 
+  while keeping the strings and playing details the same. None of that would 
+  have been possible if the body measurement already included the effects of 
+  coupling to undamped strings. 
+
+  More commonly, you do not want undamped strings in a frequency response 
+  measurement because they interfere with the measurement. The strings ring on 
+  for a lot longer than the body modes, so you need to allow a significantly 
+  longer sampling time in your measurement protocol. This long ringing gives 
+  another effect: the strings produce extra narrow peaks and dips in the 
+  response, determined by the resonances of the strings. Figure 4 shows an 
+  example of the bridge admittance of a violin, with and without string 
+  damping. If you want to identify peaks as body modes, and perhaps to do modal 
+  analysis (which we will come to in section 10.5), these extra peaks are a 
+  distraction: notice how the string modes have had a particularly strong 
+  effect on the low-frequency ``signature modes''. Furthermore, if you want to 
+  compare your measurements with ones done by other people, the comparison is 
+  cleaner and simpler without string effects: the other instruments may have 
+  been fitted with different strings, they may not have been tuned the same, 
+  and so on. 
+
+  \fig{figs/fig-1dad2cd1.png}{Figure 4. Measured bridge admittance of a violin, 
+  with strings damped (blue) and undamped (red)} 
+
+  However, it is important that the strings are in place and under normal 
+  tension during a measurement. The violin gives a particularly clear example 
+  here. The bridge is held in place by the strings, and the static stresses 
+  produced by the string tension also influence other aspects of the behaviour. 
+  The tightness of the soundpost would be different without string tension, for 
+  example. Also, the geometry of the violin means that the longitudinal 
+  stiffness of the strings is a contributing factor to the vibration modes of 
+  the body. We met some consequences of this kind of influence of the strings 
+  when we discussed the banjo in section 5.5 — the banjo shares with the violin 
+  the arrangement of a “floating” bridge and a tailpiece to anchor the strings. 
+
+  If you damp the strings, you need to do it carefully. If you were to do it by 
+  putting foam between the strings and the fingerboard, for example, you would 
+  be adding damping to the body modes as well as damping the strings. A method 
+  that often works very effectively is to weave a piece of paper or light card 
+  (like a business card) over and under the strings. This can be done without 
+  making contact with the fingerboard or body, and it can produce very 
+  effective damping via frictional rubbing of the strings against the card. An 
+  example can be seen in Fig.\ 3. A useful check is to strum the strings with 
+  the card in place — if you can still hear a pitch associated with a string 
+  frequency, the damping is not enough. 
+
+  C.3: Checks 
+
+  There are some things you can do to check that a measured frequency response 
+  looks reliable. The first is something we mentioned back in section 5.1.1. If 
+  you are doing a hammer test and your software package allows it, you should 
+  repeat each test several times, and calculate an average response. This will 
+  reduce the effects of noise, and it also gives you the coherence function, 
+  which is an indication of how well your measurements are behaving. Coherence 
+  close to 1 (or 0~dB if you are looking at plots with a decibel scale) 
+  indicates that your measurement passes at least some of the tests for 
+  reliability. 
+
+  The coherence plot often gives a very direct indication of the bandwidth over 
+  which your frequency response can be trusted. At high frequencies your hammer 
+  taps will not be putting very much energy into the instrument, and this will 
+  lead to an increase in noise and a reduction in coherence. Figure 5 shows an 
+  example. In this case, the coherence suggests that the measured bridge 
+  admittance is reliable up to about 6~kHz. 
+
+  \fig{figs/fig-f0939372.png}{Figure 5. The bridge admittance of a violin 
+  (blue) with the associated coherence function (red)} 
+
+  There are two other checks that can be made if your measurement is of a 
+  structural response, such as admittance. If you are doing a driving-point 
+  measurement (tapping essentially at the same position as the sensor) then the 
+  frequency response function has an important property which can be checked if 
+  your software package allows you to view the phase response, or else the 
+  complex version of the function. Figure 6 illustrates this property for an 
+  example of the driving-point admittance at the bridge of a violin. It shows 
+  two alternative views of the same response: on the left the real and 
+  imaginary parts of the complex admittance are plotted, while on the right the 
+  phase angle is plotted. 
+
+  Notice that the real part of the admittance (blue curve on the left) is 
+  always positive, while the phase angle always stays within the range between 
+  $-90^\circ$ and $+90^\circ$. These both follow from the requirement that if 
+  you apply a force to the violin at the measurement point, energy must always 
+  flow into the violin, never out of it. Any measurement of a driving-point 
+  admittance should show this behaviour, and it is a useful thing to check. One 
+  thing you may find is that the real part of your admittance is always 
+  negative, rather than always positive. This is simply an indication that when 
+  you come to calibrate your measuring system (see subsection E) you will need 
+  a negative calibration factor to correct the error. 
+
+  If your measurement is of accelerance rather than admittance (i.e. you are 
+  measuring acceleration rather than velocity in response to a hammer tap), 
+  there is an equivalent property but the details are slightly different. It is 
+  now the imaginary part, not the real part, which must always be positive. The 
+  equivalent condition on the phase angle is that it must lie in the range 
+  between $0^\circ$ and $180^\circ$. 
+
+  On the other hand, if your tapping position is not the same as your sensor 
+  position then you can do a different check. There is a very general 
+  reciprocal theorem, which tells us that if you swap the positions of tapping 
+  and measurement, the frequency response should be exactly the same. So do the 
+  measurement you planned, then move your sensor to where you were tapping, and 
+  tap with your hammer at the original sensor position. Compare the results of 
+  the two measurements: they should be identical (within the accuracy limits of 
+  the measurement you are doing). 
+
+  \samsection{D: Reproducibility} 
+
+  All measurements have noise and accuracy limits. To avoid over-interpreting 
+  your measurements, and as a way of getting to know your particular 
+  measurement rig and its quirks, it is really important to go through 
+  something like the checklist given below. The important thing is the idea and 
+  the mindset, rather than the exact numbers of how many of each kind of test 
+  you do. But don’t shortcut this learning and checking stage, the time it 
+  takes will be amply repaid in mistakes avoided later. 
+
+  D.1: Repeat tests 
+
+  Set your rig up for the measurement you intend. But don’t just do the test 
+  once, repeat the measurement several times. Display the results on top of 
+  each other — on the screen if your software allows it, but if necessary print 
+  the plots out, stack them and hold them up to a window. Look carefully at the 
+  detailed comparison. How different are they? Close enough for what you wanted 
+  to know, or would you like the reproducibility to be better? Is the 
+  difference more or less uniform? Perhaps it is different in different 
+  frequency ranges, or the peaks are more reproducible than the dips, or there 
+  is some other pattern. Patterns are always trying to tell you something….so 
+  think about it. Can you guess what kind of thing might cause this pattern? Is 
+  it something you could tighten up in your procedure? Try it! 
+
+  You don’t have to go through this rigmarole every time you make a test, but 
+  you should do it occasionally — more often when you are learning, less often 
+  as you gain experience. 
+
+  In this repeat-testing process, think about the limits on the resolution of 
+  the measurement. If the frequency step is 1.5 Hz then looking for changes 
+  smaller than about 6 Hz will be problematic. Set the FFT analyzer so that it 
+  can clearly resolve the differences that are being measured, to the best of 
+  the analyzer’s capabilities. This is no different than selecting a scale for 
+  weighing things: if the scale only reads out in tenths of a gram, weighing 
+  items that are on the order of a half of gram or less will have poor 
+  resolution. 
+
+  D.2: Deliberate variations 
+
+  Now do a deliberate experiment about variability. Keep the same test 
+  instrument (or wood sample, or whatever you are trying to measure), and 
+  repeat the test with “irrelevant” things deliberately varied. The first thing 
+  to do is to simply take the instrument (or whatever) out of the rig, put 
+  everything away, and then take it out again as if it was another day’s 
+  testing, and try to put it all back together exactly as you had it before. 
+  The next thing to do is to move the rig around in the room, or to a different 
+  room. Move the furniture around a bit. Choose days with different temperature 
+  and humidity. Anything else you can think of. For all these tests, ask the 
+  same kind of questions as before. How repeatable are the results? Are there 
+  patterns to the variation? 
+
+  Now you will have gained some experience about how far you can trust your 
+  measurement, and in the course of doing that you will also have got better at 
+  controlling what you are doing. Just keep thinking of the analogy with 
+  instrument making, and remember your first instrument: you were proud of it 
+  at the time, but many established makers would like to get that first 
+  instrument back and destroy it (or at least take their label out). Your first 
+  measurements may be similar. There is no shame in that, everyone is the same. 
+
+  The caution can be extended: when you make your second instrument the “it 
+  really shouldn’t take this long” voice is heard in the back of your mind. As 
+  it in many things in life, and for measurements in particular, ‘haste makes 
+  waste’. 
+
+  A good idea for a final step in checking out your test rig and data analysis 
+  processes before you get down to serious measurement is to try to reproduce 
+  the results of a known test. This is best done as a non-destructive test such 
+  as adding lumps of mass to the instrument. Look around for a simple 
+  experiment someone else has done and see if you can get comparable results. 
+  The violin in your rig is different from the one tested by the previous 
+  author, so what you want to see is a similar trend, and broadly similar 
+  numbers. 
+
+  D.3: Real tests 
+
+  Now get back to what you were trying to do. Probably you wanted to measure 
+  differences between instruments, or changes after some procedure. Are the 
+  differences you measure bigger than the ones you saw in these reproducibility 
+  tests? If they are, you (probably) have meaningful data. If not, you may 
+  still have meaningful data, but it isn’t obvious. Look for the patterns again 
+  — does the deliberate variation produce a different pattern from the ones you 
+  saw before, or does it look suspiciously similar to the effect of the weather 
+  changing or moving the furniture? 
+
+  Hypothesis testing is the best way to explore the data. A hypothesis is based 
+  on your current understanding and expectations. A hypothesis is a guess, 
+  hopefully an educated guess. It maybe the null hypothesis “If I do this 
+  nothing will change” or based on conjecture “If I block one f-hole A0 will 
+  change by a fifth”. The hypothesis may be right or wrong. If the hypothesis 
+  is correct you most likely understand how the system is working (great!). If 
+  the hypothesis turns out to be incorrect, what you learn from the experiment 
+  will help you pose a new hypothesis. After you have checked the hypothesis, 
+  look around — did something else change in a pattern? For example, in most 
+  cases changing something that moves a low frequency mode will also change the 
+  system at high frequencies. 
+
+  \samsection{E. Calibration} 
+
+  You have now learned to make measurements that you understand and trust, at 
+  least to an extent. Now you may want to compare with someone else’s 
+  measurements of what is supposed to be the same thing. Maybe something 
+  published, or maybe you are exchanging results with a friend with a similar 
+  test rig. The first thing you need is some kind of calibration procedure, to 
+  fix the absolute level of your plots so that it makes sense to compare. The 
+  essence of any calibration procedure is to apply your measurement procedure 
+  exactly as you were doing it, with no changes whatever, to measure something 
+  that you already know the answer to. You compare what you get with what you 
+  expect. If all is well, the pattern should look right, but you will need to 
+  apply a scaling factor to your measurements to convert to the right answer. 
+  This is the calibration factor for your rig: write it down and apply exactly 
+  the same factor to all measurements made with the same rig and the same 
+  settings. 
+
+  If you change a setting by twiddling a knob or switching a range switch, you 
+  should repeat the calibration experiment — don’t trust the manufacturer to 
+  have marked the dial accurately enough, check it out yourself. Any 
+  instrumentation rig that has ‘knobs’ which vary the gain continuously (as 
+  opposed to switching between preset ranges) will be a constant source of 
+  problems with maintaining calibration. One approach is to arrange to work 
+  with the knob right at the top of the range, which is something you can 
+  reliably repeat every time. Unfortunately top of the range settings can have 
+  other consequences related to signal limiting or signal distortion. The best 
+  advice to work around the ‘knob’ problem is find a good safe setting, then 
+  tape over the knob securely, do your calibration measurement in that 
+  condition, and never touch the knob again! 
+
+  E.1: Absolute and relative calibration 
+
+  There are two levels of calibration you might do. The “gold standard” is an 
+  absolute calibration, which turns your results into internationally agreed 
+  units: for example admittance (or mobility) in N~s/m (or s/kg, which is the 
+  same thing although it looks different). If you can easily do such a 
+  calibration, as you can for admittance, then it is obviously the best thing. 
+  For many measurements, especially for sound pressure measured by a 
+  microphone, it is not so easy to do an absolute calibration using reasonably 
+  cheap equipment. Then you have to think what you are really trying to do. Do 
+  you want to express your radiated sound power in absolute terms (in 
+  milliwatts, for instance)? Then you need to bite the bullet and find a way to 
+  get an absolute calibration. But perhaps you just want to be able to compare 
+  measured sound levels with someone else’s results from a similar rig, being 
+  sure that differences are correctly captured. Then all you really need is the 
+  relative calibration factor which would convert your friend’s results onto 
+  the same scale as yours. 
+
+  E.2: How do you do it? 
+
+  There is a choice of two approaches: calibrate each part of the system 
+  separately, or do an overall calibration. The second approach is usually much 
+  easier. With enough effort, you can calibrate each separate piece of 
+  equipment — for example accelerometer, hammer, conditioning amplifiers, 
+  computer card, and software FFT algorithm — then combine all these factors to 
+  give the overall factor for your frequency response function measurement. 
+  Some of these factors may be supplied by manufacturers, but the others may 
+  take some effort to determine. The chain is no stronger than its weakest 
+  link, so this approach is quite error-prone if you miss a step out or get one 
+  thing wrong. 
+
+  Usually, it is much simpler to do a single calibration for your entire 
+  frequency response function in one go. For an absolute calibration, you need 
+  to find a system for which the particular property you are measuring is 
+  already known — either because of some fundamental law of nature, or because 
+  someone else has already calibrated it using some standard test. 
+
+  For admittance, you can use Newton’s law of motion “force equals mass times 
+  acceleration”. If you measure a system which is essentially just a mass 
+  moving in a straight line, then the acceleration per unit force is simply the 
+  inverse of the mass, which you can determine with a weighing scale (but 
+  remember that the standard unit of mass is the kilogram, not the gram, so 
+  express the mass in kilograms!). In practice your mass might be suspended on 
+  strings as a pendulum, or supported on soft foam. 
+
+  You have to be careful that your hammer tap really does just make it move in 
+  a more-or-less straight line, without any significant rotation or 
+  cross-direction motion. You must also remember to choose a mass which is 
+  convenient to measure using the same settings of gain etc. that you use for 
+  your actual measurements. But then with care you can obtain an absolute 
+  calibration and compare your results with, for example, the calibrated bridge 
+  admittances of violins and guitars seen in earlier chapters here, or with 
+  published ones by researchers like Erik Jansson or George Bissinger. (To 
+  compare with Jansson measurements you need to read the small print — his 
+  plots are not given in calibrated units, but he gives the required 
+  calibration correction in the text.) 
+
+  For a relative calibration of a hammer-to-microphone measurement, for 
+  example, you need to choose some kind of stable and easily reproducible 
+  system which makes a noise when tapped. By agreeing to tap in a given 
+  position and place your microphone at certain place, you should get the same 
+  answer every time (but check it out by the approach of section 2). Once that 
+  is verified, then the same structure or a careful copy of it can be tested by 
+  your friend. You should obtain matching frequency response plots, except for 
+  a scale factor (i.e. a shift on a dB scale). That scale factor is what you 
+  need to convert your measurements ready to be compared. 
+
+  Pay careful attention in two-channel measurements where one spectrum is being 
+  divided by another — it is easy to get the input and output cables swapped. 
+  Mobility (velocity over force, admittance) is quite different from impedance 
+  (force over velocity). Whereas mobility peaks at resonances, impedance peaks 
+  at anti-resonances. If the signature modes have suddenly jumped when you do a 
+  measurement on your standard test article, check the channel assignments: 
+  another reason to add that standard test article to your test rig kit bag. 
+
+  A final note: with all these calibration factors, of any kind, it is fatally 
+  easy to multiply by the factor when you meant to divide, or vice versa. You 
+  need to be awake when you think about how to do this! It always sounds 
+  obvious when someone explains, but this is a very common mistake. 

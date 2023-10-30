@@ -1,0 +1,175 @@
+  In section 12.1, we highlighted four aspects of impacts which should be 
+  included in a comprehensive simulation model. Some details of how to 
+  implement these will be described here. The first was to allow for the 
+  possibility of some loss of energy during the bounce. As is familiar from 
+  many problems involving energy dissipation, we do not have a universal 
+  physical model for the mechanism(s) of dissipation, but we can represent the 
+  main effect via a simple trick suggested by Stronge [1]. 
+
+  We have already introduced the idea of a contact spring to represent the 
+  local forces in the immediate vicinity of the contact region between two 
+  bodies. During a bounce, that contact spring will first be squashed during a 
+  compression phase, and then it will give its stored energy back during a 
+  rebound phase as the bodies start to separate. If we want to recognise the 
+  fact that a relatively small proportion of that stored energy is not given 
+  back because it has been dissipated in some way, we can represent that 
+  directly. 
+
+  If the contact spring is assumed to be linear, then the force would be given 
+  by a spring constant $k_c$ multiplied by the distance by which the spring has 
+  been compressed as the impacting bodies come together. In a simulation model, 
+  we can detect the moment at which the spring force starts to decrease because 
+  we are entering the rebound phase, and from that moment on we can replace 
+  $k_c$ by a value $Rk_c$ where $R$ is a factor less than 1. This means that a 
+  fraction $R$ of the stored energy from the compression phase is discarded, 
+  exactly the effect we are trying to achieve. The factor $R$ is the 
+  energy-based coefficient of restitution, introduced by Stronge [1] in order 
+  to resolve some paradoxical behaviour arising from earlier definitions of 
+  coefficient of restitution based on ratios of velocities before and after 
+  impact. 
+
+  The second model ingredient we need to mention also concerns the details of 
+  the contact spring. A linear spring may not be a very accurate model: an 
+  alternative is something called a Hertzian spring. If you think of pressing a 
+  spherical rubber ball against a rigid surface like a table, it is obvious 
+  that there will a circular ``footprint'' of contact as a patch of the ball is 
+  squashed flat. If you press a little harder, that footprint will grow. Press 
+  a little harder still, and because of the bigger footprint the ball will 
+  deform rather less than the first time you increased the force. In other 
+  words, the contact has the character of a ``hardening spring'' (see Fig.\ 2 
+  of section 8.2, for example). 
+
+  Specifically, mathematical analysis of this problem (see for example sections 
+  4.1 and 4.2 of Johnson [2]) suggests that the force $F$ in the spring should 
+  vary according to 
+
+  $$F=k_H \delta^{3/2} \tag{1}$$ 
+
+  where $\delta$ is the displacement of the rubber ball, and $k_H$ is a 
+  constant which plays a similar role to the linear spring constant $k_c$ 
+  mentioned earlier (but note that because of the power-law form of equation 
+  (1), the two constants do not have the same dimensions). If we want to 
+  introduce energy dissipation into a Hertzian spring, we can use Stronge's 
+  trick again: reduce the value of $k_H$ during the rebound phase of an impact. 
+
+  The third and fourth model ingredients are related, and we can deal with them 
+  together. We imagine an impact between two bodies occurring more or less at a 
+  single point, and we need to allow for the fact that both bodies (the 
+  ``instrument'' and the ``striker'') will be set into vibration by the contact 
+  force. Figure 1 shows a sketch of the situation during contact of the two 
+  bodies. The spring exerts the same force $F(t)$ outwards on both bodies. The 
+  ``striker'' responds to this force with a vibration displacement $z_1(t)$, 
+  and the ``instrument'' responds with a corresponding displacement $z_2(t)$. 
+
+  The spring compression is 
+
+  $$\delta=-(z_1+z_2), \tag{2}$$ 
+
+  where the two displacements are measured from the point where contact is 
+  first made, so the bodies are only in contact if $\delta > 0$: otherwise, the 
+  bodies are out of contact and $F=0$. When they are in contact, the spring 
+  force is either 
+
+  $$F=k_c\delta \tag{3}$$ 
+
+  if the spring is linear, or 
+
+  $$F=k_H\delta^{3/2} \tag{4}$$ 
+
+  if it is a Hertzian spring. 
+
+  The displacements $z_1$ and $z_2$ can be calculated from the linear vibration 
+  properties of the two bodies. As we have done in earlier chapters when 
+  modelling bowed strings and wind instruments, we can express each of these 
+  calculations as a convolution with the appropriate impulse response, then 
+  compute it efficiently using a set of IIR filters deduced from the modal 
+  properties of the system. 
+
+  If the striker has modes with natural frequencies $\omega_n^s$, Q-factors 
+  $Q_n^s$ and effective modal masses at the contact point $M_n^s$, its impulse 
+  response is 
+
+  $$g_s(t)=\sum_n{\dfrac{1}{M_n^s \omega_n^s} \sin \omega_n^s t~e^{-\omega_n^s 
+  t/2 Q_n^s}}. \tag{5}$$ 
+
+  This can be expressed as the imaginary part of a sum of complex exponentials, 
+  and the convolution (written as a sum over discrete time steps for simulation 
+  purposes) can then be expressed as a set of recursive digital filters as 
+  described in detail in section 9.5.2. An identical procedure can be followed 
+  for the instrument, with natural frequencies $\omega_n^i$, Q-factors $Q_n^i$, 
+  effective modal masses at the contact point $M_n^i$, and an impulse response 
+  $g_i(t)$. 
+
+  This description is quite general. For the immediate purposes of section 12.1 
+  we apply it to a specific model system: the ``instrument'' is a rectangular 
+  thin plate, pinned round its boundary, and the ``striker'' is a pinned-free 
+  bending beam which hits the plate (through a contact spring) at its free end. 
+
+  We suppose that the plate has total mass $M_p$ and dimensions $a \times b$, 
+  occupying the region $0 \le x \le a$ and $0 \le y \le b$. The mode shapes are 
+  then 
+
+  $$u_{nm}=A_{nm} \sin \dfrac{n \pi x}{a} \sin \dfrac{n \pi y}{b} \tag{6}$$ 
+
+  where the normalisation constant $A_{nm}$ is determined by requiring 
+
+  $$\int_0^a{\int_0^b{ u^2_{nm} \dfrac{M_p}{ab}~dx~dy}}=1 . \tag{7}$$ 
+
+  Substituting and evaluating the integrals gives 
+
+  $$A^2_{nm}=\dfrac{4}{M_p} \tag{8}$$ 
+
+  so that the effective modal mass at a striking position $(x_0,y_0)$ is 
+
+  $$M_{nm}=\dfrac{1}{u^2_{nm}(x_0,y_0)}=\dfrac{M_p}{4 \sin^2 \frac{n \pi 
+  x_0}{a} \sin^2 \frac{m \pi y_0}{b}} . \tag{9}$$ 
+
+  The corresponding natural frequencies were given in equation (6) of section 
+  3.2.3: they satisfy 
+
+  $$\omega_{nm} = \lambda \left[\frac{n^2 \pi^2}{a^2}+\frac{m^2 \pi^2}{b^2} 
+  \right] \tag{10}$$ 
+
+  where $\lambda$ is a constant depending on the stiffness, mass and thickness 
+  of the plate. It can be conveniently fixed by specifying the frequency of the 
+  fundamental mode, with $n=m=1$. For the specific results to be shown, the 
+  plate had aspect ratio $a/b = 1.55$ and the lowest frequency was fixed at 
+  100~Hz. The striking point was at $(0.3a,0.3b)$. The total mass $M_p$ was 
+  chosen differently for different cases. All modes are assigned a Q-factor 
+  200, to give a vaguely metallic sound quality. 
+
+  The beam problem for the model striker can be solved in a similar way to the 
+  free-free beam analysed in section 3.2.1. For these pinned-free boundary 
+  conditions, the condition corresponding to equation (17) of that section is 
+
+  $$\tan kL = \tanh kL . \tag{11}$$ 
+
+  This equation was solved numerically, and the corresponding natural 
+  frequencies calculated from the allowed values of $kL$. All modes were 
+  assigned a Q-factor 30, roughly the expected kind of value for a wooden 
+  stick. 
+
+  The mode shapes were found by substitution into equation (13) of that 
+  section, with relations between the constants $K_1$--$K_4$ determined by the 
+  particular boundary conditions of this problem. The mass normalisation was 
+  then carried out numerically, to yield values for the effective modal masses 
+  at the striking point, the free end of the beam. 
+
+  But there is an important exception to that description. A pinned-free beam 
+  has a single rigid-body mode, in which it rotates freely about the pinned end 
+  with shape 
+
+  $$u_0(x)=A x . \tag{12}$$ 
+
+  The mass normalisation can be carried out trivially here, with the result 
+  that the effective modal mass at the free end is $M_0=M_b/3$ where $M_b$ is 
+  the total mass of the beam. For the purposes of simulation, this rigid-body 
+  mode was given a very low but non-zero frequency so that the IIR filter trick 
+  could still be used. This mode is used, of course, to simulate the action of 
+  the drummer wielding this ``drumstick''. Unlike all the other modal filters, 
+  this one was initialised with non-zero motion in order to produce the strike. 
+
+  \sectionreferences{}[1] W. J. Stronge: Impact mechanics, Cambridge University 
+  Press (2000) 
+
+  [2] K. L. Johnson: Contact mechanics, Cambridge University Press (1985) 

@@ -1,0 +1,381 @@
+  This section will make extensive use of vector calculus concepts and 
+  notation: if you are a bit rusty on that, check \tt{}section 4.1.4\rm{} first. 
+
+  The governing equations for fluid flow involve two rather different 
+  ingredients. First, we will use universal laws of physics: Newton's law and 
+  the conservation of mass. The second ingredient is more empirical, and the 
+  details could vary depend on which fluid we are interested in, and what kind 
+  of flow regime we wish to study. This ingredient is a constitutive law, 
+  relating the internal forces (described via a stress tensor) to the fluid 
+  motion (described by a rate of strain tensor, provided our fluid can be 
+  approximated by a classical ``Newtonian fluid'' with no ``memory''). If our 
+  fluid is compressible, we also need a thermodynamic relation of some kind to 
+  relate density to pressure. 
+
+  Suppose that our fluid has velocity $\underline{u}(\underline{r},t)$, density 
+  $\rho(\underline{r},t)$ and pressure $p(\underline{r},t)$. First, we will 
+  look at the requirement for conservation of mass. Consider the small 
+  brick-shaped element of volume sketched in Fig.\ 1, with one corner at 
+  position $\underline{r}=(x,y,z)$ and sides of length $\delta x$, $\delta y$ 
+  and $\delta z$ aligned with the $x,y,z$ axes of a Cartesian coordinate 
+  system. This element has volume $\delta V= \delta x \delta y \delta z$. 
+
+  The rate of change of mass inside the volume is approximately 
+
+  $$\dfrac{\partial \rho}{\partial t} \delta V \tag{1}$$ 
+
+  where the derivative of density is evaluated at the centre of the element. 
+  Now we need to look at the rate at which mass is flowing into or out of the 
+  volume, through the various faces. For the two vertical faces perpendicular 
+  to the $x$ axis, the net mass flow into the volume is 
+
+  $$\left[\rho(x,y,z,t) u_1(x,y,z,t) -- \rho (x + \delta x,y,z,t) u_1(x + 
+  \delta x,y,z,t) \right] \delta y \delta z $$ 
+
+  $$\approx -\delta V \dfrac{\partial (\rho u_1)}{\partial x} \tag{2}$$ 
+
+  where $(u_1,u_2,u_3)$ are the components of $\underline{u}$ so that $u_1$ is 
+  the velocity perpendicular to the faces we are thinking about. The other two 
+  pairs of faces contribute similar terms, so the net mass flow into the volume 
+  is 
+
+  $$-\delta V \dfrac{\partial (\rho u_1)}{\partial x} -\delta V \dfrac{\partial 
+  (\rho u_2)}{\partial y} -\delta V \dfrac{\partial (\rho u_3)}{\partial z} = 
+  -\delta V \nabla \cdot (\rho \underline{u}) . \tag{3}$$ 
+
+  Equating this to the rate of increase of mass inside the volume from (1), we 
+  obtain the equation 
+
+  $$\dfrac{\partial \rho}{\partial t} = -- \nabla \cdot (\rho \underline{u}) . 
+  \tag{4}$$ 
+
+  Now we can use a standard vector identity 
+
+  $$\nabla (\rho \underline{u}) = \underline{u} \cdot \nabla \rho + \rho \nabla 
+  \cdot \underline{u}\tag{5}$$ 
+
+  to rewrite equation (4) in the form 
+
+  $$\dfrac{\partial \rho}{\partial t} + \underline{u} \cdot \nabla \rho = -- 
+  \rho \nabla \cdot \underline{u}\tag{6}$$ 
+
+  or 
+
+  $$\dfrac{D \rho}{D t} = -- \rho \nabla \cdot \underline{u}\tag{7}$$ 
+
+  where $\frac{D\rho}{Dt} = \frac{\partial \rho}{\partial t} + \underline{u} 
+  \cdot \nabla \rho$ is the rate of change of density following the flow, in 
+  other words the rate of change of density of a fluid particle. 
+
+  Equation (7) immediately tells us that an incompressible flow, for which 
+  $\frac{D\rho}{Dt} =0$, must satisfy 
+
+  $$\nabla \cdot \underline{u} = 0 \mathrm{~~~~(incompressible~flow)} . 
+  \tag{8}$$ 
+
+  Equation (7) also gives us an example of a physical interpretation of the 
+  divergence: $\nabla \cdot \underline{u}$ must be the rate of increase of 
+  volume of a fluid element. 
+
+  Fluid flow can also give us a physical example of the curl of a vector field. 
+  To see this, we will look at the local flow field in the immediate 
+  neighbourhood of a chosen point, which we can define to be $\underline{r}=0$. 
+  The first two terms of a Taylor expansion of the velocity field then give 
+
+  $$u_i \approx u_i^{(0)} + \sum_j{c_{ij} r_j} \mathrm{~~~for~~}i=1,2,3 
+  \tag{9}$$ 
+
+  where it is convenient to work in terms of components of the vectors for this 
+  particular analysis, so $\underline{u} = (u_1,u_2,u_3)$ and 
+  $\underline{r}=(r_1,r_2,r_3)$ (which are just another name for $x,y,z$). In 
+  equation (9), $u_i^{(0)}$ are the components of the velocity at the reference 
+  position $\underline{r}=0$, and the $3 \times 3$ matrix (or more technically 
+  the second-rank tensor) 
+
+  $$c_{ij} = \dfrac{\partial u_i}{\partial r_j} \mathrm{~~~for~~}i,j=1,2,3 . 
+  \tag{10}$$ 
+
+  Now we separate $c_{ij}$ into the sum of its symmetric part and its 
+  antisymmetric part: 
+
+  $$c_{ij} = \frac{1}{2}\left[c_{ij} + c_{ji} \right]+\frac{1}{2}\left[c_{ij} 
+  -- c_{ji} \right] = e_{ij} + \omega_{ij} . \tag{11}$$ 
+
+  The antisymmetric term has a simple interpretation. By writing everything out 
+  in full and then comparing, it can be easily verified that 
+
+  $$\sum_j{\omega_{ij} r_j}=\frac{1}{2}[\underline{\omega} \times 
+  \underline{r}]_i \mathrm{~~~for~~}i=1,2,3 \tag{12}$$ 
+
+  where the vector 
+
+  $$\underline{\omega} = \nabla \times \underline{u} .\tag{13}$$ 
+
+  This vector is called the vorticity. Equation (12) describes rigid rotation, 
+  at angular velocity $\underline{\omega}/2$. 
+
+  The effect of the symmetric term $e_{ij}$ (known technically as the rate of 
+  strain tensor) can also be described quite easily. This is a symmetric $3 
+  \times 3$ matrix, so by a standard result from linear algebra it has three 
+  mutually perpendicular eigenvectors, and if we rotate our coordinate axes to 
+  those three directions, the matrix is diagonalised. This means that the 
+  associated term in equation (9) describes a flow which would turn a sphere 
+  into an ellipsoid, with axes aligned with those three eigenvectors. 
+
+  We can summarise all this with a geometric description. If you were to inject 
+  a blob of dye to make a small sphere around the chosen reference point, the 
+  subsequent flow can be described as the sum of three components. The blob 
+  will rotate with an angular velocity $(1/2)\nabla \times \underline{u}$, its 
+  volume will grow at rate $\nabla \cdot \underline{u}$, and the remaining part 
+  of the flow will cause the sphere to distort into an ellipsoid. 
+
+  We are nearly ready to apply Newton's law to our flowing fluid, and deduce 
+  the governing equation. But first we need to relate the rate of strain tensor 
+  $e_{ij}$ to the internal forces, which are described by another $3 \times 3$ 
+  matrix, the stress tensor $\sigma_{ij}$. The definition of this stress tensor 
+  is based on a hypothetical measurement. Suppose we imagine a small element of 
+  area somewhere within the flow, described by a vector area $\underline{dA}$. 
+  If we could somehow embed a force-measuring sensor in this little piece of 
+  area, it would find that there was a force acting across the two faces. That 
+  force could in principle be in any direction: for example the effect of 
+  pressure in the fluid would give a force normal to the surface, parallel to 
+  the vector $\underline{dA}$, whereas a shearing flow in the presence of 
+  viscosity would give a shear force, acting parallel to the surface and thus 
+  perpendicular to $\underline{dA}$. If this force has components 
+  $(p_1,p_2,p_3)$ per unit area, the stress tensor is defined so that 
+
+  $$p_i=\sum_j{\sigma_{ij} dA_j}\mathrm{~~~for~~}i=1,2,3 . \tag{14}$$ 
+
+  If the fluid is at rest, the only internal force acting is pressure. At any 
+  given point, the pressure always acts normal to any surface element 
+  $\underline{dA}$, and the value of that force is the same, whatever the 
+  orientation of the surface. This means that the stress tensor takes a very 
+  simple form: 
+
+  $$e_{ij}=-p \delta_{ij} \tag{15}$$ 
+
+  where $\delta_{ij}$ is the mathematician's standard name for the identity 
+  matrix: 
+
+  $$\delta_{ij} = \left\lbrace \begin{matrix} {1 \mathrm{~~if~~} i=j}\\{0 
+  \mathrm{~~if~~} i\ne j}\end{matrix} \right. \tag{16}$$ 
+
+  When the fluid is flowing, we can generalise this result and define the 
+  pressure by 
+
+  $$p=-\dfrac{1}{3} \sum_{i=1}^3{e_{ii}} \tag{17}$$ 
+
+  Now we can think about Newton's law. The acceleration of a fluid particle is 
+  given by $\frac{D\underline{u}}{Dt}$: obviously we need the rate of change of 
+  velocity following the particle. To combine this with what we know about the 
+  internal forces, it is clearest to apply Newton's law to a region of the flow 
+  field, rather than to a small element. So suppose we have a volume $V$ within 
+  the flow, with a closed surface $S$ forming its outside ``skin''. The result, 
+  for the $i\mathrm{th}$ component, is 
+
+  $$\int{\int{\int_V{\rho \dfrac{Du_i}{Dt} dV}}}=\int{\int{\int_V{\rho f_i 
+  dV}}}+\int{\int_S{\sum_j{\sigma_{ij} dA_j }}} \tag{18}$$ 
+
+  where $f_i$ is the $i\mathrm{th}$ component of any external force (such as 
+  gravity) that may be acting throughout the body of our fluid. It is expressed 
+  here as a force per unit mass, so that if it is in fact the gravitational 
+  force we would have $\underline{f}=\underline{g}$ in terms of the usual 
+  gravitational acceleration $\underline{g}$. Now we can apply a version of the 
+  divergence theorem to the final term, to convert it from a surface integral 
+  to a volume integral: 
+
+  $$\int{\int{\int_V{\rho \dfrac{Du_i}{Dt} dV}}}=\int{\int{\int_V{\rho f_i 
+  dV}}}+\int{\int{\int_V{\sum_j{\dfrac{\partial \sigma_{ij}}{\partial r_j} dV 
+  }}}} . \tag{19}$$ 
+
+  Now we have a sum of three volume integrals equal to zero, but the volume 
+  over which we have integrated is entirely arbitrary. The only way this result 
+  could be true for every choice of volume $V$ would be if 
+
+  $$\rho \dfrac{Du_i}{Dt}=\rho f_i+\sum_j{\dfrac{\partial \sigma_{ij}}{\partial 
+  r_j}}\mathrm{~~~for~~}i=1,2,3 \tag{20}$$ 
+
+  everywhere. This is the governing equation we want, but it still remains to 
+  express $\sigma_{ij}$ in terms of $e_{ij}$, which is turn depends on 
+  $\underline{u}$. 
+
+  From here on I will only present the simplest case, when the flow is 
+  incompressible so that equation (8) is satisfied. We want a relation between 
+  $e_{ij}$ and $\sigma_{ij}$. If we make the assumptions (i) that this relation 
+  is linear; and (ii) that the physical properties of the fluid are isotropic 
+  (in other words without any preferred directions), then a standard result 
+  from tensor algebra tells us what the form of the relationship must be: 
+
+  $$\sigma_{ij} = -p \delta_{ij} + 2 \mu e_{ij} \tag{21}$$ 
+
+  where $\mu$ is a constant, the viscosity. Substituting and tidying up leads 
+  to the equation 
+
+  $$\rho \dfrac{D \underline{u}}{Dt}= -\nabla p \mathrm{~} -- \rho 
+  \underline{f}+\mu \nabla^2 \underline{u}. \tag{22}$$ 
+
+  This is the Navier-Stokes equation for the case of incompressible flow. 
+  Notice that the only nonlinearity here is the term $\underline{u} \cdot 
+  \nabla \underline{u}$ hidden within the $D/Dt$ term. 
+
+  The next interesting thing we can deduce is called Bernoulli's principle. 
+  Again, I will just present the very simplest version of this, which is enough 
+  to give the flavour. Suppose we have a flow which is steady, incompressible 
+  and inviscid ($\mu=0$), with density the same everywhere. Our Navier-Stokes 
+  equation then reads 
+
+  $$\rho \underline{u} \cdot \nabla \underline{u}= -\nabla p \mathrm{~} -- \rho 
+  \underline{f} . \tag{23}$$ 
+
+  If the body force is gravitational, then it can be written as the gradient of 
+  the gravitational potential $gz$ where $g$ is the usual gravitational 
+  acceleration and $z$ is the vertical coordinate, measured upwards. Now note 
+  that 
+
+  $$\underline{u} \cdot \nabla \underline{u} = \frac{1}{2} \nabla 
+  (\underline{u} \cdot \underline{u}) . \tag{24}$$ 
+
+  Every term in the equation is now a gradient, and it can be rearranged into 
+
+  $$\nabla \left(\dfrac{q^2}{2}+\dfrac{p}{\rho}+gz\right) = 0 \tag{25}$$ 
+
+  where $q^2=\underline{u} \cdot \underline{u}$ is the square of the flow 
+  speed. It follows that 
+
+  $$\dfrac{q^2}{2}+\dfrac{p}{\rho}+gz\ = \mathrm{~constant.} \tag{26}$$ 
+
+  We can see explanations of more than one phenomenon in this simple equation. 
+  First, it tells us about the increase in static pressure with depth, for 
+  example under water. If the water is not flowing, so $q=0$, it tells that 
+  $p=K \rho-\rho g z$. Recalling that we have defined $z$ to be positive 
+  upwards, if a diver goes down into the sea they will encounter pressure 
+  rising with depth, just as we expect. This is called the hydrostatic 
+  pressure, equal to $\rho g |z|$. More directly relevant to our interest in 
+  wind instruments, if the gravity term is insignificant the equation tells us 
+  that as flow speed $q$ increases, so the pressure must drop by an amount 
+  proportional to $q^2$. This will be significant when we look at the 
+  excitation of reed and brass instruments. 
+
+  For completeness, it is useful to summarise (without derivations) some 
+  extensions of Bernoulli's principle with less restrictive assumptions. If the 
+  fluid is not incompressible, the next simplest assumption is that it is 
+  barotropic: this means that the density is an instantaneous function of the 
+  pressure, $\rho(p)$. In that case, we define the enthalpy 
+
+  $$I(p)=\int{\dfrac{dp'}{\rho(p')}} \tag{27}$$ 
+
+  and then Bernoulli's principle for steady irrotational flow (i.e. $\nabla 
+  \times \underline{u}=0$) says that 
+
+  $$\dfrac{q^2}{2}+I(p)+gz = \mathrm{~constant.} \tag{28}$$ 
+
+  Next, if we have steady flow with vorticity, we define the quantity 
+
+  $$H=\dfrac{q^2}{2}+I(p)+gz , \tag{29}$$ 
+
+  and then Bernoulli's principle states that $\nabla H$ is perpendicular to 
+  both $\underline{u}$ and $\underline{\omega} = \nabla \times \underline{u}$, 
+  in other words $H$ is constant along both streamlines and vortex lines. 
+
+  Finally, we can say a little about vorticity and how it evolves. If we take 
+  the curl of equation (22) and then make use of some vector identities, we can 
+  manipulate it into the form 
+
+  $$\dfrac{D \underline{\omega}}{Dt}=\underline{\omega} \cdot 
+  \nabla\underline{u} + \nu \nabla^2 \underline{\omega} \tag{30}$$ 
+
+  where $\nu=\mu/\rho$ is called the ``kinematic viscosity''. This equation 
+  tells us about two rather different aspects of vorticity dynamics. First, in 
+  the inviscid case ($\nu=0$), it reveals a powerful and unexpected result. If 
+  we think about a small ``thread'' of material, on a line element 
+  $\underline{\delta l}$, the analysis leading to equation (9) tells us that 
+  this material element evolves according to 
+
+  $$\dfrac{D \underline{\delta l}}{Dt}=\underline{\delta l} \cdot 
+  \nabla\underline{u} . \tag{31}$$ 
+
+  This is exactly the same equation that governs the evolution of vorticity 
+  $\underline{\omega}$ in an inviscid flow field. So if we choose a material 
+  line element that lies along a vortex line, we see that the vorticity must 
+  evolve with the flow. As it is often stated, ``vortex lines are frozen in the 
+  fluid''. So, for example, if the material line gets stretched by the flow, 
+  the vorticity will also increase in the same proportion. This is part of the 
+  mechanism by which tropical storms and tornadoes can ``spin up'': the rising 
+  of hot air stretches the vortex lines, creating faster rotation. 
+
+  This result tells us something important. For any flow started from rest, 
+  there must initially be no vorticity anywhere. If the fluid is inviscid, it 
+  appears that this must remain true in the subsequent flow. Indeed, there is a 
+  result called the Kelvin circulation theorem for an inviscid fluid. If you 
+  consider a closed material curve $C$, the integral of the velocity round $C$, 
+  called the circulation $K$, is constant in time: 
+
+  $$K=\oint_C{\underline{u} \cdot \underline{dl}} . \tag{32}$$ 
+
+  So how does circulation or vorticity ever arise in a flow? We can see one 
+  route for this to happen if we restore the viscosity term of equation (30), 
+  and note that the equation then has the character of a diffusion equation. If 
+  the first term on the right-hand side were omitted, it would have exactly the 
+  same form as the equation governing heat diffusion in a solid body, for 
+  example. 
+
+  So viscosity causes vorticity to diffuse through the fluid. An important 
+  example of this is illustrated in Fig.\ 2. As explained in section 11.2, when 
+  fluid flows over a fixed surface the no-slip boundary condition on the 
+  surface leads to the formation of a boundary layer, with a flow profile 
+  similar to the one shown in the figure. The figure shows a small material 
+  element in the boundary layer. It is subjected to shearing flow, which 
+  automatically means that the element has some net rotation --- in other 
+  words, it has non-zero vorticity. So boundary layers on solid surfaces 
+  generate vorticity, and equation (30) indicates that vorticity may then 
+  diffuse out into the flow pattern. 
+
+  There is another, more vigorous, way that non-zero circulation can appear in 
+  a flow. It still involves boundary layers, but rather than diffusion, the 
+  process involves vortex shedding. It will be relevant to several aspects of 
+  wind instruments, but I will introduce the idea via a different application: 
+  how do aeroplanes fly? I will illustrate, with a series of hand-drawn 
+  sketches of streamline patterns (which should not be regarded as more than 
+  qualitative). 
+
+  Figure 3 shows a schematic airfoil cross-section. When the aircraft first 
+  starts to taxi down the runway, the flow pattern in the initial moments may 
+  look a little like this sketch. There are two stagnation points, marked by 
+  red rings: the streamlines joined to these points are the ones that separate 
+  flow that passes above the wing from flow that passes below it. 
+
+  But there is a big problem with this flow. The trailing edge of the wing has 
+  a sharp edge, marked by the green ring. The flow speed close to this sharp 
+  corner will get very high. Bernoulli then tells us that the pressure must get 
+  very low. If this was a propellor blade and the fluid was water, this would 
+  be the mechanism of cavitation: when the pressure drops low enough to cancel 
+  the hydrostatic pressure, bubbles can be seen streaming from the propellor 
+  blades. 
+
+  But for the aircraft wing, something different happens, which is indicated 
+  very schematically in Fig.\ 4. The boundary layer separates from the surface 
+  and forms a separation bubble. This bubble then separates entirely from the 
+  wing, and becomes an independent vortex with a circulation direction that is 
+  anticlockwise in the diagram. In order to preserve the total circulation, and 
+  thus satisfy Kelvin's theorem, there is equal and opposite net circulation 
+  around the wing. 
+
+  The result is as shown (schematically again) in Fig.\ 5. The vortex which was 
+  shed is ``left behind on the airfield''. The wing then has just the right 
+  amount of clockwise circulation (indicated by the red arrow) that the rear 
+  stagnation point is shifted exactly to the sharp trailing edge, as sketched. 
+  This eliminates the need for very fast local flow, because (as the name 
+  suggests) the flow speed goes to zero at a stagnation point. The effect of 
+  the clockwise circulation round the wing is that the air flowing over the top 
+  surface is speeded up, while the air flowing over the bottom surface is 
+  slowed down. Bernoulli then tells us that the pressure is lower on the top 
+  surface than on the bottom surface, and it is this difference of pressures 
+  that lifts the aircraft off the ground. 
+
+  Any flow interacting with a sharp corner is likely to lead to vortex 
+  shedding, and this is relevant to many problems, including some involving 
+  musical instruments. Examples might be air flow in and out of tone-holes, or 
+  flow in and out of the f-holes of a violin near the Helmholtz resonance 
+  frequency. More immediately important for this chapter, the excitation 
+  mechanism of flute-like instruments involves these ingredients, as we will 
+  see in section 11.6. 

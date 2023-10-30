@@ -1,0 +1,460 @@
+
+
+  Musical strings come in a great variety. Some are simple single-strand 
+  monofilaments: made of steel for the piano or steel-string guitar, or of 
+  various polymers for classical guitars, harps and so on. Others have a more 
+  complicated construction, with a core of some kind over-wound with one or 
+  more layers of wire or tape, as in the lower strings of a piano or guitar, or 
+  any of the strings of a cello. Figure 1 shows some examples. The piano has 
+  plain steel strings for the higher notes, three strings per note. Lower down, 
+  the strings switch to having a steel core, over-wrapped with copper wire. The 
+  lowest notes have just one string per note, slightly higher notes have two 
+  strings per note. The classical guitar, on the other hand, has one string per 
+  note throughout. The top three strings are plain nylon (which you can see is 
+  transparent), while the three bass strings have a core of stranded nylon (not 
+  visible in the picture), over-wrapped with copper wire which has been plated 
+  to appear silver. Other instruments might have strings using natural gut, 
+  either plain (as in many harps), or over-wrapped (as in some traditional 
+  violin strings). Why is there so much variety, and how does a player or 
+  instrument maker set about choosing the “right” strings for an instrument? 
+
+  Back in Chapter 5, we already met some of the key ideas. Now we will approach 
+  the question more systematically, and support the discussion with sound 
+  examples so that the perceptual effect of some of the key factors can be 
+  experienced. The first stage is to put ourselves into the player’s position, 
+  and try to understand what they want to achieve or to avoid when they choose 
+  a string. As often with these musical questions, the answer is surprisingly 
+  complicated. There are some aspects that are common to all stringed 
+  instruments, plus some extras that are specific to instruments of particular 
+  types. 
+
+  The starting point is to be clear about what we already know, before we begin 
+  the selection process. We have the instrument in front of us, so we know the 
+  length of the string (by which we mean the vibrating length, between the 
+  bridge and the nut). We also know what note the string is to be tuned to. 
+
+  One thing we have already seen is that the impedance of a string is 
+  important, because it determines how strongly the string vibration couples to 
+  the instrument body. This in turn governs the loudness of the note when that 
+  string is played. To remind you of two key facts, the impedance is governed 
+  by the product of the tension and the mass per unit length of the string. 
+  But, for a string of a given length, the fundamental frequency is governed by 
+  the ratio of those two quantities. So that ratio is fixed by the fact that we 
+  know the tuning. This seems to leave us with just one choice. We can choose a 
+  heavier or a lighter string, and we will then adjust the tension in 
+  proportion to the mass per unit length in order to tune correctly. A heavier 
+  string needs a higher tension, and so has a higher impedance; a lighter 
+  string vice versa. 
+
+  But impedance is not the only thing that changes when you choose a heavier, 
+  tighter string. We can start by thinking about monofilament strings. Once you 
+  have chosen a material, with a particular density, the only choice you have 
+  is the string diameter. This determines the mass per unit length, in 
+  proportion to the cross-sectional area of the string. But, as we saw back in 
+  section 5.4, other things change when you replace a thin string with a 
+  thicker one. First, the bending stiffness increases. That makes the natural 
+  frequencies deviate more markedly from ideal harmonic relations. 
+
+  It is easy to use computer-synthesised sounds to illustrate the effect. We 
+  can use the synthesis method described in section 5.4, and in the computer we 
+  can try combinations that would be difficult to achieve on a real physical 
+  instrument. Sound 1 gives three guitar-like notes, and the only thing that 
+  has changed between them is the diameter of the string. The chosen note 
+  represents the third string of a guitar, played at the 12th fret: in other 
+  words, the note G (392 Hz) on a string of length 325 mm. To avoid 
+  complications associated with damping, which we will discuss in a moment, all 
+  modes of the string are assumed to have the same Q-factor with value 3000. 
+  This is a number typical of a steel guitar string. The string is coupled to a 
+  guitar body, but the admittance has been artificially reduced by a factor of 
+  1000, to create an essentially rigid bridge (again to avoid confusion from 
+  extra effects). 
+
+  These ``strings'' are made of steel, with the appropriate density and Young's 
+  modulus. The first note assumes a string of 0.3 mm diameter: a typical value 
+  for the top string of a guitar, much thinner than you would expect for the 
+  third string. The second note assumes a string of 0.6 mm diameter. It sounds 
+  perceptibly different from the first note, with a slightly ``jangly'' 
+  quality. This diameter is about what you might expect if you were to fit a 
+  solid steel third string to a guitar, and follow the trend from the first and 
+  second strings. But sets of steel guitar strings do not usually use a solid 
+  third string, probably to avoid the jangly sound just illustrated. Instead, a 
+  thinner core is used, with over-wrapped wire to increase the mass without 
+  increasing the bending stiffness so much. 
+
+  The third note in Sound 1 assumes a steel string of diameter 1 mm, comparable 
+  to a piano string. Now the sound is drastically different. You probably hear 
+  the ``pitch'' going up compared to the earlier notes, although if you listen 
+  out for it you can hear that the fundamental frequency hums on at exactly the 
+  same pitch as the other two notes. This strange, percussion-like sound is an 
+  extreme example of the effect of bending stiffness: no-one would want to 
+  choose a guitar string making a sound like this, unless the player is looking 
+  for special timbres along the lines of the ``prepared piano''. 
+
+  This example brings out another factor that influences string choice. The 
+  three ``strings'' used here require very different tensions to tune them to 
+  the assumed note: the tensions would be 36 N, 143 N and 398 N respectively. 
+  The middle value is typical for actual steel guitar strings. The first 
+  tension would probably strike a player as far too low: such a string would be 
+  very floppy, and in danger of giving fret buzzes all the time. The third one, 
+  on the other hand, has such a high tension that it is probably more than the 
+  structure of a guitar body is designed to take. It might also feel 
+  uncomfortably tight to the player, but that issue is probably less 
+  significant than the danger of the bridge coming unstuck from the soundboard! 
+  This highlights an important thing for the process of string selection: for a 
+  given string on a given instrument, there will be a minimum and a maximum 
+  acceptable tension. We will return to that issue in a bit, when we build up a 
+  design chart for string selection. 
+
+  But first we need to be aware of a second thing that happens when the string 
+  diameter is changed: the damping of the string vibration changes. This 
+  doesn't matter very much for metal strings, but for nylon or gut strings it 
+  can make a very big difference to the sound, to the extent that it is a 
+  critical factor to take into account in the process of selecting strings. 
+
+  Back in section 5.4, we discussed two sources of damping in a vibrating 
+  string. One is associated with the air surrounding the string: energy is lost 
+  to viscosity of the air. It was shown in section 5.4.5 that this effect is 
+  strongest at low frequencies. The second source of damping arises from the 
+  fact that string materials like nylon or gut have very high intrinsic 
+  damping. Think of the sound you would hear if you tapped a nylon wine beaker: 
+  it would be a dull thud, quite unlike the ringing sound of a glass one. This 
+  high material damping can influence our vibrating string through the effect 
+  of bending stiffness: it depends on exactly the same parameter that 
+  determines the inharmonicity we just heard in Sound 1 (see section 5.4.4 for 
+  the details). Energy loss by this mechanism increases rapidly at high 
+  frequency. 
+
+  The combined effect of the two things is that the damping as a function of 
+  frequency follows a U-shaped curve: from highish values at low frequency due 
+  to the air viscosity, it falls with increasing frequency until the bending 
+  effect comes in, making the curve turn round and grow. Somewhere in between 
+  it will hit a minimum value where the string can ring the best. Strings of 
+  different diameters will follow different versions of this curve. Fat 
+  strings, with high bending stiffness, will show the rising trend sooner and 
+  more strongly. 
+
+  This expectation is borne out by measurements. Figure 2 shows some results 
+  for three different nylon strings, all attached to the same guitar body. The 
+  discrete symbols show measured values of frequency and loss factor, in three 
+  colours for the different strings. The black points are for a very thin 
+  string, the red ones for a regular guitar top string: both are acceptably 
+  ``musical-sounding''. The green points, though, show the results for a very 
+  thick string, which gave a very unsatisfactory dull thump when plucked. The 
+  results show why: except for the very lowest frequency, where the three 
+  strings show comparable values of loss factor, the green points indicate very 
+  high damping, increasing rapidly with frequency. 
+
+  Figure 2 also shows, as solid lines, the predictions of the theory from 
+  section 5.4. The U-shaped curves are evident, and the curves follow the 
+  measured points satisfyingly well. The dash-dot lines show the contribution 
+  to the loss factor from the bending effect on its own, rising rapidly with 
+  frequency. This rising trend creates a high-frequency roll-off in the sound 
+  of each plucked string. This can be used to formulate a criterion for a 
+  ``musically acceptable'' string, which distinguishes the red and black 
+  strings from the unacceptable green one. We will come to the details shortly. 
+
+  I said earlier that this damping effect is not important for metal strings. 
+  To see why, Fig.\ 3 shows results corresponding to Fig.\ 2, but for a steel 
+  guitar string. The scales are the same as in Fig.\ 2. This time the loss 
+  factor is still falling when we reach 10 kHz. The internal damping of the 
+  kind of steel used for musical strings is very low, so we simply don't see a 
+  dramatic rising trend of damping associated with string bending stiffness. 
+  Comparing Figs.\ 2 and 3, it is no surprise that a steel string can sound 
+  quite different from a nylon string, even a very thin one. The steel string 
+  can deliver long-ringing sound up to very high frequencies, most evident if 
+  it is played with a hard plectrum in order to excite frequencies that high. 
+
+  \samsection{Building a string selection chart} 
+
+  We are now ready to pull together the things we have seen about string 
+  selection in graphical form to make a design chart. We will develop this in 
+  stages, for the particular case of nylon strings. For reasons explained in 
+  the next link, it will turn out that we can express all the things we need in 
+  terms of a single parameter, which is the product of the string length (in 
+  metres) and the tuned frequency (in Hz). The value of this parameter, 
+  remember, is something we already know for any given string. Also, the value 
+  does not change if you play different notes on the same string: the 
+  fundamental frequency of a string is proportional to the length so the length 
+  cancels out. We will put this product along the horizontal axis of a plot, 
+  and on the vertical we can indicate the string diameter. The result of the 
+  first stage of construction is shown in Fig.\ 4. Two things have been added 
+  to the axes just described. First, the set of curves in shades of copper 
+  colours are lines of constant tension: the colour code for values of tension 
+  is shown in the sidebar. 
+
+  Two vertical lines have also been added to the plot. These are connected with 
+  the ultimate strength of a nylon string, before it breaks. Somewhat 
+  surprisingly, if you take a nylon string of any diameter and stretch it until 
+  it breaks, the highest frequency you will reach is the same, regardless of 
+  the string diameter. You need higher tension with a thicker string, of 
+  course, but breaking is determined by the stress in the string (force per 
+  unit area), and it turns out that stress depends only on the position on the 
+  horizontal axis. The algebra lying behind this claim is given in the next 
+  link. There are two versions of the vertical line. To the left of the solid 
+  line, you can expect a nylon string to last more or less for ever without 
+  breaking. But once you are to the right of the line the string will continue 
+  to stretch, more or less rapidly, and eventually it is likely to break. The 
+  further right you move, the shorter the lifetime. The dashed line marks the 
+  most extreme string I could find in actual use on a professionally-played 
+  instrument. 
+
+  The next stage of constructing our selection chart is shown in Fig.\ 5. A new 
+  set of curves has been added, in magenta dashes. These are lines of constant 
+  impedance. They have a somewhat similar falling trend to the constant-tension 
+  curves, but quite different in detail. Again, the algebra behind these lines 
+  is explained in the previous link. 
+
+  The final step is to add a limit on string choice based on the damping effect 
+  described above and to be illustrated shortly in Sound 2. The details are 
+  described in the next link. This time, the limiting condition for a 
+  musically-acceptable string does not give a single curve in the chart, 
+  because it also depends on the length of the string. Figure 6 shows some 
+  examples of the result. The upward-trending black curve is the limit for the 
+  open string of a guitar, with length 650 mm. The sound of that open string 
+  should be acceptable if it lies below this black curve. The dashed curve is 
+  the corresponding limit for playing at the 12th fret of the guitar, so that 
+  the vibrating length has halved to 325 mm. We see immediately that a given 
+  string will be in increasing danger of crossing the limit line as you play it 
+  in higher and higher positions: the string's point on the chart stays fixed, 
+  but the limit curve moves progressively downwards. 
+
+  Figure 6 also includes some discrete points. The blue stars mark the position 
+  in the chart of the top three strings of a typical classical guitar set. It 
+  can be seen that this set of strings has been chosen as some kind of 
+  compromise between constant tension and constant impedance. The third string, 
+  the leftmost of the three points, comes the closest to the limit lines 
+  associated with damping: indeed, the chart suggests that if that third string 
+  is played up to the 12th fret the sound quality will become muffled to an 
+  extent that may be considered marginal. This is indeed an effect familiar to 
+  guitarists. 
+
+  But, of course, you want to hear the effect for yourself. Sound 2 gives three 
+  synthesised notes, corresponding to the three red stars in the plot. The note 
+  played corresponds to the 12th fret, so the important comparison is with the 
+  dashed limit line. The first sound goes with the lowest star. It is well 
+  below the line, and sounds fine. The second corresponds quite closely to the 
+  actual third string played at this fret, and it is close to the line. The 
+  sound is clearly less ``twangy'' than the first note. The third note is well 
+  above the line, and illustrates what I mean by ``not musically acceptable''. 
+
+  To see what the chart in Fig.\ 6 is telling us, a schematic version is shown 
+  in Fig.\ 7. The string needs to be chosen to be not too tight and not too 
+  slack. Obviously, the string should not break, or at least not too quickly. 
+  Finally, it should lie below the limit line associated with damping, for the 
+  highest note to be played on the string (with the shortest vibrating length). 
+  The player's choice of string diameter allows them to move along a vertical 
+  line in the chart. Choosing a thicker string allows a louder sound (because 
+  the impedance is increased), but if the string lies in the left half of the 
+  plot, you run the risk of getting too close to the damping limit. So a 
+  thicker string tends to be louder but duller, and conversely a thinner string 
+  is quieter but can be brighter-sounding. 
+
+  It should be emphasised that the damping limit plotted in Fig.\ 6 is not a 
+  precise one. The lines plotted there give an indication of when the sound 
+  quality may start to deteriorate, in the manner illustrated by Sound 2. But 
+  the criterion, explained in the previous link, is based on a very crude 
+  assumption: an ``acceptable'' string should have at least 10 overtones with 
+  damping lower than a certain threshold value. For the strings of a guitar, 
+  this empirical criterion works quite well. But in a moment we will look the 
+  harp, where the range of string lengths and tuned frequencies is far larger. 
+  For that case it doesn't entirely make sense to have a criterion based on a 
+  fixed number of overtones: 10 overtones of a low string on a concert harp 
+  might only take you to 1~kHz, whereas 10 overtones on the top string of the 
+  same harp would take you beyond 30~kHz, well beyond the range of human 
+  hearing. Under those circumstances, you would guess that for the low strings 
+  you would like to be well below the threshold as plotted here, but by the 
+  time you reach the highest strings you could afford to be significantly above 
+  the threshold line. 
+
+  All of this has been about solid, monofilament strings. As the chart makes 
+  clear, for an instrument with fixed-length strings like a guitar there is an 
+  intrinsic problem associated with choosing bass strings. The length is fixed, 
+  so as the tuned note gets lower you automatically move to the left in the 
+  chart. We have already seen that the third string of a classical guitar is 
+  close to the limit for a solid nylon string, if you want to be able to play 
+  it in high positions. For the lower strings, if you want a bright and twangy 
+  sound, you have to do something different. One choice is to use steel strings 
+  rather than nylon strings, but that takes you into the different sound world 
+  of the steel-string guitar, and we have also heard (in Sound 1) that thick 
+  steel strings don't really work, for a different reason. Although the damping 
+  problem goes away, the inharmonicity due to bending stiffness produces an 
+  undesirable sound. 
+
+  You are left with two choices. Most modern instruments, like the classical 
+  guitar, opt to use over-wound strings for the lower notes. This construction 
+  allows the string to be heavier without too much penalty in terms of bending 
+  stiffness. The result is the typical appearance of a set of classical guitar 
+  strings, as we saw in Fig.\ 1. 
+
+  Things are more challenging if you play a period instrument like a lute, and 
+  you want to aim for an ``authentic'' sound and feel. At least in the earlier 
+  part of the lute's heyday, the technology of making wire-wrapped strings may 
+  not have existed, or at least such strings would have been expensive and not 
+  widely available. Players used plain gut strings, and the result in terms of 
+  damping was very similar to the nylon strings we have been looking at. To 
+  help with this intractable problem, lute-players used a trick. The strings of 
+  a lute are in pairs called courses. For the lower courses, instead of using a 
+  pair of fat strings tuned in unison they could use a thick-thin pair, with 
+  the thinner one tuned an octave higher. When you pluck the two strings 
+  together, you get the necessary low fundamental frequency from the thick 
+  string, but the thinner string can supply higher overtones to add brightness 
+  to the sound, because it lies further to the right in the chart and so is 
+  further away from the damping limit line. 
+
+  \samsection{Case study: the harp} 
+
+  The harp makes an interesting case study in the use of the selection charts. 
+  Unlike the guitar, a harp has strings of different lengths for each note. 
+  This raises a new issue, to be taken into account when choosing strings: the 
+  ``feel'' of the strings to the player. A simple way to characterise feel is 
+  to ask ``how hard do you have to pull the string, in order to create a 
+  desired displacement before you let go and start the vibration?'' A simple 
+  static force-balance calculation reveals that this measure of feel is 
+  governed by the ratio of tension to length. So if a harpist wants the feel to 
+  stay roughly the same across the range of the instrument, they need to choose 
+  higher tensions for the longer strings. 
+
+  This is indeed what they do. Figure 8 shows the same selection chart for 
+  nylon strings, annotated with a set of recommended string diameters for a 
+  concert harp, from a string manufacturer. The pattern is quite different from 
+  what we saw for the strings of a classical guitar. The tensions get very high 
+  indeed for the lower, longer strings. The harp body has to be designed to 
+  withstand this amount of internal force; and even so, a common mechanical 
+  failure in harps involves the soundboard pulling away from the rest of the 
+  body. 
+
+  Because all the strings have different lengths, it is hard to show the 
+  associated damping limit curves. In this plot, changing colours have been 
+  used to indicate the pattern. The discrete points for the strings are 
+  coloured red and blue, in alternating batches. A limit curve is plotted for 
+  the length associated with the last string of each colour batch, in the 
+  corresponding colour. It can be seen that these lines always fall rather 
+  close to the change of colour in the batches of points. What this means is 
+  that all these strings fall close to the suggested damping limit. 
+
+  But many harpists do not choose nylon strings at all: they prefer the sound 
+  of natural gut strings. Figure 9 shows the corresponding selection chart for 
+  gut strings: it is similar in some ways to the nylon chart, but details 
+  matter here and when you look in detail, every string material requires a 
+  different version of the chart. The chart in Fig.\ 9 is again annotated with 
+  discrete points based on the string manufacturer's recommended choice of 
+  gauges for a concert harp. The same scheme of changing colours is used to 
+  indicate the pattern of the damping limit curves. 
+
+  This time, the colour changes between the batches of discrete points all 
+  occur before the corresponding limit line, even though the actual values of 
+  tension are higher than in the nylon example. Comparing with Fig.\ 8, each 
+  colour change for the strings falls consistently further below the plotted 
+  limit line for gut strings compared to nylon strings: gut strings allow the 
+  harp to have a brighter sound than is possible with nylon strings. Probably 
+  this is at least part of the reason why players continue to prefer gut 
+  strings, despite their higher cost and higher sensitivity to changes in 
+  humidity and temperature. 
+
+  The most obvious difference between the charts for nylon and gut is in the 
+  shapes of the damping limit curves. For nylon the curves bend down, whereas 
+  for gut they are essentially straight. The reason for this difference lies in 
+  the way the two materials respond to changes in tension. Man-made polymers 
+  like nylon consist of long-chain molecules, tangled together a bit like a 
+  bowl of spaghetti. As a string stretches under tension, these chains get 
+  straightened out; more and more so as the tension is increased. This has a 
+  consequence for an important mechanical property of the string, the Young's 
+  modulus, which determines the stiffness along the length of the string. As 
+  the molecules straighten, the string gets stiffer. This is ultimately what 
+  causes the damping limit lines to bend over (for details, see [1]). But gut 
+  does not behave like this: its Young's modulus stays essentially the same 
+  whatever the tension. That results in the straight lines seen in Fig.\ 9. 
+
+  Now look again at the points representing the harp strings in the two 
+  materials. Because of the desire to use high tensions in order to improve the 
+  feel, the string choices push into a region of the charts where they are 
+  significantly different. The straight lines in the harp chart gave a bit more 
+  ``headroom'' in the string choice, compared to the nylon chart. It looks as 
+  if harpists exploit this to the full. 
+
+  Just to complete the story, we should note that harpists actually use a more 
+  complicated combination of strings. They do indeed prefer gut strings in the 
+  middle range of the instrument. But a comparison of Figs.\ 8 and 9 reveals 
+  something we haven't mentioned: the black lines indicating the breaking 
+  strength are further to the left for gut than for nylon. So for the very 
+  highest strings, nylon is generally used in order to improve the life 
+  expectancy. For the very lowest strings, a different issue arises. The charts 
+  indicate the use of very fat strings, which influences both the damping 
+  effect we have discussed, and the inharmonicity we met earlier. For both 
+  reasons, harpists typically choose over-wrapped strings for the lowest notes, 
+  usually with a steel core. 
+
+  \samsection{What about bowed instruments?} 
+
+  The strings with the most complicated construction are not found on 
+  plucked-string instruments, but on instruments like the violin or cello. The 
+  vibrating string length of a cello is similar to that of a guitar, but you 
+  can pay as much for a single cello string as for several full sets of 
+  high-quality guitar strings. What is going on? The same range of physical 
+  behaviour involving impedance, inharmonicity and damping is still important. 
+  We will see in a bit that there are some extra details that also matter in a 
+  bowed string, but in themselves these are probably not the main issue that 
+  has driven string design towards such complicated and expensive 
+  constructions. 
+
+  A more important aspect of the explanation lies, probably, in the different 
+  ways that a violinist and a guitarist interact with their strings during 
+  performance. Think for a moment about the sounds made by a beginner on these 
+  two instruments. A complete novice can pluck a single note on a guitar, and 
+  obtain a satisfyingly “musical” sound. But, notoriously, a beginner on the 
+  violin is likely to produce some very unpleasant noises before they learn how 
+  to create an acceptable sound. 
+
+  With a plucked string, the performer’s input is mainly limited to setting the 
+  initial shape of the string. Once they let go, the string “does its own 
+  thing”, producing a mixture of almost-harmonic overtones, each with its 
+  characteristic decay profile. In a bowed string, by contrast, the player is 
+  interacting with the string throughout the motion, all the time the bow is in 
+  contact. The player is trying to make the string do particular tricks (with a 
+  range of bowing techniques with names like sautillé and martelé). The string 
+  may have other ideas, and respond to a wrong bow gesture with an undesirable 
+  squeak or groan rather than the crisp note the player had in mind. Once a 
+  player has learned to control these different ways to bow a string, they can 
+  be rewarded by an instrument that offers enormous flexibility of musical 
+  expression. But first they need to put in many hours, weeks and years of 
+  practice: as the saying goes, there is no free lunch. 
+
+  This is a first glimpse into the wild and complicated world of seriously 
+  nonlinear instruments: we will engage with it properly in the next few 
+  chapters. For the moment, all we need take away is that a violinist or 
+  cellist cares more than a guitarist about some subtleties of string 
+  behaviour. They are constantly fighting against a string that doesn’t really 
+  want to do what they have in mind. Any small improvement in the string’s 
+  mechanical behaviour might make their life easier, and allow them to play 
+  better and more reliably. A similar thing happens with sports equipment: for 
+  a tennis player or a cellist, any small enhancement that improves their 
+  performance is valued, and worth paying serious money for. 
+
+  I mentioned that there are some properties of a string that we have not 
+  considered up to now, which can matter for a violinist or cellist. To satisfy 
+  your curiosity, I will give a brief account now. But things will become 
+  clearer when we look at bowed strings in detail, in Chapter 9. A bowed string 
+  is driven into vibration by the friction force between the bow-hair and the 
+  string, mediated by the rosin with which a player coats the bow-hair. This 
+  introduces two new things to consider in string design and selection. First, 
+  the surface of the string has to be suitable to interact with the rosin. It 
+  helps if the surface is smooth, so wrapped strings need to be made with 
+  ribbons of tape rather than with round wire. The physics and chemistry of the 
+  string's surface may also play a role: bowed instruments do not generally use 
+  nylon strings, for example, because rosin does not stick effectively to them. 
+
+  The second consequence of driving a string by friction from a bow is that a 
+  new type of string vibration can come into play. The friction force is 
+  applied tangentially across the surface of the cylindrical string. So as well 
+  as exciting transverse string vibration, it can excite torsional vibration in 
+  which ``waves of twisting'' travel along the string. Torsional string 
+  vibration does not (usually) contribute directly to much of the sound from an 
+  instrument, but it does influence the details of the string motion. It can 
+  provide an additional source of damping, and it can also contribute more 
+  subtle effects: more on this in section 9.5.3. 
+
+
+
+  \sectionreferences{}[1] J. Woodhouse and N. Lynch-Aird ``Choosing strings for 
+  plucked musical instruments''. \tt{}Acta Acustica united with Acustica 
+  \textbf{105}, 516-529, (2019)\rm{}.~ 

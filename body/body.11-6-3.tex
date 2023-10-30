@@ -1,0 +1,110 @@
+  We can easily extend Millot's model from section 11.6.2 to include two reeds, 
+  and thus represent one reed channel of a harmonica, coupled to the player's 
+  mouth cavity. Figure 1 shows the sketch of the situation, reproduced from 
+  section 11.6. Figure 2 shows the same system represented in the form of 
+  Millot's model. A volume $V$, representing the mouth cavity, is fed with air 
+  from the player's lungs at a steady volume flow rate $U_0$. A tube of length 
+  $L$ and cross-sectional area $S$ opens off this volume, and at its end it 
+  carries two reeds side by side. One is configured as an opening reed, the 
+  other as a closing reed. One reed has length $L_1$, width $w_1$ and thickness 
+  $h_1$, the other has corresponding dimensions $L_2, w_2$ and $h_2$. Each reed 
+  is stood off from the end-plate by a clearance $x_0$, and the gap between 
+  each reed and the slot in the end-plate is $b$ all the way round. 
+
+  The pressure in the volume $V$ is $p_1(t)$, and the pressure acting on the 
+  two reeds at the end of the tube is $p_2(t)$. The total volume flow rate into 
+  the tube is $u(t)$, made up of the sum of contributions from the two reeds. 
+  The flow rate through the gap surrounding reed 1 is $u_1$, and that past reed 
+  2 is $u_2$. There are also flow rate contributions associated with the motion 
+  of the two reeds. If the tip displacements are $x_1$ and $x_2$ respectively, 
+  these contributions are proportional to $\dot{x_1}$ and $\dot{x_2}$ 
+  respectively, so that the total flow rate is 
+
+  $$u=u_1+K_{x1} \dot{x_1} + u_2 +K_{x2} \dot{x_2} \tag{1}$$ 
+
+  where 
+
+  $$K_{xj}=0.4 w_j L_j \mathrm{~~~~~} j=1,2. \tag{2}$$ 
+
+  The flow rates through the reed gaps are given by the same expression as in 
+  earlier models, derived from Bernoulli's law: 
+
+  $$u_1=CF_1 \sqrt{\dfrac{2p_2}{\rho_0}}, \mathrm{~~~~}u_2=CF_2 
+  \sqrt{\dfrac{2p_2}{\rho_0}} \tag{3}$$ 
+
+  where $C=0.61$ is the vena contracta coefficient, $\rho_0$ is the density of 
+  air, and $F_1$ and $F_2$ are the respective gap areas around the two reeds. 
+  These areas are computed from the tip displacement by exactly the same 
+  calculation as described previously. Figure 3 shows the two area functions 
+  for the opening-reed and closing-reed configurations, using the particular 
+  parameters assumed for the harmonica model: reed 1 has dimensions $14.5 
+  \times 2 \times 0.13 \mathrm{~mm}$ and is tuned to frequency 440~Hz, reed 2 
+  has dimensions $15 \times 2 \times 0.13 \mathrm{~mm}$ and is tuned to 392~Hz. 
+  The gap around the reeds is $b=0.2 \mathrm{~mm}$ and the stand-off distance 
+  is $x_0=0.5 \mathrm{~mm}$. 
+
+  The reed channel is assumed to have length $L=28 \mathrm{~mm}$ and 
+  cross-sectional area $S=20 \mathrm{~mm}^2$. This value of $L$ is somewhat 
+  larger than the physical length of a typical harmonica channel to make some 
+  allowance for the further constriction given by the player's lips. 
+
+  The remaining equations follow from the earlier derivations in sections 
+  11.6.1 and 11.6.2. The equation of motion of reed $j$, regarded as a damped 
+  harmonic oscillator representing the lowest cantilever bending mode of 
+  vibration, is 
+
+  $$\ddot{x_j}+\dfrac{\omega_j}{Q_j} \dot{x_j} +\omega_j^2 x_j = K_{pj} p_2 
+  \mathrm{~~~~~} j=1,2 \tag{4}$$ 
+
+  where 
+
+  $$K_{pj} = 1.5 \dfrac{w_j L_j}{m_j} \mathrm{~~~~~} j=1,2 \tag{5}$$ 
+
+  as before, where $m_j$ is the total mass of reed $j$, calculated from the 
+  volume $L_j \times w_j \times h_j$ using the density of brass, 8553~kg/m$^3$. 
+  Reed $j$ has (angular) natural frequency $\omega_j$ and Q-factor $Q_j$. Both 
+  reeds were assigned the same Q-factor, with the value 95. 
+
+  The equation governing the pressure $p_1$ is 
+
+  $$\dot{p_1}=\dfrac{\rho_0 c^2}{V} (U_0 -- u) \tag{6}$$ 
+
+  as usual, where $c$ is the speed of sound. 
+
+  Finally, Newton's law for the ``plug'' of air in the tube is 
+
+  $$S(p_1-p_2) = \rho_0 L S \dfrac{d}{dt}\left[\dfrac{u}{S}\right] \tag{7}$$ 
+
+  so that 
+
+  $$p_1-p_2=\dfrac{\rho_0 c^2}{V \omega_h^2} \dot{u} \tag{8}$$ 
+
+  in terms of the Helmholtz resonance frequency 
+
+  $$\omega_h=\sqrt{\dfrac{c^2 S}{VL}}. \tag{9}$$ 
+
+  We can augment equation (8) to allow the Helmholtz resonance to have some 
+  damping, with Q-factor $Q_h$: 
+
+  $$p_1-p_2=\dfrac{\rho_0 c^2}{V \omega_h^2} \left[\dot{u}+ 
+  \dfrac{\omega_h}{Q_h}u \right] . \tag{10}$$ 
+
+  For the simulations shown in section 11.6 the value $Q_h=4$ was used, to 
+  reflect the rather high damping expected from a vocal tract resonance. 
+
+  The value of inflow rate $U_0$ needed to create a given static pressure is 
+  calculated by using static versions of this set of equations, setting all the 
+  time derivatives to zero. Denoting steady values with an over-bar as in 
+  sections 11.6.1 and 11.6.1, equation (8) tells us that 
+  $\bar{p}_1=\bar{p}_2=\bar{p}$ say. Equation (6) gives $\bar{u}=U_0$. Equation 
+  (4) then leads to 
+
+  $$\omega_j^2 \bar{x}_j=K_{pj} \bar{p} \tag{11}$$ 
+
+  while equation (1) gives 
+
+  $$U_0=\bar{u}_1+\bar{u}_2= C \sqrt{\dfrac{2 \bar{p}}{\rho_0}} 
+  (\bar{F}_1+\bar{F}_2) \tag{12}$$ 
+
+  where $\bar{F_j}$ is deduced from the relevant one of the area functions 
+  plotted in Fig.\ 3, evaluated at $\bar{x_j}$. 

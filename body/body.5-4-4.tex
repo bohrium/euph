@@ -1,0 +1,58 @@
+  To estimate the loss factor associated with bending deformation of the 
+  string, we can use yet another argument based on Rayleigh's principle, on the 
+  assumption that material damping is small, as it invariably is for the 
+  materials that musical strings are made from. We already know the expressions 
+  for the kinetic and potential energies of the system (without damping). We 
+  also already have a good idea of the mode shapes of the undamped system: they 
+  are the sinusoidal shapes from section 3.1.1. 
+
+  Now we use an argument to which we will return in rather more detail in 
+  section 10.3.3. To solve the damped problem we can replace $E$ in the 
+  expression for potential energy with a complex version $E(1+i \eta_E)$. Now 
+  Rayleigh’s principle says that given an approximation to a mode shape we can 
+  get a rather good approximation to its natural frequency by evaluating the 
+  Rayleigh quotient. The modes of the damped system will be slightly different 
+  from the modes of the undamped system, but the undamped mode shapes will 
+  still give a good approximation. So we evaluate the Rayleigh quotient using 
+  the true expression for the potential energy, with the complex modulus, but 
+  with the approximate expression for mode shape from the undamped calculation. 
+
+  This gives a good approximation to the natural frequency, which will now be a 
+  complex number: $\omega_n=a+ib$, say. So the time dependence of free 
+  oscillation of this mode will be proportional to 
+
+  $$e^{i \omega_n t}=e^{i(a+ib)t}=e^{iat} e^{-bt} .\tag{1}$$ 
+
+  The real part of the complex frequency describes the oscillation frequency as 
+  before, while the imaginary part describes an exponential decay, just as we 
+  would expect for a damped system. If we define a loss factor $\eta_{bend}$ to 
+  describe this energy loss mechanism, then from the definition of loss factor 
+
+  $$b=a \eta_{bend}/2$$ 
+
+  so that 
+
+  $$\eta_{bend} = \frac{2b}{a} =\frac{2\Im (\omega_n)}{\Re (\omega_n)} \approx 
+  \frac{\Im (\omega_n^2)}{\Re (\omega_n^2)} \tag{2}$$ 
+
+  in terms of the real and imaginary parts of the complex frequency, where we 
+  have assumed small damping so that $b \ll a$. 
+
+  The Rayleigh quotient for the damped stiff string, from eq. (6) of section 
+  5.4.3, is 
+
+  $$\omega_n^2 \approx \dfrac{\int_0^L{P \left(\frac{\partial u_n}{\partial 
+  x}\right)^2} dx + \int_0^L{E(1+i \eta_E) I \left(\frac{\partial^2 
+  u_n}{\partial x^2}\right)^2} dx}{\int_0^L{m u_n^2} dx} \tag{3}$$ 
+
+  so that 
+
+  $$\omega_n^2 \approx \dfrac{P}{m} \left(\dfrac{n \pi}{L}\right)^2 + 
+  \dfrac{E(1+i \eta_E)I}{m} \left(\dfrac{n \pi}{L}\right)^4 . \tag{4}$$ 
+
+  Using eq. (2), we can deduce 
+
+  $$\eta_{bend} \approx \dfrac{E \eta_E I \left(\dfrac{n \pi}{L}\right)^2}{P} = 
+  2 \alpha n^2 \eta_E$$ 
+
+  in terms of the inharmonicity parameter $\alpha$ introduced in section 5.4.3. 

@@ -1,0 +1,167 @@
+  Raman's argument applies strictly to bowed-string motion based on two 
+  assumptions: that the string is an ideal, textbook string, and that the 
+  friction force is governed by a ``Stribeck law'' in which the friction force 
+  varies with relative sliding speed according to a curve like the example 
+  shown schematically in Fig.\ 1. Neither of these assumptions is exactly true 
+  for a real bowed string, as we will see later in this chapter, but they give 
+  a good first shot at explaining a lot of bowed-string waveforms. 
+
+  \fig{figs/fig-97b7ee76.png}{Figure 1. Schematic plot of friction force as a 
+  function of sliding speed, where $v_b$ is the bow speed. The black line and 
+  stars relate to Raman's argument, explained in the text.} 
+
+  The periodic string motions in which Raman was interested were all observed 
+  to involve the bowed string oscillating at the same frequency as the free 
+  string. As a consequence, he argued, the friction force at the bow must 
+  remain essentially constant: the modes of a string have very low damping, so 
+  any significant variation of the friction force at the frequency of string 
+  modes would produce a resonant response to high amplitude. For the extreme 
+  case of the undamped textbook string, the predicted amplitude would be 
+  infinite. Helmholtz motion is an example: it is a possible free motion of an 
+  ideal string. So one way to think about Helmholtz motion and all the other 
+  regimes we will find in this section is that they are free motions of the 
+  string which happen to be able to tolerate the presence of the bow. 
+
+  Figure 1 then tells us that the string velocity at the bowed point must 
+  alternate, in some pattern, between two fixed values. During an episode of 
+  sticking, the string velocity must match the bow speed and lie somewhere on 
+  the vertical portion of the friction curve. But the velocity must integrate 
+  to zero over a complete cycle, in order that there is no mean sideways motion 
+  of the string. So episodes of sticking must be balanced by episodes of 
+  slipping with a negative string velocity. If the friction force is to remain 
+  constant during this process, the point on the curve corresponding to this 
+  slipping speed must lie on a horizontal line with the relevant sticking 
+  point, as indicated by the two black stars in the figure. 
+
+  This argument shows that any possible motion of the string at the bowed point 
+  must involve spells of constant velocity interrupted by jumps, all of the 
+  same magnitude. Now we can use D’Alembert’s solution for the general motion 
+  of an ideal string (section 5.4.2) to deduce what must be happening along the 
+  rest of the string. The string displacement $w(x,t)$ at position $x$ and time 
+  $t$ must be the sum of a right-travelling wave $f$ and a left-travelling wave 
+  $g$, both with fixed shape: 
+
+  $$w(x,t)=f(t-x/c)+g(t+x/c) \tag{1}$$ 
+
+  where $c$ is the wave speed on the string. The string has fixed ends at $x=0$ 
+  and $x=L$, so 
+
+  $$f(t)+g(t)=0 \tag{2}$$ 
+
+  and 
+
+  $$f(t-L/c)+g(t+L/c)=0 , \tag{3}$$ 
+
+  so 
+
+  $$g=-f \tag{4}$$ 
+
+  and 
+
+  $$f(t)=f(t+2L/c) . \tag{5}$$ 
+
+  The string velocity $v(x,t)$ can also be written in travelling-wave form: 
+
+  $$v(x,t)=f^\prime(t-x/c) -- f^\prime(t+x/c) . \tag{6}$$ 
+
+  from eqs. (1) and (4), where primes denote the derivative. 
+
+  Our measurements are of the force exerted on the bridge. If the string 
+  tension is $T$, this is given by 
+
+  $$T \left.\dfrac{\partial w}{\partial x} \right|_{x=0} = \dfrac{T}{c} \left[ 
+  g^\prime(t) -- f^\prime(t) \right]=-\dfrac{2T}{c}f^\prime(t) . \tag{7}$$ 
+
+  So, apart from a constant multiplier, the bridge force wavefrom directly 
+  reveals the form of the travelling wave $f^\prime(t)$. 
+
+  For the particular case of Helmholtz motion we already know that the bridge 
+  force is a sawtooth wave. So this sawtooth also gives the form of the 
+  travelling velocity waves. The result is animated in Fig.\ 2. The two 
+  travelling waves are shown at the top, over a range that is three times as 
+  long as the physical string, indicated by the vertical lines. The black shape 
+  at the bottom shows $v(x,t)$ for the string. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-f05b86f9-00.png }&\vidframe{ 0.30 }{ vids/vid-f05b86f9-01.png }&\vidframe{ 0.30 }{ vids/vid-f05b86f9-02.png } \end{tabular}\caption{Figure 2. Helmholtz motion visualised in terms of travelling velocity waves. The travelling waves are shown over a wider range than the physical length of the string, indicated by the vertical lines. The lower animation shows the varying velocity distribution on the string.}\mooendvideo
+
+  This may not be immediately recognisable as corresponding to Helmholtz 
+  motion. To understand the plot, try laying a vertical ruler against the 
+  screen, selecting a particular position on the string. This is your chosen 
+  bowing point. Now look at how the velocity at that point varies through the 
+  cycle of vibration. If your chosen point is near the left-hand end, where you 
+  would normally bow a violin string, you will see that it spends most of the 
+  cycle with a relatively small positive velocity, and the remainder with a 
+  larger negative velocity. This is exactly what were were expecting: the 
+  amplitude of motion will be scaled so that the positive velocity matches the 
+  bow speed. The negative sliding speed has the correct value so that the 
+  integrated velocity over the cycle is zero. This description will hold 
+  whatever point you select as your bowed point: the only thing that will 
+  change is the amplitude scaling in order to match the positive velocity to 
+  the bow speed. 
+
+  We can see the string vibration much more clearly if we integrate the 
+  sawtooth waveforms to obtain the corresponding travelling wave contributions 
+  to the string displacement. Each linear ramp in the sawtooth integrates to a 
+  parabolic section of curve, and where the sawtooth had jumps, the integrated 
+  function has a sharp corner, in other words a slope discontinuity. Using 
+  these travelling waves, the corresponding animation for string displacement 
+  is shown in Fig.\ 3, and now it is clear that it does indeed reproduce 
+  Helmholtz motion. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-12682a59-00.png }&\vidframe{ 0.30 }{ vids/vid-12682a59-01.png }&\vidframe{ 0.30 }{ vids/vid-12682a59-02.png } \end{tabular}\caption{Figure 3. Animation of Helmholtz motion corresponding to Fig. 2, but showing the travelling waves making up the string displacement, and the resulting string motion.}\mooendvideo
+
+  Raman used this approach, via travelling waves of velocity, to catalogue all 
+  the possible idealised bowed-string waveforms. The two waves from eq. (6) 
+  must always add up to give a velocity waveform at the bowed point consisting 
+  of constant velocity segments, interrupted by jumps. He showed that this can 
+  only occur if the travelling waves of velocity take the form of a linear 
+  ramp, interrupted by jumps. The ramp segments always have the same slope, and 
+  the only distinction between different regimes of vibration comes in the 
+  number and disposition of the jumps. We will show some examples, to 
+  illustrate the two types of bridge force waveform shown in section 9.1. 
+
+  Helmholtz motion is the only possible solution with a single velocity jump. 
+  The next simplest possibility has two jumps. Figure 4 shows an animation 
+  corresponding to Fig.\ 2, for a typical example of such motion. We know from 
+  eq. (7) that the blue curve, the right-travelling velocity wave, mirrors the 
+  waveform of bridge force, and we can recognise that waveform as corresponding 
+  to Fig.\ 5 of section 9.1, describing a typical case of double-slipping 
+  motion. If you do the ruler trick again, selecting a bowing point and 
+  watching how the string velocity varies at that point, you will quickly see 
+  that the motion does indeed involve two slipping episodes in every cycle. 
+  Figure 5 shows the corresponding animation for string displacement. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-d804e880-00.png }&\vidframe{ 0.30 }{ vids/vid-d804e880-01.png }&\vidframe{ 0.30 }{ vids/vid-d804e880-02.png } \end{tabular}\caption{Figure 4. Animation similar to Fig. 2, for a typical case of double-slipping motion.}\mooendvideo
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-b9c70e9d-00.png }&\vidframe{ 0.30 }{ vids/vid-b9c70e9d-01.png }&\vidframe{ 0.30 }{ vids/vid-b9c70e9d-02.png } \end{tabular}\caption{Figure 5. Animation of double-slipping motion corresponding to Fig. 4, showing displacement rather than velocity.}\mooendvideo
+
+  Such motion is classified as Raman's ``second type''. There is a special case 
+  of this motion that has direct relevance to violinists. If the two velocity 
+  jumps are arranged in a regular and symmetrical manner, the resulting motion 
+  is illustrated in Fig.\ 6 and 7. This is still double-slipping motion, but 
+  because the two slips in each cycle occur with equal spacing, the result is a 
+  sound with half the period: in other words, a note that plays an octave 
+  higher. Now look at the animation of the string motion in Fig.\ 7: it 
+  consists of two ``Helmholtz motions'', going on simultaneously in the two 
+  halves of the string. The string remains stationary at its midpoint. This is 
+  the motion that arises when a violinist plays a ``harmonic'', by lightly 
+  touching a finger at the mid-point of the string. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-33830942-00.png }&\vidframe{ 0.30 }{ vids/vid-33830942-01.png }&\vidframe{ 0.30 }{ vids/vid-33830942-02.png } \end{tabular}\caption{Figure 6. Animation similar to Figs. 2 and 4, for the special case of double-slipping motion corresponding to the playing of an octave ``harmonic'' on a violin or cello string.}\mooendvideo
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-25476915-00.png }&\vidframe{ 0.30 }{ vids/vid-25476915-01.png }&\vidframe{ 0.30 }{ vids/vid-25476915-02.png } \end{tabular}\caption{Figure 7. Animation of symmetrical double-slipping motion corresponding to Fig. 6, showing displacement rather than velocity. The played ``harmonic'' involves ``miniature Helmholtz motion'' in the two halves of the string simultaneously.}\mooendvideo
+
+  For a final example, we look at a case of ``S-motion''. The particular case 
+  shown in Figs.\ 8 and 9 would be classified by Raman as of 7th type, based on 
+  the number of velocity jumps. The blue velocity waveform in Fig.\ 8 can be 
+  seen to have the same general form as the measured bridge-force waveforms in 
+  Fig.\ 6 of section 9.1. If you do the ``ruler trick'' with Fig.\ 8, you may 
+  be able to see that some possible bowing positions have a single slip per 
+  cycle in this vibration regime, while others show more than one slip. In 
+  practice, S-motion usually appears with a single slip: the particular bowing 
+  position then governs which Raman higher type is excited. We will see more 
+  about this in section 9.3. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-58476c9f-00.png }&\vidframe{ 0.30 }{ vids/vid-58476c9f-01.png }&\vidframe{ 0.30 }{ vids/vid-58476c9f-02.png } \end{tabular}\caption{Figure 8. Animation in the same format as Figs. 2, 4 and 6, showing a typical example of ``S-motion''. This particular example would be classified by Raman as ``7th type'' based on the number of velocity jumps.}\mooendvideo
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-6d5b1d2a-00.png }&\vidframe{ 0.30 }{ vids/vid-6d5b1d2a-01.png }&\vidframe{ 0.30 }{ vids/vid-6d5b1d2a-02.png } \end{tabular}\caption{Figure 9. Animation showing string displacement for the same S-motion case as in Fig. 8.}\mooendvideo

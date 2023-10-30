@@ -1,0 +1,171 @@
+  We now have a rather general description of the relation between the input 
+  and output of a linear system. It is useful to put this into mathematical 
+  form and to introduce two important concepts: we will need them later (in 
+  section 6.5) when we start to talk about the sound made by a violin in 
+  response to string motion created by the player. Think back to the ``black 
+  box'' in Fig.\ 2 of section 2.1. We apply some input waveform $x(t)$, and we 
+  obtain an output waveform $y(t)$. We can express both functions in terms of 
+  their Fourier transforms, $X(\omega)$ and $Y(\omega)$. Now at each individual 
+  frequency $\omega$ the input is converted into the output simply by 
+  multiplication with the frequency response function of the box, which we can 
+  call $G(\omega)$. In other words 
+
+  $$Y(\omega) = G(\omega) X(\omega) . \tag{1}$$ 
+
+  We would like to turn this into a direct relation between $x(t)$ and $y(t)$. 
+  We will first do this mathematically, then we will see how to interpret the 
+  result graphically and intuitively. 
+
+  Before we begin, we need to introduce another important idea, the Dirac delta 
+  function. Look at the family of pulse shapes shown in Fig.\ 1: they have a 
+  width $h$ and a height $1/h$, so that they all have unit area underneath the 
+  plot. As $h$ gets smaller, the pulse gets narrower and higher. The Dirac 
+  delta function is the limiting case as $h\rightarrow 0$: it has an infinite 
+  value for an infinitesimally short time, while still having unit area. This 
+  is a mathematical idealisation of the kind of impulsive force we imagine 
+  being applied to the toy drum by our drumstick, which had a very high value 
+  for a very short time. 
+
+  \fig{figs/fig-0b098ca0.png}{Figure 1. A sequence of rectangular pulses with 
+  different widths, all having unit area.} 
+
+  This delta function, written $\delta(t)$, has two important properties. The 
+  first of them is this: 
+
+  $$\int{f(t) \delta(t-T) dt} = f(T) \tag{2}$$ 
+
+  where $f(t)$ is any function, and the limits of the integration must include 
+  the value $t=T$, where the infinite peak of the delta function occurs. This 
+  result is fairly obvious, if you just think about the sequence of shapes in 
+  Fig.\ 1. The values of $f(t)$ do not matter except in the immediate vicinity 
+  of $t=T$ because the delta function is zero everywhere else. So we might as 
+  well replace $f(t)$ by the constant value $f(T)$. We could then take that 
+  constant outside the integral, leaving just the delta function inside. But we 
+  know the delta function integrates to the value 1 because it has been defined 
+  that way. 
+
+  The second important property concerns the Fourier transform of $\delta(t)$, 
+  which we could call $D(\omega)$: 
+
+  $$D(\omega)=\dfrac{1}{2 \pi} \int_{-\infty}^{\infty}{\delta(t) e^{-i \omega 
+  t} dt} =\dfrac{1}{2 \pi} \tag{3}$$ 
+
+  using eq. (2), and so, by the formula for the inverse Fourier transform, 
+
+  $$2 \pi \delta(t)=\int_{\infty}^{\infty}{2 \pi D(\omega) e^{i \omega t} d 
+  \omega} =\int_{-\infty}^{\infty}{e^{i \omega t} d \omega} . \tag{4}$$ 
+
+  The delta function contains all frequencies, with equal amplitude. 
+
+  Now the mathematical approach to eq. (1) is based on something called the 
+  convolution theorem. Suppose we have any two functions $a(t)$ and $b(t)$, and 
+  their corresponding Fourier transforms $A(\omega)$ and $B(\omega)$. Suppose a 
+  third function $c(t)$ with Fourier transform $C(\omega)$ satisfies $C=AB$. 
+  The theorem then states that 
+
+  $$c(t)= \dfrac{1}{2 \pi} \int_{-\infty}^{\infty}{a(t-\tau) b(\tau) d \tau} 
+  \tag{5}$$ 
+
+  where the integral on the right-hand side is called a convolution integral. 
+  To prove this theorem, we express this integral in terms of the Fourier 
+  transforms $A$ and $B$: 
+
+  $$\int_{-\infty}^{\infty}{a(t-\tau) b(\tau) d 
+  \tau}=\int_{-\infty}^{\infty}{\int_{-\infty}^{\infty}{\int_{-\infty}^{\infty}{A(\alpha) 
+  e^{i \alpha (t-\tau)} B(\beta) e^{i \beta \tau} d \beta} d \alpha } d \tau}$$ 
+
+  $$=\int_{-\infty}^{\infty}{\int_{-\infty}^{\infty}{A(\alpha) B(\beta) e^{i 
+  \alpha t} \int_{-\infty}^{\infty}{e^{i (\beta -- \alpha) \tau} d \tau} d 
+  \beta} d \alpha }. \tag{6}$$ 
+
+  But we can express the final integral in terms of a delta function using eq. 
+  (4): 
+
+  $$\int_{-\infty}^{\infty}{e^{i (\beta -- \alpha) \tau} d \tau} = 2 \pi \delta 
+  (\beta -- \alpha) \tag{7}$$ 
+
+  Substituting into eq. (6), we can now do the $\beta$ integration trivially 
+  using eq. (2), and so 
+
+  $$\int_{-\infty}^{\infty}{a(t-\tau) b(\tau) d \tau}=2 
+  \pi\int_{-\infty}^{\infty}{A(\alpha) B(\alpha) e^{i \alpha t} d \alpha}$$ 
+
+  $$=2 \pi \int_{-\infty}^{\infty}{C(\alpha) e^{i \alpha t} d \alpha} =2 \pi 
+  c(t) \tag{8}$$ 
+
+  which is the convolution theorem. 
+
+  We can apply this theorem directly to eq. (1), in terms of the inverse 
+  Fourier transform of $G(\omega)$. For reasons that will rapidly become 
+  apparent, it is convenient to call this inverse transform $2 \pi g(t)$. The 
+  result is then 
+
+  $$y(t)= \int_{-\infty}^{\infty}{g(t-\tau) x(\tau) d \tau} . \tag{9}$$ 
+
+  The function $g(t)$ has a simple physical interpretation in terms of our 
+  input-output system. From eq. (1), if the input is a delta function then the 
+  output would have $Y(\omega)=G(\omega)/2 \pi$ and the output waveform would 
+  thus be $y(t)=g(t)$. Since a delta function is an idealised impulse, this is 
+  called the impulse response of the system. Equation (9) thus says that in the 
+  general case, the output is the convolution of the input $x(t)$ with the 
+  impulse response of the system. 
+
+  For a simple illustration, we can calculate the impulse response of the 
+  mass-spring oscillator analysed in section 2.2.2. The mass is initially at 
+  rest, then at time $t=0$ the delta function ``arrives''. It is a unit 
+  impulse, so it gives the mass a unit change in momentum by Newton's law. So 
+  immediately after $t=0$, the mass still has zero displacement but its 
+  velocity has jumped to $1/m$. After that there is no applied force because 
+  the delta function returns to zero, so the oscillator executes free vibration 
+  at its natural frequency $\Omega=\sqrt{k/m}$, with a suitable amplitude and 
+  phase to match these initial conditions. The displacement for $t \ge 0$, 
+  which is the impulse response, is thus 
+
+  $$g(t) = \dfrac{1}{m \Omega} \sin \Omega t= \dfrac{1}{\sqrt{k m}} \sin \Omega 
+  t . \tag{10}$$ 
+
+  There is a simple way to understand the meaning of the convolution integral 
+  eq. (9). For the sake of graphical clarity, we will not illustrate using the 
+  impulse response from eq. (10). Instead, we will suppose that our linear 
+  system has an impulse response which is a simple exponential decay: 
+  $g(t)=e^{-t}$. Now suppose that the input to the system is the function 
+  $x(t)$ plotted at the top of Fig.\ 2. Slice this function up into thin strips 
+  with width $\Delta T$, as indicated in the plot. Each strip, taken by itself, 
+  gives a narrow pulse of input. The sum of all these pulses is the whole of 
+  the function $x(t)$. 
+
+  The strip near a time $t=T$ has an area $x(T) \Delta T$, so this strip 
+  considered on its own is roughly the same as an impulse $x(T) \delta(t-T) 
+  \Delta T$. This impulse, on its own, would produce output from the system 
+  $x(T) \Delta T g(t-T)$ by definition of the impulse response. For our sample 
+  problem these separate contributions are all plotted, one after another, down 
+  the page. Choose a strip in the figure, and run you eye vertically downwards: 
+  you will find one with a jump aligned with the centre of your strip, and it 
+  will have a magnitude (positive or negative depending which strip you choose) 
+  proportional to the height at the centre of your strip. 
+
+  \fig{figs/fig-075f3ad9.png}{Figure 2. Illustration of convolution: see text} 
+
+  Since the input $x(t)$ is the sum of the strips, the total output $y(t)$ is 
+  given, approximately, by the sum of all these scaled and delayed impulse 
+  responses. In other words 
+
+  $$y(t) \approx \sum_{slices}{x(T) g(t-T) \Delta T} . \tag{11}$$ 
+
+  The result of adding up this sum for the finite strips in Fig.\ 2 is plotted 
+  in Fig.\ 3. 
+
+  \fig{figs/fig-3d8c79b4.png}{Figure 3. The input as in Fig. 2, together with 
+  the sum of the responses to the finite strips, giving the jagged red line.} 
+
+  Now we let the width of the strips get narrower and narrower, so that they 
+  approximate more and more closely to the actual function $x(t)$. In the limit 
+  the sum becomes an integral and the approximation becomes exact: 
+
+  $$y(t)=\int_{-\infty}^{t}{x(T) g(t-T) dT} , \tag{12}$$ 
+
+  which is exactly the convolution integral of eq. (9). The result for the 
+  sample problem is plotted in Fig.\ 4. 
+
+  \fig{figs/fig-5cd1f792.png}{Figure 4. Plot as in Fig. 3, after the width of 
+  the strips has become very narrow.} 

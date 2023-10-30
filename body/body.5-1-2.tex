@@ -1,0 +1,95 @@
+  The result of connecting a stretched string to a non-rigid instrument body is 
+  that some energy will be transferred from the string into body vibration. To 
+  analyse this, we will suppose the string has tension $T$ and mass per unit 
+  length $m$, so that it has a wave speed $c=\sqrt{T/m}$ and a wave impedance 
+  $Z_0=\sqrt{Tm}$. One end of the string, at $x=0$, is connected to the 
+  instrument body, with bridge admittance $Y(\omega)$. The other end, at $x=L$, 
+  is assumed to be rigidly fixed. 
+
+  It is easiest to work in terms of travelling waves on the string. Suppose 
+  that a sine wave with frequency $\omega$ and unit amplitude travels in from 
+  $x>0$, and impinges on the bridge. A reflected wave will be generated, with 
+  the same frequency but travelling in the opposite direction. It will have a 
+  reduced amplitude, and perhaps a phase shift. We can represent both effects 
+  through a complex reflection coefficient $R(\omega)$. The incident wave can 
+  be written as $e^{i \omega(t+x/c)}$, while the reflected wave is $R e^{i 
+  \omega (t-x/c)}$: the situation is sketched in Fig.\ 1. 
+
+  \fig{figs/fig-cdf9e49a.png}{Figure 1: sketch of an incident wave on a string, 
+  impinging on the bridge and generating a reflected wave.} 
+
+  The total deflection of the string is given by the sum of the two waves: 
+
+  $$w(x,t)=e^{i \omega(t+x/c)}+R e^{i \omega (t-x/c)} \tag{1}$$ 
+
+  (remembering that, as usual, the physical solution will be given by the real 
+  part of this complex expression). We can now write down expressions for the 
+  motion of the string at the bridge, and also for the force exerted on the 
+  bridge at that point. These two things must be related via the admittance 
+  $Y$, and the resulting equation will allow us to solve for the reflection 
+  coefficient $R$. 
+
+  The string displacement at $x=0$ is given directly from eq. (1) as $(1+R)e^{i 
+  \omega t}$. The force on the bridge is given by the resolved component of the 
+  tension in the direction normal to the soundboard, which is approximately 
+  equal to 
+
+  $$T \left[ \dfrac{\partial w}{\partial x} \right]_{x=0} = T \left[ \dfrac{i 
+  \omega}{c} -- R \dfrac{i \omega}{c} \right] e^{i \omega t} = i \omega Z_0 
+  (1-R) e^{i \omega t}\tag{2}$$ 
+
+  since $Z_0=T/c$. So the condition for the admittance $Y$ is that 
+
+  $$i \omega (1+R) = Y(\omega) i \omega Z_0 (1-R) .\tag{3}$$ 
+
+  The factor of $i \omega$ on the left-hand side is needed to convert the 
+  string's displacement into its velocity. This equation can easily be solved, 
+  to give 
+
+  $$R=\dfrac{Y(\omega) Z_0 -- 1}{Y(\omega) Z_0 + 1} .\tag{4}$$ 
+
+  For any realistic stringed instrument, the body motion at the bridge is 
+  always small compared to the string motion. This translates into the 
+  statement that $|Y(\omega) Z_0| \ll 1$. We can then make use of the binomial 
+  theorem to obtain a simpler approximate expression for $R$: 
+
+  $$R \approx [Y(\omega) Z_0 -- 1][1-Y(\omega) Z_0] \approx -1 +2Y(\omega) Z_0 
+  .\tag{5}$$ 
+
+  This makes physical sense: a rigid termination would give an inverted 
+  reflection with $R=-1$, and this is slightly modified by the non-rigid 
+  bridge. 
+
+  The final step is to think about the rate of energy loss from the string into 
+  the body, and find an expression for the resulting loss factor of a string 
+  mode, when any other sources of energy dissipation are ignored. A mode of the 
+  string consists of a standing wave, which is the resultant of the 
+  forward-travelling and backward-travelling waves in Fig.\ 1. The wave comes 
+  to the bridge, is reflected as we have just analysed, then travels to the 
+  other end of the string where it is reflected with no further loss of energy 
+  because we have assumed a rigid termination there. It then completes the 
+  circuit by arriving back at the bridge. 
+
+  During one round trip, the amplitude of the wave has been reduced by a factor 
+  $|R|$. The energy carried by a wave is proportional to the square of its 
+  amplitude, so the energy has been reduced by a factor $|R|^2$ in that time. 
+  The proportional loss of energy is thus $(1-|R|^2)$. The definition of loss 
+  factor is that it describes the proportional energy loss per radian of 
+  vibration, so we need to divide by the number of radians in a round trip. For 
+  the $n$th mode of the string, with approximate mode shape $\sin (n \pi x/L)$, 
+  there are $n$ cycles per round trip, or $2 \pi n$ radians. So the loss factor 
+  due to energy loss through the bridge is 
+
+  $$\eta^{(n)}_{body} \approx \dfrac{1-|R|^2}{2 \pi n} . \tag{6}$$ 
+
+  Making use of the approximation in eq. (5), the magnitude of $R$ can be 
+  calculated via 
+
+  $$|R|^2=R R^* \approx [-1+2Y(\omega) Z_0] [-1+2Y^*(\omega) Z_0]$$ 
+
+  $$\approx 1 -- 2 Z_0 (Y + Y^*) \approx 1 -- 4 Z_0 \Re(Y)\tag{7}$$ 
+
+  where $.^*$ denotes the complex conjugate, and $\Re(.)$ denotes the real part 
+  of a complex quantity. So finally, 
+
+  $$\eta^{(n)}_{body} \approx \dfrac{2 Z_0 \Re(Y)}{ \pi n} . \tag{8}$$ 

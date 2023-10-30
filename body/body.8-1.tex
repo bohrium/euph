@@ -1,0 +1,243 @@
+  Up to now, we have been concentrating on linear systems. In the previous 
+  section we saw examples of musical instruments that were “almost linear”, but 
+  with nonlinear effects beginning to show, and sometimes proving important for 
+  the sound. Shortly, we will look at some seriously nonlinear instruments. But 
+  before that it is useful to step back a little to give a brief survey of what 
+  we might expect to see, and what methods we might bring to bear in order to 
+  make sense of nonlinear phenomena. 
+
+  This will not be an easy task, and you should not expect a complete, 
+  organised account of everything nonlinear systems can do. “Nonlinear” is one 
+  of those terms that is defined purely by its negative. “Linear” means 
+  something definite: linear systems are amenable to systematic discussion, as 
+  we illustrated in Chapter 2. But “nonlinear” simply means “not one of 
+  those…”. It is a bit like the term “agnostic”, which only tells you something 
+  about what a person does not believe: it tells you nothing about what they do 
+  believe. 
+
+  When nonlinearity becomes important, some of the concepts we have been using 
+  regularly up to this point become useless; or at the least, questionable and 
+  potentially misleading. The prime example is the idea of a frequency response 
+  function. We have been showing various plots of frequency response, for 
+  example using bridge admittance to characterise the behaviour of the soundbox 
+  of a stringed instrument. Well, think right back to Chapter 2. That was where 
+  we first met the idea of frequency response plots, which relied on the idea 
+  of linearity in two critical ways. 
+
+  First, we learned that sine waves are special waveforms. For any linear 
+  system, if you feed a sine wave in you get another sine wave out, at the same 
+  frequency. Its amplitude and phase may have been changed, and those changes 
+  may vary with the frequency of the particular sine wave, but the waveform is 
+  always sinusoidal. The second crucial property of linear systems is 
+  superposition: if you can express the input as a sum of separate terms, and 
+  if you know how each of those terms separately is affected by the system, 
+  then you simply add the separate outputs together to find the total response. 
+  We applied this idea to Fourier analysis: express the input as a combination 
+  of sinusoidal terms, work out how each term is affected by knowing the 
+  frequency response function, then add these output sinusoids together to find 
+  the actual output. 
+
+  Both these properties go out of the window with a nonlinear system. We can 
+  give very simple illustrations to demonstrate that claim. Let’s start with 
+  the “sine wave in, sine wave out” property. Think about an electrical 
+  amplifier, like the ones in home hi-fi systems. An ideal amplifier simply 
+  takes an input electrical signal, and boosts it by a certain factor so that 
+  it can drive a loudspeaker. An amplifier that behaves like this certainly 
+  satisfies the sine wave property: every input waveform, sine waves included, 
+  should produce output with the identical waveform except for the amplitude 
+  being increased. 
+
+  Well, there is a problem. Any amplifier is likely to have a maximum output 
+  voltage that it is capable of producing — often related directly to the 
+  voltage of the power supply which provides it with electrical power. Now 
+  suppose you feed in a sine wave, with an amplitude big enough that a 
+  correctly amplified version would exceed this limit. What is likely to happen 
+  is a type of nonlinear response known as clipping. The peaks and troughs of 
+  the output sine wave will be chopped off at the amplifier’s maximum voltage. 
+  The result, in idealised form, will be an output waveform like the red curve 
+  in Fig.\ 1, instead of the dotted black curve which represents a correctly 
+  amplified sine wave. 
+
+  \fig{figs/fig-8ff9a099.png}{Figure 1. Nonlinear response of an amplifier: the 
+  dotted sine wave is the desired output, but if clipping occurs the actual 
+  output will be like the red curve.} 
+
+  What can we say about the clipped output waveform? Well, it certainly isn’t a 
+  sine wave. But it is still a repetitive, or periodic, waveform. We know from 
+  section 2.2.1 that any periodic waveform can be expressed as a Fourier 
+  series, which will consist of a sine wave at the fundamental frequency (the 
+  frequency of our input sine wave), plus a series of sine waves at exactly 
+  harmonic frequencies. So here we meet one of the characteristic effects of a 
+  nonlinear system: it might generate harmonics of a frequency you feed in. In 
+  the case of the hi-fi amplifier, this would be a bad thing. You don’t want 
+  your amplifier to change the sound of what you are listening to, just make it 
+  louder. But the sound of the clipped waveform will be very different from the 
+  sound of a sine wave: much brighter, because of all the high-frequency 
+  components appearing in the Fourier series. You can hear in in Sound 1: first 
+  the sine wave, then the clipped version. 
+
+  Clipping isn’t always bad, though. A less harsh version of clipping, called 
+  “soft clipping”, seems to be part of the reason for the enduring preference 
+  of electric guitarists for valve (vacuum tube) amplifiers. Modern solid-state 
+  amplifiers may be more likely to produce “hard” clipping of the kind 
+  illustrated in Fig.\ 1 and demonstrated in Sound 1. The soft clipping effect 
+  enters more gradually as the input level approaches the amplifier's limit: a 
+  schematic example is shown in Fig.\ 2. Guitarists can make constructive use 
+  of the effect, whereas hard clipping comes in more abruptly and simply sounds 
+  harsh. This is a first, tiny, glimpse that a musician may make constructive 
+  use of nonlinear effects. That will be a major theme of this chapter: we will 
+  meet examples in many different guises. 
+
+  \fig{figs/fig-f7eb68d7.png}{Figure 2. Schematic plot of an amplifier showing 
+  ``soft clipping'', to be contrasted with the ``hard clipping'' in Fig. 1.} 
+
+  The idea of superposition also goes out of the window with any nonlinear 
+  system. We have already seen an example of this in the discussion of “phantom 
+  partials” in the previous section. The nonlinearity we looked at in section 
+  7.4.1 was the simple example of a square law. What we found was that if you 
+  take a single sine wave and square it, the result is a sine wave at double 
+  the frequency you started with. This is a rather extreme example of 
+  ``harmonic generation'': the nonlinearity gives an output containing only 
+  second harmonic, with none of the original fundamental frequency. 
+
+  So what happens if we take two sine waves at different frequencies and put 
+  them through the square-law nonlinearity? Taking each one separately and 
+  squaring it would give two sine waves at the two doubled frequencies. But we 
+  saw in section 7.4.1 that when you add the two sine waves together and then 
+  square them, the result includes extra sinusoidal terms at the sum and 
+  difference of the two original frequencies. This is definitely not a 
+  superposition of the two separate outputs. 
+
+  There is another idea that we have made much use of, but which becomes 
+  questionable in the presence of nonlinearity: the idea of modes of vibration. 
+  Modes give a very powerful and general tool for understanding the vibration 
+  of linear structures. Lord Rayleigh, back in the 19th century, was intimately 
+  familiar with that fact, and it has been a cornerstone of vibration theory 
+  ever since. Well, people do sometimes talk about “nonlinear modes”, but this 
+  is a somewhat contentious idea which is still a topic of current research. As 
+  a rule of thumb we should not expect discussions of nonlinear effects to 
+  centre around modes in the same way as we have been using for linear 
+  vibration. At the very least, we will exercise caution in any such 
+  discussions. 
+
+  All this seems very negative. Should we regard nonlinearity simply as a 
+  nuisance, to be avoided wherever possible? In the context of a lot of 
+  industrial problems involving noise and vibration control, the answer would 
+  be “yes”. But for musical problems, the answer is an emphatic “no!”. At the 
+  risk of offending percussionists, isn’t there something a bit limiting about 
+  a lot of percussion instruments? Of course you can make interesting music on 
+  a marimba, but the range of possibilities is much less wide than with the 
+  human voice, or a violin. Nonlinearity is the key to this difference. 
+
+  To give an impression of why that might be, it is useful to list some of the 
+  possible consequences of nonlinearity: we will go into these in more detail 
+  in subsequent sections. So far, we have only met some rather basic nonlinear 
+  phenomena: harmonic generation (as in the clipping example);combination 
+  frequencies (such as phantom partials); the pitch glide effect in which 
+  vibration amplitude affects the frequency; and (in the lute string example) 
+  the fact that some kind of impact might change the bandwidth of excitation, 
+  and thus change the brightness of the sound. 
+
+  But these examples give little hint of the richness of behaviour that can 
+  stem from nonlinearity. The next phenomenon to mention gives the key to 
+  entire families of musical instruments: the possibility of self-excited 
+  vibration. Up to now, we have been discussing vibration and sound caused by 
+  some obvious source of excitation: a drumstick, the clapper of a bell, the 
+  finger or plectrum of a guitarist, the hammer of a piano. But what about the 
+  wind instruments? A player blows steadily into the mouthpiece of a recorder, 
+  for example, and a musical note may or may not emerge depending on whether 
+  they get the technique just right. In some way, the player’s lungs must be 
+  providing the energy to sustain the vibration and sound. But where does the 
+  vibration come from? The same question could be asked about a violin: the 
+  player pushes the bow across a string, and vibration appears “from nowhere”. 
+
+  Linear theory can give no more than a hint of the answer to that question. We 
+  will see in section 8.3 that it is sometimes possible to predict the 
+  threshold for self-excited vibration using a linearised theory. Reed woodwind 
+  instruments can illustrate the effect. If you blow very gently into a 
+  clarinet or saxophone, you hear nothing except a bit of “breath noise” from 
+  your blowing. But if you gradually increase your blowing pressure, at some 
+  stage a musical note will “light up” from nowhere. That critical blowing 
+  pressure is an example of a threshold of instability: we will see how that 
+  works in section ?. But the only thing linear theory can predict is that once 
+  you are beyond the threshold, the volume of the note will continue to grow in 
+  an exponential way, louder and louder without limit. The real note doesn’t do 
+  that: it settles to a steady amplitude. That kind of sustained self-excited 
+  vibration always requires nonlinearity, whether we are talking about wind 
+  instruments or bowed string instruments, or about the disastrous wind-driven 
+  vibration of the \tt{}Tacoma Narrows bridge\rm{}. 
+
+  We can return to the recorder or clarinet examples to illustrate the next 
+  nonlinear phenomenon. You have gradually increased blowing pressure to find 
+  the threshold, and achieved a decent musical note. If you carry on blowing 
+  gradually harder, you may find that at some stage the instrument 
+  spontaneously switches to playing a different note: a musician would call 
+  this “overblowing”. This tells us that the recorder or clarinet is capable of 
+  more than one kind of self-excited note, or regime of vibration, and also 
+  that when you vary a parameter like the blowing pressure you may hit critical 
+  values where a switch occurs. In mathematical accounts of the underlying 
+  theory, such switches are called bifurcations. Regime switches like this are 
+  crucial to many musical instruments: indeed, with a valveless brass 
+  instrument like a bugle or natural horn this is the only way that a player 
+  can change the note they are playing. Of course, in practice the player will 
+  not only vary the blowing pressure: they will also do things with their lips, 
+  varying their “embouchure” to allow them to control the switches reliably. 
+
+  Now think about doing a similar experiment with a violin. Place your bow on a 
+  string, move it at a steady speed, and gradually increase how hard you press 
+  down. You don't find a clear-cut threshold this time, it all seems more 
+  complicated than the wind instruments. When you are pressing very lightly, 
+  you may create a variety of whistles and squeaks. Then you will find a value 
+  of the bow force when the violin starts to make the kind of sound you (or 
+  your violin teacher) are aiming for. But if you carry on increasing the 
+  force, this nice musical note will eventually give way to some kind of 
+  raucous “crunch”. What has happened is that regular periodic motion of the 
+  string, responsible for the acceptable musical note, ceases to be possible. 
+  Instead, something non-periodic (and non-musical) occurs instead. This is an 
+  example of another important nonlinear phenomenon you will probably have 
+  heard of: “chaos”. 
+
+  The hallmark of chaotic response is something called “sensitive dependence”. 
+  If you repeat the experiment with a new bow-stroke, you will produce a 
+  similar-sounding “crunch” at the end, but if the two notes are recorded and 
+  then compared carefully, the details will be different. Even a very good 
+  player will not be able to take a bowed string deep into the raucous regime, 
+  and achieve exactly the same motion twice. Tiny differences in the two bow 
+  gestures will be amplified in the chaotic regime to produce results that are 
+  completely different. 
+
+  Good violinists probably never stray into this raucous, chaotic regime, but 
+  they regularly encounter another manifestation of “sensitive dependence”. 
+  During the transient at the start of each note, it is extremely hard to 
+  control the bow gesture well enough that two identical waveforms can be 
+  produced. By dint of many hours of practice, a good violinist will learn to 
+  control their transients well enough that most of the time they can produce 
+  something that sounds pretty much the same. But for some kinds of bow gesture 
+  it is hard to do even that: we will go into some details on all this in 
+  Chapter?. Such behaviour can only occur in a nonlinear system: linear systems 
+  simply do not allow anything resembling sensitive dependence or chaos. 
+
+  This example of bowed-string transients raises the final issue to be 
+  mentioned in this introductory discussion. Let me remind you of something I 
+  said right back in Chapter 1. I ventured a definition: “A musical instrument 
+  is a contrivance which allows a performer to use gestures they are physically 
+  capable of performing to make sounds that they like”. Every musical 
+  instrument represents a balance between two competing desires. On the one 
+  hand, the player wants an instrument with a wide repertoire of possible 
+  sounds to give a good “palette” for their performance. But they have to be 
+  capable of exercising rather precise control over these sounds, so they want 
+  an instrument with good “playability”. The richer the potential palette, the 
+  trickier the control problem is likely to become. We will investigate all 
+  this and try to pin down at least some aspects of ``playability'' in Chapter 
+  ?. 
+
+  In summary, in this chapter and the ones that follow we will explore some of 
+  the wonderful, but often frustrating, possibilities that arise from different 
+  aspects of nonlinear behaviour in musical instruments. Profoundly nonlinear 
+  instruments like the violin require a lot of practice before you can even 
+  produce a single note with satisfying musical qualities, but in the hands of 
+  an expert a violin can produce a whole world of interesting musical sounds. 
+  Its motto might be “no pain, no gain”. But none of this musical potential 
+  would be possible without the nonlinearity: as the software engineers would 
+  put it, nonlinearity is not a bug, it’s a feature. 
+

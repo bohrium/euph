@@ -1,0 +1,64 @@
+  There is a simple way to see why the natural frequencies of a rectangular 
+  plate with simply-supported edges give rise to a modal density that is 
+  constant on average. Equation (6) of section 3.2.3 gave natural frequencies 
+
+  $$\omega_{nm} = \sqrt{\frac{EK}{\rho h}} \left[\frac{n^2 
+  \pi^2}{a^2}+\frac{m^2 \pi^2}{b^2} \right] \tag{1}$$ 
+
+  which we can write in the form 
+
+  $$\omega_{nm} = \sqrt{\frac{EK}{\rho h}} \left[k_x^2+k_y^2 \right] \tag{2}$$ 
+
+  where $k_x$ and $k_y$ are the components of wavenumber in the $x$ and $y$ 
+  directions respectively. The solutions allow $n$ and $m$ to take any integer 
+  values 1,2,3..., so if we plot these in the wavenumber plane we obtain a 
+  regular grid, sketched in Fig.\ 1. 
+
+  \fig{figs/fig-3d9226ce.png}{Figure 1. Modes of a rectangular plate of 
+  dimensions $0.6 \times 0.4$ m, plotted in wavenumber space (red stars). The 
+  blue curve encloses the set of modes with natural frequencies below a chosen 
+  frequency.} 
+
+  If we now ask how many modes have natural frequencies below some fixed value 
+  $\Omega$, we have to count the number of points on this wavenumber grid lying 
+  inside a quarter-circle with radius $r$ satisfying 
+
+  $$\sqrt{\frac{EK}{\rho h}} r^2 = \Omega \tag{3}$$ 
+
+  such as the one plotted in blue in Fig.\ 1. The points are uniformly 
+  distributed over the plane, so this mode count is proportional to the area 
+  inside the blue curve. But the radius $r$ is proportional to $\sqrt{\Omega}$, 
+  and of course the area is proportional to $r^2$, so we deduce that the count 
+  of natural frequencies below $\Omega$ is proportional to $\Omega$. This is 
+  another way of saying that the average modal density is a constant, 
+  independent of $\Omega$. 
+
+  To obtain an explicit formula, we first note that the area of one ``box'' of 
+  the wavenumber grid is $(\pi/a) \times (\pi/b)$. The area of the 
+  quarter-circle is 
+
+  $$A_c = \dfrac{\pi r^2}{4} = \dfrac{\pi}{4} \Omega \sqrt{\dfrac{\rho h}{EK}} 
+  \tag{4}$$ 
+
+  so using the value of $K$ from eq. (4) of section 3.2.3 we can deduce that 
+  the number of ``boxes'' needed to fill this area, and hence the mode count 
+  $N(\Omega)$, is given by 
+
+  $$N \approx \dfrac{ab}{\pi^2} \dfrac{\pi}{4} \Omega \sqrt{\dfrac{12 \rho 
+  (1-\nu^2)}{Eh^2}} = \Omega \dfrac{ab}{2 \pi h} \sqrt{\dfrac{3 \rho 
+  (1-\nu^2)}{E}} . \tag{5}$$ 
+
+  Thus the modal density $n$ is 
+
+  $$n=\dfrac{dN}{d \Omega} = \dfrac{ab}{2 \pi h} \sqrt{\dfrac{3 \rho 
+  (1-\nu^2)}{E}} . \tag{6}$$ 
+
+  This argument has been based on the special case of the rectangular plate, 
+  with simply-supported edges. If the shape and/or the boundary conditions are 
+  changed in some continuous way, the points in the wavenumber plot will move 
+  around continuously, but they never appear or disappear. So the average 
+  density of points in the plane remains fairly uniform, and the argument given 
+  above still applies. Of course, the density of points and hence the numerical 
+  value of the modal density may change, for example if the plate is made 
+  smaller, larger or thicker. But it will remain the case that the average 
+  modal density will remain roughly constant. 

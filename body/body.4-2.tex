@@ -1,0 +1,417 @@
+
+
+  There are two aspects of acoustics that will be of direct interest to us to 
+  understand the behaviour of musical instruments. Wind instruments of all 
+  kinds rely on acoustical resonators, and acoustic resonances also play a role 
+  in understanding the behaviour of stringed instrument bodies and of room 
+  acoustics. This section will give an initial overview of all these examples. 
+  Then in the next section we will address the other important aspect of 
+  acoustics : the radiation of sound by a vibrating structure such as a violin 
+  body. 
+
+  When we looked at mechanical vibration in Chapter 2, we started with the 
+  mass-spring system, with a single degree of freedom, then went on to look at 
+  multi-modal systems like stretched strings and bending beams. We follow a 
+  similar sequence here. There is an acoustical equivalent of the mass-spring 
+  oscillator, called a Helmholtz resonator. 
+
+  \samsection{A: The Helmholtz resonator} 
+
+  This simple resonating system is responsible for the popping noise when you 
+  pull out a cork or flick a thumb out of the top of a bottle. All 
+  “bottle-like” vessels have a low-frequency resonance in which a “plug” of air 
+  in the neck behaves like an invisible piston, and can oscillate on a “spring” 
+  resulting from compression of the air in the enclosed volume inside the 
+  bottle. This ``spring'' is the force you feel if you try to operate a bicycle 
+  pump while you have your thumb over the end. Figure 1 shows a sketch, and the 
+  next link gives a derivation of the resulting formula for the resonant 
+  frequency. 
+
+  \fig{figs/fig-2e7e436e.png}{Figure 1. Sketch of a bottle, with the invisible 
+  piston mass that is responsible for the Helmholtz resonance.} 
+
+  Before the days of electronics, a set of tuned Helmholtz resonators could be 
+  used as a “spectrum analyser”: an example is shown in Fig.\ 2. Helmholtz 
+  resonance also accounts for the effect that children often encounter when 
+  visiting the seaside: they hold a sea-shell to one ear, and are told ``You 
+  can hear the sound of the sea inside the shell''. Both these examples work in 
+  the same way: the resonator amplifies ambient sound in a frequency range 
+  close to the resonant frequency, as demonstrated explicitly in the previous 
+  link. If you place an ear close enough, you hear this amplification effect. 
+  The resonators shown in Fig.\ 2 are provided with a nipple that is placed in 
+  the ear canal for this purpose. 
+
+  The most direct musical application of a Helmholtz resonator is an ancient 
+  instrument called the ocarina. Figure 3 shows an example. A whistle-like 
+  mouthpiece leads to a chamber with a number of finger holes. Unlike other 
+  wind instruments with finger holes, it doesn't matter which particular holes 
+  you cover. The note you obtain from the ocarina depends only on the total 
+  area of open holes: it is a Helmholtz resonator and the frequency is 
+  determined by the chamber volume and the combined area and ``neck length'' of 
+  the open holes, according to the formula given in the previous link. This 
+  means that ocarinas can be made in many different shapes, but all work in the 
+  same way and all sound rather similar. 
+
+  A more mainstream application of Helmholtz resonance in musical instruments 
+  is relevant to many stringed instruments. For definiteness, we will use the 
+  guitar as an example. The body of an acoustic guitar like the one seen in 
+  Fig.\ 4 is a thin-walled box, usually made of wood, and there is an opening 
+  in the top plate, usually called the soundhole. It is sometimes thought that 
+  this hole is there ``to let the sound out'', but that is quite misleading. 
+  Most of the sound is created by vibration of the wooden plates, but the hole 
+  serves to make a significant enhancement to the radiation of sound at lower 
+  frequencies in the instrument's range by adding a Helmholtz-like resonance. 
+  ``Helmholtz-like'', because the box is not a rigid enclosure. It is very 
+  important to allow for the flexibility of the plates forming the walls of the 
+  box. 
+
+  \fig{figs/fig-8422f1ea.png}{Figure 4. A classical guitar, being played by Ian 
+  Cross} 
+
+  We can get a good impression of how this works using a simple model which 
+  takes account of only one vibration mode of the box, the lowest mode of the 
+  top plate. We will come to a more complete description of how the guitar 
+  works in section 5.3, including some images of mode shapes, but for now we 
+  simply need to know that this lowest mode behaves just as you would expect. 
+  The main area of the plate, carrying the bridge in the middle, bulges in and 
+  out roughly in the manner sketched in Fig.\ 5. 
+
+  \fig{figs/fig-6c65af28.png}{Figure 5. Sketch of a guitar body, indicating the 
+  form of the lowest mode of the top plate (on a greatly exaggerated scale)} 
+
+  This plate vibration will interact with the internal air pressure and the 
+  Helmholtz resonance. The vibrating plate will cause changes in internal air 
+  pressure, and in turn that pressure exerts a force on the plate. But the same 
+  is still true of the invisible ``Helmholtz piston'' in the soundhole. The 
+  combined system can be represented in a different form, shown in Fig.\ 6. The 
+  mode of the top plate is represented by a mass and a spring, and also a 
+  piston connecting it to the internal air. The enclosure is otherwise rigid, 
+  with a ``neck'' in which the Helmholtz piston moves. It is no coincidence 
+  that this figure resembles a loudspeaker in an enclosure: the same modelling 
+  is used in the design of ducted (or bass reflex) loudspeakers. 
+
+  \fig{figs/fig-8fbcc8b4.png}{Figure 6. Idealised version of the guitar mode 
+  from Fig. 5 coupled to the Helmholtz resonance. (The same model can describe 
+  a ducted loudspeaker enclosure.)} 
+
+  The detailed analysis of this system is given in the next link, but we can 
+  learn the most important things about the result without mathematical detail 
+  by doing one more stage of abstraction. The system in Fig.\ 6 can be 
+  represented by an equivalent mass-spring system, shown in Fig.\ 7. The 
+  left-hand mass and spring represent the mode of the plate (or of the 
+  loudspeaker cone). The right-hand mass represents the Helmholtz piston. The 
+  spring connecting the two masses represents the springiness of the internal 
+  air: the net volume, and hence the internal pressure, depends on the relative 
+  motion of the two pistons. For example, if the Helmholtz piston moved inwards 
+  at the same time as the plate moved outwards, with the correct ratio of 
+  amplitudes, the volume and internal pressure would not change. 
+
+  \fig{figs/fig-c30c8828.png}{Figure 7. Mass-spring system equivalent to Fig. 
+  6} 
+
+  The two-mass system of Fig.\ 7 will have two vibration modes, as explored in 
+  some generality in Section 2.2.5. The lower-frequency one of these modes will 
+  have the two masses moving in the same phase, while the higher frequency will 
+  have them moving in opposite phases. Both modes will involve some stretching 
+  and compression of the right-hand spring, representing changes of internal 
+  air pressure. We will see in section 4.3 that changes in internal pressure, 
+  associate with changes in net volume, give a good indication of the strength 
+  of external sound radiation by each mode. 
+
+  Figure 8 shows a schematic representation of the two modes, in a way that 
+  relates directly to Fig.\ 6. It is based on parameter values appropriate to a 
+  typical guitar body (see previous link for details). In order to illustrate 
+  the relative volume displacements of the two pistons, which is the important 
+  factor determining the sound radiation, the two pistons are shown with the 
+  same sizes. In the real guitar, the Helmholtz piston has about 1/10 the area 
+  of the effective plate piston , so that its relative displacement is in fact 
+  10 times bigger to compensate. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-2b8d4bad-00.png }&\vidframe{ 0.30 }{ vids/vid-2b8d4bad-01.png }&\vidframe{ 0.30 }{ vids/vid-2b8d4bad-02.png } \end{tabular}\caption{Figure 8. Animation of the two modes of the model in Fig. 6. The plotted motion is proportional to the volumes displaced by the two pistons: the plate piston (upper) and the Helmholtz piston (lower). In a guitar, these two modes are normally about an octave apart in frequency, as depicted here.}\mooendvideo
+
+  Both modes involve some motion of the mass representing the top plate motion. 
+  This is important: the vibrating string is attached to the plate, and the 
+  excitation of each mode depends on plate motion. For an ideal Helmholtz 
+  resonator with rigid cavity walls, the resonance could not be excited by a 
+  vibrating string. 
+
+  So in summary the combination of a flexible top plate with a cavity 
+  containing a soundhole is that the guitar has two resonances which are good 
+  radiators of sound, and which can both be driven efficiently by the vibrating 
+  strings. The details are, to a large extent, under the control of the guitar 
+  maker. The frequencies of the two resonances can be controlled: the thickness 
+  and bracing details of the top plate determine where the lowest plate 
+  resonance would fall in the absence of interaction with the air, while the 
+  volume of the box and the size of the soundhole determine where the Helmholtz 
+  resonance would fall in the absence of plate motion. A trick sometimes used 
+  by guitar makers when they want to reduce the Helmholtz frequency is to add a 
+  ``tornavoz'': a cylindrical collar fitted inside the box, extending the 
+  soundhole into a longer neck and thus increasing the mass of the ``Helmholtz 
+  piston''. An example is shown in Fig.\ 9. 
+
+  \fig{figs/fig-46604c5d.png}{Figure 9. A guitar fitted with a tornavoz to 
+  modify the Helmholtz resonance frequency} 
+
+  \samsection{B: Pipe resonances} 
+
+  Most wind instruments rely on resonances in pipes of one kind or another. 
+  They have a variety of internal shapes, or bore profiles. We look first at 
+  two simple examples, then take a preliminary look at how to deal with more 
+  complicated profiles such as those found in brass instruments. 
+
+  The first example makes use of the simplest sound field that we met in 
+  section 4.1, the plane wave. As Fig.\ 10 indicates, a straight-walled pipe 
+  can be superimposed on a plane wave, aligned with the direction of 
+  propagation, and since the particle motion is always parallel to the pipe 
+  walls, the wave inside the pipe can behave exactly the same way as it did in 
+  empty space. So plane waves can propagate along a straight pipe at the speed 
+  of sound: a practical application of this is the speaking tube, still 
+  sometimes used as a way to communicate which doesn't rely on electricity. 
+
+  \fig{figs/fig-3c4906ca.png}{Figure 10. Sketch of a plane sound wave (wave 
+  crests shown as black lines), with a straight pipe (red lines) superimposed. 
+  The particle motion (blue arrow) is parallel to the pipe walls, so the plane 
+  wave can propagate inside the pipe exactly the same as in empty space.} 
+
+  Now we want to think about pipes of finite length, to understand their mode 
+  shapes and resonant frequencies. First, we need to think about possible 
+  boundary conditions at the end of a pipe. One possibility is an open end: the 
+  pipe is simply cut off. The sound wave inside the pipe is then exposed to the 
+  outside world. Some sound will escape from the end and radiate away, but to a 
+  good first approximation we can say that at the end of the pipe (or, at 
+  least, somewhere near the end of the pipe: see the discussion of end 
+  corrections in section 4.2.1) the pressure simply becomes the steady 
+  atmospheric pressure. In terms of the acoustic pressure, that means the open 
+  end of the pipe must be a node. 
+
+  Another simple boundary condition would occur if one end of the pipe was 
+  blocked. At a closed end like this, the thing we can say straight away is 
+  that the oscillating air particles cannot pass through the blocked end: we 
+  must have a nodal point of particle displacement. We can deduce what this 
+  means for pressure by referring back to eq. (2) of section 4.1.1: pressure is 
+  proportional to the spatial derivative of displacement. Once we assume 
+  sinusoidal time dependence in order to find modes of the pipe, then the 
+  spatial variation must also be sinusoidal. It follows that if the pressure 
+  variation is like $\sin kx$, the displacement must be like $\cos kx$, and 
+  vice versa. So a nodal point of displacement means an antinode of pressure. 
+
+  We now have enough information to find mode shapes and natural frequencies. 
+  For a pipe open at both ends, the pressure must be sinusoidal with nodes at 
+  both ends. It follows that the mode shapes are exactly the same as the ones 
+  we found for a vibrating string in section 3.1.1. The first few are 
+  illustrated in Fig.\ 11. The natural frequencies also obey the same formula 
+  as for the string: the $n$th frequency is 
+
+  $$f_n=\frac{nc}{2L} \tag{1}$$ 
+
+  for a pipe of length $L$, where $c$ is the speed of sound. 
+
+  \fig{figs/fig-3fdb2120.png}{Figure 11. The first five mode shapes for 
+  pressure inside a straight pipe, open at both ends.} 
+
+  For a pipe that is open at one end but closed at the other, the corresponding 
+  mode shapes have to be as shown in Fig.\ 12. The lowest mode has a 
+  quarter-wavelength trapped in the length, rather than a half-wavelength as 
+  for the open-open pipe. The next mode has 3 quarter-wavelengths, the next 5 
+  and so on. The corresponding frequency for the $n$th mode is 
+
+  $$ f_n=\frac{(2n-1)c}{4L} . \tag{2}$$ 
+
+  It follows that the pattern of natural frequencies is different from the 
+  open-open case. The frequency ratios are 1:3:5:7, rather than 1:2:3:4. In 
+  other words, they are alternate terms of the harmonic series, rather then 
+  every term. Furthermore, the fundamental frequency of the closed-open pipe is 
+  an octave lower than that of the open-open pipe, for a tube of the same 
+  length. This explains a familiar effect in instruments. To a first 
+  approximation, a flute is a straight open-open tube, and a clarinet is a 
+  straight closed-open tube. The two instruments have roughly the same length, 
+  but the clarinet plays an octave lower for a given fingering. It overblows at 
+  the twelfth (a frequency ratio of 3), whereas the flute overblows at the 
+  octave. 
+
+  \fig{figs/fig-7a32d469.png}{Figure 12. The first five mode shapes for 
+  pressure inside a straight pipe, open at one end but closed at the other.} 
+
+  Some instruments, like the oboe and the saxophone, are better approximated as 
+  conical tubes rather than straight tubes. The ideal straight-sided conical 
+  tube is another case that we can understand easily, based on something we 
+  already know: this time, it is a spherical wave field such as that produced 
+  by a pulsating sphere as in section 4.1.2. As Fig.\ 13 indicates, a 
+  straight-walled conical pipe can be superimposed on such a spreading 
+  spherical wave, aligned with the direction of propagation and with its point 
+  placed at the origin. As happened for the plane wave and the straight pipe, 
+  the particle motion is always parallel to the pipe walls, so the wave inside 
+  the pipe can behave exactly the same way as it did in empty space. 
+
+  \fig{figs/fig-a263730f.png}{Figure 13. Sketch of a spherically-spreading 
+  sound wave (wave crests shown as black lines), with a conical pipe (red 
+  lines) superimposed. The particle motion (blue arrow) is radial, and 
+  therefore parallel to the pipe walls, so the wave can propagate inside the 
+  pipe exactly the same as in empty space.} 
+
+  We need to think about boundary conditions again. The theory for the 
+  spherical wave showed that the combination $xp$ satisfies the one-dimensional 
+  wave equation, rather than the pressure $p$ alone as in the case of the 
+  straight pipe. Here, $x$ is the distance along the cone from the point. At an 
+  open end of the cone, we will have a node of pressure as before, and hence a 
+  node of $xp$. But as we approach the pointed end of the cone, $x \rightarrow 
+  0$, and so $xp(x) \rightarrow 0$. The result is that the combination $xp$ has 
+  sinusoidal variation, with zeros at both ends --- exactly the same conditions 
+  as the open-open straight pipe. The mode shapes for pressure are thus 
+
+  $$p_n(x)=\dfrac{\sin n \pi x/L}{x} \tag{3}$$ 
+
+  with corresponding natural frequencies that are exactly the same as the 
+  open-open straight pipe: 
+
+  $$f_n=\frac{nc}{2L} . \tag{4}$$ 
+
+  The first few of these pressure mode shapes are plotted in Fig.\ 14. At first 
+  glance they look similar to the closed-open modes of Fig.\ 12, but in fact 
+  they are significantly different: the wavelength, visible by the positions of 
+  the nodal points, matches the open-open case, not the closed-open case of the 
+  straight tube. 
+
+  \fig{figs/fig-80c7efcf.png}{Figure 14. The first five mode shapes for 
+  pressure inside a open-ended conical pipe.} 
+
+  We now turn to brass instruments, and we immediately encounter an apparent 
+  paradox. Something like a trumpet is clearly an open-closed tube: the 
+  mouthpiece end is closed by the player's lips. The tube does not taper down 
+  in a conical way at the mouthpiece end: most brass instruments have a long 
+  section of straight tube before the flaring bell, as is obvious if you think 
+  about the slide of a trombone. So we might expect the instrument to have 
+  resonances at alternate harmonics (or, at least, approximate harmonics). But, 
+  as is familiar from the kinds of tune that can be played on a bugle or a 
+  post-horn, the instruments in fact seem able to play the complete harmonic 
+  series, not just the odd terms. 
+
+  The resolution of this question is that the bore profile of a typical brass 
+  instrument is not well approximated by any of the simple shapes we have 
+  looked at up to now. We need to explore the underlying theory of horns with 
+  varying cross-section to understand the ingenious trick that is used by 
+  makers of brass instruments. If the cross-sectional area of the bore varies 
+  slowly and smoothly with distance, then to a good first approximation the 
+  pressure obeys a modified version of the wave equation called the Webster 
+  horn equation. The details are given in the next link. 
+
+  This equation doesn't have easy mathematical solutions for realistic bore 
+  profiles, so to see roughly what happens we will resort to the computer. 
+  Figure 15 shows the first few pressure modes, computed from the Webster 
+  equation for a bore profile which has the right kind of features for a 
+  realistic brass instrument. It has a straight tube with a closed end, leading 
+  into a section which flares: gradually at first, then more abruptly as the 
+  bell is approached. 
+
+  \fig{figs/fig-c9519905.png}{Figure 15. The first five mode shapes computed 
+  for a simple model of a brass instrument with a flaring bell. The vertical 
+  black lines show the predicted cut-off point for each mode, where the 
+  travelling wave becomes evanescent. If the frequency of the second mode is 
+  scaled to the value 2, the frequencies of these five modes are 0.75, 2, 2.97, 
+  4.07, 5.07.} 
+
+  The sequence of mode shapes is recognisably related to the closed-open modes 
+  for a straight tube, seen in Fig.\ 12, but the shapes have been ``squashed 
+  in'' towards the mouthpiece end. Most conspicuously, the fundamental mode is 
+  mainly confined to the left-hand half of the tube, dying away to low levels 
+  long before the bell is reached. Something similar happens for the second 
+  mode, but it reaches closer to the bell before it fades away. The sequence 
+  continues with the higher modes: each successive mode looks a bit more like 
+  the corresponding shape in Fig.\ 12. 
+
+  The previous link explains what is happening. It involves behaviour similar 
+  to something we have met back in section 3.5, in connection with the 
+  ``musical saw''. For a given frequency, and hence a given wavelength, there 
+  is a point in the flaring bore beyond which it is no longer possible for a 
+  travelling wave to propagate. It switches over to an evanescent wave, with 
+  exponential decay. Just as happened in the musical saw, most of the energy in 
+  the travelling wave is reflected back down the tube from this critical point, 
+  which can be calculated easily from the bore profile. For each mode, this 
+  point is marked in Fig.\ 15 by a vertical black line. It can be seen that 
+  these lines match quite well to the point where the sinusoidal behaviour of 
+  mode amplitude switches over to a decaying shape. 
+
+  The result is that the apparent length of the tube is shorter than the real 
+  length: by a large amount for the fundamental mode, and by a decreasing 
+  amount for the successive higher modes. This naturally changes the natural 
+  frequencies: a shorter tube will always give a higher frequency. The pattern 
+  that emerges is most clear if we scale the natural frequencies by taking the 
+  second mode as a reference, and calling that frequency ``2''. In these terms, 
+  the frequencies of the 5 modes seen in Fig.\ 15 are 0.75, 2, 2.97, 4.07 and 
+  5.07. Modes 2, 3, 4 and 5 now have frequencies reasonably close to the 
+  harmonic relations 2:3:4:5. The fundamental mode, though, does not fit into 
+  this approximate harmonic series. This example, despite being based on a very 
+  crude model, gives a good idea of what happens in real brass instruments: at 
+  some time in the past, instrument makers have hit on a type of bore profile 
+  that allows the instrument to have resonances which fall in a good 
+  approximation to the complete harmonic series, apart from the fundamental 
+  frequency which is always too low. 
+
+  \samsection{C: Acoustic cavities and room acoustics} 
+
+  There is a final class of acoustical resonators that deserves a brief 
+  discussion: resonances inside cavities, which could range from a concert hall 
+  to the inside of a violin body. The simplest example is a rectangular space 
+  with hard walls. For this case we already know enough to deduce the mode 
+  shapes and natural frequencies. Suppose we have a box with side lengths $A 
+  \times B \times C$ along the coordinate directions $x,y,z$. We could start by 
+  looking for modes that only depend on $x$: these would involve plane waves in 
+  the $x$ direction, and the cavity would simply behave like a tube which is 
+  closed at both ends. There has to be a pressure antinode at both ends, so the 
+  modes are similar to the open-open modes of Fig.\ 11, with the same natural 
+  frequencies, but they involve cosines rather than sines. The first few shapes 
+  are shown in Fig.\ 16. 
+
+  \fig{figs/fig-a37654bf.png}{Figure 16. The first 5 mode shapes of pressure in 
+  a closed-closed tube, or for plane waves in a rectangular enclosure.} 
+
+  But obviously we could get the same set of shapes from plane waves in the $y$ 
+  direction, or in the $z$ direction. More than that, we can find a mode that 
+  has any combination of these $x$, $y$ and $z$ shapes simultaneously: the most 
+  general pressure mode takes the form 
+
+  $$p_{qrs}=\cos \frac{q \pi x}{A} \cos \frac{r \pi y}{B} \cos \frac{s \pi 
+  z}{C} \tag{5}$$ 
+
+  where each of $q$, $r$ and $s$ can take any integer value 0,1,2,3,... Notice 
+  the inclusion of 0 here: this option is necessary to allow plane-wave modes. 
+  For example, the case we just described has $r=s=0$ for a plane wave in the 
+  $x$ direction. The modes plotted in Fig.\ 16 have $q=1,2,3,4,5$. 
+
+  The frequencies corresponding to the modes in eq. (5) can be deduced 
+  immediately from the wave equation: 
+
+  $$f_{qrs}=\frac{c}{2 \pi} \sqrt{\left[ \left( \dfrac{q \pi}{A} \right)^2 + 
+  \left( \dfrac{r \pi}{B} \right)^2 + \left( \dfrac{s \pi}{C} \right)^2 \right] 
+  } . \tag{6}$$ 
+
+  To see the most important thing that this equation tells us, it is useful to 
+  compute an example. Consider a rectangular space $5 \times 4 \times 3$ m in 
+  size: a typical domestic room. The fundamental frequency is 34 Hz: this is a 
+  plane standing wave in the 5 m direction, exactly like the top plot in Fig.\ 
+  16. But the important behaviour becomes clear if we calculate a lot of the 
+  natural frequencies of this room and plot a histogram of them. Choosing 100 
+  Hz bins, we get the result seen in Fig.\ 17. The histogram shows that the 
+  room has an enormous of modes: the number per 100 Hz band grows very rapidly, 
+  and by 5 kHz there are about 50,000 modes within each 100 Hz band! This modal 
+  density function grows in proportion to the square of frequency, and this 
+  trend applies to any acoustic volume: the next link explains why. 
+
+  \fig{figs/fig-4f01fd6a.png}{Figure 17. Histogram of natural frequencies of a 
+  rectangular room of dimensions $5 \times 4 \times 3$ m, shown in 100 Hz 
+  bins.} 
+
+  All the modes in our room will have some energy dissipation, and hence every 
+  resonant peak will have a finite half-power bandwidth determined by the 
+  damping level (see section 2.2.7). The high modal density seen in Fig.\ 17 
+  then tells us that, except at the very lowest frequencies, the modal overlap 
+  factor will be large: this is defined as the ratio of the half-power 
+  bandwidth to the typical spacing between adjacent modes. This has profound 
+  implications for the acoustical behaviour of the room. The response at any 
+  given frequency will involve a very large number of modes. The conclusion is 
+  that we probably won't learn very much if we try to understand the acoustics 
+  of our room by looking for individual modes across the audible frequency 
+  range: room acoustics is a statistical science. We will illustrate some of 
+  the behaviour with measurements involving room acoustics, in section 10.4 
+  (see subsection D). 
+

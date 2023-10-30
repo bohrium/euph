@@ -1,0 +1,587 @@
+  \samsection{A. Why do things bounce?} 
+
+  If you have been following the pattern of chapters so far, you might be 
+  expecting an “underpinnings” chapter next. Well, the next topic doesn’t need 
+  a whole chapter of underpinning, but this first section does indeed give some 
+  background information for the musical applications in the ensuing sections. 
+  The questions of interest all involve collisions, bouncing and buzzing. 
+
+  We have already said a little about the mechanics of bouncing, when we 
+  discussed impact hammers for frequency response measurement, back in section 
+  2.2.6. In order to get a first impression of how hammers behave we used a 
+  very crude approximation: we allowed for the mass of the hammer and an 
+  effective stiffness acting between this mass and the structure being tapped, 
+  but we treated that structure as being rigid. We did not allow for the fact 
+  that the structure would vibrate in response to the tap — which is of course 
+  the point of tapping in the first place, whether we are thinking of a 
+  vibration measurement or a percussionist hitting a drum or a marimba bar. In 
+  the course of this section we will rectify this omission. 
+
+  A particularly simple kind of collision involving bouncing is illustrated in 
+  Fig.\ 1. This shows two identical steel balls, suspended from a frame so that 
+  they can only move along a circular arc. We start with one ball stationary, 
+  and we release the other from a height. They collide, and the result is that 
+  the moving ball stops dead, while the stationary ball moves off with the same 
+  speed that the moving ball had before the collision. The second ball swings 
+  out and then returns, and the process repeats in the opposite direction. 
+
+  A variant of this example is shown in Fig.\ 2. This shows the same toy as in 
+  Fig.\ 1, but now there are five identical balls. We drop a ball at one end, 
+  and the ball at the opposite end flies off — but apparently without the balls 
+  in between moving at all. There is a simple way to see why this behaviour 
+  could have been anticipated. Suppose there was a very small space between 
+  each ball and the next one. When you drop the first ball, the first thing 
+  that happens is exactly the same as in Fig.\ 1: the first ball stops dead, 
+  and the second one moves off at the original speed. But in a very short time 
+  this ball will hit the third ball. The second ball, in its turn, will stop 
+  dead while the third ball moves off. This process would be repeated all the 
+  way along the chain, however many balls we had, until the last ball is 
+  launched. This one doesn’t have another one to hit, so it flies off, swings 
+  upwards, returns, and repeats the process in reverse. 
+
+  One way to think about the result of the first impact seen in Fig.\ 1 is that 
+  we have used a mass (the right-hand ball) to strike a pendulum. This caused 
+  the pendulum to vibrate, in the rather stately way that a swinging pendulum 
+  does. It has only a single vibration frequency, and we saw a half-cycle of 
+  that vibration before the ball returned, and a second impact occurred with 
+  the original mass. But if we had moved the first mass, our “striker”, smartly 
+  out of the way, the pendulum would have continued to swing. This is a simple 
+  model for what happens when a percussionist hits a marimba bar, or an 
+  acoustician hits a violin bridge with a small impulse hammer in order to 
+  measure its vibration response. In both cases, multiple impacts are usually 
+  not wanted (for reasons we will explore shortly). You want the percussion 
+  beater or the impulse hammer to rebound out of the way, leaving the structure 
+  free to vibrate. 
+
+  But there may also be a conflicting requirement. If you want to make the 
+  loudest sound on the marimba, you would like to put as much energy as 
+  possible into the vibration. You supply a certain amount of kinetic energy in 
+  the moving beater, just before it strikes. The most you could possibly hope 
+  would be for all that energy to go into vibration of the struck object. This 
+  is exactly the situation we saw in Fig.\ 1. The first ball transferred all 
+  its kinetic energy to the second ball, the swinging pendulum. The first ball 
+  did not rebound so as to get out of the way, and a second impact followed 
+  shortly afterwards. If something similar happened to the marimba player, they 
+  might describe the result as a “buzz” or as “chattering” of the beater. For 
+  practical purposes, we perhaps need a compromise: transfer a reasonable 
+  amount of kinetic energy, but allow a clean bounce. 
+
+  There is a third important factor: the frequency spectrum of the force 
+  applied by the bouncing beater, which will determine the brightness or 
+  mellowness of the resulting sound. We will see shortly that there is an 
+  interesting interaction between the three factors, linked to the design of 
+  the beater and also to the vibration characteristics of the object you are 
+  tapping. This interaction plays out somewhat differently in different 
+  applications: we will find rather different requirements for an impact hammer 
+  for an acoustic measurement, the choice of beaters or drumsticks for a 
+  percussionist, and the design of a suitable clapper for a church bell. 
+
+  First, a reminder of the simple calculation of the behaviour of a bouncing 
+  hammer from section 2.2.6. The hammer is only in contact with the structure 
+  for a very short time, but during that time we know that a force must act to 
+  prevent the hammer-head from penetrating into the structure. The simplest 
+  idealisation of that force is to imagine a very stiff spring separating the 
+  two components. In the case of our bouncing steel balls, for example, this 
+  contact spring force is provided by small deformations of the steel in a tiny 
+  region around the contact, as indicated in a sketch in Fig.\ 3. For the 
+  purposes of a simple model we can replace this by a contact spring joining 
+  two rigid balls, as sketched in Fig.\ 4. 
+
+  During contact, we now have the two rigid masses linked by a spring. This 
+  combination will produce a resonance frequency, as usual — it is called a 
+  contact resonance. At the moment when contact begins, the balls are moving 
+  towards one another, so while they remain in contact the spring force will 
+  follow a sinusoidal waveform at the resonance frequency. If the balls were 
+  sticky so that they remained together thereafter, the result would be the 
+  dashed curve in Fig.\ 5. But in the absence of stickiness, the force can only 
+  be compressive. Once the model calls for a tensile force, we know that the 
+  balls will in fact separate. So (within this simple model) the contact force 
+  during a single impact should follow a half-cycle of the sinusoidal wave, as 
+  shaded in red in Fig.\ 5. 
+
+  We can find the corresponding spectrum of the contact force by calculating 
+  the Fourier transform of this half-cycle of sine wave: the details were given 
+  in section 2.2.6. Two typical examples are shown in Fig.\ 6, reproduced from 
+  Fig.\ 3 of that section. The plot shows results for two different values of 
+  the contact resonance frequency. For the lower frequency (red curve), the 
+  amplitude of the force spectrum is only high up to about 700~Hz, while for 
+  the higher frequency (black curve) it extends up to around 4~kHz. In both 
+  cases this effective bandwidth is a bit more than twice the contact resonance 
+  frequency, something to bear in mind for later in this section. 
+
+  The resonance frequency is determined, as usual, by the ratio of the contact 
+  stiffness to the mass. So a low stiffness or a high mass tends to give a low 
+  resonance frequency, and correspondingly low bandwidth. A low mass or a high 
+  stiffness gives the opposite result, and a high bandwidth. In other words, a 
+  heavy, soft beater gives a more gentle, mellow tone from a struck object, 
+  while a light, hard one gives a crisper, brighter sound: exactly as every 
+  percussionist knows. 
+
+  \samsection{B. The missing ingredients} 
+
+  So far, so good: the simple model gives us some plausible and useful 
+  information. However, there are four separate reasons why it is incomplete, 
+  and therefore potentially unrealistic. We will outline all four issues, and 
+  then explore the consequences using computer simulations of a model problem 
+  which will allow us to add them in one at a time. 
+
+  For the first missing ingredient, look back for a moment at Fig.\ 1. Without 
+  writing down any equations, we can glimpse an important aspect of the 
+  underlying physics of collision. Because the two balls are identical and the 
+  collision is exactly aligned along the line joining the centres of the balls, 
+  everything is symmetrical. After the first collision the ball that was 
+  initially stationary moves off with (almost exactly) the same speed that the 
+  moving ball previously had, and this tells us two things: the total kinetic 
+  energy stays the same, and the total momentum stays the same. (Both kinetic 
+  energy and momentum are calculated from the mass and the speed of the balls. 
+  Since the balls have the same mass and the speed stays the same, both 
+  quantities must be the same before and after the collision.) 
+
+  However, I have glossed over something. Momentum really is conserved in a 
+  collision, but kinetic energy is not quite conserved: some energy will always 
+  be lost. If nothing else, the audible “click” of the bouncing balls means 
+  that a small amount of energy has been carried away in the form of sound 
+  waves. With our steel balls the loss is very small, but if the balls had been 
+  made of something like wood a higher proportion of the energy might be lost, 
+  mainly converted into heat associated with the contact deformation sketched 
+  in Fig.\ 3. The ratio of kinetic energies before and after a collision can be 
+  used to define a coefficient of restitution which can then be incorporated 
+  into a simulation model: some details of this and other aspects of the 
+  mathematical modelling of more realistic collisions are given in the next 
+  link. 
+
+  \samsection{C. Simulation results for hitting a rigid surface} 
+
+  To explore the influence of these various factors we will look at a simple 
+  model system, vaguely resembling a percussion instrument like a cymbal being 
+  hit with a drumstick. The “instrument” is a rectangular thin plate, hinged 
+  round its boundary, and the “drumstick” is a hinged-free bending beam which 
+  hits the plate (through a contact spring) with its free end. The system is 
+  sketched in Fig.\ 7, and some details of how the model has been implemented 
+  in the computer were given in the previous link. This model is not meant to 
+  be an accurate representation of a real musical instrument, or of a drumstick 
+  and the way a drummer really holds it — we are looking for qualitative 
+  insights by varying the model parameters to get an impression of, for 
+  example, the circumstances that will lead to multiple impacts between the 
+  plate and the drumstick. 
+
+  The relevant vibration behaviour of the plate and the drumstick will be 
+  adjusted by specifying the total mass and the lowest vibration resonance 
+  frequency of each. Other details, such as the assumed aspect ratio of the 
+  plate, the striking position on the plate, and the damping factors for both 
+  plate and drumstick will be kept fixed (if you are curious, they were 
+  specified in the previous link). 
+
+  The first step is to verify that the model reproduces the behaviour sketched 
+  in Fig.\ 5 when the plate is effectively rigid, and the lowest resonance 
+  frequency of the stick is so high that it doesn’t affect the behaviour. 
+  Specifically, we make the plate mass 500 metric tons, and the first stick 
+  resonance 10~kHz. We also assume a linear contact spring, as in the 
+  theoretical calculation. The red curve in Fig.\ 8 then shows the computed 
+  waveform of contact force for a particular choice of the stick mass and 
+  contact stiffness. It does indeed show the expected shape, a half-cycle of a 
+  sine wave before a clean bounce occurs and contact is lost. 
+
+  The blue curve in Fig.\ 8 shows what happens if we replace the linear contact 
+  spring with a nonlinear Hertzian spring, with a stiffness chosen to give more 
+  or less the same contact time. There is still a single, symmetrical pulse of 
+  force, but the shape is subtly different. At the moment of first contact, the 
+  force builds up less abruptly than with the linear spring. But the force 
+  grows progressively more steeply a little later in the pulse, a direct result 
+  of the “hardening spring” behaviour. 
+
+  We can see a different comparison between these two force pulses if we take 
+  the FFT and look at their frequency spectra: the results are shown in Fig.\ 
+  9, using the same plot colours as Fig.\ 8. The spectra are shown on a 
+  logarithmic (dB) scale, normalised in the same way as Fig.\ 6 so that the 
+  value tends to zero at very low frequency. For both pulses, the spectrum 
+  looks generically similar to Fig.\ 6: high values restricted to a relatively 
+  narrow band of low frequencies, then a pattern of sharp dips and secondary 
+  peaks with decreasing height. We can see that the Hertzian spring (blue 
+  curve) gives a slightly wider bandwidth at low frequency, and that the 
+  frequencies of the secondary peaks are all a little higher, while the peak 
+  heights decrease more rapidly (a consequence of the more gentle start and end 
+  of the pulse). 
+
+  It is useful to see a broader view of how things change when the drumstick 
+  properties are varied. If we take a range of values of the mass and contact 
+  stiffness, we can compute a grid of cases and then show the results in 
+  graphical form rather similar to the “playability plots” we used earlier when 
+  talking about bowed string and wind instruments. Figure 10 shows the contact 
+  time, for a range of stick masses up to 200~g, and for a wide range of linear 
+  contact spring stiffnesses. (Because of the wide range, varying over a factor 
+  of 100, a logarithmic scale has been used on the vertical axis.) The colours 
+  show a curving pattern, which for this preliminary case simply follows the 
+  contour lines of the contact resonance frequency. 
+
+  Figure 11 gives an indication of how the force spectrum varies over the same 
+  grid of simulated cases. The colours here show the spectral centroid, which 
+  gives a simple guide to the frequency content of each force waveform. The 
+  curves mark out the same contour lines of contact resonance frequency as in 
+  Fig.\ 10. Comparing Figs.\ 10 and 11, we see the expected behaviour: a light 
+  stick with a stiff tip gives a short contact time and a high spectral 
+  centroid implying a bright sound, while a heavy stick with a soft tip gives a 
+  long contact time, a lower spectral centroid, and a more mellow or muffled 
+  sound. However, at this stage there is no ``sound'', because we are hitting 
+  an essentially rigid surface. Shortly, we will relax this assumption and hear 
+  some sound examples. 
+
+  Figures 12 and 13 show corresponding plots with a Hertzian contact spring. 
+  This time we do not have a simple mathematical result for how the contact 
+  force behaves, but in fact both plots look broadly similar to Figs.\ 10 and 
+  11 for the linear spring. The same trends are followed, and you have to look 
+  rather carefully to spot the subtle differences in the shapes of the contours 
+  mapped out by the colour shading. Provisionally, then, the nature of the 
+  contact spring doesn’t make a huge difference to the predicted behaviour. 
+
+  \samsection{D. Simulations with flexible plates} 
+
+  If make our plate or our drumstick (or both) have more realistic dynamic 
+  behaviour, things immediately get more complicated. As a first step we will 
+  change the plate behaviour, leaving the drumstick still essentially rigid. 
+  Before showing detailed simulation results for this case, though, it is 
+  useful to introduce an approximate argument which tells us something 
+  important about what we can expect to see. 
+
+  The basis of the argument is something we mentioned at the start of this 
+  section, when we talked about the transfer of kinetic energy from a moving 
+  “beater” to vibration of the structure which is struck. Every vibration mode 
+  that is excited takes some of the kinetic energy that the drummer put into 
+  the moving drumstick. Perhaps this makes it intuitively plausible that there 
+  might be a limit to how many modes can be strongly excited before the supply 
+  of kinetic energy is “used up”. 
+
+  This idea proves to be correct — the details are explained in the next link. 
+  The argument makes use of the force waveform shown in Fig.\ 5. We have 
+  already seen (see Fig.\ 6) that the frequency bandwidth associated with a 
+  pulse like this depends on the contact duration, or equivalently on the 
+  contact resonance frequency. When a force pulse like this is applied to a 
+  given structure, it is straightforward to calculate how strongly each mode 
+  will be excited. 
+
+  The total kinetic energy of the vibrating structure can then be calculated. 
+  It depends on the contact resonance frequency, and there is a threshold value 
+  of the contact resonance frequency above which the vibrating structure would 
+  require more kinetic energy than is available. This puts a limit on the 
+  shortest contact time that is possible if the drumstick is to rebound. At the 
+  threshold the incoming drumstick would be stopped dead by the impact (just as 
+  we saw with the steel balls in Figs.\ 1 and 2). A second impact is almost 
+  certain to follow, when the vibrating structure returns and hits the 
+  stationary drumstick. 
+
+  We will illustrate with results for two different vibrating systems. First, 
+  we look at an example of the vibrating plate described earlier (see Fig.\ 7), 
+  chosen to have total mass 200~g and a lowest resonance frequency 100~Hz. This 
+  plate will be impacted at the four different points shown in Fig.\ 14, and 
+  the resulting threshold values of the contact resonance frequency are shown 
+  as a function of the “hammer” mass in Fig.\ 15. Because the mass and the 
+  threshold frequency cover a very wide range, logarithmic scales have been 
+  used on both axes. 
+
+  All four curves show a falling trend — a heavier hammer means that the 
+  threshold frequency is lower. Three of the tapping positions give rather 
+  similar results (the blue, green and black curves), but the position close to 
+  the edge of the plate (the red curve) shows a significantly higher frequency 
+  over the entire range. In other words, it is easier to excite a wide 
+  bandwidth of response in this plate by tapping close to an edge. It is 
+  important to recall that this plate has fixed edges all the way round, so 
+  that the plate “feels” relatively rigid for a tapping position near the edge. 
+
+  This behaviour contrasts with our second example, a vibrating beam with free 
+  ends, like a marimba bar. The system, sketched in Fig.\ 16, is given the same 
+  total mass and the same lowest resonance frequency as the plate. Again, it is 
+  tapped at four different positions, giving the threshold results plotted in 
+  Fig.\ 17. All four curves show a falling trend again, but the shape and 
+  position of the curves is different from the ones in Fig.\ 15: changing the 
+  system you tap can make a big difference to the bandwidth you can excite with 
+  a given hammer. The main reason behind this contrast is the fact that the 
+  resonances of a plate come thick and fast after the first one, whereas the 
+  resonances of a bending beam are spaced progressively wider apart (see 
+  section 4.2.4 for some detailed analysis of this difference of modal 
+  density). 
+
+  The other contrast with Fig.\ 15 lies in the position of the red curve 
+  relative to the others. Again this red curve is associated with tapping near 
+  the edge of the structure — in fact, right at the edge in this case. For the 
+  beam, the red curve lies below the others rather than above them as it did 
+  for the plate. The main reason this time is not to be sought in the 
+  difference between plates and beams, though. Instead, the important 
+  difference is in the edge conditions. The plate was fixed at the edge, while 
+  the beam is free at its ends. So now the red curve is the result of tapping 
+  at a position where the structure “feels” most floppy. This makes it harder 
+  to avoid multiple impacts. 
+
+  Now we are ready to see some simulation results for the plate system. If the 
+  total mass of the plate is set to 2~kg, with a first resonance frequency at 
+  100~Hz, the equivalent of Fig.\ 10 now looks like the plot in Fig.\ 18. 
+  Virtually nothing has changed: this plate is still heavy enough that the 
+  bouncing process is not affected significantly. But if we reduce the mass 
+  further to 200~g as in the case studied in Figs.\ 14 and 15, the result is 
+  shown in Fig.\ 19: this time something looks obviously different, especially 
+  in the upper right-hand region of the plot. To see what has happened, Fig.\ 
+  20 shows a map of the same grid of simulations, coloured black where there 
+  was a single, clean bounce and in colours where a multiple impact of some 
+  kind occurred. These multiple impacts occur throughout the region that looked 
+  different in Fig.\ 19. 
+
+  The colour scale in Fig.\ 20 indicates the ratio of the contact stiffness to 
+  the threshold value calculated by the approximate argument, as in Fig.\ 15. 
+  Where the pixels become white, the approximate criterion has been reached or 
+  exceeded. We can see in the plot that there is a substantial range of contact 
+  stiffness for which the simulations predict multiple impacts of some kind 
+  although the limiting stiffness from the approximate argument has not been 
+  reached. However, the general shape of the contours of these intermediate 
+  colours follows the trend marked by the edge of the patch of white pixels, so 
+  the approximate argument does give a useful indication of the pattern. 
+
+  Some examples of the shape of the contact force waveforms for different plate 
+  masses are shown in Figs.\ 21 and 22. The red curve in Fig.\ 21 is the same 
+  as the red curve in Fig.\ 8, showing the half-sine shape when the impacted 
+  plate was effectively rigid. The blue curve shows the result for the same 
+  case with the plate mass 2~kg as in Fig.\ 18, and the green curve shows the 
+  result for the 200~g plate as in Fig.\ 19. The green circle in Figs.\ 19 and 
+  20 marks the pixel corresponding to these three waveforms. The blue curve has 
+  slightly smaller magnitude than the red curve, because of energy transfer to 
+  the plate, but otherwise the pulse shape looks very similar. Comparing with 
+  Fig.\ 20, this pixel lies just above the region where single impacts occurred 
+  for the 200~g plate, and the green curve shows the kind of behaviour we might 
+  have guessed: a double-humped shape, but not quite losing contact in between 
+  to give multiple impacts. 
+
+  Figure 22 shows corresponding results for the pixel marked by a black circle 
+  in Figs.\ 19 and 20. The red and blue pulses in this plot show a shorter 
+  contact time than the corresponding ones in Fig.\ 21, as expected with the 
+  higher contact stiffness. Looking at Fig.\ 20, we see that this pixel lies in 
+  the white region for the 200~g plate, where the criterion based on kinetic 
+  energy has been exceeded. The plot confirms this. The green curve shows a 
+  rather ragged waveform, with three separate impacts. There is a significant 
+  delay before the third impact: the drumstick had to wait for the vibrating 
+  plate to come back and hit it before it was thrown off, away from any further 
+  impacts. 
+
+  Figures 23 and 24 show the corresponding frequency spectra to Figs.\ 21 and 
+  22 respectively, plotted in the matching colours. In both cases we see that 
+  as the impacted plate gets lighter, the dips in the spectrum get shallower. 
+  For cases in which there is only a single impact, the relatively subtle 
+  modification to the pulse shape from impacting a vibrating plate has resulted 
+  in a smoother spectrum. But the green curve in Fig.\ 24 shows more ragged 
+  behaviour, which is perhaps not too surprising. We will come back to these 
+  observations in a bit — they have implications for measurements using an 
+  impulse hammer. 
+
+  You may be wondering what these simulated plate impacts sound like. Some 
+  examples are given in Sounds 1—5, corresponding to the five cases marked by 
+  circles in Fig.\ 20 for the 200~g plate. In each case, what you are listening 
+  to is the waveform of plate velocity at the struck point. Sound 1 is the 
+  datum case, marked by the green circle and lying in the middle of the 
+  diagram. Sounds 2 and 3 illustrate what happens if we keep the same contact 
+  stiffness but vary the hammer mass: Sound 2 goes with the left-hand blue 
+  circle, and Sound 3 with the right-hand one. Sounds 4 and 5 give the 
+  corresponding comparison for keeping the mass the same but varying the 
+  contact stiffness. Sound 4 corresponds to the blue circle at the bottom of 
+  the diagram, Sound 5 to the black circle at the top. 
+
+  All five examples give a recognisable impression of the kind of sounds you 
+  might make by hitting a metal plate with a stick of some sort. They are quite 
+  “unmusical” sounds, because this plate does not represent a carefully tuned 
+  percussion instrument — there are no harmonic relationships between the 
+  resonance frequencies (look back at Chapter 2 for a reminder of why that is 
+  important). Compared to the datum case in Sound 1, Sound 2 has a shorter 
+  contact time because of the lower mass, while Sound 3 has a heavier mass and 
+  a longer contact time. The effect of those changes on the degree of 
+  “brightness” is clear. Sounds 4 and 5 give a somewhat similar contrast in 
+  brightness, this time caused by a change in contact stiffness rather than 
+  mass. 
+
+  Sound 5 stands out as being a bit “rough”. Recall that this case falls in the 
+  white region of Fig.\ 20, where the approximate criterion for double bouncing 
+  has been exceeded. We saw the resulting force waveform in the green curve in 
+  Fig.\ 22, and now we hear the consequence of those multiple impacts for the 
+  sound. It is easy to believe that under some circumstances a percussionist 
+  would not want this kind of rough sound. To avoid that, Fig.\ 20 shows that 
+  they need to choose a lighter stick or one with a softer head: starting from 
+  the black circle you can escape the white region either by moving left or by 
+  moving down. 
+
+  \samsection{E. Simulations with a flexible drumstick} 
+
+  Now we can add the final ingredient to the model, by allowing the “drumstick” 
+  to have vibration resonances in the frequency range of interest. We want to 
+  plot an image similar to the earlier ones, so we still want the drumstick 
+  mass to be a variable. I have chosen a simple approach: the change in mass is 
+  achieved by choosing different diameters of circular rod, assuming that the 
+  drumstick is always made of the same material. The theory of bending beams 
+  (see section 3.2.1) then tells us that the resonance frequencies of the beam 
+  scale proportional to the square root of the mass (so thinner, lighter beams 
+  have lower resonance frequencies, as you would expect). For a specific model 
+  that might be in the right ballpark for a normal drumstick, I have chosen the 
+  lowest frequency to be 1~kHz when the mass of the beam is 30~g, and then used 
+  the scaling relation to calculate the frequency for other masses. 
+
+  Running a set of simulations over the same range as earlier figures gives the 
+  plot shown in Fig.\ 25. The results look very similar to Fig.\ 20 over most 
+  of the plane, but at the left-hand side something new has appeared: instead 
+  of black pixels down the left-hand side, we see a lot of red. This red colour 
+  is a bit misleading, though. I have calculated the threshold value of contact 
+  stiffness exactly as before, using the approximate argument based on the 
+  vibration modes of the plate. But really we should include the modes of the 
+  drumstick as well in this calculation — the previous link explains how to do 
+  this. When that is done, the result is shown in Fig.\ 26. An additional patch 
+  of white pixels has appeared in the top left corner, and the pattern of the 
+  other colours now tracks the white region in very much the same way as found 
+  earlier. 
+
+  We deduce that the vibration of the drumstick makes multiple contacts more 
+  likely, especially if the stick is quite light. To see the consequences, two 
+  cases have been chosen to show in detail. They are marked with circles in 
+  Fig.\ 26: both involve the “nominal” 30~g drumstick, with a first resonance 
+  at 1~kHz. One is not far above the black pixels, the other is up in the white 
+  region. For the first of these, marked by the green circle, the waveform of 
+  contact force is shown in red in Fig.\ 27. The plot also shows the 
+  corresponding case from Fig.\ 20, with the rigid drumstick. The red waveform 
+  shows a clear double peak, although it does not lose contact in between so it 
+  is not strictly a double bounce. 
+
+  Figure 28 shows the frequency spectra of these two force pulses, and it also 
+  shows the spectrum of the resulting plate velocity in the two cases. The 
+  colours match Fig.\ 27: both spectra for the flexible drumstick are shown in 
+  red, and both for the rigid drumstick are in blue. The smooth curves show the 
+  force spectrum, and the obviously jagged curves show the plate velocity, with 
+  peaks at all the resonance frequencies. 
+
+  This comparison of spectra tells an interesting story. Look first at the two 
+  smooth curves. Near the drumstick resonance at 1~kHz, the red curve has a 
+  significant dip — it falls over 15~dB below the blue curve. This difference 
+  is manifested directly in the spectra of plate velocity: if you look 
+  carefully, you can see that the peak heights in the red curve fall well below 
+  those of the blue curve in this frequency range. What has presumably happened 
+  is that the first resonance of the flexible drumstick has had a strong 
+  influence on the spacing of the double hump in Fig.\ 27. Even though the 
+  total contact duration is only about 1~ms, this is enough for the stick 
+  resonance to make itself felt in the force spectrum. 
+
+  Figures 29 and 30 show the same comparisons for the case marked with a black 
+  circle in Fig.\ 26. Both force waveforms are now very jagged, as we would 
+  expect since we are up in the white region. At first glance the rigid stick 
+  (in blue) shows more drastic effects, with several separate contacts. The 
+  flexible stick (in red) has only a single contact, but it lasts longer than 
+  the main pulse in the blue waveform and has a more complicated shape. When we 
+  look at the comparison of spectra in Fig.\ 30, we see an important 
+  consequence of this complicated shape. The force spectrum for the flexible 
+  stick (smooth curve in red) shows a dip around the resonance frequency at 
+  1~kHz, very similar to the case shown in Fig.\ 27. 
+
+  The conclusion is that the first resonance of the drumstick has a 
+  surprisingly consistent effect on the two cases. The obvious next question 
+  is: “can you hear it?” Sounds 6 and 7 allow you to listen to the two plate 
+  velocity waveforms for the case shown in Figs 27 and 28. Sound 6 is for the 
+  flexible drumstick, Sound 7 the comparison for the rigid one. Sounds 8 and 9 
+  give the same comparison for the cases shown in Figs.\ 29 and 30. You may 
+  need to ensure good audio reproduction to hear this effect clearly 
+  (headphones may work best), but I think you will agree that in both cases you 
+  can hear a difference of sound between the flexible and rigid drumsticks. 
+  Furthermore, it is a rather similar kind of difference in both cases. 
+
+  It seems a good guess that you are hearing directly the effect of reducing 
+  the sound from the vibrating plate near the lowest resonance of the flexible 
+  drumstick. Of course, other details may also influence the sound (such as the 
+  other resonances of the stick). But tentatively, this simple example lends 
+  support to the claim of percussionists that different sticks give different 
+  sounds. Now, we must not over-interpret this example. Drummers do not hold 
+  their sticks at the end like our model, and the “drumstick” model is very 
+  crude compared to the design of real drumsticks (which usually taper and have 
+  a distinct “head”). These factors will influence the resonance frequencies 
+  and the effective masses of those resonances as felt at the striking point. 
+  But the idea that one, and possibly more, of the stick resonances can 
+  sometimes show up in the sound as audible dips in the spectrum surely 
+  deserves to be investigated in more detail. 
+
+  There is very little scientific literature about the vibration of real 
+  drumsticks: the only measurements seem to be contained in a Masters thesis by 
+  Andreas Wagner [1]. Figure 31 reproduces some of his results: measured 
+  resonance frequencies and mode shapes for two commercial drumsticks. Each 
+  stick was supported by a soft clamp at the balance point or fulcrum point, 
+  which is a position that drummers are often recommended to hold a stick for 
+  playing involving fast bouncing. The drummer’s fingers will no doubt add 
+  significant damping to any vibration mode which is moving at this point, but 
+  intriguingly both sticks show a mode near 900~Hz with a rather extended 
+  near-nodal region around the fulcrum. This mode might be a strong candidate 
+  for influencing the timing of multiple bounces, and thus affecting the sound 
+  of the struck object. 
+
+  \samsection{F. Coda: implications for impact hammer testing} 
+
+  So far, the discussion of bouncing has mainly been in the context of the 
+  sound of a struck percussion instrument. However, the modelling and analysis 
+  are also relevant to something else we have met in earlier chapters: the use 
+  of an impact hammer to excite a structure, not in order to make a particular 
+  noise on it but as part of the process of measuring something like the input 
+  admittance. There are subtleties of detail (some of these have been discussed 
+  in sections 5.1.1, 10.4 and 10.4.2), but in essence such a measurement goes 
+  like this. The structure is tapped, and the force waveform and the 
+  structure’s response are collected into a computer. Both are converted to 
+  frequency spectra by using the FFT, then finally the required frequency 
+  response is obtained by dividing the response spectrum, frequency by 
+  frequency, by the force spectrum. 
+
+  The useful frequency range of such a measurement depends on the force 
+  spectrum. We need to divide by that spectrum, so we certainly can’t tolerate 
+  frequencies at which it is zero. But there is a more insidious problem: all 
+  measurements contain some noise, so in practice we can only use frequencies 
+  for which the force spectrum rises significantly above the “floor” determined 
+  by that noise. 
+
+  If the impact gives a single, clean pulse rather like the idealised version 
+  from Fig.\ 5, the force spectrum will look like a somewhat noisy version of 
+  the examples in Fig.\ 6. Everything should work for frequencies within the 
+  first “hump” of the force spectrum, but we won’t be able to get useful 
+  information as we approach the frequency of the first zero in the spectrum. 
+  We might or might not get some useful information from frequencies lying near 
+  the subsequent peaks in the spectrum, but the level is low compared to the 
+  hump at low frequency, and at best the measurements will be noisy and rather 
+  unsatisfactory. The conclusion from this, which we have already seen earlier, 
+  is that if you want to measure frequency response reliably up to high 
+  frequency, you need to achieve a very short hammer pulse: this needs a light 
+  hammer, and a high contact stiffness. 
+
+  The discussion in this section now reveals a snag. Hammers with high contact 
+  stiffness are liable to give multiple bounces rather than a single contact, 
+  especially if the hammer itself has a resonance within the frequency range 
+  you are trying to cover. Does this matter? The force spectra in the red 
+  curves of Figs.\ 28 and 30 suggest a potential problem. Both show a strong 
+  dip around the frequency of the “hammer” resonance, determined by the spacing 
+  of the “double hump” in a force waveform like the red curve in Fig.\ 27. This 
+  might be a significantly longer time than the duration of a single pulse, so 
+  the dip in the force spectrum will occur at a lower frequency than we were 
+  expecting and the useful frequency range for the measurement will be reduced. 
+
+  The extreme case arises when a “double bounce” from the hammer produces two 
+  pulses of similar height, like the idealised example plotted in Fig.\ 32. The 
+  corresponding frequency spectrum is shown in Fig.\ 33, and we can see that it 
+  has very deep troughs indeed. Whatever the noise floor of the measurement 
+  equipment might be, a dip like this is guaranteed to fall below it and thus 
+  limit the usable bandwidth of the measurement. The less symmetrical double 
+  hump in the red waveform of Fig.\ 28 gave a far shallower dip, perhaps 
+  shallow enough that it still lies above the noise floor. The multiple 
+  contacts shown in the green curve in Fig.\ 22 give rise to the force spectrum 
+  shown in Fig.\ 24, which has a lot of small dips --- these will not 
+  necessarily be deep enough to cause big problems with a frequency response 
+  measurement. 
+
+  The conclusion is that double bounces from an impact hammer might or might 
+  not be tolerated in a measurement, depending on the noise floor of the 
+  measuring equipment together with the details of the structure being hit, the 
+  vibration behaviour of the hammer, and the consequent symmetry or asymmetry 
+  of the force waveform. Any trough in the force spectrum will result in some 
+  reduction of the signal-to-noise ratio of the frequency response measurement, 
+  but if the effect is not too extreme you may be able to compensate by 
+  repeating the measurement more times and getting the advantages of averaging. 
+  Reducing the noise level in the measurement equipment always helps, but it is 
+  always worth keeping an eye on the force waveform and its spectrum. If you 
+  see a double bounce with rather similar pulses, you should expect problems 
+  and take steps to change something. 
+
+  \sectionreferences{}[1] Andreas Wagner, “Analysis of drumbeats — interaction 
+  between drummer, drumstick and instrument”, \tt{}MSc dissertation\rm{}, Dept. 
+  of Speech Music and Hearing, KTH Royal Institute of Technology, Stockholm 
+  (2006). 
