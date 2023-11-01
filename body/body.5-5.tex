@@ -61,6 +61,9 @@
   section that these contribute directly to the characteristic sound of a banjo 
   (see subsection E). 
 
+  \fig{figs/fig-fb90a851.png}{\caption{Figure 1. Spectrogram of the note $G\_4$ 
+  (392 Hz), played with a plectrum on the top string of a banjo.}} 
+
   From a spectrogram like Fig.\ 1, it is straightforward to detect each 
   vertical band representing a decaying mode, and to analyse the variation of 
   level and phase with time in order to determine a best estimate of the 
@@ -72,6 +75,18 @@
   measurements: the two sets are plotted as red circles and stars, and a 
   reassuring correspondence can be seen between the two over the important 
   parts of both plots. 
+
+  \fig{figs/fig-32b58107.png}{\caption{Figure 2. Loss factor versus frequency 
+  for modes excited by plucking the top string of a guitar. Red circles and 
+  stars show measured values; black dots show the predicted loss factor for 
+  energy flow into the body alone, calculated from the measured bridge 
+  admittance. The analysis method cannot detect modes significantly above the 
+  magenta line. Green dashed lines indicate decay time constants $\tau$ = 50 ms 
+  (top line), 100 ms, 200 ms, 300 ms and 400 ms (lowest line).}} 
+
+  \fig{figs/fig-a5bccc69.png}{\caption{Figure 3. Loss factor versus frequency 
+  for modes excited by plucking the top string of a banjo, in the same format 
+  as Fig. 2.}} 
 
   In each plot, the magenta line indicates the limit of applicability of the 
   analysis method. Above this line the decay time becomes too short to be 
@@ -199,6 +214,8 @@
   repeatedly in sections 5.1--5.3. The same admittance is applied to all five 
   strings. Here is the resulting sound: it is encouragingly banjo-like. 
 
+\audio{}
+
   As will be seen and heard in the next few subsections, a number of 
   interesting questions can be explored using measured admittances. However, 
   there are other questions that cannot be addressed that way, at least without 
@@ -224,6 +241,13 @@
   lying on either side of the original peak frequency. Apart from this, the two 
   red curves look very similar over the entire frequency range. 
 
+  \fig{figs/fig-17fa1cab.png}{\caption{Figure 4. Bridge admittances used in 
+  synthesis. The solid red line is the datum admittance corresponding to Sound 
+  B.1, measured on the bridge of the Deering banjo near the first string, with 
+  the resonator back fitted to the banjo. The dotted red line shows the 
+  corresponding admittance measured with the resonator back removed. The blue 
+  line is the datum case of the square banjo model, used for Sound B.2.}} 
+
   The blue curve follows the trends of these two red curves fairly well. At low 
   frequency, it looks recognisably similar to the dotted red curve, except that 
   the first peak frequency is a little higher in frequency. This is an expected 
@@ -240,6 +264,8 @@
   identical to the sound based on the measured admittance, it seems 
   sufficiently similar that we can hope the model will capture the perceptual 
   effect of parameter variations well enough to be useful. 
+
+\audio{}
 
   For both types of synthesis model, there are some additional parameter 
   choices relating to internal ``housekeeping'' issues of various kinds: 
@@ -259,12 +285,21 @@
   occasion. Sound C.2 uses the admittance at the bridge centre, at the position 
   of the third string. 
 
+\audio{}
+
+\audio{}
+
+\audio{}
+
   This admittance was plotted in section 5.3, reproduced here as Fig.\ 5. The 
   comparison of the red and black curves in this plot makes it hardly 
   surprising that a very different sound is produced. Sound C.3 uses a 
   different admittance for each of the five strings, and so is closer to the 
   real instrument than any of the cases using the same admittance for all five 
   strings. 
+
+  \fig{figs/fig-c7145ef4.png}{\caption{Figure 5. Admittance at three positions 
+  on the banjo bridge, reproduced from Fig. 17 of section 5.3.}} 
 
   The next group of sounds gives a similar comparison, but using a set of 
   admittances measured with the resonator back removed from the banjo. Sound 
@@ -278,6 +313,12 @@
   admittances for the five strings. Sound C.5 has even more of the 
   ``zinginess'' effect. 
 
+\audio{}
+
+\audio{}
+
+\audio{}
+
   The next two sounds relate to a study carried out in reference [2]. In the 
   process of refining models of the banjo behaviour, some measurements were 
   made with the bridge replaced by a solid circular bridge, placed either at 
@@ -286,12 +327,25 @@
   with this bridge. Only a single string is carried by this ``bridge'', and the 
   tests were done with the resonator back removed. 
 
+  \fig{figs/fig-ec0d7d73.png}{\caption{Figure 6. The banjo being tested with 
+  the rigid circular bridge, carrying only one string.}} 
+
+\audio{}
+
+\audio{}
+
   The corresponding admittances are plotted in Fig.\ 7, in comparison with the 
   result with the normal bridge (also measured without the resonator), the same 
   as the dotted line in Fig.\ 4. It is perhaps not very surprising to discover 
   that these admittances produce distinctive sounds, but reassuring that both 
   sound (to my ears, at least) banjo-like. As would have been expected, the 
   ``bridge hill'' around 3 kHz has disappeared with the rigid bridge. 
+
+  \fig{figs/fig-0d6af2c8.png}{\caption{Figure 7. Measured bridge admittances of 
+  the Deering banjo without its resonator back. Blue curve: circular bridge at 
+  the centre of the membrane; black curve: circular bridge offset from the 
+  centre; red dashed curve: regular bridge, measured near the first string as 
+  in Fig. 4.}} 
 
   Notice one feature of Fig.\ 7, which will be significant when we come to 
   subsection G. At the lowest frequencies, both cases with the circular bridge 
@@ -321,6 +375,14 @@
   All the modal responses to the pluck are coherent in the body motion, so they 
   add up constructively at the initial instant after the pluck release. 
 
+  \fig{figs/fig-c4454b0c.png}{\caption{Figure 8. Bridge admittances of a 
+  steel-string guitar (black solid), a flamenco guitar (black dashed) and a 
+  violin (blue), compared to the datum admittance of the banjo (red).}} 
+
+\audio{}
+
+\audio{}
+
   Finally, Sound C.11 gives an indication of what a violin might sound like 
   with a banjo neck and strings fitted to it. In some ways the sound is 
   intermediate between that of the banjo and the guitars. This is consistent 
@@ -328,6 +390,8 @@
   significantly higher than the guitars in the low kHz range, as a result of 
   the ``bridge hill''. The result is a sound which strikes some listeners as 
   reminiscent of a harpsichord. 
+
+\audio{}
 
   \textbf{D: Strings and plucking} 
 
@@ -360,6 +424,14 @@
   would affect the added stiffness effect: see the discussion around Sounds 
   G.8--G.13. 
 
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
   It should be explained that some banjos do indeed use strings of these other 
   materials, but usually in a context of seeking an ``old-time'' sound, often 
   with a natural skin head with somewhat lower tension than a typical Mylar 
@@ -380,6 +452,16 @@
   that question would take us into different territory and we ignore it for 
   now. 
 
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
   Another thing that is easy to explore is the influence of two variables under 
   the player's control: the plucking point and the nature of the plectrum or 
   fingertip. We have already heard a synthesised example of moving the plucking 
@@ -387,11 +469,21 @@
   similar examples for the banjo. The familiar change of sound associated with 
   this shift is captured well by these sounds. 
 
+\audio{}
+
+\audio{}
+
   The effective width of the plectrum or fingertip can also be varied: this 
   models the range of sounds produced by changing from a hard plectrum, to a 
   fingernail, to the flesh of a fingertip. This effect is achieved by a rather 
   crude filter in the model, but the familiar change of sound is quite well 
   captured by Sounds D.11, D.12 and D.13. 
+
+\audio{}
+
+\audio{}
+
+\audio{}
 
   \textbf{E. Alternative synthesis methods} 
 
@@ -416,6 +508,8 @@
   banjo head over time, for example as a result of changes in temperature or 
   from creep of the tensioned Mylar head. 
 
+\audio{}
+
   The remaining three sounds are all calculated using a two-polarisation model, 
   with three different values of $\theta$: Sound E.2 has $\theta = 0^\circ$, 
   Sound E.3 has $\theta = 45^\circ$, and Sound E.4 has $\theta = 90^\circ$. It 
@@ -429,6 +523,12 @@
   of the synthesis process when damping is too low. We will come back to this 
   issue in subsection I. 
 
+\audio{}
+
+\audio{}
+
+\audio{}
+
   All the synthesised sounds so far have been produced by the frequency domain 
   approach. We now compare the results with some obtained by a modal approach, 
   based on approximating the measured admittance by a modal summation, then 
@@ -438,6 +538,10 @@
   decomposition is sufficiently accurate for the present purpose, and also 
   provides an internal check on the synthesis coding since these two methods 
   are independent. 
+
+\audio{}
+
+\audio{}
 
   The modal approach provides an opportunity to do something interesting, which 
   is not possible by the frequency domain method. Each coupled body/string mode 
@@ -450,6 +554,10 @@
   similar to the full synthesis with all modes. However, the difference is 
   clearly audible (provided your audio playback quality is good enough), but it 
   is hard to put into words. 
+
+\audio{}
+
+\audio{}
 
   Corresponding spectrograms are shown in Figs.\ 9 and 10. The comparison of 
   these spectrograms reveals that it is hardly surprising if the body modes 
@@ -465,6 +573,12 @@
   is played. The mix of body modes is similar for every note, and constitutes a 
   kind of acoustical fingerprint of the instrument. 
 
+  \fig{figs/fig-45232de7.png}{\caption{Figure 9. Spectrogram of the sample 
+  music fragment, synthesised using ``string modes'' only.}} 
+
+  \fig{figs/fig-4707ec3a.png}{\caption{Figure 10. Spectrogram of the sample 
+  music fragment, synthesised using ``body modes'' only.}} 
+
   \textbf{F. Tension and size of head membrane} 
 
   For the remaining sound examples we turn to the square banjo model, in order 
@@ -474,6 +588,16 @@
   size. This seems quite a drastic change (the area changes from four times the 
   real banjo down to a quarter of that area), but the effects on sound are 
   surprisingly small. 
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
 
   To see a possible explanation, Fig.\ 11 shows three of the admittances 
   associated with this set. It is clear that all the individual resonances are 
@@ -486,6 +610,10 @@
   significantly influenced by changing the size of the head, so the formant 
   does not move. 
 
+  \fig{figs/fig-02967916.png}{\caption{Figure 11. The bridge admittances 
+  associated with Sounds F.2 (blue curve), F.3 (the datum case, red curve) and 
+  F.5 (black curve).}} 
+
   Slightly different behaviour is seen in the next case, when the effect of 
   changing the head tension is investigated. Values range from a half (Sound 
   F.6) to double (Sound F.10) the nominal tension. Figure 12 shows a selection 
@@ -497,6 +625,20 @@
   significance than changes in the individual resonances within a fixed formant 
   structure. We will explore this idea further with other parametric variations 
   in the next subsection. 
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+  \fig{figs/fig-b1ac0df4.png}{\caption{Figure 12. The bridge admittances 
+  associated with Sounds F.6 (blue curve), F.8 (the datum case, red curve) and 
+  F.10 (black curve).}} 
 
   The effects of head size and head tension are only incorporated in this study 
   through their influence on the bridge admittance. On a real banjo these 
@@ -516,6 +658,20 @@
   be a mute (Sound G.7). The sound changes are very significant, and broadly in 
   line with expectations. 
 
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
   Figure 13 shows examples of the associated admittances. The formant is 
   shifted drastically, as would be expected with these large changes of mass. 
   The choice of a bridge mass of 1.5 g for the datum case was motivated by 
@@ -524,11 +680,31 @@
   actual bridge mass of 2.2 g shifts the formant significantly too low in 
   frequency. 
 
+  \fig{figs/fig-a020d056.png}{\caption{Figure 13. The bridge admittances 
+  associated with Sounds G.1 (blue curve), G.3 (red curve) and G.6 (black 
+  curve).}} 
+
   Figure 14, and the next set of sound examples, illustrate the effect of 
   changing the additional stiffness. Values vary from essentially zero (Sound 
   G.8) to double the value used in the datum case (Sound G.13). Not 
   surprisingly, increasing the stiffness shifts the formant to higher 
   frequency. The effect is clearly audible. 
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+  \fig{figs/fig-8420596f.png}{\caption{Figure 14. The bridge admittances 
+  associated with Sounds G.8 (blue curve), G.10 (red curve) and G.13 (black 
+  curve).}} 
 
   One way to change this additional stiffness has already been seen in Fig.\ 7: 
   a bridge carrying only one string rather than the full set of 5 clearly 
@@ -561,6 +737,16 @@
   sound quality comes between Sound H.3 and Sound H.4, when the bridge hill is 
   first removed. 
 
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
   Selected examples of these admittances are plotted in Fig.\ 15. The plot is 
   a little hard to interpret at first glance, because large sections of these 
   curves are identical. For example, the appearance of a blue curve turning 
@@ -574,10 +760,24 @@
   sound rather similar: swapping between the two datum admittances in 
   frequencies up to about 2 kHz makes relatively little difference. 
 
+  \fig{figs/fig-a19cba6a.png}{\caption{Figure 15. The bridge admittances 
+  associated with Sounds H.1 (blue curve), H.4 (red curve) and H.5 (black 
+  curve).}} 
+
   These examples are now repeated, this time using the square banjo admittance 
   without the phase compensation fudge that was described in section 5.5.2. The 
   final sounds in this set illustrate the ``zinginess'' problem mentioned 
   earlier, and discussed in the next subsection. 
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
+
+\audio{}
 
   \textbf{I. ``Zinginess'' and the damping question} 
 

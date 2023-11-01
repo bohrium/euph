@@ -12,6 +12,10 @@
   subdividing the total bow width into the chosen number. The details of all 
   this can be found in reference [2]. 
 
+  \fig{figs/fig-b48d0faa.png}{\caption{Figure 1. Schematic sketch of a set of 
+  discrete ``bow-hairs'', regularly spaced across the chosen section of the 
+  string.}} 
+
   The model then uses a finite-difference approach to the section of string 
   lying under the bow, combined with the digital waveguide method to represent 
   the two sections of string outside the width of the bow. At each time step, 
@@ -53,6 +57,11 @@
   the exact shape of the curve at intermediate speeds. (Note that, for 
   consistency with earlier plots, the curve is shown here as a function of 
   $-v$.) 
+
+  \fig{figs/fig-9e480a55.png}{\caption{Figure 2. Measured steady-sliding 
+  friction coefficient for violin rosin (stars), with the double-exponential 
+  curve fit used in previous sections (red) together with an approximate 
+  hyperbolic fit to the same data (blue curve).}} 
 
   We can illustrate some typical results of this model. These simulations, and 
   the ones shown in section 9.7, use parameter values suitable for a violin G 
@@ -96,6 +105,17 @@
   slipping across the finite width of the bow become more evident: we will see 
   more detail of this shortly. 
 
+  \fig{figs/fig-529beb3e.png}{\caption{Figure 3. Examples of bridge force 
+  waveforms for an open G string of a violin, simulated using a flat bow of 
+  width 10 mm, for some representative columns of Schelleng's diagram. The four 
+  plots correspond to columns 2, 8, 14 and 20 of the Schelleng diagrams shown 
+  in section 9.3: the $\beta$ values at the centre of the bow, from left to 
+  right, are 0.0225, 0.0449, 0.0899 and 0.1800 respectively. Bow force values 
+  correspond to alternate rows of the earlier Schelleng diagrams. Each 
+  simulation was initialised with ideal Helmholtz motion. Simulations are based 
+  on the friction-curve model, with the hyperbolic friction curve plotted in 
+  Fig. 2.}} 
+
   More surprisingly, we do not see any clear example of a transition to double 
   slipping motion at low values of bow force. Instead, the sawtooth waveform 
   gets more and more rounded, and in the lower left of this figure they seem to 
@@ -126,6 +146,14 @@
   Results corresponding to Fig.\ 3 for these two cases are shown in Figs.\ 4 
   and 5, respectively. 
 
+  \fig{figs/fig-b25f0a77.png}{\caption{Figure 4. Bridge-force waveforms from 
+  Schelleng's diagram in the same format as Fig. 3, but simulated using the 
+  thermal friction model from Section 9.6.}} 
+
+  \fig{figs/fig-64000b6e.png}{\caption{Figure 5. Bridge-force waveforms from 
+  Schelleng's diagram in the same format as Figs. 3 and 4, simulated using the 
+  modified thermal friction model from Section 9.6.}} 
+
   The immediate impression from these plots is that all three friction models 
   give quite similar-looking results. However, if we look in a little more 
   detail we can see significant differences between the three models. We will 
@@ -135,6 +163,30 @@
   force waveform from the three different friction models, accompanied by maps 
   to show what is going on under the bow. All cases have the stick-slip map, 
   and the two thermal models also have a temperature map. 
+
+  \fig{figs/fig-f6894ea8.png}{\caption{Figure 6. Bridge force waveform for the 
+  chosen case, simulated with the friction curve model.}} 
+
+  \fig{figs/fig-b369ff72.png}{\caption{Figure 7. The map of slipping and 
+  sticking within the bow, corresponding to Fig. 6.}} 
+
+  \fig{figs/fig-2cebc965.png}{\caption{Figure 8. Bridge force waveform for the 
+  chosen case, simulated with the original thermal friction model.}} 
+
+  \fig{figs/fig-a1a7e293.png}{\caption{Figure 9. The map of slipping and 
+  sticking within the bow, corresponding to Fig. 8.}} 
+
+  \fig{figs/fig-19dc9edd.png}{\caption{Figure 10. The map of temperature 
+  distribution within the bow, corresponding to Fig. 8.}} 
+
+  \fig{figs/fig-8485edc1.png}{\caption{Figure 11. Bridge force waveform for the 
+  chosen case, simulated with the modified thermal friction model.}} 
+
+  \fig{figs/fig-596e1d0b.png}{\caption{Figure 12. The map of slipping and 
+  sticking within the bow, corresponding to Fig. 11.}} 
+
+  \fig{figs/fig-e76d1998.png}{\caption{Figure 13. The map of temperature 
+  distribution within the bow, corresponding to Fig. 11.}} 
 
   Finally, we can show some transient results using the three finite-width 
   models. Each is compared to the corresponding point-bow model --- these 
@@ -150,6 +202,24 @@
   all 6 models. The 9 panels of that figure are laid out in the same 
   arrangement as the $3 \times 3$ grid of green circles. In each panel, results 
   for the 6 different models are identified by plot colour. 
+
+  \fig{figs/fig-9084474e.png}{} 
+
+  \fig{figs/fig-75892a33.png}{} 
+
+  \fig{figs/fig-13663156.png}{} 
+
+  \fig{figs/fig-0bc0f3ab.png}{} 
+
+  \fig{figs/fig-f0c1bb38.png}{} 
+
+  \fig{figs/fig-35806490.png}{} 
+
+  \fig{figs/fig-f955e80c.png}{} 
+
+  \fig{figs/fig-a6b5ac30.png}{} 
+
+  \fig{figs/fig-33a23783.png}{} 
 
   These waveforms show what lies behind the automatic classification in the 
   Guettler diagrams. The black curves, for the finite-width friction-curve 

@@ -1,0 +1,97 @@
+  \tt{}Euphonics\rm{} 
+
+  The science of musical instruments                           ISSN 2977-5612 
+
+  The formulation of a ``digital waveguide'' simulation model for an idealised 
+  bowed string is very similar to the equivalent model for the clarinet, 
+  detailed in section 8.5.3. There are two main differences: first, the 
+  excitation of the clarinet occurs at the end of the tube while a string is 
+  bowed somewhere in the middle; and second, the nonlinear function associated 
+  with the simplest friction model is more severely non-smooth than the 
+  mouthpiece characteristic we assumed for the clarinet. The first issue makes 
+  the formulation slightly more complicated, but makes no fundamental change in 
+  the way the model operates. 
+
+  The second issue makes a bigger difference: it means that stick-slip motion 
+  of a bowed string always involves non-smooth behaviour. There is no 
+  equivalent of the linearised argument leading to a threshold of blowing 
+  pressure, as we found in the clarinet case. This fits with experience of 
+  playing a violin: there is no possibility of quasi-sinusoidal motion when you 
+  press lightly or bow slowly: if the string vibrates it is always stick-slip 
+  motion of some kind with a rich spectrum of harmonics. 
+
+  The starting point for modelling is similar to the clarinet case: we assume 
+  that in the immediate vicinity of the single point where we want the bow to 
+  act, the transverse vibration of the string can be approximated by that of an 
+  ideal string (as analysed in section 3.1.1). First, we think about an 
+  infinite string, extending away on both sides from the bowed point. If we 
+  apply a force $f(t)$ to such an infinite string, the velocity response of the 
+  string at the bowed point is $v(t)= f(t)/(2Z_0)$ where $Z_0=\sqrt{T/m}$ is 
+  the wave impedance of the string, of tension $T$ and mass per unit length 
+  $m$. In other words, our infinite string behaves like an ideal dashpot, with 
+  velocity proportional to applied force. This motion at the bowed point 
+  generates two outgoing waves of magnitude $f(t)/(2Z_0)$, sent off 
+  symmetrically in the two directions. 
+
+  Of course, our real string has a finite length. The situation is then as 
+  sketched in Fig.\ 1. The force $f(t)$ generates outgoing waves as on the 
+  infinite system (shown in red in the figure), but now after a delay reflected 
+  waves (shown in blue) return to the bowed point from the two sides. Each 
+  separate reflected wave can be computed by convolution of the outgoing wave 
+  with a reflection function similar to the one used in the clarinet model. 
+  This time we need two reflection functions, which we can call $r_1(t)$ and 
+  $r_2(t)$, describing reflection behaviour from the bridge side and the finger 
+  side respectively. They will have different delays, which will depend on 
+  where the player chooses to place the bow on the string. This bowing position 
+  will play an important role in later discussions: it is usually described via 
+  a non-dimensional parameter $\beta$ which is the bow-bridge distance 
+  expressed as a proportion of the string length. 
+
+  \fig{figs/fig-76514fbc.png}{\caption{Figure 1. Schematic diagram showing 
+  outgoing waves from the bowed point (in red) and reflected waves returning to 
+  the bowed point (in blue).}} 
+
+  At a given time $t$, we can denote the incoming and outgoing velocity waves 
+  on the two sides of the bowed point by $v_1^{(i)}(t), v_1^{(o)}(t), 
+  v_2^{(i)}(t)$ and $v_2^{(o)}(t)$. They are related in two different ways. The 
+  outgoing wave on one side is given by the incoming wave from the other side, 
+  plus the new contribution from the force $f(t)$, so that 
+
+  $$v_1^{(o)} = v_2^{(i)} + \dfrac{f}{2Z_0} \mathrm{~~~ and~~~} v_2^{(o)} = 
+  v_1^{(i)} + \dfrac{f}{2Z_0} . \tag{1}$$ 
+
+  Second, the incoming waves on each side are generated from the corresponding 
+  outgoing waves using the relevant reflection function: 
+
+  $$v_1^{(i)} = v_1^{(o)} * r_1 \mathrm{~~~ and~~~} v_2^{(i)} = v_2^{(o)} * r_2 
+  \tag{2}$$ 
+
+  where * denotes the operation of convolution. We can call the combined 
+  velocity resulting from these incoming waves 
+
+  $$v_h(t)=v_1^{(i)}(t) + v_2^{(i)}(t) \tag{3}$$ 
+
+  where the subscript `h' suggests ``history'', just as in the clarinet model 
+  of section 8.5.3. 
+
+  At a given time $t$ we can calculate $v_h(t)$ from our knowledge of the past 
+  history of the motion. Now the actual velocity at the bowed point is the sum 
+  of the infinite-string response and the returning reflected waves: 
+
+  $$v(t)=\frac{f(t)}{2Z_0} +v_h(t) . \tag{4}$$ 
+
+  This is the direct equivalent for the bowed-string problem of equation (9) 
+  from section 8.5.3. It is the equation of a straight line in the $v-f$ plane, 
+  with slope $2Z_0$ and horizontal position governed by the value of $v_h$. 
+
+  The new values of $v(t)$ and $f(t)$ are given by the intersection of this 
+  straight line with the friction force --- velocity curve. If the coefficient 
+  of friction is denoted $\mu(v)$ and the normal bow force is $F_b$, then this 
+  curve is given by $f=F_b \mu(v)$. For the particular plots and simulations 
+  shown in section 9.2, the curve-fitted coefficient of friction takes the form 
+
+  $$\mu(v)=(\mu_{ss}-\mu_d) e^{-v/v_{cc}} + (\mu_s-\mu_d) e^{-v/v_c} + \mu_d 
+  \tag{5}$$ 
+
+  with $\mu_{ss}=1.2$, $\mu_s=0.8$, $\mu_d=0.35$, $v_{cc}=0.01$ m/s and 
+  $v_c=0.1$ m/s. 

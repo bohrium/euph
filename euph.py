@@ -1,5 +1,5 @@
-# author:   samtenka
-# change:   2023-10-30
+# author.replace('<strong>', '\\textbf{'):   samtenka
+# change.replace('</strong>', '}'))      :   2023-10-31
 # create:   2023-10-28
 # descrp:   scrape [ euphonics.org ] and assemble to book
 # to use:
@@ -23,6 +23,7 @@ import tqdm
 import hashlib
 import glob
 import os
+from parse_html import get_items, content_item , urls
 
 #-------  _  ------------------------------------------------------------------
 
@@ -48,19 +49,27 @@ def clean_post(s):
              .replace('&lt;', '<')
              .replace('&amp;', '\\&')
              #
-             .replace('%', '\\%')
+             #.replace('%', r'\%')
+             #
+            .replace('<strong>', '\\textbf{')
+            .replace('</strong>', '}')
+            .replace('<br>', '')
              )
 
-user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
+#user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
 user_agent = 'Mozilla/5.0 (X11; Linux i686 on x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2909.25 Safari/537.36'
 headers = {'User-Agent':user_agent,}
 
-def get_headlines(url, pattern):
+def get_headlines(url, pattern, clean_percents=False):
     request = urllib.request.Request(url, headers=headers)
     response = urllib.request.urlopen(request, timeout=2.)
     html = clean_pre(response.read())
     html = clean_post(html.decode('utf-8'))
-    return [mm.groupdict() for mm in re.finditer(pattern, html)]
+    if clean_percents:
+        html = re.sub(r'(?<=[^\\])%', r'\\%', html)
+    return [mm.groupdict()
+            for pp in html.split('\n\n')
+            for mm in re.finditer(pattern, pp)]
 
 def wrap_col(text, line_width=80, indent='  '):
     formatted = indent[:]
@@ -77,10 +86,13 @@ def wrap_col(text, line_width=80, indent='  '):
 def process_para(groupdict):
     gd = groupdict
     text = gd['text']
-    figurl = gd['figurl']
-    figcap = gd['figcap']
-    vidurl = gd['vidurl']
-    vidcap = gd['vidcap']
+    imageurl = gd['imgurl']
+    imagecap = gd['imgcap']
+    videourl = gd['videourl']
+    videocap = gd['videocap']
+    audiourl = gd['audiourl']
+    audiocap = gd['audiocap']
+
     if text is not None:
         if 'SECTION' in text: return ''
         text = text.strip()
@@ -90,8 +102,8 @@ def process_para(groupdict):
         #elif text.startswith('<strong>'):
         #     text = (text.replace('<strong>', '\\samsection{')
         #                 .replace('</strong>', '}'))
-        text = (text.replace('<strong>', '\\textbf{')
-                    .replace('</strong>', '}'))
+        #text = (text.replace('<strong>', '\\textbf{')
+        #            .replace('</strong>', '}'))
         #
         text = re.sub('<a [^>]*>', r'\\tt{}', text)
         text = re.sub('</a>', r'\\rm{}', text)
@@ -99,19 +111,25 @@ def process_para(groupdict):
         text = text.replace('Figs. ', 'Figs.\\ ')
         #
         return wrap_col(text)
-    elif figurl is not None:
-        h = hashlib.md5(figurl.encode('utf-8')).hexdigest()[:8]
+    elif imageurl is not None:
+        h = hashlib.md5(imageurl.encode('utf-8')).hexdigest()[:8]
         local_name = 'figs/fig-{:s}.png'.format(h)
         if not glob.glob(local_name):
-            print('downloading {:s}'.format(figurl))
-            os.system('curl -o {:s} {:s} -s'.format(local_name, figurl))
-        return wrap_col('\\fig{{{:s}}}{{{:s}}}'.format(local_name, figcap.strip()))
-    elif vidurl is not None:
-        h = hashlib.md5(vidurl.encode('utf-8')).hexdigest()[:8]
+            print('downloading {:s}'.format(imageurl))
+            os.system('curl -o {:s} {:s} -s'.format(local_name, imageurl))
+        imagecap = '\\caption{{{:s}}}'.format(imagecap.strip()) if imagecap is not None else ''
+        imagecap = re.sub('<(/)?a[^>]*>', '', imagecap)
+        imagecap = re.sub('<a [^>]*>', r'\\tt{}', imagecap)
+        imagecap = re.sub('</a>', r'\\rm{}', imagecap)
+        imagecap = imagecap .replace('_','\\_') # TODO FIXME : what if mathmode subscript?
+
+        return wrap_col('\\fig{{{:s}}}{{{:s}}}'.format(local_name, imagecap))
+    elif videourl is not None:
+        h = hashlib.md5(videourl.encode('utf-8')).hexdigest()[:8]
         local_name = 'vids/vid-{:s}.png'.format(h)
         if not glob.glob(local_name):
-            print('downloading {:s}'.format(vidurl))
-            os.system('curl -o {:s} {:s} -s'.format(local_name, vidurl))
+            print('downloading {:s}'.format(videourl))
+            os.system('curl -o {:s} {:s} -s'.format(local_name, videourl))
             temp_out = 'temp-out'
             os.system('ffprobe -i {:s} -show_entries format=duration -v quiet -of csv="p=0" > {:s}'.format(local_name, temp_out))
             with open(temp_out) as f:
@@ -124,29 +142,31 @@ def process_para(groupdict):
 
         frame_names = sorted(glob.glob('vids/vid-{:s}-*.png'.format(h)))
         ll = len(frame_names)
-        return '\\moobeginvid\\begin{{tabular}}{{{:s}}} {:s} \\end{{tabular}}\\caption{{{:s}}}\\mooendvideo'.format(
+        videocap = '\\caption{{{:s}}}'.format(videocap.strip()) if videocap is not None else ''
+        videocap = re.sub('<(/)?a[^>]*>', '', videocap)
+        videocap = re.sub('<a [^>]*>', r'\\tt{}', videocap)
+        videocap = re.sub('</a>', r'\\rm{}', videocap)
+        videocap = videocap.replace('_','\\_') # TODO FIXME : what if mathmode subscript? 
+
+        return '\\moobeginvid\\begin{{tabular}}{{{:s}}} {:s} \\end{{tabular}}{:s}\\mooendvideo'.format(
             'c'*ll,
             '&'.join('\\vidframe{{ {:.2f} }}{{ {:s} }}'.format(.9/ll, fn) for fn in frame_names),
-            vidcap.strip()
+            videocap
         )
+    elif audiourl is not None:
+        return '\\audio{}'
     else:
         assert False
 
-text = '<p>(?P<text>[^\n]*)</p>'
-figu = '(<div [^>]*>)?<figure[^>]*><img( [a-z]+(="[^"]*")?)* src="(?P<figurl>[^"]*)"[^>]*>(</image>)?<figcaption [^>]*>(?P<figcap>[^<]*)</figcaption></figure>'
-vide = '(<div [^>]*>)?<figure[^>]*><video( [a-z]+(="[^"]*")?)* src="(?P<vidurl>[^"]*)"[^>]*>(</video>)?<figcaption [^>]*>(?P<vidcap>[^<]*)</figcaption></figure>'
-para = '|'.join((text, figu, vide))
-
 def tex_from(url, texname):
-    bb = get_headlines(url, para)
+    bb = get_headlines(url, content_item, clean_percents=True)
     tt = '\n\n'.join(map(process_para, bb))
     with open(texname, 'w') as f:
         f.write(tt)
 
-
-urls = '<p[^>]*>(<mark [^>]*>Chapter )?(?P<sectnum>[0-9]+(.[0-9]+)*)(</mark>)? <a [^>]*href="(?P<url>[^"]*)"[^>]*>(?P<title>[^<]*)</a></p>'
-
 bb = get_headlines('https://euphonics.org/homepage/', urls)
+for b in bb:
+    print(b)
 
 filenm_from_sn = lambda sectnum : 'body/body.{:s}.tex'.format(sectnum.replace('.', '-'))
 
@@ -170,6 +190,8 @@ def make_all_bodies():
     for b in tqdm.tqdm(bb):
         url = b['url']
         sectnum = b['sectnum']
+        #if sectnum not in ['3.6','4.2','9.1', '9.3.2', '10.5']: continue
+        #if not sectnum.startswith('11'): continue
         tex_from(url, filenm_from_sn(sectnum))
 
 def correct_typo(sectnum, before, after):
@@ -187,20 +209,16 @@ def correct_all(sectnum, before, after):
         correct_typo(sn, before, after)
         #correct_typo(sn, '<a [^>]*>', r'\\tt{}')
 
-#print(bb)
 if __name__=='__main__':
     make_all_inputs('all-input.tex')
-
     make_all_bodies()
 
-    #correct_typo('4.3', r'frequency 10% below critical' ,
-    #                    r'frequency 10\% below critical' )
     correct_typo('5.5', r'admittances are plotted in Fig.\ 15}.',
                         r'admittances are plotted in Fig.\ 15.'  )
     correct_typo('6.4', r'Technical Report #1998-010,' ,
                         r'Technical Report \#1998-010,' )
     correct_typo('11.8',r'middle D#',
                         r'middle D\#' )
-
-
+    #correct_typo('1', r'http://campusdata.uark.edu/resources/images/articles/2017-01-31_04-23-17-PMRS61352_KellyBros-scr.jpg',
+    #                  r'')
 

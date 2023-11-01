@@ -43,8 +43,13 @@
 \newcommand{\fig}[2]{%
     \begin{marginfigure}%
   \includegraphics[width=\textwidth]{#1}%
-  \caption{\scriptsize{#2}}%
+  %\caption{\scriptsize{#2}}%
+  {\scriptsize{#2}}
 \end{marginfigure}%
+}
+
+\newcommand{\audio}[1]{%
+  \attnsam{AUDIO MISSING}
 }
 
 %\newcommand{\moobeginvid}{\begin{fullwidth}\centering}
@@ -61,7 +66,8 @@
 
 \newcommand{\sectionreferences}{\sampassage{references}}
 
-
+% thanks to tex.stackexchange.com/questions/352596
+\usepackage{marginfix} % to fix tufte margin items falling off page
 
 \begin{document}\samtitle{%
   EUPHONICS, by Jim Woodhouse}

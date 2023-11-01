@@ -62,11 +62,11 @@
   appropriate to a semi-infinite tube of the same diameter. (With the decibel 
   scale of the plot, this illustrates Skudrzyk's theorem: see section 5.3.2.) 
 
-  \fig{figs/fig-f1c60553.png}{Figure 1. The scaled input impedance $Z/Z_t$ of a 
-  clarinet-like cylindrical tube, normalised by the characteristic impedance. 
-  The red curve shows the result according to the method described in section 
-  11.1.1, the blue curve shows a modified version with increased damping at 
-  higher frequencies.} 
+  \fig{figs/fig-f1c60553.png}{\caption{Figure 1. The scaled input impedance 
+  $Z/Z\_t$ of a clarinet-like cylindrical tube, normalised by the 
+  characteristic impedance. The red curve shows the result according to the 
+  method described in section 11.1.1, the blue curve shows a modified version 
+  with increased damping at higher frequencies.}} 
 
   Although this increase of damping is entirely artificial, something of the 
   kind happens in a real clarinet because of the influence of the bell. The 
@@ -81,6 +81,12 @@
   kHz. This real effect is far more drastic than the artificial one imposed in 
   Fig.\ 1. 
 
+  \fig{figs/fig-b27b4438.png}{\caption{Figure 2. The measured input impedance 
+  of a clarinet with all tone-holes closed, taken from 
+  https://newt.phys.unsw.edu.au/music/clarinet/E3.html and reproduced by 
+  permission of Joe Wolfe. Note that the frequency range here only runs up to 
+  4~kHz, much shorter than in Fig. 1.}} 
+
   Taking the inverse FFT of the impedance plotted in blue in Fig.\ 1 gives the 
   impulse response shown in Fig.\ 3. The initial delta function can be seen, 
   appearing as a single digital sample of height 1 in this discrete-time 
@@ -92,8 +98,9 @@
   pattern then repeats, with alternating negative and positive pulses getting 
   gradually lower and more rounded. 
 
-  \fig{figs/fig-37a64b13.png}{Figure 3. Impulse response of an idealised 
-  clarinet tube, obtained by inverse FFT of the blue impedance from Fig. 1.} 
+  \fig{figs/fig-37a64b13.png}{\caption{Figure 3. Impulse response of an 
+  idealised clarinet tube, obtained by inverse FFT of the blue impedance from 
+  Fig. 1.}} 
 
   If we process the impedance with equation (4) to obtain the reflection 
   coefficient, then take the inverse FFT of that, we obtain the result shown in 
@@ -108,9 +115,9 @@
   damping, causing wave dispersion and leading to an asymmetric pulse. For 
   details, see for example Fletcher and Rossing [1], section 8.2. 
 
-  \fig{figs/fig-78a02e24.png}{Figure 4. Reflection function corresponding to 
-  the impulse response in Fig. 3, obtained by processing the impedance with 
-  equation (4) then taking an inverse FFT.} 
+  \fig{figs/fig-78a02e24.png}{\caption{Figure 4. Reflection function 
+  corresponding to the impulse response in Fig. 3, obtained by processing the 
+  impedance with equation (4) then taking an inverse FFT.}} 
 
   For this reflection function, we find numerically that 
 

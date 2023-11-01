@@ -47,10 +47,16 @@
   then seems to fall into a plane, where it circulates round and round, 
   spiralling slowly outwards. Nothing obviously “chaotic” here, surely? 
 
+  \fig{figs/fig-042c7948.png}{\caption{Figure 1. The early part of a particular 
+  trajectory of the Lorenz equations.}} 
+
   Figure 2 shows the same trajectory, computed for twice as long. Now what we 
   see is that after spiralling outwards for a while, it took off into space, 
   did a loop somewhat similar to the initial one, then dropped back onto the 
   plane, in a different place from before, and started spiralling out again. 
+
+  \fig{figs/fig-ed2c8c5c.png}{\caption{Figure 2. The same trajectory as in Fig. 
+  1, computed for twice as long.}} 
 
   Finally, Fig.\ 3 shows the result for the same trajectory when we follow it 
   for 5 times as long as in Fig.\ 1. The pattern begins to look quite 
@@ -62,6 +68,11 @@
   3D, with a rotating animation. This reveals that what we have called a 
   “plane” is not in fact quite flat. It also shows that the loops on the 
   right-hand side of the plot also map out a different “curvy plane”. 
+
+  \fig{figs/fig-10bc05d4.png}{\caption{Figure 3. The same trajectory as in 
+  Figs. 1 and 2, computed for 5 times as long as Fig. 1.}} 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-a85b30b5-00.png }&\vidframe{ 0.30 }{ vids/vid-a85b30b5-01.png }&\vidframe{ 0.30 }{ vids/vid-a85b30b5-02.png } \end{tabular}\caption{Figure 4. Animated version of the trajectory of Fig. 3, showing the 3D structure rotating it}\mooendvideo
 
   A crucial characteristic of a chaotic system is “sensitive dependence on 
   initial conditions”. We can illustrate this directly with our Lorenz example. 
@@ -77,6 +88,10 @@
   visible. The tiny difference in starting points has been amplified, so that 
   after a while the two trajectories look quite different. This is ``sensitive 
   dependence'' in action. 
+
+  \fig{figs/fig-5a7f26f8.png}{\caption{Figure 5. Two nearby trajectories of the 
+  Lorenz equation. In blue is the trajectory from Fig. 3, in red is one with a 
+  starting position differing only by one part in a thousand.}} 
 
   Bearing in mind that Lorenz was a meteorologist, this kind of behaviour 
   points towards the famous ``butterfly effect''. The traditional version is 
@@ -104,6 +119,9 @@
   saddle point will, after they have passed close to the saddle point, be 
   widely separated into different regions of the phase plane. 
 
+  \fig{figs/fig-4c7c0b70.png}{\caption{Figure 6. A saddle point in the phase 
+  plane}} 
+
   To see the relevance to our example of the Lorenz equations, Fig.\ 7 shows a 
   different view of the trajectory from Fig.\ 3. This time, we are looking at 
   it from vertically above, down the z-axis. If you look in the centre of this 
@@ -119,6 +137,10 @@
   shapes: that's exactly what happens with the Lorenz system. Following this 
   train of ideas is one route into the mathematics of chaos, but we won't try 
   to go any deeper for the purposes of this introduction. 
+
+  \fig{figs/fig-b7caa381.png}{\caption{Figure 7. The trajectory of the Lorenz 
+  equations as shown in Fig. 3, but viewed down the z-axis. Notice the 
+  characteristic pattern of a saddle point at the centre of this pattern.}} 
 
   Systems capable of showing chaotic behaviour often share a feature in their 
   phase space behaviour. You can think of the trajectories in phase space as if 
@@ -150,6 +172,10 @@
   watered-silk pattern. If you look carefully at the bevelled edge in the 
   close-up, you can see layers within the thickness of the metal. 
 
+  \fig{figs/fig-234ee2f0.png}{} 
+
+  \fig{figs/fig-1ca33421.png}{} 
+
   We can use the Lorenz equations to illustrate one more qualitative 
   phenomenon. In Fig.\ 5 we emphasised the fact that a small change in initial 
   position leads to a drastic divergence of trajectories. But now look at Fig.\ 
@@ -159,6 +185,9 @@
   similar in terms of a qualitative description. After a rather short initial 
   phase, all three of them seem to settle in to the two “curvy planes” which we 
   saw in the earlier examples. 
+
+  \fig{figs/fig-98c6f4f7.png}{\caption{Figure 9. Three trajectories of the 
+  Lorenz equations, with very different starting points}} 
 
   To understand this (at least in a very vague way), we need to introduce a new 
   concept. To start, let’s go back to the simple linear oscillator, with 
@@ -170,6 +199,9 @@
   wait long enough the initial energy will all be dissipated by the damping, 
   and it will settle back towards it equilibrium position. The position (0,0) 
   in the phase plane is called an attractor, for obvious reasons. 
+
+  \fig{figs/fig-94b59e4c.png}{\caption{Figure 10. Phase portrait of a stable 
+  spiral}} 
 
   There are other possible types of attractor. Some nonlinear systems show 
   self-excited oscillation (we’ll be looking at that in the next section). A 
@@ -201,6 +233,8 @@
   simple way to find a chaotic system. Figure 11 shows a double pendulum: two 
   identical rods, hinged together and hung from a pivot at the top. 
 
+  \fig{figs/fig-726a2bba.png}{\caption{Figure 11. Sketch of a double pendulum}} 
+
   The equations governing the motion of a double pendulum like this are derived 
   in the next link. Armed with those equations, it is easy to solve them in the 
   computer to illustrate how the system behaves: Fig.\ 12 shows an example. The 
@@ -217,6 +251,8 @@
   pendulums can occasionally do a loop, nearly every motion trajectory exhibits 
   chaotic behaviour. 
 
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-6f3972c4-00.png }&\vidframe{ 0.30 }{ vids/vid-6f3972c4-01.png }&\vidframe{ 0.30 }{ vids/vid-6f3972c4-02.png } \end{tabular}\caption{Figure 12. Example of free motion of an undamped double pendulum, simulated from the governing equations}\mooendvideo
+
   You might be thinking ``But this is just a computer simulation: does a real 
   double pendulum behave like that?'' Figure 13 shows an example based on 
   measured motion of a double pendulum: this one is used in a laboratory 
@@ -226,10 +262,14 @@
   hanging vertically downwards. But you can see in the figure that before that 
   happens, the motion looks similarly chaotic. 
 
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-3a08e0da-00.png }&\vidframe{ 0.30 }{ vids/vid-3a08e0da-01.png }&\vidframe{ 0.30 }{ vids/vid-3a08e0da-02.png } \end{tabular}\caption{Figure 13. Measured motion of a double pendulum: data courtesy of Hugh Hunt}\mooendvideo
+
   Figure 14 shows a direct demonstration of ``sensitive dependence'' using this 
   laboratory pendulum system. The operator has launched the system three times, 
   from approximately the same initial position. All three subsequent motions 
   are combined in this plot. You can see that for a while the three cases move 
   in a rather similar way, but they diverge progressively, and by the end the 
   three cases are moving in quite different ways. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-050f1f2f-00.png }&\vidframe{ 0.30 }{ vids/vid-050f1f2f-01.png }&\vidframe{ 0.30 }{ vids/vid-050f1f2f-02.png } \end{tabular}\caption{Figure 14. Three different measured examples of motion of a double pendulum, starting from very similar initial positions: data courtesy of Hugh Hunt}\mooendvideo
 

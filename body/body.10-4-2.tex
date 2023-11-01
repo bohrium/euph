@@ -38,6 +38,12 @@
   sine wave, but it is at the wrong frequency, a much lower frequency than it 
   should be. 
 
+  \fig{figs/fig-3b7db1e7.png}{\caption{Figure 1. An illustration of aliasing. A 
+  sine wave at frequency 4.5~kHz is shown in black. The red stars are the 
+  result of sampling this sine wave at a frequency of 5~kHz. They dot out a 
+  sine wave with the much lower frequency 500~Hz, which is 5000-4500~Hz: the 
+  sampling frequency minus the sine wave frequency.}} 
+
   Specifically, the frequency marked by the red stars is 500~Hz, which is the 
   difference between the sampling rate and the true frequency of the sine wave. 
   This aliasing effect is not just a mathematical artefact: you can hear it. 
@@ -49,6 +55,10 @@
   the sampling rate). It then turns round again and starts rising. The case 
   plotted in Fig.\ 1 occurs shortly before this second reversal, when the sweep 
   reaches 5~kHz and you hear a tone at 500~Hz. 
+
+\audio{}
+
+\audio{}
 
   You absolutely do not want aliasing to be going on in your measurement! 
   Frequency peaks will appear in entirely the wrong places. So you must choose 
@@ -73,6 +83,9 @@
   in this particular example). You can see that the response has decayed to low 
   levels by 0.5~s, and if this is the complete data sample, the resolution will 
   be 2~Hz. 
+
+  \fig{figs/fig-627f0190.png}{\caption{Figure 2. The response from an 
+  accelerometer attached to the bridge of a banjo, following a hammer tap.}} 
 
   Now you have to consider a trade-off. Higher resolution seems desirable 
   because it leads to smoother plots, but it requires you to store a larger 
@@ -130,6 +143,9 @@
   suitable holding arrangement is shown in Fig.\ 3. This treble viol is resting 
   on soft foam on its end block, and is supported by a foam-lined ``hand'' on 
   the neck. 
+
+  \fig{figs/fig-c7af4f8c.png}{\caption{Figure 3. A treble viol being tested. 
+  Note the holding arrangement and the card for string damping}} 
 
   Another approach that is often used is to suspend the instrument from some 
   kind of frame using rubber bands. This approach can give good isolation of 
@@ -193,6 +209,9 @@
   been fitted with different strings, they may not have been tuned the same, 
   and so on. 
 
+  \fig{figs/fig-1dad2cd1.png}{\caption{Figure 4. Measured bridge admittance of 
+  a violin, with strings damped (blue) and undamped (red)}} 
+
   However, it is important that the strings are in place and under normal 
   tension during a measurement. The violin gives a particularly clear example 
   here. The bridge is held in place by the strings, and the static stresses 
@@ -234,6 +253,9 @@
   example. In this case, the coherence suggests that the measured bridge 
   admittance is reliable up to about 6~kHz. 
 
+  \fig{figs/fig-f0939372.png}{\caption{Figure 5. The bridge admittance of a 
+  violin (blue) with the associated coherence function (red)}} 
+
   There are two other checks that can be made if your measurement is of a 
   structural response, such as admittance. If you are doing a driving-point 
   measurement (tapping essentially at the same position as the sensor) then the 
@@ -244,6 +266,10 @@
   two alternative views of the same response: on the left the real and 
   imaginary parts of the complex admittance are plotted, while on the right the 
   phase angle is plotted. 
+
+  \fig{figs/fig-551612d9.png}{} 
+
+  \fig{figs/fig-3dafb074.png}{} 
 
   Notice that the real part of the admittance (blue curve on the left) is 
   always positive, while the phase angle always stays within the range between 

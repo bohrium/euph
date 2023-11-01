@@ -80,13 +80,13 @@
   modal contributions together gives the total impulse response: the results 
   corresponding to Figs.\ 1 and 2 are shown in Figs.\ 3 and 4. 
 
-  \fig{figs/fig-2ff72db7.png}{Figure 3. The impulse response corresponding to 
-  the clarinet impedance shown in Fig. 1, computed from the fitted modal 
-  parameters.} 
+  \fig{figs/fig-2ff72db7.png}{\caption{Figure 3. The impulse response 
+  corresponding to the clarinet impedance shown in Fig. 1, computed from the 
+  fitted modal parameters.}} 
 
-  \fig{figs/fig-c4746eeb.png}{Figure 4. The impulse response corresponding to 
-  the saxophone impedance shown in Fig. 2, computed from the fitted modal 
-  parameters.} 
+  \fig{figs/fig-c4746eeb.png}{\caption{Figure 4. The impulse response 
+  corresponding to the saxophone impedance shown in Fig. 2, computed from the 
+  fitted modal parameters.}} 
 
   Impulse responses like these can be used directly in a simulation algorithm, 
   as described in the previous link. At each time step, the pressure inside the 
@@ -129,15 +129,15 @@
   idealised models from section 11.3 are included in Fig.\ 5: ``clarinet'' in a 
   dashed black curve, ``saxophone'' in a dotted black curve. 
 
-  \fig{figs/fig-7b9953b8.png}{Figure 5. The modal frequencies for the clarinet 
-  (red curve) and the soprano saxophone (blue curve) deduced from modal 
-  fitting, each normalised by the fundamental frequency. The ``error bars'' 
-  indicate the half-power bandwidths of each modal peak. The lower green line 
-  shows the behaviour expected if the frequencies were perfectly harmonic with 
-  ratios 1,2,3,4... while the upper green line shows the corresponding 
+  \fig{figs/fig-7b9953b8.png}{\caption{Figure 5. The modal frequencies for the 
+  clarinet (red curve) and the soprano saxophone (blue curve) deduced from 
+  modal fitting, each normalised by the fundamental frequency. The ``error 
+  bars'' indicate the half-power bandwidths of each modal peak. The lower green 
+  line shows the behaviour expected if the frequencies were perfectly harmonic 
+  with ratios 1,2,3,4... while the upper green line shows the corresponding 
   behaviour for frequency ratios 1,3,5,7... The dashed black curve shows the 
   values used in the idealised clarinet model from section 11.3, and the dotted 
-  black curve shows the corresponding idealised saxophone model.} 
+  black curve shows the corresponding idealised saxophone model.}} 
 
   Figure 5 shows that the two real instruments show behaviour somewhat 
   intermediate between the idealised patterns shown by the two green lines. 
@@ -189,12 +189,12 @@
   very much if we simply took a constant value for the modal Q-factor around 
   30, for all modes of both instruments. 
 
-  \fig{figs/fig-24e29975.png}{Figure 6. The Q-factors deduced from the modal 
-  fitting process, for the clarinet (red) and the soprano saxophone (blue). The 
-  dashed black curve shows corresponding Q-factors deduced from the idealised 
-  clarinet impedance, shown in Fig. 1 of section 11.3.2 and used for the 
-  clarinet simulations of section 11.3. The dotted black curve shows the 
-  corresponding idealised saxophone model from section 11.3.3.} 
+  \fig{figs/fig-24e29975.png}{\caption{Figure 6. The Q-factors deduced from the 
+  modal fitting process, for the clarinet (red) and the soprano saxophone 
+  (blue). The dashed black curve shows corresponding Q-factors deduced from the 
+  idealised clarinet impedance, shown in Fig. 1 of section 11.3.2 and used for 
+  the clarinet simulations of section 11.3. The dotted black curve shows the 
+  corresponding idealised saxophone model from section 11.3.3.}} 
 
   The dashed black curve in this figure shows the Q-factors used in the 
   idealised clarinet model from section 11.3, while the dotted black curve 
@@ -224,11 +224,11 @@
   are likely to be affected by non-negligible modal overlap in this frequency 
   range, and the simple circle-fitting strategy would then be too crude. 
 
-  \fig{figs/fig-87894312.png}{Figure 7. The amplitude factors (squared modal 
-  amplitudes) deduced from the modal fitting process, for the clarinet (red) 
-  and the soprano saxophone (blue). The dashed black curve shows the values 
-  used in the idealised clarinet model from section 11.3, and the dotted black 
-  curve shows the corresponding idealised saxophone model.} 
+  \fig{figs/fig-87894312.png}{\caption{Figure 7. The amplitude factors (squared 
+  modal amplitudes) deduced from the modal fitting process, for the clarinet 
+  (red) and the soprano saxophone (blue). The dashed black curve shows the 
+  values used in the idealised clarinet model from section 11.3, and the dotted 
+  black curve shows the corresponding idealised saxophone model.}} 
 
   \textbf{B. Simulation results for the clarinet} 
 
@@ -245,6 +245,13 @@
   for a brief interval during each cycle air is flowing in the reverse 
   direction: back into the player’s mouth through the open reed. 
 
+  \fig{figs/fig-7107cfd9.png}{\caption{Figure 8. Example transient of the 
+  clarinet model: the upper curve shows the mouthpiece pressure, the lower 
+  curve shows the volume flow rate into the mouthpiece. This is a ``cold 
+  start'' transient: it corresponds to the bottom right-hand pixel in Fig. 9. 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">[Modal 
+  clarinet model using measured impedance, dynamic reed model.]}} 
+
   But, as we saw before, it is hard to learn much from an individual 
   simulation. So we move directly on to pressure-gap diagrams, to give an 
   impression of the “playability” of this clarinet, fingered for its lowest 
@@ -256,6 +263,18 @@
   increases upwards in this plot, and all the similar ones we will see shortly. 
   At the very top of the plot, the bite has got so hard that the reed is 
   entirely closed. 
+
+  \fig{figs/fig-fc37e1d1.png}{\caption{Figure 9. Pressure-gap diagram for the 
+  clarinet over the same ranges of mouth pressure and reed gap as the examples 
+  shown in section 11.3. These simulations were all run assuming a ``cold 
+  start'', with the mouth pressure suddenly applied at time $t=0$. The colour, 
+  uniformly red, shows that whenever there was a note rather than silence, it 
+  had a period matching (approximately) the fundamental frequency of the tube, 
+  i.e. the first register of the clarinet. The assumed Q-factor of the reed was 
+  2.5, as in Fig. 32 of section 11.3. The various sloping lines indicate 
+  thresholds of various kinds, exactly as discussed in section 11.3. <meta 
+  http-equiv="content-type" content="text/html; charset=utf-8">[Modal clarinet 
+  model using measured impedance, dynamic reed model.]}} 
 
   The particular transient shown in Fig.\ 8 corresponds to the bottom 
   right-hand pixel of this diagram, with mouth pressure 4~kPa and reed gap 
@@ -320,6 +339,15 @@
   can get the note started, the clarinet is capable of playing at (or at least 
   near) the nominal frequency anywhere within this larger wedge-shaped region. 
 
+  \fig{figs/fig-341004b2.png}{\caption{Figure 10. Pressure-gap diagram as in 
+  Fig. 9, but initialised in a way that encouraged oscillation at the 
+  fundamental frequency. The resulting red wedge indicates the region in this 
+  plane in which it is possible to maintain a steady note in the first 
+  register, once it is started. The three horizontal green lines mark the sets 
+  of waveforms to be shown in Fig. 13. <meta http-equiv="content-type" 
+  content="text/html; charset=utf-8">[Modal clarinet model using measured 
+  impedance, dynamic reed model.]}} 
+
   There are many other choices for how to colour-shade diagrams like this, to 
   bring out different aspects of the behaviour. Figure 11 shows the same set of 
   simulations as in Fig.\ 10, coloured to show the behaviour of the playing 
@@ -327,6 +355,12 @@
   the playing frequency relative to the nominal frequency of this note on the 
   clarinet. That note is written $E_3$, but because the $B\flat$ clarinet is a 
   transposing instrument it plays at $D_3$, 146.8~Hz. 
+
+  \fig{figs/fig-4204fbf3.png}{\caption{Figure 11. Pressure-gap diagram for the 
+  same simulations as in Fig. 10, but now colour-shaded to show the pitch 
+  deviation in cents from the nominal pitch of this note ($D\_3$, 146.8~Hz). 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">[Modal 
+  clarinet model using measured impedance, dynamic reed model.]}} 
 
   The plot suggests that the note tends to play sharp, but there several things 
   to be said about that. First, the fitted frequency of the lowest tube mode 
@@ -357,6 +391,14 @@
   This results in a big reduction in high-frequency content in the pressure 
   waveform. 
 
+  \fig{figs/fig-a28340af.png}{\caption{Figure 12. Pressure-gap diagram for the 
+  same simulations as in Fig. 10, but now colour-shaded to indicate the 
+  frequency content of the final waveform by the value of the highest harmonic 
+  that remains close to the level predicted by the Raman square wave. This 
+  diagram is in the same format as Fig. 17 and later plots from section 11.3. 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">[Modal 
+  clarinet model using measured impedance, dynamic reed model.]}} 
+
   To give a direct impression of the waveforms that lie behind these various 
   plots, Fig.\ 13 shows the full set of pressure waveforms along the three 
   lines marked in green in Fig.\ 10. To help interpret this plot, notice that 
@@ -366,6 +408,15 @@
   But near the edges of the wedge-shaped region, for example the waveforms at 
   the top and bottom of the left-hand column, the shape looks more like a sine 
   wave. 
+
+  \fig{figs/fig-b2c96999.png}{\caption{Figure 13. The final portion of the 
+  waveforms along lines marked in green in Fig. 10, for the cases that produced 
+  notes. The left-hand column corresponds to the upper line, the middle column 
+  to the middle line, the right-hand column to the lower line. Left-to-right 
+  rows in Fig. 10 become top-to-bottom stacks here, so that mouth pressure 
+  increases as you move down each column. <meta http-equiv="content-type" 
+  content="text/html; charset=utf-8">[Modal clarinet model using measured 
+  impedance, dynamic reed model.]}} 
 
   I will show one final group of plots relating to this clarinet model. If we 
   make a version of Fig.\ 9 over an extended range of blowing pressure and reed 
@@ -377,6 +428,14 @@
   simulated clarinet is over-blowing to the second register (without the use of 
   the register key). 
 
+  \fig{figs/fig-def109a2.png}{\caption{Figure 14. Pressure-gap diagram matching 
+  Fig. 9, but taken over a wider range of mouth pressure and reed gap. A few 
+  white pixels indicate conditions that led to over-blowing to the second 
+  register (with a frequency close to the second mode of the pipe, 
+  approximately 3 times the fundamental frequency, a musical twelfth). <meta 
+  http-equiv="content-type" content="text/html; charset=utf-8">[Modal clarinet 
+  model using measured impedance, dynamic reed model.]}} 
+
   Figure 15 shows a version of Fig.\ 10 over this same extended range. When the 
   simulation is “primed” with some oscillation at the fundamental frequency, it 
   is perfectly capable of sustaining a note in the first register over the 
@@ -387,6 +446,17 @@
   started. This white region lies entirely within the red region of Fig.\ 15: 
   in that range the clarinet is capable to sustaining two different regimes of 
   oscillation (and maybe others too). 
+
+  \fig{figs/fig-25f4933c.png}{\caption{Figure 15. Pressure-gap diagram over the 
+  same ranges as Fig. 14, but for transient conditions matching Fig. 10. <meta 
+  http-equiv="content-type" content="text/html; charset=utf-8">[Modal clarinet 
+  model using measured impedance, dynamic reed model.]}} 
+
+  \fig{figs/fig-372d6e61.png}{\caption{Figure 16. Pressure-gap diagram 
+  corresponding to Fig. 15, except that the oscillation was initialised to 
+  encourage the second register rather than the first register. <meta 
+  http-equiv="content-type" content="text/html; charset=utf-8">[Modal clarinet 
+  model using measured impedance, dynamic reed model.]}} 
 
   These three plots tell us something important about playing the clarinet. 
   None of the initial transients used in these simulations will be an accurate 
@@ -411,6 +481,11 @@
   pulse-like waveform. This is the expected form of the “Helmholtz motion” for 
   this instrument. 
 
+  \fig{figs/fig-df0d41b5.png}{\caption{Figure 17. The waveform of pressure for 
+  a successful transient of the saxophone model. <meta 
+  http-equiv="content-type" content="text/html; charset=utf-8">[Modal saxophone 
+  model using measured impedance, dynamic reed model.]}} 
+
   Figure 18 shows a pressure-gap diagram for cold-start transients. Unlike the 
   corresponding results for the clarinet in Fig.\ 9, the saxophone shows 
   regions where a note in the first, second or third registers is produced — at 
@@ -430,15 +505,15 @@
   bassoon. In contrast, the clarinet will start readily on ppp on the lowest 
   notes.'' 
 
-  \fig{figs/fig-79a099d6.png}{Figure 18. Pressure-gap diagram for the saxophone 
-  over the same ranges of mouth pressure and reed gap as the examples shown in 
-  section 11.3. These simulations were all run assuming a ``cold start'', with 
-  the mouth pressure suddenly applied at time $t=0$. The colour indicates which 
-  register of the saxophone each note plays in. The assumed Q-factor of the 
-  reed was 2.5. The three horizontal green lines mark the sets of waveforms to 
-  be shown in Fig. 18, and the circles mark cases whose frequency spectra are 
-  shown in Fig. 20. [Modal saxophone model using measured impedance, dynamic 
-  reed model.]} 
+  \fig{figs/fig-79a099d6.png}{\caption{Figure 18. Pressure-gap diagram for the 
+  saxophone over the same ranges of mouth pressure and reed gap as the examples 
+  shown in section 11.3. These simulations were all run assuming a ``cold 
+  start'', with the mouth pressure suddenly applied at time $t=0$. The colour 
+  indicates which register of the saxophone each note plays in. The assumed 
+  Q-factor of the reed was 2.5. The three horizontal green lines mark the sets 
+  of waveforms to be shown in Fig. 18, and the circles mark cases whose 
+  frequency spectra are shown in Fig. 20. [Modal saxophone model using measured 
+  impedance, dynamic reed model.]}} 
 
   Figure 19 shows three sets of waveforms, in the same format as Fig.\ 13. They 
   correspond to the three rows of Fig.\ 18 marked by horizontal lines. It is 
@@ -448,13 +523,13 @@
   the pulse waveform characteristic of Helmholtz motion. Indeed, the second of 
   these is the case we have already seen in Fig.\ 17. 
 
-  \fig{figs/fig-4ae784bb.png}{Figure 19. The final portion of the waveforms 
-  along lines marked in green in Fig. 18, for the cases that produced notes. 
-  The left-hand column corresponds to the upper line, the middle column to the 
-  middle line, the right-hand column to the lower line: the format is the same 
-  as Fig. 13. The second waveform from the top in the middle column is the case 
-  shown in Fig. 17. [Modal saxophone model using measured impedance, dynamic 
-  reed model.]} 
+  \fig{figs/fig-4ae784bb.png}{\caption{Figure 19. The final portion of the 
+  waveforms along lines marked in green in Fig. 18, for the cases that produced 
+  notes. The left-hand column corresponds to the upper line, the middle column 
+  to the middle line, the right-hand column to the lower line: the format is 
+  the same as Fig. 13. The second waveform from the top in the middle column is 
+  the case shown in Fig. 17. [Modal saxophone model using measured impedance, 
+  dynamic reed model.]}} 
 
   Next, we come to four yellow pixels in Fig.\ 18, and Fig.\ 19 reveals that 
   these all show two pulses per period, “double-slipping motion” in 
@@ -494,10 +569,10 @@
   the fourth is rather like the second, and the last one (in green) has strong 
   peaks at all harmonics, like the first one. 
 
-  \fig{figs/fig-27d82b74.png}{Figure 20. Frequency spectra of the steady 
-  waveforms of runs marked by circles in Fig. 18. In the interests of clarity, 
-  the spectra have been separated by steps of 40~dB. [Modal saxophone model 
-  using measured impedance, dynamic reed model.]} 
+  \fig{figs/fig-27d82b74.png}{\caption{Figure 20. Frequency spectra of the 
+  steady waveforms of runs marked by circles in Fig. 18. In the interests of 
+  clarity, the spectra have been separated by steps of 40~dB. [Modal saxophone 
+  model using measured impedance, dynamic reed model.]}} 
 
   So, you should be wondering, what do these all sound like? Sound 1 gives you 
   a chance to hear all the simulated notes along the bottom row of Fig.\ 18. 
@@ -508,6 +583,8 @@
   which are associated with the waveform and spectrum details we have just 
   discussed. 
 
+\audio{}
+
   Figure 21 shows a version of the same pressure-gap diagram as Fig.\ 18, 
   colour-shaded to show the frequency deviation in cents from the nominal 
   frequency of the relevant register (i.e. twice the nominal frequency for the 
@@ -517,11 +594,11 @@
   confirm this: if you look closely at the peak positions, the yellow spectrum 
   has all its peaks at slightly lower frequencies than the other four. 
 
-  \fig{figs/fig-e670e301.png}{Figure 21. Pressure-gap diagram for the same 
-  simulations as in Fig. 18, but now colour-shaded to show the pitch deviation 
-  in cents from the nominal frequency, taking the different registers into 
-  account. [Modal saxophone model using measured impedance, dynamic reed 
-  model.]} 
+  \fig{figs/fig-e670e301.png}{\caption{Figure 21. Pressure-gap diagram for the 
+  same simulations as in Fig. 18, but now colour-shaded to show the pitch 
+  deviation in cents from the nominal frequency, taking the different registers 
+  into account. [Modal saxophone model using measured impedance, dynamic reed 
+  model.]}} 
 
   We will say a bit more about frequency deviation in a moment, in the context 
   of our next set of plots. Just as we did with the clarinet, we now want to 
@@ -537,13 +614,13 @@
   is suggesting that once you get this lowest note started on the saxophone, 
   you may be able to sustain it with the pressure reduced below the line. 
 
-  \fig{figs/fig-af7911eb.png}{Figure 22. Pressure-gap diagram as in Fig. 18, 
-  but initialised in a way that encouraged oscillation at the fundamental 
-  frequency. The resulting red wedge indicates the region in this plane in 
-  which it is possible to maintain a steady note in the first register, once it 
-  is started. The three horizontal green lines mark the sets of waveforms to be 
-  shown in Fig. 25. [Modal saxophone model using measured impedance, dynamic 
-  reed model.]} 
+  \fig{figs/fig-af7911eb.png}{\caption{Figure 22. Pressure-gap diagram as in 
+  Fig. 18, but initialised in a way that encouraged oscillation at the 
+  fundamental frequency. The resulting red wedge indicates the region in this 
+  plane in which it is possible to maintain a steady note in the first 
+  register, once it is started. The three horizontal green lines mark the sets 
+  of waveforms to be shown in Fig. 25. [Modal saxophone model using measured 
+  impedance, dynamic reed model.]}} 
 
   Figure 23 shows a version of the same pressure-gap diagram, shaded to show 
   frequency deviation. Figure 24 shows another version, shaded to show 
@@ -553,15 +630,15 @@
   out, the spectral centroid would be the centre of gravity of the cardboard 
   shape.) 
 
-  \fig{figs/fig-1d8d72f3.png}{Figure 23. Pressure-gap diagram for the same 
-  simulations as in Fig. 22, but now colour-shaded to show the deviation in 
-  cents from the nominal frequency. [Modal saxophone model using measured 
-  impedance, dynamic reed model.]} 
+  \fig{figs/fig-1d8d72f3.png}{\caption{Figure 23. Pressure-gap diagram for the 
+  same simulations as in Fig. 22, but now colour-shaded to show the deviation 
+  in cents from the nominal frequency. [Modal saxophone model using measured 
+  impedance, dynamic reed model.]}} 
 
-  \fig{figs/fig-b4e936b1.png}{Figure 24. Pressure-gap diagram for the same 
-  simulations as in Fig. 22, but now colour-shaded to show the spectral 
+  \fig{figs/fig-b4e936b1.png}{\caption{Figure 24. Pressure-gap diagram for the 
+  same simulations as in Fig. 22, but now colour-shaded to show the spectral 
   centroid of the final periodic waveform. [Modal saxophone model using 
-  measured impedance, dynamic reed model.]} 
+  measured impedance, dynamic reed model.]}} 
 
   The two plots reveal some interesting features. First, Fig.\ 24 shows a 
   pattern of variation that looks superficially similar to the corresponding 
@@ -585,12 +662,12 @@
   harmonics, and that is probably responsible for reducing the spectral 
   centroid. 
 
-  \fig{figs/fig-2f28a513.png}{Figure 25. The final portion of the waveforms 
-  along lines marked in green in Fig. 22, for the cases that produced notes. 
-  The left-hand column corresponds to the upper line, the middle column to the 
-  middle line, the right-hand column to the lower line: the format is the same 
-  as Fig. 13. [Modal saxophone model using measured impedance, dynamic reed 
-  model.]} 
+  \fig{figs/fig-2f28a513.png}{\caption{Figure 25. The final portion of the 
+  waveforms along lines marked in green in Fig. 22, for the cases that produced 
+  notes. The left-hand column corresponds to the upper line, the middle column 
+  to the middle line, the right-hand column to the lower line: the format is 
+  the same as Fig. 13. [Modal saxophone model using measured impedance, dynamic 
+  reed model.]}} 
 
   We haven’t finished with Figs.\ 23 and 24 yet: there is another interesting 
   thing to be noticed. Earlier in this section when we were discussing the 
@@ -636,10 +713,10 @@
   notes, but in the strip along the lower edge of the wedge-shaped region, 
   something else happens. 
 
-  \fig{figs/fig-86665834.png}{Figure 27. Pressure-gap diagram computed with the 
-  multiphonic fingering giving the impedance in Fig. 26. The three circles mark 
-  the cases used in Figs. 28 and 29, and in Sound 2. [Modal clarinet model 
-  using measured impedance, dynamic reed model.]} 
+  \fig{figs/fig-86665834.png}{\caption{Figure 27. Pressure-gap diagram computed 
+  with the multiphonic fingering giving the impedance in Fig. 26. The three 
+  circles mark the cases used in Figs. 28 and 29, and in Sound 2. [Modal 
+  clarinet model using measured impedance, dynamic reed model.]}} 
 
   We will look at three examples, drawn from the bottom row of this diagram and 
   marked by three circles. The first half-second of the simulated pressure 
@@ -649,9 +726,9 @@
   other two cases lead to non-periodic signals. The bottom plot, in yellow, has 
   a very long transient before it settles into the quasi-periodic state. 
 
-  \fig{figs/fig-555b5b21.png}{Figure 28. The pressure waveforms from pixels 30, 
-  28 and 26 in the bottom row if Fig. 27 (marked there by circles). [Modal 
-  clarinet model using measured impedance, dynamic reed model.]} 
+  \fig{figs/fig-555b5b21.png}{\caption{Figure 28. The pressure waveforms from 
+  pixels 30, 28 and 26 in the bottom row if Fig. 27 (marked there by circles). 
+  [Modal clarinet model using measured impedance, dynamic reed model.]}} 
 
   Figure 29 shows the frequency spectra of the same three waveforms, with the 
   same layout and colour coding. The blue curve shows a series of harmonic 
@@ -661,8 +738,10 @@
   hear more than one pitch in these sounds: this is, of course, the origin of 
   the term “multiphonic”. 
 
-  \fig{figs/fig-32a55546.png}{Figure 29. Frequency spectra of the three 
-  waveforms shown in Fig. 28, calculated from the next half-second of the 
+  \fig{figs/fig-32a55546.png}{\caption{Figure 29. Frequency spectra of the 
+  three waveforms shown in Fig. 28, calculated from the next half-second of the 
   signals after the portion shown in the plot. [Modal clarinet model using 
-  measured impedance, dynamic reed model.]} 
+  measured impedance, dynamic reed model.]}} 
+
+\audio{}
 

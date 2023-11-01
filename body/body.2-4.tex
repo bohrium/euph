@@ -1,0 +1,241 @@
+
+
+  Now back to the frequency response function of the drum. Figure 1, reproduced 
+  from section 2.2, shows a sequence of very clear peaks, which correspond to 
+  the resonances or natural frequencies of the drum. Comparing the two 
+  different measurements, it is clear that they both have peaks at the same 
+  frequencies, but that the pattern of heights of those peaks is very different 
+  for the two tapping positions. This illustrates something said earlier: a 
+  drummer excites a different mixture of the vibration modes by hitting in 
+  different places. The peak heights in the measurement reflect the relative 
+  amplitudes in the mixture, and the sound of the drum will be different in the 
+  two cases. 
+
+  \fig{figs/fig-ec199e5c.png}{\caption{Figure 1: Frequency response functions 
+  of the toy drum, reproduced from section 2.2, for two different positions of 
+  the tapping hammer. The numbers on the y-axis correspond to calibrated 
+  values: the frequency response function at any given frequency is a velocity 
+  divided by a force, so the units are meters per second per Newton, m s$^{-1}$ 
+  N$^{-1}$.}} 
+
+  Something else can be noticed in this plot --- or rather, not noticed where 
+  it might perhaps have been expected. The peaks, showing the resonances or 
+  natural frequencies, are spaced in a rather irregular way. They are 
+  definitely not in a regular pattern in which the higher frequencies are exact 
+  multiples of the first one, called the fundamental frequency. In other words, 
+  the natural frequencies of this drum are not harmonically spaced. Now, as we 
+  will see in chapter 3, some musically-important vibrating systems do have 
+  natural frequencies which are harmonically spaced, at least approximately. 
+  But most things don't do this: our toy drum is quite typical in this respect. 
+  For some reason, there is a widespread belief that all sequences of resonant 
+  frequencies are ``harmonics'', to the extent that people sometimes use the 
+  word ``harmonic'' interchangeably with ``resonance''. If you had this idea 
+  before you started reading this paragraph, then stop it right away! It is 
+  going to be very important in the next chapter to examine whether or not some 
+  of the natural frequencies of certain objects are harmonically spaced. If we 
+  were to call the frequencies ``harmonics'', we would find ourselves saying 
+  things like ``In this case the harmonics are not exactly harmonic'', and 
+  confusion would reign. Call them natural frequencies, or resonances, or 
+  overtones, or partials, but reserve the word ``harmonic'' for the theoretical 
+  notion of frequencies that are exact multiples of a fundamental. 
+
+  We can show some of the mode shapes corresponding to the resonances of the 
+  toy drum using a time-honoured method called Chladni patterns. Ernst Chladni 
+  was an eighteenth century scientist who found he could visualise the 
+  vibration of a glass disc by holding it lightly on his fingertips, sprinkling 
+  sand on the surface, then making it vibrate using a violin bow against the 
+  edge. The sand bounces around on the vibrating disc, and tends to collect 
+  along the nodal lines. Nowadays, rather than using a violin bow it is easier 
+  and more controlled to use an electronic sine-wave generator and a small 
+  loudspeaker to ``sing'' at the disc or, in our case, the drum. We sprinkle 
+  powder on the surface: tea leaves are a good choice, because they are less 
+  heavy than sand and bounce more easily, and also the black colour shows up 
+  nicely on the white skin. The sine wave oscillator is gently adjusted through 
+  the frequency range to seek out resonances. The tea leaves then reveal the 
+  nodal line patterns. 
+
+  Some examples for our drum are shown in Fig.\ 2. The first mode is not 
+  illustrated, because there is nothing to see by this method: the only nodal 
+  line is around the rim of the drum. The first strong peak in Fig.\ 1 shows 
+  that this lowest mode occurs at about 130 Hz. The next two, appearing as a 
+  close pair of peaks around 230 Hz, correspond to modes with a single nodal 
+  diameter: one of these is shown in the first Chladni pattern. The companion 
+  mode would have the nodal diameter rotated by $90^\circ$. For the perfect 
+  textbook drum in Fig.\ 3 of section 2.2, these two modes occurred at exactly 
+  the same frequency, but the real drum is not perfect, and the two modes have 
+  slightly different frequencies. This might be caused by non-uniformity in the 
+  mass distribution of the membrane, or by a slightly irregular distribution of 
+  tension: something always prevents real objects from having perfect symmetry, 
+  it only occurs in textbooks. For related reasons, the frequency of these 
+  modes relative to the lowest mode is similar to the textbook value, but not 
+  exactly equal to it. 
+
+  \fig{figs/fig-f1c9d232.png}{} 
+
+  \fig{figs/fig-7837e3fc.png}{} 
+
+  \fig{figs/fig-8321bac6.png}{} 
+
+  \fig{figs/fig-8997210f.png}{} 
+
+  Representative Chladni patterns for three more modes of the drum are also 
+  shown: one with one nodal circle, one with three nodal diameters, and one 
+  mode at a higher frequency with a more complicated shape not matching any of 
+  the patterns of the idealised theory. This is another universal phenomenon: 
+  as you go up the sequence of modes for any structure, the shapes become 
+  increasingly sensitive to small mechanical details, and sooner or later they 
+  cease to be recognisable in comparison to theoretical estimates. This remark 
+  does not only apply to our drum, it is equally true of large computer models 
+  of cars, buildings or aeroplanes. 
+
+  Chladni patterns are not the only approach to visualising vibration patterns: 
+  more hi-tech options are also available. One way is the use a laser-Doppler 
+  vibrometer, mentioned earlier, to scan over a grid of points on the surface 
+  of the object, and then assemble animated views of the response at each peak 
+  frequency. Two examples are shown below, obtained from the stretched membrane 
+  forming the head of a banjo. The vertical scale is hugely exaggerated 
+  compared to the actual vibration when the banjo is in use. The banjo head 
+  exhibits similar shapes to the toy drum. The first one illustrated is similar 
+  to the Chladni figure with three nodal diameters, while the second one shows 
+  motion with two nodal circles. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-7b38791f-00.png }&\vidframe{ 0.30 }{ vids/vid-7b38791f-01.png }&\vidframe{ 0.30 }{ vids/vid-7b38791f-02.png } \end{tabular}\mooendvideo
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-de1e9eee-00.png }&\vidframe{ 0.30 }{ vids/vid-de1e9eee-01.png }&\vidframe{ 0.30 }{ vids/vid-de1e9eee-02.png } \end{tabular}\caption{Figure 3.  Animations of the motion of the head of a banjo, driven at two different frequencies.}\mooendvideo
+
+  Strictly, neither this approach nor the Chladni method really shows modes: 
+  these patterns are technically known as Operating Deflection Shapes, often 
+  abbreviated to ODS. They are the response to driving at a single frequency 
+  close to a response peak. The pattern will be dominated by the closest mode 
+  shape, but the motion will also contain some contribution from other modes. 
+  Evidence of this effect can be seen in the first of the animations: the 
+  pattern appears to rotate slightly during the motion. This is caused by a 
+  combination of the two modes which each have three nodal diameters: see the 
+  discussion in section 2.2.4. On the real banjo head these two modes do not 
+  have exactly the same frequency, so they contribute to this ODS with slightly 
+  different phases. The combination produces the effect of rotation. 
+
+  There is an experimental technique which can, at least in principle, reveal 
+  true mode shapes rather than ODS patterns. It is called ``experimental modal 
+  analysis''. A discussion of how this works will be deferred to section 10.5, 
+  but as a taster, here is an example of a mode shape of the body of a violin 
+  obtained by this method. 
+
+\moobeginvid\begin{tabular}{ccc} \vidframe{ 0.30 }{ vids/vid-37441170-00.png }&\vidframe{ 0.30 }{ vids/vid-37441170-01.png }&\vidframe{ 0.30 }{ vids/vid-37441170-02.png } \end{tabular}\caption{Figure 4. A mode shape of a violin body. Data and animation copyright George Stoppani, reproduced by permission.}\mooendvideo
+
+  Returning to the toy drum, we can use it to illustrate a very different way 
+  to represent vibration or sound in graphical form. This way is known as 
+  ``time-frequency analysis'', or the ``spectrogram'', and it has a lot in 
+  common with the way our own ears process sound. In the description up to now, 
+  plots with time on the axis were turned into plots with frequency on the 
+  axis, using Fourier analysis and the FFT. But we don't hear those as 
+  alternatives, we hear them somehow mixed up. Play a scale on a piano: how do 
+  you describe the sound? Surely, as a sequence of pitches, in other words as 
+  frequencies arranged in a particular pattern in time. 
+
+  There are several ways to generate such a time-frequency description in the 
+  computer. The simplest is good enough to show the idea. We first get the 
+  sound or vibration waveform of interest into the computer by sampling it in 
+  the normal way for any digital recording. But instead of taking the entire 
+  chunk of sound and performing a huge FFT to turn the whole thing into a 
+  Fourier sine-wave recipe, we chop it into smaller segments and FFT each one 
+  separately. Stack the results next to each other in the order of the segments 
+  and, lo, we have a time-varying frequency spectrum. The pictures look nicer 
+  if we use a few processing tricks, such as overlapping the segments, but 
+  essentially that is all there is to it. 
+
+  An example for the drum is shown in Fig.\ 5. The main plot shows the 
+  spectrogram, with frequency along the horizontal axis and time running 
+  vertically upwards. The colours in the plot show the distribution of energy 
+  in the sound, ``hotter'' for louder. To help relate this picture to the 
+  earlier ones, the original time waveform is plotted vertically on the left, 
+  synchronised with the time axis of the spectrogram. Similarly, the full FFT 
+  is plotted along the bottom, aligned with the spectrogram frequency axis. 
+  What the spectrogram shows is a set of vertical stripes, getting cooler as 
+  they go up. These are the individual modes of the drum, each vibrating at its 
+  own natural frequency, and dying away with time as the energy is dissipated 
+  into sound radiation and heat. You can listen to the sound this spectrogram 
+  is calculated from in Sound 1. 
+
+  \fig{figs/fig-b59cd169.png}{\caption{Figure 5: The main colour-shaded image 
+  shows a spectrogram of the toy drum. Along the bottom is the frequency 
+  spectrum obtained by a full FFT of the whole time history. On the left-hand 
+  side is the original time history. These subsidiary time and FFT traces are 
+  correctly aligned with the spectrogram axes.}} 
+
+\audio{}
+
+  Looking closely at the bottom plot, it can be seen that the frequencies of 
+  the resonances are more sharply defined in the full FFT than in the 
+  spectrogram. Indeed at higher frequencies the separate resonant frequencies 
+  begin to overlap and blur together in the spectrogram. This is the price of 
+  trying to see time and frequency variation simultaneously. They are both 
+  aspects of the same thing, and the more you try to see details of variation 
+  in time, the more you blur the details in frequency; and vice versa. This is 
+  in fact an acoustical version of a famous result in quantum mechanics called 
+  the ``Heisenberg uncertainty principle'' --- but it is easier to understand 
+  in acoustics! 
+
+  The uncertainty effect does not only happen in the computer: your own hearing 
+  system also has to cope with it. Listen to the sound of a piece of cardboard 
+  whirring against the spokes of a bicycle wheel. If the wheel is going slowly, 
+  you hear individual little thud noises as each spoke passes. But when the 
+  wheel goes fast enough you hear a kind of note, with a pitch that goes up as 
+  the wheel speeds up. Somewhere between these two extremes you have switched 
+  from hearing ``time stuff'' to ``frequency stuff''. Where exactly is the 
+  switchover? There is no precise answer, but it generally falls in the 
+  vicinity of 20 thuds per second. A cat's purr happens at around about this 
+  rate: do you hear it as a low note or a fast-repeating sequence in time? This 
+  defines, a little vaguely, the lowest note you can perceive as a pitch (about 
+  20 Hz), and at the same time the fastest temporal events you can resolve 
+  (around 1/20 second, or 50 milliseconds). Needless to say there is more to it 
+  than this: perception is endlessly subtle, but this will do us for the 
+  moment. 
+
+  A few spectrogram plots of other sounds show the kind of things they can 
+  reveal. Figure 6 shows a single note on a guitar: you can hear it in Sound 2. 
+  It is broadly similar to the drum picture, with vertical stripes gradually 
+  cooling as they go up. But notice the regular pattern of the frequencies of 
+  these peaks. A stretched string has natural frequencies which fall (almost) 
+  in a harmonic pattern, and we will examine this more closely in the next 
+  chapter. Figure 7 shows a single note played on a violin, with vibrato: you 
+  can hear it in Sound 3. If you screw up your eyes a bit, or take your glasses 
+  off, this spectrogram might look quite similar to the previous picture, with 
+  a set of regularly-spaced vertical stripes. But the player's vibrato leads to 
+  a regular ripple pattern, particular obvious at the higher frequencies. The 
+  fundamental frequency is being modulated by a few percent. Each harmonic 
+  inherits the same percentage variation, so as the frequency goes up the 
+  absolute variation gets bigger and more obvious. Notice that the FFT plot 
+  along the bottom shows only blurring of the peaks: the spectrogram analysis 
+  is far better at bringing out the structure of the ``wobble''. 
+
+  \fig{figs/fig-add26cf8.png}{\caption{Figure 6: A spectrogram of a plucked 
+  note on a guitar}} 
+
+\audio{}
+
+  \fig{figs/fig-8a6ceb14.png}{\caption{Figure 7: A spectrogram of a note on a 
+  violin, played with vibrato}} 
+
+\audio{}
+
+  And now, in the famous phrase, for something completely different. Figure 8 
+  shows a spectrogram of the sound of a Chinese orchestral gong or tamtam: you 
+  can hear it in Sound 4. The spectrogram has been smoothed to bring out the 
+  most important aspect clearly. Look at the very bottom of the spectrogram 
+  plot. This is the moment when the beater hit the tamtam. A soft beater was 
+  used, and it only excites vibration up to about 500 Hz. But as time goes on, 
+  something magical happens. There is a slanting ``front'' running up from 
+  about 500 Hz on the bottom line of the plot, above which hotter colours are 
+  seen. This is a striking demonstration of a nonlinear effect: over the first 
+  half second or so, energy which was initially concentrated at low frequencies 
+  makes its way, somehow, up to far higher frequencies. This is a visualisation 
+  of the characteristic ``blooming'' sound of the tamtam. No linear system can 
+  behave like this, and having seen this tantalising glimpse we will hurriedly 
+  return to simpler questions for the time being. 
+
+  \fig{figs/fig-01c4bad3.png}{\caption{Figure 8: A spectrogram of the sound of 
+  a tamtam (Chinese gong).}} 
+
+\audio{}
+

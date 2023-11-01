@@ -1,0 +1,305 @@
+
+
+  First, another technical result must be pulled out of the hat: the idea, 
+  trailed in the previous chapter, of Fourier analysis. The idea, essentially, 
+  is that any waveform whatsoever can be built up by adding together sine 
+  waves. Fourier was a French mathematician who, among other things, travelled 
+  with Napoleon's army and was for a while made governor of Lower Egypt. He 
+  discovered the result we are interested in while studying the flow of heat, 
+  but the mathematical result applies equally well to other waveforms. 
+
+  It is easiest to see what is going on if we look first at a periodic (or 
+  repeating) waveform: we will consider a sawtooth wave. Fourier showed that 
+  the sawtooth wave can be built up from a recipe, by taking a certain amount 
+  of sine wave at the same frequency as the sawtooth then adding, in an 
+  appropriate phase, a certain amount of the second harmonic, a sine wave at 
+  twice the frequency, plus a certain amount of the third harmonic at three 
+  times the frequency, and so on. Figure 1 shows how it works: the left-hand 
+  column shows the successive sine waves being added, while the right-hand 
+  column shows the sawtooth waveform gradually building up. By adding more and 
+  more terms, the result gets closer and closer to a perfect sawtooth wave. You 
+  can hear the effect of adding these successive terms in Sound 1. 
+
+  \fig{figs/fig-d2971ee6.png}{\caption{<br>Figure 1: A sawtooth wave being 
+  built up by adding sine waves. Left column: the successive sine waves; right 
+  column: the cumulative waveform at each stage. Only the first six terms are 
+  shown, but the process could continue indefinitely, making the waveform 
+  progressively more accurate.}} 
+
+\audio{}
+
+  The same idea can be applied to any other repetitive waveform: there is 
+  nothing special about the sawtooth wave. A little less intuitively, the 
+  approach can also be applied to non-periodic waveforms like the force pulse 
+  in the upper trace of Fig.\ 1 of section 2.1. The difference is that you have 
+  to add a bit of sine wave at every frequency, not just at separate harmonic 
+  frequencies. The mathematical procedure for calculating the ``sine wave 
+  recipe'' of a periodic waveform is called a Fourier series, and the 
+  equivalent procedure for a general non-periodic waveform is called a Fourier 
+  transform. This leads to a piece of jargon which may be familiar: the usual 
+  computer routine for calculating this important recipe is called the ``Fast 
+  Fourier Transform'' or FFT. The process of turning a recorded sound into an 
+  MP3 file, for example, makes heavy use of the FFT. 
+
+  So back to the drum. If it behaves as a linear system, then we know what 
+  happens to any sine wave which is put in: nothing at all, apart from scaling 
+  by an amplitude factor and shifting in phase. We aren't really interested in 
+  sine wave input, though: the input we want is the force pulse from the 
+  beater. But Fourier says that we can express that pulse as a combination of 
+  sine waves. We could apply each of those sine waves separately to the drum, 
+  getting a scaled and shifted sine wave out in each case. Now the second 
+  important property of linear systems comes into play, known as the 
+  ``principle of superposition''. This is a grand name for a simple idea: if 
+  the input to a linear system is the sum of several components, then the 
+  output is simply the sum of the corresponding separate outputs. 
+
+  We can take each separate sine wave from the Fourier recipe, find the output 
+  of the drum to that sine wave, then add them all together and we should get 
+  the actual output, the vibration waveform from the lower trace of Fig.\ 1 of 
+  section 2.1. It follows that we can calculate the response of the drum to any 
+  kind of force input provided we know what it does to sine waves. In other 
+  words, everything we need to know about the drum's behaviour is coded 
+  (somehow) into the amplitude scale factor and the phase shift. Now remember 
+  that these might vary with the frequency of the sine wave, so we could plot a 
+  graph against frequency of the scale factor and the phase shift: this 
+  combined information is called the frequency response function of the drum. 
+  It is the first step in obtaining an ``acoustic fingerprint'' of the drum. We 
+  will see some examples soon. 
+
+  For the next step we need to know a little about the theory of vibration. The 
+  essence of vibration lies in the interaction between restoring force and 
+  inertia. If a system is displaced a little from a position of stable 
+  equilibrium, a restoring force of one kind or another will make it tend to 
+  return. Inertia will guarantee that, left to its own devices, the system will 
+  overshoot the equilibrium position. A restoring force with the opposite sign 
+  will then act, and some kind of oscillatory behaviour will result, at a 
+  frequency governed by the balance between the restoring force and the 
+  inertia. Restoring forces can arise from many physical causes, for example 
+  gravity (as in a pendulum), elastic internal stresses (as in a steel spring 
+  or a wobbling jelly) or change in pressure of a fluid (as in sound waves in 
+  an organ pipe, or air compressed in a bicycle pump with your thumb blocking 
+  the outlet). 
+
+  The archetypal vibrating system consists of a mass supported by a spring. The 
+  sketch in Fig.\ 2 shows a schematic version. The mass provides the inertia, 
+  and the spring provides the restoring force. If the spring behaves in a 
+  linear fashion, that restoring force obeys Hooke's law: the force is 
+  proportional to the distance the mass has moved away from the equilibrium 
+  position. The constant of proportionality is the stiffness of the spring, 
+  called $k$ here. The units of $k$ are force per unit displacement, so N/m or 
+  N m$^{-1}$. Applying Newton's law of motion to this simple system, two things 
+  are easily shown: the displacement of the mass during free vibration is a 
+  sine wave, and the frequency of that sine wave is determined by the ratio 
+  $k/m$. Specifically, the frequency in Hz is given by $\frac{\sqrt{k/m}}{2 
+  \pi}$. More detail is given in the next link. 
+
+  \fig{figs/fig-94beb439.png}{\caption{Figure 2: Schematic diagram of the 
+  simplest vibrating system: the mass m can vibrate in a vertical direction, 
+  restrained by the spring k.}} 
+
+  We could note a small detail here. We saw $k$ and $m$ appearing above, and 
+  this is the first time that mathematical variables like this have appeared in 
+  the main text. They appear in italic, because this is a typographical 
+  convention. They also appear in a different display font, which is simply a 
+  side-effect of the method used to incorporate mathematical text throughout 
+  this web site. The result may be that they look a little odd, and perhaps a 
+  little intimidating if mathematics is not something really familiar to you. 
+  The message is: ``Don't panic!'' Simply read them in your mind as like any 
+  other kind of ``k'' or ``m''. We also had the Greek letter $\pi$, ``pi''. 
+  Most people are probably familiar with this one, but we will occasionally see 
+  other Greek letters: it is a habit of mathematicians to use Greek letters for 
+  certain things. I will mention their names when they first appear: please 
+  don't regard this as a patronising gesture on my part, I am simply trying to 
+  cater to the widest audience. 
+
+  Now to delve deeper into the theory of vibration. The particular aspects we 
+  need are not new or controversial: they were all known to Lord Rayleigh in 
+  the nineteenth century. Rayleigh is the great guru of acoustics. He made 
+  other scientific contributions as well: he was the first to explain why the 
+  sky is blue, and he won the Nobel prize for the discovery of argon. He had 
+  serious health problems in his youth, and at the age of 30 he spent some 
+  months sailing on the Nile. Not only did this improve his health, but he 
+  started writing ``The Theory of Sound'', published a few years later. This 
+  astonishing work is one of the few scientific books from the nineteenth 
+  century which is still in active use as a reference text, rather than merely 
+  as a historical curiosity. 
+
+  The first question to answer is: how do we know that it is OK to treat the 
+  drum as a linear system? The real answer to that question is mathematical, 
+  and is summarised in the next link. The key conclusion is that vibration of 
+  any object will usually be linear provided the amplitude is small enough. How 
+  small is small enough? That is a matter for empirical checking by experiment, 
+  but the result is that most ``musical vibration'' is small enough that we can 
+  get away with assuming linearity nearly all the time. It is not always true: 
+  we will meet a striking exception later (this is a pun: think J. Arthur 
+  Rank). Also, of course, we should not forget the warning from the previous 
+  chapter that small effects cannot necessarily be ignored in musical problems. 
+  Nevertheless, on the principle of not running before we can walk, we will 
+  take advantage of the simplifying insights from linear theory for as long as 
+  we can get away with it. 
+
+  Back to the drum again. After the beater has bounced off, the drum continues 
+  to produce output (i.e. to vibrate) when no input is being applied to it. The 
+  general theory of linear vibration reveals that this is only possible in a 
+  particular way. The drum has certain natural frequencies, which are 
+  characteristic of that particular drum. Each of these natural frequencies is 
+  associated with a particular pattern of vibration of the drum skin, called a 
+  vibration mode. Modes of a linear system like the drum obey the ``principle 
+  of superposition'': they can vibrate simultaneously, each at its own natural 
+  frequency, uninfluenced by each other. Remarkably, each separate mode behaves 
+  exactly like the simple mass-spring oscillator (known as a ``simple harmonic 
+  oscillator'') discussed above. 
+
+  The first few mode shapes for a perfect ``textbook'' drum are illustrated in 
+  Fig.\ 3. The lowest mode, in the top left of the figure, has the whole skin 
+  vibrating up and down, but all the higher modes have nodal lines, which are 
+  lines where there is no displacement of the skin. The second mode has a 
+  single line along one diameter. Higher modes have a mixture of nodal 
+  diameters and nodal circles, and the patterns get more and more complicated 
+  as we go to higher frequencies: the wavelength of the skin motion gets 
+  shorter. Mode shapes of any vibrating structure behave in a way generally 
+  similar to this: the simplest thing you can imagine for the lowest mode, then 
+  more and more complicated patterns with shorter and shorter wavelengths as 
+  the frequency goes up. 
+
+  \fig{figs/fig-6adeb7ce.png}{\caption{<br>Figure 3: The vibration modes of an 
+  ideal circular drum. All modes in a particular column have the same number of 
+  nodal circles, while all modes in a given row have the same number of nodal 
+  diameters. The first few are shown here: the pattern continues indefinitely 
+  to the right and downwards. Above each mode shape is listed its natural 
+  frequency, relative to the fundamental mode.}} 
+
+  There is one slight complication in this problem: nearly all the drum modes 
+  actually occur in pairs. The second mode, with a frequency 1.59 times that of 
+  the fundamental, is an example. The perfectly circular drum has no preferred 
+  direction, so how could it know where to put that single nodal diameter? The 
+  answer is that it doesn't know: the diameter could be put anywhere. One 
+  particular choice is shown in the figure, and its natural companion would 
+  have a nodal line rotated at $90^\circ$ so that it passed through the points 
+  of maximum displacement of this one. Now, recall that modes can vibrate 
+  simultaneously, independent of each other. It turns out with a small 
+  algebraic calculation described in the next link that if you have these two 
+  particular modes vibrating simultaneously, they can combine to give the same 
+  shape again, but with the nodal diameter rotated. By choosing the amplitudes 
+  of the two modes suitably, the diameter can indeed be put anywhere at all. 
+
+  The sound of the drum after the input forcing has stopped can only, ever, 
+  consist of a mixture of these particular frequencies. The drummer can control 
+  the relative loudness of the different frequencies in the mixture by doing 
+  the things drummers are familiar with: choosing a hard or soft drumstick, and 
+  choosing where to hit the drum: a hit in the centre will produce a different 
+  sound from one near the rim. There is a useful formula that reveals exactly 
+  how this effect of striking position works in terms of the mode shapes of the 
+  drum. It is a good example of the kind of ``deep theory'' mentioned in the 
+  first chapter: one would expect this formula to apply, to a good 
+  approximation, to any structure vibrating with small amplitude. The details 
+  are given in eq. (11) and the associated discussion in the next link. This 
+  one equation captures a great deal of important information about vibration 
+  behaviour, not only for drums but for just about every other instrument we 
+  will look at. 
+
+  What about the reason a drum sounds different with different choices of 
+  drumstick? That all comes down to Fourier analysis again. We have already 
+  said that the force pulse from the bouncing drumstick can be broken down into 
+  a mixture of sine waves. When you change from a soft to a hard stick you 
+  change the shape of the force pulse, and that changes the mixture. Just as 
+  you would guess, a hard stick bounces quickly off the drum, producing a very 
+  narrow pulse of force. A soft beater stays in contact much longer, giving a 
+  broader pulse. Now there is a very simple relation between the width and the 
+  frequency mixture: wide pulses consist mainly of low frequencies only, but 
+  narrower pulses contain a lot more high frequency. As a rule of thumb, if the 
+  length of the pulse is $T$ seconds, then it generates frequencies up to about 
+  $1/T$ Hz. Rayleigh thought about this problem, and gave a simple approximate 
+  formula: the next link gives some details. A good first guess for the shape 
+  of the force pulse is a half-cycle of a sine wave, and the Fourier analysis 
+  of that waveform can be calculated mathematically. The result, as far as the 
+  drummer is concerned, is that a soft beater will only excite the first few 
+  natural frequencies of the drum, but a hard stick will excite more of them. 
+
+  The actual sound of the struck drum involves one extra ingredient: it does 
+  indeed consist of a mixture of sine waves, each corresponding to a particular 
+  vibration mode of the structure, but each of these sine waves decays in 
+  amplitude as time goes on, because energy is gradually lost. To give a 
+  complete ``vibration fingerprint'' of the sound we thus need to know three 
+  things about each of these sine waves: the frequency, the amplitude and the 
+  decay rate or damping. The decay rate determines whether the sound goes ping 
+  (slow decay) or thud (fast decay). When a sound immediately strikes you as 
+  ``metallic'' or ``wooden'', you are probably responding mainly to a 
+  difference in typical decay rates between those two kinds of material. 
+
+  So, the set of natural frequencies, mode shapes and decay rates can be 
+  regarded as the vibration fingerprint of that particular drum. But just now, 
+  we said the same about the frequency response function of the drum, so what 
+  is the connection? The answer is simple. One way to apply force to a drum 
+  which is approximately a sine wave is to sing or hum gently, close to the 
+  drum-skin. Tympanists routinely do this when they are tweaking the tuning of 
+  an instrument. They are listening for resonances, frequencies where the drum, 
+  as it were, sings back at you. These resonances are nothing other than the 
+  natural frequencies we have just been talking about. Now recall that the 
+  frequency response function tells us the amplitude scaling factor, which 
+  varies with frequency. Resonances are frequencies where you get a lot of 
+  output for not very much input: in other words, they will show up as peaks in 
+  the plot against frequency. 
+
+  \fig{figs/fig-b1e0c63a.png}{} 
+
+  \fig{figs/fig-f78fb884.png}{} 
+
+  It is time to stop talking in abstract terms, and see the response of a real 
+  drum. The small toy drum shown in Fig.\ 4(a) will be examined. The frequency 
+  response function has been measured, by tapping the drum at one point with a 
+  hammer equipped with a force-measuring sensor, and the motion at a nearby 
+  point on the skin has been measured. The skin of the drum is very light, so 
+  we do not want to fix any kind of heavy sensor to the surface because that 
+  would change the vibration behaviour enough to annoy the drummer. Instead, 
+  the motion has been measured using a non-contact sensor called a laser 
+  Doppler vibrometer. A laser beam is shone at the point to be measured: the 
+  red dot of the laser beam is visible in Fig.\ 4(b). A spot of reflective 
+  paint is put on the drum at this point, so some of the beam is reflected 
+  back. Now when the drum is vibrating, something happens to the reflected 
+  beam: its frequency is changed a little by the \tt{}Doppler effect\rm{}, the 
+  familiar phenomenon that makes the note of an ambulance warning horn change 
+  as the ambulance comes towards you, passes and moves away. The vibrometer 
+  detects this change, and turns it into an electrical signal proportional to 
+  the vibration velocity of the drum-skin parallel to the laser beam. That 
+  signal can be captured into a computer. 
+
+  Now we follow the procedure described earlier to find the frequency response. 
+  Both the hammer signal and the vibrometer signal are turned into combinations 
+  of sine waves, using an FFT routine in the computer. For each frequency we 
+  then take the ratio of amplitudes, output divided by input, and also the 
+  phase difference between the two. For the moment we will just look at the 
+  amplitude response: it is plotted as a function of frequency in Fig.\ 5. In 
+  fact, two different versions are shown, found by tapping in two different 
+  places while keeping the measuring point the same. 
+
+  The amplitude varies over a huge range, so to make it easier to see what is 
+  going on it has been plotted on a logarithmic vertical scale. The left-hand 
+  axis shows the level, in terms of powers of ten. (The notation $10^2$ means 
+  $10 \times 10$, $10^{-2}$ means $1/(10 \times 10)=0.01$ and similarly for 
+  other positive and negative powers.) The right-hand axis shows the same 
+  information on a decibel scale. Decibels tell us about ratios of amplitudes 
+  rather than absolute amplitudes. The conventional scale for this purpose 
+  means that every 20 dB on the vertical scale corresponds to a factor of 10 in 
+  the amplitude, as can be seen by comparing the left and right scales. 
+  Decibels are familiar from noise level meters. The ``loudness'' of sound is 
+  usually measured in that way, because our ears work, more or less, on a 
+  logarithmic scale: more about this in Chapter 6. 
+
+  \fig{figs/fig-36d1584b.png}{\caption{Figure 5: Frequency response functions 
+  of the toy drum from Fig. 2.6, for two different positions of the tapping 
+  hammer. The numbers on the y-axis correspond to calibrated values: the 
+  frequency response function at any given frequency is a velocity divided by a 
+  force, so the units are meters per second per Newton, m s$^{-1}$ N$^{-1}$.}} 
+
+  Before we leave this discussion of scientific background material, there is 
+  one more thing to be mentioned about the response of linear systems. We have 
+  seen that the frequency response function allows you to convert each 
+  sine-wave component of input into the corresponding component of output. But 
+  surely there should be a way to relate the output time waveform to the input 
+  time waveform, without going via the counter-intuitive process of taking 
+  Fourier transforms? Well, there is indeed such a procedure, called 
+  convolution. The details are given in the next link. We won't need this 
+  straight away, but it will become important in Chapter 6 when we want to talk 
+  about how the sound of a violin is influenced by the body vibration. 
+

@@ -27,11 +27,16 @@
   portrait of the particular system we choose to study. It captures in one 
   picture every possible motion of the system. 
 
+  \fig{figs/fig-23fcd867.png}{\caption{Figure 1. Sketch of a trajectory in the 
+  phase plane}} 
+
   A good example to illustrate the idea is the pendulum discussed in section 
   8.2.1 and shown again here in Fig.\ 2. Its angle of swing is described by an 
   angle $\theta$ (Greek ``theta'', remember). We will use this angle for the 
   horizontal axis of our phase portrait, and its rate of change $d\theta / dt$ 
   as the corresponding ``velocity'' on the vertical axis. 
+
+  \fig{figs/fig-80063d6c.png}{\caption{Figure 2. A pendulum}} 
 
   The phase portrait for the pendulum appears in Fig.\ 3. This plot doesn't 
   show arrows on the trajectories, but it is easy to work out where the arrows 
@@ -40,6 +45,8 @@
   increasing, so all the arrows would point towards the right. In the lower 
   half, $d\theta / dt$ is negative so $\theta$ is decreasing and all the arrows 
   would point to the left. 
+
+  \fig{figs/fig-29844698.png}{\caption{Figure 3. Phase portrait of a pendulum}} 
 
   The values marked on the horizontal axis may be confusing if you aren't used 
   to thinking of angles in radians, but the code is very simple. One complete 
@@ -61,6 +68,11 @@
   view of Fig.\ 2. The undulating lines in the lower half have $\theta$ 
   decreasing, so they describe clockwise rotation. These three types of motion 
   are summarised in Fig.\ 4. 
+
+  \fig{figs/fig-70b6a0d6.png}{\caption{Figure 4. The three types of 
+  qualitatively different motion of the pendulum, indicated in the phase plane. 
+  They are separated by curves emanating from saddle points. Such a curve is 
+  called a separatrix.}} 
 
   The curves that separate motion of different types are obviously important. 
   These curves are trajectories with a very special property, but to see what 
@@ -100,6 +112,10 @@
   right we see a saddle point, which is the generic behaviour near any unstable 
   equilibrium point. 
 
+  \fig{figs/fig-aa44ba08.png}{} 
+
+  \fig{figs/fig-c7305961.png}{} 
+
   We can immediately recognise these two patterns in Fig.\ 3. Now look closely 
   at the right-hand plot of Fig.\ 5, for the saddle point, and pay close 
   attention to the pattern of arrows. The plot does indeed seem to show a pair 
@@ -137,6 +153,9 @@
   should be pretty much what you were expecting, showing trajectories 
   spiralling in towards the equilibrium point. 
 
+  \fig{figs/fig-c7e4f900.png}{\caption{Figure 6. Phase portrait of a stable 
+  spiral}} 
+
   A portion of the phase portrait of the damped pendulum is shown in Fig.\ 7. 
   Only one ``cell'' of the repeating pattern is shown, because you need to be 
   able to see the pattern clearly enough to follow some of the trajectories. It 
@@ -151,6 +170,9 @@
   position. But with damping, it loses energy as it moves so that it doesn't 
   have enough to get back to the vertical. It swings back and forth with 
   gradually decreasing amplitude. 
+
+  \fig{figs/fig-16320d6a.png}{\caption{Figure 7. Portion of the phase portrait 
+  of a pendulum with some damping added}} 
 
   So what about the claim that the separatrices (that's the plural of 
   ``separatrix'') divide regions with different qualitative behaviour? Well, 
@@ -176,6 +198,9 @@
   point is at the origin in the phase plane, and the whole plane is filled with 
   closed loops characteristic of a centre. Figure 8 shows a plot. 
 
+  \fig{figs/fig-ae432bad.png}{\caption{Figure 8. Phase portrait of the Duffing 
+  equation, with a positive linear spring and a hardening nonlinear term.}} 
+
   But if we allow the linear component of the spring to have negative 
   stiffness, something dramatic happens. There are now three equilibrium 
   points: a saddle point and two centres. The resulting phase portrait is 
@@ -191,6 +216,9 @@
   either to the left or to the right, and it could oscillate about either of 
   those positions: just what Fig.\ 9 suggests. 
 
+  \fig{figs/fig-8ca64f88.png}{\caption{Figure 9. Phase portrait of the Duffing 
+  equation with a negative linear spring and a hardening nonlinear term}} 
+
   We can learn something interesting about the behaviour in Figs.\ 8 and 9 if 
   we plot a graph of the position of the equilibrium points against the 
   stiffness of the linear component of the spring. The result is plotted in 
@@ -202,4 +230,8 @@
   is called, reasonably enough, a pitchfork bifurcation. Plots like Fig.\ 10 
   are called bifurcation diagrams, and they are often useful to summarise the 
   different regimes that a nonlinear vibrating system can show. 
+
+  \fig{figs/fig-4f33b713.png}{\caption{Figure 10. Bifurcation diagram for the 
+  Duffing equation. Stable equilibria are shown as solid lines, unstable 
+  equilibria by a dashed line.}} 
 

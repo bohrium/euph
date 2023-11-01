@@ -8,8 +8,8 @@
 #           Then each item in `bb` is a dictionary such as
 #             {
 #               'text'      : None,
-#               'imageurl'  : 'https://...',
-#               'imagecap'  : 'Figure 28.  A cow balancing...',
+#               'imgurl'    : 'https://...',
+#               'imgcap'    : 'Figure 28.  A cow balancing...',
 #               'videourl'  : None,
 #               'videocap'  : None,
 #               'audiourl'  : None,
@@ -50,7 +50,8 @@ parse_setting = lambda lhs: lambda label: (
         ' {:s}="{:s}"'.format(lhs, group(label)(until('"')))
         )
 
-to_next_tag = lambda: r'([^<\n]|<[^>]*>)*' # allows one layer of tag nesting
+#to_next_tag = lambda: r'([^<\n]|<[^>]*>)*' # allows one layer of tag nesting
+to_next_tag = lambda: r'([^<\n]|<[^/][^>]*>|<[^/][^>]*>[^<\n]*</[^/>]*>)*' # allows one layer of tag nesting
 
 #==============================================================================
 #===  REGEXES TO EXPORT  ======================================================
@@ -73,7 +74,7 @@ video = media_regex('video')
 audio = media_regex('audio')
 
 prose = (''
-    +begtag('p')
+    +'<p>' # NOT begtag('p') SINCE want to have no options
     +group('text')(r'[^\n]*')
     +endtag('p')
     )
@@ -88,6 +89,17 @@ content_item = '|'.join((
 def get_items(html):
     return [mm.groupdict()
             for mm in re.finditer(content_item, html, flags=re.M)]
+
+urls = (''
+    +begtag('p')
+    +maybe(begtag('mark')+'Chapter ')
+    +group('sectnum')('[0-9]+(.[0-9]+)*') + chomp()
+    +maybe(endtag('mark'))
+    +parse_tag('a')(parse_setting('href')('url'))
+    +group('title')(to_next_tag())
+    +endtag('a')
+    +endtag('p')
+    )
 
 #==============================================================================
 #===  TESTING  ================================================================

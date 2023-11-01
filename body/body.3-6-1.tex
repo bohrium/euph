@@ -1,0 +1,148 @@
+  The idealised model of a stretched membrane is closely related to the one we 
+  saw in section 3.1.1 for a string. The membrane is allowed to vibrate 
+  transversely with a (small) displacement from equilibrium given by 
+  $w(x,y,t)$. Suppose it has tension per unit length $T$, and mass per unit 
+  area $m$. To obtain the equation of motion, we can consider a small 
+  rectangular element of the membrane between positions $x$ and $x+ \delta x$ 
+  and $y$ and $y+ \delta y$. (Note that the displacement is exaggerated in the 
+  plot, for clarity.) 
+
+  \fig{figs/fig-b2fdb90a.png}{\caption{Figure 1. A small element of a stretched 
+  membrane, undergoing transverse vibration}} 
+
+  Using exactly the same argument as in section 3.1.1, Newton's law for this 
+  small element requires 
+
+  $$m~\delta x~\delta y \frac{\partial^2 w}{\partial t^2} \approx T~\delta y 
+  \left[ \left( \frac{\partial w}{\partial x} \right) _{x + \delta x} -- \left( 
+  \frac{\partial w}{\partial x} \right) _{x} \right] $$ 
+
+  $$+ T~\delta x \left[ \left( \frac{\partial w}{\partial y} \right) _{y + 
+  \delta y} -- \left( \frac{\partial w}{\partial y} \right) _{y} \right] 
+  .\tag{1}$$ 
+
+  Now as $\delta x \rightarrow 0$ and $\delta y \rightarrow 0$ the two terms in 
+  square brackets tend towards second derivatives multiplied by $\delta x$ and 
+  $\delta y$ respectively. Cancelling a factor $\delta x ~ \delta y$, the 
+  equation of motion becomes 
+
+  $$m \frac{\partial^2 w}{\partial t^2} -- T \left[ \dfrac{\partial^2 
+  w}{\partial x^2} + \dfrac{\partial^2 w}{\partial y^2} \right] =0 .\tag{2}$$ 
+
+  We want to use this equation to find the vibration modes and natural 
+  frequencies of a circular drum. Obviously, we do not want to analyse that 
+  problem using Cartesian coordinates: we first want to transform eq. (2) into 
+  polar coordinates $(r, \theta)$. From the usual relationships $x=r \cos 
+  \theta$ and $y = r \sin \theta$ we can deduce 
+
+  $$\frac{\partial r}{\partial x} = \cos \theta, \frac{\partial r}{\partial y} 
+  = \sin \theta \tag{3}$$ 
+
+  and 
+
+  $$\frac{\partial \theta}{\partial x} = -- \frac{\sin \theta}{r}, 
+  \frac{\partial \theta}{\partial y} = \frac{\cos \theta}{r} . \tag{4}$$ 
+
+  Now we use the chain rule: for example, 
+
+  $$\frac{\partial w}{\partial x} =\frac{\partial w}{\partial r} \frac{\partial 
+  r}{\partial x} + \frac{\partial w}{\partial \theta} \frac{\partial 
+  \theta}{\partial x}=\frac{\partial w}{\partial r} \cos \theta -- 
+  \frac{\partial w}{\partial \theta} \frac{\sin \theta}{r} . \tag{5}$$ 
+
+  Using this approach repeatedly and then gathering up all the terms, we find 
+  after a little algebra that 
+
+  $$\dfrac{\partial^2 w}{\partial x^2} + \dfrac{\partial^2 w}{\partial 
+  y^2}=\dfrac{\partial^2 w}{\partial r^2} + \dfrac{1}{r} \dfrac{\partial 
+  w}{\partial r}+ \dfrac{1}{r^2} \dfrac{\partial^2 w}{\partial \theta^2} 
+  \tag{6}$$ 
+
+  so that the equation of motion (2) becomes 
+
+  $$m \frac{\partial^2 w}{\partial t^2} -- T \left[ \dfrac{\partial^2 
+  w}{\partial r^2} + \dfrac{1}{r} \dfrac{\partial w}{\partial r}+ 
+  \dfrac{1}{r^2} \dfrac{\partial^2 w}{\partial \theta^2} \right] =0 . \tag{7}$$ 
+
+  We can solve this for the vibration modes of a circular drum with a fixed 
+  edge all the way round a circle of radius $a$, by the method of separation of 
+  variables. We try to find a solution of the form $w(r,\theta,t) = f(r) 
+  g(\theta) e^{i \omega t}$. Substituting into eq. (7), we then require 
+
+  $$T \left[ f^{\prime \prime} g +\frac{1}{r} f^{\prime} g+\frac{1}{r^2} f 
+  g^{\prime \prime} \right] = -m \omega^2 f g \tag{8}$$ 
+
+  where the prime symbol denotes differentiation. We can rearrange the terms in 
+  eq. (8) into the form 
+
+  $$\frac{ r^2 f^{\prime \prime}}{f} + \frac{ r f^{\prime}}{f} + \frac{m 
+  \omega^2}{T}r^2 = -- \frac{g^{\prime \prime}}{g} . \tag{9}$$ 
+
+  The significance of this rearrangement may not be immediately apparent, but 
+  the key feature is that everything on the left-hand side is a function of $r$ 
+  only, while the right-hand side is a function of $\theta$ only. The only way 
+  that a function of $r$ could be equal to a function of $\theta$ (for all 
+  values of $r$ and $\theta$) is if both expressions are in fact NOT functions 
+  of anything, but simply constant. So we put each side separately equal to a 
+  constant, and for reasons that will rapidly become apparent, it is convenient 
+  to call this constant $n^2$. Look first at the equation for $\theta$: the 
+  function $g$ must satisfy 
+
+  $$g^{\prime \prime} = -- n^2 g. \tag{10}$$ 
+
+  The general solution is $g=A \cos n \theta+B \sin n \theta$ with constants 
+  $A$ and $B$. Bearing in mind that $\theta$ is the polar angle, this solution 
+  only makes physical sense if $n$ is a whole number so that the solution 
+  ``joins up'' when you do one complete circle around the origin. So the 
+  allowed solutions have $n=0, 1, 2, 3,...$. 
+
+  Now we can go back to eq. (9) and look at the corresponding equation for the 
+  radial variation $f(r)$. This must satisfy 
+
+  $$r^2 f^{\prime \prime} + r f^{\prime} + \left(\frac{m \omega^2}{T} r^2 -- 
+  n^2 \right) f = 0 . \tag{11}$$ 
+
+  This equation is called Bessel’s equation, and it arises in many problems 
+  with circular geometry. Being a second-order ordinary differential equation, 
+  it has two independent solutions (for a given value of $n$). These solutions 
+  are collectively called Bessel functions. One of these solutions always has a 
+  singularity (i.e. infinite value) at $r~=~0$, and so is not relevant for 
+  describing the vibration of a complete circular drum. The second solution is 
+  the one we want. It is usually denoted $J_n(kr)$, where $k= \omega 
+  \sqrt{m/T}$. Its mathematical properties have been extensively explored, but 
+  we need not go into any details here. Bessel functions can be readily 
+  computed: they are available as library functions in scientific computation 
+  systems such as Matlab, Mathematica, Python and so on. The first few of these 
+  Bessel functions are plotted in Fig.\ 2. 
+
+  \fig{figs/fig-2d256ea8.png}{\caption{Figure 2. The first few Bessel function 
+  $J\_n$.}} 
+
+  To find vibration modes of a membrane we must now enforce the boundary 
+  condition, which is simply 
+
+  $$w(a,\theta,t) =0, \mathrm{~~or~~} f(a)=0 . \tag{12}$$ 
+
+  The natural frequencies are thus governed by the condition 
+
+  $$J_n(ka)=0 . \tag{13}$$ 
+
+  It is clear from the graphs above that for any value of $n$ there will be a 
+  series of possible values of $ka$ at the successive zeros of $J_n$. Each will 
+  lead to a value of natural frequency $\omega=k \sqrt{T/m}$. The vibration 
+  mode shapes are then 
+
+  $$u(r,\theta)=J_n(kr) \cos n \theta \mathrm{~~~or~~~}J_n(kr) \sin n \theta 
+  \tag{14}$$ 
+
+  They can be arranged in a two-dimensional family, according to the value of 
+  $n$ (which determines how many nodal diameters there are) and the number of 
+  nodal circles, governed by which zero of the Bessel function is chosen. The 
+  result is sketched in Fig.\ 3, and the corresponding value of $ka$ is shown 
+  by each mode sketch. The frequencies can be calculated from the values of 
+  $ka$. 
+
+  \fig{figs/fig-258751c1.png}{\caption{Figure 3. Node line patterns for the 
+  first few modes of an ideal circular drum. The value of $ka$ is indicated 
+  above each plot. The pattern would continue indefinitely to the right and 
+  downwards.}} 

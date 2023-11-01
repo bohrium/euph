@@ -10,6 +10,10 @@
   open E string of a violin, while the blue curve shows the same note played 
   high on the G string. 
 
+  \fig{figs/fig-a81fc57e.png}{\caption{Figure 1. Measured bridge force 
+  waveforms of the note E$\_5$ (660~Hz) played on the open E string of a violin 
+  (red curve), and as a fingered note high on the G string (blue curve)}} 
+
   Perhaps the difference between these two waveforms looks rather subtle and 
   unimportant? By no means: look at Fig.\ 2, which shows the frequency spectra 
   of these two waveforms. The blue curve, for the G string, shows only 6 
@@ -19,6 +23,11 @@
   hardly surprising that we hear a strong difference of “brightness” between 
   the sounds of these two notes. Indeed, your dog or your cat might complain 
   about the sound of the E-string note. 
+
+  \fig{figs/fig-96f11108.png}{\caption{Figure 2. Frequency spectra of the two 
+  bridge force waveforms from Fig. 1: red curve for the E string, blue curve 
+  for the G string. The arrows give an indication of the upper limit for 
+  hearing of humans, dogs and cats.}} 
 
   We can see something else interesting in Fig.\ 2. Notice that the first few 
   harmonics show peaks of essentially the same height in both red and blue 
@@ -32,6 +41,10 @@
   sawtooth Fourier series in Fig.\ 1 of section 2.2, but it is worth repeating 
   it here: see Fig.\ 3. 
 
+  \fig{figs/fig-6ef60827.png}{\caption{Figure 3. The successive stages of 
+  building up a sawtooth wave from its Fourier series, repeated from Fig. 1 of 
+  section 2.2}} 
+
   This plot reminds us that the sharpness of the “flyback” portion of the 
   sawtooth depends upon how many harmonics are included. This is the clue to 
   understanding the difference between the two waveforms in Fig.\ 1: the 
@@ -44,6 +57,9 @@
   amateur viola player, and had a lifelong interest in the acoustics of the 
   violin and its relatives. Figure 4 shows him in 1974, talking to another 
   luminary of the violin acoustics world, Carleen Hutchins. 
+
+  \fig{figs/fig-b8cc0c51.png}{\caption{Figure 4. Lothar Cremer (right) in 
+  conversation with Carleen Hutchins in 1974}} 
 
   Cremer thought about what happens to the Helmholtz corner during a cycle of 
   Helmholtz motion. Starting from the moment when the corner leaves the bow 
@@ -98,6 +114,10 @@
   the string at the bowed point, and the friction force $f(t)$ acting at that 
   point. 
 
+  \fig{figs/fig-55384ee3.png}{\caption{Figure 5. Schematic diagram of the 
+  simplest model of a bowed string, in the same format as Fig. 4 of section 8.5 
+  for the clarinet model.}} 
+
   Simulations based on this model started to be performed in the late 1970s, 
   allowing Cremer’s mechanism for the influence of bow force on tone quality to 
   be investigated in quantitative detail. However, the simulation model does 
@@ -125,6 +145,13 @@
   the friction force divided by the bow force. Coefficient of friction is 
   normally described using the Greek letter $\mu$ (``mu''). 
 
+  \fig{figs/fig-6fcb56be.png}{\caption{Figure 6. Blue stars show measurements 
+  of the coefficient of friction for a rosin-coated surface during steady 
+  sliding at different speeds. The red curve is a curve fit to those 
+  measurements, together with the vertical portion relevant to sticking 
+  friction, and the mirror image portion relevant to slipping in the opposite 
+  direction.}} 
+
   The details of the bowed-string model are described in the next link. Just as 
   in the clarinet model, the new values of $v(t)$ and $f(t)$ at each time step 
   are found where the friction-force curve intersects with a straight line. The 
@@ -138,6 +165,12 @@
   “reflection functions” like Fig.\ 10 of section 8.5: one for the length of 
   string between bow and bridge, the other for the length between bow and 
   finger. 
+
+  \fig{figs/fig-681c38f5.png}{\caption{Figure 7. The friction curve from Fig. 
+  6, together with three possible positions of the sloping blue line whose 
+  intersection with the curve determines the new values of $v(t)$ and $f(t)$. 
+  Friction force is plotted for two different values of the bow force: 10~N 
+  (solid curve) and 1~N (dashed curve).}} 
 
   Figure 7 shows three possible positions of this line. All three positions 
   correspond to slipping friction with the lower value of bow force (the dashed 
@@ -164,6 +197,11 @@
   reaches the left-hand position in the figure, whereupon it is forced to make 
   a jump to the slipping branch following the longer dark green arrow. 
 
+  \fig{figs/fig-64d2ffbf.png}{\caption{Figure 8. The friction curve and sloping 
+  straight lines as in Fig. 7, illustrating the hysteresis loop that arises 
+  because of the possibility of multiple intersections between the red curve 
+  and the moving blue line.}} 
+
   To see the significance of this hysteresis behaviour, we can look at a first 
   example of computer simulation. We will choose a deliberately simplified 
   model, ignoring many aspects of the behaviour of real strings, in order to 
@@ -184,6 +222,10 @@
   0.1~m/s) to the slipping speed (assumed here to be $-1$~m/s). The jump is 
   downwards, so this plot corresponds to the moment of release, when the string 
   starts to slip. 
+
+  \fig{figs/fig-23f47812.png}{} 
+
+  \fig{figs/fig-67e27452.png}{} 
 
   The corner then travels to the violin bridge and back, and it returns rounded 
   and inverted. This new shape appears in the right-hand plot, as the blue 
@@ -238,6 +280,11 @@
   capture process in red, and during the release process in blue. It should be 
   clear how this plot relates to Fig.\ 8. 
 
+  \fig{figs/fig-a7b4cec6.png}{\caption{Figure 10. The friction curve used in 
+  the simulation shown in Fig. 9, illustrating the hysteresis cycle: the 
+  portions of the curve accessed in the left-hand panel of Fig. 9 are shown in 
+  blue, and those accessed in the right-hand panel are shown in blue.}} 
+
   Figures 11 and 12 show plots corresponding to Fig.\ 9 and 10, but using a 
   much lower bow force. It is low enough that hysteresis does not occur, as can 
   be seen directly in Fig.\ 12. Comparing Figs.\ 9 and 11, we can see several 
@@ -252,6 +299,13 @@
   corner-rounding to take full effect: the Helmholtz corner would continue to 
   get more and more rounded for a few more cycles, but we haven’t included them 
   in this plot. 
+
+  \fig{figs/fig-1db8639d.png}{} 
+
+  \fig{figs/fig-b19d4711.png}{} 
+
+  \fig{figs/fig-00c7b67a.png}{\caption{Figure 12. The friction curve used in 
+  the simulation of Fig. 11, plotted in the same format as Fig. 10.}} 
 
   There is another consequence of rounding of the Helmholtz corner, which we 
   haven’t mentioned yet. With a rounded corner, each velocity transition from 
@@ -271,6 +325,14 @@
   wave will travel off in the opposite direction. Figure 13 might help to 
   visualise what then happens. This diagram shows time running horizontally, 
   and distance along the string running vertically. 
+
+  \fig{figs/fig-44b90cc8.png}{\caption{Figure 13. Diagram to show the origin of 
+  the pattern of ``Schelleng's ripples''. Time runs horizontally and distance 
+  along the string runs vertically. The red line shows the path of the 
+  Helmholtz corner, and the horizontal line marks the bowing position. Blue 
+  lines show the first few bounces of the secondary waves generated when a 
+  rounded Helmholtz corner interacts with friction at the bow during stick-slip 
+  transitions.}} 
 
   The Helmholtz corner, bouncing back and forth along the string, traces out 
   the zig-zag line shown in red. The position of the bow is indicated by the 
@@ -322,6 +384,12 @@
   $Z=0.55$ Ns/m. It is bowed at a speed of 5 cm/s, with the three values of bow 
   force 0.03 N, 0.1 N and 0.6 N. 
 
+  \fig{figs/fig-3aac38b4.png}{\caption{Figure 14. Simulated bridge-force 
+  waveforms for a highly idealised model of a bowed string, for three different 
+  values of bow force. The red curve has a very low force, the blue curve is 
+  higher, and the black curve is close to the limit at which Helmholtz motion 
+  ceases to be possible. The curves are separated vertically for clarity.}} 
+
   Figure 15 shows the corresponding waveforms of string velocity, which can be 
   compared with the shapes seen in Figs.\ 9 and 11. The red curve, with the 
   lowest bow force, shows a very rounded shape, and as the force increases the 
@@ -331,6 +399,9 @@
   shows a bow force that is close to the limit, beyond which Helmholtz motion 
   ceases to be possible. This gives us a neat link to the next section, where 
   the limits on bow force will be discussed in some detail. 
+
+  \fig{figs/fig-3da58726.png}{\caption{Figure 15. Waveforms of string velocity 
+  for the same three simulations shown in Fig. 14.}} 
 
 
 
