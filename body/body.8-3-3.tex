@@ -1,73 +1,81 @@
   Back in section 8.2.2 we met Duffing's equation. For undamped, free motion 
   the equation can be written: 
 
-  $$\ddot{x} +\alpha x +\mu x^3 = 0 \tag{1}$$ 
+  \begin{equation*}\ddot{x} +\alpha x +\mu x^3 = 0 \tag{1}\end{equation*} 
 
-  where $\alpha$ represents the stiffness of the linear spring and $\mu$ is the 
-  nonlinear coefficient. If $\mu > 0$ it is a hardening spring, if $\mu < 0$ it 
-  is a softening spring. To put this into a suitable form for looking at the 
-  phase space representation, we write it as the pair of equations 
+  \noindent{}where $\alpha$ represents the stiffness of the linear spring and 
+  $\mu$ is the nonlinear coefficient. If $\mu > 0$ it is a hardening spring, if 
+  $\mu < 0$ it is a softening spring. To put this into a suitable form for 
+  looking at the phase space representation, we write it as the pair of 
+  equations 
 
-  $$\dot{x}=y \mathrm{,~~~~}\dot{y}=-\alpha x -\mu x^3 . \tag{2}$$ 
+  \begin{equation*}\dot{x}=y \mathrm{,~~~~}\dot{y}=-\alpha x -\mu x^3 . 
+  \tag{2}\end{equation*} 
 
   To find singular points we need to solve $\dot{x}=0$, $\dot{y}=0$ so that 
 
-  $$\alpha x +\mu x^3 = 0 \mathrm{~~and~~} y=0 \tag{3}$$ 
+  \begin{equation*}\alpha x +\mu x^3 = 0 \mathrm{~~and~~} y=0 
+  \tag{3}\end{equation*} 
 
   The solutions of the first of these equations are $x=0$, together with 
 
-  $$x^2=-\alpha / \mu \tag{4}$$ 
+  \begin{equation*}x^2=-\alpha / \mu \tag{4}\end{equation*} 
 
-  if the latter yields a real solution for $x$, in other words if $\alpha / \mu 
-  \le 0$. So $(0,0)$ is always a singular point, and there are also singular 
-  points at 
+  \noindent{}if the latter yields a real solution for $x$, in other words if 
+  $\alpha / \mu \le 0$. So $(0,0)$ is always a singular point, and there are 
+  also singular points at 
 
-  $$x=\pm \sqrt{\dfrac{-\alpha}{\mu}} \mathrm{,~~~} y=0 \tag{5}$$ 
+  \begin{equation*}x=\pm \sqrt{\dfrac{-\alpha}{\mu}} \mathrm{,~~~} y=0 
+  \tag{5}\end{equation*} 
 
-  if one of $\alpha$ or $\mu$ is positive while the other is negative. 
+  \noindent{}if one of $\alpha$ or $\mu$ is positive while the other is 
+  negative. 
 
   To find out what kind of singular point these are, we need to perform the 
   linearised analysis described in section 8.3.2. For the point $(0,0)$, the 
   linearised matrix $A$ can be written down immediately by ignoring the cubic 
   term in eq. (2): it is 
 
-  $$A=\begin{bmatrix}0 \& 1\\ -\alpha \& 0\end{bmatrix} \tag{6}$$ 
+  \begin{equation*}A=\begin{bmatrix}0 \& 1\\ -\alpha \& 0\end{bmatrix} 
+  \tag{6}\end{equation*} 
 
-  so the trace $T=0$ as expected for an undamped oscillator, while the 
-  determinant $D=\alpha$. The results from section 8.3.2 then tell us that if 
-  $\alpha > 0$ the singular point is a centre, while if $\alpha < 0$ it is a 
+  \noindent{}so the trace $T=0$ as expected for an undamped oscillator, while 
+  the determinant $D=\alpha$. The results from section 8.3.2 then tell us that 
+  if $\alpha > 0$ the singular point is a centre, while if $\alpha < 0$ it is a 
   saddle point. 
 
   For the other singular point, we are only interested in the case $\alpha < 0$ 
   so write $\beta = -\alpha$ with $\beta > 0$. Now write 
 
-  $$x=\pm \sqrt{\dfrac{\beta}{\mu}} + \epsilon \tag{7}$$ 
+  \begin{equation*}x=\pm \sqrt{\dfrac{\beta}{\mu}} + \epsilon 
+  \tag{7}\end{equation*} 
 
-  so that $\epsilon$ is small close to one of the pair of singular points. 
-  Equations (2) then read 
+  \noindent{}so that $\epsilon$ is small close to one of the pair of singular 
+  points. Equations (2) then read 
 
-  $$\dot{\epsilon}=y \mathrm{,~~~~} \dot{y}=\beta \left[\pm 
+  \begin{equation*}\dot{\epsilon}=y \mathrm{,~~~~} \dot{y}=\beta \left[\pm 
   \sqrt{\dfrac{\beta}{\mu}} + \epsilon \right] -\mu \left[\pm 
-  \sqrt{\dfrac{\beta}{\mu}} + \epsilon\right]^3 \tag{8}$$ 
+  \sqrt{\dfrac{\beta}{\mu}} + \epsilon\right]^3 \tag{8}\end{equation*} 
 
-  with the linearised approximation 
+  \noindent{}with the linearised approximation 
 
-  $$\dot{\epsilon}=y \mathrm{,~~~~} \dot{y} \approx \beta \left[\pm 
-  \sqrt{\dfrac{\beta}{\mu}} + \epsilon \right] -\mu \left[\pm 
+  \begin{equation*}\dot{\epsilon}=y \mathrm{,~~~~} \dot{y} \approx \beta 
+  \left[\pm \sqrt{\dfrac{\beta}{\mu}} + \epsilon \right] -\mu \left[\pm 
   \left(\dfrac{\beta}{\mu}\right)^{3/2} + 3\epsilon\dfrac{\beta}{\mu} \right] 
-  \tag{9}$$ 
+  \tag{9}\end{equation*} 
 
-  and so 
+  \noindent{}and so 
 
-  $$\dot{\epsilon}=y \mathrm{,~~~~} \dot{y} \approx -2 \beta \epsilon . 
-  \tag{10}$$ 
+  \begin{equation*}\dot{\epsilon}=y \mathrm{,~~~~} \dot{y} \approx -2 \beta 
+  \epsilon . \tag{10}\end{equation*} 
 
   The matrix $A$ is thus 
 
-  $$A=\begin{bmatrix}0 \& 1\\ -2\beta \& 0\end{bmatrix}, \tag{11}$$ 
+  \begin{equation*}A=\begin{bmatrix}0 \& 1\\ -2\beta \& 0\end{bmatrix}, 
+  \tag{11}\end{equation*} 
 
-  which has trace $T=0$ and determinant $D=2\beta$, so since $\beta > 0$, both 
-  these singular points are centres. 
+  \noindent{}which has trace $T=0$ and determinant $D=2\beta$, so since $\beta 
+  > 0$, both these singular points are centres. 
 
   These results can be summarised in the bifurcation diagram shown in Fig.\ 1: 
   this shows the positions $x$ of the singular points as a function of 
@@ -84,13 +92,14 @@
   The behaviour of Duffing's equation can also be viewed from the energy 
   perspective. Equation (1) can be obtained by using the kinetic energy 
 
-  $$T=\dfrac{1}{2} \dot{x}^2 \tag{12}$$ 
+  \begin{equation*}T=\dfrac{1}{2} \dot{x}^2 \tag{12}\end{equation*} 
 
-  and the potential energy 
+  \noindent{}and the potential energy 
 
-  $$V=\dfrac{\alpha}{2} x^2 + \dfrac{\mu}{4} x^4, \tag{13}$$ 
+  \begin{equation*}V=\dfrac{\alpha}{2} x^2 + \dfrac{\mu}{4} x^4, 
+  \tag{13}\end{equation*} 
 
-  then using energy conservation in the form $\frac{d}{dt}[T+V]=0$. 
+  \noindent{}then using energy conservation in the form $\frac{d}{dt}[T+V]=0$. 
 
   Figure 2 shows a plot of $V(x)$ for various values of $\alpha$. When $\alpha 
   > 0$, the curves show a single minimum at $x=0$, indicating the stable 

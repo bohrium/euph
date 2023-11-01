@@ -27,59 +27,64 @@
   derivatives, $\dot{q}$s, assuming that the motion is small as outlined in 
   section 2.2.3. The result for the potential energy can be written 
 
-  $$V=\dfrac{1}{2}\sum_j \sum_k K_{jk} q_j q_k, \tag{1} $$ 
+  \begin{equation*}V=\dfrac{1}{2}\sum_j \sum_k K_{jk} q_j q_k, \tag{1} 
+  \end{equation*} 
 
-  a quadratic expression involving a matrix $K$ whose terms are $K_{jk}$, 
-  called the stiffness matrix. (The notation $\sum_j(\dots)$ means ``add up the 
-  terms $(\dots)$ for all the values of $j$.'') We can always choose the values 
-  so as to make $K$ symmetric. The total kinetic energy $T$ is the sum of terms 
-  like ``$\frac{1}{2}mv^2$'' for each bit of mass making up the system. It 
-  follows that it will be described by a quadratic expression 
+  \noindent{}a quadratic expression involving a matrix $K$ whose terms are 
+  $K_{jk}$, called the stiffness matrix. (The notation $\sum_j(\dots)$ means 
+  ``add up the terms $(\dots)$ for all the values of $j$.'') We can always 
+  choose the values so as to make $K$ symmetric. The total kinetic energy $T$ 
+  is the sum of terms like ``$\frac{1}{2}mv^2$'' for each bit of mass making up 
+  the system. It follows that it will be described by a quadratic expression 
 
-  $$T=\dfrac{1}{2}\sum_j \sum_k M_{jk} \dot{q}_j \dot{q}_k . \tag{2}$$ 
+  \begin{equation*}T=\dfrac{1}{2}\sum_j \sum_k M_{jk} \dot{q}_j \dot{q}_k . 
+  \tag{2}\end{equation*} 
 
   Again, we can always choose to make the matrix $M$, whose terms are $M_{jk}$, 
   symmetric. It is called the mass matrix. 
 
   Now we can use Lagrange's equations: for free motion of the system, 
 
-  $$\dfrac{d}{dt}\left( \dfrac{\partial T}{\partial 
-  \dot{q}_j}\right)+\dfrac{\partial V}{\partial q_j}=0 \tag{3}$$ 
+  \begin{equation*}\dfrac{d}{dt}\left( \dfrac{\partial T}{\partial 
+  \dot{q}_j}\right)+\dfrac{\partial V}{\partial q_j}=0 \tag{3}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$\sum_k M_{jk} \ddot{q}_k + \sum_k K_{jk} q_k =0. \tag{4}$$ 
+  \begin{equation*}\sum_k M_{jk} \ddot{q}_k + \sum_k K_{jk} q_k =0. 
+  \tag{4}\end{equation*} 
 
   These are linear equations, representing a set of coupled mass-spring 
   oscillators. Finding the vibration modes allows us to uncouple them. A 
   vibration mode is simply defined to be a solution with sinusoidal time 
   dependence: 
 
-  $$q_j(t)=u_j e^{i\omega t}. \tag{5}$$ 
+  \begin{equation*}q_j(t)=u_j e^{i\omega t}. \tag{5}\end{equation*} 
 
   So we require 
 
-  $$-\omega^2 \sum_k M_{jk} u_k + \sum_k K_{jk} u_k =0, \tag{6}$$ 
+  \begin{equation*}-\omega^2 \sum_k M_{jk} u_k + \sum_k K_{jk} u_k =0, 
+  \tag{6}\end{equation*} 
 
-  or in matrix-vector form, 
+  \noindent{}or in matrix-vector form, 
 
-  $$K \mathbf{u}=\omega^2 M \mathbf{u}, \tag{7}$$ 
+  \begin{equation*}K \mathbf{u}=\omega^2 M \mathbf{u}, \tag{7}\end{equation*} 
 
-  which is a standard mathematical equation called a ``generalised eigenvalue 
-  problem''. For the purposes of hand calculation, the usual solution procedure 
-  is: 
+  \noindent{}which is a standard mathematical equation called a ``generalised 
+  eigenvalue problem''. For the purposes of hand calculation, the usual 
+  solution procedure is: 
 
   (i) solve 
 
-  $$\det[K -\omega^2 M ]=0 \tag{8}$$ 
+  \begin{equation*}\det[K -\omega^2 M ]=0 \tag{8}\end{equation*} 
 
-  for the natural frequencies $\omega=\omega_n$; 
+  \noindent{}for the natural frequencies $\omega=\omega_n$; 
 
   (ii) for each allowed $\omega_n$, solve the simultaneous equations 
 
-  $$K \mathbf{u}^{(n)}=\omega_n^2 M \mathbf{u}^{(n)}, \tag{9}$$ 
+  \begin{equation*}K \mathbf{u}^{(n)}=\omega_n^2 M \mathbf{u}^{(n)}, 
+  \tag{9}\end{equation*} 
 
-  for the mode shape $\mathbf{u}^{(n)}$. 
+  \noindent{}for the mode shape $\mathbf{u}^{(n)}$. 
 
   Because $M$ and $K$ are both symmetric, there are standard results from 
   linear algebra which show that 
@@ -89,21 +94,22 @@
   (ii) the eigenvectors are orthogonal with respect to both the mass and 
   stiffness matrices. This means that 
 
-  $$ \mathbf{u}^{(m)T} M \mathbf{u}^{(n)} = 0 \mathrm{~~~~if~} n \ne m 
-  \tag{10}$$ 
+  \begin{equation*} \mathbf{u}^{(m)T} M \mathbf{u}^{(n)} = 0 \mathrm{~~~~if~} n 
+  \ne m \tag{10}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$ \mathbf{u}^{(m)T} K \mathbf{u}^{(n)} = 0 \mathrm{~~~~if~} n \ne m 
-  \tag{11}$$ 
+  \begin{equation*} \mathbf{u}^{(m)T} K \mathbf{u}^{(n)} = 0 \mathrm{~~~~if~} n 
+  \ne m \tag{11}\end{equation*} 
 
-  where $.^T$ denotes the transpose. 
+  \noindent{}where $.^T$ denotes the transpose. 
 
   Mode shapes have no built-in amplitude, they can be scaled by any factor. It 
   is convenient to fix the scale factor using ``mass normalisation'': scale 
   each mode so that 
 
-  $$\mathbf{u}^{(n)T} M \mathbf{u}^{(n)}=1 . \tag{12}$$ 
+  \begin{equation*}\mathbf{u}^{(n)T} M \mathbf{u}^{(n)}=1 . 
+  \tag{12}\end{equation*} 
 
   The archetypal vibration measurement, on a musical instrument or any other 
   structure, is to apply a sinusoidal force to one point on a structure and 
@@ -113,8 +119,8 @@
   forcing at ``point'' $j$. It can be expressed rather simply in terms of the 
   mode shapes and frequencies: 
 
-  $$G(j,k,\omega)=\dfrac{q_k}{F}=\sum_n 
-  \dfrac{u_j^{(n)}u_k^{(n)}}{\omega_n^2-\omega^2}. \tag{13}$$ 
+  \begin{equation*}G(j,k,\omega)=\dfrac{q_k}{F}=\sum_n 
+  \dfrac{u_j^{(n)}u_k^{(n)}}{\omega_n^2-\omega^2}. \tag{13}\end{equation*} 
 
   The word ``point'' was deliberately written in quotes in the sentence above, 
   because eq. (13) applies to a much wider range of problems than is 
@@ -158,7 +164,7 @@
   on the system by external forces during this displacement is $\delta W$: then 
   define $Q_j$ so that 
 
-  $$\delta W=Q_j \delta q_j. \tag{14}$$ 
+  \begin{equation*}\delta W=Q_j \delta q_j. \tag{14}\end{equation*} 
 
   If $q_j$ is actually the displacement of a particular point on the system, 
   then $Q_j$ is indeed the force applied at that point, as implied by the 

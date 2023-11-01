@@ -144,27 +144,28 @@
   of functional forms and the values of certain constants, the first governing 
   equations for our model describe the motion of the jet centre-line: 
 
-  $$\eta(x,t)=e^{\alpha x} \eta_0(t-x/c_p) \tag{1}$$ 
+  \begin{equation*}\eta(x,t)=e^{\alpha x} \eta_0(t-x/c_p) 
+  \tag{1}\end{equation*} 
 
-  where the growth rate 
+  \noindent{}where the growth rate 
 
-  $$\alpha \approx \dfrac{0.3}{h}, \tag{2}$$ 
+  \begin{equation*}\alpha \approx \dfrac{0.3}{h}, \tag{2}\end{equation*} 
 
-  the propagation speed of disturbances on the jet is 
+  \noindent{}the propagation speed of disturbances on the jet is 
 
-  $$c_p \approx 0.4 u_0 , \tag{3}$$ 
+  \begin{equation*}c_p \approx 0.4 u_0 , \tag{3}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\eta_0(t)=\dfrac{h}{u_0} u(t) \tag{4}$$ 
+  \begin{equation*}\eta_0(t)=\dfrac{h}{u_0} u(t) \tag{4}\end{equation*} 
 
-  where $u_0$ is the nominal speed of the injected air and $u(t)$ is the 
-  acoustic velocity, related to the volume flow rate by 
+  \noindent{}where $u_0$ is the nominal speed of the injected air and $u(t)$ is 
+  the acoustic velocity, related to the volume flow rate by 
 
-  $$v=u w d \tag{5}$$ 
+  \begin{equation*}v=u w d \tag{5}\end{equation*} 
 
-  where $d$ is the width of the mouth in the direction perpendicular to the 
-  diagrams in Figs.\ 1--4 so that $wd$ is the mouth area. 
+  \noindent{}where $d$ is the width of the mouth in the direction perpendicular 
+  to the diagrams in Figs.\ 1--4 so that $wd$ is the mouth area. 
 
   To complete the model, we need a relation between the jet motion, the 
   acoustic velocity, and the pressure inside the mouthpiece. According to 
@@ -176,19 +177,21 @@
   for the jet flow profile (known as a ``Bickley profile''), they give the 
   resulting contribution to the pressure jump across the mouth in the form 
 
-  $$\Delta p_{source}=\dfrac{\rho_0 \delta_d u_0 b}{w} \dfrac{d}{dt} \left[ 
-  \tanh \left( \dfrac{\eta(w,t)-y_0}{b} \right) \right] \tag{6}$$ 
+  \begin{equation*}\Delta p_{source}=\dfrac{\rho_0 \delta_d u_0 b}{w} 
+  \dfrac{d}{dt} \left[ \tanh \left( \dfrac{\eta(w,t)-y_0}{b} \right) \right] 
+  \tag{6}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$b \approx \dfrac{2h}{5} \tag{7}$$ 
+  \begin{equation*}b \approx \dfrac{2h}{5} \tag{7}\end{equation*} 
 
-  describes the effective half-width of the jet profile, and 
+  \noindent{}describes the effective half-width of the jet profile, and 
 
-  $$\delta_d \approx \dfrac{4}{\pi}\sqrt{2 h w} \tag{8}$$ 
+  \begin{equation*}\delta_d \approx \dfrac{4}{\pi}\sqrt{2 h w} 
+  \tag{8}\end{equation*} 
 
-  describes the effective separation of a pair of acoustic sources above and 
-  below the labium: they combine to constitute the dipole source. 
+  \noindent{}describes the effective separation of a pair of acoustic sources 
+  above and below the labium: they combine to constitute the dipole source. 
 
   The second contribution to the internal pressure comes from interaction of 
   the acoustic flow with the labium. Figure 5 shows in sketch form how the flow 
@@ -196,7 +199,7 @@
   potential flow pattern. The flow accelerates as it approaches the sharp edge, 
   then decelerates symmetrically on the other side. As a result, Bernoulli 
   tells us that the pressure decreases, then increases back to the original 
-  level.<br> 
+  level. 
 
   \fig{figs/fig-9bac9fc2.png}{\caption{Figure 5. Sketch of streamlines of the 
   acoustic flow, without viscosity so that it is a potential flow pattern.}} 
@@ -213,11 +216,11 @@
   pressure drop using Bernoulli's principle, just as we did for the clarinet 
   mouthpiece. The result is 
 
-  $$\Delta p_{loss} = -\dfrac{1}{2} \rho_0 \dfrac{u^2 \mathrm{sign}(u)}{C^2} 
-  \tag{9}$$ 
+  \begin{equation*}\Delta p_{loss} = -\dfrac{1}{2} \rho_0 \dfrac{u^2 
+  \mathrm{sign}(u)}{C^2} \tag{9}\end{equation*} 
 
-  where $C$ is a vena contracta coefficient with a value of the order of 0.6 as 
-  before. 
+  \noindent{}where $C$ is a vena contracta coefficient with a value of the 
+  order of 0.6 as before. 
 
   \fig{figs/fig-519ccf34.png}{\caption{Figure 6. Sketch of streamlines for the 
   same situation as in Fig. 5, but with viscosity so that boundary layer 
@@ -228,69 +231,77 @@
   that the fluctuating component of pressure is zero there. So the pressure 
   inside the mouthpiece is given by the sum of the two contributions: 
 
-  $$p(t)=\Delta p_{source} + \Delta p_{loss} . \tag{10}$$ 
+  \begin{equation*}p(t)=\Delta p_{source} + \Delta p_{loss} . 
+  \tag{10}\end{equation*} 
 
   We can learn something interesting from these equations if we look at the 
   threshold case when the pressure and volume flow signals are small and 
   quasi-sinusoidal: 
 
-  $$p \approx \bar{p}e^{i \omega t}, v \approx \bar{v}e^{i \omega t} . 
-  \tag{11}$$ 
+  \begin{equation*}p \approx \bar{p}e^{i \omega t}, v \approx \bar{v}e^{i 
+  \omega t} . \tag{11}\end{equation*} 
 
   The two complex amplitudes $\bar{p}$ and $\bar{v}$ are linked by 
 
-  $$\dfrac{\bar{v}}{\bar{p}} = Y(\omega) . \tag{12}$$ 
+  \begin{equation*}\dfrac{\bar{v}}{\bar{p}} = Y(\omega) . 
+  \tag{12}\end{equation*} 
 
   We are only going to be interested in the phases of the various complex 
   quantities in this calculation, so we will ignore the effect of the growth 
   factor $\alpha$ and the labium offset $y_0$. The approximate version of 
   equation (1) then says 
 
-  $$\eta \approx \eta_0(t-\tau) \tag{13}$$ 
+  \begin{equation*}\eta \approx \eta_0(t-\tau) \tag{13}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$\eta_0 \approx \dfrac{h}{u_0 w d} \bar{v} e^{i \omega t} \tag{14}$$ 
+  \begin{equation*}\eta_0 \approx \dfrac{h}{u_0 w d} \bar{v} e^{i \omega t} 
+  \tag{14}\end{equation*} 
 
-  and the delay 
+  \noindent{}and the delay 
 
-  $$\tau=w/c_p, \tag{15}$$ 
+  \begin{equation*}\tau=w/c_p, \tag{15}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$\eta \approx \dfrac{h}{u_0 w d} \bar{v} e^{i \omega (t-\tau)} . \tag{16}$$ 
+  \begin{equation*}\eta \approx \dfrac{h}{u_0 w d} \bar{v} e^{i \omega 
+  (t-\tau)} . \tag{16}\end{equation*} 
 
   Now we turn to equation (6). We are assuming that the amplitude of $\eta$ is 
   small, so we can use the familiar approximation $\tanh \theta \approx \theta$ 
   to simplify the equation to the form 
 
-  $$\Delta p_{source} \approx \dfrac{\rho_0 \delta_d u_0 b}{w} i \omega 
-  \dfrac{\eta}{b} \approx \dfrac{\rho_0 \delta_d u_0 h}{w^2 u_0 d} i \omega 
-  \bar{v} e^{i \omega (t-\tau)} . \tag{17}$$ 
+  \begin{equation*}\Delta p_{source} \approx \dfrac{\rho_0 \delta_d u_0 b}{w} i 
+  \omega \dfrac{\eta}{b} \approx \dfrac{\rho_0 \delta_d u_0 h}{w^2 u_0 d} i 
+  \omega \bar{v} e^{i \omega (t-\tau)} . \tag{17}\end{equation*} 
 
   The term $\Delta p_{loss}$ is second order in $\bar{v}$ so we can neglect it 
   and deduce that $p \approx \Delta p_{source}$. Substituting into equation 
   (12) and cancelling the amplitude $\bar{v}$, we obtain something of the form 
 
-  $$(\mathrm{constants})i Y(\omega) e^{i \omega (t-\tau)} \approx e^{i \omega 
-  t} \tag{18}$$ 
+  \begin{equation*}(\mathrm{constants})i Y(\omega) e^{i \omega (t-\tau)} 
+  \approx e^{i \omega t} \tag{18}\end{equation*} 
 
-  where $(\mathrm{constants})$ denotes a collection of real, positive 
-  quantities. In order for the phases of these complex quantities to balance, 
-  we must have 
+  \noindent{}where $(\mathrm{constants})$ denotes a collection of real, 
+  positive quantities. In order for the phases of these complex quantities to 
+  balance, we must have 
 
-  $$e^{[i \pi/2 +i \arg(Y) -i \omega \tau]} = 1 \tag{19}$$ 
+  \begin{equation*}e^{[i \pi/2 +i \arg(Y) -i \omega \tau]} = 1 
+  \tag{19}\end{equation*} 
 
-  where we have used the identity $i = e^{i \pi/2}$, so finally we require 
+  \noindent{}where we have used the identity $i = e^{i \pi/2}$, so finally we 
+  require 
 
-  $$\arg(Y) + \pi/2 -- \omega \tau = 2m \pi \tag{20}$$ 
+  \begin{equation*}\arg(Y) + \pi/2 -- \omega \tau = 2m \pi 
+  \tag{20}\end{equation*} 
 
-  where $m$ could be any positive or negative integer (including zero). If we 
-  express this phase balance result in terms of the frequency $f=\omega/2 \pi$, 
-  we can deduce an expression for the delay $\tau$ as a fraction of the period 
-  length: 
+  \noindent{}where $m$ could be any positive or negative integer (including 
+  zero). If we express this phase balance result in terms of the frequency 
+  $f=\omega/2 \pi$, we can deduce an expression for the delay $\tau$ as a 
+  fraction of the period length: 
 
-  $$\tau f= \dfrac{\arg Y(\omega)}{2 \pi} + \dfrac{1}{4} -m . \tag{21}$$ 
+  \begin{equation*}\tau f= \dfrac{\arg Y(\omega)}{2 \pi} + \dfrac{1}{4} -m . 
+  \tag{21}\end{equation*} 
 
   This tells us something important. If our ``recorder'' is producing a note at 
   a frequency close to one of the peaks of $Y$, then $\arg (Y)$ will be 

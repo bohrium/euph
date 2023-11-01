@@ -33,86 +33,95 @@
   The first of our model equations is the Bernoulli expression relating to the 
   flow past the reed: 
 
-  $$p \approx \dfrac{\rho_0 u^2}{2 C^2 F(x)^2} . \tag{1}$$ 
+  \begin{equation*}p \approx \dfrac{\rho_0 u^2}{2 C^2 F(x)^2} . 
+  \tag{1}\end{equation*} 
 
   This is identical to the expression we have used before, except for the 
   inclusion of a vena contracta coefficient $C$, for which Tarnolpolsky et al. 
   suggest the value 0.61 for the jet geometry of interest here. The second 
   equation describes the reed dynamics: 
 
-  $$\ddot{x}+\dfrac{\omega_r}{Q_r}\dot{x}+\omega_r^2 x = K_p p \tag{2}$$ 
+  \begin{equation*}\ddot{x}+\dfrac{\omega_r}{Q_r}\dot{x}+\omega_r^2 x = K_p p 
+  \tag{2}\end{equation*} 
 
-  where dots denote time derivatives and where $K_p =1.5 w L/m$: the value 1.5 
-  here is suggested by Tarnopolsky et al. based on the mode shape of the lowest 
-  cantilever mode shape of the reed. The third equation relates the rate of 
-  change of pressure inside the chamber to the net volume flow rate of air into 
-  it: 
+  \noindent{}where dots denote time derivatives and where $K_p =1.5 w L/m$: the 
+  value 1.5 here is suggested by Tarnopolsky et al. based on the mode shape of 
+  the lowest cantilever mode shape of the reed. The third equation relates the 
+  rate of change of pressure inside the chamber to the net volume flow rate of 
+  air into it: 
 
-  $$\dot{p}=\dfrac{\rho_0 c^2}{V}[U_0 -- u -- K_x \dot{x}] \tag{3}$$ 
+  \begin{equation*}\dot{p}=\dfrac{\rho_0 c^2}{V}[U_0 -- u -- K_x \dot{x}] 
+  \tag{3}\end{equation*} 
 
-  where $\rho_0$ is the density of air and $c$ is the speed of sound. This is 
-  the same equation we used for the Helmholtz resonator in section 4.2.1, 
-  except for the final term in the square brackets. This describes the 
-  component of volume flow generated directly by the motion of the reed. It 
-  involves a constant $K_x=0.4wL$, where the suggested numerical value 0.4 is 
-  again based on the cantilever mode shape. 
+  \noindent{}where $\rho_0$ is the density of air and $c$ is the speed of 
+  sound. This is the same equation we used for the Helmholtz resonator in 
+  section 4.2.1, except for the final term in the square brackets. This 
+  describes the component of volume flow generated directly by the motion of 
+  the reed. It involves a constant $K_x=0.4wL$, where the suggested numerical 
+  value 0.4 is again based on the cantilever mode shape. 
 
   For the purposes of a linearised stability analysis, we now assume that 
 
-  $$u=\bar{u}+u' e^{i \omega t} \mathrm{,~~} p=\bar{p}+p' e^{i \omega t} 
-  \mathrm{,~~} x=\bar{x}+x' e^{i \omega t} \tag{4}$$ 
+  \begin{equation*}u=\bar{u}+u' e^{i \omega t} \mathrm{,~~} p=\bar{p}+p' e^{i 
+  \omega t} \mathrm{,~~} x=\bar{x}+x' e^{i \omega t} \tag{4}\end{equation*} 
 
-  where for example $\bar{p}$ is the mean value and $p'$ is the (complex) 
-  amplitude of a small harmonic fluctuation at frequency $\omega$. We 
+  \noindent{}where for example $\bar{p}$ is the mean value and $p'$ is the 
+  (complex) amplitude of a small harmonic fluctuation at frequency $\omega$. We 
   substitute these expressions into the three equations, linearise with respect 
   to all the primed quantities where necessary, and then equate separately the 
   steady terms and terms involving $e^{i \omega t}$. Equations (2) and (3) are 
   both linear, so this involves very little effort. The results from equation 
   (2) are 
 
-  $$\omega_r^2 \bar{x}=K_p \bar{p} \tag{5}$$ 
+  \begin{equation*}\omega_r^2 \bar{x}=K_p \bar{p} \tag{5}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\left[ -\omega^2 + i \omega \dfrac{\omega_r}{Q_r} + \omega_r^2 \right]x' = 
-  K_p p' . \tag{6}$$ 
+  \begin{equation*}\left[ -\omega^2 + i \omega \dfrac{\omega_r}{Q_r} + 
+  \omega_r^2 \right]x' = K_p p' . \tag{6}\end{equation*} 
 
   Corresponding results from equation (3) are 
 
-  $$\bar{u}=U_0 \tag{7}$$ 
+  \begin{equation*}\bar{u}=U_0 \tag{7}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$i \omega p' = -- \dfrac{\rho_0 c^2}{V} [u'+i \omega K_x x'] . \tag{8}$$ 
+  \begin{equation*}i \omega p' = -- \dfrac{\rho_0 c^2}{V} [u'+i \omega K_x x'] 
+  . \tag{8}\end{equation*} 
 
   For equation (1) we need to work a little harder. First, we take the first 
   two terms of a Taylor expansion of $F(x)$: 
 
-  $$F(x) \approx F(\bar{x}) + x' e^{i \omega t} 
-  \dfrac{dF}{dx}(\bar{x})=\bar{F}+\bar{F}' x' e^{i \omega t}\tag{9}$$ 
+  \begin{equation*}F(x) \approx F(\bar{x}) + x' e^{i \omega t} 
+  \dfrac{dF}{dx}(\bar{x})=\bar{F}+\bar{F}' x' e^{i \omega 
+  t}\tag{9}\end{equation*} 
 
-  where for brevity we define $\bar{F}=F(\bar{x})$ and 
+  \noindent{}where for brevity we define $\bar{F}=F(\bar{x})$ and 
   $\bar{F}'=dF(\bar{x})/dx$. 
 
   So now equation (1) gives 
 
-  $$\bar{p}+p'e^{i \omega t}\approx \dfrac{\rho_0}{2C^2}\left( \bar{u}+u'e^{i 
-  \omega t} \right)^2\left(\bar{F}+\bar{F}' x' e^{i \omega t} \right)^{-2}$$ 
+  \begin{equation*}\bar{p}+p'e^{i \omega t}\approx \dfrac{\rho_0}{2C^2}\left( 
+  \bar{u}+u'e^{i \omega t} \right)^2\left(\bar{F}+\bar{F}' x' e^{i \omega t} 
+  \right)^{-2}\end{equation*} 
 
-  $$\approx \dfrac{\rho_0}{2C^2 \bar{F}^2}\left( U_0^2 + 2 U_0 u' e^{i \omega 
-  t} \right) \left(1-2\dfrac{\bar{F}'}{\bar{F}} x' e^{i \omega t} \right)$$ 
+  \begin{equation*}\approx \dfrac{\rho_0}{2C^2 \bar{F}^2}\left( U_0^2 + 2 U_0 
+  u' e^{i \omega t} \right) \left(1-2\dfrac{\bar{F}'}{\bar{F}} x' e^{i \omega 
+  t} \right)\end{equation*} 
 
-  $$\approx \dfrac{\rho_0}{2C^2 \bar{F}^2}\left( U_0^2 +2 U_0 u' e^{i \omega t} 
-  -- 2U_0^2 \dfrac{\bar{F}'}{\bar{F}} x' e^{i \omega t} \right)\tag{10}$$ 
+  \begin{equation*}\approx \dfrac{\rho_0}{2C^2 \bar{F}^2}\left( U_0^2 +2 U_0 u' 
+  e^{i \omega t} -- 2U_0^2 \dfrac{\bar{F}'}{\bar{F}} x' e^{i \omega t} 
+  \right)\tag{10}\end{equation*} 
 
-  and so 
+  \noindent{}and so 
 
-  $$\bar{p} =\dfrac{\rho_0 U_0^2}{2C^2 \bar{F}^2}\tag{11}$$ 
+  \begin{equation*}\bar{p} =\dfrac{\rho_0 U_0^2}{2C^2 
+  \bar{F}^2}\tag{11}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$p'=\dfrac{\rho_0 U_0}{C^2 \bar{F}^2}\left(u'-U_0 
-  \dfrac{\bar{F}'}{\bar{F}}x' \right). \tag{12}$$ 
+  \begin{equation*}p'=\dfrac{\rho_0 U_0}{C^2 \bar{F}^2}\left(u'-U_0 
+  \dfrac{\bar{F}'}{\bar{F}}x' \right). \tag{12}\end{equation*} 
 
   We are interested in thresholds for pressure, so $\bar{p}$ is the variable of 
   interest. Equation (5) gives the static displacement of the reed tip in 
@@ -121,39 +130,44 @@
 
   We now eliminate $u'$ between equations (8) and (12) to obtain 
 
-  $$-\dfrac{i \omega V}{\rho_0 c^2}p' -- i \omega K_x x' = U_0 
-  \dfrac{\bar{F}'}{\bar{F}} x' + \dfrac{U_0}{2 \bar{p}}p' \tag{13}$$ 
+  \begin{equation*}-\dfrac{i \omega V}{\rho_0 c^2}p' -- i \omega K_x x' = U_0 
+  \dfrac{\bar{F}'}{\bar{F}} x' + \dfrac{U_0}{2 \bar{p}}p' 
+  \tag{13}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$(i \omega A +B)p'=-(i \omega D + E)x' \tag{14}$$ 
+  \begin{equation*}(i \omega A +B)p'=-(i \omega D + E)x' 
+  \tag{14}\end{equation*} 
 
-  with 
+  \noindent{}with 
 
-  $$A=\dfrac{V}{\rho_0 c^2} \mathrm{,~~} B=\dfrac{C^2 \bar{F}^2}{\rho_0 U_0} 
-  \mathrm{,~~} D=K_x \mathrm{,~~} E=U_0 \dfrac{\bar{F}'}{\bar{F}} . \tag{15}$$ 
+  \begin{equation*}A=\dfrac{V}{\rho_0 c^2} \mathrm{,~~} B=\dfrac{C^2 
+  \bar{F}^2}{\rho_0 U_0} \mathrm{,~~} D=K_x \mathrm{,~~} E=U_0 
+  \dfrac{\bar{F}'}{\bar{F}} . \tag{15}\end{equation*} 
 
   Now we can substitute in equation (6): 
 
-  $$\left[ -\omega^2 + i \omega \dfrac{\omega_r}{Q_r} + \omega_r^2 \right]x' = 
-  -K_p \dfrac{i \omega D + E}{i \omega A + B} x'$$ 
+  \begin{equation*}\left[ -\omega^2 + i \omega \dfrac{\omega_r}{Q_r} + 
+  \omega_r^2 \right]x' = -K_p \dfrac{i \omega D + E}{i \omega A + B} 
+  x'\end{equation*} 
 
-  $$=-K_p \dfrac{(i \omega D + E)(-i \omega A + B)}{\omega^2 A^2 + B^2} x' . 
-  \tag{16}$$ 
+  \begin{equation*}=-K_p \dfrac{(i \omega D + E)(-i \omega A + B)}{\omega^2 A^2 
+  + B^2} x' . \tag{16}\end{equation*} 
 
   In order for an instability to occur, the imaginary part of the right-hand 
   side expression must at least compensate for the damping term on the 
   left-hand side, so the condition for instability is 
 
-  $$\dfrac{\omega_r}{Q_r} < K_p\dfrac{EA-DB}{\omega_r^2 A^2 + B^2} \tag{17}$$ 
+  \begin{equation*}\dfrac{\omega_r}{Q_r} < K_p\dfrac{EA-DB}{\omega_r^2 A^2 + 
+  B^2} \tag{17}\end{equation*} 
 
-  where we have substituted $\omega_r$ for $\omega$ in the denominator because 
-  we always expect our free reed to vibrate close to its natural frequency. The 
-  constants $A$, $B$ and $D$ are always positive, but $E$ depends on the sign 
-  of $\bar{F}'$. So we certainly need $\bar{F}'>0$ to have any chance of 
-  satisfying the instability condition --- in other words, it must behave as an 
-  ``opening reed'' in the immediate vicinity of the equilibrium displacement 
-  $\bar{x}$. 
+  \noindent{}where we have substituted $\omega_r$ for $\omega$ in the 
+  denominator because we always expect our free reed to vibrate close to its 
+  natural frequency. The constants $A$, $B$ and $D$ are always positive, but 
+  $E$ depends on the sign of $\bar{F}'$. So we certainly need $\bar{F}'>0$ to 
+  have any chance of satisfying the instability condition --- in other words, 
+  it must behave as an ``opening reed'' in the immediate vicinity of the 
+  equilibrium displacement $\bar{x}$. 
 
   To calculate a reasonable approximation to the area function $F(x)$, we can 
   follow a similar approach to previous authors [2,3]. For a given displaced 
@@ -179,17 +193,18 @@
   simple application of the non-steady version of Bernoulli's equation would 
   lead to 
 
-  $$p \approx \dfrac{\rho_0 u^2}{2 C^2 F(x)^2} + \dfrac{d}{dt} \left[ 
-  \dfrac{\rho_0 u \delta}{C F(x)} \right] \tag{18}$$ 
+  \begin{equation*}p \approx \dfrac{\rho_0 u^2}{2 C^2 F(x)^2} + \dfrac{d}{dt} 
+  \left[ \dfrac{\rho_0 u \delta}{C F(x)} \right] \tag{18}\end{equation*} 
 
-  in place of equation (1), where $\delta$ is an estimate of the length over 
-  which the jet past the reed remains laminar: we might expect it to be of the 
-  order of a few millimetres. Following through the same linearisation 
-  procedure, one extra complex factor appears. The simplest way to summarise 
-  the result is to say that everything follows identically if we replace $C^2$ 
-  by 
+  \noindent{}in place of equation (1), where $\delta$ is an estimate of the 
+  length over which the jet past the reed remains laminar: we might expect it 
+  to be of the order of a few millimetres. Following through the same 
+  linearisation procedure, one extra complex factor appears. The simplest way 
+  to summarise the result is to say that everything follows identically if we 
+  replace $C^2$ by 
 
-  $$\dfrac{C^2}{1+i \omega \delta C \bar{F}/U_0}. \tag{19}$$ 
+  \begin{equation*}\dfrac{C^2}{1+i \omega \delta C \bar{F}/U_0}. 
+  \tag{19}\end{equation*} 
 
   This complicates the algebra somewhat, but when the effect of making this 
   change is tested numerically for the geometry of any of the reeds we will be 
@@ -201,32 +216,35 @@
   couched in more general terms. This involves keeping equations (6) and (12), 
   but replacing equation (8) with the more general version 
 
-  $$p'=-Z(\omega) \left(u'+i \omega K_x x' \right) \tag{20}$$ 
+  \begin{equation*}p'=-Z(\omega) \left(u'+i \omega K_x x' \right) 
+  \tag{20}\end{equation*} 
 
-  where $Z(\omega)$ is the impedance presented to one face of the reed. The 
-  negative sign arises because the impedance we would measure would involve 
-  positive volume flow into the acoustic system, whereas we have defined our 
-  flow rate positive into the reed. We can recover the previous case by 
-  recalling that the impedance of a volume $V$ is 
+  \noindent{}where $Z(\omega)$ is the impedance presented to one face of the 
+  reed. The negative sign arises because the impedance we would measure would 
+  involve positive volume flow into the acoustic system, whereas we have 
+  defined our flow rate positive into the reed. We can recover the previous 
+  case by recalling that the impedance of a volume $V$ is 
 
-  $$Z_{volume}=\dfrac{\rho_0 c^2}{i \omega V}. \tag{21}$$ 
+  \begin{equation*}Z_{volume}=\dfrac{\rho_0 c^2}{i \omega V}. 
+  \tag{21}\end{equation*} 
 
   In this more general framework, the condition for instability becomes 
 
-  $$\dfrac{\omega_r^2}{Q_r} < \mathrm{Im}\left[\dfrac{K_p(U_0 \bar{F}'/\bar{F} 
-  + i \omega K_x)}{-Y(\omega)-C^2 \bar{F}^2/\rho_0 U_0}\right] \tag{22}$$ 
+  \begin{equation*}\dfrac{\omega_r^2}{Q_r} < \mathrm{Im}\left[\dfrac{K_p(U_0 
+  \bar{F}'/\bar{F} + i \omega K_x)}{-Y(\omega)-C^2 \bar{F}^2/\rho_0 U_0}\right] 
+  \tag{22}\end{equation*} 
 
-  where $\mathrm{Im}$ denotes the imaginary part, and $Y=1/Z$ is the admittance 
-  of the acoustic system. Again, the expression could all be evaluated at 
-  $\omega=\omega_r$ for an explicit approximation. Using the notation from 
-  equation (16), for instability we require 
+  \noindent{}where $\mathrm{Im}$ denotes the imaginary part, and $Y=1/Z$ is the 
+  admittance of the acoustic system. Again, the expression could all be 
+  evaluated at $\omega=\omega_r$ for an explicit approximation. Using the 
+  notation from equation (16), for instability we require 
 
-  $$\dfrac{\omega_r^2}{Q_r} <-K_p \mathrm{Im} \left[ \dfrac{i \omega D + E}{Y 
-  +B}\right]=-K_p\mathrm{Im} \left[\dfrac{(i \omega D + 
-  E)(B+Y^*)}{|Y|^2+B^2}\right]$$ 
+  \begin{equation*}\dfrac{\omega_r^2}{Q_r} <-K_p \mathrm{Im} \left[ \dfrac{i 
+  \omega D + E}{Y +B}\right]=-K_p\mathrm{Im} \left[\dfrac{(i \omega D + 
+  E)(B+Y^*)}{|Y|^2+B^2}\right]\end{equation*} 
 
-  $$=-K_p\left[\dfrac{(\omega D (B+\mathrm{Re} Y) -- E \mathrm{Im} 
-  Y}{|Y|^2+B^2}\right] . \tag{23}$$ 
+  \begin{equation*}=-K_p\left[\dfrac{(\omega D (B+\mathrm{Re} Y) -- E 
+  \mathrm{Im} Y}{|Y|^2+B^2}\right] . \tag{23}\end{equation*} 
 
   Certainly for this condition to be satisfied, the final expression must be 
   positive. The constants $B$ and $D$ are positive, so the first term in the 

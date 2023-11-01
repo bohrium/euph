@@ -22,18 +22,19 @@
   easy to see that we need just one extra term in the governing equation 
   compared to eq. (7) from section 3.2.1: this equation becomes 
 
-  $$\rho A \dfrac{\partial^2 w}{\partial t^2}+EI \dfrac{\partial^4 w}{\partial 
-  x^4} + K w=0\tag{1}$$ 
+  \begin{equation*}\rho A \dfrac{\partial^2 w}{\partial t^2}+EI 
+  \dfrac{\partial^4 w}{\partial x^4} + K w=0\tag{1}\end{equation*} 
 
-  where the term $Kw$ represents the force from the foundation springs. We are 
-  interested in solutions to this equation that are travelling waves, so try 
-  substituting 
+  \noindent{}where the term $Kw$ represents the force from the foundation 
+  springs. We are interested in solutions to this equation that are travelling 
+  waves, so try substituting 
 
-  $$w(x,t) = e^{i k x} e^{i \omega t} .\tag{2}$$ 
+  \begin{equation*}w(x,t) = e^{i k x} e^{i \omega t} .\tag{2}\end{equation*} 
 
   Then eq. (1) requires that the wavenumber $k$ satisfies 
 
-  $$k^4 = \dfrac{\rho A \omega^2 -K}{EI} . \tag{3}$$ 
+  \begin{equation*}k^4 = \dfrac{\rho A \omega^2 -K}{EI} . 
+  \tag{3}\end{equation*} 
 
   Without the presence of $K$, eq. (3) would mean that for any value of 
   $\omega$ we can find a real solution for $k$. In physical terms, that means 
@@ -41,19 +42,19 @@
   But with the foundation term, things are different. For frequencies 
   satisfying 
 
-  $$\omega^2 > \frac{K}{\rho A} \tag{4}$$ 
+  \begin{equation*}\omega^2 > \frac{K}{\rho A} \tag{4}\end{equation*} 
 
-  we can still find a real solution for $K$. But if 
+  \noindent{}we can still find a real solution for $K$. But if 
 
-  $$\omega^2 < \frac{K}{\rho A} \tag{5}$$ 
+  \begin{equation*}\omega^2 < \frac{K}{\rho A} \tag{5}\end{equation*} 
 
-  this is no longer possible. The possible solutions take the form 
+  \noindent{}this is no longer possible. The possible solutions take the form 
 
-  $$k=\frac{\pm 1 \pm i}{\sqrt{2}} \left[\dfrac{K -- \rho A \omega^2 }{EI} 
-  \right]^{1/4} \tag{6}$$ 
+  \begin{equation*}k=\frac{\pm 1 \pm i}{\sqrt{2}} \left[\dfrac{K -- \rho A 
+  \omega^2 }{EI} \right]^{1/4} \tag{6}\end{equation*} 
 
-  so that all possible solutions decay exponentially with $x$. Such solutions 
-  are called evanescent waves. The transition frequency $\omega = 
+  \noindent{}so that all possible solutions decay exponentially with $x$. Such 
+  solutions are called evanescent waves. The transition frequency $\omega = 
   \sqrt{\frac{K}{\rho A} }$, above which travelling waves first become 
   possible, is called the waveguide cut-on frequency (or cut-off frequency, if 
   you are thinking about scanning downwards in frequency when you encounter 

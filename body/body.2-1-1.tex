@@ -27,19 +27,20 @@
 
   Now we take advantage of the famous result 
 
-  $$e^{i \omega t}=\cos \omega t+i\sin \omega t . \tag{1}$$ 
+  \begin{equation*}e^{i \omega t}=\cos \omega t+i\sin \omega t . 
+  \tag{1}\end{equation*} 
 
   This allows us to package the amplitude and phase of a sine wave into a 
   single complex number. From equation (1), $\cos\omega t=\mathrm{Re}(e^{i 
   \omega t})$. Now suppose we have a sine wave with amplitude $a$ and phase 
   $\phi$: 
 
-  $$f(t)=a\cos(\omega t + \phi)=\mathrm{Re}(ae^{i \omega 
-  t+i\phi})=\mathrm{Re}(Ae^{i \omega t}) \tag{2}$$ 
+  \begin{equation*}f(t)=a\cos(\omega t + \phi)=\mathrm{Re}(ae^{i \omega 
+  t+i\phi})=\mathrm{Re}(Ae^{i \omega t}) \tag{2}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$A=ae^{i\phi}. \tag{3}$$ 
+  \begin{equation*}A=ae^{i\phi}. \tag{3}\end{equation*} 
 
   As a shorthand, we usually do not bother to write the $\mathrm{Re}(...)$. We 
   just talk about a sine wave $Ae^{i \omega t}$ with frequency $\omega$ and 
@@ -51,34 +52,35 @@
   Suppose our input $f(t)=e^{i \omega t}$, and suppose the corresponding output 
   is $g(t)$. Now think about a small time shift by $\delta$. The input is 
 
-  $$x(t+\delta)=e^{i \omega (t+\delta)} = e^{i \omega t} e^{i \omega \delta} = 
-  x(t) e^{i \omega \delta}. \tag{4}$$ 
+  \begin{equation*}x(t+\delta)=e^{i \omega (t+\delta)} = e^{i \omega t} e^{i 
+  \omega \delta} = x(t) e^{i \omega \delta}. \tag{4}\end{equation*} 
 
   By the assumption of linearity, the output must follow the same pattern: 
 
-  $$y(t+\delta)=y(t) e^{i \omega \delta} \tag{5}$$ 
+  \begin{equation*}y(t+\delta)=y(t) e^{i \omega \delta} \tag{5}\end{equation*} 
 
-  because the term $e^{i \omega \delta}$ is simply a constant multiplier. But 
-  we know from Taylor's theorem that 
+  \noindent{}because the term $e^{i \omega \delta}$ is simply a constant 
+  multiplier. But we know from Taylor's theorem that 
 
-  $$y(t+\delta) \approx y(t) + \delta \dot{y}(t) \tag{6}$$ 
+  \begin{equation*}y(t+\delta) \approx y(t) + \delta \dot{y}(t) 
+  \tag{6}\end{equation*} 
 
-  provided $\delta \ll 1$, where $\dot{y}$ is $dy/dt$. So we have 
+  \noindent{}provided $\delta \ll 1$, where $\dot{y}$ is $dy/dt$. So we have 
 
-  $$y(t) + \delta \dot{y}(t) \approx y(t) e^{i \omega \delta} \approx y(t) (1 + 
-  i \omega \delta) \tag{7}$$ 
+  \begin{equation*}y(t) + \delta \dot{y}(t) \approx y(t) e^{i \omega \delta} 
+  \approx y(t) (1 + i \omega \delta) \tag{7}\end{equation*} 
 
-  leading to 
+  \noindent{}leading to 
 
-  $$\dot{y}(t) \approx i \omega y(t). \tag{8}$$ 
+  \begin{equation*}\dot{y}(t) \approx i \omega y(t). \tag{8}\end{equation*} 
 
   In the limit $\delta \rightarrow 0$ this equation becomes exact. It is a 
   simple first-order differential equation for the output $y(t)$, which has the 
   general solution 
 
-  $$y(t) = A e^{i \omega t} \tag{9}$$ 
+  \begin{equation*}y(t) = A e^{i \omega t} \tag{9}\end{equation*} 
 
-  where $A$ is an arbitrary (complex) constant. This is the result we want: the 
-  output must indeed be a sinusoidal wave at the same frequency $\omega$ as the 
-  input, scaled by a factor $a$ and phase-shifted by an angle $\phi$ where $A=a 
-  e^{i \phi}$. 
+  \noindent{}where $A$ is an arbitrary (complex) constant. This is the result 
+  we want: the output must indeed be a sinusoidal wave at the same frequency 
+  $\omega$ as the input, scaled by a factor $a$ and phase-shifted by an angle 
+  $\phi$ where $A=a e^{i \phi}$. 

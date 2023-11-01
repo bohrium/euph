@@ -16,21 +16,23 @@
 
   First, differentiation: things like 
 
-  $$\dfrac{df}{dx}$$ 
+  \begin{equation*}\dfrac{df}{dx}\end{equation*} 
 
-  which you may interpret as the slope of a graph of the function $f(x)$. 
+  \noindent{}which you may interpret as the slope of a graph of the function 
+  $f(x)$. 
 
   Second, integration: things like 
 
-  $$\int_a^b{f(x) dx}$$ 
+  \begin{equation*}\int_a^b{f(x) dx}\end{equation*} 
 
-  which you may interpret as the area under the graph of $f(x)$ between the 
-  points $x=a$ and $x=b$. 
+  \noindent{}which you may interpret as the area under the graph of $f(x)$ 
+  between the points $x=a$ and $x=b$. 
 
   The third thing is perhaps the one you did not immediately think of. There is 
   a very important theorem which connects the first two things together: 
 
-  $$\int_a^b{\dfrac{df}{dx} dx} = [f(x)]_a^b . \tag{1}$$ 
+  \begin{equation*}\int_a^b{\dfrac{df}{dx} dx} = [f(x)]_a^b . 
+  \tag{1}\end{equation*} 
 
   In words, the integral of a derivative gives you the original function, 
   evaluated on the boundaries of the region of interest. 
@@ -45,20 +47,20 @@
   $T(\underline{r})$, where $\underline{r}$ is the position vector with 
   components $(x,y,z)$ with respect to Cartesian axes. Then the vector 
 
-  $$\mathrm{grad~}T = \nabla T = \left[\dfrac{\partial T}{\partial 
-  x},\dfrac{\partial T}{\partial y},\dfrac{\partial T}{\partial z}\right] 
-  \tag{2}$$ 
+  \begin{equation*}\mathrm{grad~}T = \nabla T = \left[\dfrac{\partial 
+  T}{\partial x},\dfrac{\partial T}{\partial y},\dfrac{\partial T}{\partial 
+  z}\right] \tag{2}\end{equation*} 
 
-  is called the gradient of $T$. This vector has a simple physical 
+  \noindent{}is called the gradient of $T$. This vector has a simple physical 
   interpretation. Its direction is towards the steepest rate of increase of 
   temperature, and its magnitude is the rate of increase. One interpretation of 
   this equation is that we have a vector operator 
 
-  $$\nabla = \left[\dfrac{\partial }{\partial x},\dfrac{\partial }{\partial 
-  y},\dfrac{\partial }{\partial z}\right] \tag{3}$$ 
+  \begin{equation*}\nabla = \left[\dfrac{\partial }{\partial x},\dfrac{\partial 
+  }{\partial y},\dfrac{\partial }{\partial z}\right] \tag{3}\end{equation*} 
 
-  acting on the scalar field $T$ to produce the vector gradient. This operator 
-  is usually called ``del'', or sometimes ``nabla''. 
+  \noindent{}acting on the scalar field $T$ to produce the vector gradient. 
+  This operator is usually called ``del'', or sometimes ``nabla''. 
 
   Now suppose we have a vector field variable instead of a scalar field: for 
   example the velocity field $\underline{u}(\underline{r})$ in a fluid flow. In 
@@ -69,35 +71,38 @@
   vectors $\underline{a}$ and $\underline{b}$, with components $(a_1,a_2,a_3)$ 
   and $(b_1,b_2,b_3)$, the scalar product is defined by 
 
-  $$\underline{a}\cdot \underline{b} = a_1b_1+a_2b_2+a_3b_3 \tag{4}$$ 
+  \begin{equation*}\underline{a}\cdot \underline{b} = a_1b_1+a_2b_2+a_3b_3 
+  \tag{4}\end{equation*} 
 
-  and the vector product is defined by a $3 \times 3$ determinant: 
+  \noindent{}and the vector product is defined by a $3 \times 3$ determinant: 
 
-  $$\underline{a} \times \underline{b} = \begin{vmatrix} 
+  \begin{equation*}\underline{a} \times \underline{b} = \begin{vmatrix} 
   \underline{i}\&\underline{j}\&\underline{k}\\a_1\&a_2\&a_3\\b_1\&b_2\&b_3 
-  \end{vmatrix}$$ 
+  \end{vmatrix}\end{equation*} 
 
   
-  $$=(a_2b_3-a_3b_2)\underline{i}+(a_3b_1-a_1b_3)\underline{j}+(a_1b_2-a_2b_1)\underline{j} 
-  \tag{5}$$ 
+  \begin{equation*}=(a_2b_3-a_3b_2)\underline{i}+(a_3b_1-a_1b_3)\underline{j}+(a_1b_2-a_2b_1)\underline{j} 
+  \tag{5}\end{equation*} 
 
-  in terms of the unit vectors $\underline{i},\underline{j},\underline{k}$ in 
-  the $x$, $y$ and $z$ directions respectively. 
+  \noindent{}in terms of the unit vectors 
+  $\underline{i},\underline{j},\underline{k}$ in the $x$, $y$ and $z$ 
+  directions respectively. 
 
   So we define two vector derivatives of our vector field $\underline{u}$ in 
   the same way. First is the divergence: 
 
-  $$\mathrm{div~} \underline{u} = \nabla \cdot \underline{u} = \dfrac{\partial 
-  u_1}{\partial x}+\dfrac{\partial u_2}{\partial y}+\dfrac{\partial 
-  u_3}{\partial z} \tag{6}$$ 
+  \begin{equation*}\mathrm{div~} \underline{u} = \nabla \cdot \underline{u} = 
+  \dfrac{\partial u_1}{\partial x}+\dfrac{\partial u_2}{\partial 
+  y}+\dfrac{\partial u_3}{\partial z} \tag{6}\end{equation*} 
 
-  where the components of $\underline{u}$ are $(u_1,u_2,u_3)$. The second one 
-  is the curl: 
+  \noindent{}where the components of $\underline{u}$ are $(u_1,u_2,u_3)$. The 
+  second one is the curl: 
 
-  $$\mathrm{curl~} \underline{u} = \nabla \times \underline{u} =\begin{vmatrix} 
-  \underline{i}\&\underline{j}\&\underline{k}\\ \frac{\partial}{\partial 
-  x}\&\frac{\partial}{\partial y}\&\frac{\partial}{\partial z}\\u_1\&u_2\&u_3 
-  \end{vmatrix} . \tag{7}$$ 
+  \begin{equation*}\mathrm{curl~} \underline{u} = \nabla \times \underline{u} 
+  =\begin{vmatrix} \underline{i}\&\underline{j}\&\underline{k}\\ 
+  \frac{\partial}{\partial x}\&\frac{\partial}{\partial 
+  y}\&\frac{\partial}{\partial z}\\u_1\&u_2\&u_3 \end{vmatrix} . 
+  \tag{7}\end{equation*} 
 
   Fluid dynamics provides good examples of physical interpretation of 
   divergence and curl. If you inject a small blob of dye into a flowing fluid 
@@ -115,12 +120,12 @@
   different densities are distributed within a defined volume. If the variation 
   of density is $\rho(\underline{r})$, the total mass is 
 
-  $$\int{\int{\int_V{\rho(x,y,z) dx}dy}dz} = 
-  \int{\int{\int_V{\rho(\underline{r})}}dV} \tag{8}$$ 
+  \begin{equation*}\int{\int{\int_V{\rho(x,y,z) dx}dy}dz} = 
+  \int{\int{\int_V{\rho(\underline{r})}}dV} \tag{8}\end{equation*} 
 
-  since $\rho dV$ is the mass inside a small volume $dV$, and to find the total 
-  mass you simply need to add them all up, so the integration needs to 
-  encompass the entire volume $V$ of the car. 
+  \noindent{}since $\rho dV$ is the mass inside a small volume $dV$, and to 
+  find the total mass you simply need to add them all up, so the integration 
+  needs to encompass the entire volume $V$ of the car. 
 
   Our second type of integral is a surface integral. Again, we can introduce 
   the idea through an example. Water flows through a pipe, with some velocity 
@@ -142,8 +147,9 @@
   $\underline{u} \cdot d\underline{A}$, and the total flow rate is the integral 
   of this quantity over the surface: 
 
-  $$\mathrm{Flow~rate} = \int{\int_{\mathrm{surface}}{\underline{u} \cdot 
-  d\underline{A}}} \tag{9}$$ 
+  \begin{equation*}\mathrm{Flow~rate} = 
+  \int{\int_{\mathrm{surface}}{\underline{u} \cdot d\underline{A}}} 
+  \tag{9}\end{equation*} 
 
   The third type of integral is a line integral. This one is most easily 
   introduced through an electrical example. An electrically charged particle 
@@ -159,7 +165,8 @@
   is $q\underline{E} \cdot d\underline{l}$. The total work done is then given 
   by an integral along the curve: 
 
-  $$W=\int_\mathrm{curve}{q\underline{E} \cdot d\underline{l}} \tag{10}$$ 
+  \begin{equation*}W=\int_\mathrm{curve}{q\underline{E} \cdot d\underline{l}} 
+  \tag{10}\end{equation*} 
 
   Notice that the vector line element is defined to point tangentially to the 
   curve, whereas the vector area element was defined to point normal to the 
@@ -181,8 +188,9 @@
   Then, for any vector field $\underline{u}(\underline{r})$, the theorem states 
   that 
 
-  $$\int{\int{\int_V{\nabla \cdot \underline{u} \mathrm{~} 
-  dV}}}=\int{\int_S{\underline{u} \cdot d\underline{A}}} . \tag{11}$$ 
+  \begin{equation*}\int{\int{\int_V{\nabla \cdot \underline{u} \mathrm{~} 
+  dV}}}=\int{\int_S{\underline{u} \cdot d\underline{A}}} . 
+  \tag{11}\end{equation*} 
 
   This looks far more complicated than our original theorem (1) for ordinary 
   calculus, but if we describe it in words we can see a parallel. Equation (11) 
@@ -198,11 +206,12 @@
   running round the edge, as sketched in Fig.\ 4 (think of something like a 
   frisbee, for example). Then the theorem states 
 
-  $$\int{\int_S{\nabla \times \underline{u} \cdot d\underline{A}}} = 
-  \oint_C{\underline{u} \cdot d\underline{l}} \tag{12}$$ 
+  \begin{equation*}\int{\int_S{\nabla \times \underline{u} \cdot 
+  d\underline{A}}} = \oint_C{\underline{u} \cdot d\underline{l}} 
+  \tag{12}\end{equation*} 
 
-  where the integral symbol on the right-hand side means that the integral is 
-  to be taken around the closed loop. 
+  \noindent{}where the integral symbol on the right-hand side means that the 
+  integral is to be taken around the closed loop. 
 
   \fig{figs/fig-270b1ba9.png}{\caption{Figure 4. Sketch of a curve $C$ (in red) 
   forming the edge of a section of curved surface $S$}} 

@@ -14,43 +14,47 @@
   imparted to the structure must be given by the jump in momentum of the 
   bouncing mass: 
 
-  $$I=m(v_1+v_2). \tag{1}$$ 
+  \begin{equation*}I=m(v_1+v_2). \tag{1}\end{equation*} 
 
   We can write the force waveform as $I f(t)$ so that 
 
-  $$\int{f(t) dt} = 1 \tag{2}$$ 
+  \begin{equation*}\int{f(t) dt} = 1 \tag{2}\end{equation*} 
 
-  where the integral is taken over the entire duration of the pulse(s). The 
-  response velocity $v(t)$ is then given by the standard convolution integral 
-  (see section 2.2.8) 
+  \noindent{}where the integral is taken over the entire duration of the 
+  pulse(s). The response velocity $v(t)$ is then given by the standard 
+  convolution integral (see section 2.2.8) 
 
-  $$v(t)=I \int_{-\infty}^t{g(t-\tau) f(\tau) d \tau} \tag{3}$$ 
+  \begin{equation*}v(t)=I \int_{-\infty}^t{g(t-\tau) f(\tau) d \tau} 
+  \tag{3}\end{equation*} 
 
-  in terms of the impulse response 
+  \noindent{}in terms of the impulse response 
 
-  $$g(t) = \sum_n{\dfrac{\cos \omega_n t}{M_n}} \mathrm{~~~for~~} t\ge 0 
-  \tag{4}$$ 
+  \begin{equation*}g(t) = \sum_n{\dfrac{\cos \omega_n t}{M_n}} 
+  \mathrm{~~~for~~} t\ge 0 \tag{4}\end{equation*} 
 
-  where mode $n$ has resonance frequency $\omega_n$ and effective mass at the 
-  impacted point $M_n$. This effective mass is related to the mode shape at the 
-  impacted point, which we can write in a shorthand way as $u_n(x_0)$: then 
+  \noindent{}where mode $n$ has resonance frequency $\omega_n$ and effective 
+  mass at the impacted point $M_n$. This effective mass is related to the mode 
+  shape at the impacted point, which we can write in a shorthand way as 
+  $u_n(x_0)$: then 
 
-  $$M_n=\dfrac{1}{u_n^2(x_0)} \tag{5}$$ 
+  \begin{equation*}M_n=\dfrac{1}{u_n^2(x_0)} \tag{5}\end{equation*} 
 
-  where the mode shape is assumed to have been normalised in the usual way with 
-  respect to the mass distribution of the structure: see section 2.2.5, where 
-  the normalisation condition was stated in discrete form in equation (12). 
-  Note that the influence of damping is ignored in equation (4), because an 
-  impact event is too short for damping to have a significant influence. 
+  \noindent{}where the mode shape is assumed to have been normalised in the 
+  usual way with respect to the mass distribution of the structure: see section 
+  2.2.5, where the normalisation condition was stated in discrete form in 
+  equation (12). Note that the influence of damping is ignored in equation (4), 
+  because an impact event is too short for damping to have a significant 
+  influence. 
 
   Suppose first that the impact is an ideal, instantaneous one: then 
 
-  $$f(t) = \delta(t), \tag{6}$$ 
+  \begin{equation*}f(t) = \delta(t), \tag{6}\end{equation*} 
 
-  the Dirac delta function (see section 2.2.8). Equations (3) and (4) then 
-  reduce to the simple form 
+  \noindent{}the Dirac delta function (see section 2.2.8). Equations (3) and 
+  (4) then reduce to the simple form 
 
-  $$v(t) = I \sum_n{\dfrac{\cos \omega_n t}{M_n}} . \tag{7}$$ 
+  \begin{equation*}v(t) = I \sum_n{\dfrac{\cos \omega_n t}{M_n}} . 
+  \tag{7}\end{equation*} 
 
   The expression $I \cos \omega_n t /M_n$ is thus the velocity of the effective 
   mass $M_n$ representing mode $n$, and since we know that the mass matrix is 
@@ -58,33 +62,35 @@
   equation representing the kinetic energy of the system before and after 
   impact: 
 
-  $$\frac{1}{2}m v_1^2 = \frac{1}{2}m v_2^2 +\frac{1}{2} \sum_n{M_n 
-  \dfrac{I^2}{M_n^2}} \tag{8}$$ 
+  \begin{equation*}\frac{1}{2}m v_1^2 = \frac{1}{2}m v_2^2 +\frac{1}{2} 
+  \sum_n{M_n \dfrac{I^2}{M_n^2}} \tag{8}\end{equation*} 
 
-  where the right-hand side has been evaluated immediately after the impact, at 
-  $t=0+$ so that all the cosine factors are simply equal to 1. Notice that 
-  equation (8) ignores any actual loss of energy during the collision: the aim 
-  here is to find an upper limit on the post-impact vibration. 
+  \noindent{}where the right-hand side has been evaluated immediately after the 
+  impact, at $t=0+$ so that all the cosine factors are simply equal to 1. 
+  Notice that equation (8) ignores any actual loss of energy during the 
+  collision: the aim here is to find an upper limit on the post-impact 
+  vibration. 
 
   Substituting from equation (1) and writing 
 
-  $$v_2= \lambda v_1 \tag{9}$$ 
+  \begin{equation*}v_2= \lambda v_1 \tag{9}\end{equation*} 
 
-  we obtain 
+  \noindent{}we obtain 
 
-  $$1- \lambda^2 = (1+\lambda)^2 \sum_n{\dfrac{m}{M_n}} . \tag{10}$$ 
+  \begin{equation*}1- \lambda^2 = (1+\lambda)^2 \sum_n{\dfrac{m}{M_n}} . 
+  \tag{10}\end{equation*} 
 
   Cancelling a factor $(1+ \lambda)$ leaves 
 
-  $$1-\lambda = (1+\lambda)K \tag{11}$$ 
+  \begin{equation*}1-\lambda = (1+\lambda)K \tag{11}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$K=\sum_n{\dfrac{m}{M_n}} \tag{12}$$ 
+  \begin{equation*}K=\sum_n{\dfrac{m}{M_n}} \tag{12}\end{equation*} 
 
-  and so 
+  \noindent{}and so 
 
-  $$\lambda = \dfrac{1-K}{1+K}. \tag{13}$$ 
+  \begin{equation*}\lambda = \dfrac{1-K}{1+K}. \tag{13}\end{equation*} 
 
   But now we hit a snag. The speed ratio $\lambda$ must be positive for a 
   rebound, and for that to happen equation (13) requires $K \le 1$. The 
@@ -101,17 +107,18 @@
   $\Omega$ is now a variable, which we can use to describe impacts of different 
   durations. Specifically, we can write 
 
-  $$f(t)=A \cos \Omega t \mathrm{~~~for~~} -T \le t \le T \tag{14}$$ 
+  \begin{equation*}f(t)=A \cos \Omega t \mathrm{~~~for~~} -T \le t \le T 
+  \tag{14}\end{equation*} 
 
-  and zero outside that range, where the contact duration is $2T$. Since this 
-  duration is a half-cycle at the frequency $\Omega$, we have 
+  \noindent{}and zero outside that range, where the contact duration is $2T$. 
+  Since this duration is a half-cycle at the frequency $\Omega$, we have 
 
-  $$T=\dfrac{\pi}{2 \Omega}. \tag{15}$$ 
+  \begin{equation*}T=\dfrac{\pi}{2 \Omega}. \tag{15}\end{equation*} 
 
   The pulse is sketched in Fig.\ 2. The constant $A$ is determined by the 
   unit-area condition (2), with the result 
 
-  $$A=\dfrac{\pi}{4T}. \tag{16}$$ 
+  \begin{equation*}A=\dfrac{\pi}{4T}. \tag{16}\end{equation*} 
 
   \fig{figs/fig-3d62b640.png}{\caption{Figure 2. The idealised force pulse when 
   a mass bounces off a rigid surface, mediated by a linear contact spring.}} 
@@ -120,23 +127,24 @@
   (4). After a little algebraic manipulation, the result for the velocity 
   $v(t)$ at time $t=T$ immediately after the pulse finishes is 
 
-  $$v(T)=\dfrac{I}{2} \sum_n{\dfrac{1}{M_n} \left\lbrace 
+  \begin{equation*}v(T)=\dfrac{I}{2} \sum_n{\dfrac{1}{M_n} \left\lbrace 
   \dfrac{\Omega^2}{\Omega^2 -- \omega_n^2} (1 + \cos \omega_n \pi/\Omega) 
-  \right\rbrace} . \tag{17}$$ 
+  \right\rbrace} . \tag{17}\end{equation*} 
 
   The effective velocity of the modal mass $M_n$ just after the pulse finishes 
   is thus 
 
-  $$v_n=\dfrac{I}{M_n} \dfrac{\Omega^2}{\Omega^2 -- \omega_n^2} \dfrac{(1 + 
-  \cos \omega_n \pi/\Omega)}{2} \tag{18}$$ 
+  \begin{equation*}v_n=\dfrac{I}{M_n} \dfrac{\Omega^2}{\Omega^2 -- \omega_n^2} 
+  \dfrac{(1 + \cos \omega_n \pi/\Omega)}{2} \tag{18}\end{equation*} 
 
-  and the kinetic energy of the vibrating structure is $(1/2)\sum_n{M_n 
-  v_n^2}$. Substituting this into the equivalent of equation (8), we can obtain 
-  an equation identical to equation (11) if we replace $K$ by 
+  \noindent{}and the kinetic energy of the vibrating structure is 
+  $(1/2)\sum_n{M_n v_n^2}$. Substituting this into the equivalent of equation 
+  (8), we can obtain an equation identical to equation (11) if we replace $K$ 
+  by 
 
-  $$K^\prime (\Omega) = \sum_n{\dfrac{m}{M_n} \left\lbrace 
+  \begin{equation*}K^\prime (\Omega) = \sum_n{\dfrac{m}{M_n} \left\lbrace 
   \dfrac{\Omega^2}{\Omega^2 -- \omega_n^2} \dfrac{(1 + \cos \omega_n 
-  \pi/\Omega)}{2} \right\rbrace^2} . \tag{19}$$ 
+  \pi/\Omega)}{2} \right\rbrace^2} . \tag{19}\end{equation*} 
 
   It is reassuring to see that we recover the delta-function version (12) in 
   the limit $T \rightarrow 0$ so that $\Omega \rightarrow\infty$, as we would 

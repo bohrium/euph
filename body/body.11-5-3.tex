@@ -35,13 +35,13 @@
   reed mouthpiece, we already mentioned the ``sweeping flow'' effect. Equation 
   (14) from that section gave the total volume flow rate into the instrument as 
 
-  $$v=-w(H_0-y) \sqrt{2 |\Delta p|/\rho_0} \mathrm{~sign} (\Delta p)+A_r 
-  \dot{y} \tag{1}$$ 
+  \begin{equation*}v=-w(H_0-y) \sqrt{2 |\Delta p|/\rho_0} \mathrm{~sign} 
+  (\Delta p)+A_r \dot{y} \tag{1}\end{equation*} 
 
-  where the first term describes the air flow through the gap, and the second 
-  term describes the sweeping flow. This second term is proportional to the tip 
-  velocity of the reed, $\dot{y}$, with a coefficient $A_r$ which is an 
-  effective area of the vibrating reed. The other variables in this equation 
+  \noindent{}where the first term describes the air flow through the gap, and 
+  the second term describes the sweeping flow. This second term is proportional 
+  to the tip velocity of the reed, $\dot{y}$, with a coefficient $A_r$ which is 
+  an effective area of the vibrating reed. The other variables in this equation 
   are the pressure difference $\Delta p = p-p_m$, the density of air $\rho_0$, 
   the width $w$ of the lip opening (idealised as rectangular), and the initial 
   opening $H_0$. The time-varying pressure inside the mouthpiece is $p(t)$, 
@@ -69,11 +69,11 @@
   equilibrium state, as in the reed case. An approximate revised version of 
   equation (1) is thus 
 
-  $$v=-w(H_0+2y) \sqrt{2 |\Delta p|/\rho_0} \mathrm{~sign} (\Delta p)+A_r 
-  \dot{x} \tag{2}$$ 
+  \begin{equation*}v=-w(H_0+2y) \sqrt{2 |\Delta p|/\rho_0} \mathrm{~sign} 
+  (\Delta p)+A_r \dot{x} \tag{2}\end{equation*} 
 
-  where $A_r$ now represents a combined effective area of the two vibrating 
-  lips. 
+  \noindent{}where $A_r$ now represents a combined effective area of the two 
+  vibrating lips. 
 
   \fig{figs/fig-e64ea4b7.png}{\caption{Figure 1. Sketch of the upper lip of a 
   brass player, showing the two components of motion}} 
@@ -87,21 +87,22 @@
   trombone. A simple idealisation of this effect is to use the vertical 
   displacement $y$ to modulate the area: we can express 
 
-  $$A_r \approx w (L_{lip} -- \lambda y) \tag{3}$$ 
+  \begin{equation*}A_r \approx w (L_{lip} -- \lambda y) \tag{3}\end{equation*} 
 
-  where $L_{lip}$ is an effective combined length of the two vibrating lip 
-  ``reeds'', and $\lambda$ is a dimensionless constant to be investigated by 
-  numerical experimentation once we have a complete model. The maximum 
-  plausible value of $\lambda$ would be 2, which would correspond to the 
-  effective length $L_{lip}$ being reduced by the entire opening displacement 
-  $2y$. 
+  \noindent{}where $L_{lip}$ is an effective combined length of the two 
+  vibrating lip ``reeds'', and $\lambda$ is a dimensionless constant to be 
+  investigated by numerical experimentation once we have a complete model. The 
+  maximum plausible value of $\lambda$ would be 2, which would correspond to 
+  the effective length $L_{lip}$ being reduced by the entire opening 
+  displacement $2y$. 
 
   The dynamics of the ``reed'' is determined, in this simple idealisation, by 
   the horizontal displacement $x$: a suitable new version of the governing 
   equation from section 11.3.1 (equation (3) there) can be written 
 
-  $$M_r \ddot{x} + C_r \dot{x} + K_r x=-\Delta p \dfrac{A_r}{w L_{lip}}=-\Delta 
-  p \left(1-\dfrac{\lambda y}{L_{lip}}\right) . \tag{4}$$ 
+  \begin{equation*}M_r \ddot{x} + C_r \dot{x} + K_r x=-\Delta p \dfrac{A_r}{w 
+  L_{lip}}=-\Delta p \left(1-\dfrac{\lambda y}{L_{lip}}\right) . 
+  \tag{4}\end{equation*} 
 
   The term involving $\lambda$ arises because the variables $M_r$, $C_r$ and 
   $K_r$ were defined per unit area, so we now need to use the equilibrium 
@@ -186,12 +187,12 @@
   al. [2]). The parameter $\lambda$ governing the area modulation effect is set 
   to zero for this initial case so that the effective area is then given by 
 
-  $$A_r=w L_{lip} \tag{5}$$ 
+  \begin{equation*}A_r=w L_{lip} \tag{5}\end{equation*} 
 
-  in terms of the ``effective reed length'' $L_{lip}$. The simulations in Fig.\ 
-  3 use the value $L_{lip}=1 \mathrm{~mm}$ so that the sweeping flow term is 
-  very small, and the results for zero delay are almost identical to those seen 
-  in Fig.\ 2. 
+  \noindent{}in terms of the ``effective reed length'' $L_{lip}$. The 
+  simulations in Fig.\ 3 use the value $L_{lip}=1 \mathrm{~mm}$ so that the 
+  sweeping flow term is very small, and the results for zero delay are almost 
+  identical to those seen in Fig.\ 2. 
 
   \fig{figs/fig-60f95027.png}{\caption{Figure 3. Set of pressure --- lip 
   resonance diagrams, covering the range indicated by the green box in Fig. 1. 

@@ -22,21 +22,23 @@
   vibration of a system with $N$ degrees of freedom can be represented by the 
   equation 
 
-  $$M \ddot{\mathbf{q}} + K \mathbf{q}= 0, \tag{1}$$ 
+  \begin{equation*}M \ddot{\mathbf{q}} + K \mathbf{q}= 0, 
+  \tag{1}\end{equation*} 
 
-  where $\mathbf{q}$ is a vector of generalised coordinates, $M$ is the mass 
-  matrix and $K$ is the stiffness matrix. Both matrices have dimensions $N 
-  \times N$. Physically, these equations can be interpreted as representing $N$ 
-  coupled harmonic oscillators. It seems very natural to extend this to damped 
-  systems by adding a new term by analogy with the expression for a damped 
-  harmonic oscillator derived in section 2.2.7, to represent $N$ coupled, 
-  damped oscillators: 
+  \noindent{}where $\mathbf{q}$ is a vector of generalised coordinates, $M$ is 
+  the mass matrix and $K$ is the stiffness matrix. Both matrices have 
+  dimensions $N \times N$. Physically, these equations can be interpreted as 
+  representing $N$ coupled harmonic oscillators. It seems very natural to 
+  extend this to damped systems by adding a new term by analogy with the 
+  expression for a damped harmonic oscillator derived in section 2.2.7, to 
+  represent $N$ coupled, damped oscillators: 
 
-  $$M \ddot{\mathbf{q}} + C \dot{\mathbf{q}} + K \mathbf{q}= 0, \tag{2}$$ 
+  \begin{equation*}M \ddot{\mathbf{q}} + C \dot{\mathbf{q}} + K \mathbf{q}= 0, 
+  \tag{2}\end{equation*} 
 
-  where $C$ is the damping matrix or dissipation matrix. Damping governed in 
-  this way by the generalised velocities $\dot{\mathbf{q}}$ is called viscous 
-  damping. 
+  \noindent{}where $C$ is the damping matrix or dissipation matrix. Damping 
+  governed in this way by the generalised velocities $\dot{\mathbf{q}}$ is 
+  called viscous damping. 
 
   Now recall from section 2.2.5 that the undamped equation (1) can be derived 
   from Lagrange's equations, and that the mass and stiffness matrices can be 
@@ -46,32 +48,35 @@
   (2) by $\dot{\mathbf{q}}^t$ (where $t$ denotes the transpose of the vector) 
   gives 
 
-  $$\dot{\mathbf{q}}^t M \ddot{\mathbf{q}} + \dot{\mathbf{q}}^t C 
-  \dot{\mathbf{q}} + \dot{\mathbf{q}}^t K \mathbf{q}= 0$$ 
+  \begin{equation*}\dot{\mathbf{q}}^t M \ddot{\mathbf{q}} + \dot{\mathbf{q}}^t 
+  C \dot{\mathbf{q}} + \dot{\mathbf{q}}^t K \mathbf{q}= 0\end{equation*} 
 
-  $$\therefore \dot{\mathbf{q}}^t C \dot{\mathbf{q}} = -\dfrac{d}{dt}\left[ 
-  \dfrac{1}{2}\dot{\mathbf{q}}^t M \dot{\mathbf{q}} + \dfrac{1}{2}\mathbf{q}^t 
-  C \dot{\mathbf{q}}\right] = -\dfrac{d}{dt}\left[ \mathrm{total~energy} 
-  \right] \tag{3}$$ 
+  \begin{equation*}\therefore \dot{\mathbf{q}}^t C \dot{\mathbf{q}} = 
+  -\dfrac{d}{dt}\left[ \dfrac{1}{2}\dot{\mathbf{q}}^t M \dot{\mathbf{q}} + 
+  \dfrac{1}{2}\mathbf{q}^t C \dot{\mathbf{q}}\right] = -\dfrac{d}{dt}\left[ 
+  \mathrm{total~energy} \right] \tag{3}\end{equation*} 
 
-  making use of the fact that both $K$ and $M$ are symmetric. This makes it 
-  clear that the function 
+  \noindent{}making use of the fact that both $K$ and $M$ are symmetric. This 
+  makes it clear that the function 
 
-  $$F= \dfrac{1}{2} \dot{\mathbf{q}}^t C \dot{\mathbf{q}} \tag{4}$$ 
+  \begin{equation*}F= \dfrac{1}{2} \dot{\mathbf{q}}^t C \dot{\mathbf{q}} 
+  \tag{4}\end{equation*} 
 
-  known as the Rayleigh dissipation function, is half the rate of dissipation 
-  of energy. This is another quadratic expression, in which we can choose the 
-  entries in the matrix to be symmetric. Working back via Lagrange's equations, 
-  with a generalised force 
+  \noindent{}known as the Rayleigh dissipation function, is half the rate of 
+  dissipation of energy. This is another quadratic expression, in which we can 
+  choose the entries in the matrix to be symmetric. Working back via Lagrange's 
+  equations, with a generalised force 
 
-  $$Q_j=\dfrac{\partial F}{\partial \dot{q_j}} \tag{5}$$ 
+  \begin{equation*}Q_j=\dfrac{\partial F}{\partial \dot{q_j}} 
+  \tag{5}\end{equation*} 
 
-  representing the damping force, we arrive back at eq. (2). 
+  \noindent{}representing the damping force, we arrive back at eq. (2). 
 
   For the undamped system (1) we would find modes by calculating the 
   eigenvalues and eigenvectors from 
 
-  $$K \mathbf{u}^{(n)}=\omega_n^2 M \mathbf{u}^{(n)} . \tag{6}$$ 
+  \begin{equation*}K \mathbf{u}^{(n)}=\omega_n^2 M \mathbf{u}^{(n)} . 
+  \tag{6}\end{equation*} 
 
   When we change to modal variables, or ``normal coordinates'', both $M$ and 
   $K$ are diagonalised. It is not possible to do this for the system of eq. (2) 
@@ -79,14 +84,15 @@
   diagonalises three matrices simultaneously. There are special cases for which 
   it is possible, for example if 
 
-  $$C= \alpha M + \beta K \tag{7}$$ 
+  \begin{equation*}C= \alpha M + \beta K \tag{7}\end{equation*} 
 
-  where $\alpha, \beta$ are constants (so-called ``Rayleigh damping''). This 
-  special form is often assumed for convenience, e.g. in Finite Element 
-  packages, but there is usually no physical justification whatever for this 
-  assumption. If the damping in a system is modelled by a physically sensible 
-  matrix $C$, standard modal analysis will usually not work. We need a 
-  different mathematical formalism to find what has become of the modes. 
+  \noindent{}where $\alpha, \beta$ are constants (so-called ``Rayleigh 
+  damping''). This special form is often assumed for convenience, e.g. in 
+  Finite Element packages, but there is usually no physical justification 
+  whatever for this assumption. If the damping in a system is modelled by a 
+  physically sensible matrix $C$, standard modal analysis will usually not 
+  work. We need a different mathematical formalism to find what has become of 
+  the modes. 
 
   A useful approach, which is also widely used to analyse systems in control 
   theory, is to reformulate the governing equations as a set of $2N$ 
@@ -94,38 +100,41 @@
   present. This change is simply an algebraic trick, with no physical 
   significance. Define a new vector 
 
-  $$\mathbf{y} = \begin{bmatrix}\mathbf{q}\\ 
+  \begin{equation*}\mathbf{y} = \begin{bmatrix}\mathbf{q}\\ 
   \dot{\mathbf{q}}\end{bmatrix},~~~\dot{\mathbf{y}} = 
-  \begin{bmatrix}\dot{\mathbf{q}}\\\ddot{\mathbf{q}}\end{bmatrix} . \tag{8}$$ 
+  \begin{bmatrix}\dot{\mathbf{q}}\\\ddot{\mathbf{q}}\end{bmatrix} . 
+  \tag{8}\end{equation*} 
 
   Then 
 
-  $$\dot{\mathbf{y}} = \begin{bmatrix}0 \& I\\ -M^{-1}K \& 
+  \begin{equation*}\dot{\mathbf{y}} = \begin{bmatrix}0 \& I\\ -M^{-1}K \& 
   -M^{-1}C\end{bmatrix} \begin{bmatrix}\mathbf{q}\\ 
-  \dot{\mathbf{q}}\end{bmatrix} = A \mathbf{y} \tag{9}$$ 
+  \dot{\mathbf{q}}\end{bmatrix} = A \mathbf{y} \tag{9}\end{equation*} 
 
-  where $0$ denotes the $N \times N$ matrix of zeros, $I$ denotes the $N \times 
-  N$ identity matrix, and the final matrix $A$ is a $2N \times 2N$ matrix. 
+  \noindent{}where $0$ denotes the $N \times N$ matrix of zeros, $I$ denotes 
+  the $N \times N$ identity matrix, and the final matrix $A$ is a $2N \times 
+  2N$ matrix. 
 
   The top half of this set of equations simply says 
   $\dot{\mathbf{q}}=\dot{\mathbf{q}}$, while the bottom half says 
 
-  $$\ddot{\mathbf{q}} = -M^{-1} K \mathbf{q} -- M^{-1} C \dot{\mathbf{q}} 
-  \tag{10}$$ 
+  \begin{equation*}\ddot{\mathbf{q}} = -M^{-1} K \mathbf{q} -- M^{-1} C 
+  \dot{\mathbf{q}} \tag{10}\end{equation*} 
 
-  which is a rearranged version of eq. (2). 
+  \noindent{}which is a rearranged version of eq. (2). 
 
   We can now look for ``modal'' solutions of eq. (9): try 
 
-  $$\mathbf{y} = \mathbf{u} e^{\lambda t} . \tag{11}$$ 
+  \begin{equation*}\mathbf{y} = \mathbf{u} e^{\lambda t} . 
+  \tag{11}\end{equation*} 
 
   Then we require 
 
-  $$A \mathbf{u} = \lambda \mathbf{u} \tag{12}$$ 
+  \begin{equation*}A \mathbf{u} = \lambda \mathbf{u} \tag{12}\end{equation*} 
 
-  which is a standard matrix eigenvalue-eigenvector problem. It is difficult to 
-  solve by hand for problems of any realistic size, but it is very easy to 
-  compute answers. 
+  \noindent{}which is a standard matrix eigenvalue-eigenvector problem. It is 
+  difficult to solve by hand for problems of any realistic size, but it is very 
+  easy to compute answers. 
 
   Note that the matrix $A$ is not symmetric, so the eigenvalues $\lambda$ will 
   in general be complex. From eq. (11), the imaginary part of $\lambda$ will 
@@ -146,60 +155,68 @@
   resonance of each string, considered in isolation. So suppose that the 
   displacement of string $j$ is given approximately by 
 
-  $$w_j(x,t) = b_j(t) \sin \dfrac{\pi x}{L} + a(t)\dfrac{x}{L} \tag{13}$$ 
+  \begin{equation*}w_j(x,t) = b_j(t) \sin \dfrac{\pi x}{L} + a(t)\dfrac{x}{L} 
+  \tag{13}\end{equation*} 
 
-  where $a(t)$ is the displacement of the oscillator representing the body 
-  mode. 
+  \noindent{}where $a(t)$ is the displacement of the oscillator representing 
+  the body mode. 
 
   We now calculate the potential and kinetic energies of the system, and deduce 
   the mass and stiffness matrices for the three degree-of-freedom system 
   parameterised by the vector $\mathbf{q} = [a~b_1~b_2]^t$. The potential 
   energy is given by 
 
-  $$V = \frac{1}{2} k a^2 +\sum_j{\dfrac{1}{2}T_j \int_0^L{\left( 
-  \dfrac{\partial w_j}{\partial x} \right)^2 dx}} $$ 
+  \begin{equation*}V = \frac{1}{2} k a^2 +\sum_j{\dfrac{1}{2}T_j 
+  \int_0^L{\left( \dfrac{\partial w_j}{\partial x} \right)^2 dx}} 
+  \end{equation*} 
 
-  $$= \frac{1}{2} k a^2 +\sum_j{\dfrac{1}{2}T_j \int_0^L{\left( \dfrac{b_j 
-  \pi}{L} \cos \dfrac{\pi x}{L}\right)^2 dx}} $$ 
+  \begin{equation*}= \frac{1}{2} k a^2 +\sum_j{\dfrac{1}{2}T_j \int_0^L{\left( 
+  \dfrac{b_j \pi}{L} \cos \dfrac{\pi x}{L}\right)^2 dx}} \end{equation*} 
 
-  $$= \frac{1}{2} k a^2 +\sum_j{\dfrac{\pi^2 T_j b_j^2}{4L}} \tag{14}$$ 
+  \begin{equation*}= \frac{1}{2} k a^2 +\sum_j{\dfrac{\pi^2 T_j b_j^2}{4L}} 
+  \tag{14}\end{equation*} 
 
-  so that the stiffness matrix is 
+  \noindent{}so that the stiffness matrix is 
 
-  $$K =\begin{bmatrix}k \& 0 \& 0\\ 0 \& \frac{\pi^2 T_1}{2L} \& 0 \\ 0 \& 0 \& 
-  \frac{\pi^2 T_12}{2L}\end{bmatrix} . \tag{15}$$ 
+  \begin{equation*}K =\begin{bmatrix}k \& 0 \& 0\\ 0 \& \frac{\pi^2 T_1}{2L} \& 
+  0 \\ 0 \& 0 \& \frac{\pi^2 T_12}{2L}\end{bmatrix} . \tag{15}\end{equation*} 
 
   The kinetic energy is given in a similar way, by 
 
-  $$T = \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j \int_0^L{\dot{w}_j^2 
-  dx}} $$ 
+  \begin{equation*}T = \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j 
+  \int_0^L{\dot{w}_j^2 dx}} \end{equation*} 
 
-  $$= \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j \int_0^L{\left[\dot{b}_j 
-  \sin \dfrac{\pi x}{L} + \dfrac{\dot{a}x}{L}\right]^2 dx}} $$ 
+  \begin{equation*}= \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j 
+  \int_0^L{\left[\dot{b}_j \sin \dfrac{\pi x}{L} + \dfrac{\dot{a}x}{L}\right]^2 
+  dx}} \end{equation*} 
 
-  $$= \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j \left\lbrace \dot{b}_j^2 
-  \dfrac{L}{2} + \dfrac{\dot{a}^2}{L^2} \dfrac{L^3}{3} + \dfrac{2 \dot{a} 
-  \dot{b}_j}{L} \int_0^L{x \sin \dfrac{\pi x}{L} dx}\right\rbrace }$$ 
+  \begin{equation*}= \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j 
+  \left\lbrace \dot{b}_j^2 \dfrac{L}{2} + \dfrac{\dot{a}^2}{L^2} \dfrac{L^3}{3} 
+  + \dfrac{2 \dot{a} \dot{b}_j}{L} \int_0^L{x \sin \dfrac{\pi x}{L} 
+  dx}\right\rbrace }\end{equation*} 
 
-  $$= \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j \left\lbrace \dfrac{L}{2} 
-  \dot{b}_j^2 + \dfrac{L}{3} \dot{a}^2 + \dfrac{2 \dot{a} \dot{b}_j}{L} 
-  \dfrac{L^2}{\pi}\right\rbrace } \tag{16}$$ 
+  \begin{equation*}= \frac{1}{2} m \dot{a}^2 +\sum_j{\dfrac{1}{2}m_j 
+  \left\lbrace \dfrac{L}{2} \dot{b}_j^2 + \dfrac{L}{3} \dot{a}^2 + \dfrac{2 
+  \dot{a} \dot{b}_j}{L} \dfrac{L^2}{\pi}\right\rbrace } \tag{16}\end{equation*} 
 
-  after using integration by parts on the final term. It follows that the mass 
-  matrix is 
+  \noindent{}after using integration by parts on the final term. It follows 
+  that the mass matrix is 
 
-  $$M =\begin{bmatrix}m+L(m_1+m_2)/3 \& m_1 L /\pi \& m_2 L/\pi\\ m_1 L /\pi \& 
-  m_1 L /2 \& 0 \\ m_2 L /\pi \& 0 \& m_2 L /2\end{bmatrix} . \tag{17}$$ 
+  \begin{equation*}M =\begin{bmatrix}m+L(m_1+m_2)/3 \& m_1 L /\pi \& m_2 
+  L/\pi\\ m_1 L /\pi \& m_1 L /2 \& 0 \\ m_2 L /\pi \& 0 \& m_2 L 
+  /2\end{bmatrix} . \tag{17}\end{equation*} 
 
   Finally, we need the damping matrix. The rate of energy dissipation in the 
   body dashpot is $c \dot{a}^2$, so 
 
-  $$C = \begin{bmatrix}c \& 0 \& 0 \\ 0 \& c_1 \& 0 \\ 0 \& 0 \& c_2 
-  \end{bmatrix} \tag{18}$$ 
+  \begin{equation*}C = \begin{bmatrix}c \& 0 \& 0 \\ 0 \& c_1 \& 0 \\ 0 \& 0 \& 
+  c_2 \end{bmatrix} \tag{18}\end{equation*} 
 
-  where the equivalent dashpot strengths of the two string modes are given by 
+  \noindent{}where the equivalent dashpot strengths of the two string modes are 
+  given by 
 
-  $$c_j = \dfrac{\pi \sqrt{T_j m_j}}{2 Q_j} . \tag{19}$$ 
+  \begin{equation*}c_j = \dfrac{\pi \sqrt{T_j m_j}}{2 Q_j} . 
+  \tag{19}\end{equation*} 
 
   We can then assemble the $6 \times 6$ matrix $A$ from eq. (9), and compute 
   its eigenvalues and eigenvectors. There, will of course, be 6 of them: but 

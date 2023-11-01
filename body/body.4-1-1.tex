@@ -23,71 +23,75 @@
   We can apply conservation of mass to this element of air: the product of 
   density and volume must remain constant, so 
 
-  $$\rho_0 A \delta x = (\rho_0 + \rho') A [\delta x -- \xi(x) + \xi(x+ \delta 
-  x)] $$ 
+  \begin{equation*}\rho_0 A \delta x = (\rho_0 + \rho') A [\delta x -- \xi(x) + 
+  \xi(x+ \delta x)] \end{equation*} 
 
-  $$\approx (\rho_0 + \rho') A \left[\delta x + \frac{\partial \xi}{\partial x} 
-  \delta x \right] . \tag{1}$$ 
+  \begin{equation*}\approx (\rho_0 + \rho') A \left[\delta x + \frac{\partial 
+  \xi}{\partial x} \delta x \right] . \tag{1}\end{equation*} 
 
   Cancelling $A \delta x$ and ignoring products of small quantities because we 
   want a linearised relation, this reduces to 
 
-  $$0 \approx \rho' + \rho_0 \frac{\partial \xi}{\partial x} .\tag{2}$$ 
+  \begin{equation*}0 \approx \rho' + \rho_0 \frac{\partial \xi}{\partial x} 
+  .\tag{2}\end{equation*} 
 
   Now we can express $\rho'$ in terms of the pressure change $p'$. At typical 
   acoustic frequencies, sound waves fluctuate sufficiently quickly that the air 
   behaves adiabatically (or isentropically). This means that the thermodynamic 
   relation 
 
-  $$p V^\gamma = \mathrm{constant} \tag{3}$$ 
+  \begin{equation*}p V^\gamma = \mathrm{constant} \tag{3}\end{equation*} 
 
-  can be assumed for any small fluid volume $V$, where $\gamma$ is the ratio of 
-  specific heats for air, a constant with the value 1.4. In terms of density, 
-  this means 
+  \noindent{}can be assumed for any small fluid volume $V$, where $\gamma$ is 
+  the ratio of specific heats for air, a constant with the value 1.4. In terms 
+  of density, this means 
 
-  $$p \rho^{-\gamma} = \mathrm{constant} \tag{4}$$ 
+  \begin{equation*}p \rho^{-\gamma} = \mathrm{constant} \tag{4}\end{equation*} 
 
-  so that for our element, 
+  \noindent{}so that for our element, 
 
-  $$p_0 \rho_0^{-\gamma} = (p_0 +p') (\rho_0 + \rho')^{-\gamma} = (p_0 +p') 
-  \rho_0 ^{-\gamma} (1+ \rho'/\rho_0)^{-\gamma} \tag{5}$$ 
+  \begin{equation*}p_0 \rho_0^{-\gamma} = (p_0 +p') (\rho_0 + \rho')^{-\gamma} 
+  = (p_0 +p') \rho_0 ^{-\gamma} (1+ \rho'/\rho_0)^{-\gamma} 
+  \tag{5}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$0 \approx p' -- p_0 \gamma \frac{\rho'}{\rho_0} \tag{6}$$ 
+  \begin{equation*}0 \approx p' -- p_0 \gamma \frac{\rho'}{\rho_0} 
+  \tag{6}\end{equation*} 
 
-  using the binomial theorem and ignoring products of small terms. Substituting 
-  in eq. (2) then gives 
+  \noindent{}using the binomial theorem and ignoring products of small terms. 
+  Substituting in eq. (2) then gives 
 
-  $$\frac{\partial \xi}{\partial x} = -- \frac{p'}{p_0 \gamma} . \tag{7}$$ 
+  \begin{equation*}\frac{\partial \xi}{\partial x} = -- \frac{p'}{p_0 \gamma} . 
+  \tag{7}\end{equation*} 
 
   We can obtain a second relation between $p'$ and $\xi$ by applying Newton's 
   law to our small volume. The pressure acts on the two end faces, giving a net 
   force which must be balanced by mass times acceleration. So 
 
-  $$A p(x) -A p(x+ \delta x) = \rho_0 A \delta x \frac{\partial^2 \xi}{\partial 
-  t^2} \tag{8}$$ 
+  \begin{equation*}A p(x) -A p(x+ \delta x) = \rho_0 A \delta x 
+  \frac{\partial^2 \xi}{\partial t^2} \tag{8}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$- \frac{\partial p'}{\partial x} \approx \rho_0 \frac{\partial^2 
-  \xi}{\partial t^2} . \tag{9}$$ 
+  \begin{equation*}- \frac{\partial p'}{\partial x} \approx \rho_0 
+  \frac{\partial^2 \xi}{\partial t^2} . \tag{9}\end{equation*} 
 
   Differentiating this with respect to $x$ and then using eq. (7), we obtain 
 
-  $$\frac{\partial^2 p'}{\partial x^2} = -\rho_0 \frac{\partial^2}{\partial 
-  t^2} \left[ \frac{\partial \xi}{\partial x} \right]= \rho_0 
-  \frac{\partial^2}{\partial t^2} \left[ \frac{p'}{p_0 \gamma} \right] 
-  \tag{10}$$ 
+  \begin{equation*}\frac{\partial^2 p'}{\partial x^2} = -\rho_0 
+  \frac{\partial^2}{\partial t^2} \left[ \frac{\partial \xi}{\partial x} 
+  \right]= \rho_0 \frac{\partial^2}{\partial t^2} \left[ \frac{p'}{p_0 \gamma} 
+  \right] \tag{10}\end{equation*} 
 
   So finally, if we define a constant $c$ satisfying 
 
-  $$c^2 =\frac{\gamma p_0}{\rho_0} \tag{11}$$ 
+  \begin{equation*}c^2 =\frac{\gamma p_0}{\rho_0} \tag{11}\end{equation*} 
 
-  we obtain the governing equation 
+  \noindent{}we obtain the governing equation 
 
-  $$\frac{\partial^2 p'}{\partial t^2}= c^2 \frac{\partial^2 p'}{\partial x^2} 
-  .\tag{12}$$ 
+  \begin{equation*}\frac{\partial^2 p'}{\partial t^2}= c^2 \frac{\partial^2 
+  p'}{\partial x^2} .\tag{12}\end{equation*} 
 
   We can recognise this as exactly the same equation we found for the ideal 
   stretched string in section 3.1.1, and so we already know that $c$ is the 
@@ -105,35 +109,40 @@
   eq. (1), we need to allow for the volume change associated with each of the 
   three pairs of faces of the fluid element: the result is 
 
-  $$\rho_0 \delta x \delta y \delta z \approx (\rho_0 + \rho') \left[1 + 
-  \frac{\partial \xi_1}{\partial x} \right] \delta x \left[1 + \frac{\partial 
-  \xi_2}{\partial y} \right] \delta y \left[1 + \frac{\partial \xi_3}{\partial 
-  z} \right] \delta z \tag{13}$$ 
+  \begin{equation*}\rho_0 \delta x \delta y \delta z \approx (\rho_0 + \rho') 
+  \left[1 + \frac{\partial \xi_1}{\partial x} \right] \delta x \left[1 + 
+  \frac{\partial \xi_2}{\partial y} \right] \delta y \left[1 + \frac{\partial 
+  \xi_3}{\partial z} \right] \delta z \tag{13}\end{equation*} 
 
-  and so 
+  \noindent{}and so 
 
-  $$0 \approx \rho_0 \left[\frac{\partial \xi_1}{\partial x} + \frac{\partial 
-  \xi_2}{\partial y} + \frac{\partial \xi_3}{\partial z} \right] + \rho' 
-  \tag{14}$$ 
+  \begin{equation*}0 \approx \rho_0 \left[\frac{\partial \xi_1}{\partial x} + 
+  \frac{\partial \xi_2}{\partial y} + \frac{\partial \xi_3}{\partial z} \right] 
+  + \rho' \tag{14}\end{equation*} 
 
-  or, in the notation of vector calculus involving the divergence operator, 
+  \noindent{}or, in the notation of vector calculus involving the divergence 
+  operator, 
 
-  $$-\rho_0 \nabla \cdot \underline{\xi} = \rho' = \frac{p'}{c^2} \tag{15}$$ 
+  \begin{equation*}-\rho_0 \nabla \cdot \underline{\xi} = \rho' = 
+  \frac{p'}{c^2} \tag{15}\end{equation*} 
 
-  using eqs. (6) and (11). (If you are hazy about vector calculus, the next 
-  link gives an introduction to the main concepts.) 
+  \noindent{}using eqs. (6) and (11). (If you are hazy about vector calculus, 
+  the next link gives an introduction to the main concepts.) 
 
   To apply Newton's law to the fluid element, we simply have the equivalent of 
   eqs. (8) and (9) for each component separately, leading to 
 
-  $$\rho_0 \ddot{\underline{\xi}} = -- \nabla p' \tag{16}$$ 
+  \begin{equation*}\rho_0 \ddot{\underline{\xi}} = -- \nabla p' 
+  \tag{16}\end{equation*} 
 
-  in terms of the gradient of pressure. Taking the divergence of this equation 
-  and then using eq. (15), we obtain 
+  \noindent{}in terms of the gradient of pressure. Taking the divergence of 
+  this equation and then using eq. (15), we obtain 
 
-  $$\nabla \cdot \nabla p' = -\rho_0 \nabla \cdot \ddot{\underline{\xi}} = 
-  \frac{\partial^2}{\partial t^2} \left[ \frac{p'}{c^2} \right] . \tag{17}$$ 
+  \begin{equation*}\nabla \cdot \nabla p' = -\rho_0 \nabla \cdot 
+  \ddot{\underline{\xi}} = \frac{\partial^2}{\partial t^2} \left[ 
+  \frac{p'}{c^2} \right] . \tag{17}\end{equation*} 
 
   The result is the wave equation in three dimensions: 
 
-  $$\frac{\partial^2 p'}{\partial t^2} = c^2 \nabla^2 p' .\tag{18}$$ 
+  \begin{equation*}\frac{\partial^2 p'}{\partial t^2} = c^2 \nabla^2 p' 
+  .\tag{18}\end{equation*} 

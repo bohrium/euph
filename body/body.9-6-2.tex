@@ -35,13 +35,13 @@
   order to ensure that the friction force always opposes the direction of 
   sliding motion, the friction force $f$ must then take the form 
 
-  $$f=-F_b \mu(T) \mathrm{sgn}(v) \tag{1}$$ 
+  \begin{equation*}f=-F_b \mu(T) \mathrm{sgn}(v) \tag{1}\end{equation*} 
 
-  where $F_b$ is the bow force, and $\mathrm{sgn}(v)$ denotes the sign 
-  function, equal to $\pm1$ depending on whether $v$ is positive or negative. 
-  What this means for the simulation is that at each time step we first 
-  calculate the temperature, and hence obtain $\mu$, then to deal with the 
-  $\mathrm{sgn}(v)$ term we solve a version of the graphical construction 
+  \noindent{}where $F_b$ is the bow force, and $\mathrm{sgn}(v)$ denotes the 
+  sign function, equal to $\pm1$ depending on whether $v$ is positive or 
+  negative. What this means for the simulation is that at each time step we 
+  first calculate the temperature, and hence obtain $\mu$, then to deal with 
+  the $\mathrm{sgn}(v)$ term we solve a version of the graphical construction 
   illustrated in Fig.\ 3. This function has a vertical portion representing the 
   state of sticking, but during sliding the function is simply constant, so 
   there can be no jumps and no hysteresis loop. 
@@ -57,7 +57,7 @@
   behaves predominantly as a viscous liquid. That would suggest a friction law 
   taking the general form 
 
-  $$f=-F_b \zeta(T) v . \tag{2}$$ 
+  \begin{equation*}f=-F_b \zeta(T) v . \tag{2}\end{equation*} 
 
   The function $\mathrm{sgn}(v)$ has been replaced by simple proportionality to 
   $v$, because a viscous shear force is proportional to shear rate. This factor 
@@ -103,7 +103,7 @@
   speed $v_{as}$, and a value $k_{lim}$ as the sliding speed tends to zero. The 
   equation of the curve then takes the form 
 
-  $$(f-1)(v-v_{as})=-v_{as} (k_{lim}-1) . \tag{3}$$ 
+  \begin{equation*}(f-1)(v-v_{as})=-v_{as} (k_{lim}-1) . \tag{3}\end{equation*} 
 
   The particular function plotted here has $v_{as}=0.8$ m/s and $k_{lim}=2$, 
   which are the parameter values used for the simulation examples shown in 

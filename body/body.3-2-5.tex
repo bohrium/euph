@@ -3,27 +3,32 @@
   $q_1,q_2,\dots,q_N$ we argued that the potential energy has the form of a 
   quadratic expression 
 
-  $$V=\dfrac{1}{2}\sum_j \sum_k K_{jk} q_j q_k \tag{1}$$ 
+  \begin{equation*}V=\dfrac{1}{2}\sum_j \sum_k K_{jk} q_j q_k 
+  \tag{1}\end{equation*} 
 
-  involving a matrix $K$ whose terms are $K_{jk}$, called the stiffness matrix. 
-  Similarly, the kinetic energy was expressed as a quadratic expression in the 
-  generalised velocities $\dot{q}_1,\dot{q}_2,\dots,\dot{q}_N$ 
+  \noindent{}involving a matrix $K$ whose terms are $K_{jk}$, called the 
+  stiffness matrix. Similarly, the kinetic energy was expressed as a quadratic 
+  expression in the generalised velocities 
+  $\dot{q}_1,\dot{q}_2,\dots,\dot{q}_N$ 
 
-  $$T=\dfrac{1}{2}\sum_j \sum_k M_{jk} \dot{q}_j \dot{q}_k\tag{2}$$ 
+  \begin{equation*}T=\dfrac{1}{2}\sum_j \sum_k M_{jk} \dot{q}_j 
+  \dot{q}_k\tag{2}\end{equation*} 
 
-  involving a matrix $M$ whose terms are $M_{jk}$, called the mass matrix. 
-  These expressions can be written compactly in terms of the vector 
+  \noindent{}involving a matrix $M$ whose terms are $M_{jk}$, called the mass 
+  matrix. These expressions can be written compactly in terms of the vector 
   $\mathbf{q}$ whose components are $q_i$: 
 
-  $$V=\frac{1}{2} \mathbf{q}^T K \mathbf{q},~~~T=\frac{1}{2} \mathbf{\dot{q}}^T 
-  M \mathbf{\dot{q}}\tag{3}$$ 
+  \begin{equation*}V=\frac{1}{2} \mathbf{q}^T K \mathbf{q},~~~T=\frac{1}{2} 
+  \mathbf{\dot{q}}^T M \mathbf{\dot{q}}\tag{3}\end{equation*} 
 
-  where $\mathbf{q}^T$ denotes the transpose of the vector $\mathbf{q}$. 
+  \noindent{}where $\mathbf{q}^T$ denotes the transpose of the vector 
+  $\mathbf{q}$. 
 
   We will now give an outline proof of an important result about the ``Rayleigh 
   quotient'' 
 
-  $$R=\frac{\mathbf{q}^T K \mathbf{q}}{\mathbf{q}^T M \mathbf{q}} .\tag{4}$$ 
+  \begin{equation*}R=\frac{\mathbf{q}^T K \mathbf{q}}{\mathbf{q}^T M 
+  \mathbf{q}} .\tag{4}\end{equation*} 
 
   Notice that the denominator is not quite the kinetic energy: the expression 
   involves $\mathbf{q}$, not $\mathbf{\dot{q}}$. 
@@ -32,27 +37,29 @@
   $\mathbf{u}^{(n)}$, which were the solutions of eq. (7) of section 2.2.5. So 
   write 
 
-  $$\mathbf{q}=\sum_n{\alpha_n \mathbf{u}^{(n)}} .\tag{5}$$ 
+  \begin{equation*}\mathbf{q}=\sum_n{\alpha_n \mathbf{u}^{(n)}} 
+  .\tag{5}\end{equation*} 
 
   Substitute this expression into eq. (4), and take advantage of the fact 
   (described in section 2.2.5) that any two modes $\mathbf{u}^{(n)}$ and 
   $\mathbf{u}^{(m)}$ are orthogonal with respect to both matrices $K$ and $M$. 
   The result simplifies down to 
 
-  $$R=\frac{\alpha_1^2 \omega_1^2 + \alpha_2^2 \omega_2^2 + \dots + \alpha_N^2 
-  \omega_N^2 }{\alpha_1^2 + \alpha_2^2 + \dots + \alpha_N^2 } .\tag{6}$$ 
+  \begin{equation*}R=\frac{\alpha_1^2 \omega_1^2 + \alpha_2^2 \omega_2^2 + 
+  \dots + \alpha_N^2 \omega_N^2 }{\alpha_1^2 + \alpha_2^2 + \dots + \alpha_N^2 
+  } .\tag{6}\end{equation*} 
 
   Now suppose that the vector $\mathbf{q}$ is an approximation to one of the 
   modes, say $\mathbf{u}^{(k)}$. That means that we could take $\alpha_k =1$, 
   and all the other $\alpha_n$ will be small: 
 
-  $$\alpha_n \ll 1,~~~n \ne k .\tag{7}$$ 
+  \begin{equation*}\alpha_n \ll 1,~~~n \ne k .\tag{7}\end{equation*} 
 
   Then 
 
-  $$R=\frac{\alpha_1^2 \omega_1^2 + \alpha_2^2 \omega_2^2 + \dots+ \omega_k^2 + 
-  \dots + \alpha_N^2 \omega_N^2 }{\alpha_1^2 + \alpha_2^2 + \dots + 1 \dots + 
-  \alpha_N^2 } .\tag{8}$$ 
+  \begin{equation*}R=\frac{\alpha_1^2 \omega_1^2 + \alpha_2^2 \omega_2^2 + 
+  \dots+ \omega_k^2 + \dots + \alpha_N^2 \omega_N^2 }{\alpha_1^2 + \alpha_2^2 + 
+  \dots + 1 \dots + \alpha_N^2 } .\tag{8}\end{equation*} 
 
   It is obvious that $R \approx \omega_k^2$, but the result we want is stronger 
   than that. The vector $\mathbf{q}$ differs from the exact mode shape by terms 
@@ -66,17 +73,17 @@
   $\omega_2^2, \omega_3^2, \dots$ by $\omega_1^2$, where we assume we have 
   arranged the frequencies in order so that 
 
-  $$\omega_1^2 \le \omega_2^2 \le \omega_3^2 \le \dots \le \omega_N^2 
-  .\tag{9}$$ 
+  \begin{equation*}\omega_1^2 \le \omega_2^2 \le \omega_3^2 \le \dots \le 
+  \omega_N^2 .\tag{9}\end{equation*} 
 
   Then it is obvious that we must have reduced the value of the Rayleigh 
   quotient, whatever the values of $\alpha_1, \alpha_2, \dots$, because both 
   numerator and denominator are sums of terms that are all positive because 
   they are squares. So 
 
-  $$R \ge \frac{\alpha_1^2 \omega_1^2 + \alpha_2^2 \omega_1^2 + \dots+ 
-  \omega_1^2 + \dots + \alpha_N^2 \omega_1^2 }{\alpha_1^2 + \alpha_2^2 + \dots 
-  + 1 \dots + \alpha_N^2} = \omega_1^2 .\tag{10}$$ 
+  \begin{equation*}R \ge \frac{\alpha_1^2 \omega_1^2 + \alpha_2^2 \omega_1^2 + 
+  \dots+ \omega_1^2 + \dots + \alpha_N^2 \omega_1^2 }{\alpha_1^2 + \alpha_2^2 + 
+  \dots + 1 \dots + \alpha_N^2} = \omega_1^2 .\tag{10}\end{equation*} 
 
   In a similar way, if we replace all the $\omega_j^2$ by the largest value 
   $\omega_N^2$ we can deduce that $R \ge \omega_N^2$. 

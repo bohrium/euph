@@ -15,77 +15,84 @@
   amplitudes $R$ and $T$ as indicated in the figure. So the total acoustical 
   pressure field is 
 
-  $$p'=e^{i(\omega t -kx)} + R e^{i(\omega t +kx)} \mathrm{~~~for~~~}x \le 0 
-  \tag{1}$$ 
+  \begin{equation*}p'=e^{i(\omega t -kx)} + R e^{i(\omega t +kx)} 
+  \mathrm{~~~for~~~}x \le 0 \tag{1}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$p'=T e^{i(\omega t -kx)} \mathrm{~~~for~~~}x \ge 0 \tag{2}$$ 
+  \begin{equation*}p'=T e^{i(\omega t -kx)} \mathrm{~~~for~~~}x \ge 0 
+  \tag{2}\end{equation*} 
 
-  where $k=\omega /c$ and $c$ is the speed of sound. Using equations (2) and 
-  (3) from section 11.1.1, the associated volume flow rates (positive to the 
-  right) are 
+  \noindent{}where $k=\omega /c$ and $c$ is the speed of sound. Using equations 
+  (2) and (3) from section 11.1.1, the associated volume flow rates (positive 
+  to the right) are 
 
-  $$u=\dfrac{1}{Z_0}\left(e^{i(\omega t -kx)} -- R e^{i(\omega t +kx)} \right) 
-  \mathrm{~~~for~~~}x \le 0 \tag{3}$$ 
+  \begin{equation*}u=\dfrac{1}{Z_0}\left(e^{i(\omega t -kx)} -- R e^{i(\omega t 
+  +kx)} \right) \mathrm{~~~for~~~}x \le 0 \tag{3}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$u=\dfrac{T}{Z_0} e^{i(\omega t -kx)} \mathrm{~~~for~~~}x \ge 0 \tag{4}$$ 
+  \begin{equation*}u=\dfrac{T}{Z_0} e^{i(\omega t -kx)} \mathrm{~~~for~~~}x \ge 
+  0 \tag{4}\end{equation*} 
 
-  where $Z_0$ is the characteristic impedance of sound waves in air. 
+  \noindent{}where $Z_0$ is the characteristic impedance of sound waves in air. 
 
   At $x=0$ the pressure is 
 
-  $$p'=(1+R)e^{i \omega t} = Te^{i \omega t} . \tag{5}$$ 
+  \begin{equation*}p'=(1+R)e^{i \omega t} = Te^{i \omega t} . 
+  \tag{5}\end{equation*} 
 
   This pressure acts on the side branch, which we know from section 11.1.1 has 
   an input impedance 
 
-  $$Z_{\mathrm{hole}}=\dfrac{i Z_0}{C} \tan kh \approx \dfrac{i Z_0}{C} kh 
-  \tag{6}$$ 
+  \begin{equation*}Z_{\mathrm{hole}}=\dfrac{i Z_0}{C} \tan kh \approx \dfrac{i 
+  Z_0}{C} kh \tag{6}\end{equation*} 
 
-  where the final approximate expression is valid because $kh \ll 1$ for our 
-  tone-hole. The result is a volume flow rate into the hole 
+  \noindent{}where the final approximate expression is valid because $kh \ll 1$ 
+  for our tone-hole. The result is a volume flow rate into the hole 
 
-  $$u_{\mathrm{hole}}=\dfrac{C}{iZ_0 kh}T e^{i \omega t} . \tag{7}$$ 
+  \begin{equation*}u_{\mathrm{hole}}=\dfrac{C}{iZ_0 kh}T e^{i \omega t} . 
+  \tag{7}\end{equation*} 
 
   Now if we disregard the compressibility of the small volume at the junction, 
   shown as a dotted box in Fig.\ 1, we can equate the volume flows into and out 
   of this box to obtain 
 
-  $$\dfrac{S}{Z_0}(1-R)=\dfrac{S}{Z_0}T +\dfrac{C}{iZ_0 kh}T \tag{8}$$ 
+  \begin{equation*}\dfrac{S}{Z_0}(1-R)=\dfrac{S}{Z_0}T +\dfrac{C}{iZ_0 kh}T 
+  \tag{8}\end{equation*} 
 
-  $$=\left(\dfrac{S}{Z_0}+\dfrac{C}{iZ_0 kh} \right) (1+R) \tag{9}$$ 
+  \begin{equation*}=\left(\dfrac{S}{Z_0}+\dfrac{C}{iZ_0 kh} \right) (1+R) 
+  \tag{9}\end{equation*} 
 
-  using equation (5). Rearranging, we find 
+  \noindent{}using equation (5). Rearranging, we find 
 
-  $$R=-\dfrac{\lambda}{\lambda+2ikh} \tag{10}$$ 
+  \begin{equation*}R=-\dfrac{\lambda}{\lambda+2ikh} \tag{10}\end{equation*} 
 
-  where $\lambda=C/S$ is the area ratio of the hole to the tube. It follows 
-  from equation (5) that 
+  \noindent{}where $\lambda=C/S$ is the area ratio of the hole to the tube. It 
+  follows from equation (5) that 
 
-  $$T=1+R = \dfrac{2ikh}{\lambda+2ikh} . \tag{11}$$ 
+  \begin{equation*}T=1+R = \dfrac{2ikh}{\lambda+2ikh} . \tag{11}\end{equation*} 
 
   It is reassuring to check that these results satisfy the conservation of 
   energy. The average energy intensity carried by a plane wave with complex 
   amplitude $A$ is $|A|^2/2Z_0$ by equation (11) of section 4.1.3, so the total 
   energy flux away from the tone-hole is 
 
-  $$\dfrac{S(|R|^2 + |T|^2)}{2Z_0} = \dfrac{S(\lambda^2+ 
-  4k^2k^2)}{2Z_0|\lambda+2ikh|^2} = \dfrac{S}{2Z_0} \tag{12}$$ 
+  \begin{equation*}\dfrac{S(|R|^2 + |T|^2)}{2Z_0} = \dfrac{S(\lambda^2+ 
+  4k^2k^2)}{2Z_0|\lambda+2ikh|^2} = \dfrac{S}{2Z_0} \tag{12}\end{equation*} 
 
-  which is indeed equal to the total energy flux of the incoming wave, which 
-  had unit amplitude. 
+  \noindent{}which is indeed equal to the total energy flux of the incoming 
+  wave, which had unit amplitude. 
 
   It is interesting to note that the reflection and transmission of waves by 
   the tone-hole is governed by a single non-dimensional parameter 
 
-  $$K=\dfrac{2hk}{\lambda} \tag{13}$$ 
+  \begin{equation*}K=\dfrac{2hk}{\lambda} \tag{13}\end{equation*} 
 
-  since 
+  \noindent{}since 
 
-  $$R=-\dfrac{1}{1+iK}, \mathrm{~~~}T=\dfrac{iK}{1+iK} . \tag{14}$$ 
+  \begin{equation*}R=-\dfrac{1}{1+iK}, \mathrm{~~~}T=\dfrac{iK}{1+iK} . 
+  \tag{14}\end{equation*} 
 
   When $K \ll 1$, $R \approx -1+iK$ and $T \approx iK$. This is the limit of a 
   large tone-hole, in which virtually all the energy is reflected. Conversely, 

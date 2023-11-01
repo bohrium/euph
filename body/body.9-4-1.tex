@@ -5,9 +5,9 @@
   reflection coefficient $R$ for an ideal string with impedance $Z_0$ attached 
   to a body with bridge admittance $Y(\omega)$: 
 
-  $$R \approx -1 + 2 Z_0 Y(\omega) \tag{1}$$ 
+  \begin{equation*}R \approx -1 + 2 Z_0 Y(\omega) \tag{1}\end{equation*} 
 
-  from equation (5) of section 5.1.2. 
+  \noindent{}from equation (5) of section 5.1.2. 
 
   To turn this into an approximate expression for the reflection function, we 
   simply need the inverse Fourier transform. We already know the answer to 
@@ -15,11 +15,12 @@
   response $g(t)$ of the bridge; the velocity response to a unit impulse (delta 
   function of applied force). So the reflection function $r(t)$ is given by 
 
-  $$r(t) \approx -\delta(t-2\beta L /c) + 2Z_0 g(t-2\beta L /c) \tag{2}$$ 
+  \begin{equation*}r(t) \approx -\delta(t-2\beta L /c) + 2Z_0 g(t-2\beta L /c) 
+  \tag{2}\end{equation*} 
 
-  where $2\beta L/c$ is the time delay for a wave on the string to travel to 
-  the bridge and back at the wave speed $c$, $L$ being the string length and 
-  $\beta$ being the relative position of the bowed point. 
+  \noindent{}where $2\beta L/c$ is the time delay for a wave on the string to 
+  travel to the bridge and back at the wave speed $c$, $L$ being the string 
+  length and $\beta$ being the relative position of the bowed point. 
 
   For the simplest wolf model, we would include just one body mode. We can 
   represent the resonance responsible for the wolf as a mass-spring-dashpot 
@@ -27,13 +28,13 @@
   deduce the impulse response of such an oscillator from the analysis in 
   section 2.2.7: provided the damping is small, it is given by 
 
-  $$g(t) \approx \dfrac{1}{m} \cos (\omega_b t) e^{-\omega_b \eta_b t/2} 
-  \tag{3}$$ 
+  \begin{equation*}g(t) \approx \dfrac{1}{m} \cos (\omega_b t) e^{-\omega_b 
+  \eta_b t/2} \tag{3}\end{equation*} 
 
-  where the resonance frequency is $\omega_b = \sqrt{k/m}$ and the modal loss 
-  factor is defined by $\omega_b \eta_b \approx c/m$. It is easy to see that 
-  this has the expected form for the velocity response to an impulse: at $t=0$ 
-  the impulse provides a unit jump in momentum, so that the velocity 
+  \noindent{}where the resonance frequency is $\omega_b = \sqrt{k/m}$ and the 
+  modal loss factor is defined by $\omega_b \eta_b \approx c/m$. It is easy to 
+  see that this has the expected form for the velocity response to an impulse: 
+  at $t=0$ the impulse provides a unit jump in momentum, so that the velocity 
   immediately after the impulse must be $1/m$. But there is no residual 
   acceleration immediately after the impulse, so the free vibration of the 
   oscillator must be in the cosine phase. 

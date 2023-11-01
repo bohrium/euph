@@ -12,26 +12,27 @@
   (we are envisaging the outgoing wave as travelling to the right, and the 
   reflected wave travelling to the left). The two wave amplitudes are linked by 
 
-  $$P_L=R(\omega) P_R \tag{1}$$ 
+  \begin{equation*}P_L=R(\omega) P_R \tag{1}\end{equation*} 
 
-  where $R(\omega)$ is the reflection coefficient. Note that $P_R$, $P_L$ and 
-  $R$ may all be complex quantities, because they contain phase information as 
-  well as amplitude information. 
+  \noindent{}where $R(\omega)$ is the reflection coefficient. Note that $P_R$, 
+  $P_L$ and $R$ may all be complex quantities, because they contain phase 
+  information as well as amplitude information. 
 
   We can use a result from section 4.1.1 to obtain the corresponding complex 
   amplitudes of the two travelling waves of volume flow rate: these will be 
 
-  $$V_R=P_R/Z_t,\mathrm{~~~~}V_L=-P_L/Z_t \tag{2}$$ 
+  \begin{equation*}V_R=P_R/Z_t,\mathrm{~~~~}V_L=-P_L/Z_t \tag{2}\end{equation*} 
 
-  in terms of the characteristic impedance of the tube, $Z_t$. Now we can write 
-  down an expression for the input impedance $Z$: 
+  \noindent{}in terms of the characteristic impedance of the tube, $Z_t$. Now 
+  we can write down an expression for the input impedance $Z$: 
 
-  $$Z(\omega) = \dfrac{P_R+P_L}{V_R+V_L}=\dfrac{Z_t(P_R+P_L)}{P_R-P_L}=Z_t 
-  \dfrac{1+R}{1-R}. \tag{3}$$ 
+  \begin{equation*}Z(\omega) = 
+  \dfrac{P_R+P_L}{V_R+V_L}=\dfrac{Z_t(P_R+P_L)}{P_R-P_L}=Z_t \dfrac{1+R}{1-R}. 
+  \tag{3}\end{equation*} 
 
   Inverting this relation gives 
 
-  $$R=\dfrac{Z-Z_t}{Z+Z_t}. \tag{4}$$ 
+  \begin{equation*}R=\dfrac{Z-Z_t}{Z+Z_t}. \tag{4}\end{equation*} 
 
   Both $Z$ and $R$ are defined in the frequency domain. The inverse Fourier 
   transforms of these two quantities are both of some interest to us. We know 
@@ -121,20 +122,22 @@
 
   For this reflection function, we find numerically that 
 
-  $$\int_0^\infty{r(t) dt}=-0.966$$ 
+  \begin{equation*}\int_0^\infty{r(t) dt}=-0.966\end{equation*} 
 
-  so that it does not satisfy the unit-area condition given in equation (5) in 
-  section 8.5.3. In section 11.3 we also showed simulations done with a 
-  corresponding Raman model, and it is now easy to describe how that model was 
-  created. Raman's model has a delta-function reflection function 
+  \noindent{}so that it does not satisfy the unit-area condition given in 
+  equation (5) in section 8.5.3. In section 11.3 we also showed simulations 
+  done with a corresponding Raman model, and it is now easy to describe how 
+  that model was created. Raman's model has a delta-function reflection 
+  function 
 
-  $$r_{Raman}(t)=-\lambda \delta(t-\tau)$$ 
+  \begin{equation*}r_{Raman}(t)=-\lambda \delta(t-\tau)\end{equation*} 
 
-  with amplitude $\lambda \le 1$ and delay $\tau$. So to create a Raman model 
-  similar to the reflection function in Fig.\ 4, we choose $\tau$ to match the 
-  timing of the (negative) peak response, and $\lambda=0.966$ to match the 
-  area. In section 11.3 we also showed some results with the lossless version 
-  of the Raman model: that model uses the same delay, but with $\lambda=1$. 
+  \noindent{}with amplitude $\lambda \le 1$ and delay $\tau$. So to create a 
+  Raman model similar to the reflection function in Fig.\ 4, we choose $\tau$ 
+  to match the timing of the (negative) peak response, and $\lambda=0.966$ to 
+  match the area. In section 11.3 we also showed some results with the lossless 
+  version of the Raman model: that model uses the same delay, but with 
+  $\lambda=1$. 
 
   \sectionreferences{}[1] Neville H Fletcher and Thomas D Rossing; “The physics 
   of musical instruments”, Springer-Verlag (Second edition 1998) 

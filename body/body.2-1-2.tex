@@ -7,7 +7,7 @@
   see what happens if we define a symbol $i$ to be the square root of $-1$, so 
   that 
 
-  $$i^2=-1 . \tag{1}$$ 
+  \begin{equation*}i^2=-1 . \tag{1}\end{equation*} 
 
   (Some people call this $j$ rather than $i$, but I will always use $i$.) 
 
@@ -23,10 +23,11 @@
   two complex numbers together. We can treat $i$ just as if it was a 
   mathematical variable like $x$, and expand out the brackets as usual: 
 
-  $$(5+3i)(2-2i) = 10 +6i -10i -6 i^2=10 -4i +6 = 16-4i \tag{2}$$ 
+  \begin{equation*}(5+3i)(2-2i) = 10 +6i -10i -6 i^2=10 -4i +6 = 16-4i 
+  \tag{2}\end{equation*} 
 
-  where we have used equation (1) to get rid of $i^2$. So the result of 
-  multiplying two complex numbers is another complex number --- very 
+  \noindent{}where we have used equation (1) to get rid of $i^2$. So the result 
+  of multiplying two complex numbers is another complex number --- very 
   reassuring. 
 
   Next, we should recall that any square root could actually have a $\pm$ sign 
@@ -37,7 +38,8 @@
   called complex conjugates of each other. Now see what happens when we 
   multiply the two together: 
 
-  $$(x+iy)(x-iy)=x^2 +ixy -ixy -i^2 y^2 = x^2 + y^2. \tag{3}$$ 
+  \begin{equation*}(x+iy)(x-iy)=x^2 +ixy -ixy -i^2 y^2 = x^2 + y^2. 
+  \tag{3}\end{equation*} 
 
   This result has a simple geometrical interpretation, in a useful graphical 
   representation of complex numbers called the ``Argand diagram''. If we take 
@@ -55,7 +57,8 @@
   But we don't always use Cartesian coordinates --- it is sometimes useful to 
   use polar coordinates $r$ and $\theta$ such that 
 
-  $$x=r \cos \theta, \mathrm{~~~} y=r \sin \theta. \tag{4}$$ 
+  \begin{equation*}x=r \cos \theta, \mathrm{~~~} y=r \sin \theta. 
+  \tag{4}\end{equation*} 
 
   This polar representation of our complex number is indeed useful. The radius 
   $r$ is called the ``magnitude'' of the complex number, and the angle $\theta$ 
@@ -64,10 +67,10 @@
   complex conjugate gives the square of the magnitude. In symbols, if we denote 
   the complex number by $z=x+iy$ and the complex conjugate by $z^*=x-iy$, then 
 
-  $$z z^* =r^2 =|z|^2 \tag{5}$$ 
+  \begin{equation*}z z^* =r^2 =|z|^2 \tag{5}\end{equation*} 
 
-  where $|z|$ is another common notation for the magnitude $r$ of the complex 
-  number. 
+  \noindent{}where $|z|$ is another common notation for the magnitude $r$ of 
+  the complex number. 
 
   We can use this result to complete our toolkit for elementary manipulations 
   of complex numbers. We have already seen how to multiply two complex numbers 
@@ -75,7 +78,8 @@
   and we want $a/b$. All we need to do it multiply on the top and bottom of the 
   fraction by the complex conjugate of $b$: 
 
-  $$\dfrac{a}{b}=\dfrac{a b^*}{b b^*}=\dfrac{a b^*}{|b|^2}. \tag{6}$$ 
+  \begin{equation*}\dfrac{a}{b}=\dfrac{a b^*}{b b^*}=\dfrac{a b^*}{|b|^2}. 
+  \tag{6}\end{equation*} 
 
   The denominator is now an ordinary ``real number'' $|b|^2$, so we can see 
   that the ratio $a/b$ is indeed just another complex number, which we could 
@@ -85,60 +89,68 @@
   will need, and it relates to the combination $\cos \theta + i \sin \theta$ 
   that appears in the polar expression 
 
-  $$z=x+iy=r(\cos \theta +i \sin \theta) . \tag{7}$$ 
+  \begin{equation*}z=x+iy=r(\cos \theta +i \sin \theta) . 
+  \tag{7}\end{equation*} 
 
   To get to this result we need a short digression on ``Taylor series'' or 
   ``power series''. It is often useful to express a function like cosine in 
   terms of a sum of powers: is it possible to write 
 
-  $$\cos \theta =\sum_{n=0}^\infty{a_n \theta^n} \tag{8}$$ 
+  \begin{equation*}\cos \theta =\sum_{n=0}^\infty{a_n \theta^n} 
+  \tag{8}\end{equation*} 
 
-  where the coefficients $a_0$, $a_1$, $a_2,...$ are constants? Well, if we put 
-  $\theta =0$ in this equation, the left-hand side is $\cos(0)=1$, while the 
-  right-hand side is simply $a_0$ because all the other terms disappear. So we 
-  must have $a_0=1$. Now what happens if we differentiate equation (8)? We get 
+  \noindent{}where the coefficients $a_0$, $a_1$, $a_2,...$ are constants? 
+  Well, if we put $\theta =0$ in this equation, the left-hand side is 
+  $\cos(0)=1$, while the right-hand side is simply $a_0$ because all the other 
+  terms disappear. So we must have $a_0=1$. Now what happens if we 
+  differentiate equation (8)? We get 
 
-  $$-\sin \theta = \sum_{n=1}^\infty{n a_n \theta^{n-1}} \tag{9}$$ 
+  \begin{equation*}-\sin \theta = \sum_{n=1}^\infty{n a_n \theta^{n-1}} 
+  \tag{9}\end{equation*} 
 
-  and now if we set $\theta=0$ we find 
+  \noindent{}and now if we set $\theta=0$ we find 
 
-  $$a_1 = -\sin(0)=0. \tag{10}$$ 
+  \begin{equation*}a_1 = -\sin(0)=0. \tag{10}\end{equation*} 
 
   Differentiating again and setting $\theta=0$ we find 
 
-  $$a_2 = -\dfrac{\cos(0)}{2} = -\dfrac{1}{2}, \tag{11}$$ 
+  \begin{equation*}a_2 = -\dfrac{\cos(0)}{2} = -\dfrac{1}{2}, 
+  \tag{11}\end{equation*} 
 
-  and we can continue this process to find the power series 
+  \noindent{}and we can continue this process to find the power series 
 
-  $$\cos \theta = 1-\dfrac{\theta^2}{2}+\dfrac{\theta^4}{2 \times 3 \times 
-  4}-\dfrac{\theta^6}{2 \times 3 \times 4 \times 5 \times 6} +...\tag{12}$$ 
+  \begin{equation*}\cos \theta = 1-\dfrac{\theta^2}{2}+\dfrac{\theta^4}{2 
+  \times 3 \times 4}-\dfrac{\theta^6}{2 \times 3 \times 4 \times 5 \times 6} 
+  +...\tag{12}\end{equation*} 
 
   If we go through the same process starting with the function $\sin \theta$, 
   we find that the corresponding power series is 
 
-  $$\sin \theta = \theta -\dfrac{\theta^3}{2 \times 3} + \dfrac{\theta^5}{2 
-  \times 3 \times 4 \times 5}+... \tag{13}$$ 
+  \begin{equation*}\sin \theta = \theta -\dfrac{\theta^3}{2 \times 3} + 
+  \dfrac{\theta^5}{2 \times 3 \times 4 \times 5}+... \tag{13}\end{equation*} 
 
   Finally, we can repeat the process with the exponential function $e^x$ and 
   find 
 
-  $$e^x = 1+x+\dfrac{x^2}{2}+\dfrac{x^3}{2 \times 3}+\dfrac{x^4}{2 \times 3 
-  \times 4}+... \tag{14}$$ 
+  \begin{equation*}e^x = 1+x+\dfrac{x^2}{2}+\dfrac{x^3}{2 \times 
+  3}+\dfrac{x^4}{2 \times 3 \times 4}+... \tag{14}\end{equation*} 
 
   Now comes the magic. If we substitute $x=i\theta$ into equation (14), we find 
 
-  $$e^{i \theta} = 1+i \theta-\dfrac{\theta^2}{2}-i\dfrac{\theta^3}{2 \times 
-  3}+\dfrac{\theta^4}{2 \times 3 \times 4}+... \tag{15}$$ 
+  \begin{equation*}e^{i \theta} = 1+i 
+  \theta-\dfrac{\theta^2}{2}-i\dfrac{\theta^3}{2 \times 3}+\dfrac{\theta^4}{2 
+  \times 3 \times 4}+... \tag{15}\end{equation*} 
 
   Alternate terms are real and imaginary, and if we collect those real and 
   imaginary terms together into two separate series, we recognise both of them 
   from equations (12) and (13): we have the very striking result 
 
-  $$e^{i \theta} = \cos \theta + i \sin \theta . \tag{16}$$ 
+  \begin{equation*}e^{i \theta} = \cos \theta + i \sin \theta . 
+  \tag{16}\end{equation*} 
 
   Notice that this allows us to rewrite equation (7) in the compact form 
 
-  $$z=x+iy=r e^{i \theta}. \tag{17}$$ 
+  \begin{equation*}z=x+iy=r e^{i \theta}. \tag{17}\end{equation*} 
 
   We will make extensive use of the result (16) in the development of the 
   theory of vibration ( sections 2.2.2 and 2.2.7 are the first important 
@@ -147,26 +159,30 @@
   have two angles $A$ and $B$, and we multiply together the two results 
   corresponding to equation (16): 
 
-  $$e^{iA} e^{iB} = (\cos A +i \sin A)(\cos B +i \sin B). \tag{18}$$ 
+  \begin{equation*}e^{iA} e^{iB} = (\cos A +i \sin A)(\cos B +i \sin B). 
+  \tag{18}\end{equation*} 
 
   Multiplying out the brackets and using familiar properties of the exponential 
   function, this becomes 
 
-  $$e^{i(A+B)} = \cos A \cos B -\sin A \sin B +i(\sin A \cos B+\cos A \sin B) 
-  \tag{19}$$ 
+  \begin{equation*}e^{i(A+B)} = \cos A \cos B -\sin A \sin B +i(\sin A \cos 
+  B+\cos A \sin B) \tag{19}\end{equation*} 
 
   But 
 
-  $$e^{i(A+B)} = \cos (A+B) + i \sin (A+B) \tag{20}$$ 
+  \begin{equation*}e^{i(A+B)} = \cos (A+B) + i \sin (A+B) 
+  \tag{20}\end{equation*} 
 
-  so equating the real parts and the imaginary parts of equation (19) we can 
-  deduce immediately that 
+  \noindent{}so equating the real parts and the imaginary parts of equation 
+  (19) we can deduce immediately that 
 
-  $$\cos (A+B)= \cos A \cos B -\sin A \sin B \tag{21}$$ 
+  \begin{equation*}\cos (A+B)= \cos A \cos B -\sin A \sin B 
+  \tag{21}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\sin (A+B) = \sin A \cos B+\cos A \sin B . \tag{22}$$ 
+  \begin{equation*}\sin (A+B) = \sin A \cos B+\cos A \sin B . 
+  \tag{22}\end{equation*} 
 
   These results can, of course, be proved by trigonometry without using complex 
   numbers, but it takes far, far longer than this simple calculation! 

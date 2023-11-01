@@ -35,45 +35,47 @@
   mass-spring-dashpot oscillator with mass $m$, stiffness $k$ and dashpot 
   strength $c$, and we deduced the required the impulse response to be 
 
-  $$g(t) \approx \dfrac{1}{m} \cos (\omega_b t) e^{-\omega_b \eta_b t/2} 
-  \tag{1}$$ 
+  \begin{equation*}g(t) \approx \dfrac{1}{m} \cos (\omega_b t) e^{-\omega_b 
+  \eta_b t/2} \tag{1}\end{equation*} 
 
-  where the resonance frequency is $\omega_b = \sqrt{k/m}$ and the modal loss 
-  factor is defined by $\omega_b \eta_b \approx c/m$. 
+  \noindent{}where the resonance frequency is $\omega_b = \sqrt{k/m}$ and the 
+  modal loss factor is defined by $\omega_b \eta_b \approx c/m$. 
 
   The computation will be carried out in discrete time, so the convolution 
   integral with a function $f(t)$ will be approximated by a sum of the form 
 
-  $$c_n=h\sum_{j=0}^{\infty}{g(jh) f_{n-j}} \tag{2}$$ 
+  \begin{equation*}c_n=h\sum_{j=0}^{\infty}{g(jh) f_{n-j}} 
+  \tag{2}\end{equation*} 
 
-  where $h$ is the chosen time step and $f_j=f(jh)$ are the discrete values of 
-  the stored outgoing wave. The upper limit of this sum is indefinite, 
-  depending on the length of past history of the function $f$ which is 
-  available at this point in the simulation. 
+  \noindent{}where $h$ is the chosen time step and $f_j=f(jh)$ are the discrete 
+  values of the stored outgoing wave. The upper limit of this sum is 
+  indefinite, depending on the length of past history of the function $f$ which 
+  is available at this point in the simulation. 
 
   Now note that we can write $g(jh)$ as the real part of a complex number, in 
   the form 
 
-  $$g(jh) = \Re{\left[ \dfrac{1}{m} e^{(i-2\eta_b)\omega_b jh/2} \right]} = 
-  \Re{\dfrac{1}{m} \alpha^j} \tag{3}$$ 
+  \begin{equation*}g(jh) = \Re{\left[ \dfrac{1}{m} e^{(i-2\eta_b)\omega_b jh/2} 
+  \right]} = \Re{\dfrac{1}{m} \alpha^j} \tag{3}\end{equation*} 
 
-  where the complex constant $\alpha$ is given by 
+  \noindent{}where the complex constant $\alpha$ is given by 
 
-  $$\alpha=e^{(i- \eta_b)\omega_b h/2} . \tag{4}$$ 
+  \begin{equation*}\alpha=e^{(i- \eta_b)\omega_b h/2} . \tag{4}\end{equation*} 
 
   It follows that our convolution integral is approximated by 
 
-  $$c_n=\dfrac{h}{m}\Re{\left[\sum_{j=0}^{\infty}{\alpha^j f_{n-j}} 
-  \right]}=\dfrac{h}{m}\Re{C_n} \tag{5}$$ 
+  \begin{equation*}c_n=\dfrac{h}{m}\Re{\left[\sum_{j=0}^{\infty}{\alpha^j 
+  f_{n-j}} \right]}=\dfrac{h}{m}\Re{C_n} \tag{5}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$C_n=\sum_{j=0}^{\infty}{\alpha^j f_{n-j}}. \tag{6}$$ 
+  \begin{equation*}C_n=\sum_{j=0}^{\infty}{\alpha^j f_{n-j}}. 
+  \tag{6}\end{equation*} 
 
   Now we see that 
 
-  $$c_{n+1}=\dfrac{h}{m}\Re{C_{n+1}}=\dfrac{h}{m} \Re{\left[f_{n+1}+\alpha 
-  C_{n} \right]} . \tag{7}$$ 
+  \begin{equation*}c_{n+1}=\dfrac{h}{m}\Re{C_{n+1}}=\dfrac{h}{m} 
+  \Re{\left[f_{n+1}+\alpha C_{n} \right]} . \tag{7}\end{equation*} 
 
   The sum of indefinite length has disappeared. All we need to do is store the 
   current value of $C_n$, then at each time step we update it by multiplying by 
@@ -109,11 +111,11 @@
   simply a combination of the equations derived earlier for a flexible string 
   (section 3.1.1) and a bending beam (section 3.2.1): 
 
-  $$m \dfrac{\partial^2 w}{\partial t^2} =T \dfrac{\partial^2 w}{\partial 
-  x^2}-EI \dfrac{\partial^4 w}{\partial x^4} \tag{8}$$ 
+  \begin{equation*}m \dfrac{\partial^2 w}{\partial t^2} =T \dfrac{\partial^2 
+  w}{\partial x^2}-EI \dfrac{\partial^4 w}{\partial x^4} \tag{8}\end{equation*} 
 
-  where $w(x,t)$ is the displacement of the string, $m$ is its mass per unit 
-  length, $T$ is its tension and $EI$ is its bending rigidity. 
+  \noindent{}where $w(x,t)$ is the displacement of the string, $m$ is its mass 
+  per unit length, $T$ is its tension and $EI$ is its bending rigidity. 
 
   It is possible to derive a closed-form expression for the response of such a 
   stiff string to an initial impulse. The expression is approximate, based on a 

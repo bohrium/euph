@@ -6,26 +6,28 @@
   particle velocity $\underline{v'}=\frac{\partial \underline{\xi}}{\partial 
   t}$, to obtain 
 
-  $$-\rho_0 \nabla \cdot \underline{v'} = \frac{1}{c^2} \frac{\partial 
-  p'}{\partial t} \tag{1}$$ 
+  \begin{equation*}-\rho_0 \nabla \cdot \underline{v'} = \frac{1}{c^2} 
+  \frac{\partial p'}{\partial t} \tag{1}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\rho_0 \frac{\partial \underline{v'}}{\partial t} = -- \nabla p' . 
-  \tag{2}$$ 
+  \begin{equation*}\rho_0 \frac{\partial \underline{v'}}{\partial t} = -- 
+  \nabla p' . \tag{2}\end{equation*} 
 
   We can combine these to give an important energy equation. Multiply eq. (1) 
   by $p'/\rho_0$, take the scalar product of eq. (2) with $\underline{v'}$ and 
   add the two together: 
 
-  $$\dfrac{1}{\rho_0 c^2} p' \dfrac{\partial p'}{\partial t} + p' \nabla \cdot 
-  \underline{v'} + \rho_0 \underline{v'} \cdot \dfrac{\partial 
-  \underline{v'}}{\partial t} + \underline{v'} \cdot \nabla p' = 0 \tag{3}$$ 
+  \begin{equation*}\dfrac{1}{\rho_0 c^2} p' \dfrac{\partial p'}{\partial t} + 
+  p' \nabla \cdot \underline{v'} + \rho_0 \underline{v'} \cdot \dfrac{\partial 
+  \underline{v'}}{\partial t} + \underline{v'} \cdot \nabla p' = 0 
+  \tag{3}\end{equation*} 
 
-  which can be rewritten 
+  \noindent{}which can be rewritten 
 
-  $$\dfrac{\partial}{\partial t} \left( \dfrac{1}{2} \rho_0 v'^2 + \dfrac{1}{2 
-  \rho_0 c^2} p'^2 \right) + \nabla \cdot (p' \underline{v'}) = 0 . \tag{4}$$ 
+  \begin{equation*}\dfrac{\partial}{\partial t} \left( \dfrac{1}{2} \rho_0 v'^2 
+  + \dfrac{1}{2 \rho_0 c^2} p'^2 \right) + \nabla \cdot (p' \underline{v'}) = 0 
+  . \tag{4}\end{equation*} 
 
   The two terms in the brackets describe the kinetic energy density $E_k=\rho_0 
   v'^2/2$ and the potential energy density stored in compression of the air, 
@@ -36,37 +38,39 @@
   of space. If eq. (4) is integrated over a volume $V$ bounded by a surface 
   $S$, we obtain 
 
-  $$\int_V{\dfrac{\partial}{\partial t} (E_k+E_p) dV} + \int_V{\nabla \cdot 
-  \underline{I} dV}=0 \tag{5}$$ 
+  \begin{equation*}\int_V{\dfrac{\partial}{\partial t} (E_k+E_p) dV} + 
+  \int_V{\nabla \cdot \underline{I} dV}=0 \tag{5}\end{equation*} 
 
-  so, using the divergence theorem, 
+  \noindent{}so, using the divergence theorem, 
 
-  $$\int_V{\dfrac{\partial}{\partial t} (E_k+E_p) dV} + \int_S{\underline{I} 
-  \cdot \underline{n} dS}=0 \tag{6}$$ 
+  \begin{equation*}\int_V{\dfrac{\partial}{\partial t} (E_k+E_p) dV} + 
+  \int_S{\underline{I} \cdot \underline{n} dS}=0 \tag{6}\end{equation*} 
 
-  which implies that the rate of change of total energy inside $V$ is balanced 
-  by energy transport across its surface $S$ which is governed by the 
-  intensity. 
+  \noindent{}which implies that the rate of change of total energy inside $V$ 
+  is balanced by energy transport across its surface $S$ which is governed by 
+  the intensity. 
 
   For a plane wave in the $x$ direction, we can write $p'=\hat{p} e^{i \omega 
   (t-x/c)}$. The only non-zero component of velocity will be in the $x$ 
   direction; we can denote it $u'$. From the $x$ component of eq. (2), we then 
   have 
 
-  $$-\rho_0 \dfrac{\partial u'}{\partial t} = \dfrac{\partial p'}{\partial x} = 
-  -\dfrac{i \omega \hat{p}}{c} e^{i \omega (t-x/c)} \tag{7}$$ 
+  \begin{equation*}-\rho_0 \dfrac{\partial u'}{\partial t} = \dfrac{\partial 
+  p'}{\partial x} = -\dfrac{i \omega \hat{p}}{c} e^{i \omega (t-x/c)} 
+  \tag{7}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$u' = \dfrac{\hat{p}}{\rho_0 c} e^{i \omega (t-x/c)} . \tag{8}$$ 
+  \begin{equation*}u' = \dfrac{\hat{p}}{\rho_0 c} e^{i \omega (t-x/c)} . 
+  \tag{8}\end{equation*} 
 
   Pressure and velocity are in phase, and their ratio, called impedance, is 
 
-  $$\frac{p'}{u'} = \rho_o c =Z \tag{9}$$ 
+  \begin{equation*}\frac{p'}{u'} = \rho_o c =Z \tag{9}\end{equation*} 
 
-  where $Z$ is a real value that is independent of frequency. It is a material 
-  property of the air, called the characteristic impedance, or sometimes wave 
-  impedance. 
+  \noindent{}where $Z$ is a real value that is independent of frequency. It is 
+  a material property of the air, called the characteristic impedance, or 
+  sometimes wave impedance. 
 
   The concept of impedance is used in several fields of science, and the 
   general context is always the same. There are two variables, one force-like 
@@ -82,7 +86,8 @@
   Returning to our plane wave in the $x$ direction, the intensity vector is 
   also in the $x$ direction, with magnitude 
 
-  $$I=p' u' = \dfrac{\hat{p}^2}{Z} \cos^2{\omega (t-x/c)} . \tag{10}$$ 
+  \begin{equation*}I=p' u' = \dfrac{\hat{p}^2}{Z} \cos^2{\omega (t-x/c)} . 
+  \tag{10}\end{equation*} 
 
   Note that we can't use the complex exponential representation directly here, 
   because intensity is a nonlinear quantity. At a position $x$, the intensity 
@@ -90,32 +95,36 @@
   the average intensity over one cycle, and since we know that the average 
   value of $\cos^2$ is 1/2, the result is 
 
-  $$\left< I \right> =\frac{1}{2} \frac{\hat{p}^2}{Z} . \tag{11}$$ 
+  \begin{equation*}\left< I \right> =\frac{1}{2} \frac{\hat{p}^2}{Z} . 
+  \tag{11}\end{equation*} 
 
   For the spherical wave from section 4.1.2 we have 
 
-  $$p'=\frac{\hat{p}}{r} e^{i \omega t -- i k r} \tag{12}$$ 
+  \begin{equation*}p'=\frac{\hat{p}}{r} e^{i \omega t -- i k r} 
+  \tag{12}\end{equation*} 
 
-  from eq. (7), and 
+  \noindent{}from eq. (7), and 
 
-  $$u' = \frac{\hat{p}}{i\omega \rho_0 r} \left( \frac{1}{r} +\frac{i 
-  \omega}{c} \right) e^{i\omega t -- ikr} = \frac{\hat{p}}{\rho_0 r} 
+  \begin{equation*}u' = \frac{\hat{p}}{i\omega \rho_0 r} \left( \frac{1}{r} 
+  +\frac{i \omega}{c} \right) e^{i\omega t -- ikr} = \frac{\hat{p}}{\rho_0 r} 
   \left(\frac{1}{c} + \frac{1}{i \omega r}\right) e^{i\omega t -- 
-  ikr}\tag{13}$$ 
+  ikr}\tag{13}\end{equation*} 
 
-  for the radial component of velocity. We want to multiply this by $p'$ from 
-  eq. (12) and average over a cycle, as we did in the plane-wave case. But this 
-  time we need to be a bit careful. The first term in the brackets in eq. (13) 
-  describes a component of $u'$ that is in phase with $p'$, so that we can 
-  average the product as before, gaining a factor 1/2 in the process. But the 
-  second term has an extra factor of $i$ in the complex representation: this 
-  component of velocity is in quadrature with the pressure (i.e. $90^\circ$ out 
-  of phase), which means that the product of the two will average to zero over 
-  one cycle. So we only need to keep the first term, with the result 
+  \noindent{}for the radial component of velocity. We want to multiply this by 
+  $p'$ from eq. (12) and average over a cycle, as we did in the plane-wave 
+  case. But this time we need to be a bit careful. The first term in the 
+  brackets in eq. (13) describes a component of $u'$ that is in phase with 
+  $p'$, so that we can average the product as before, gaining a factor 1/2 in 
+  the process. But the second term has an extra factor of $i$ in the complex 
+  representation: this component of velocity is in quadrature with the pressure 
+  (i.e. $90^\circ$ out of phase), which means that the product of the two will 
+  average to zero over one cycle. So we only need to keep the first term, with 
+  the result 
 
-  $$\left< I \right> =\frac{1}{2} \frac{\hat{p}^2}{Z} \tag{14}$$ 
+  \begin{equation*}\left< I \right> =\frac{1}{2} \frac{\hat{p}^2}{Z} 
+  \tag{14}\end{equation*} 
 
-  exactly as in the case of the plane wave. 
+  \noindent{}exactly as in the case of the plane wave. 
 
   This calculation gives a clue for how we should interpret the near field and 
   far field in this example. The term in eq. (13) which contributed to energy 
@@ -151,15 +160,16 @@
   \rho$ we can deduce $\rho_0 dV + V_0 d\rho =0$ where $V_0$ is the initial 
   volume and $\rho_0$ is the ambient density of air. So 
 
-  $$E=\dfrac{V_0}{\rho_0}\int{p' d\rho'}=\dfrac{V_0 c^2}{\rho_0}\int{\rho' 
-  d\rho'}=\dfrac{V_0 c^2}{\rho_0}\dfrac{1}{2}\rho'^2 \tag{15}$$ 
+  \begin{equation*}E=\dfrac{V_0}{\rho_0}\int{p' d\rho'}=\dfrac{V_0 
+  c^2}{\rho_0}\int{\rho' d\rho'}=\dfrac{V_0 c^2}{\rho_0}\dfrac{1}{2}\rho'^2 
+  \tag{15}\end{equation*} 
 
-  where we have used the result $p'=c^2 \rho'$ from section 4.1.1. 
+  \noindent{}where we have used the result $p'=c^2 \rho'$ from section 4.1.1. 
 
   So the potential energy density is 
 
-  $$\dfrac{1}{2}\dfrac{c^2}{\rho_0}\rho'^2 = \dfrac{1}{2}\dfrac{1}{\rho_0 
-  c^2}p'^2 \tag{16}$$ 
+  \begin{equation*}\dfrac{1}{2}\dfrac{c^2}{\rho_0}\rho'^2 = 
+  \dfrac{1}{2}\dfrac{1}{\rho_0 c^2}p'^2 \tag{16}\end{equation*} 
 
-  using the same relation again. The final expression is the form we need for 
-  equation (4). 
+  \noindent{}using the same relation again. The final expression is the form we 
+  need for equation (4). 

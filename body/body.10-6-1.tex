@@ -69,21 +69,23 @@
   satisfied. We showed that the resulting sound field pressure $p(\mathbf{x})$ 
   at position $\mathbf{x}$ was given by the Rayleigh integral 
 
-  $$p(\mathbf{x}) = e^{i \omega t} \int_S{G(\mathbf{x},\mathbf{x'}) 
-  v(\mathbf{x'}) d^2 \mathbf{x'}} \tag{1}$$ 
+  \begin{equation*}p(\mathbf{x}) = e^{i \omega t} 
+  \int_S{G(\mathbf{x},\mathbf{x'}) v(\mathbf{x'}) d^2 \mathbf{x'}} 
+  \tag{1}\end{equation*} 
 
-  where the integral is over the plane $S$ of the vibrating source plate with 
-  velocity $v(\mathbf{x'})e^{i \omega t}$ at position $\mathbf{x'}$, $d^2 
-  \mathbf{x'}$ is the element of area in that plane, and the function $G$ is 
-  defined by 
+  \noindent{}where the integral is over the plane $S$ of the vibrating source 
+  plate with velocity $v(\mathbf{x'})e^{i \omega t}$ at position $\mathbf{x'}$, 
+  $d^2 \mathbf{x'}$ is the element of area in that plane, and the function $G$ 
+  is defined by 
 
-  $$G(\mathbf{x},\mathbf{x'})= \dfrac{i \omega \rho_0}{2 \pi}\dfrac{e^{i k 
-  |\mathbf{x}-\mathbf{x'}|}}{|\mathbf{x}-\mathbf{x'}|} . \tag{2}$$ 
+  \begin{equation*}G(\mathbf{x},\mathbf{x'})= \dfrac{i \omega \rho_0}{2 
+  \pi}\dfrac{e^{i k |\mathbf{x}-\mathbf{x'}|}}{|\mathbf{x}-\mathbf{x'}|} . 
+  \tag{2}\end{equation*} 
 
-  where $\rho_0$ is the density of air and $k=\omega/c$ is the wavenumber of 
-  sound waves in air, where $c$ is the speed of sound. Equation (1) takes the 
-  form of a convolution integral, and the function $G$ is an example of 
-  something called called a Green's function. (These are named after 
+  \noindent{}where $\rho_0$ is the density of air and $k=\omega/c$ is the 
+  wavenumber of sound waves in air, where $c$ is the speed of sound. Equation 
+  (1) takes the form of a convolution integral, and the function $G$ is an 
+  example of something called called a Green's function. (These are named after 
   \tt{}George Green\rm{}, an English mathematician of the early 19th century.) 
 
   Our hologram reconstruction problem is very similar, and it can be solved by 
@@ -91,18 +93,20 @@
   $v(\mathbf{x'})$ replaced by $p_m(\mathbf{x'})$, the measured pressure at 
   position $\mathbf{x'}$ in the hologram plane: 
 
-  $$p(\mathbf{x}) = e^{i \omega t} \int_H{F(\mathbf{x},\mathbf{x'}) 
-  p_m(\mathbf{x'}) d^2 \mathbf{x'}} \tag{3}$$ 
+  \begin{equation*}p(\mathbf{x}) = e^{i \omega t} 
+  \int_H{F(\mathbf{x},\mathbf{x'}) p_m(\mathbf{x'}) d^2 \mathbf{x'}} 
+  \tag{3}\end{equation*} 
 
-  where now the integral is over the hologram plane $H$. We need a different 
-  Green's function, $F$, which is closely related to the ``free space Green's 
-  function'' $G$ of equation (2): 
+  \noindent{}where now the integral is over the hologram plane $H$. We need a 
+  different Green's function, $F$, which is closely related to the ``free space 
+  Green's function'' $G$ of equation (2): 
 
-  $$F(\mathbf{x},\mathbf{x'})=- \dfrac{1}{2 \pi} \dfrac{\partial}{\partial 
-  z'}\left[ \dfrac{e^{i k 
-  |\mathbf{x}-\mathbf{x'}|}}{|\mathbf{x}-\mathbf{x'}|}\right] \tag{4}$$ 
+  \begin{equation*}F(\mathbf{x},\mathbf{x'})=- \dfrac{1}{2 \pi} 
+  \dfrac{\partial}{\partial z'}\left[ \dfrac{e^{i k 
+  |\mathbf{x}-\mathbf{x'}|}}{|\mathbf{x}-\mathbf{x'}|}\right] 
+  \tag{4}\end{equation*} 
 
-  where $z'$ denotes the component of $\mathbf{x'}$ in the direction 
+  \noindent{}where $z'$ denotes the component of $\mathbf{x'}$ in the direction 
   perpendicular to the hologram plane. 
 
   To reconstruct the sound field on the other side of the hologram plane, 
@@ -111,18 +115,19 @@
   calculate the sound field at any position above that plane in terms of the 
   pressure $p_s$ on the source plane: 
 
-  $$p(\mathbf{x}) = e^{i \omega t} \int_S{F(\mathbf{x},\mathbf{x'}) 
-  p_s(\mathbf{x'}) d^2 \mathbf{x'}} \tag{5}$$ 
+  \begin{equation*}p(\mathbf{x}) = e^{i \omega t} 
+  \int_S{F(\mathbf{x},\mathbf{x'}) p_s(\mathbf{x'}) d^2 \mathbf{x'}} 
+  \tag{5}\end{equation*} 
 
-  where the integral is now over the source plane $S$. But we don't know $p_s$! 
-  Our measurement is of $p_m$, which is inside the new region. They are, of 
-  course, related by 
+  \noindent{}where the integral is now over the source plane $S$. But we don't 
+  know $p_s$! Our measurement is of $p_m$, which is inside the new region. They 
+  are, of course, related by 
 
-  $$p_m(\mathbf{x}) = \int_S{F(\mathbf{x},\mathbf{x'}) p_s(\mathbf{x'}) d^2 
-  \mathbf{x'}} \tag{6}$$ 
+  \begin{equation*}p_m(\mathbf{x}) = \int_S{F(\mathbf{x},\mathbf{x'}) 
+  p_s(\mathbf{x'}) d^2 \mathbf{x'}} \tag{6}\end{equation*} 
 
-  where both $p_s$ and $p_m$ are assumed to be sinusoidal at frequency 
-  $\omega$. 
+  \noindent{}where both $p_s$ and $p_m$ are assumed to be sinusoidal at 
+  frequency $\omega$. 
 
   We need to invert equation (6) to obtain $p_s$ in terms of $p_m$. The key to 
   that is to Fourier transform everything in sight, and take advantage of a 
@@ -138,19 +143,21 @@
   on the perpendicular direction $z$. If we denote Fourier transformed 
   functions by a hat, then for example 
 
-  $$\hat{F}(k_1,k_2,z)=\dfrac{1}{4 
+  \begin{equation*}\hat{F}(k_1,k_2,z)=\dfrac{1}{4 
   \pi^2}\int_{-\infty}^\infty{\int_{-\infty}^\infty{F(x,y,z)e^{i k_1 x+ik_2 y} 
-  dx}dy} \tag{7}$$ 
+  dx}dy} \tag{7}\end{equation*} 
 
-  where $k_1$ and $k_2$ are the wavenumbers in the $x$ and $y$ directions. 
+  \noindent{}where $k_1$ and $k_2$ are the wavenumbers in the $x$ and $y$ 
+  directions. 
 
   By virtue of the convolution theorem, equation (6) then becomes 
 
-  $$\hat{p}_m=4 \pi^2 \hat{F} \hat{p}_s \tag{8}$$ 
+  \begin{equation*}\hat{p}_m=4 \pi^2 \hat{F} \hat{p}_s \tag{8}\end{equation*} 
 
-  so that we can accomplish the inversion we need trivially: 
+  \noindent{}so that we can accomplish the inversion we need trivially: 
 
-  $$\hat{p}_s=\dfrac{\hat{p}_m }{4 \pi^2 \hat{F}} . \tag{9}$$ 
+  \begin{equation*}\hat{p}_s=\dfrac{\hat{p}_m }{4 \pi^2 \hat{F}} . 
+  \tag{9}\end{equation*} 
 
   An inverse Fourier transform then gives the pressure distribution we need. 
   However, there is a snag to be considered. Because of the division by 

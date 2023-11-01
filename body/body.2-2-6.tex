@@ -15,15 +15,16 @@
   The equation of motion of the hammer mass is then exactly the same as the 
   simple harmonic oscillator examined in section 2.2.2: 
 
-  $$m \dfrac{d^2 x}{dt^2}+kx=0. \tag{1}$$ 
+  \begin{equation*}m \dfrac{d^2 x}{dt^2}+kx=0. \tag{1}\end{equation*} 
 
   The solution is thus 
 
-  $$x=A \cos(\Omega t + \phi) \tag{2}$$ 
+  \begin{equation*}x=A \cos(\Omega t + \phi) \tag{2}\end{equation*} 
 
-  where $\Omega=\sqrt{k/m}$, and $A$ and $\phi$ are constants determined by the 
-  initial conditions: at the moment of first making contact, $x=0$ and the 
-  velocity $\dot{x}$ is equal to the speed with which the hammer is moving. 
+  \noindent{}where $\Omega=\sqrt{k/m}$, and $A$ and $\phi$ are constants 
+  determined by the initial conditions: at the moment of first making contact, 
+  $x=0$ and the velocity $\dot{x}$ is equal to the speed with which the hammer 
+  is moving. 
 
   The force applied to the structure is $f=kx$: but this description only 
   applies while that force is positive. As soon as the solution suggests that 
@@ -41,30 +42,33 @@
   the force pulse, which then extends symmetrically from $t=-\pi / (2 \Omega)$ 
   to $t=+\pi / (2 \Omega)$. Then 
 
-  $$F(\omega) = \dfrac{kA}{2 \pi} \int_{-\pi/2 \Omega}^{\pi/2 \Omega} \cos 
-  \Omega t~e^{-i \omega t} dt \tag{3}$$ 
+  \begin{equation*}F(\omega) = \dfrac{kA}{2 \pi} \int_{-\pi/2 \Omega}^{\pi/2 
+  \Omega} \cos \Omega t~e^{-i \omega t} dt \tag{3}\end{equation*} 
 
-  $$ = \dfrac{kA}{4 \pi} \int_{-\pi/2 \Omega}^{\pi/2 \Omega} \left[ e^{i \Omega 
-  t} + e^{-i \Omega t} \right]~e^{-i \omega t} dt $$ 
+  \begin{equation*} = \dfrac{kA}{4 \pi} \int_{-\pi/2 \Omega}^{\pi/2 \Omega} 
+  \left[ e^{i \Omega t} + e^{-i \Omega t} \right]~e^{-i \omega t} dt 
+  \end{equation*} 
 
-  $$= \dfrac{kA}{4 \pi} \left[ \dfrac{e^{i (\Omega -- \omega) t}}{i (\Omega -- 
-  \omega)} -- \dfrac{e^{-i (\Omega + \omega) t}}{i (\Omega + \omega)} 
-  \right]_{-\pi/2 \Omega}^{\pi/2 \Omega} $$ 
+  \begin{equation*}= \dfrac{kA}{4 \pi} \left[ \dfrac{e^{i (\Omega -- \omega) 
+  t}}{i (\Omega -- \omega)} -- \dfrac{e^{-i (\Omega + \omega) t}}{i (\Omega + 
+  \omega)} \right]_{-\pi/2 \Omega}^{\pi/2 \Omega} \end{equation*} 
 
-  $$= \dfrac{kA}{2 \pi} \left[ \dfrac{\sin \frac{\pi}{2} \left(1 -- 
-  \frac{\omega}{\Omega} \right)}{\Omega -- \omega} + \dfrac{\sin \frac{\pi}{2} 
-  \left(1 + \frac{\omega}{\Omega} \right)}{\Omega + \omega} \right].$$ 
+  \begin{equation*}= \dfrac{kA}{2 \pi} \left[ \dfrac{\sin \frac{\pi}{2} \left(1 
+  -- \frac{\omega}{\Omega} \right)}{\Omega -- \omega} + \dfrac{\sin 
+  \frac{\pi}{2} \left(1 + \frac{\omega}{\Omega} \right)}{\Omega + \omega} 
+  \right].\end{equation*} 
 
   But $\sin (\pi/2 + \alpha) = \cos \alpha$ and $\sin(\pi/2 -- \alpha)= \cos 
   \alpha$, so 
 
-  $$F(\omega) = \dfrac{kA}{2 \pi} \cos \dfrac{\pi \omega}{2 \Omega} \left[ 
-  \dfrac{1}{\Omega -- \omega} + \dfrac{1}{\Omega + \omega} \right] $$ 
+  \begin{equation*}F(\omega) = \dfrac{kA}{2 \pi} \cos \dfrac{\pi \omega}{2 
+  \Omega} \left[ \dfrac{1}{\Omega -- \omega} + \dfrac{1}{\Omega + \omega} 
+  \right] \end{equation*} 
 
-  and finally, 
+  \noindent{}and finally, 
 
-  $$F(\omega) = \dfrac{kA \Omega}{\pi} \dfrac{\cos \frac{\pi \omega}{2 
-  \Omega}}{\Omega^2 -- \omega^2}. \tag{4}$$ 
+  \begin{equation*}F(\omega) = \dfrac{kA \Omega}{\pi} \dfrac{\cos \frac{\pi 
+  \omega}{2 \Omega}}{\Omega^2 -- \omega^2}. \tag{4}\end{equation*} 
 
   To see what this means, two plots are given below. Figure 2 is a 
   ``universal'' plot of the prediction of eq. (4), with the ratio $\omega / 

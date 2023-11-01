@@ -862,6 +862,19 @@
   clarinet reed in earlier sections. (In mathematical terms, we are using a 
   “complex mode shape”.) 
 
+  Cutting a long story short, with carefully-chosen parameter values this 
+  extended model does indeed allow notes to be “played” on our simulated 
+  trombone with a Q-factor of the lips as low as 1: far lower than we were able 
+  to use with the previous model. Figure 37 shows a sequence of three 
+  pressure--lip resonance diagrams, in the same format as previous ones, all 
+  using this value of Q-factor. As you move down the sequence in the left-hand 
+  column, the time delay is increasing in steps of 0.5~ms. With no time delay, 
+  the entire diagram would be black, but the other three (with delays 0.5~ms, 
+  1~ms and 1.5~ms) all show a good spread of coloured pixels. Note that all 
+  these delays are quite short compared to the period of the notes being 
+  played: the nominal fundamental frequency for this configuration of the 
+  trombone is 58.3~Hz, corresponding to a period 17.2~ms. 
+
   \fig{figs/fig-5260ad60.png}{} 
 
   \fig{figs/fig-d9abad8e.png}{} 
@@ -873,6 +886,19 @@
   \fig{figs/fig-38b7b822.png}{} 
 
   \fig{figs/fig-59a43006.png}{} 
+
+  Each pressure--lip resonance diagram is accompanied by a plot in the same 
+  format as Figs.\ 18 and 28, showing the normalised playing frequency for any 
+  non-black pixels in the column corresponding to blowing pressure 1~kPa, which 
+  is the pressure used in the measurements by Boutin, Smith and Wolfe. In the 
+  top row there are no playable notes at this blowing pressure, although the 
+  pressure--lip resonance diagram shows that it would only need a slightly 
+  higher pressure for the third natural note to reach its threshold and start 
+  to play. In the second row, we see that the second, third and fourth notes 
+  can be played with this value of delay, but that the red stars all lie above 
+  the blue lines so that the notes can only be “lipped up”, not “lipped down”. 
+  But in the third row some stars fall below the blue lines, indicating that 
+  lipping down has become possible. 
 
   \fig{figs/fig-fafaa502.png}{} 
 

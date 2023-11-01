@@ -8,11 +8,11 @@
   displacement is $w(x,t)$, and we now also allow longitudinal displacement 
   $\xi(x,t)$. Because of the longitudinal stretch, the tension may also vary: 
 
-  $$T(x,t) = T_0 +EA\epsilon(x,t) \tag{1}$$ 
+  \begin{equation*}T(x,t) = T_0 +EA\epsilon(x,t) \tag{1}\end{equation*} 
 
-  where $E$ is the Young's modulus of the string, $A$ is the cross-sectional 
-  area, $\epsilon$ is the longitudinal strain and $T_0$ is the original string 
-  tension. 
+  \noindent{}where $E$ is the Young's modulus of the string, $A$ is the 
+  cross-sectional area, $\epsilon$ is the longitudinal strain and $T_0$ is the 
+  original string tension. 
 
   \fig{figs/fig-ceaadbaa.png}{\caption{Figure 1. Sketch of an element of the 
   string. Longitudinal displacement is indicated in blue, tension is indicated 
@@ -21,53 +21,57 @@
   This element of string originally had length $\delta x$. Denoting the 
   stretched length by $\delta s$, Pythagoras' theorem gives 
 
-  $$\delta s^2 \approx (\delta x + \delta \xi)^2 + \delta w^2 \tag{2} $$ 
+  \begin{equation*}\delta s^2 \approx (\delta x + \delta \xi)^2 + \delta w^2 
+  \tag{2} \end{equation*} 
 
-  where $\delta \xi=\xi(x + \delta x) -- \xi(x)$ and $\delta w=w(x + \delta x) 
-  -- w(x)$, so that 
+  \noindent{}where $\delta \xi=\xi(x + \delta x) -- \xi(x)$ and $\delta w=w(x + 
+  \delta x) -- w(x)$, so that 
 
-  $$\delta s \approx \delta x \left[ \left(1 + \dfrac{\partial \xi}{\partial 
-  x}\right)^2 + \left(\dfrac{\partial w}{\partial x}\right)^2 \right]^{1/2} . 
-  \tag{3}$$ 
+  \begin{equation*}\delta s \approx \delta x \left[ \left(1 + \dfrac{\partial 
+  \xi}{\partial x}\right)^2 + \left(\dfrac{\partial w}{\partial x}\right)^2 
+  \right]^{1/2} . \tag{3}\end{equation*} 
 
   We are most interested in the case of very small longitudinal motion $\xi$ 
   driven by fairly small transverse displacement $w$. With those 
   approximations, we can expand using the binomial theorem to see that the 
   leading-order contribution to string stretching is given by 
 
-  $$\delta s \approx \delta x \left[ 1 + \dfrac{\partial \xi}{\partial x} + 
-  \dfrac{1}{2}\left(\dfrac{\partial w}{\partial x}\right)^2 \right] . \tag{4}$$ 
+  \begin{equation*}\delta s \approx \delta x \left[ 1 + \dfrac{\partial 
+  \xi}{\partial x} + \dfrac{1}{2}\left(\dfrac{\partial w}{\partial x}\right)^2 
+  \right] . \tag{4}\end{equation*} 
 
   It follows that the strain is 
 
-  $$\epsilon \approx \dfrac{\delta s -- \delta x}{\delta x} \approx 
-  \dfrac{\partial \xi}{\partial x} + \dfrac{1}{2}\left(\dfrac{\partial 
-  w}{\partial x}\right)^2 \tag{5}$$ 
+  \begin{equation*}\epsilon \approx \dfrac{\delta s -- \delta x}{\delta x} 
+  \approx \dfrac{\partial \xi}{\partial x} + \dfrac{1}{2}\left(\dfrac{\partial 
+  w}{\partial x}\right)^2 \tag{5}\end{equation*} 
 
-  and the tension at position $x$ is 
+  \noindent{}and the tension at position $x$ is 
 
-  $$T \approx T_0 + EA\left[\dfrac{\partial \xi}{\partial x} + 
-  \dfrac{1}{2}\left(\dfrac{\partial w}{\partial x}\right)^2 \right] . \tag{6}$$ 
+  \begin{equation*}T \approx T_0 + EA\left[\dfrac{\partial \xi}{\partial x} + 
+  \dfrac{1}{2}\left(\dfrac{\partial w}{\partial x}\right)^2 \right] . 
+  \tag{6}\end{equation*} 
 
   Now we can apply Newton's law to the net horizontal motion of the small 
   element of string: 
 
-  $$m \delta x \dfrac{\partial^2 \xi}{\partial t^2} \approx T(x+\delta x) -- 
-  T(x) \tag{7}$$ 
+  \begin{equation*}m \delta x \dfrac{\partial^2 \xi}{\partial t^2} \approx 
+  T(x+\delta x) -- T(x) \tag{7}\end{equation*} 
 
-  where $m$ is the mass per unit length of the string, and the angles 
-  $\theta_1$ and $\theta_2$ are assumed to be small. It follows that 
+  \noindent{}where $m$ is the mass per unit length of the string, and the 
+  angles $\theta_1$ and $\theta_2$ are assumed to be small. It follows that 
 
-  $$m \dfrac{\partial^2 \xi}{\partial t^2} \approx \dfrac{\partial T}{\partial 
-  x} \approx EA\left[ \dfrac{\partial^2 \xi}{\partial x^2} + \dfrac{1}{2} 
-  \dfrac{\partial}{\partial x} \left(\dfrac{\partial w}{\partial x}\right)^2 
-  \right] \tag{8}$$ 
+  \begin{equation*}m \dfrac{\partial^2 \xi}{\partial t^2} \approx 
+  \dfrac{\partial T}{\partial x} \approx EA\left[ \dfrac{\partial^2 
+  \xi}{\partial x^2} + \dfrac{1}{2} \dfrac{\partial}{\partial x} 
+  \left(\dfrac{\partial w}{\partial x}\right)^2 \right] \tag{8}\end{equation*} 
 
-  so that finally the governing equation we want is 
+  \noindent{}so that finally the governing equation we want is 
 
-  $$m \dfrac{\partial^2 \xi}{\partial t^2} -- EA \dfrac{\partial^2 
-  \xi}{\partial x^2} \approx \dfrac{EA}{2} \dfrac{\partial}{\partial x} 
-  \left(\dfrac{\partial w}{\partial x}\right)^2 . \tag{9}$$ 
+  \begin{equation*}m \dfrac{\partial^2 \xi}{\partial t^2} -- EA 
+  \dfrac{\partial^2 \xi}{\partial x^2} \approx \dfrac{EA}{2} 
+  \dfrac{\partial}{\partial x} \left(\dfrac{\partial w}{\partial x}\right)^2 . 
+  \tag{9}\end{equation*} 
 
   This is the usual linear wave equation for longitudinal motion, with a source 
   term on the right-hand side determined by a quadratic function of the 
@@ -88,18 +92,20 @@
   linear operations are involved. So to find the possible frequencies, it is 
   sufficient to look at a squared combination of the form 
 
-  $$\left[\sum_j{a_j \sin \omega_j t} \right]^2 \tag{10}$$ 
+  \begin{equation*}\left[\sum_j{a_j \sin \omega_j t} \right]^2 
+  \tag{10}\end{equation*} 
 
-  where $\omega_j$ is the $j$th transverse resonance frequency. We can ignore 
-  the effects of damping for this qualitative discussion. This squared sum will 
-  involve terms like 
+  \noindent{}where $\omega_j$ is the $j$th transverse resonance frequency. We 
+  can ignore the effects of damping for this qualitative discussion. This 
+  squared sum will involve terms like 
 
-  $$\sin^2 \omega_j t = (1 -- \cos 2 \omega_j t)/2 \tag{11}$$ 
+  \begin{equation*}\sin^2 \omega_j t = (1 -- \cos 2 \omega_j t)/2 
+  \tag{11}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\sin \omega_j t \sin \omega_k t = [\cos (\omega_j -\omega_k)t -- \cos 
-  (\omega_j +\omega_k)t]/2 . \tag{12}$$ 
+  \begin{equation*}\sin \omega_j t \sin \omega_k t = [\cos (\omega_j 
+  -\omega_k)t -- \cos (\omega_j +\omega_k)t]/2 . \tag{12}\end{equation*} 
 
   So the particular integral must consist of a linear combination of sinusoidal 
   terms with frequencies which are either frequency-doubled transverse 
@@ -115,18 +121,19 @@
   is useful to look at explicit results for the resulting combination 
   frequencies. We showed in section 5.4.3 that 
 
-  $$\omega_j \approx j \omega_1 (1+\alpha j^2) \tag{13}$$ 
+  \begin{equation*}\omega_j \approx j \omega_1 (1+\alpha j^2) 
+  \tag{13}\end{equation*} 
 
-  where $\alpha=\frac{EI\pi^2}{2T_0 L^2}$ in terms of the string length $L$ and 
-  the bending stiffness $EI$. So, for example, the frequency-doubled version of 
-  $\omega_3$ will be $6 \omega_1 (1+9 \alpha)$. Unless $\alpha = 0$, this is a 
-  different frequency from $\omega_6 = 6 \omega_1 (1+36 \alpha)$. Similarly, 
-  the sum $\omega_3 + \omega_4$ will be $3 \omega_1 (1+9 \alpha) + 4 
-  \omega_1(1+16 \alpha) = \omega_1 (7 + 91 \alpha)$, which is a different 
-  frequency from $\omega_7 = 7 \omega_1 (1+49 \alpha)$. The ``phantom 
-  partials'' generated by the square law inside Eq. (9) will not match any of 
-  the original frequencies $\omega_j$. This accounts for the complicated 
-  patterns of peaks revealed in Figs.\ 5 and 6 of section 7.4. 
+  \noindent{}where $\alpha=\frac{EI\pi^2}{2T_0 L^2}$ in terms of the string 
+  length $L$ and the bending stiffness $EI$. So, for example, the 
+  frequency-doubled version of $\omega_3$ will be $6 \omega_1 (1+9 \alpha)$. 
+  Unless $\alpha = 0$, this is a different frequency from $\omega_6 = 6 
+  \omega_1 (1+36 \alpha)$. Similarly, the sum $\omega_3 + \omega_4$ will be $3 
+  \omega_1 (1+9 \alpha) + 4 \omega_1(1+16 \alpha) = \omega_1 (7 + 91 \alpha)$, 
+  which is a different frequency from $\omega_7 = 7 \omega_1 (1+49 \alpha)$. 
+  The ``phantom partials'' generated by the square law inside Eq. (9) will not 
+  match any of the original frequencies $\omega_j$. This accounts for the 
+  complicated patterns of peaks revealed in Figs.\ 5 and 6 of section 7.4. 
 
   Finally, our interest is not directly in the longitudinal string motion as 
   such, but in the force exerted on the soundboard, which then produces sound 

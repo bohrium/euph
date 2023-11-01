@@ -2,13 +2,13 @@
   parameters, based on the modal decomposition formula derived in section 
   11.4.1: 
 
-  $$Z(\omega) = i \omega \sum_m{\dfrac{A_m}{\omega_m^2+ i \omega \omega_m/Q_m 
-  -- \omega^2}} \tag{1}$$ 
+  \begin{equation*}Z(\omega) = i \omega \sum_m{\dfrac{A_m}{\omega_m^2+ i \omega 
+  \omega_m/Q_m -- \omega^2}} \tag{1}\end{equation*} 
 
-  where $\omega_m$ is the (angular) frequency and $Q_m$ the Q-factor of mode 
-  $m$. The coefficient $A_m = p_m^2(0)$, where $p_m(x)$ is the pressure mode 
-  shape for a tube closed at the mouthpiece end where $x=0$. (The mode shape 
-  must be normalised in a particular way, explained in section 11.4.1.) 
+  \noindent{}where $\omega_m$ is the (angular) frequency and $Q_m$ the Q-factor 
+  of mode $m$. The coefficient $A_m = p_m^2(0)$, where $p_m(x)$ is the pressure 
+  mode shape for a tube closed at the mouthpiece end where $x=0$. (The mode 
+  shape must be normalised in a particular way, explained in section 11.4.1.) 
 
   As we showed in section 10.5.1, each single term from the modal summation 
   (1), when plotted in the Nyquist plane (real part of $Z$ versus imaginary 
@@ -68,10 +68,11 @@
   such an oscillator back in section 2.2.8. So we know that our impulse 
   response $g(t)$ is given by 
 
-  $$g(t) \approx \sum_m{A_m \cos(\omega_m t) e^{-\omega_m t/2Q_m}} \tag{2}$$ 
+  \begin{equation*}g(t) \approx \sum_m{A_m \cos(\omega_m t) e^{-\omega_m 
+  t/2Q_m}} \tag{2}\end{equation*} 
 
-  where, again, we use values of $A_m$ which are real and positive, ignoring 
-  the fitted phase. 
+  \noindent{}where, again, we use values of $A_m$ which are real and positive, 
+  ignoring the fitted phase. 
 
   Now we can describe the steps of a mode-based simulation. After a given 
   number of time steps, we have available the stored history of the volume flow 
@@ -79,7 +80,8 @@
   mouthpiece is then given by a convolution integral of the flow rate with the 
   impulse response we have just found: 
 
-  $$p(t) = \int_0^t{v(t-\tau) g(\tau) d \tau} . \tag{3}$$ 
+  \begin{equation*}p(t) = \int_0^t{v(t-\tau) g(\tau) d \tau} . 
+  \tag{3}\end{equation*} 
 
   The lower limit of the integral is written as $\tau=0$ here, on the 
   assumption that the simulation started at time $t=0$. In any computer 

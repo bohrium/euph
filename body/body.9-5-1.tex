@@ -29,15 +29,17 @@
   little algebraic manipulation, the resulting equation can be cast into a 
   difference equation 
 
-  $$v_n -- \lambda^2 v_{n-N} = \dfrac{1}{2Z_0} \left[f_n + \lambda f_{n-p} + 
-  \lambda f_{n-q} + \lambda^2 f_{n-N} \right] \tag{1}$$ 
+  \begin{equation*}v_n -- \lambda^2 v_{n-N} = \dfrac{1}{2Z_0} \left[f_n + 
+  \lambda f_{n-p} + \lambda f_{n-q} + \lambda^2 f_{n-N} \right] 
+  \tag{1}\end{equation*} 
 
-  where $N=p+q$. As usual, for each successive value of $n$ this equation is to 
-  be solved simultaneously with 
+  \noindent{}where $N=p+q$. As usual, for each successive value of $n$ this 
+  equation is to be solved simultaneously with 
 
-  $$f_n = F_b \mu(v_n) \tag{2}$$ 
+  \begin{equation*}f_n = F_b \mu(v_n) \tag{2}\end{equation*} 
 
-  where $F_b$ is the bow force and $\mu(v)$ is the friction coefficient. 
+  \noindent{}where $F_b$ is the bow force and $\mu(v)$ is the friction 
+  coefficient. 
 
   The simplicity of this model allows various mathematical investigations to be 
   carried out relatively straightforwardly. Raman was able to solve the model 
@@ -56,30 +58,31 @@
   solutions with the natural period of the string, so that $v_{n+N}=v_n$ and 
   $f_{n+N}=f_n$ for all values of $n$. Equation (1) then becomes 
 
-  $$2 Z_0 (1 -- \lambda^2) v_n = (1+ \lambda^2)f_n + \lambda f_{n-p} + \lambda 
-  f_{n-q} \tag{3}$$ 
+  \begin{equation*}2 Z_0 (1 -- \lambda^2) v_n = (1+ \lambda^2)f_n + \lambda 
+  f_{n-p} + \lambda f_{n-q} \tag{3}\end{equation*} 
 
-  except that when $n-p$ or $n-q$ go outside the range $1,\cdots,N$ they are 
-  folded back into that range by adding or subtracting a suitable multiple of 
-  $N$. The result is a set of $N$ simultaneous equations that can be written in 
-  the form 
+  \noindent{}except that when $n-p$ or $n-q$ go outside the range $1,\cdots,N$ 
+  they are folded back into that range by adding or subtracting a suitable 
+  multiple of $N$. The result is a set of $N$ simultaneous equations that can 
+  be written in the form 
 
-  $$2 Z_0 (1 -- \lambda^2) \mathbf{v} = M \mathbf{f} \tag{4}$$ 
+  \begin{equation*}2 Z_0 (1 -- \lambda^2) \mathbf{v} = M \mathbf{f} 
+  \tag{4}\end{equation*} 
 
-  where $\mathbf{v}$ and $\mathbf{f}$ are length-$N$ vectors containing the 
-  values of $v_n$ and $f_n$, and the matrix $M$ is given by 
+  \noindent{}where $\mathbf{v}$ and $\mathbf{f}$ are length-$N$ vectors 
+  containing the values of $v_n$ and $f_n$, and the matrix $M$ is given by 
 
-  $$M=\begin{bmatrix}1+\lambda^2 \& 0 \& \cdots \& \lambda \& \cdots \& \lambda 
-  \& 0 \& \cdots \& 0\\0 \& 1+\lambda^2 \& 0 \& \cdots \& \lambda \& \cdots \& 
-  \lambda \& 0 \& \cdots \\ \vdots \& \vdots \& \vdots \& \vdots \& \vdots \& 
-  \vdots \& \vdots \& \vdots \& \vdots\\ \vdots \& \vdots \& \vdots \& \vdots 
-  \& \vdots \& \vdots \& \vdots \& \vdots \& \vdots \\\cdots \& 0 \& \lambda \& 
-  \cdots \& \lambda \& \cdots \& 0 \& 1+\lambda^2 \& 0\\0 \& \cdots \& 0 \& 
-  \lambda \& \cdots \& \lambda \& \cdots \& 0 \& 1+\lambda^2 \end{bmatrix} 
-  \tag{5}$$ 
+  \begin{equation*}M=\begin{bmatrix}1+\lambda^2 \& 0 \& \cdots \& \lambda \& 
+  \cdots \& \lambda \& 0 \& \cdots \& 0\\0 \& 1+\lambda^2 \& 0 \& \cdots \& 
+  \lambda \& \cdots \& \lambda \& 0 \& \cdots \\ \vdots \& \vdots \& \vdots \& 
+  \vdots \& \vdots \& \vdots \& \vdots \& \vdots \& \vdots\\ \vdots \& \vdots 
+  \& \vdots \& \vdots \& \vdots \& \vdots \& \vdots \& \vdots \& \vdots 
+  \\\cdots \& 0 \& \lambda \& \cdots \& \lambda \& \cdots \& 0 \& 1+\lambda^2 
+  \& 0\\0 \& \cdots \& 0 \& \lambda \& \cdots \& \lambda \& \cdots \& 0 \& 
+  1+\lambda^2 \end{bmatrix} \tag{5}\end{equation*} 
 
-  where the diagonal bands containing $\lambda$ are spaced $p$ and $q$ places 
-  above and below the leading diagonal. 
+  \noindent{}where the diagonal bands containing $\lambda$ are spaced $p$ and 
+  $q$ places above and below the leading diagonal. 
 
   During an interval of sticking, we know that $v_n=v_b$, the bow speed, while 
   the corresponding $f_n$ is unknown. The situation is reversed during an 
@@ -93,33 +96,35 @@
   values we are slipping. Now we partition the vectors and the matrix in this 
   $q:p$ ratio: 
 
-  $$\mathbf{v}=\begin{bmatrix} \mathbf{v_1}\\ 
+  \begin{equation*}\mathbf{v}=\begin{bmatrix} \mathbf{v_1}\\ 
   \mathbf{v_2}\end{bmatrix},~~~\mathbf{f}=\begin{bmatrix} \mathbf{f_1}\\ 
   \mathbf{f_2}\end{bmatrix}, M=\begin{bmatrix} A \& B \\ C \& D\end{bmatrix} 
-  \tag{6}$$ 
+  \tag{6}\end{equation*} 
 
-  where $\mathbf{v_1}$ contains $q$ repeats of the value $v_b$, $\mathbf{v_2}$ 
-  contains the unknown velocities, $\mathbf{f_1}$ contains the unknown forces, 
-  and $\mathbf{f_2}$ contains $p$ repeats of the value $F_b \mu_d$. 
+  \noindent{}where $\mathbf{v_1}$ contains $q$ repeats of the value $v_b$, 
+  $\mathbf{v_2}$ contains the unknown velocities, $\mathbf{f_1}$ contains the 
+  unknown forces, and $\mathbf{f_2}$ contains $p$ repeats of the value $F_b 
+  \mu_d$. 
 
   Expanding the partitioned problem out we obtain 
 
-  $$2 Z_0 (1 -- \lambda^2) \mathbf{v_1}=A \mathbf{f_1}+B\mathbf{f_2} \tag{7}$$ 
+  \begin{equation*}2 Z_0 (1 -- \lambda^2) \mathbf{v_1}=A 
+  \mathbf{f_1}+B\mathbf{f_2} \tag{7}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$2 Z_0 (1 -- \lambda^2) \mathbf{v_2}=C \mathbf{f_1}+D\mathbf{f_2} . 
-  \tag{8}$$ 
+  \begin{equation*}2 Z_0 (1 -- \lambda^2) \mathbf{v_2}=C 
+  \mathbf{f_1}+D\mathbf{f_2} . \tag{8}\end{equation*} 
 
   Thus the unknown values are given by 
 
-  $$\mathbf{f_1}=A^{-1} \left[ 2 Z_0 (1 -- \lambda^2) \mathbf{v_1} -- 
-  B\mathbf{f_2} \right] \tag{9}$$ 
+  \begin{equation*}\mathbf{f_1}=A^{-1} \left[ 2 Z_0 (1 -- \lambda^2) 
+  \mathbf{v_1} -- B\mathbf{f_2} \right] \tag{9}\end{equation*} 
 
-  and then 
+  \noindent{}and then 
 
-  $$\mathbf{v_2}=\dfrac{1}{2 Z_0 (1 -- \lambda^2)} \left[C 
-  \mathbf{f_1}+D\mathbf{f_2} \right] . \tag{10}$$ 
+  \begin{equation*}\mathbf{v_2}=\dfrac{1}{2 Z_0 (1 -- \lambda^2)} \left[C 
+  \mathbf{f_1}+D\mathbf{f_2} \right] . \tag{10}\end{equation*} 
 
   Figure 1 shows some computed examples. The first plot shows the force and 
   velocity waveforms for the case $p=1$, $q=12$. Cases like this, where 

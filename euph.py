@@ -97,8 +97,12 @@ def process_para(groupdict):
         if 'SECTION' in text: return ''
         text = text.strip()
         #
-        if text.startswith('[1]'):
+        if text.startswith('$$') and text.endswith('$$'):
+            text = r'\begin{equation*}' + text[2:-2] + r'\end{equation*}'
+        elif text.startswith('[1]'):
             text = '\\sectionreferences{}'+text
+        elif text and text[0].islower():
+            text = r'\noindent{}'+text
         #elif text.startswith('<strong>'):
         #     text = (text.replace('<strong>', '\\samsection{')
         #                 .replace('</strong>', '}'))
@@ -111,6 +115,7 @@ def process_para(groupdict):
         text = text.replace('Figs. ', 'Figs.\\ ')
         #
         return wrap_col(text)
+
     elif imageurl is not None:
         h = hashlib.md5(imageurl.encode('utf-8')).hexdigest()[:8]
         local_name = 'figs/fig-{:s}.png'.format(h)
@@ -178,9 +183,9 @@ def make_input(b):
     return (''
         +{0:'\\sampart', 1:'\\samsection', 2:'\\sampassage'}[level]
         +'{{{:s} \\quad {:s}}}'.format(sn, b['title'])
+        +r'\label{s:'+h+'}'
         +'\\renewcommand{{\\whichsect}}{{{:s}}}'.format(sn)
         +'\\input{{{:s}}}'.format(filenm_from_sn(sn))
-        +r'\label{s:'+h+'}'
     )
 
 def make_contents(b):
@@ -189,8 +194,8 @@ def make_contents(b):
     level = sn.count('-')
     h = hashlib.md5(title.encode('utf-8')).hexdigest()[:8]
     return (
-         {0:r'\item[\hspace{{-1cm}}{:s}\hspace{{+0cm}} \large\bf\sf \blu {:s}]\hfill \\ ',
-         1:r'\quad{{\gre{{}}{:s}}}~{:s}',
+         {0:r'\item[\hspace{{-1cm}}{{\gre{{}}{:s}}}\hspace{{+0cm}} \large\bf\sf \blu {:s}]\hfill \\ ',
+         1:r'\quad{{\gre {:s}}}~{:s}',
          #1:r'\item[\quad\quad {:s}]\hfill {:s}',
          2:''}[level].format(
             r'\pageref{s:'+h+'}',
@@ -238,7 +243,7 @@ def correct_all(sectnum, before, after):
 
 if __name__=='__main__':
     make_all_inputs('all-input.tex', contentsfilename='all-contents.tex')
-    #make_all_bodies()
+    make_all_bodies()
 
     correct_typo('5.5', r'admittances are plotted in Fig.\ 15}.',
                         r'admittances are plotted in Fig.\ 15.'  )

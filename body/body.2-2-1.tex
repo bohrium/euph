@@ -2,30 +2,34 @@
   function you start with is $f(t)$, repeating with a period $T$. Then it can 
   be expressed by 
 
-  $$f(t)=a_0+\sum_{n=1}^\infty \left( a_n \cos \dfrac{2n\pi t}{T} + b_n \sin 
-  \dfrac{2n\pi t}{T} \right) \tag{1}$$ 
+  \begin{equation*}f(t)=a_0+\sum_{n=1}^\infty \left( a_n \cos \dfrac{2n\pi 
+  t}{T} + b_n \sin \dfrac{2n\pi t}{T} \right) \tag{1}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$a_0=\dfrac{1}{T}\int_0^T f(t) dt, a_n=\dfrac{2}{T}\int_0^T f(t)\cos 
-  \dfrac{2n\pi t}{T} dt \tag{2}$$ 
+  \begin{equation*}a_0=\dfrac{1}{T}\int_0^T f(t) dt, a_n=\dfrac{2}{T}\int_0^T 
+  f(t)\cos \dfrac{2n\pi t}{T} dt \tag{2}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$b_n=\dfrac{2}{T}\int_0^T f(t)\sin \dfrac{2n\pi t}{T} dt. \tag{3}$$ 
+  \begin{equation*}b_n=\dfrac{2}{T}\int_0^T f(t)\sin \dfrac{2n\pi t}{T} dt. 
+  \tag{3}\end{equation*} 
 
   Alternatively, there is a neater form in terms of complex numbers: 
 
-  $$f(t)=\sum_{n=-\infty}^\infty c_n e^{2in\pi t/T} \tag{4}$$ 
+  \begin{equation*}f(t)=\sum_{n=-\infty}^\infty c_n e^{2in\pi t/T} 
+  \tag{4}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$c_n=\dfrac{2}{T}\int_0^T f(t)e^{-2in\pi t/T} dt. \tag{5}$$ 
+  \begin{equation*}c_n=\dfrac{2}{T}\int_0^T f(t)e^{-2in\pi t/T} dt. 
+  \tag{5}\end{equation*} 
 
   The two versions of the Fourier series are related in a very simple way, via 
   the real and imaginary parts of the complex numbers $c_n$: 
 
-  $$a_n=\Re (c_n), \mathrm{~~~~}b_n=\Im (c_n) \tag{6}$$ 
+  \begin{equation*}a_n=\Re (c_n), \mathrm{~~~~}b_n=\Im (c_n) 
+  \tag{6}\end{equation*} 
 
   We have written all the integrals in equations (2), (3) and (5) over the 
   range from $t=0$ to $t=T$, but we could equally well have chosen any other 
@@ -35,12 +39,13 @@
   main text, then instead of a sum over discrete harmonic frequency components 
   we need an integral: 
 
-  $$f(t)=\int_{-\infty}^\infty F(\omega) e^{i \omega t} dt \tag{7}$$ 
+  \begin{equation*}f(t)=\int_{-\infty}^\infty F(\omega) e^{i \omega t} dt 
+  \tag{7}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$F(\omega)=\dfrac{1}{2\pi}\int_{-\infty}^\infty f(t) e^{-i \omega t} 
-  d\omega. \tag{8}$$ 
+  \begin{equation*}F(\omega)=\dfrac{1}{2\pi}\int_{-\infty}^\infty f(t) e^{-i 
+  \omega t} d\omega. \tag{8}\end{equation*} 
 
   $F(\omega)$ is called the Fourier transform of $f(t)$. 
 
@@ -77,26 +82,29 @@
   derive the explicit form of this Fourier series. If we want a sawtooth wave 
   with period $T$ and peak amplitude of 1, we can define 
 
-  $$f(t) = \dfrac{2t}{T} \tag{9}$$ 
+  \begin{equation*}f(t) = \dfrac{2t}{T} \tag{9}\end{equation*} 
 
-  within the range $-T/2 \le t \le T/2$, and then repeating periodically. 
+  \noindent{}within the range $-T/2 \le t \le T/2$, and then repeating 
+  periodically. 
 
   It is simplest to calculate the complex form of the series: 
 
-  $$c_n=\dfrac{4}{T^2} \int_{-T/2}^{T/2}{t e^{-2in \pi t/T} dt} \tag{10}$$ 
+  \begin{equation*}c_n=\dfrac{4}{T^2} \int_{-T/2}^{T/2}{t e^{-2in \pi t/T} dt} 
+  \tag{10}\end{equation*} 
 
-  where we have chosen the integration range to match the way the function was 
-  defined. 
+  \noindent{}where we have chosen the integration range to match the way the 
+  function was defined. 
 
   So, using integration by parts, 
 
-  $$\dfrac{T^2 c_n}{4} = \left[ -t \dfrac{e^{-2in \pi t/T}}{(-2in \pi /T)} 
-  \right]_{-T/2}^{T/2} -- \dfrac{T}{2in \pi} \int_{-T/2}^{T/2}{e^{-2in \pi t/T} 
-  dt} \tag{11}$$ 
+  \begin{equation*}\dfrac{T^2 c_n}{4} = \left[ -t \dfrac{e^{-2in \pi 
+  t/T}}{(-2in \pi /T)} \right]_{-T/2}^{T/2} -- \dfrac{T}{2in \pi} 
+  \int_{-T/2}^{T/2}{e^{-2in \pi t/T} dt} \tag{11}\end{equation*} 
 
-  $$=\dfrac{T}{2in \pi} \left\lbrace \dfrac{T}{2} e^{-in \pi} + \dfrac{T}{2} 
-  e^{in \pi} \right\rbrace = \dfrac{T^2 (-1)^n}{2in \pi} \tag{12}$$ 
+  \begin{equation*}=\dfrac{T}{2in \pi} \left\lbrace \dfrac{T}{2} e^{-in \pi} + 
+  \dfrac{T}{2} e^{in \pi} \right\rbrace = \dfrac{T^2 (-1)^n}{2in \pi} 
+  \tag{12}\end{equation*} 
 
-  because the integral in equation (11) is zero. So finally 
+  \noindent{}because the integral in equation (11) is zero. So finally 
 
-  $$c_n = \dfrac{2(-1)^n}{in \pi} . \tag{13}$$ 
+  \begin{equation*}c_n = \dfrac{2(-1)^n}{in \pi} . \tag{13}\end{equation*} 

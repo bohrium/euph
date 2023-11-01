@@ -1,18 +1,19 @@
   The mass-spring oscillator is easy to analyse. If the displacement of the 
   mass away from equilibrium is denoted $x(t)$, then Newton's law requires 
 
-  $$m \dfrac{d^2x}{dt^2} + kx=0 \tag{1}$$ 
+  \begin{equation*}m \dfrac{d^2x}{dt^2} + kx=0 \tag{1}\end{equation*} 
 
-  for free motion of the mass, with no external force applied. If a force 
-  $f(t)$ were to be applied, it would simply replace the zero on the right-hand 
-  side of this equation. The general solution of the equation for free motion 
-  can be written 
+  \noindent{}for free motion of the mass, with no external force applied. If a 
+  force $f(t)$ were to be applied, it would simply replace the zero on the 
+  right-hand side of this equation. The general solution of the equation for 
+  free motion can be written 
 
-  $$x(t)=A \cos(\Omega t) + B \sin(\Omega t) \tag{2}$$ 
+  \begin{equation*}x(t)=A \cos(\Omega t) + B \sin(\Omega t) 
+  \tag{2}\end{equation*} 
 
-  where $A$ and $B$ are arbitrary constants, and 
+  \noindent{}where $A$ and $B$ are arbitrary constants, and 
 
-  $$\Omega^2=\dfrac{k}{m}. \tag{3}$$ 
+  \begin{equation*}\Omega^2=\dfrac{k}{m}. \tag{3}\end{equation*} 
 
   $\Omega$ is the oscillation frequency in radians per second: it is related to 
   the frequency $f$ in Hz by $\Omega = 2 \pi f \tag{4}$. 
@@ -20,15 +21,15 @@
   This solution can be written in other forms. The sin and cos terms can be 
   combined into a single sine wave: 
 
-  $$x(t) = R \cos(\Omega t + \phi) \tag{5}$$ 
+  \begin{equation*}x(t) = R \cos(\Omega t + \phi) \tag{5}\end{equation*} 
 
-  where the amplitude 
+  \noindent{}where the amplitude 
 
-  $$R = \sqrt{A^2 + B^2} \tag{6}$$ 
+  \begin{equation*}R = \sqrt{A^2 + B^2} \tag{6}\end{equation*} 
 
-  and the phase shift $\phi$ satisfies 
+  \noindent{}and the phase shift $\phi$ satisfies 
 
-  $$\tan{\phi} = -B/A. \tag{7}$$ 
+  \begin{equation*}\tan{\phi} = -B/A. \tag{7}\end{equation*} 
 
   The form (5) makes it particularly clear that the most general free motion of 
   the oscillator consists of sinusoidal oscillation at (radian) frequency 
@@ -38,12 +39,12 @@
   representation (look back at section 2.1.2 if you are a bit hazy about 
   complex numbers in this application): 
 
-  $$x(t)= C e^{i \Omega t} \tag{8}$$ 
+  \begin{equation*}x(t)= C e^{i \Omega t} \tag{8}\end{equation*} 
 
-  where as usual we implicitly assume that the real part of this complex 
-  expression is to be taken. The complex amplitude $C$ is given by 
+  \noindent{}where as usual we implicitly assume that the real part of this 
+  complex expression is to be taken. The complex amplitude $C$ is given by 
 
-  $$C=R e^{i \phi}. \tag{9}$$ 
+  \begin{equation*}C=R e^{i \phi}. \tag{9}\end{equation*} 
 
   Another important aspect of the behaviour of the simple oscillator is the 
   response to a sinusoidal applied force. The easiest way to analyse this case 
@@ -53,17 +54,18 @@
   same frequency, so write it in the form $X e^{i \omega t}$. Equation (1) then 
   requires 
 
-  $$m \dfrac{d^2}{dt^2}\left[X e^{i \omega t} \right] + kX e^{i \omega t}=Fe^{i 
-  \omega t} . \tag{10}$$ 
+  \begin{equation*}m \dfrac{d^2}{dt^2}\left[X e^{i \omega t} \right] + kX e^{i 
+  \omega t}=Fe^{i \omega t} . \tag{10}\end{equation*} 
 
   Thus 
 
-  $$(- \omega^2 m+k)X=F \tag{11}$$ 
+  \begin{equation*}(- \omega^2 m+k)X=F \tag{11}\end{equation*} 
 
-  so that the frequency response function of the oscillator, $X/F$, is given by 
+  \noindent{}so that the frequency response function of the oscillator, $X/F$, 
+  is given by 
 
-  $$\dfrac{X}{F} = \dfrac{1}{k-\omega^2 m}=\dfrac{1/m}{\Omega^2 -- \omega^2} 
-  \tag{12}. $$ 
+  \begin{equation*}\dfrac{X}{F} = \dfrac{1}{k-\omega^2 m}=\dfrac{1/m}{\Omega^2 
+  -- \omega^2} \tag{12}. \end{equation*} 
 
   For this particular linear system, the frequency response function turns out 
   not to be complex, but it does vary with frequency $\omega$. For low 

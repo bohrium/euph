@@ -10,7 +10,7 @@
   multiplication with the frequency response function of the box, which we can 
   call $G(\omega)$. In other words 
 
-  $$Y(\omega) = G(\omega) X(\omega) . \tag{1}$$ 
+  \begin{equation*}Y(\omega) = G(\omega) X(\omega) . \tag{1}\end{equation*} 
 
   We would like to turn this into a direct relation between $x(t)$ and $y(t)$. 
   We will first do this mathematically, then we will see how to interpret the 
@@ -32,28 +32,30 @@
   This delta function, written $\delta(t)$, has two important properties. The 
   first of them is this: 
 
-  $$\int{f(t) \delta(t-T) dt} = f(T) \tag{2}$$ 
+  \begin{equation*}\int{f(t) \delta(t-T) dt} = f(T) \tag{2}\end{equation*} 
 
-  where $f(t)$ is any function, and the limits of the integration must include 
-  the value $t=T$, where the infinite peak of the delta function occurs. This 
-  result is fairly obvious, if you just think about the sequence of shapes in 
-  Fig.\ 1. The values of $f(t)$ do not matter except in the immediate vicinity 
-  of $t=T$ because the delta function is zero everywhere else. So we might as 
-  well replace $f(t)$ by the constant value $f(T)$. We could then take that 
-  constant outside the integral, leaving just the delta function inside. But we 
-  know the delta function integrates to the value 1 because it has been defined 
-  that way. 
+  \noindent{}where $f(t)$ is any function, and the limits of the integration 
+  must include the value $t=T$, where the infinite peak of the delta function 
+  occurs. This result is fairly obvious, if you just think about the sequence 
+  of shapes in Fig.\ 1. The values of $f(t)$ do not matter except in the 
+  immediate vicinity of $t=T$ because the delta function is zero everywhere 
+  else. So we might as well replace $f(t)$ by the constant value $f(T)$. We 
+  could then take that constant outside the integral, leaving just the delta 
+  function inside. But we know the delta function integrates to the value 1 
+  because it has been defined that way. 
 
   The second important property concerns the Fourier transform of $\delta(t)$, 
   which we could call $D(\omega)$: 
 
-  $$D(\omega)=\dfrac{1}{2 \pi} \int_{-\infty}^{\infty}{\delta(t) e^{-i \omega 
-  t} dt} =\dfrac{1}{2 \pi} \tag{3}$$ 
+  \begin{equation*}D(\omega)=\dfrac{1}{2 \pi} \int_{-\infty}^{\infty}{\delta(t) 
+  e^{-i \omega t} dt} =\dfrac{1}{2 \pi} \tag{3}\end{equation*} 
 
-  using eq. (2), and so, by the formula for the inverse Fourier transform, 
+  \noindent{}using eq. (2), and so, by the formula for the inverse Fourier 
+  transform, 
 
-  $$2 \pi \delta(t)=\int_{\infty}^{\infty}{2 \pi D(\omega) e^{i \omega t} d 
-  \omega} =\int_{-\infty}^{\infty}{e^{i \omega t} d \omega} . \tag{4}$$ 
+  \begin{equation*}2 \pi \delta(t)=\int_{\infty}^{\infty}{2 \pi D(\omega) e^{i 
+  \omega t} d \omega} =\int_{-\infty}^{\infty}{e^{i \omega t} d \omega} . 
+  \tag{4}\end{equation*} 
 
   The delta function contains all frequencies, with equal amplitude. 
 
@@ -63,44 +65,47 @@
   third function $c(t)$ with Fourier transform $C(\omega)$ satisfies $C=AB$. 
   The theorem then states that 
 
-  $$c(t)= \dfrac{1}{2 \pi} \int_{-\infty}^{\infty}{a(t-\tau) b(\tau) d \tau} 
-  \tag{5}$$ 
+  \begin{equation*}c(t)= \dfrac{1}{2 \pi} \int_{-\infty}^{\infty}{a(t-\tau) 
+  b(\tau) d \tau} \tag{5}\end{equation*} 
 
-  where the integral on the right-hand side is called a convolution integral. 
-  To prove this theorem, we express this integral in terms of the Fourier 
-  transforms $A$ and $B$: 
+  \noindent{}where the integral on the right-hand side is called a convolution 
+  integral. To prove this theorem, we express this integral in terms of the 
+  Fourier transforms $A$ and $B$: 
 
-  $$\int_{-\infty}^{\infty}{a(t-\tau) b(\tau) d 
+  \begin{equation*}\int_{-\infty}^{\infty}{a(t-\tau) b(\tau) d 
   \tau}=\int_{-\infty}^{\infty}{\int_{-\infty}^{\infty}{\int_{-\infty}^{\infty}{A(\alpha) 
-  e^{i \alpha (t-\tau)} B(\beta) e^{i \beta \tau} d \beta} d \alpha } d \tau}$$ 
+  e^{i \alpha (t-\tau)} B(\beta) e^{i \beta \tau} d \beta} d \alpha } d 
+  \tau}\end{equation*} 
 
-  $$=\int_{-\infty}^{\infty}{\int_{-\infty}^{\infty}{A(\alpha) B(\beta) e^{i 
-  \alpha t} \int_{-\infty}^{\infty}{e^{i (\beta -- \alpha) \tau} d \tau} d 
-  \beta} d \alpha }. \tag{6}$$ 
+  \begin{equation*}=\int_{-\infty}^{\infty}{\int_{-\infty}^{\infty}{A(\alpha) 
+  B(\beta) e^{i \alpha t} \int_{-\infty}^{\infty}{e^{i (\beta -- \alpha) \tau} 
+  d \tau} d \beta} d \alpha }. \tag{6}\end{equation*} 
 
   But we can express the final integral in terms of a delta function using eq. 
   (4): 
 
-  $$\int_{-\infty}^{\infty}{e^{i (\beta -- \alpha) \tau} d \tau} = 2 \pi \delta 
-  (\beta -- \alpha) \tag{7}$$ 
+  \begin{equation*}\int_{-\infty}^{\infty}{e^{i (\beta -- \alpha) \tau} d \tau} 
+  = 2 \pi \delta (\beta -- \alpha) \tag{7}\end{equation*} 
 
   Substituting into eq. (6), we can now do the $\beta$ integration trivially 
   using eq. (2), and so 
 
-  $$\int_{-\infty}^{\infty}{a(t-\tau) b(\tau) d \tau}=2 
-  \pi\int_{-\infty}^{\infty}{A(\alpha) B(\alpha) e^{i \alpha t} d \alpha}$$ 
+  \begin{equation*}\int_{-\infty}^{\infty}{a(t-\tau) b(\tau) d \tau}=2 
+  \pi\int_{-\infty}^{\infty}{A(\alpha) B(\alpha) e^{i \alpha t} d 
+  \alpha}\end{equation*} 
 
-  $$=2 \pi \int_{-\infty}^{\infty}{C(\alpha) e^{i \alpha t} d \alpha} =2 \pi 
-  c(t) \tag{8}$$ 
+  \begin{equation*}=2 \pi \int_{-\infty}^{\infty}{C(\alpha) e^{i \alpha t} d 
+  \alpha} =2 \pi c(t) \tag{8}\end{equation*} 
 
-  which is the convolution theorem. 
+  \noindent{}which is the convolution theorem. 
 
   We can apply this theorem directly to eq. (1), in terms of the inverse 
   Fourier transform of $G(\omega)$. For reasons that will rapidly become 
   apparent, it is convenient to call this inverse transform $2 \pi g(t)$. The 
   result is then 
 
-  $$y(t)= \int_{-\infty}^{\infty}{g(t-\tau) x(\tau) d \tau} . \tag{9}$$ 
+  \begin{equation*}y(t)= \int_{-\infty}^{\infty}{g(t-\tau) x(\tau) d \tau} . 
+  \tag{9}\end{equation*} 
 
   The function $g(t)$ has a simple physical interpretation in terms of our 
   input-output system. From eq. (1), if the input is a delta function then the 
@@ -121,8 +126,8 @@
   phase to match these initial conditions. The displacement for $t \ge 0$, 
   which is the impulse response, is thus 
 
-  $$g(t) = \dfrac{1}{m \Omega} \sin \Omega t= \dfrac{1}{\sqrt{k m}} \sin \Omega 
-  t . \tag{10}$$ 
+  \begin{equation*}g(t) = \dfrac{1}{m \Omega} \sin \Omega t= \dfrac{1}{\sqrt{k 
+  m}} \sin \Omega t . \tag{10}\end{equation*} 
 
   There is a simple way to understand the meaning of the convolution integral 
   eq. (9). For the sake of graphical clarity, we will not illustrate using the 
@@ -151,7 +156,8 @@
   given, approximately, by the sum of all these scaled and delayed impulse 
   responses. In other words 
 
-  $$y(t) \approx \sum_{slices}{x(T) g(t-T) \Delta T} . \tag{11}$$ 
+  \begin{equation*}y(t) \approx \sum_{slices}{x(T) g(t-T) \Delta T} . 
+  \tag{11}\end{equation*} 
 
   The result of adding up this sum for the finite strips in Fig.\ 2 is plotted 
   in Fig.\ 3. 
@@ -164,10 +170,11 @@
   approximate more and more closely to the actual function $x(t)$. In the limit 
   the sum becomes an integral and the approximation becomes exact: 
 
-  $$y(t)=\int_{-\infty}^{t}{x(T) g(t-T) dT} , \tag{12}$$ 
+  \begin{equation*}y(t)=\int_{-\infty}^{t}{x(T) g(t-T) dT} , 
+  \tag{12}\end{equation*} 
 
-  which is exactly the convolution integral of eq. (9). The result for the 
-  sample problem is plotted in Fig.\ 4. 
+  \noindent{}which is exactly the convolution integral of eq. (9). The result 
+  for the sample problem is plotted in Fig.\ 4. 
 
   \fig{figs/fig-5cd1f792.png}{\caption{Figure 4. Plot as in Fig. 3, after the 
   width of the strips has become very narrow.}} 

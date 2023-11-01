@@ -9,42 +9,47 @@
 
   We can write the resulting equation in this form: 
 
-  $$\ddot{x}+p \eta \dot{x} +p^2 x +\mu x^3 = F(t) \tag{1}$$ 
+  \begin{equation*}\ddot{x}+p \eta \dot{x} +p^2 x +\mu x^3 = F(t) 
+  \tag{1}\end{equation*} 
 
-  where $p$ is the angular frequency of the linear oscillator resonance, $\eta$ 
-  is the linear damping factor, $\mu$ is the nonlinear coefficient, and $F(t)$ 
-  is the externally applied excitation force. If $\mu > 0$ it is a hardening 
-  spring, if $\mu < 0$ it is a softening spring. We will consider the case of 
-  harmonic excitation with amplitude $a$ and frequency $\omega$: 
+  \noindent{}where $p$ is the angular frequency of the linear oscillator 
+  resonance, $\eta$ is the linear damping factor, $\mu$ is the nonlinear 
+  coefficient, and $F(t)$ is the externally applied excitation force. If $\mu > 
+  0$ it is a hardening spring, if $\mu < 0$ it is a softening spring. We will 
+  consider the case of harmonic excitation with amplitude $a$ and frequency 
+  $\omega$: 
 
-  $$F(t)=a \cos \omega t . \tag{2}$$ 
+  \begin{equation*}F(t)=a \cos \omega t . \tag{2}\end{equation*} 
 
   We will first look at the undamped case, with $\eta =0$. The cubic spring law 
   means that the nonlinearity generates only odd harmonics. So a simple 2-term 
   harmonic expression to try would be 
 
-  $$x \approx \alpha \cos \omega t + \beta \cos 3\omega t . \tag{3}$$ 
+  \begin{equation*}x \approx \alpha \cos \omega t + \beta \cos 3\omega t . 
+  \tag{3}\end{equation*} 
 
   Substituting in eq. (1) gives 
 
-  $$-\omega^2 \left(\alpha \cos \omega t + 9\beta \cos 3\omega t\right) + p^2 
-  \left(\alpha \cos \omega t + \beta \cos 3\omega t\right)$$ 
+  \begin{equation*}-\omega^2 \left(\alpha \cos \omega t + 9\beta \cos 3\omega 
+  t\right) + p^2 \left(\alpha \cos \omega t + \beta \cos 3\omega 
+  t\right)\end{equation*} 
 
-  $$+\mu \left(\alpha \cos \omega t + \beta \cos 3\omega t\right)^3 = a \cos 
-  \omega t. \tag{4}$$ 
+  \begin{equation*}+\mu \left(\alpha \cos \omega t + \beta \cos 3\omega 
+  t\right)^3 = a \cos \omega t. \tag{4}\end{equation*} 
 
   We now expand out the cubed term, and make use of three standard 
   trigonometrical formulae: 
 
-  $$\cos \theta \cos \phi = \frac{1}{2} \left[\cos (\theta -- \phi) + \cos 
-  (\theta + \phi) \right], \tag{5}$$ 
+  \begin{equation*}\cos \theta \cos \phi = \frac{1}{2} \left[\cos (\theta -- 
+  \phi) + \cos (\theta + \phi) \right], \tag{5}\end{equation*} 
 
-  $$\cos^2 \theta = \dfrac{1}{2}\left(1 + \cos 2 \theta \right) \tag{6}$$ 
+  \begin{equation*}\cos^2 \theta = \dfrac{1}{2}\left(1 + \cos 2 \theta \right) 
+  \tag{6}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\cos^3 \theta =\frac{3}{4}\cos \theta + \frac{1}{4} \cos 3 \theta . 
-  \tag{7}$$ 
+  \begin{equation*}\cos^3 \theta =\frac{3}{4}\cos \theta + \frac{1}{4} \cos 3 
+  \theta . \tag{7}\end{equation*} 
 
   The result is a linear combination of terms in $\cos n\omega t$ for various 
   odd-number values of $n$. We equate the coefficients of all the terms in 
@@ -56,24 +61,28 @@
 
   The two equations that result are: 
 
-  $$-\alpha \omega^2 + \alpha p^2 + \mu \left[\frac{3}{4}\alpha^3 + 
-  \frac{3}{4}\alpha^2 \beta +\frac{3}{2}\alpha \beta^2 \right] = a \tag{8}$$ 
+  \begin{equation*}-\alpha \omega^2 + \alpha p^2 + \mu 
+  \left[\frac{3}{4}\alpha^3 + \frac{3}{4}\alpha^2 \beta +\frac{3}{2}\alpha 
+  \beta^2 \right] = a \tag{8}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$-9\beta \omega^2+ \beta p^2 + \mu \left[\frac{1}{4}\alpha^3 + 
-  \frac{3}{2}\alpha^2 \beta +\frac{3}{4} \beta^3 \right] = 0 . \tag{9}$$ 
+  \begin{equation*}-9\beta \omega^2+ \beta p^2 + \mu \left[\frac{1}{4}\alpha^3 
+  + \frac{3}{2}\alpha^2 \beta +\frac{3}{4} \beta^3 \right] = 0 . 
+  \tag{9}\end{equation*} 
 
   We can make a further approximation: we expect the third harmonic generated 
   by the nonlinearity to be small in magnitude, so that $ |\beta | \ll |\alpha 
   |$. The terms in square brackets, which are also multiplied by the small 
   parameter $\mu$, can thus be simplified to give 
 
-  $$\alpha (p^2 -- \omega^2) +\dfrac{3}{4} \mu \alpha^3 \approx a \tag{10}$$ 
+  \begin{equation*}\alpha (p^2 -- \omega^2) +\dfrac{3}{4} \mu \alpha^3 \approx 
+  a \tag{10}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\beta (p^2-9 \omega^2) + \dfrac{1}{4} \mu \alpha^3 \approx 0 . \tag{11}$$ 
+  \begin{equation*}\beta (p^2-9 \omega^2) + \dfrac{1}{4} \mu \alpha^3 \approx 0 
+  . \tag{11}\end{equation*} 
 
   Equation (10) is a cubic equation for $\alpha$ for given excitation level 
   $a$. Once $\alpha$ is found, eq. (11) gives the associated value of $\beta$. 
@@ -99,26 +108,27 @@
   calculation worked out, we can save effort by looking only at the fundamental 
   component of the Fourier series: so this time we try 
 
-  $$x=\alpha \cos \omega t + \gamma \sin \omega t . \tag{12}$$ 
+  \begin{equation*}x=\alpha \cos \omega t + \gamma \sin \omega t . 
+  \tag{12}\end{equation*} 
 
   We substitute into eq. (1), and make similar use of trigonometrical 
   identities. Ignoring all higher harmonic components, we can obtain two 
   equations for $\alpha$ and $\gamma$ by equating coefficients of all terms in 
   $\cos \omega t$, and all terms in $\sin \omega t$. The result is 
 
-  $$(p^2 -- \omega^2) \alpha +p \eta \gamma \omega +\frac{3}{4} \mu \alpha 
-  (\alpha^2 + \gamma^2) = a \tag{13}$$ 
+  \begin{equation*}(p^2 -- \omega^2) \alpha +p \eta \gamma \omega +\frac{3}{4} 
+  \mu \alpha (\alpha^2 + \gamma^2) = a \tag{13}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$(p^2 -- \omega^2) \gamma -p \eta \alpha \omega +\frac{3}{4} \mu \gamma 
-  (\alpha^2 + \gamma^2) = 0 . \tag{14}$$ 
+  \begin{equation*}(p^2 -- \omega^2) \gamma -p \eta \alpha \omega +\frac{3}{4} 
+  \mu \gamma (\alpha^2 + \gamma^2) = 0 . \tag{14}\end{equation*} 
 
   With a little manipulation, these two equations can be combined to yield a 
   single equation for the amplitude $z$, defined by $z^2=\alpha^2 + \gamma^2$: 
 
-  $$\left[ \left(\omega^2 -- p^2 -- \frac{3}{4} \mu z^2 \right)^2 + (p \eta 
-  \omega)^2 \right] z^2 = a^2. \tag{15}$$ 
+  \begin{equation*}\left[ \left(\omega^2 -- p^2 -- \frac{3}{4} \mu z^2 
+  \right)^2 + (p \eta \omega)^2 \right] z^2 = a^2. \tag{15}\end{equation*} 
 
   This cubic equation for $z^2$ was solved numerically to generate the damped 
   response shown in Figs.\ 3, 4 and 5 of section 8.2. 
@@ -131,13 +141,13 @@
   point where $\alpha = 0$. Substituting this into eqs. (13) and (14) and doing 
   minor manipulations, we obtain the equation 
 
-  $$\gamma^4 +\dfrac{4p^2}{3 \mu} \gamma^2 -\dfrac{4a^2}{3 \mu p^2 \eta^2}=0 
-  \tag{16}$$ 
+  \begin{equation*}\gamma^4 +\dfrac{4p^2}{3 \mu} \gamma^2 -\dfrac{4a^2}{3 \mu 
+  p^2 \eta^2}=0 \tag{16}\end{equation*} 
 
-  which is a quadratic equation for $\gamma^2$. Once $\gamma$ is known, the 
-  corresponding frequency satisfies 
+  \noindent{}which is a quadratic equation for $\gamma^2$. Once $\gamma$ is 
+  known, the corresponding frequency satisfies 
 
-  $$p \eta \gamma \omega = a. \tag{17}$$ 
+  \begin{equation*}p \eta \gamma \omega = a. \tag{17}\end{equation*} 
 
   These two equations, evaluated with different values of $a$ representing a 
   slow decay of the oscillation, give the blue circles shown in Figs.\ 3 and 5 

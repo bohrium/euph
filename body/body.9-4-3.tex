@@ -37,62 +37,65 @@
   To see how the coupled system behaves, we can simply write down Newton's law 
   for the two masses, to deduce 
 
-  $$m_1 \ddot{x_1} = -- k_1 x_1 -- k_2 (x_1 -x_2) \tag{1}$$ 
+  \begin{equation*}m_1 \ddot{x_1} = -- k_1 x_1 -- k_2 (x_1 -x_2) 
+  \tag{1}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$m_2 \ddot{x_2} = -- k_2 (x_2 -x_1) \tag{2}$$ 
+  \begin{equation*}m_2 \ddot{x_2} = -- k_2 (x_2 -x_1) \tag{2}\end{equation*} 
 
-  where $x_1$ and $x_2$ are the displacements of the two masses away from their 
-  equilibrium positions. We can deduce the mass, stiffness and damping 
-  matrices: 
+  \noindent{}where $x_1$ and $x_2$ are the displacements of the two masses away 
+  from their equilibrium positions. We can deduce the mass, stiffness and 
+  damping matrices: 
 
-  $$M=\begin{bmatrix}m_1 \& 0\\ 0 \& 
+  \begin{equation*}M=\begin{bmatrix}m_1 \& 0\\ 0 \& 
   m_2\end{bmatrix},~~K=\begin{bmatrix}k_1+k_2 \& -k_2\\ -k_2 \& 
   k_2\end{bmatrix},~~C=\begin{bmatrix}c_1 \& 0\\ 0 \& c_2\end{bmatrix} . 
-  \tag{3}$$ 
+  \tag{3}\end{equation*} 
 
   The case of interest arises when the TMD is tuned to the same natural 
   frequency as the original resonance, so we can choose to set 
 
-  $$m_2=\epsilon m_1,~~~k_2=\epsilon k_1 \tag{4}$$ 
+  \begin{equation*}m_2=\epsilon m_1,~~~k_2=\epsilon k_1 \tag{4}\end{equation*} 
 
-  where the mass ratio $\epsilon$ is expected to be a small number. The 
-  absolute values of $m_1$ and $k_1$ will not influence the behaviour except to 
-  set the specific value of the resonance frequency, and act as an overall 
-  scale factor in any frequency response functions. For maximum simplicity, we 
-  can treat the non-dimensionalised case with $m_1=1,~~k_1=1$ so that when we 
-  calculate the coupled natural frequencies they will be normalised by the 
-  original resonance frequency. 
+  \noindent{}where the mass ratio $\epsilon$ is expected to be a small number. 
+  The absolute values of $m_1$ and $k_1$ will not influence the behaviour 
+  except to set the specific value of the resonance frequency, and act as an 
+  overall scale factor in any frequency response functions. For maximum 
+  simplicity, we can treat the non-dimensionalised case with $m_1=1,~~k_1=1$ so 
+  that when we calculate the coupled natural frequencies they will be 
+  normalised by the original resonance frequency. 
 
   The mass and stiffness matrices then take the form 
 
-  $$M=\begin{bmatrix}1 \& 0\\ 0 \& 
+  \begin{equation*}M=\begin{bmatrix}1 \& 0\\ 0 \& 
   \epsilon\end{bmatrix},~~K=\begin{bmatrix}1+\epsilon \& -\epsilon\\ -\epsilon 
-  \& \epsilon\end{bmatrix} . \tag{5}$$ 
+  \& \epsilon\end{bmatrix} . \tag{5}\end{equation*} 
 
   We can now calculate the undamped natural frequencies and mode shapes in the 
   usual way (see equations (8) and (9) of section 2.2.5). The (normalised) 
   natural frequencies satisfy 
 
-  $$\begin{vmatrix}1-\epsilon-\omega^2 \& -\epsilon \\ -\epsilon \& 
-  \epsilon-\epsilon \omega^2\end{vmatrix} =0 \tag{6}$$ 
+  \begin{equation*}\begin{vmatrix}1-\epsilon-\omega^2 \& -\epsilon \\ -\epsilon 
+  \& \epsilon-\epsilon \omega^2\end{vmatrix} =0 \tag{6}\end{equation*} 
 
-  which simplifies to the quadratic equation 
+  \noindent{}which simplifies to the quadratic equation 
 
-  $$\omega^4 -- (2-\epsilon) \omega^2 + (1-2\epsilon) = 0 \tag{7}$$ 
+  \begin{equation*}\omega^4 -- (2-\epsilon) \omega^2 + (1-2\epsilon) = 0 
+  \tag{7}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$\omega^2 = 1 -\dfrac{\epsilon}{2} \pm \sqrt{\epsilon -- \epsilon^2 /4} 
-  \approx 1 \pm \sqrt{\epsilon} \tag{8}$$ 
+  \begin{equation*}\omega^2 = 1 -\dfrac{\epsilon}{2} \pm \sqrt{\epsilon -- 
+  \epsilon^2 /4} \approx 1 \pm \sqrt{\epsilon} \tag{8}\end{equation*} 
 
-  where the final approximation uses the fact that $\epsilon$ is small. 
+  \noindent{}where the final approximation uses the fact that $\epsilon$ is 
+  small. 
 
   Now we can deduce the ratio of modal amplitudes from equation (2): 
 
-  $$\dfrac{x_2}{x_1} = \dfrac{1}{1-\omega^2} \approx \pm 
-  \dfrac{1}{\sqrt{\epsilon}} . \tag{9}$$ 
+  \begin{equation*}\dfrac{x_2}{x_1} = \dfrac{1}{1-\omega^2} \approx \pm 
+  \dfrac{1}{\sqrt{\epsilon}} . \tag{9}\end{equation*} 
 
   A physical interpretation of equation (9) is that the two masses have 
   approximately equal kinetic energy in both modes. 
@@ -117,17 +120,18 @@
   \omega t}$ on mass $m_2$. If $x_1 =X_1 e^{i \omega t}$ and $x_2 =X_2 e^{i 
   \omega t}$, then 
 
-  $$[-\omega^2 M + i \omega C +K] \textbf{X} = \textbf{F} \tag{10}$$ 
+  \begin{equation*}[-\omega^2 M + i \omega C +K] \textbf{X} = \textbf{F} 
+  \tag{10}\end{equation*} 
 
-  where $\textbf{X}$ is the vector $[X_1~~X_2]^t$ and $\textbf{F}$ is the 
-  vector $[F_1~~F_2]^t$. The term in square brackets $[...]$ in equation (10) 
-  is called the dynamic stiffness matrix $D$. The simplest way to compute the 
-  frequency response we want is to invert it, because 
+  \noindent{}where $\textbf{X}$ is the vector $[X_1~~X_2]^t$ and $\textbf{F}$ 
+  is the vector $[F_1~~F_2]^t$. The term in square brackets $[...]$ in equation 
+  (10) is called the dynamic stiffness matrix $D$. The simplest way to compute 
+  the frequency response we want is to invert it, because 
 
-  $$\textbf{X} = D^{-1} \textbf{F} \tag{11}$$ 
+  \begin{equation*}\textbf{X} = D^{-1} \textbf{F} \tag{11}\end{equation*} 
 
-  so that the (1,1) element of $D^{-1}$ is the frequency response we want: the 
-  displacement response of mass $m_1$ to a force $F_1$. 
+  \noindent{}so that the (1,1) element of $D^{-1}$ is the frequency response we 
+  want: the displacement response of mass $m_1$ to a force $F_1$. 
 
   Figure 3 shows some examples. The blue curve shows the original response of 
   the resonance without the added TMD, assuming a value $\eta_1 = 0.01$. The 

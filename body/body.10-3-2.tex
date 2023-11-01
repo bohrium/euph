@@ -166,22 +166,23 @@
   There are just four possible expressions satisfying these conditions, so our 
   most general expression for the potential energy must take the form 
 
-  $$ V = \dfrac{1}{2} \int{\int{h^3 \left[ D_1 \left(\dfrac{\partial^2 
-  w}{\partial x^2} \right)^2 + D_2 \dfrac{\partial^2 w}{\partial x^2} 
-  \dfrac{\partial^2 w}{\partial y^2} \right. }} $$ 
+  \begin{equation*} V = \dfrac{1}{2} \int{\int{h^3 \left[ D_1 
+  \left(\dfrac{\partial^2 w}{\partial x^2} \right)^2 + D_2 \dfrac{\partial^2 
+  w}{\partial x^2} \dfrac{\partial^2 w}{\partial y^2} \right. }} 
+  \end{equation*} 
 
-  $$ \left. + D_3 \left(\dfrac{\partial^2 w}{\partial y^2} \right)^2 + D_4 
-  \left(\dfrac{\partial^2 w}{\partial x \partial y} \right)^2 \right] dx dy 
-  \tag{1}$$ 
+  \begin{equation*} \left. + D_3 \left(\dfrac{\partial^2 w}{\partial y^2} 
+  \right)^2 + D_4 \left(\dfrac{\partial^2 w}{\partial x \partial y} \right)^2 
+  \right] dx dy \tag{1}\end{equation*} 
 
-  where $w(x,y)$ is the displacement of the plate, $h$ is the thickness, and 
-  $D_1$--$D_4$ are four constants with the dimensions of stiffness. The 
-  corresponding expression for kinetic energy is much simpler: 
+  \noindent{}where $w(x,y)$ is the displacement of the plate, $h$ is the 
+  thickness, and $D_1$--$D_4$ are four constants with the dimensions of 
+  stiffness. The corresponding expression for kinetic energy is much simpler: 
 
-  $$T=\dfrac{1}{2} \int{\int{ \rho h \left( \dfrac{\partial w}{\partial t} 
-  \right)^2 dx dy }} \tag{2}$$ 
+  \begin{equation*}T=\dfrac{1}{2} \int{\int{ \rho h \left( \dfrac{\partial 
+  w}{\partial t} \right)^2 dx dy }} \tag{2}\end{equation*} 
 
-  where $\rho$ is the density. 
+  \noindent{}where $\rho$ is the density. 
 
   Now we can calculate three simple estimates using Rayleigh's principle, to 
   obtain approximate expressions for the frequencies of the three modes in the 
@@ -190,19 +191,21 @@
   the approximate mode shape $w \approx xy .$ The result, turned round to give 
   an expression for stiffness, is 
 
-  $$D_4 \approx 0.274 f_t^2 \rho a^2 b^2/h^2 \tag{3}$$ 
+  \begin{equation*}D_4 \approx 0.274 f_t^2 \rho a^2 b^2/h^2 
+  \tag{3}\end{equation*} 
 
-  where the plate has dimensions $a \times b$. The other two modes in the top 
-  row of Fig.\ 3 involve approximately one-dimensional bending in the $x$ and 
-  $y$ directions. If we call the corresponding frequencies $f_x$ and $f_y$, we 
-  can obtain Rayleigh estimates for both by using the first mode of a free-free 
-  beam as an approximate mode shape. This gives the expressions 
+  \noindent{}where the plate has dimensions $a \times b$. The other two modes 
+  in the top row of Fig.\ 3 involve approximately one-dimensional bending in 
+  the $x$ and $y$ directions. If we call the corresponding frequencies $f_x$ 
+  and $f_y$, we can obtain Rayleigh estimates for both by using the first mode 
+  of a free-free beam as an approximate mode shape. This gives the expressions 
 
-  $$D_1 \approx 0.0789 f_x^2 \rho a^4/h^2 \tag{4}$$ 
+  \begin{equation*}D_1 \approx 0.0789 f_x^2 \rho a^4/h^2 \tag{4}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$D_3 \approx 0.0789 f_y^2 \rho b^4/h^2 . \tag{5}$$ 
+  \begin{equation*}D_3 \approx 0.0789 f_y^2 \rho b^4/h^2 . 
+  \tag{5}\end{equation*} 
 
   There is a way to improve on these three simple estimates, but it involves 
   more elaborate computation (see [1] for the details). For workshop use by a 
@@ -224,15 +227,16 @@
   exactly aligned with the L and R directions in the solid timber. For that 
   case, 
 
-  $$D_1 = E_L/12 \mu, D_2 = \nu_{LR}E_R/6 \mu = \nu_{RL}E_L/6 \mu, $$ 
+  \begin{equation*}D_1 = E_L/12 \mu, D_2 = \nu_{LR}E_R/6 \mu = \nu_{RL}E_L/6 
+  \mu, \end{equation*} 
 
-  $$D_3 = E_R/12 \mu, D_4 = G_{LR}/3 \tag{6}$$ 
+  \begin{equation*}D_3 = E_R/12 \mu, D_4 = G_{LR}/3 \tag{6}\end{equation*} 
 
-  where $E_L$ and $E_R$ are the two Young's moduli, $G_{LR}$ is the shear 
-  modulus in the LR plane, $\nu_{LR}$ and $\nu_{RL}$ are the two Poisson's 
-  ratios, and $\mu=1 -- \nu_{LR} \nu_{RL} .$ The two versions of the expression 
-  for $D_2$ make use of the reciprocal relation for Poisson's ratios. For the 
-  full gory details of more general cases, see [1]. 
+  \noindent{}where $E_L$ and $E_R$ are the two Young's moduli, $G_{LR}$ is the 
+  shear modulus in the LR plane, $\nu_{LR}$ and $\nu_{RL}$ are the two 
+  Poisson's ratios, and $\mu=1 -- \nu_{LR} \nu_{RL} .$ The two versions of the 
+  expression for $D_2$ make use of the reciprocal relation for Poisson's 
+  ratios. For the full gory details of more general cases, see [1]. 
 
   Finally, as a guide what kind of numbers you might expect if you measure the 
   $D_j$ for soundboard material, here are some measured results for spruce. A 

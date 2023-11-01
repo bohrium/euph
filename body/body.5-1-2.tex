@@ -20,7 +20,8 @@
 
   The total deflection of the string is given by the sum of the two waves: 
 
-  $$w(x,t)=e^{i \omega(t+x/c)}+R e^{i \omega (t-x/c)} \tag{1}$$ 
+  \begin{equation*}w(x,t)=e^{i \omega(t+x/c)}+R e^{i \omega (t-x/c)} 
+  \tag{1}\end{equation*} 
 
   (remembering that, as usual, the physical solution will be given by the real 
   part of this complex expression). We can now write down expressions for the 
@@ -34,27 +35,29 @@
   tension in the direction normal to the soundboard, which is approximately 
   equal to 
 
-  $$T \left[ \dfrac{\partial w}{\partial x} \right]_{x=0} = T \left[ \dfrac{i 
-  \omega}{c} -- R \dfrac{i \omega}{c} \right] e^{i \omega t} = i \omega Z_0 
-  (1-R) e^{i \omega t}\tag{2}$$ 
+  \begin{equation*}T \left[ \dfrac{\partial w}{\partial x} \right]_{x=0} = T 
+  \left[ \dfrac{i \omega}{c} -- R \dfrac{i \omega}{c} \right] e^{i \omega t} = 
+  i \omega Z_0 (1-R) e^{i \omega t}\tag{2}\end{equation*} 
 
-  since $Z_0=T/c$. So the condition for the admittance $Y$ is that 
+  \noindent{}since $Z_0=T/c$. So the condition for the admittance $Y$ is that 
 
-  $$i \omega (1+R) = Y(\omega) i \omega Z_0 (1-R) .\tag{3}$$ 
+  \begin{equation*}i \omega (1+R) = Y(\omega) i \omega Z_0 (1-R) 
+  .\tag{3}\end{equation*} 
 
   The factor of $i \omega$ on the left-hand side is needed to convert the 
   string's displacement into its velocity. This equation can easily be solved, 
   to give 
 
-  $$R=\dfrac{Y(\omega) Z_0 -- 1}{Y(\omega) Z_0 + 1} .\tag{4}$$ 
+  \begin{equation*}R=\dfrac{Y(\omega) Z_0 -- 1}{Y(\omega) Z_0 + 1} 
+  .\tag{4}\end{equation*} 
 
   For any realistic stringed instrument, the body motion at the bridge is 
   always small compared to the string motion. This translates into the 
   statement that $|Y(\omega) Z_0| \ll 1$. We can then make use of the binomial 
   theorem to obtain a simpler approximate expression for $R$: 
 
-  $$R \approx [Y(\omega) Z_0 -- 1][1-Y(\omega) Z_0] \approx -1 +2Y(\omega) Z_0 
-  .\tag{5}$$ 
+  \begin{equation*}R \approx [Y(\omega) Z_0 -- 1][1-Y(\omega) Z_0] \approx -1 
+  +2Y(\omega) Z_0 .\tag{5}\end{equation*} 
 
   This makes physical sense: a rigid termination would give an inverted 
   reflection with $R=-1$, and this is slightly modified by the non-rigid 
@@ -80,16 +83,20 @@
   there are $n$ cycles per round trip, or $2 \pi n$ radians. So the loss factor 
   due to energy loss through the bridge is 
 
-  $$\eta^{(n)}_{body} \approx \dfrac{1-|R|^2}{2 \pi n} . \tag{6}$$ 
+  \begin{equation*}\eta^{(n)}_{body} \approx \dfrac{1-|R|^2}{2 \pi n} . 
+  \tag{6}\end{equation*} 
 
   Making use of the approximation in eq. (5), the magnitude of $R$ can be 
   calculated via 
 
-  $$|R|^2=R R^* \approx [-1+2Y(\omega) Z_0] [-1+2Y^*(\omega) Z_0]$$ 
+  \begin{equation*}|R|^2=R R^* \approx [-1+2Y(\omega) Z_0] [-1+2Y^*(\omega) 
+  Z_0]\end{equation*} 
 
-  $$\approx 1 -- 2 Z_0 (Y + Y^*) \approx 1 -- 4 Z_0 \Re(Y)\tag{7}$$ 
+  \begin{equation*}\approx 1 -- 2 Z_0 (Y + Y^*) \approx 1 -- 4 Z_0 
+  \Re(Y)\tag{7}\end{equation*} 
 
-  where $.^*$ denotes the complex conjugate, and $\Re(.)$ denotes the real part 
-  of a complex quantity. So finally, 
+  \noindent{}where $.^*$ denotes the complex conjugate, and $\Re(.)$ denotes 
+  the real part of a complex quantity. So finally, 
 
-  $$\eta^{(n)}_{body} \approx \dfrac{2 Z_0 \Re(Y)}{ \pi n} . \tag{8}$$ 
+  \begin{equation*}\eta^{(n)}_{body} \approx \dfrac{2 Z_0 \Re(Y)}{ \pi n} . 
+  \tag{8}\end{equation*} 

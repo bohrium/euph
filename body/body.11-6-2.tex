@@ -15,35 +15,38 @@
   Most of the equations are virtually unchanged. The Bernoulli expression 
   relating to the flow past the reed involves the pressure $p_2$: 
 
-  $$p_2 \approx \dfrac{\rho_0 u^2}{2 C^2 F(x)^2} . \tag{1}$$ 
+  \begin{equation*}p_2 \approx \dfrac{\rho_0 u^2}{2 C^2 F(x)^2} . 
+  \tag{1}\end{equation*} 
 
   The same is true for the equation describing the reed dynamics: 
 
-  $$\ddot{x}+\dfrac{\omega_r}{Q_r}\dot{x}+\omega_r^2 x = K_p p_2 . \tag{2}$$ 
+  \begin{equation*}\ddot{x}+\dfrac{\omega_r}{Q_r}\dot{x}+\omega_r^2 x = K_p p_2 
+  . \tag{2}\end{equation*} 
 
   The equation relating the rate of change of pressure inside the chamber to 
   the net volume flow rate of air into it obviously involves the pressure 
   $p_1$: 
 
-  $$\dot{p_1}=\dfrac{\rho_o c^2}{V}[U_0 -u -- K_x \dot{x}] . \tag{3}$$ 
+  \begin{equation*}\dot{p_1}=\dfrac{\rho_o c^2}{V}[U_0 -u -- K_x \dot{x}] . 
+  \tag{3}\end{equation*} 
 
   Finally, we use the ``Helmholtz resonator'' approximation to treat the 
   ``plug'' of air in the new tube as if it was a rigid mass: Newton's law then 
   states 
 
-  $$S_2(p_1-p_2)=\rho_0 S_2 L_2\dfrac{d}{dt}\left(\dfrac{u+K_x \dot{x}}{S_2} 
-  \right) . \tag{4}$$ 
+  \begin{equation*}S_2(p_1-p_2)=\rho_0 S_2 L_2\dfrac{d}{dt}\left(\dfrac{u+K_x 
+  \dot{x}}{S_2} \right) . \tag{4}\end{equation*} 
 
   This gives an equation linking $p_1$ and $p_2$. We can re-write it slightly 
   by making use of the formula for the Helmholtz resonance frequency of the 
   chamber and tube, from section 4.2.1: 
 
-  $$\omega_h^2=\dfrac{c^2 S_2}{VL_2} . \tag{5}$$ 
+  \begin{equation*}\omega_h^2=\dfrac{c^2 S_2}{VL_2} . \tag{5}\end{equation*} 
 
   Equation (4) then becomes 
 
-  $$p_1-p_2=\dfrac{\rho_0 c^2}{\omega_h^2 V} \dfrac{d}{dt}\left(u+K_x \dot{x} 
-  \right) . \tag{6}$$ 
+  \begin{equation*}p_1-p_2=\dfrac{\rho_0 c^2}{\omega_h^2 V} 
+  \dfrac{d}{dt}\left(u+K_x \dot{x} \right) . \tag{6}\end{equation*} 
 
   We then follow the same procedure as in section 11.6.1, setting 
   $p_1=\bar{p_1}+ p'_1 e^{i \omega t}$ and so on. The only real change is the 
@@ -51,37 +54,39 @@
   algebra, we can reach a result that is almost identical to equation (16) from 
   section 11.6.1: 
 
-  $$\left[ -\omega^2 + i \omega \dfrac{\omega_r}{Q_r} + \omega_r^2 \right]x' = 
-  -K_p \dfrac{i \omega D + E}{i \omega A' + B} x'$$ 
+  \begin{equation*}\left[ -\omega^2 + i \omega \dfrac{\omega_r}{Q_r} + 
+  \omega_r^2 \right]x' = -K_p \dfrac{i \omega D + E}{i \omega A' + B} 
+  x'\end{equation*} 
 
-  $$=-K_p \dfrac{(i \omega D + E)(-i \omega A' + B)}{\omega^2 A'^2 + B^2} x' . 
-  \tag{7}$$ 
+  \begin{equation*}=-K_p \dfrac{(i \omega D + E)(-i \omega A' + B)}{\omega^2 
+  A'^2 + B^2} x' . \tag{7}\end{equation*} 
 
   The only difference is that the constant $A$ has been replaced by 
 
-  $$A'=\dfrac{A}{1-\omega^2/\omega_h^2}=\dfrac{V}{\rho_0 c^2 
-  (1-\omega^2/\omega_h^2)} . \tag{8}$$ 
+  \begin{equation*}A'=\dfrac{A}{1-\omega^2/\omega_h^2}=\dfrac{V}{\rho_0 c^2 
+  (1-\omega^2/\omega_h^2)} . \tag{8}\end{equation*} 
 
   The new condition for instability is thus 
 
-  $$\dfrac{\omega_r}{Q_r} < K_p\dfrac{EA'-DB}{\omega_r^2 A'^2 + B^2} \tag{9}$$ 
+  \begin{equation*}\dfrac{\omega_r}{Q_r} < K_p\dfrac{EA'-DB}{\omega_r^2 A'^2 + 
+  B^2} \tag{9}\end{equation*} 
 
-  where $A'$ is evaluated at $\omega=\omega_r$, using the same approximation as 
-  before that the reed generally vibrates close to its natural frequency. The 
-  only terms in this equation which are not necessarily positive are $A'$ and 
-  $E=U_0 \dfrac{\bar{F}'}{\bar{F}}$. But notice that these terms appear as the 
-  product $A'E$, so if the signs of both are changed, the stability threshold 
-  will be exactly the same. Instability requires this product to be positive, 
-  so either an opening reed with $\omega_r < \omega_h$ or a closing reed with 
-  $\omega_r > \omega_h$. 
+  \noindent{}where $A'$ is evaluated at $\omega=\omega_r$, using the same 
+  approximation as before that the reed generally vibrates close to its natural 
+  frequency. The only terms in this equation which are not necessarily positive 
+  are $A'$ and $E=U_0 \dfrac{\bar{F}'}{\bar{F}}$. But notice that these terms 
+  appear as the product $A'E$, so if the signs of both are changed, the 
+  stability threshold will be exactly the same. Instability requires this 
+  product to be positive, so either an opening reed with $\omega_r < \omega_h$ 
+  or a closing reed with $\omega_r > \omega_h$. 
 
   We can relate this pattern to Fletcher's impedance formulation of the 
   stability condition, described at the end of section 11.6.1. The input 
   impedance that would be measured at the reed, for the Millot model, can 
   easily be evaluated from the equations above: the result is 
 
-  $$Z_M(\omega) = \dfrac{\rho_0 c^2}{i \omega 
-  V}\left[1-\omega^2/\omega_h^2\right] .\tag{10}$$ 
+  \begin{equation*}Z_M(\omega) = \dfrac{\rho_0 c^2}{i \omega 
+  V}\left[1-\omega^2/\omega_h^2\right] .\tag{10}\end{equation*} 
 
   We saw in section 11.6.1 that for a closing reed, with $\bar{F}' < 0$, the 
   imaginary part of the impedance must be positive for instability, whereas for 

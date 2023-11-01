@@ -1,59 +1,65 @@
   The governing equation for free motion of a pendulum with damping is 
 
-  $$\ddot{\theta} = -\lambda \dot{\theta} -\dfrac{g}{L} \sin \theta . \tag{1}$$ 
+  \begin{equation*}\ddot{\theta} = -\lambda \dot{\theta} -\dfrac{g}{L} \sin 
+  \theta . \tag{1}\end{equation*} 
 
   A class of equations which includes this case would be 
 
-  $$\ddot{x}=g(x,\dot{x}) \tag{2}$$ 
+  \begin{equation*}\ddot{x}=g(x,\dot{x}) \tag{2}\end{equation*} 
 
-  where $g$ is any function. In the spirit of the phase-plane view, we can 
-  recast this as a pair of first-order equations by writing 
+  \noindent{}where $g$ is any function. In the spirit of the phase-plane view, 
+  we can recast this as a pair of first-order equations by writing 
 
-  $$\dot{x} = y,\mathrm{~~~~~}\dot{y}=g(x,y). \tag{3}$$ 
+  \begin{equation*}\dot{x} = y,\mathrm{~~~~~}\dot{y}=g(x,y). 
+  \tag{3}\end{equation*} 
 
   Again we could generalise this: the approach to be followed here would apply 
   to any equations of the form 
 
-  $$\dot{x} = f(x,y),\mathrm{~~~~~}\dot{y}=g(x,y). \tag{4}$$ 
+  \begin{equation*}\dot{x} = f(x,y),\mathrm{~~~~~}\dot{y}=g(x,y). 
+  \tag{4}\end{equation*} 
 
-  where $f$ is another function. Singular points (or equilibrium points) occur 
-  where $\dot{x}=\dot{y}=0$, so they occur at positions $(x_0,y_0)$ which are 
-  roots of 
+  \noindent{}where $f$ is another function. Singular points (or equilibrium 
+  points) occur where $\dot{x}=\dot{y}=0$, so they occur at positions 
+  $(x_0,y_0)$ which are roots of 
 
-  $$f(x_0,y_0)=0, \mathrm{~~~~~}g(x_0,y_0)=0. \tag{5}$$ 
+  \begin{equation*}f(x_0,y_0)=0, \mathrm{~~~~~}g(x_0,y_0)=0. 
+  \tag{5}\end{equation*} 
 
   Provided $f$ and $g$ are both smooth, we can expand both functions by Taylor 
   series in the vicinity of each singular point, and keep only the linear 
   terms: 
 
-  $$f \approx a_{11} (x-x_0) + a_{12} (y-y_0)$$ 
+  \begin{equation*}f \approx a_{11} (x-x_0) + a_{12} (y-y_0)\end{equation*} 
 
-  $$g \approx a_{21} (x-x_0) + a_{22} (y-y_0) \tag{6}$$ 
+  \begin{equation*}g \approx a_{21} (x-x_0) + a_{22} (y-y_0) 
+  \tag{6}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$\begin{bmatrix}\dot{x}\\ \dot{y}\end{bmatrix} \approx A 
-  \begin{bmatrix}x-x_0\\ y-y_0\end{bmatrix} \tag{7}$$ 
+  \begin{equation*}\begin{bmatrix}\dot{x}\\ \dot{y}\end{bmatrix} \approx A 
+  \begin{bmatrix}x-x_0\\ y-y_0\end{bmatrix} \tag{7}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$A=\begin{bmatrix} a_{11} \& a_{12}\\a_{21} \& a_{22} \end{bmatrix} . 
-  \tag{8}$$ 
+  \begin{equation*}A=\begin{bmatrix} a_{11} \& a_{12}\\a_{21} \& a_{22} 
+  \end{bmatrix} . \tag{8}\end{equation*} 
 
   To see the behaviour determined by these linearised equations, it is useful 
   to look first for solutions satisfying 
 
-  $$\begin{bmatrix} \dot{x} \\ \dot{y} \end{bmatrix} = \lambda \begin{bmatrix} 
-  x-x_0 \\ y-t_0 \end{bmatrix} \tag{9}$$ 
+  \begin{equation*}\begin{bmatrix} \dot{x} \\ \dot{y} \end{bmatrix} = \lambda 
+  \begin{bmatrix} x-x_0 \\ y-t_0 \end{bmatrix} \tag{9}\end{equation*} 
 
-  where $\lambda$ is a constant. In other words, we seek the eigenvalues and 
-  eigenvectors of the matrix $A$ such that 
+  \noindent{}where $\lambda$ is a constant. In other words, we seek the 
+  eigenvalues and eigenvectors of the matrix $A$ such that 
 
-  $$A \mathbf{u} = \lambda \mathbf{u} . \tag{10}$$ 
+  \begin{equation*}A \mathbf{u} = \lambda \mathbf{u} . \tag{10}\end{equation*} 
 
   The associated solution of eq. (9) is simply 
 
-  $$\mathbf{u} = \mathbf{u_0} e^{\lambda t} . \tag{11}$$ 
+  \begin{equation*}\mathbf{u} = \mathbf{u_0} e^{\lambda t} . 
+  \tag{11}\end{equation*} 
 
   If the eigenvalues are real, this describes motion radially inwards or 
   outwards along the eigenvector direction. If the eigenvalues are complex, 
@@ -62,14 +68,15 @@
 
   From the usual determinant, the eigenvalues are the roots of 
 
-  $$(a_{11}-\lambda)(a_{22}-\lambda)-a_{12} a_{21} =0 \tag{12}$$ 
+  \begin{equation*}(a_{11}-\lambda)(a_{22}-\lambda)-a_{12} a_{21} =0 
+  \tag{12}\end{equation*} 
 
-  which leads to 
+  \noindent{}which leads to 
 
-  $$\lambda^2 -- T \lambda +D =0 \tag{13}$$ 
+  \begin{equation*}\lambda^2 -- T \lambda +D =0 \tag{13}\end{equation*} 
 
-  where $T=a_{11}+a_{22}$ is the trace of the matrix $A$ and $D$ is its 
-  determinant. 
+  \noindent{}where $T=a_{11}+a_{22}$ is the trace of the matrix $A$ and $D$ is 
+  its determinant. 
 
   We can recognise this as the same as the characteristic equation for the 
   damped harmonic oscillator (see section 2.2.7), where $D$ plays the role of 

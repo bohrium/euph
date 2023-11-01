@@ -29,28 +29,30 @@
   these contributions are proportional to $\dot{x_1}$ and $\dot{x_2}$ 
   respectively, so that the total flow rate is 
 
-  $$u=u_1+K_{x1} \dot{x_1} + u_2 +K_{x2} \dot{x_2} \tag{1}$$ 
+  \begin{equation*}u=u_1+K_{x1} \dot{x_1} + u_2 +K_{x2} \dot{x_2} 
+  \tag{1}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$K_{xj}=0.4 w_j L_j \mathrm{~~~~~} j=1,2. \tag{2}$$ 
+  \begin{equation*}K_{xj}=0.4 w_j L_j \mathrm{~~~~~} j=1,2. 
+  \tag{2}\end{equation*} 
 
   The flow rates through the reed gaps are given by the same expression as in 
   earlier models, derived from Bernoulli's law: 
 
-  $$u_1=CF_1 \sqrt{\dfrac{2p_2}{\rho_0}}, \mathrm{~~~~}u_2=CF_2 
-  \sqrt{\dfrac{2p_2}{\rho_0}} \tag{3}$$ 
+  \begin{equation*}u_1=CF_1 \sqrt{\dfrac{2p_2}{\rho_0}}, \mathrm{~~~~}u_2=CF_2 
+  \sqrt{\dfrac{2p_2}{\rho_0}} \tag{3}\end{equation*} 
 
-  where $C=0.61$ is the vena contracta coefficient, $\rho_0$ is the density of 
-  air, and $F_1$ and $F_2$ are the respective gap areas around the two reeds. 
-  These areas are computed from the tip displacement by exactly the same 
-  calculation as described previously. Figure 3 shows the two area functions 
-  for the opening-reed and closing-reed configurations, using the particular 
-  parameters assumed for the harmonica model: reed 1 has dimensions $14.5 
-  \times 2 \times 0.13 \mathrm{~mm}$ and is tuned to frequency 440~Hz, reed 2 
-  has dimensions $15 \times 2 \times 0.13 \mathrm{~mm}$ and is tuned to 392~Hz. 
-  The gap around the reeds is $b=0.2 \mathrm{~mm}$ and the stand-off distance 
-  is $x_0=0.5 \mathrm{~mm}$. 
+  \noindent{}where $C=0.61$ is the vena contracta coefficient, $\rho_0$ is the 
+  density of air, and $F_1$ and $F_2$ are the respective gap areas around the 
+  two reeds. These areas are computed from the tip displacement by exactly the 
+  same calculation as described previously. Figure 3 shows the two area 
+  functions for the opening-reed and closing-reed configurations, using the 
+  particular parameters assumed for the harmonica model: reed 1 has dimensions 
+  $14.5 \times 2 \times 0.13 \mathrm{~mm}$ and is tuned to frequency 440~Hz, 
+  reed 2 has dimensions $15 \times 2 \times 0.13 \mathrm{~mm}$ and is tuned to 
+  392~Hz. The gap around the reeds is $b=0.2 \mathrm{~mm}$ and the stand-off 
+  distance is $x_0=0.5 \mathrm{~mm}$. 
 
   \fig{figs/fig-b5e3be20.png}{\caption{Figure 3. Gap area as a function of reed 
   tip displacement for the reed geometry used in this model. The red curve is 
@@ -66,41 +68,46 @@
   harmonic oscillator representing the lowest cantilever bending mode of 
   vibration, is 
 
-  $$\ddot{x_j}+\dfrac{\omega_j}{Q_j} \dot{x_j} +\omega_j^2 x_j = K_{pj} p_2 
-  \mathrm{~~~~~} j=1,2 \tag{4}$$ 
+  \begin{equation*}\ddot{x_j}+\dfrac{\omega_j}{Q_j} \dot{x_j} +\omega_j^2 x_j = 
+  K_{pj} p_2 \mathrm{~~~~~} j=1,2 \tag{4}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$K_{pj} = 1.5 \dfrac{w_j L_j}{m_j} \mathrm{~~~~~} j=1,2 \tag{5}$$ 
+  \begin{equation*}K_{pj} = 1.5 \dfrac{w_j L_j}{m_j} \mathrm{~~~~~} j=1,2 
+  \tag{5}\end{equation*} 
 
-  as before, where $m_j$ is the total mass of reed $j$, calculated from the 
-  volume $L_j \times w_j \times h_j$ using the density of brass, 8553~kg/m$^3$. 
-  Reed $j$ has (angular) natural frequency $\omega_j$ and Q-factor $Q_j$. Both 
-  reeds were assigned the same Q-factor, with the value 95. 
+  \noindent{}as before, where $m_j$ is the total mass of reed $j$, calculated 
+  from the volume $L_j \times w_j \times h_j$ using the density of brass, 
+  8553~kg/m$^3$. Reed $j$ has (angular) natural frequency $\omega_j$ and 
+  Q-factor $Q_j$. Both reeds were assigned the same Q-factor, with the value 
+  95. 
 
   The equation governing the pressure $p_1$ is 
 
-  $$\dot{p_1}=\dfrac{\rho_0 c^2}{V} (U_0 -- u) \tag{6}$$ 
+  \begin{equation*}\dot{p_1}=\dfrac{\rho_0 c^2}{V} (U_0 -- u) 
+  \tag{6}\end{equation*} 
 
-  as usual, where $c$ is the speed of sound. 
+  \noindent{}as usual, where $c$ is the speed of sound. 
 
   Finally, Newton's law for the ``plug'' of air in the tube is 
 
-  $$S(p_1-p_2) = \rho_0 L S \dfrac{d}{dt}\left[\dfrac{u}{S}\right] \tag{7}$$ 
+  \begin{equation*}S(p_1-p_2) = \rho_0 L S 
+  \dfrac{d}{dt}\left[\dfrac{u}{S}\right] \tag{7}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$p_1-p_2=\dfrac{\rho_0 c^2}{V \omega_h^2} \dot{u} \tag{8}$$ 
+  \begin{equation*}p_1-p_2=\dfrac{\rho_0 c^2}{V \omega_h^2} \dot{u} 
+  \tag{8}\end{equation*} 
 
-  in terms of the Helmholtz resonance frequency 
+  \noindent{}in terms of the Helmholtz resonance frequency 
 
-  $$\omega_h=\sqrt{\dfrac{c^2 S}{VL}}. \tag{9}$$ 
+  \begin{equation*}\omega_h=\sqrt{\dfrac{c^2 S}{VL}}. \tag{9}\end{equation*} 
 
   We can augment equation (8) to allow the Helmholtz resonance to have some 
   damping, with Q-factor $Q_h$: 
 
-  $$p_1-p_2=\dfrac{\rho_0 c^2}{V \omega_h^2} \left[\dot{u}+ 
-  \dfrac{\omega_h}{Q_h}u \right] . \tag{10}$$ 
+  \begin{equation*}p_1-p_2=\dfrac{\rho_0 c^2}{V \omega_h^2} \left[\dot{u}+ 
+  \dfrac{\omega_h}{Q_h}u \right] . \tag{10}\end{equation*} 
 
   For the simulations shown in section 11.6 the value $Q_h=4$ was used, to 
   reflect the rather high damping expected from a vocal tract resonance. 
@@ -112,12 +119,12 @@
   $\bar{p}_1=\bar{p}_2=\bar{p}$ say. Equation (6) gives $\bar{u}=U_0$. Equation 
   (4) then leads to 
 
-  $$\omega_j^2 \bar{x}_j=K_{pj} \bar{p} \tag{11}$$ 
+  \begin{equation*}\omega_j^2 \bar{x}_j=K_{pj} \bar{p} \tag{11}\end{equation*} 
 
-  while equation (1) gives 
+  \noindent{}while equation (1) gives 
 
-  $$U_0=\bar{u}_1+\bar{u}_2= C \sqrt{\dfrac{2 \bar{p}}{\rho_0}} 
-  (\bar{F}_1+\bar{F}_2) \tag{12}$$ 
+  \begin{equation*}U_0=\bar{u}_1+\bar{u}_2= C \sqrt{\dfrac{2 \bar{p}}{\rho_0}} 
+  (\bar{F}_1+\bar{F}_2) \tag{12}\end{equation*} 
 
-  where $\bar{F_j}$ is deduced from the relevant one of the area functions 
-  plotted in Fig.\ 3, evaluated at $\bar{x_j}$. 
+  \noindent{}where $\bar{F_j}$ is deduced from the relevant one of the area 
+  functions plotted in Fig.\ 3, evaluated at $\bar{x_j}$. 

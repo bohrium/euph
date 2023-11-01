@@ -43,10 +43,10 @@
   4.1 and 4.2 of Johnson [2]) suggests that the force $F$ in the spring should 
   vary according to 
 
-  $$F=k_H \delta^{3/2} \tag{1}$$ 
+  \begin{equation*}F=k_H \delta^{3/2} \tag{1}\end{equation*} 
 
-  where $\delta$ is the displacement of the rubber ball, and $k_H$ is a 
-  constant which plays a similar role to the linear spring constant $k_c$ 
+  \noindent{}where $\delta$ is the displacement of the rubber ball, and $k_H$ 
+  is a constant which plays a similar role to the linear spring constant $k_c$ 
   mentioned earlier (but note that because of the power-law form of equation 
   (1), the two constants do not have the same dimensions). If we want to 
   introduce energy dissipation into a Hertzian spring, we can use Stronge's 
@@ -67,20 +67,20 @@
 
   The spring compression is 
 
-  $$\delta=-(z_1+z_2), \tag{2}$$ 
+  \begin{equation*}\delta=-(z_1+z_2), \tag{2}\end{equation*} 
 
-  where the two displacements are measured from the point where contact is 
-  first made, so the bodies are only in contact if $\delta > 0$: otherwise, the 
-  bodies are out of contact and $F=0$. When they are in contact, the spring 
-  force is either 
+  \noindent{}where the two displacements are measured from the point where 
+  contact is first made, so the bodies are only in contact if $\delta > 0$: 
+  otherwise, the bodies are out of contact and $F=0$. When they are in contact, 
+  the spring force is either 
 
-  $$F=k_c\delta \tag{3}$$ 
+  \begin{equation*}F=k_c\delta \tag{3}\end{equation*} 
 
-  if the spring is linear, or 
+  \noindent{}if the spring is linear, or 
 
-  $$F=k_H\delta^{3/2} \tag{4}$$ 
+  \begin{equation*}F=k_H\delta^{3/2} \tag{4}\end{equation*} 
 
-  if it is a Hertzian spring. 
+  \noindent{}if it is a Hertzian spring. 
 
   The displacements $z_1$ and $z_2$ can be calculated from the linear vibration 
   properties of the two bodies. As we have done in earlier chapters when 
@@ -93,8 +93,8 @@
   $Q_n^s$ and effective modal masses at the contact point $M_n^s$, its impulse 
   response is 
 
-  $$g_s(t)=\sum_n{\dfrac{1}{M_n^s \omega_n^s} \sin \omega_n^s t~e^{-\omega_n^s 
-  t/2 Q_n^s}}. \tag{5}$$ 
+  \begin{equation*}g_s(t)=\sum_n{\dfrac{1}{M_n^s \omega_n^s} \sin \omega_n^s 
+  t~e^{-\omega_n^s t/2 Q_n^s}}. \tag{5}\end{equation*} 
 
   This can be expressed as the imaginary part of a sum of complex exponentials, 
   and the convolution (written as a sum over discrete time steps for simulation 
@@ -113,40 +113,44 @@
   occupying the region $0 \le x \le a$ and $0 \le y \le b$. The mode shapes are 
   then 
 
-  $$u_{nm}=A_{nm} \sin \dfrac{n \pi x}{a} \sin \dfrac{n \pi y}{b} \tag{6}$$ 
+  \begin{equation*}u_{nm}=A_{nm} \sin \dfrac{n \pi x}{a} \sin \dfrac{n \pi 
+  y}{b} \tag{6}\end{equation*} 
 
-  where the normalisation constant $A_{nm}$ is determined by requiring 
+  \noindent{}where the normalisation constant $A_{nm}$ is determined by 
+  requiring 
 
-  $$\int_0^a{\int_0^b{ u^2_{nm} \dfrac{M_p}{ab}~dx~dy}}=1 . \tag{7}$$ 
+  \begin{equation*}\int_0^a{\int_0^b{ u^2_{nm} \dfrac{M_p}{ab}~dx~dy}}=1 . 
+  \tag{7}\end{equation*} 
 
   Substituting and evaluating the integrals gives 
 
-  $$A^2_{nm}=\dfrac{4}{M_p} \tag{8}$$ 
+  \begin{equation*}A^2_{nm}=\dfrac{4}{M_p} \tag{8}\end{equation*} 
 
-  so that the effective modal mass at a striking position $(x_0,y_0)$ is 
+  \noindent{}so that the effective modal mass at a striking position 
+  $(x_0,y_0)$ is 
 
-  $$M_{nm}=\dfrac{1}{u^2_{nm}(x_0,y_0)}=\dfrac{M_p}{4 \sin^2 \frac{n \pi 
-  x_0}{a} \sin^2 \frac{m \pi y_0}{b}} . \tag{9}$$ 
+  \begin{equation*}M_{nm}=\dfrac{1}{u^2_{nm}(x_0,y_0)}=\dfrac{M_p}{4 \sin^2 
+  \frac{n \pi x_0}{a} \sin^2 \frac{m \pi y_0}{b}} . \tag{9}\end{equation*} 
 
   The corresponding natural frequencies were given in equation (6) of section 
   3.2.3: they satisfy 
 
-  $$\omega_{nm} = \lambda \left[\frac{n^2 \pi^2}{a^2}+\frac{m^2 \pi^2}{b^2} 
-  \right] \tag{10}$$ 
+  \begin{equation*}\omega_{nm} = \lambda \left[\frac{n^2 \pi^2}{a^2}+\frac{m^2 
+  \pi^2}{b^2} \right] \tag{10}\end{equation*} 
 
-  where $\lambda$ is a constant depending on the stiffness, mass and thickness 
-  of the plate. It can be conveniently fixed by specifying the frequency of the 
-  fundamental mode, with $n=m=1$. For the specific results to be shown, the 
-  plate had aspect ratio $a/b = 1.55$ and the lowest frequency was fixed at 
-  100~Hz. The striking point was at $(0.3a,0.3b)$. The total mass $M_p$ was 
-  chosen differently for different cases. All modes are assigned a Q-factor 
-  200, to give a vaguely metallic sound quality. 
+  \noindent{}where $\lambda$ is a constant depending on the stiffness, mass and 
+  thickness of the plate. It can be conveniently fixed by specifying the 
+  frequency of the fundamental mode, with $n=m=1$. For the specific results to 
+  be shown, the plate had aspect ratio $a/b = 1.55$ and the lowest frequency 
+  was fixed at 100~Hz. The striking point was at $(0.3a,0.3b)$. The total mass 
+  $M_p$ was chosen differently for different cases. All modes are assigned a 
+  Q-factor 200, to give a vaguely metallic sound quality. 
 
   The beam problem for the model striker can be solved in a similar way to the 
   free-free beam analysed in section 3.2.1. For these pinned-free boundary 
   conditions, the condition corresponding to equation (17) of that section is 
 
-  $$\tan kL = \tanh kL . \tag{11}$$ 
+  \begin{equation*}\tan kL = \tanh kL . \tag{11}\end{equation*} 
 
   This equation was solved numerically, and the corresponding natural 
   frequencies calculated from the allowed values of $kL$. All modes were 
@@ -163,7 +167,7 @@
   has a single rigid-body mode, in which it rotates freely about the pinned end 
   with shape 
 
-  $$u_0(x)=A x . \tag{12}$$ 
+  \begin{equation*}u_0(x)=A x . \tag{12}\end{equation*} 
 
   The mass normalisation can be carried out trivially here, with the result 
   that the effective modal mass at the free end is $M_0=M_b/3$ where $M_b$ is 

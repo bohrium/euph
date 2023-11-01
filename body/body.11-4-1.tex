@@ -5,81 +5,88 @@
   unit length. The result, given in section 7.2.1 of Chaigne and Kergomard [1], 
   is 
 
-  $$\dfrac{S}{c^2} \dfrac{\partial^2 p}{\partial t^2} = 
+  \begin{equation*}\dfrac{S}{c^2} \dfrac{\partial^2 p}{\partial t^2} = 
   \dfrac{\partial}{\partial x}\left(S\dfrac{\partial p}{\partial x} \right) + 
-  \rho_0 \dfrac{\partial q}{\partial t} \tag{1}$$ 
+  \rho_0 \dfrac{\partial q}{\partial t} \tag{1}\end{equation*} 
 
-  where $p$ is the pressure, $S(x)$ is the cross-sectional area of the tube, 
-  $c$ is the speed of sound and $\rho_0$ is the density of air. 
+  \noindent{}where $p$ is the pressure, $S(x)$ is the cross-sectional area of 
+  the tube, $c$ is the speed of sound and $\rho_0$ is the density of air. 
 
   We are interested in the pressure modes $p_n(x) e^{i \omega_n t}$ when the 
   tube has a closed end at $x=0$. Substituting in equation (1) without the 
   source term, these modes must satisfy 
 
-  $$-\frac{S \omega_n^2}{c^2}p_n = \dfrac{\partial}{\partial 
-  x}\left(S\dfrac{\partial p_n}{\partial x} \right) . \tag{2}$$ 
+  \begin{equation*}-\frac{S \omega_n^2}{c^2}p_n = \dfrac{\partial}{\partial 
+  x}\left(S\dfrac{\partial p_n}{\partial x} \right) . \tag{2}\end{equation*} 
 
   As usual, the mode shapes are orthogonal with respect to an integral deduced 
   from the potential energy. From section 4.1.3, the potential energy can be 
   expressed in the form 
 
-  $$V=\dfrac{1}{2} \dfrac{1}{\rho_0 c^2} \int_0^L{S p^2 dx} \tag{3}$$ 
+  \begin{equation*}V=\dfrac{1}{2} \dfrac{1}{\rho_0 c^2} \int_0^L{S p^2 dx} 
+  \tag{3}\end{equation*} 
 
-  so we can deduce that 
+  \noindent{}so we can deduce that 
 
-  $$\dfrac{1}{2} \dfrac{1}{\rho_0 c^2} \int_0^L{S p_n(x) p_m(x) dx} = 0 
-  \mathrm{~~~for~~~} n \ne m . \tag{4}$$ 
+  \begin{equation*}\dfrac{1}{2} \dfrac{1}{\rho_0 c^2} \int_0^L{S p_n(x) p_m(x) 
+  dx} = 0 \mathrm{~~~for~~~} n \ne m . \tag{4}\end{equation*} 
 
   We can choose to normalise the modes using the same expression, so that 
 
-  $$\dfrac{1}{\rho_0 c^2} \int_0^L{S p_n^2(x) dx} = 1. \tag{5}$$ 
+  \begin{equation*}\dfrac{1}{\rho_0 c^2} \int_0^L{S p_n^2(x) dx} = 1. 
+  \tag{5}\end{equation*} 
 
   Now go back to equation (1), and include a source term $q e^{i \omega t} 
   \delta(x)$ describing a concentrated sinusoidal source at $x=0$ (using the 
   Dirac delta function --- see section 2.2.8). The pressure $p(x) e^{i \omega 
   t}$ must satisfy 
 
-  $$-\dfrac{S}{c^2} \omega^2 p = \dfrac{\partial}{\partial 
+  \begin{equation*}-\dfrac{S}{c^2} \omega^2 p = \dfrac{\partial}{\partial 
   x}\left(S\dfrac{\partial p}{\partial x} \right) + \rho_0 i \omega q 
-  \delta(x). \tag{6}$$ 
+  \delta(x). \tag{6}\end{equation*} 
 
   Now we seek a solution of this equation in the form of a modal expansion 
 
-  $$p(x) = \sum_n{a_n p_n(x)} \tag{7}$$ 
+  \begin{equation*}p(x) = \sum_n{a_n p_n(x)} \tag{7}\end{equation*} 
 
-  with complex coefficients $a_n$. If we multiply equation (6) by $p_m(x)$ and 
-  integrate over the range $0 \rightarrow L$ we find 
+  \noindent{}with complex coefficients $a_n$. If we multiply equation (6) by 
+  $p_m(x)$ and integrate over the range $0 \rightarrow L$ we find 
 
-  $$-\dfrac{\omega^2}{c^2} \sum_n{a_n \int_0^L{S p_n p_m dx}}=$$ 
+  \begin{equation*}-\dfrac{\omega^2}{c^2} \sum_n{a_n \int_0^L{S p_n p_m 
+  dx}}=\end{equation*} 
 
-  $$\sum_n{a_n \int_0^L{p_m \dfrac{\partial}{\partial x}\left(S\dfrac{\partial 
-  p_n}{\partial x} \right) dx}} + i \omega \rho_0 q p_m(0) \tag{8}$$ 
+  \begin{equation*}\sum_n{a_n \int_0^L{p_m \dfrac{\partial}{\partial 
+  x}\left(S\dfrac{\partial p_n}{\partial x} \right) dx}} + i \omega \rho_0 q 
+  p_m(0) \tag{8}\end{equation*} 
 
-  where the properties of the delta function have been used to simplify the 
-  final term. Now we can use equations (4), (5) and (6) to deduce 
+  \noindent{}where the properties of the delta function have been used to 
+  simplify the final term. Now we can use equations (4), (5) and (6) to deduce 
 
-  $$-\dfrac{\omega^2}{c_2}a_m \rho_0 c^2 = -\dfrac{\omega_m^2}{c_2}a_m \rho_0 
-  c^2 + i \omega \rho_0 q p_m(0) \tag{9}$$ 
+  \begin{equation*}-\dfrac{\omega^2}{c_2}a_m \rho_0 c^2 = 
+  -\dfrac{\omega_m^2}{c_2}a_m \rho_0 c^2 + i \omega \rho_0 q p_m(0) 
+  \tag{9}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$a_m (\omega_m^2 -- \omega^2) = i \omega q p_m(0). \tag{10}$$ 
+  \begin{equation*}a_m (\omega_m^2 -- \omega^2) = i \omega q p_m(0). 
+  \tag{10}\end{equation*} 
 
   Substituting in equation (7) gives 
 
-  $$p(x,\omega)= i \omega q \sum_m{\dfrac{p_m(0) p_m(x)}{\omega_m^2 -- 
-  \omega^2}} \tag{11}$$ 
+  \begin{equation*}p(x,\omega)= i \omega q \sum_m{\dfrac{p_m(0) 
+  p_m(x)}{\omega_m^2 -- \omega^2}} \tag{11}\end{equation*} 
 
-  so that the input impedance we want is 
+  \noindent{}so that the input impedance we want is 
 
-  $$Z(\omega) = \dfrac{p(0)}{q} = i \omega \sum_m{\dfrac{p_m^2(0)}{\omega_m^2 
-  -- \omega^2}} . \tag{12}$$ 
+  \begin{equation*}Z(\omega) = \dfrac{p(0)}{q} = i \omega 
+  \sum_m{\dfrac{p_m^2(0)}{\omega_m^2 -- \omega^2}} . \tag{12}\end{equation*} 
 
   In the usual way (see section 2.2.7) we can tweak this undamped result to 
   allow for small modal damping with Q-factor $Q_m$ for mode $m$, to give 
 
-  $$Z(\omega) \approx i \omega \sum_m{\dfrac{p_m^2(0)}{\omega_m^2 + i \omega 
-  \omega_m/Q_m -- \omega^2}} . \tag{13}$$ 
+  \begin{equation*}Z(\omega) \approx i \omega 
+  \sum_m{\dfrac{p_m^2(0)}{\omega_m^2 + i \omega \omega_m/Q_m -- \omega^2}} . 
+  \tag{13}\end{equation*} 
 
   This has exactly the same form as the modal expression for the input 
   admittance of a mechanical system: see for example equation (12) of section 

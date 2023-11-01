@@ -3,30 +3,31 @@
   at least a short length of uniform tube. We can then use a general expression 
   for acoustic pressure of plane waves in a parallel duct: 
 
-  $$p(x,t) = p_R(t-x/c) + p_L(t+x/c) \tag{1}$$ 
+  \begin{equation*}p(x,t) = p_R(t-x/c) + p_L(t+x/c) \tag{1}\end{equation*} 
 
-  where $c$ is the speed of sound, and $p_L$ and $p_R$ denote left-travelling 
-  and right-travelling waves, respectively. We derived this expression in 
-  section 5.4.2 in the context of waves on an ideal string, but we also showed 
-  in section 4.1.1 that plane acoustic waves obey the same one-dimensional wave 
-  equation as waves on a string. 
+  \noindent{}where $c$ is the speed of sound, and $p_L$ and $p_R$ denote 
+  left-travelling and right-travelling waves, respectively. We derived this 
+  expression in section 5.4.2 in the context of waves on an ideal string, but 
+  we also showed in section 4.1.1 that plane acoustic waves obey the same 
+  one-dimensional wave equation as waves on a string. 
 
   Using results from section 4.1.1, we can also write down the corresponding 
   contributions to the acoustic volume flow rate: these are 
 
-  $$Z_t^{-1}p_R(t-x/c) \mathrm{~~~and~~~} -Z_t^{-1}p_L(t+x/c) \tag{2}$$ 
+  \begin{equation*}Z_t^{-1}p_R(t-x/c) \mathrm{~~~and~~~} -Z_t^{-1}p_L(t+x/c) 
+  \tag{2}\end{equation*} 
 
-  where $Z_t$ is a constant called the wave impedance (or characteristic 
-  impedance) of the tube. It is equal to $c$ times the density of air divided 
-  by the cross-sectional area of the tube. 
+  \noindent{}where $Z_t$ is a constant called the wave impedance (or 
+  characteristic impedance) of the tube. It is equal to $c$ times the density 
+  of air divided by the cross-sectional area of the tube. 
 
   The reed entrance is at $x=0$, so at that point we have 
 
-  $$p(t)=p_R(t) + p_L(t) \tag{3}$$ 
+  \begin{equation*}p(t)=p_R(t) + p_L(t) \tag{3}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$Z_t v(t)=p_L(t) -- p_R(t) . \tag{4}$$ 
+  \begin{equation*}Z_t v(t)=p_L(t) -- p_R(t) . \tag{4}\end{equation*} 
 
   Now we introduce the linear acoustical behaviour of the clarinet tube. 
   Suppose a pressure pulse in the form of a Dirac delta function is sent out 
@@ -36,7 +37,7 @@
   permanent, steady difference of mean pressure between the inside and the 
   outside of the tube, linear acoustics requires this function to satisfy 
 
-  $$\int_0^\infty{r(t) dt} =-1 . \tag{5}$$ 
+  \begin{equation*}\int_0^\infty{r(t) dt} =-1 . \tag{5}\end{equation*} 
 
   \fig{figs/fig-e01b3e01.png}{\caption{Figure 1. A simple reflection function 
   $r(t)$}} 
@@ -45,25 +46,27 @@
   $r(t)$ to calculate the reflected pressure wave caused by any outgoing 
   pressure wave by the process of convolution. The result is that 
 
-  $$p_L(t)=\int_0^\infty{r(\tau) p_R(t-\tau) d \tau} \tag{6}$$ 
+  \begin{equation*}p_L(t)=\int_0^\infty{r(\tau) p_R(t-\tau) d \tau} 
+  \tag{6}\end{equation*} 
 
-  and for brevity we can denote this convolution expression by $p_L=r*p_R$. 
+  \noindent{}and for brevity we can denote this convolution expression by 
+  $p_L=r*p_R$. 
 
   Taking the sum and difference of eqs. (3) and (4) gives 
 
-  $$p+Z_t v=2 p_L=2r*p_R \tag{7}$$ 
+  \begin{equation*}p+Z_t v=2 p_L=2r*p_R \tag{7}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$p-Z_t v=2p_R . \tag{8}$$ 
+  \begin{equation*}p-Z_t v=2p_R . \tag{8}\end{equation*} 
 
   These can be combined into the form 
 
-  $$p=p_h + Z_t v \tag{9}$$ 
+  \begin{equation*}p=p_h + Z_t v \tag{9}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$p_h=r*(p+Z_t v). \tag{10}$$ 
+  \begin{equation*}p_h=r*(p+Z_t v). \tag{10}\end{equation*} 
 
   The subscript `h' here is to suggest ``history'': $p_h$ is something we can 
   easily calculate, by the convolution integral, from a knowledge of the past 
@@ -96,7 +99,7 @@
   characteristic impedance $Z_t=1$. The smooth portion of the nonlinear curve 
   then has the cubic form 
 
-  $$v=0.03(p_0 -p)(p-p_0+5)(p-p_0+10) . \tag{11}$$ 
+  \begin{equation*}v=0.03(p_0 -p)(p-p_0+5)(p-p_0+10) . \tag{11}\end{equation*} 
 
   The maximum positive slope of this curve occurs at the point $p-p_0=-5$, and 
   the value of the slope there is 0.75, so it is indeed lower than $1/Z_t$. 

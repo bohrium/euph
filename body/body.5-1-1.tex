@@ -25,19 +25,22 @@
   result of tyre noise from the rough surface of the road. We can define 
   something called the power spectral density of the input 
 
-  $$S_{xx}(\omega) = \frac{1}{T}\left<|X(\omega)|^2 \right> = 
-  \frac{1}{T}\left<X(\omega) X^*(\omega)\right> \tag{1}$$ 
+  \begin{equation*}S_{xx}(\omega) = \frac{1}{T}\left<|X(\omega)|^2 \right> = 
+  \frac{1}{T}\left<X(\omega) X^*(\omega)\right> \tag{1}\end{equation*} 
 
-  where $T$ is the length of the chunk of signal that has been processed, $X^*$ 
-  denotes the complex conjugate of $X$, and $\left< ... \right>$ means `average 
-  value over the multiple measurements'. Similarly, we define 
+  \noindent{}where $T$ is the length of the chunk of signal that has been 
+  processed, $X^*$ denotes the complex conjugate of $X$, and $\left< ... 
+  \right>$ means `average value over the multiple measurements'. Similarly, we 
+  define 
 
-  $$S_{yy}(\omega) = \frac{1}{T}\left<Y(\omega) Y^*(\omega)\right> .\tag{2}$$ 
+  \begin{equation*}S_{yy}(\omega) = \frac{1}{T}\left<Y(\omega) 
+  Y^*(\omega)\right> .\tag{2}\end{equation*} 
 
   Finally, a related quantity is the cross spectral density of the output and 
   input: 
 
-  $$S_{xy}(\omega) = \frac{1}{T}\left<X(\omega) Y^*(\omega)\right> .\tag{3}$$ 
+  \begin{equation*}S_{xy}(\omega) = \frac{1}{T}\left<X(\omega) 
+  Y^*(\omega)\right> .\tag{3}\end{equation*} 
 
   Given these three averaged quantities, there are two different ways that we 
   might estimate the thing we really want, $Y/X$: either as $S_{yy}/S_{xy}$, or 
@@ -45,8 +48,9 @@
   should be equal. A useful measure of whether this is happening is the 
   coherence function $C_{xy}$ defined as the ratio of the two: 
 
-  $$C_{xy}(\omega)=\dfrac{S_{xy}(\omega)S^*_{xy}(\omega)}{S_{xx}(\omega) 
-  S_{yy}(\omega)} .\tag{4}$$ 
+  
+  \begin{equation*}C_{xy}(\omega)=\dfrac{S_{xy}(\omega)S^*_{xy}(\omega)}{S_{xx}(\omega) 
+  S_{yy}(\omega)} .\tag{4}\end{equation*} 
 
   Since the two power spectral densities are by definition real and positive, 
   and the expression in the numerator is $|S_{xy}(\omega)|^2$, it is obvious 

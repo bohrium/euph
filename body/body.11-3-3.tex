@@ -19,68 +19,73 @@
   sinusoidal excitation at frequency $\omega$, can be written as a sum of 
   right-travelling and left-travelling spherical waves: 
 
-  $$p=A_R \dfrac{e^{i \omega t -ikr}}{r} + A_L \dfrac{e^{i \omega t +ikr}}{r} 
-  \tag{1}$$ 
+  \begin{equation*}p=A_R \dfrac{e^{i \omega t -ikr}}{r} + A_L \dfrac{e^{i 
+  \omega t +ikr}}{r} \tag{1}\end{equation*} 
 
-  where $A_R$ and $A_L$ are (complex) coefficients and the wavenumber 
-  $k=\omega/c$ as usual, where $c$ is the speed of sound. The particle velocity 
-  $v$ then must satisfy equation (2) from section 4.1.3, so that 
+  \noindent{}where $A_R$ and $A_L$ are (complex) coefficients and the 
+  wavenumber $k=\omega/c$ as usual, where $c$ is the speed of sound. The 
+  particle velocity $v$ then must satisfy equation (2) from section 4.1.3, so 
+  that 
 
-  $$\rho_0\dfrac{\partial v}{\partial t}=-\dfrac{\partial p}{\partial r} 
-  \tag{2}$$ 
+  \begin{equation*}\rho_0\dfrac{\partial v}{\partial t}=-\dfrac{\partial 
+  p}{\partial r} \tag{2}\end{equation*} 
 
-  where $\rho_0$ is the density of air. Substituting, 
+  \noindent{}where $\rho_0$ is the density of air. Substituting, 
 
-  $$\rho_0 i \omega v = A_R \dfrac{e^{i \omega t -ikr}}{r^2} + A_L \dfrac{e^{i 
-  \omega t +ikr}}{r^2}$$ 
+  \begin{equation*}\rho_0 i \omega v = A_R \dfrac{e^{i \omega t -ikr}}{r^2} + 
+  A_L \dfrac{e^{i \omega t +ikr}}{r^2}\end{equation*} 
 
-  $$+ ik A_R\dfrac{e^{i \omega t -ikr}}{r}- ik A_L\dfrac{e^{i \omega t 
-  +ikr}}{r} \tag{3}$$ 
+  \begin{equation*}+ ik A_R\dfrac{e^{i \omega t -ikr}}{r}- ik A_L\dfrac{e^{i 
+  \omega t +ikr}}{r} \tag{3}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$v=\dfrac{1}{i \omega \rho_0}\left[ \dfrac{p}{r}+\dfrac{ik}{r}\left(A_R e^{i 
-  \omega t -ikr} -- A_L e^{i \omega t +ikr} \right) \right] . \tag{4}$$ 
+  \begin{equation*}v=\dfrac{1}{i \omega \rho_0}\left[ 
+  \dfrac{p}{r}+\dfrac{ik}{r}\left(A_R e^{i \omega t -ikr} -- A_L e^{i \omega t 
+  +ikr} \right) \right] . \tag{4}\end{equation*} 
 
   The tube is open at the right-hand end, so $p=0$ at $r=x_2$, giving 
 
-  $$A_R e^{-ikx_2} + A_L e^{ikx_2} = 0 \tag{5}$$ 
+  \begin{equation*}A_R e^{-ikx_2} + A_L e^{ikx_2} = 0 \tag{5}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$A_L=-A_R e^{-2ikx_2} . \tag{6}$$ 
+  \begin{equation*}A_L=-A_R e^{-2ikx_2} . \tag{6}\end{equation*} 
 
   Now at $r=x_1$ we have 
 
-  $$p=\dfrac{e^{i \omega t}}{x_1} A_R \left[ e^{-ikx_1} -- e^{ik(x_1-2x_2)} 
-  \right] \tag{7}$$ 
+  \begin{equation*}p=\dfrac{e^{i \omega t}}{x_1} A_R \left[ e^{-ikx_1} -- 
+  e^{ik(x_1-2x_2)} \right] \tag{7}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$v= \dfrac{e^{i \omega t}}{ik\rho_0 c x_1^2} A_R \left[ e^{-ikx_1} -- 
-  e^{ik(x_1-2x_2)} \right] $$ 
+  \begin{equation*}v= \dfrac{e^{i \omega t}}{ik\rho_0 c x_1^2} A_R \left[ 
+  e^{-ikx_1} -- e^{ik(x_1-2x_2)} \right] \end{equation*} 
 
-  $$+ \dfrac{e^{i \omega t}}{i\rho_0 c x_1} A_R \left[ e^{-ikx_1}+ 
-  e^{ik(x_1-2x_2)} \right] . \tag{8}$$ 
+  \begin{equation*}+ \dfrac{e^{i \omega t}}{i\rho_0 c x_1} A_R \left[ 
+  e^{-ikx_1}+ e^{ik(x_1-2x_2)} \right] . \tag{8}\end{equation*} 
 
   So the input impedance $Z$, and its inverse the admittance $Y$, satisfies 
 
-  $$\dfrac{1}{Z}=Y=\dfrac{S_1v}{p}=\dfrac{S_1}{\rho_0 c} \dfrac{e^{-ikx_1} 
-  \left(1+\dfrac{1}{ikx_1}\right) + e^{ik(x_1-2x_2)} \left(1-\dfrac{1}{ikx_1} 
-  \right)}{e^{-ikx_1} -- e^{ik(x_1-2x_2)}}$$ 
+  \begin{equation*}\dfrac{1}{Z}=Y=\dfrac{S_1v}{p}=\dfrac{S_1}{\rho_0 c} 
+  \dfrac{e^{-ikx_1} \left(1+\dfrac{1}{ikx_1}\right) + e^{ik(x_1-2x_2)} 
+  \left(1-\dfrac{1}{ikx_1} \right)}{e^{-ikx_1} -- 
+  e^{ik(x_1-2x_2)}}\end{equation*} 
 
-  $$=\dfrac{1}{Z_t}\left[ \dfrac{1+e^{-2ikL}}{1-e^{-2ikL}}+ 
+  \begin{equation*}=\dfrac{1}{Z_t}\left[ \dfrac{1+e^{-2ikL}}{1-e^{-2ikL}}+ 
   \dfrac{1}{ikx_1}\right]=-\dfrac{i}{Z_t}\left(\cot kL + \dfrac{1}{kx_1} 
-  \right) \tag{9}$$ 
+  \right) \tag{9}\end{equation*} 
 
-  where $S_1$ is the cross-sectional area at position $x_1$ and $Z_t=\rho_0 
-  c/S_1$ is the characteristic impedance of a cylindrical tube with that area. 
+  \noindent{}where $S_1$ is the cross-sectional area at position $x_1$ and 
+  $Z_t=\rho_0 c/S_1$ is the characteristic impedance of a cylindrical tube with 
+  that area. 
 
   This gives the input impedance expression we want, but we should also note a 
   further approximation. For low frequencies such that $kx_1 \ll 1$, then $kx_1 
   \approx \tan kx_1$ so that 
 
-  $$Y \approx -\dfrac{i}{Z_t}\left(\cot kL + \cot kx_1 \right) . \tag{10}$$ 
+  \begin{equation*}Y \approx -\dfrac{i}{Z_t}\left(\cot kL + \cot kx_1 \right) . 
+  \tag{10}\end{equation*} 
 
   This is the ``cylindrical saxophone'' approximation: it is precisely the 
   expression for the input admittance at distance $x_1$ from the end of a 
@@ -95,27 +100,27 @@
   If we want to couple our truncated cone to a mouthpiece cavity with volume 
   $V$, we simply need to replace $Y$ from equation (9) by 
 
-  $$Y_m=Y+\dfrac{i \omega V}{\rho_0 c^2} \tag{11}$$ 
+  \begin{equation*}Y_m=Y+\dfrac{i \omega V}{\rho_0 c^2} \tag{11}\end{equation*} 
 
-  because the pressure has to be the same at the tube mouth and in the cavity, 
-  while the total volume flow rate is the sum of the two contributions, so the 
-  two admittances must be added. The expression for the admittance of the 
-  enclosed air volume follows from equations (2) and (3) of section 4.2.1. The 
-  required value of $V$ to match the volume of the missing portion of the cone 
-  is 
+  \noindent{}because the pressure has to be the same at the tube mouth and in 
+  the cavity, while the total volume flow rate is the sum of the two 
+  contributions, so the two admittances must be added. The expression for the 
+  admittance of the enclosed air volume follows from equations (2) and (3) of 
+  section 4.2.1. The required value of $V$ to match the volume of the missing 
+  portion of the cone is 
 
-  $$V=x_1 S_1/3 . \tag{12}$$ 
+  \begin{equation*}V=x_1 S_1/3 . \tag{12}\end{equation*} 
 
   However, equation (11) is only valid at low frequency, because it relies on 
   the assumption $kx_1 \ll 1$. At very high frequencies the influence of the 
   mouthpiece should tend to zero, so for the purposes of computation equation 
   (11) is replaced by an ad hoc version including a low-pass filter: 
 
-  $$Y_m=Y+\left( \dfrac{\omega_c^2}{\omega^2+\omega_c^2} \right) \dfrac{i 
-  \omega V}{\rho_0 c^2} \tag{13}$$ 
+  \begin{equation*}Y_m=Y+\left( \dfrac{\omega_c^2}{\omega^2+\omega_c^2} \right) 
+  \dfrac{i \omega V}{\rho_0 c^2} \tag{13}\end{equation*} 
 
-  with a cutoff frequency $\omega_c$ chosen suitably: for the saxophone model 
-  discussed here this cutoff was placed at 1~kHz. 
+  \noindent{}with a cutoff frequency $\omega_c$ chosen suitably: for the 
+  saxophone model discussed here this cutoff was placed at 1~kHz. 
 
   For the purposes of simulation, we need to deduce a reflection function from 
   the input impedance. The procedure was described in section 11.3.2. It 

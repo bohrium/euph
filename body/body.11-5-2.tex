@@ -9,13 +9,14 @@
   instrument tube, is $p_2$, and the instrument tube presents an input 
   impedance 
 
-  $$Z(\omega)=p_2/q_1 \tag{1}$$ 
+  \begin{equation*}Z(\omega)=p_2/q_1 \tag{1}\end{equation*} 
 
-  at that point. Our aim is to determine the modified input impedance 
+  \noindent{}at that point. Our aim is to determine the modified input 
+  impedance 
 
-  $$Z_{in}(\omega)=p_1/q \tag{2}$$ 
+  \begin{equation*}Z_{in}(\omega)=p_1/q \tag{2}\end{equation*} 
 
-  at the player's lips, on the dotted line in the figure. 
+  \noindent{}at the player's lips, on the dotted line in the figure. 
 
   \fig{figs/fig-de7ce7a8.png}{\caption{Figure 1. Sketch of the Helmholtz 
   resonator mouthpiece model}} 
@@ -24,44 +25,51 @@
   the mean density of air. This is balanced by a density perturbation $\rho'$ 
   inside the cup. For our harmonic signal, this gives 
 
-  $$\rho_0(q-q_1)=i \omega V \rho' = i \omega V \dfrac{p_1}{c^2} \tag{3}$$ 
+  \begin{equation*}\rho_0(q-q_1)=i \omega V \rho' = i \omega V \dfrac{p_1}{c^2} 
+  \tag{3}\end{equation*} 
 
-  using the relation between density and pressure via the speed of sound $c$. 
-  Now we apply Newton's law to the mass of air in the exit tube, treating it as 
-  if it were rigid just as we did when we looked at the Helmholtz resonator in 
-  section 4.2.1: 
+  \noindent{}using the relation between density and pressure via the speed of 
+  sound $c$. Now we apply Newton's law to the mass of air in the exit tube, 
+  treating it as if it were rigid just as we did when we looked at the 
+  Helmholtz resonator in section 4.2.1: 
 
-  $$(p_1-p_2) S = L S \rho_0 \dfrac{\partial u}{\partial t} \tag{4}$$ 
+  \begin{equation*}(p_1-p_2) S = L S \rho_0 \dfrac{\partial u}{\partial t} 
+  \tag{4}\end{equation*} 
 
-  where $u$ is the flow speed. But $q_1 = Su$, so for harmonic response 
+  \noindent{}where $u$ is the flow speed. But $q_1 = Su$, so for harmonic 
+  response 
 
-  $$L \rho_0 i \omega \dfrac{q_1}{S}=p_1-p_2 = p_1 -Zq_1 \tag{5}$$ 
+  \begin{equation*}L \rho_0 i \omega \dfrac{q_1}{S}=p_1-p_2 = p_1 -Zq_1 
+  \tag{5}\end{equation*} 
 
-  using equation (1). 
+  \noindent{}using equation (1). 
 
   Eliminating $q_1$ using equation (3) we obtain 
 
-  $$p_1=\left[ Z+\dfrac{i \omega L \rho_0}{S} \right] \left[ q-\dfrac{i \omega 
-  V p_1}{\rho_0 c^2} \right] \tag{6}$$ 
+  \begin{equation*}p_1=\left[ Z+\dfrac{i \omega L \rho_0}{S} \right] \left[ 
+  q-\dfrac{i \omega V p_1}{\rho_0 c^2} \right] \tag{6}\end{equation*} 
 
-  and so 
+  \noindent{}and so 
 
-  $$Z_{in} =\dfrac{p_1}{q}=\dfrac{Z+i \omega L \rho_0/S}{1+ \dfrac{i \omega V 
-  Z}{\rho_0 c^2} -- \omega^2 \dfrac{LV}{Sc^2}} . \tag{7}$$ 
+  \begin{equation*}Z_{in} =\dfrac{p_1}{q}=\dfrac{Z+i \omega L \rho_0/S}{1+ 
+  \dfrac{i \omega V Z}{\rho_0 c^2} -- \omega^2 \dfrac{LV}{Sc^2}} . 
+  \tag{7}\end{equation*} 
 
   Now we can recall from section 4.2.1 that the resonance frequency $\omega_m$ 
   of an isolated Helmholtz resonator is given by 
 
-  $$\omega_m^2 =\dfrac{c^2S}{VL} . \tag{8}$$ 
+  \begin{equation*}\omega_m^2 =\dfrac{c^2S}{VL} . \tag{8}\end{equation*} 
 
   If we introduce non-dimensionalised versions of the impedances defined by 
 
-  $$X=\dfrac{i \omega V}{\rho_0 c^2}Z \mathrm{~~~and~~~} X_{in}=\dfrac{i \omega 
-  V}{\rho_0 c^2}Z_{in} \tag{9}$$ 
+  \begin{equation*}X=\dfrac{i \omega V}{\rho_0 c^2}Z \mathrm{~~~and~~~} 
+  X_{in}=\dfrac{i \omega V}{\rho_0 c^2}Z_{in} \tag{9}\end{equation*} 
 
-  we can simplify equation (7) into the form 
+  \noindent{}we can simplify equation (7) into the form 
 
-  $$X_{in}=\dfrac{X-\omega^2/\omega_m^2}{X+1-\omega^2/\omega_m^2}. \tag{10}$$ 
+  
+  \begin{equation*}X_{in}=\dfrac{X-\omega^2/\omega_m^2}{X+1-\omega^2/\omega_m^2}. 
+  \tag{10}\end{equation*} 
 
   Finally, recognising the term $1-\omega^2/\omega_m^2$ in the denominator as a 
   form of the usual resonant denominator for the response of a single degree of 
@@ -69,8 +77,8 @@
   the Helmholtz resonator. If the Q-factor of the mouthpiece alone is $Q_m$, we 
   can write 
 
-  $$X_{in} \approx \dfrac{X-\omega^2/\omega_m^2}{X+1+i \omega/\omega_m 
-  Q_m-\omega^2/\omega_m^2}. \tag{11}$$ 
+  \begin{equation*}X_{in} \approx \dfrac{X-\omega^2/\omega_m^2}{X+1+i 
+  \omega/\omega_m Q_m-\omega^2/\omega_m^2}. \tag{11}\end{equation*} 
 
   We can get an idea of what equation (10) or (11) predicts about resonance 
   frequencies if we think about the undamped version, for which $X(\omega)$ is 
@@ -78,7 +86,8 @@
   poles of $X$, while the new ones are given by the zeros of the denominator of 
   equation (10). In other words, they occur at frequencies satisfying 
 
-  $$X(\omega)=\dfrac{\omega^2}{\omega_m^2}-1. \tag{12}$$ 
+  \begin{equation*}X(\omega)=\dfrac{\omega^2}{\omega_m^2}-1. 
+  \tag{12}\end{equation*} 
 
   We can represent this equation graphically, as indicated schematically in 
   Fig.\ 2. 

@@ -33,19 +33,20 @@
   formula for the flow speed, and hence for the volume flow rate into the 
   mouthpiece: 
 
-  $$v=-w(H_0-y) \sqrt{2 |\Delta p|/\rho_0} \mathrm{~sign} (\Delta p) \tag{1}$$ 
+  \begin{equation*}v=-w(H_0-y) \sqrt{2 |\Delta p|/\rho_0} \mathrm{~sign} 
+  (\Delta p) \tag{1}\end{equation*} 
 
-  where the pressure difference 
+  \noindent{}where the pressure difference 
 
-  $$\Delta p = p-p_m \tag{2}$$ 
+  \begin{equation*}\Delta p = p-p_m \tag{2}\end{equation*} 
 
-  and the term $\mathrm{sign}(\Delta p)$ serves to guarantee that the flow 
-  correctly reverses if the pressure difference should reverse. It might seem a 
-  little perverse to define the pressure difference this way, so that it is 
-  usually negative. But this form matches the way earlier plots were presented, 
-  for example in section 8.5, and it will be convenient for the later 
-  development of the simulation model. Note that in this derivation we have 
-  implicitly assumed that the flow speed $v$ is very small compared to the 
+  \noindent{}and the term $\mathrm{sign}(\Delta p)$ serves to guarantee that 
+  the flow correctly reverses if the pressure difference should reverse. It 
+  might seem a little perverse to define the pressure difference this way, so 
+  that it is usually negative. But this form matches the way earlier plots were 
+  presented, for example in section 8.5, and it will be convenient for the 
+  later development of the simulation model. Note that in this derivation we 
+  have implicitly assumed that the flow speed $v$ is very small compared to the 
   speed of sound. This is usually the case in normal woodwind playing, but in 
   some extreme cases the local flow speed can get very high, and the 
   approximation becomes questionable. 
@@ -57,15 +58,17 @@
   these. In that case, the reed displacement $y$ will behave like a damped 
   harmonic oscillator, with a governing equation of the form 
 
-  $$M_r \ddot{y} + C_r \dot{y} + K_r y=-\Delta p \tag{3}$$ 
+  \begin{equation*}M_r \ddot{y} + C_r \dot{y} + K_r y=-\Delta p 
+  \tag{3}\end{equation*} 
 
-  where $M_r$ is the (effective) mass per unit area of the reed, $K_r$ is the 
-  corresponding effective stiffness per unit area, and $C_r$ is a damping 
-  coefficient per unit area. The resonance frequency $\omega_r$ will satisfy 
+  \noindent{}where $M_r$ is the (effective) mass per unit area of the reed, 
+  $K_r$ is the corresponding effective stiffness per unit area, and $C_r$ is a 
+  damping coefficient per unit area. The resonance frequency $\omega_r$ will 
+  satisfy 
 
-  $$\omega_r^2=K_r/M_r \tag{4}$$ 
+  \begin{equation*}\omega_r^2=K_r/M_r \tag{4}\end{equation*} 
 
-  as usual. 
+  \noindent{}as usual. 
 
   This resonance frequency for a typical clarinet reed and embouchure has been 
   measured, and it is in the vicinity of 3~kHz. This means that playing 
@@ -73,28 +76,30 @@
   resonance. In that case, the stiffness term of equation (3) will dominate, 
   and we obtain the approximate result 
 
-  $$K_r y \approx -\Delta p . \tag{5}$$ 
+  \begin{equation*}K_r y \approx -\Delta p . \tag{5}\end{equation*} 
 
   Eliminating $y$ in equation (1) then gives 
 
-  $$v \approx -w\left(H_0+ \dfrac{\Delta p}{K_r}\right) \sqrt{2 \dfrac{|\Delta 
-  p|}{\rho_0}} \mathrm{~sign} (\Delta p) . \tag{6}$$ 
+  \begin{equation*}v \approx -w\left(H_0+ \dfrac{\Delta p}{K_r}\right) \sqrt{2 
+  \dfrac{|\Delta p|}{\rho_0}} \mathrm{~sign} (\Delta p) . 
+  \tag{6}\end{equation*} 
 
   It is useful to introduce the closure pressure 
 
-  $$p_c=K_r H_0 , \tag{7}$$ 
+  \begin{equation*}p_c=K_r H_0 , \tag{7}\end{equation*} 
 
-  which is the minimum mouth pressure needed to close the reed completely 
-  against the lay, when the internal pressure $p=0$. We can then rewrite 
-  equation (6) in the form 
+  \noindent{}which is the minimum mouth pressure needed to close the reed 
+  completely against the lay, when the internal pressure $p=0$. We can then 
+  rewrite equation (6) in the form 
 
-  $$v \approx -u_A\left(1+ \dfrac{\Delta p}{p_c}\right) \sqrt{\dfrac{|\Delta 
-  p|}{p_c}} \mathrm{~sign} (\Delta p) \tag{8}$$ 
+  \begin{equation*}v \approx -u_A\left(1+ \dfrac{\Delta p}{p_c}\right) 
+  \sqrt{\dfrac{|\Delta p|}{p_c}} \mathrm{~sign} (\Delta p) 
+  \tag{8}\end{equation*} 
 
-  where the constant 
+  \noindent{}where the constant 
 
-  $$u_A = w H_0\sqrt{\dfrac{2 p_c}{\rho_0}} =w H_0^{3/2}\sqrt{\dfrac{2 
-  K_r}{\rho_0}} . \tag{9}$$ 
+  \begin{equation*}u_A = w H_0\sqrt{\dfrac{2 p_c}{\rho_0}} =w 
+  H_0^{3/2}\sqrt{\dfrac{2 K_r}{\rho_0}} . \tag{9}\end{equation*} 
 
   Equation (8) is the nonlinear valve characteristic we are looking for. It is 
   valid while $\Delta p > -p_c$, but at that point the reed closes. Once 
@@ -128,25 +133,27 @@
 
   For $\Delta p > -p_c$ we can rewrite equation (8) as 
 
-  $$v \approx u_A\left(1+ \dfrac{p-p_m}{p_c}\right) \sqrt{\dfrac{p_m-p}{p_c}} 
-  .\tag{10}$$ 
+  \begin{equation*}v \approx u_A\left(1+ \dfrac{p-p_m}{p_c}\right) 
+  \sqrt{\dfrac{p_m-p}{p_c}} .\tag{10}\end{equation*} 
 
   Differentiating this equation gives 
 
-  $$\dfrac{dv}{dp}= -\dfrac{u_A}{2p_c} \left(\dfrac{p_m-p}{p_c}\right)^{-1/2} 
-  +\dfrac{3u_A}{2p_c} \left(\dfrac{p_m-p}{p_c}\right)^{1/2}$$ 
+  \begin{equation*}\dfrac{dv}{dp}= -\dfrac{u_A}{2p_c} 
+  \left(\dfrac{p_m-p}{p_c}\right)^{-1/2} +\dfrac{3u_A}{2p_c} 
+  \left(\dfrac{p_m-p}{p_c}\right)^{1/2}\end{equation*} 
 
-  $$=\dfrac{u_A}{2p_c} \left(\dfrac{p_m-p}{p_c}\right)^{-1/2} \left[-1 + 
-  3\left( \dfrac{p_m-p}{p_c} \right) \right] . \tag{11}$$ 
+  \begin{equation*}=\dfrac{u_A}{2p_c} \left(\dfrac{p_m-p}{p_c}\right)^{-1/2} 
+  \left[-1 + 3\left( \dfrac{p_m-p}{p_c} \right) \right] . 
+  \tag{11}\end{equation*} 
 
   The maximum of the curve, where this slope is zero, is thus defined by 
 
-  $$\dfrac{p_m-p}{p_c}=\dfrac{1}{3} \tag{12}$$ 
+  \begin{equation*}\dfrac{p_m-p}{p_c}=\dfrac{1}{3} \tag{12}\end{equation*} 
 
-  as indicated by the dotted line in Fig.\ 2. At this value of $\Delta p$, the 
-  value of the volume flow rate is 
+  \noindent{}as indicated by the dotted line in Fig.\ 2. At this value of 
+  $\Delta p$, the value of the volume flow rate is 
 
-  $$v_{max}=\dfrac{2u_A}{3 \sqrt{3}} . \tag{13}$$ 
+  \begin{equation*}v_{max}=\dfrac{2u_A}{3 \sqrt{3}} . \tag{13}\end{equation*} 
 
   If we want a time-stepping simulation model which includes the reed 
   resonance, we need to go back to equations (1) and (3) to see how to proceed. 
@@ -181,8 +188,8 @@
   velocity $\dot{y}$, scaled by an ``effective reed area'' $A_r$, so that 
   equation (1) becomes 
 
-  $$v=-w(H_0-y) \sqrt{2 |\Delta p|/\rho_0} \mathrm{~sign} (\Delta p)+A_r 
-  \dot{y} . \tag{14}$$ 
+  \begin{equation*}v=-w(H_0-y) \sqrt{2 |\Delta p|/\rho_0} \mathrm{~sign} 
+  (\Delta p)+A_r \dot{y} . \tag{14}\end{equation*} 
 
   We will neglect this extra term for now, in the interests of simplicity, but 
   we will need to include it in later sections when we discuss some subtleties 

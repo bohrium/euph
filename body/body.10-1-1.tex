@@ -2,17 +2,17 @@
   example. Back in section 3.2.1 we found that the vibration of a bending beam 
   is governed by the equation 
 
-  $$m \dfrac{\partial^2 w}{\partial t^2}+EI \dfrac{\partial^4 w}{\partial 
-  x^4}=0 \tag{1}$$ 
+  \begin{equation*}m \dfrac{\partial^2 w}{\partial t^2}+EI \dfrac{\partial^4 
+  w}{\partial x^4}=0 \tag{1}\end{equation*} 
 
-  where $w(x,t)$ is the beam displacement at position $x$ and time $t$, and $m$ 
-  is the mass per unit length. The term $EI$ is called the ``bending rigidity'' 
-  or ``bending stiffness'', and is the product of the Young's modulus $E$ with 
-  a quantity $I$ which is called the second moment of area of the 
-  cross-section. For the particular case of a rectangular section there is a 
-  simple formula in terms of the width $b$ and the thickness $h$: 
+  \noindent{}where $w(x,t)$ is the beam displacement at position $x$ and time 
+  $t$, and $m$ is the mass per unit length. The term $EI$ is called the 
+  ``bending rigidity'' or ``bending stiffness'', and is the product of the 
+  Young's modulus $E$ with a quantity $I$ which is called the second moment of 
+  area of the cross-section. For the particular case of a rectangular section 
+  there is a simple formula in terms of the width $b$ and the thickness $h$: 
 
-  $$I=\dfrac{1}{12} bh^3. \tag{2}$$ 
+  \begin{equation*}I=\dfrac{1}{12} bh^3. \tag{2}\end{equation*} 
 
   For any particular problem, there will be boundary conditions at the ends of 
   the beam. These mean that the length $L$ of the beam enters the problem. So 
@@ -21,16 +21,16 @@
   We are interested in how a particular resonance frequency $\Omega$ depends on 
   these three parameters. It must some function 
 
-  $$\Omega = F(EI,m,L) . \tag{3}$$ 
+  \begin{equation*}\Omega = F(EI,m,L) . \tag{3}\end{equation*} 
 
   We will try to find an expression for this function as a product of powers of 
   the three parameters, because that is the only way that quantities with 
   different units, or dimensions, can be combined: so try 
 
-  $$\Omega=A (EI)^\alpha m^\beta L^\gamma \tag{4}$$ 
+  \begin{equation*}\Omega=A (EI)^\alpha m^\beta L^\gamma \tag{4}\end{equation*} 
 
-  where $A$ is a dimensionless scale factor, and $\alpha$, $\beta$ and $\gamma$ 
-  are the three powers we want to find. 
+  \noindent{}where $A$ is a dimensionless scale factor, and $\alpha$, $\beta$ 
+  and $\gamma$ are the three powers we want to find. 
 
   Next, we need the dimensions of the three parameters. The length $L$ is 
   trivial: it is indeed a length. We will write this fact as $[L] = 
@@ -50,31 +50,33 @@
 
   For that, we require 
 
-  $$\mathrm{T}^{-1} = (\mathrm{M} \mathrm{L}^3 \mathrm{T}^{-2})^\alpha 
-  (\mathrm{M} \mathrm{L}^{-1})^\beta \mathrm{L}^\gamma \tag{5}$$ 
+  \begin{equation*}\mathrm{T}^{-1} = (\mathrm{M} \mathrm{L}^3 
+  \mathrm{T}^{-2})^\alpha (\mathrm{M} \mathrm{L}^{-1})^\beta \mathrm{L}^\gamma 
+  \tag{5}\end{equation*} 
 
   Now we simply equate the powers of M, L and T on the two sides of the 
   equation. This gives the three equations 
 
-  $$0=\alpha + \beta \tag{6}$$ 
+  \begin{equation*}0=\alpha + \beta \tag{6}\end{equation*} 
 
-  $$0 = 3 \alpha -- \beta + \gamma \tag{7}$$ 
+  \begin{equation*}0 = 3 \alpha -- \beta + \gamma \tag{7}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$-1=-2 \alpha \tag{8}$$ 
+  \begin{equation*}-1=-2 \alpha \tag{8}\end{equation*} 
 
-  which can immediately be solved to give $\alpha = 1/2$, $\beta = -1/2$ and 
-  $\gamma= -2$. So equation (4) now says 
+  \noindent{}which can immediately be solved to give $\alpha = 1/2$, $\beta = 
+  -1/2$ and $\gamma= -2$. So equation (4) now says 
 
-  $$\Omega=A (EI)^{1/2} m^{-1/2} L^{-2} = \dfrac{A}{L^2} \sqrt{\dfrac{EI}{m}} . 
-  \tag{9}$$ 
+  \begin{equation*}\Omega=A (EI)^{1/2} m^{-1/2} L^{-2} = \dfrac{A}{L^2} 
+  \sqrt{\dfrac{EI}{m}} . \tag{9}\end{equation*} 
 
   For the particular case of a beam with a rectangular cross-section, we can 
   simplify further. If the density of the material is $\rho$, then $m=\rho b h$ 
   so that, using equation (2), 
 
-  $$\Omega= \dfrac{Ah}{12 L^2} \sqrt{\dfrac{E}{\rho}} . \tag{10}$$ 
+  \begin{equation*}\Omega= \dfrac{Ah}{12 L^2} \sqrt{\dfrac{E}{\rho}} . 
+  \tag{10}\end{equation*} 
 
   The constant $A$ will depend on the particular boundary conditions, and on 
   which modal frequency we are looking at. But in terms of the dependence on 
@@ -97,33 +99,35 @@
   of course they have dimensions $[M] = \mathrm{M}$ and $[a] = \mathrm{L}$. We 
   extend equation (4) to try 
 
-  $$\Omega=A (EI)^\alpha m^\beta L^\gamma M^\delta a^\epsilon \tag{11}$$ 
+  \begin{equation*}\Omega=A (EI)^\alpha m^\beta L^\gamma M^\delta a^\epsilon 
+  \tag{11}\end{equation*} 
 
-  with two extra constants $\delta$ and $\epsilon$. We substitute the 
-  dimensions, enforce dimensional consistency, and obtain three equations 
+  \noindent{}with two extra constants $\delta$ and $\epsilon$. We substitute 
+  the dimensions, enforce dimensional consistency, and obtain three equations 
   analogous to (6), (7) and (8) which read 
 
-  $$0=\alpha + \beta + \delta \tag{12}$$ 
+  \begin{equation*}0=\alpha + \beta + \delta \tag{12}\end{equation*} 
 
-  $$0 = 3 \alpha -- \beta + \gamma + \epsilon \tag{13}$$ 
+  \begin{equation*}0 = 3 \alpha -- \beta + \gamma + \epsilon 
+  \tag{13}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$-1=-2 \alpha. \tag{14}$$ 
+  \begin{equation*}-1=-2 \alpha. \tag{14}\end{equation*} 
 
   We can solve these for $\alpha$, $\beta$ and $\gamma$, leaving $\delta$ and 
   $\epsilon$ undetermined: 
 
-  $$\alpha = 1/2, \beta = -1/2 -\delta, \gamma= -2 -- \delta -\epsilon . 
-  \tag{15}$$ 
+  \begin{equation*}\alpha = 1/2, \beta = -1/2 -\delta, \gamma= -2 -- \delta 
+  -\epsilon . \tag{15}\end{equation*} 
 
   Equation (11) can then be written 
 
-  $$\Omega= A \sqrt{\dfrac{EI}{m}} m^{-\delta} L^{-2 -\delta -\epsilon} 
-  M^\delta a^\epsilon $$ 
+  \begin{equation*}\Omega= A \sqrt{\dfrac{EI}{m}} m^{-\delta} L^{-2 -\delta 
+  -\epsilon} M^\delta a^\epsilon \end{equation*} 
 
-  $$= \dfrac{A}{L^2} \sqrt{\dfrac{EI}{m}} \left(\dfrac{M}{mL} \right)^\delta 
-  \left(\dfrac{a}{L} \right)^\epsilon . \tag{16}$$ 
+  \begin{equation*}= \dfrac{A}{L^2} \sqrt{\dfrac{EI}{m}} \left(\dfrac{M}{mL} 
+  \right)^\delta \left(\dfrac{a}{L} \right)^\epsilon . \tag{16}\end{equation*} 
 
   The result is the same expression we had before, with the addition of two 
   terms involving undetermined powers $\delta$ and $\epsilon$. Those terms only 
@@ -150,30 +154,31 @@
   is written $\underline{u}$, and the gravitation acceleration is 
   $\underline{g}$. The flow is governed by the Navier-Stokes equation: 
 
-  $$\rho \left(\dfrac{\partial \underline{u}}{\partial t} + (\underline{u} 
-  \cdot \nabla) \underline{u} \right) = \mu \nabla^2 \underline{u} -- \nabla p 
-  + \rho \underline{g} . \tag{17}$$ 
+  \begin{equation*}\rho \left(\dfrac{\partial \underline{u}}{\partial t} + 
+  (\underline{u} \cdot \nabla) \underline{u} \right) = \mu \nabla^2 
+  \underline{u} -- \nabla p + \rho \underline{g} . \tag{17}\end{equation*} 
 
   The Reynolds Number gives an order-of-magnitude estimate of the ratio of two 
   of the terms in this equation: the inertia term $\rho (\underline{u} \cdot 
   \nabla) \underline{u}$ and the viscosity term $\mu \nabla^2 \underline{u}$. 
   If the flow has a typical speed $U$ and a typical length scale $L$, then 
 
-  $$\rho (\underline{u} \cdot \nabla) \underline{u} \sim \rho U^2 / L 
-  \tag{18}$$ 
+  \begin{equation*}\rho (\underline{u} \cdot \nabla) \underline{u} \sim \rho 
+  U^2 / L \tag{18}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\mu \nabla^2 \underline{u} \sim \mu U / L^2. \tag{19}$$ 
+  \begin{equation*}\mu \nabla^2 \underline{u} \sim \mu U / L^2. 
+  \tag{19}\end{equation*} 
 
   The ratio is then 
 
-  $$R = \dfrac{\rho U L}{\mu}, \tag{20}$$ 
+  \begin{equation*}R = \dfrac{\rho U L}{\mu}, \tag{20}\end{equation*} 
 
-  which is the Reynolds Number. When $R$ is very large, inertia effects 
-  dominate over viscous effects, and viscosity can be ignored. On the other 
-  hand when $R$ is small, viscosity dominates and inertia can be neglected. 
-  These two limits lead to flows with very different character. 
+  \noindent{}which is the Reynolds Number. When $R$ is very large, inertia 
+  effects dominate over viscous effects, and viscosity can be ignored. On the 
+  other hand when $R$ is small, viscosity dominates and inertia can be 
+  neglected. These two limits lead to flows with very different character. 
 
   To get an impression of the difference, think about swimming in water. When 
   humans swim, the Reynolds number is large, but for a swimming micro-organism 

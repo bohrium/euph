@@ -13,21 +13,23 @@
   Using exactly the same argument as in section 3.1.1, Newton's law for this 
   small element requires 
 
-  $$m~\delta x~\delta y \frac{\partial^2 w}{\partial t^2} \approx T~\delta y 
-  \left[ \left( \frac{\partial w}{\partial x} \right) _{x + \delta x} -- \left( 
-  \frac{\partial w}{\partial x} \right) _{x} \right] $$ 
+  \begin{equation*}m~\delta x~\delta y \frac{\partial^2 w}{\partial t^2} 
+  \approx T~\delta y \left[ \left( \frac{\partial w}{\partial x} \right) _{x + 
+  \delta x} -- \left( \frac{\partial w}{\partial x} \right) _{x} \right] 
+  \end{equation*} 
 
-  $$+ T~\delta x \left[ \left( \frac{\partial w}{\partial y} \right) _{y + 
-  \delta y} -- \left( \frac{\partial w}{\partial y} \right) _{y} \right] 
-  .\tag{1}$$ 
+  \begin{equation*}+ T~\delta x \left[ \left( \frac{\partial w}{\partial y} 
+  \right) _{y + \delta y} -- \left( \frac{\partial w}{\partial y} \right) _{y} 
+  \right] .\tag{1}\end{equation*} 
 
   Now as $\delta x \rightarrow 0$ and $\delta y \rightarrow 0$ the two terms in 
   square brackets tend towards second derivatives multiplied by $\delta x$ and 
   $\delta y$ respectively. Cancelling a factor $\delta x ~ \delta y$, the 
   equation of motion becomes 
 
-  $$m \frac{\partial^2 w}{\partial t^2} -- T \left[ \dfrac{\partial^2 
-  w}{\partial x^2} + \dfrac{\partial^2 w}{\partial y^2} \right] =0 .\tag{2}$$ 
+  \begin{equation*}m \frac{\partial^2 w}{\partial t^2} -- T \left[ 
+  \dfrac{\partial^2 w}{\partial x^2} + \dfrac{\partial^2 w}{\partial y^2} 
+  \right] =0 .\tag{2}\end{equation*} 
 
   We want to use this equation to find the vibration modes and natural 
   frequencies of a circular drum. Obviously, we do not want to analyse that 
@@ -35,48 +37,53 @@
   polar coordinates $(r, \theta)$. From the usual relationships $x=r \cos 
   \theta$ and $y = r \sin \theta$ we can deduce 
 
-  $$\frac{\partial r}{\partial x} = \cos \theta, \frac{\partial r}{\partial y} 
-  = \sin \theta \tag{3}$$ 
+  \begin{equation*}\frac{\partial r}{\partial x} = \cos \theta, \frac{\partial 
+  r}{\partial y} = \sin \theta \tag{3}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\frac{\partial \theta}{\partial x} = -- \frac{\sin \theta}{r}, 
-  \frac{\partial \theta}{\partial y} = \frac{\cos \theta}{r} . \tag{4}$$ 
+  \begin{equation*}\frac{\partial \theta}{\partial x} = -- \frac{\sin 
+  \theta}{r}, \frac{\partial \theta}{\partial y} = \frac{\cos \theta}{r} . 
+  \tag{4}\end{equation*} 
 
   Now we use the chain rule: for example, 
 
-  $$\frac{\partial w}{\partial x} =\frac{\partial w}{\partial r} \frac{\partial 
-  r}{\partial x} + \frac{\partial w}{\partial \theta} \frac{\partial 
-  \theta}{\partial x}=\frac{\partial w}{\partial r} \cos \theta -- 
-  \frac{\partial w}{\partial \theta} \frac{\sin \theta}{r} . \tag{5}$$ 
+  \begin{equation*}\frac{\partial w}{\partial x} =\frac{\partial w}{\partial r} 
+  \frac{\partial r}{\partial x} + \frac{\partial w}{\partial \theta} 
+  \frac{\partial \theta}{\partial x}=\frac{\partial w}{\partial r} \cos \theta 
+  -- \frac{\partial w}{\partial \theta} \frac{\sin \theta}{r} . 
+  \tag{5}\end{equation*} 
 
   Using this approach repeatedly and then gathering up all the terms, we find 
   after a little algebra that 
 
-  $$\dfrac{\partial^2 w}{\partial x^2} + \dfrac{\partial^2 w}{\partial 
-  y^2}=\dfrac{\partial^2 w}{\partial r^2} + \dfrac{1}{r} \dfrac{\partial 
-  w}{\partial r}+ \dfrac{1}{r^2} \dfrac{\partial^2 w}{\partial \theta^2} 
-  \tag{6}$$ 
+  \begin{equation*}\dfrac{\partial^2 w}{\partial x^2} + \dfrac{\partial^2 
+  w}{\partial y^2}=\dfrac{\partial^2 w}{\partial r^2} + \dfrac{1}{r} 
+  \dfrac{\partial w}{\partial r}+ \dfrac{1}{r^2} \dfrac{\partial^2 w}{\partial 
+  \theta^2} \tag{6}\end{equation*} 
 
-  so that the equation of motion (2) becomes 
+  \noindent{}so that the equation of motion (2) becomes 
 
-  $$m \frac{\partial^2 w}{\partial t^2} -- T \left[ \dfrac{\partial^2 
-  w}{\partial r^2} + \dfrac{1}{r} \dfrac{\partial w}{\partial r}+ 
-  \dfrac{1}{r^2} \dfrac{\partial^2 w}{\partial \theta^2} \right] =0 . \tag{7}$$ 
+  \begin{equation*}m \frac{\partial^2 w}{\partial t^2} -- T \left[ 
+  \dfrac{\partial^2 w}{\partial r^2} + \dfrac{1}{r} \dfrac{\partial w}{\partial 
+  r}+ \dfrac{1}{r^2} \dfrac{\partial^2 w}{\partial \theta^2} \right] =0 . 
+  \tag{7}\end{equation*} 
 
   We can solve this for the vibration modes of a circular drum with a fixed 
   edge all the way round a circle of radius $a$, by the method of separation of 
   variables. We try to find a solution of the form $w(r,\theta,t) = f(r) 
   g(\theta) e^{i \omega t}$. Substituting into eq. (7), we then require 
 
-  $$T \left[ f^{\prime \prime} g +\frac{1}{r} f^{\prime} g+\frac{1}{r^2} f 
-  g^{\prime \prime} \right] = -m \omega^2 f g \tag{8}$$ 
+  \begin{equation*}T \left[ f^{\prime \prime} g +\frac{1}{r} f^{\prime} 
+  g+\frac{1}{r^2} f g^{\prime \prime} \right] = -m \omega^2 f g 
+  \tag{8}\end{equation*} 
 
-  where the prime symbol denotes differentiation. We can rearrange the terms in 
-  eq. (8) into the form 
+  \noindent{}where the prime symbol denotes differentiation. We can rearrange 
+  the terms in eq. (8) into the form 
 
-  $$\frac{ r^2 f^{\prime \prime}}{f} + \frac{ r f^{\prime}}{f} + \frac{m 
-  \omega^2}{T}r^2 = -- \frac{g^{\prime \prime}}{g} . \tag{9}$$ 
+  \begin{equation*}\frac{ r^2 f^{\prime \prime}}{f} + \frac{ r f^{\prime}}{f} + 
+  \frac{m \omega^2}{T}r^2 = -- \frac{g^{\prime \prime}}{g} . 
+  \tag{9}\end{equation*} 
 
   The significance of this rearrangement may not be immediately apparent, but 
   the key feature is that everything on the left-hand side is a function of $r$ 
@@ -88,7 +95,7 @@
   to call this constant $n^2$. Look first at the equation for $\theta$: the 
   function $g$ must satisfy 
 
-  $$g^{\prime \prime} = -- n^2 g. \tag{10}$$ 
+  \begin{equation*}g^{\prime \prime} = -- n^2 g. \tag{10}\end{equation*} 
 
   The general solution is $g=A \cos n \theta+B \sin n \theta$ with constants 
   $A$ and $B$. Bearing in mind that $\theta$ is the polar angle, this solution 
@@ -99,8 +106,8 @@
   Now we can go back to eq. (9) and look at the corresponding equation for the 
   radial variation $f(r)$. This must satisfy 
 
-  $$r^2 f^{\prime \prime} + r f^{\prime} + \left(\frac{m \omega^2}{T} r^2 -- 
-  n^2 \right) f = 0 . \tag{11}$$ 
+  \begin{equation*}r^2 f^{\prime \prime} + r f^{\prime} + \left(\frac{m 
+  \omega^2}{T} r^2 -- n^2 \right) f = 0 . \tag{11}\end{equation*} 
 
   This equation is called Bessel’s equation, and it arises in many problems 
   with circular geometry. Being a second-order ordinary differential equation, 
@@ -121,19 +128,20 @@
   To find vibration modes of a membrane we must now enforce the boundary 
   condition, which is simply 
 
-  $$w(a,\theta,t) =0, \mathrm{~~or~~} f(a)=0 . \tag{12}$$ 
+  \begin{equation*}w(a,\theta,t) =0, \mathrm{~~or~~} f(a)=0 . 
+  \tag{12}\end{equation*} 
 
   The natural frequencies are thus governed by the condition 
 
-  $$J_n(ka)=0 . \tag{13}$$ 
+  \begin{equation*}J_n(ka)=0 . \tag{13}\end{equation*} 
 
   It is clear from the graphs above that for any value of $n$ there will be a 
   series of possible values of $ka$ at the successive zeros of $J_n$. Each will 
   lead to a value of natural frequency $\omega=k \sqrt{T/m}$. The vibration 
   mode shapes are then 
 
-  $$u(r,\theta)=J_n(kr) \cos n \theta \mathrm{~~~or~~~}J_n(kr) \sin n \theta 
-  \tag{14}$$ 
+  \begin{equation*}u(r,\theta)=J_n(kr) \cos n \theta \mathrm{~~~or~~~}J_n(kr) 
+  \sin n \theta \tag{14}\end{equation*} 
 
   They can be arranged in a two-dimensional family, according to the value of 
   $n$ (which determines how many nodal diameters there are) and the number of 

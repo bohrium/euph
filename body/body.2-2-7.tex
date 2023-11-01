@@ -26,47 +26,52 @@
 
   The equation of motion of this modified system is 
 
-  $$m \ddot{x}+c\dot{x} +kx=f(t) \tag{1} $$ 
+  \begin{equation*}m \ddot{x}+c\dot{x} +kx=f(t) \tag{1} \end{equation*} 
 
-  when driven by an external force $f(t)$. But we first examine free motion, 
-  with $f=0$. To find the solution, we can try substituting $x(t)=e^{i \alpha 
-  t}$ in the hope of solving for possible values of $\alpha$. Equation (1) then 
-  requires 
+  \noindent{}when driven by an external force $f(t)$. But we first examine free 
+  motion, with $f=0$. To find the solution, we can try substituting $x(t)=e^{i 
+  \alpha t}$ in the hope of solving for possible values of $\alpha$. Equation 
+  (1) then requires 
 
-  $$[-\alpha^2 m +i \alpha c + k] e^{i \alpha t} =0. \tag{2} $$ 
+  \begin{equation*}[-\alpha^2 m +i \alpha c + k] e^{i \alpha t} =0. \tag{2} 
+  \end{equation*} 
 
   The exponential factor can be cancelled, leaving a quadratic equation for 
   $\alpha$ which can be solved with the usual formula: 
 
-  $$\alpha = \dfrac{ic \pm \sqrt{-c^2 + 4 m k}}{2m}. \tag{3}$$ 
+  \begin{equation*}\alpha = \dfrac{ic \pm \sqrt{-c^2 + 4 m k}}{2m}. 
+  \tag{3}\end{equation*} 
 
   Provided the damping is light, in the sense that $c^2 \ll 4mk$, this reduces 
   to 
 
-  $$\alpha \approx \pm \sqrt{\frac{k}{m}} + \frac{ic}{2m}. \tag{4} $$ 
+  \begin{equation*}\alpha \approx \pm \sqrt{\frac{k}{m}} + \frac{ic}{2m}. 
+  \tag{4} \end{equation*} 
 
   Now note that $\sqrt{\frac{k}{m}}=\Omega$, the natural frequency of the 
   undamped oscillator found in section 2.2.2. It is convenient to define a 
   dimensionless quantity $\zeta$ so that 
 
-  $$\frac{c}{2m} = \zeta \Omega \tag{5} $$ 
+  \begin{equation*}\frac{c}{2m} = \zeta \Omega \tag{5} \end{equation*} 
 
-  which requires 
+  \noindent{}which requires 
 
-  $$\zeta=\frac{c}{2\sqrt{km}}. \tag{6} $$ 
+  \begin{equation*}\zeta=\frac{c}{2\sqrt{km}}. \tag{6} \end{equation*} 
 
   Then 
 
-  $$e^{i \alpha t} \approx e^{\pm i \Omega t} e^{-\zeta \Omega t}. \tag{7} $$ 
+  \begin{equation*}e^{i \alpha t} \approx e^{\pm i \Omega t} e^{-\zeta \Omega 
+  t}. \tag{7} \end{equation*} 
 
   This gives us our general solution for free motion of the damped oscillator: 
   in a similar form to eq. (5) of section 2.2.2 it is 
 
-  $$x(t) \approx R \cos(\Omega t + \phi) e^{-\zeta \Omega t} \tag{8} $$ 
+  \begin{equation*}x(t) \approx R \cos(\Omega t + \phi) e^{-\zeta \Omega t} 
+  \tag{8} \end{equation*} 
 
-  so that the motion consists of oscillation at frequency $\Omega$ with initial 
-  amplitude $R$ and phase offset $\phi$, but the effect of the damping is to 
-  make the oscillations die away exponentially with time. 
+  \noindent{}so that the motion consists of oscillation at frequency $\Omega$ 
+  with initial amplitude $R$ and phase offset $\phi$, but the effect of the 
+  damping is to make the oscillations die away exponentially with time. 
 
   The rate of decay is governed by the value of $\zeta$, called the damping 
   ratio. But this is not the only quantity used to characterise damping: two 
@@ -86,16 +91,18 @@
   frequency: $x(t) = Xe^{i \omega t}$. Substituting in eq. (1) and cancelling 
   the exponential factor gives 
 
-  $$[-\omega^2 m + i \omega c +k]X=F \tag{9}$$ 
+  \begin{equation*}[-\omega^2 m + i \omega c +k]X=F \tag{9}\end{equation*} 
 
-  so that the frequency response function is 
+  \noindent{}so that the frequency response function is 
 
-  $$G(\omega) = \frac{X}{F} = \frac{1}{k+i \omega c -- \omega^2 m} \tag{10} $$ 
+  \begin{equation*}G(\omega) = \frac{X}{F} = \frac{1}{k+i \omega c -- \omega^2 
+  m} \tag{10} \end{equation*} 
 
-  which can be re-written in the alternative forms 
+  \noindent{}which can be re-written in the alternative forms 
 
-  $$G(\omega) = \frac{1/m}{\Omega^2+2i \omega \zeta \Omega -- \omega^2 }= 
-  \frac{1/k}{1+2i \zeta [\omega/\Omega] -- [\omega/\Omega]^2 }. \tag{11} $$ 
+  \begin{equation*}G(\omega) = \frac{1/m}{\Omega^2+2i \omega \zeta \Omega -- 
+  \omega^2 }= \frac{1/k}{1+2i \zeta [\omega/\Omega] -- [\omega/\Omega]^2 }. 
+  \tag{11} \end{equation*} 
 
   The response function $G(\omega)$ is now complex, and we recall that the 
   physical answer is given by the real part of this complex expression. 
@@ -141,8 +148,9 @@
   the damped harmonic oscillator just discussed. Thus, we modify eq. (11) of 
   section 2.2.5 to 
 
-  $$G(j,k,\omega) \approx \dfrac{q_k}{F}=\sum_n 
+  \begin{equation*}G(j,k,\omega) \approx \dfrac{q_k}{F}=\sum_n 
   \dfrac{u_j^{(n)}u_k^{(n)}}{\omega_n^2+2i\omega \omega_n \zeta_n-\omega^2}. 
-  \tag{12}$$ 
+  \tag{12}\end{equation*} 
 
-  where the $\zeta_n$ are dimensionless numbers called modal damping ratios. 
+  \noindent{}where the $\zeta_n$ are dimensionless numbers called modal damping 
+  ratios. 

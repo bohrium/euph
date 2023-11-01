@@ -6,39 +6,41 @@
   which leads to the correct equation, by analogy with the bending beam. Recall 
   from section 3.2.1 that the governing equation for beam vibration was 
 
-  $$\rho A \dfrac{\partial^2 w}{\partial t^2}+EI \dfrac{\partial^4 w}{\partial 
-  x^4}=0. \tag{1}$$ 
+  \begin{equation*}\rho A \dfrac{\partial^2 w}{\partial t^2}+EI 
+  \dfrac{\partial^4 w}{\partial x^4}=0. \tag{1}\end{equation*} 
 
-  for displacement $w(x,t)$. For the plate, we will have displacement 
-  $w(x,y,t)$. What should we expect to be the equivalent of the fourth 
-  derivative in $x$? A natural candidate is found by replacing 
+  \noindent{}for displacement $w(x,t)$. For the plate, we will have 
+  displacement $w(x,y,t)$. What should we expect to be the equivalent of the 
+  fourth derivative in $x$? A natural candidate is found by replacing 
   $\frac{\partial^2}{\partial x^2}$ with $\frac{\partial^2}{\partial 
   x^2}+\frac{\partial^2}{\partial y^2}$, an operator called the Laplacian that 
   is known to be invariant under change of coordinate system. 
 
   This leads us to expect an equation of the form 
 
-  $$\rho h \dfrac{\partial^2 w}{\partial t^2}+EK 
+  \begin{equation*}\rho h \dfrac{\partial^2 w}{\partial t^2}+EK 
   \left[\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2} \right] 
   \left[\dfrac{\partial^2 w}{\partial x^2}+\dfrac{\partial^2 w}{\partial 
-  y^2}\right]=0\tag{2}$$ 
+  y^2}\right]=0\tag{2}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$\rho h \dfrac{\partial^2 w}{\partial t^2}+EK \left[\frac{\partial^4 
-  w}{\partial x^4}+2\frac{\partial^4 w}{\partial x^2 \partial y^2} 
-  +\frac{\partial^4 w}{\partial y^4} \right]=0\tag{3}$$ 
+  \begin{equation*}\rho h \dfrac{\partial^2 w}{\partial t^2}+EK 
+  \left[\frac{\partial^4 w}{\partial x^4}+2\frac{\partial^4 w}{\partial x^2 
+  \partial y^2} +\frac{\partial^4 w}{\partial y^4} 
+  \right]=0\tag{3}\end{equation*} 
 
-  for a plate of thickness $h$, with some constant $K$. $E$ is Young's modulus 
-  and $\rho$ is density as before: we are assuming for the moment that our 
-  plate is made of an isotropic material like a metal, with the same properties 
-  in all directions. Explicit calculation reveals that 
+  \noindent{}for a plate of thickness $h$, with some constant $K$. $E$ is 
+  Young's modulus and $\rho$ is density as before: we are assuming for the 
+  moment that our plate is made of an isotropic material like a metal, with the 
+  same properties in all directions. Explicit calculation reveals that 
 
-  $$K=\frac{h^3}{12(1-\nu^2)} \tag{4}$$ 
+  \begin{equation*}K=\frac{h^3}{12(1-\nu^2)} \tag{4}\end{equation*} 
 
-  where $\nu$ is Poisson's ratio. This Poisson's ratio factor arises because of 
-  an assumption that the plate is in a state of plane stress, because it is 
-  thin enough for any through-thickness stresses to relax to zero. 
+  \noindent{}where $\nu$ is Poisson's ratio. This Poisson's ratio factor arises 
+  because of an assumption that the plate is in a state of plane stress, 
+  because it is thin enough for any through-thickness stresses to relax to 
+  zero. 
 
   We are interested in modes, so as usual we assume $w(x,y,t)=u(x,y) e^{i 
   \omega t}$. By far the simplest special case arises if we assume a 
@@ -47,13 +49,14 @@
   bending moment about each edge line. It is easily shown that eq. (3) and 
   these boundary conditions are all satisfied by the shapes 
 
-  $$u_{nm}=\sin(n \pi x/a) \sin(m \pi y/b) \tag{5}$$ 
+  \begin{equation*}u_{nm}=\sin(n \pi x/a) \sin(m \pi y/b) 
+  \tag{5}\end{equation*} 
 
-  where $n$ and $m$ can take any integer values 1,2,3,... The corresponding 
-  natural frequencies are given by 
+  \noindent{}where $n$ and $m$ can take any integer values 1,2,3,... The 
+  corresponding natural frequencies are given by 
 
-  $$\omega_{nm} = \sqrt{\frac{EK}{\rho h}} \left[\frac{n^2 
-  \pi^2}{a^2}+\frac{m^2 \pi^2}{b^2} \right] .\tag{6}$$ 
+  \begin{equation*}\omega_{nm} = \sqrt{\frac{EK}{\rho h}} \left[\frac{n^2 
+  \pi^2}{a^2}+\frac{m^2 \pi^2}{b^2} \right] .\tag{6}\end{equation*} 
 
   Later, especially when we look at the soundboards of stringed instruments, we 
   will be interested in the vibration of wooden plates. Soundboards are usually 

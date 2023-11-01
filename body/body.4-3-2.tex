@@ -9,16 +9,16 @@
   4.3.1, we can write down the pressure produced at the observation point when 
   this element of the surface vibrates with a velocity $v e^{i \omega t}$: 
 
-  $$\delta p = \dfrac{i \omega \rho_0 v \delta S}{2 \pi} e^{i \omega t} 
-  \dfrac{e^{-i k R}}{R} \tag{1}$$ 
+  \begin{equation*}\delta p = \dfrac{i \omega \rho_0 v \delta S}{2 \pi} e^{i 
+  \omega t} \dfrac{e^{-i k R}}{R} \tag{1}\end{equation*} 
 
-  where $k=\omega /c$ as usual, and the factor 2 rather than 4 in the 
-  denominator arises because the volume flux is spreading into a half-space 
+  \noindent{}where $k=\omega /c$ as usual, and the factor 2 rather than 4 in 
+  the denominator arises because the volume flux is spreading into a half-space 
   rather than the full space. Integrating over all positions in the plane gives 
   Rayleigh's formula for the total pressure: 
 
-  $$p = \dfrac{i \omega \rho_0}{2 \pi} e^{i \omega t} \int_S{\dfrac{v e^{-i k 
-  R}}{R} dS} . \tag{2}$$ 
+  \begin{equation*}p = \dfrac{i \omega \rho_0}{2 \pi} e^{i \omega t} 
+  \int_S{\dfrac{v e^{-i k R}}{R} dS} . \tag{2}\end{equation*} 
 
   \fig{figs/fig-a48d8fb8.png}{\caption{Figure 1. Configuration sketch for the 
   Rayleigh integral and the baffled piston calculation.}} 
@@ -36,33 +36,36 @@
   coordinates $(r \sin \theta, 0, r \cos \theta)$ while the element is at 
   position $(\xi \cos \phi, \xi \sin \phi, 0)$. Thus 
 
-  $$R^2=(r \sin \theta -- \xi \cos \phi)^2 + \xi^2 \sin^2 \phi + r^2 \cos^2 
-  \theta $$ 
+  \begin{equation*}R^2=(r \sin \theta -- \xi \cos \phi)^2 + \xi^2 \sin^2 \phi + 
+  r^2 \cos^2 \theta \end{equation*} 
 
-  $$= r^2 -- 2 r \xi \sin \theta \cos \phi +\xi^2 . \tag{3}$$ 
+  \begin{equation*}= r^2 -- 2 r \xi \sin \theta \cos \phi +\xi^2 . 
+  \tag{3}\end{equation*} 
 
   If we neglect the term $\xi^2$ because $r \gg \xi$, we have 
 
-  $$R = r \left[ 1 -- \dfrac{2\xi}{r} \sin \theta \cos \phi \right]^{1/2}$$ 
+  \begin{equation*}R = r \left[ 1 -- \dfrac{2\xi}{r} \sin \theta \cos \phi 
+  \right]^{1/2}\end{equation*} 
 
-  $$\approx r \left[ 1 -- \dfrac{\xi}{r} \sin \theta \cos \phi \right]=r-\xi 
-  \sin \theta \cos \phi \tag{4}$$ 
+  \begin{equation*}\approx r \left[ 1 -- \dfrac{\xi}{r} \sin \theta \cos \phi 
+  \right]=r-\xi \sin \theta \cos \phi \tag{4}\end{equation*} 
 
-  using the binomial theorem. 
+  \noindent{}using the binomial theorem. 
 
   Using this in eq. (2) gives 
 
-  $$p\approx \dfrac{i \omega \rho_0 v}{2 \pi r} e^{i \omega t -- ikr} 
-  \int_0^a{\xi \left[ \int_0^{2 \pi}{\exp(-ik\xi \sin \theta \cos \phi) d \phi} 
-  \right] d\xi} \tag{5}$$ 
+  \begin{equation*}p\approx \dfrac{i \omega \rho_0 v}{2 \pi r} e^{i \omega t -- 
+  ikr} \int_0^a{\xi \left[ \int_0^{2 \pi}{\exp(-ik\xi \sin \theta \cos \phi) d 
+  \phi} \right] d\xi} \tag{5}\end{equation*} 
 
-  $$=\dfrac{i \omega \rho_0 v}{2 \pi r} e^{i \omega t -- ikr} \int_0^a{J_0(ky 
-  \sin \theta) \xi d\xi} \tag{6}$$ 
+  \begin{equation*}=\dfrac{i \omega \rho_0 v}{2 \pi r} e^{i \omega t -- ikr} 
+  \int_0^a{J_0(ky \sin \theta) \xi d\xi} \tag{6}\end{equation*} 
 
-  $$= i \rho_0 c k a^2 v e^{i \omega t} \left[ \dfrac{J_1(ka \sin \theta)}{ka 
-  \sin \theta} \right] \dfrac{e^{-ikr}}{r} \tag{7}$$ 
+  \begin{equation*}= i \rho_0 c k a^2 v e^{i \omega t} \left[ \dfrac{J_1(ka 
+  \sin \theta)}{ka \sin \theta} \right] \dfrac{e^{-ikr}}{r} 
+  \tag{7}\end{equation*} 
 
-  where $J_0$ and $J_1$ are Bessel functions, and we have made use of two 
-  standard identities for Bessel functions. The term in square brackets in eq. 
-  (7) describes the directional dependence of the far-field sound, plotted in 
-  Fig.\ 10 of section 4.3. 
+  \noindent{}where $J_0$ and $J_1$ are Bessel functions, and we have made use 
+  of two standard identities for Bessel functions. The term in square brackets 
+  in eq. (7) describes the directional dependence of the far-field sound, 
+  plotted in Fig.\ 10 of section 4.3. 

@@ -15,7 +15,8 @@
   complex numbers. So for example free vibration which for the undamped problem 
   varied like $e^{i \omega t}$ might now vary like 
 
-  $$e^{i(\omega + i \Delta)t} = e^{i \omega t} e^{-\Delta t} \tag{1}$$ 
+  \begin{equation*}e^{i(\omega + i \Delta)t} = e^{i \omega t} e^{-\Delta t} 
+  \tag{1}\end{equation*} 
 
   It is clear that this has achieved the desired effect: the oscillation at 
   frequency $\omega$ now decays exponentially at a rate determined by the 
@@ -49,13 +50,13 @@
   $w(x,t)$, bending stiffness $EI$ and mass per unit length $m$, the potential 
   energy is 
 
-  $$ V = \dfrac{1}{2} \int{EI \left(\dfrac{\partial^2 w}{\partial x^2} 
-  \right)^2 dx} \tag{2}$$ 
+  \begin{equation*} V = \dfrac{1}{2} \int{EI \left(\dfrac{\partial^2 
+  w}{\partial x^2} \right)^2 dx} \tag{2}\end{equation*} 
 
-  and the kinetic energy is 
+  \noindent{}and the kinetic energy is 
 
-  $$T=\dfrac{1}{2} \int{ m \left(\dfrac{\partial w}{\partial t} \right)^2 dx } 
-  . \tag{3}$$ 
+  \begin{equation*}T=\dfrac{1}{2} \int{ m \left(\dfrac{\partial w}{\partial t} 
+  \right)^2 dx } . \tag{3}\end{equation*} 
 
   The only elastic modulus entering here is Young's modulus $E$. With material 
   damping we can replace this with $E(1+i \eta_E)$. The factor $\eta_E$ may 
@@ -63,20 +64,22 @@
   can evaluate it at the undamped natural frequency $\omega_n$ corresponding to 
   mode shape $w_n(x)$. The Rayleigh quotient, from equations (2) and (3), gives 
 
-  $$\omega^2 \approx \dfrac{E(1+i \eta_E) I \int{EI \left(\dfrac{\partial^2 
-  w_n}{\partial x^2} \right)^2 dx}}{m \int{w_n^2 dx}}=(1+i \eta_E) \omega_n^2 
-  \tag{4}$$ 
+  \begin{equation*}\omega^2 \approx \dfrac{E(1+i \eta_E) I \int{EI 
+  \left(\dfrac{\partial^2 w_n}{\partial x^2} \right)^2 dx}}{m \int{w_n^2 
+  dx}}=(1+i \eta_E) \omega_n^2 \tag{4}\end{equation*} 
 
-  because this expression apart from the factor $(1+i \eta_E)$ is the Rayleigh 
-  quotient for the undamped problem, which is equal to $\omega_n^2$. 
+  \noindent{}because this expression apart from the factor $(1+i \eta_E)$ is 
+  the Rayleigh quotient for the undamped problem, which is equal to 
+  $\omega_n^2$. 
 
   So the time dependence of a free vibration in this mode is 
 
-  $$e^{i \omega_n t} e^{-\eta_E \omega_n t/2} . \tag{5}$$ 
+  \begin{equation*}e^{i \omega_n t} e^{-\eta_E \omega_n t/2} . 
+  \tag{5}\end{equation*} 
 
   From the definition of Q-factor, the value for this mode is 
 
-  $$Q_n \approx \dfrac{1}{\eta_E} . \tag{6}$$ 
+  \begin{equation*}Q_n \approx \dfrac{1}{\eta_E} . \tag{6}\end{equation*} 
 
   All modes of this beam will have the same Q-factor, except that the material 
   property $\eta_E$ may vary with frequency, but such variation is usually only 
@@ -87,53 +90,60 @@
   Now we can apply the approach to the damping of a wooden plate. We start from 
   the expressions for potential and kinetic energy, from section 10.3.2: 
 
-  $$ V = \dfrac{1}{2} \int{\int{h^3 \left[ D_1 \left(\dfrac{\partial^2 
-  w}{\partial x^2} \right)^2 + D_2 \dfrac{\partial^2 w}{\partial x^2} 
-  \dfrac{\partial^2 w}{\partial y^2} \right. }} $$ 
+  \begin{equation*} V = \dfrac{1}{2} \int{\int{h^3 \left[ D_1 
+  \left(\dfrac{\partial^2 w}{\partial x^2} \right)^2 + D_2 \dfrac{\partial^2 
+  w}{\partial x^2} \dfrac{\partial^2 w}{\partial y^2} \right. }} 
+  \end{equation*} 
 
-  $$ \left. + D_3 \left(\dfrac{\partial^2 w}{\partial y^2} \right)^2 + D_4 
-  \left(\dfrac{\partial^2 w}{\partial x \partial y} \right)^2 \right] dx dy 
-  \tag{7}$$ 
+  \begin{equation*} \left. + D_3 \left(\dfrac{\partial^2 w}{\partial y^2} 
+  \right)^2 + D_4 \left(\dfrac{\partial^2 w}{\partial x \partial y} \right)^2 
+  \right] dx dy \tag{7}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$T=\dfrac{1}{2} \int{\int{ \rho h w^2 dx dy }} \tag{8}$$ 
+  \begin{equation*}T=\dfrac{1}{2} \int{\int{ \rho h w^2 dx dy }} 
+  \tag{8}\end{equation*} 
 
-  where $w(x,y)$ is the displacement of the plate, $h$ is the thickness, 
-  $D_1$--$D_4$ are the four stiffness constants and $\rho$ is the density. 
+  \noindent{}where $w(x,y)$ is the displacement of the plate, $h$ is the 
+  thickness, $D_1$--$D_4$ are the four stiffness constants and $\rho$ is the 
+  density. 
 
   Once we introduce damping, all four of the stiffness constants become 
   complex: 
 
-  $$D_j \rightarrow D_j(1+i \eta_j) \mathrm{,~~~~} j=1,2,3,4 . \tag{9}$$ 
+  \begin{equation*}D_j \rightarrow D_j(1+i \eta_j) \mathrm{,~~~~} j=1,2,3,4 . 
+  \tag{9}\end{equation*} 
 
   Now following through the same argument based on Rayleigh's principle, we 
   deduce that for mode $n$ the modal damping factor, the inverse of the modal 
   Q-factor, is a simple weighted sum of the four $\eta_j$: 
 
-  $$\dfrac{1}{Q_n} \approx J_1 \eta_1 + J_2 \eta_2 + J_3 \eta_3 + J_4 \eta_4 
-  \tag{10}$$ 
+  \begin{equation*}\dfrac{1}{Q_n} \approx J_1 \eta_1 + J_2 \eta_2 + J_3 \eta_3 
+  + J_4 \eta_4 \tag{10}\end{equation*} 
 
-  where the dimensionless constants $J_1$--$J_4$ are defined as follows: 
+  \noindent{}where the dimensionless constants $J_1$--$J_4$ are defined as 
+  follows: 
 
-  $$J_1 = \dfrac{D_1 \int{\int{h^3 \left(\dfrac{\partial^2 w_n}{\partial x^2} 
-  \right)^2 dx dy }}}{\omega_n^2 \int{ \int{ \rho h w_n^2 dx dy }}} \tag{11}$$ 
+  \begin{equation*}J_1 = \dfrac{D_1 \int{\int{h^3 \left(\dfrac{\partial^2 
+  w_n}{\partial x^2} \right)^2 dx dy }}}{\omega_n^2 \int{ \int{ \rho h w_n^2 dx 
+  dy }}} \tag{11}\end{equation*} 
 
-  $$J_2 = \dfrac{D_1 \int{\int{h^3 \dfrac{\partial^2 w_n}{\partial x^2} 
-  \dfrac{\partial^2 w_n}{\partial y^2} dx dy }}}{\omega_n^2 \int{ \int{ \rho h 
-  w_n^2 dx dy }}} \tag{12}$$ 
+  \begin{equation*}J_2 = \dfrac{D_1 \int{\int{h^3 \dfrac{\partial^2 
+  w_n}{\partial x^2} \dfrac{\partial^2 w_n}{\partial y^2} dx dy }}}{\omega_n^2 
+  \int{ \int{ \rho h w_n^2 dx dy }}} \tag{12}\end{equation*} 
 
-  $$J_3 = \dfrac{D_1 \int{\int{h^3 \left(\dfrac{\partial^2 w_n}{\partial y^2} 
-  \right)^2 dx dy }}}{\omega_n^2 \int{ \int{ \rho h w_n^2 dx dy }}} \tag{13}$$ 
+  \begin{equation*}J_3 = \dfrac{D_1 \int{\int{h^3 \left(\dfrac{\partial^2 
+  w_n}{\partial y^2} \right)^2 dx dy }}}{\omega_n^2 \int{ \int{ \rho h w_n^2 dx 
+  dy }}} \tag{13}\end{equation*} 
 
-  $$J_4 = \dfrac{D_1 \int{\int{h^3 \left(\dfrac{\partial^2 w_n}{\partial x 
-  \partial y} \right)^2 dx dy }}}{\omega_n^2 \int{ \int{ \rho h w_n^2 dx dy }}} 
-  . \tag{14}$$ 
+  \begin{equation*}J_4 = \dfrac{D_1 \int{\int{h^3 \left(\dfrac{\partial^2 
+  w_n}{\partial x \partial y} \right)^2 dx dy }}}{\omega_n^2 \int{ \int{ \rho h 
+  w_n^2 dx dy }}} . \tag{14}\end{equation*} 
 
   It follows immediately from the Rayleigh quotient for the original, undamped 
   plate that 
 
-  $$J_1 + J_2 + J_3 + J_4 = 1 . \tag{15}$$ 
+  \begin{equation*}J_1 + J_2 + J_3 + J_4 = 1 . \tag{15}\end{equation*} 
 
   These constants capture the partitioning of potential energy, and hence 
   energy dissipation rate, between the four terms associated with $D_1$, $D_2$, 

@@ -11,30 +11,31 @@
 
   Newton's law for this small element requires 
 
-  $$m~\delta x \frac{\partial^2 w}{\partial t^2} =-T \sin \theta_1 + T 
-  \sin\theta_2 \tag{1}$$ 
+  \begin{equation*}m~\delta x \frac{\partial^2 w}{\partial t^2} =-T \sin 
+  \theta_1 + T \sin\theta_2 \tag{1}\end{equation*} 
 
   But the angles $\theta_1$ and $\theta_2$ are both very small, so 
 
-  $$\sin \theta_1 \approx \theta_1 \approx \tan \theta_1 = \left[ 
-  \frac{\partial w}{\partial x} \right] _x \tag{2}$$ 
+  \begin{equation*}\sin \theta_1 \approx \theta_1 \approx \tan \theta_1 = 
+  \left[ \frac{\partial w}{\partial x} \right] _x \tag{2}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\sin \theta_2 \approx \theta_2 \approx \tan \theta_2 = \left[ 
-  \frac{\partial w}{\partial x} \right] _{x + \delta x}. \tag{3}$$ 
+  \begin{equation*}\sin \theta_2 \approx \theta_2 \approx \tan \theta_2 = 
+  \left[ \frac{\partial w}{\partial x} \right] _{x + \delta x}. 
+  \tag{3}\end{equation*} 
 
   Thus 
 
-  $$m \frac{\partial^2 w}{\partial t^2} \approx T \left[ \dfrac{\left[ 
-  \frac{\partial w}{\partial x} \right] _{x + \delta x} -- \left[ 
+  \begin{equation*}m \frac{\partial^2 w}{\partial t^2} \approx T \left[ 
+  \dfrac{\left[ \frac{\partial w}{\partial x} \right] _{x + \delta x} -- \left[ 
   \frac{\partial w}{\partial x} \right] _{x} }{\delta x} \right] \rightarrow T 
-  \dfrac{\partial^2 w}{\partial x^2} \tag{4}$$ 
+  \dfrac{\partial^2 w}{\partial x^2} \tag{4}\end{equation*} 
 
-  as $\delta x \rightarrow 0$. Thus the equation of motion is 
+  \noindent{}as $\delta x \rightarrow 0$. Thus the equation of motion is 
 
-  $$m \frac{\partial^2 w}{\partial t^2} -- T \dfrac{\partial^2 w}{\partial x^2} 
-  =0 . \tag{5}$$ 
+  \begin{equation*}m \frac{\partial^2 w}{\partial t^2} -- T \dfrac{\partial^2 
+  w}{\partial x^2} =0 . \tag{5}\end{equation*} 
 
   If the motion were not free because a force $f(x,t)$ per unit length was 
   applied to the string, $f$ would replace the zero on the right-hand side of 
@@ -44,23 +45,25 @@
   sinusoidally at some frequency $\omega$. So to find the natural frequencies 
   and vibration modes, we need to look for solutions of the form 
 
-  $$w(x,t) = u(x) e^{i \omega t} \tag{6}$$ 
+  \begin{equation*}w(x,t) = u(x) e^{i \omega t} \tag{6}\end{equation*} 
 
   (remembering that we really mean ``real part of...'' this complex 
   expression.) Substituting in eq. (5) then gives 
 
-  $$T \dfrac{d^2u}{dx^2} + m \omega^2 u = 0. \tag{7}$$ 
+  \begin{equation*}T \dfrac{d^2u}{dx^2} + m \omega^2 u = 0. 
+  \tag{7}\end{equation*} 
 
   This is the simple harmonic equation, so we already know that the general 
   solution is 
 
-  $$u(x) = A \cos kx + B \sin kx \tag{8}$$ 
+  \begin{equation*}u(x) = A \cos kx + B \sin kx \tag{8}\end{equation*} 
 
-  where $A$ and $B$ are arbitrary constants, and 
+  \noindent{}where $A$ and $B$ are arbitrary constants, and 
 
-  $$k^2 =\dfrac{m \omega^2}{T} = \dfrac{\omega^2}{c^2} \tag{9}$$ 
+  \begin{equation*}k^2 =\dfrac{m \omega^2}{T} = \dfrac{\omega^2}{c^2} 
+  \tag{9}\end{equation*} 
 
-  where $c=\sqrt{T/m}$. 
+  \noindent{}where $c=\sqrt{T/m}$. 
 
   The quantity $k$ is called wavenumber and is a kind of ``spatial frequency''. 
   It bears the same relation to wavelength $\lambda$ as a frequency $\omega$ 
@@ -71,31 +74,35 @@
   along the string in either direction, and $c$ is the speed of these waves. To 
   see this, it is better to use the complex form of the general solution: 
 
-  $$u(x) =A' e^{ikx} + B' e^{-ikx} \tag{10}$$ 
+  \begin{equation*}u(x) =A' e^{ikx} + B' e^{-ikx} \tag{10}\end{equation*} 
 
-  where $A'$ and $B'$ are new arbitrary constants. The time-varying solution 
-  then looks like 
+  \noindent{}where $A'$ and $B'$ are new arbitrary constants. The time-varying 
+  solution then looks like 
 
-  $$w(x,t) = A' e^{i(\omega t + kx)} + B' e^{i(\omega t -- kx)} \tag{11}$$ 
+  \begin{equation*}w(x,t) = A' e^{i(\omega t + kx)} + B' e^{i(\omega t -- kx)} 
+  \tag{11}\end{equation*} 
 
-  $$=A' e^{i\omega (t + x/c)} + B' e^{i\omega (t -- x/c))}. \tag{12}$$ 
+  \begin{equation*}=A' e^{i\omega (t + x/c)} + B' e^{i\omega (t -- x/c))}. 
+  \tag{12}\end{equation*} 
 
   Now to find the modes we have to satisfy the boundary conditions at the ends 
   of the string --- we are assuming that $u = 0$ at both ends, which we can 
   take to be at the positions $x = 0$ and $x = L$. From $u(0) = 0$ we can 
   deduce from eq. (8) that $A = 0$. Now to satisfy $u(L) = 0$ we require 
 
-  $$B \sin kL = 0 \tag{12}$$ 
+  \begin{equation*}B \sin kL = 0 \tag{12}\end{equation*} 
 
-  so that the only allowed values of k are 
+  \noindent{}so that the only allowed values of k are 
 
-  $$k=n \pi/L \mathrm{~~for~~} n = 1, 2, 3, ... \tag{13}$$ 
+  \begin{equation*}k=n \pi/L \mathrm{~~for~~} n = 1, 2, 3, ... 
+  \tag{13}\end{equation*} 
 
   From eq. (9) these correspond to allowed values of the frequency $\omega$. So 
   we have a sequence of mode shapes 
 
-  $$u_n(x)=\sin (n \pi x/L) \tag{14}$$ 
+  \begin{equation*}u_n(x)=\sin (n \pi x/L) \tag{14}\end{equation*} 
 
-  with corresponding natural frequencies 
+  \noindent{}with corresponding natural frequencies 
 
-  $$\omega_n = n \pi c/L \mathrm{~~for~~} n = 1, 2, 3, ... \tag{15}$$ 
+  \begin{equation*}\omega_n = n \pi c/L \mathrm{~~for~~} n = 1, 2, 3, ... 
+  \tag{15}\end{equation*} 

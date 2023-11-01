@@ -5,9 +5,9 @@
   tube of length $L$ which is open at both ends. We now allow the 
   cross-sectional area to be 
 
-  $$S(x) = S_0 +S'(x) \tag{1}$$ 
+  \begin{equation*}S(x) = S_0 +S'(x) \tag{1}\end{equation*} 
 
-  with $S_0$ a constant, and $|S'| \ll S_0$. 
+  \noindent{}with $S_0$ a constant, and $|S'| \ll S_0$. 
 
   In order to apply Rayleigh's principle, we need suitable expressions for the 
   potential and kinetic energies. It is simplest to formulate these in terms of 
@@ -16,22 +16,22 @@
   his lead we denote this by $X(x,t)$. In terms of the particle displacement 
   $\xi(x,t)$ which we used earlier, 
 
-  $$X=S \xi . \tag{2}$$ 
+  \begin{equation*}X=S \xi . \tag{2}\end{equation*} 
 
   The kinetic energy is straightforward: it is given by 
 
-  $$T=\dfrac{1}{2} \rho_0 \int{S \dot{\xi}^2 dx} = \dfrac{1}{2} \rho_0 
-  \int{\dfrac{1}{S} \dot{X}^2 dx}. \tag{3}$$ 
+  \begin{equation*}T=\dfrac{1}{2} \rho_0 \int{S \dot{\xi}^2 dx} = \dfrac{1}{2} 
+  \rho_0 \int{\dfrac{1}{S} \dot{X}^2 dx}. \tag{3}\end{equation*} 
 
   For the potential energy, we start from an expression derived in section 
   4.1.3: 
 
-  $$P=\dfrac{1}{2} \dfrac{c^2}{\rho_0} \int{\rho'^2 dV}=\dfrac{1}{2} 
-  \dfrac{c^2}{\rho_0} \int{S\rho'^2 dx} \tag{4}$$ 
+  \begin{equation*}P=\dfrac{1}{2} \dfrac{c^2}{\rho_0} \int{\rho'^2 
+  dV}=\dfrac{1}{2} \dfrac{c^2}{\rho_0} \int{S\rho'^2 dx} \tag{4}\end{equation*} 
 
-  in terms of the acoustic density fluctuation $\rho'$, where the first 
-  integral is taken over the volume inside the tube, and the second integral 
-  uses the fact that $dV=S dx$. 
+  \noindent{}in terms of the acoustic density fluctuation $\rho'$, where the 
+  first integral is taken over the volume inside the tube, and the second 
+  integral uses the fact that $dV=S dx$. 
 
   \fig{figs/fig-fc032ef7.png}{\caption{Figure 1. A small element of the 
   acoustic wavefield in a tube with varying cross-section, showing particle 
@@ -44,28 +44,31 @@
   \approx S \delta x$, and after taking the particle displacements into account 
   it increases by an amount 
 
-  $$\delta V \approx (S+\delta S)(\xi + \delta \xi) -S \xi \approx S \delta \xi 
-  + \xi \delta S =\delta(S \xi) . \tag{5}$$ 
+  \begin{equation*}\delta V \approx (S+\delta S)(\xi + \delta \xi) -S \xi 
+  \approx S \delta \xi + \xi \delta S =\delta(S \xi) . \tag{5}\end{equation*} 
 
   Now the mass of the fluid element remains constant, so the perturbed density 
   $\rho'$, which we are trying to find, satisfies 
 
-  $$\dfrac{\rho'}{\rho_0}=-\dfrac{\delta V}{V_0} \tag{6}$$ 
+  \begin{equation*}\dfrac{\rho'}{\rho_0}=-\dfrac{\delta V}{V_0} 
+  \tag{6}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$\dfrac{S \delta x}{\rho_0}\rho' \approx -\delta(S \xi) . \tag{7}$$ 
+  \begin{equation*}\dfrac{S \delta x}{\rho_0}\rho' \approx -\delta(S \xi) . 
+  \tag{7}\end{equation*} 
 
   Dividing by $\delta x$ and taking the usual calculus limit gives 
 
-  $$\rho'=-\dfrac{\rho_0}{S}\dfrac{\partial}{\partial x}(S \xi) \tag{8}$$ 
+  \begin{equation*}\rho'=-\dfrac{\rho_0}{S}\dfrac{\partial}{\partial x}(S \xi) 
+  \tag{8}\end{equation*} 
 
-  so that our potential energy is 
+  \noindent{}so that our potential energy is 
 
-  $$P=\dfrac{1}{2} \rho_0 c^2 \int{\dfrac{1}{S}\left[\dfrac{\partial}{\partial 
-  x}(S \xi)\right]^2 dx}=\dfrac{1}{2} \rho_0 c^2 
-  \int{\dfrac{1}{S}\left[\dfrac{\partial X}{\partial x}\right]^2 dx} . 
-  \tag{9}$$ 
+  \begin{equation*}P=\dfrac{1}{2} \rho_0 c^2 
+  \int{\dfrac{1}{S}\left[\dfrac{\partial}{\partial x}(S \xi)\right]^2 
+  dx}=\dfrac{1}{2} \rho_0 c^2 \int{\dfrac{1}{S}\left[\dfrac{\partial 
+  X}{\partial x}\right]^2 dx} . \tag{9}\end{equation*} 
 
   Now we can apply Rayleigh's principle to our original problem of making a 
   small perturbation to the bore profile. We solved a similar problem back in 
@@ -82,55 +85,61 @@
   particle displacements and the variable $X$. By virtue of equation (7) from 
   section 4.1.1, we know that the answer for the $n\mathrm{th}$ mode is 
 
-  $$X_n=\cos \dfrac{n \pi x}{L} . \tag{10}$$ 
+  \begin{equation*}X_n=\cos \dfrac{n \pi x}{L} . \tag{10}\end{equation*} 
 
   Noting that 
 
-  $$\dfrac{1}{S}=\dfrac{1}{S_0+S'} \approx 
-  \dfrac{1}{S_0}\left[1-\dfrac{S'}{S_0}\right] \tag{11}$$ 
+  \begin{equation*}\dfrac{1}{S}=\dfrac{1}{S_0+S'} \approx 
+  \dfrac{1}{S_0}\left[1-\dfrac{S'}{S_0}\right] \tag{11}\end{equation*} 
 
-  by the binomial theorem, our Rayleigh quotient reads 
+  \noindent{}by the binomial theorem, our Rayleigh quotient reads 
 
-  $$\omega_n^2 \approx \dfrac{c^2 \int{(1-S'/S_0)(n \pi/L)^2 \sin^2(n \pi x/L) 
-  dx}}{\int{(1-S'/S_0) \cos^2(n \pi x/L) dx}} \tag{12}$$ 
+  \begin{equation*}\omega_n^2 \approx \dfrac{c^2 \int{(1-S'/S_0)(n \pi/L)^2 
+  \sin^2(n \pi x/L) dx}}{\int{(1-S'/S_0) \cos^2(n \pi x/L) dx}} 
+  \tag{12}\end{equation*} 
 
-  using equations (3) and (9). This takes the form 
+  \noindent{}using equations (3) and (9). This takes the form 
 
-  $$\omega_n^2 \approx \dfrac{P_0 + \delta P}{T_0 + \delta T} \tag{13}$$ 
+  \begin{equation*}\omega_n^2 \approx \dfrac{P_0 + \delta P}{T_0 + \delta T} 
+  \tag{13}\end{equation*} 
 
-  with 
+  \noindent{}with 
 
-  $$P_0=c^2 \left(\dfrac{n \pi}{L}\right)^2 \int{ \sin^2 \dfrac{n \pi x}{L} 
-  dx}=c^2 \left(\dfrac{n \pi}{L}\right)^2 \dfrac{L}{2} \tag{14}$$ 
+  \begin{equation*}P_0=c^2 \left(\dfrac{n \pi}{L}\right)^2 \int{ \sin^2 
+  \dfrac{n \pi x}{L} dx}=c^2 \left(\dfrac{n \pi}{L}\right)^2 \dfrac{L}{2} 
+  \tag{14}\end{equation*} 
 
-  $$\delta P=-\dfrac{c^2}{S_0} \left(\dfrac{n \pi}{L}\right)^2 \int{S'(x) 
-  \sin^2 \dfrac{n \pi x}{L} dx} \tag{15}$$ 
+  \begin{equation*}\delta P=-\dfrac{c^2}{S_0} \left(\dfrac{n \pi}{L}\right)^2 
+  \int{S'(x) \sin^2 \dfrac{n \pi x}{L} dx} \tag{15}\end{equation*} 
 
-  $$T_0=\int{ \cos^2 \dfrac{n \pi x}{L} dx} =\dfrac{L}{2} \tag{16}$$ 
+  \begin{equation*}T_0=\int{ \cos^2 \dfrac{n \pi x}{L} dx} =\dfrac{L}{2} 
+  \tag{16}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\delta T=-\dfrac{1}{S_0} \int{S'(x) \cos^2 \dfrac{n \pi x}{L} dx} . 
-  \tag{17}$$ 
+  \begin{equation*}\delta T=-\dfrac{1}{S_0} \int{S'(x) \cos^2 \dfrac{n \pi 
+  x}{L} dx} . \tag{17}\end{equation*} 
 
   It follows that 
 
-  $$\omega_n^2 \approx \dfrac{P_0}{T_0}\left[1 + \dfrac{\delta P}{P_0}\right] 
-  \left[1 -- \dfrac{\delta T}{T_0}\right]\approx \dfrac{P_0}{T_0}\left[1 + 
-  \dfrac{\delta P}{P_0} -- \dfrac{\delta T}{T_0}\right]$$ 
+  \begin{equation*}\omega_n^2 \approx \dfrac{P_0}{T_0}\left[1 + \dfrac{\delta 
+  P}{P_0}\right] \left[1 -- \dfrac{\delta T}{T_0}\right]\approx 
+  \dfrac{P_0}{T_0}\left[1 + \dfrac{\delta P}{P_0} -- \dfrac{\delta 
+  T}{T_0}\right]\end{equation*} 
 
-  $$=\left(\dfrac{c n \pi}{L}\right)^2 \left[1+\dfrac{2}{S_0L} \int{S'(x) 
-  \left(\cos^2\dfrac{n \pi x}{L}-\sin^2 \dfrac{n \pi x}{L} \right) dx}\right]$$ 
+  \begin{equation*}=\left(\dfrac{c n \pi}{L}\right)^2 \left[1+\dfrac{2}{S_0L} 
+  \int{S'(x) \left(\cos^2\dfrac{n \pi x}{L}-\sin^2 \dfrac{n \pi x}{L} \right) 
+  dx}\right]\end{equation*} 
 
-  $$=\left(\dfrac{c n \pi}{L}\right)^2 \left[1+\dfrac{2}{S_0L} \int{S'(x) 
-  \cos\dfrac{2n \pi x}{L} dx}\right] . \tag{18}$$ 
+  \begin{equation*}=\left(\dfrac{c n \pi}{L}\right)^2 \left[1+\dfrac{2}{S_0L} 
+  \int{S'(x) \cos\dfrac{2n \pi x}{L} dx}\right] . \tag{18}\end{equation*} 
 
   Finally, Rayleigh expressed the result as an equivalent length correction to 
   the cylindrical tube to achieve the perturbed resonance frequency: the extra 
   length required is 
 
-  $$\Delta L \approx -\dfrac{1}{S_0L} \int{S'(x) \cos\dfrac{2n \pi x}{L} dx} . 
-  \tag{19}$$ 
+  \begin{equation*}\Delta L \approx -\dfrac{1}{S_0L} \int{S'(x) \cos\dfrac{2n 
+  \pi x}{L} dx} . \tag{19}\end{equation*} 
 
   Apart from a multiplicative factor, this rather simple form is a Fourier 
   series coefficient of the bore perturbation $S'(x)$. 

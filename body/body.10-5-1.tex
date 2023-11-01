@@ -3,10 +3,10 @@
   rather general expression for any mechanical frequency response function of a 
   vibrating structure can be written in the form 
 
-  $$G(x,y,\omega) = (i \omega)^\alpha \sum_n \dfrac{u_n(x) 
-  u_n(y)}{\omega_n^2+2i\omega \omega_n \zeta_n-\omega^2} \tag{1}$$ 
+  \begin{equation*}G(x,y,\omega) = (i \omega)^\alpha \sum_n \dfrac{u_n(x) 
+  u_n(y)}{\omega_n^2+2i\omega \omega_n \zeta_n-\omega^2} \tag{1}\end{equation*} 
 
-  where the sum is over modes labelled by $n$. 
+  \noindent{}where the sum is over modes labelled by $n$. 
 
   In this formula, the $n$th mode is assumed to have mode shape $u_n$, resonant 
   frequency $\omega_n$ and damping ratio $\zeta_n$. The damping ratio is 
@@ -26,32 +26,33 @@
   We will look first at the behaviour of a single term from this modal 
   summation: define 
 
-  $$G_n = \dfrac{(i \omega)^\alpha K_n}{\omega_n^2+2i\omega \omega_n 
-  \zeta_n-\omega^2} \tag{2}$$ 
+  \begin{equation*}G_n = \dfrac{(i \omega)^\alpha K_n}{\omega_n^2+2i\omega 
+  \omega_n \zeta_n-\omega^2} \tag{2}\end{equation*} 
 
-  where 
+  \noindent{}where 
 
-  $$K_n= u_n(x) u_n(y) . \tag{3}$$ 
+  \begin{equation*}K_n= u_n(x) u_n(y) . \tag{3}\end{equation*} 
 
   We can simplify this term by factorising the quadratic in the denominator, 
   then expanding $G_n$ in partial fractions. We can write 
 
-  $$\omega_n^2+2i\omega \omega_n \zeta_n-\omega^2 = -- (\omega \mathrm{~} -- 
-  \mathrm{~} \bar{\omega}_n)(\omega + \bar{\omega}^*_n) \tag{4}$$ 
+  \begin{equation*}\omega_n^2+2i\omega \omega_n \zeta_n-\omega^2 = -- (\omega 
+  \mathrm{~} -- \mathrm{~} \bar{\omega}_n)(\omega + \bar{\omega}^*_n) 
+  \tag{4}\end{equation*} 
 
-  where $.^*$ denotes the complex conjugate, and the complex root 
+  \noindent{}where $.^*$ denotes the complex conjugate, and the complex root 
   $\bar{\omega}_n$ is given by 
 
-  $$\bar{\omega}_n=\omega_n (\cos \phi_n + i \zeta_n) \approx \omega_n (1 + i 
-  \zeta_n) \tag{5}$$ 
+  \begin{equation*}\bar{\omega}_n=\omega_n (\cos \phi_n + i \zeta_n) \approx 
+  \omega_n (1 + i \zeta_n) \tag{5}\end{equation*} 
 
-  where $\phi_n$ is defined by 
+  \noindent{}where $\phi_n$ is defined by 
 
-  $$\sin \phi_n = \zeta_n \tag{6}$$ 
+  \begin{equation*}\sin \phi_n = \zeta_n \tag{6}\end{equation*} 
 
-  and the final approximate expression is for the case of small damping 
-  $\zeta_n \ll 1$, so that $\phi_n \approx \zeta_n$ and $\cos \phi_n \approx 
-  1$. 
+  \noindent{}and the final approximate expression is for the case of small 
+  damping $\zeta_n \ll 1$, so that $\phi_n \approx \zeta_n$ and $\cos \phi_n 
+  \approx 1$. 
 
   Now we look for an expansion in partial fractions. The details depend on the 
   chosen value of $\alpha$, although we will see that the most important aspect 
@@ -59,55 +60,60 @@
   purpose of demonstrating the method, we will analyse the case $\alpha = 1$. 
   We then have 
 
-  $$G_n = -\dfrac{i \omega K_n}{(\omega \mathrm{~} -- \mathrm{~} 
-  \bar{\omega}_n)(\omega + \bar{\omega}^*_n)} \tag{7}$$ 
+  \begin{equation*}G_n = -\dfrac{i \omega K_n}{(\omega \mathrm{~} -- \mathrm{~} 
+  \bar{\omega}_n)(\omega + \bar{\omega}^*_n)} \tag{7}\end{equation*} 
 
-  and we look for an expression of the form 
+  \noindent{}and we look for an expression of the form 
 
-  $$G_n = \dfrac{A}{\omega \mathrm{~} -- \mathrm{~} \bar{\omega}_n} + 
-  \dfrac{B}{\omega + \bar{\omega}^*_n}$$ 
+  \begin{equation*}G_n = \dfrac{A}{\omega \mathrm{~} -- \mathrm{~} 
+  \bar{\omega}_n} + \dfrac{B}{\omega + \bar{\omega}^*_n}\end{equation*} 
 
-  $$=\dfrac{A(\omega + \bar{\omega}^*_n) + B(\omega \mathrm{~} -- \mathrm{~} 
-  \bar{\omega}_n)}{(\omega \mathrm{~} -- \mathrm{~} \bar{\omega}_n)(\omega + 
-  \bar{\omega}^*_n)} \tag{8}$$ 
+  \begin{equation*}=\dfrac{A(\omega + \bar{\omega}^*_n) + B(\omega \mathrm{~} 
+  -- \mathrm{~} \bar{\omega}_n)}{(\omega \mathrm{~} -- \mathrm{~} 
+  \bar{\omega}_n)(\omega + \bar{\omega}^*_n)} \tag{8}\end{equation*} 
 
-  where $A$ and $B$ are two constants. To make this expression agree with with 
-  equation (7), we need to satisfy the two conditions 
+  \noindent{}where $A$ and $B$ are two constants. To make this expression agree 
+  with with equation (7), we need to satisfy the two conditions 
 
-  $$-iK_n = A + B \tag{9}$$ 
+  \begin{equation*}-iK_n = A + B \tag{9}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$A \bar{\omega}^*_n -- B\bar{\omega}_n = 0 . \tag{10}$$ 
+  \begin{equation*}A \bar{\omega}^*_n -- B\bar{\omega}_n = 0 . 
+  \tag{10}\end{equation*} 
 
   Solving these simultaneous equations gives 
 
-  $$A = -\dfrac{iK_n}{2}(1+ i\tan \phi_n) \tag{11}$$ 
+  \begin{equation*}A = -\dfrac{iK_n}{2}(1+ i\tan \phi_n) 
+  \tag{11}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$B = -\dfrac{iK_n}{2}(1- i\tan \phi_n) , \tag{12}$$ 
+  \begin{equation*}B = -\dfrac{iK_n}{2}(1- i\tan \phi_n) , 
+  \tag{12}\end{equation*} 
 
-  so that 
+  \noindent{}so that 
 
-  $$G_n = -\dfrac{iK_n}{2} \left[\dfrac{1+ i\tan \phi_n}{\omega \mathrm{~} -- 
-  \mathrm{~} \bar{\omega}_n} + \dfrac{1- i\tan \phi_n}{\omega + 
-  \bar{\omega}^*_n} \right] \tag{13}$$ 
+  \begin{equation*}G_n = -\dfrac{iK_n}{2} \left[\dfrac{1+ i\tan \phi_n}{\omega 
+  \mathrm{~} -- \mathrm{~} \bar{\omega}_n} + \dfrac{1- i\tan \phi_n}{\omega + 
+  \bar{\omega}^*_n} \right] \tag{13}\end{equation*} 
 
-  $$\approx -\dfrac{iK_n}{2} \left[\dfrac{1+ i\zeta_n}{\omega \mathrm{~} -- 
-  \mathrm{~} \bar{\omega}_n} + \dfrac{1- i\zeta_n}{\omega + \bar{\omega}^*_n} 
-  \right] \tag{14}$$ 
+  \begin{equation*}\approx -\dfrac{iK_n}{2} \left[\dfrac{1+ i\zeta_n}{\omega 
+  \mathrm{~} -- \mathrm{~} \bar{\omega}_n} + \dfrac{1- i\zeta_n}{\omega + 
+  \bar{\omega}^*_n} \right] \tag{14}\end{equation*} 
 
-  for small damping. 
+  \noindent{}for small damping. 
 
   Equation (13) or (14) tells us that our term $G_n(\omega)$ has two poles in 
   the complex $\omega$ plane, at 
 
-  $$\omega = \bar{\omega}_n \approx \omega_n(1 + i \zeta_n) \tag{15}$$ 
+  \begin{equation*}\omega = \bar{\omega}_n \approx \omega_n(1 + i \zeta_n) 
+  \tag{15}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$\omega = -\bar{\omega}_n^* \approx \omega_n(-1 + i \zeta_n) . \tag{16}$$ 
+  \begin{equation*}\omega = -\bar{\omega}_n^* \approx \omega_n(-1 + i \zeta_n) 
+  . \tag{16}\end{equation*} 
 
   A pole is a place where the complex function goes to infinity, and these are 
   both simple poles where the infinite behaviour takes the form of the inverse 
@@ -117,23 +123,26 @@
   Exactly the same is true for the other possible values of $\alpha$. For 
   $\alpha = 0$, the result corresponding to equations (13) and (14) is 
 
-  $$G_n = -\dfrac{K_n}{2 \omega_n \cos \phi_n} \left[\dfrac{1}{\omega -- 
-  \bar{\omega}_n} -- \dfrac{1}{\omega + \bar{\omega}^*_n} \right] \tag{17}$$ 
+  \begin{equation*}G_n = -\dfrac{K_n}{2 \omega_n \cos \phi_n} 
+  \left[\dfrac{1}{\omega -- \bar{\omega}_n} -- \dfrac{1}{\omega + 
+  \bar{\omega}^*_n} \right] \tag{17}\end{equation*} 
 
-  $$\approx -\dfrac{K_n}{2 \omega_n } \left[\dfrac{1}{\omega -- \bar{\omega}_n} 
-  -- \dfrac{1}{\omega + \bar{\omega}^*_n} \right] . \tag{18}$$ 
+  \begin{equation*}\approx -\dfrac{K_n}{2 \omega_n } \left[\dfrac{1}{\omega -- 
+  \bar{\omega}_n} -- \dfrac{1}{\omega + \bar{\omega}^*_n} \right] . 
+  \tag{18}\end{equation*} 
 
   For $\alpha = 2$ the equivalent result is 
 
-  $$G_n = K_n+\dfrac{K_n \omega_n}{2} \left[\dfrac{(1-2\zeta_n^2)/\cos \phi_n + 
-  2 i \zeta_n}{\omega -- \bar{\omega}_n}\right.$$ 
+  \begin{equation*}G_n = K_n+\dfrac{K_n \omega_n}{2} 
+  \left[\dfrac{(1-2\zeta_n^2)/\cos \phi_n + 2 i \zeta_n}{\omega -- 
+  \bar{\omega}_n}\right.\end{equation*} 
 
-  $$\left. -- \dfrac{(1-2\zeta_n^2)/\cos \phi_n -- 2 i \zeta_n}{\omega + 
-  \bar{\omega}^*_n} \right] \tag{19}$$ 
+  \begin{equation*}\left. -- \dfrac{(1-2\zeta_n^2)/\cos \phi_n -- 2 i 
+  \zeta_n}{\omega + \bar{\omega}^*_n} \right] \tag{19}\end{equation*} 
 
-  $$\approx K_n+\dfrac{K_n \omega_n}{2} \left[\dfrac{1 + 2 i \zeta_n}{\omega -- 
-  \bar{\omega}_n} -- \dfrac{1 -- 2 i \zeta_n}{\omega + \bar{\omega}^*_n} 
-  \right] . \tag{20}$$ 
+  \begin{equation*}\approx K_n+\dfrac{K_n \omega_n}{2} \left[\dfrac{1 + 2 i 
+  \zeta_n}{\omega -- \bar{\omega}_n} -- \dfrac{1 -- 2 i \zeta_n}{\omega + 
+  \bar{\omega}^*_n} \right] . \tag{20}\end{equation*} 
 
   We can now deduce the pattern of poles in the complex $\omega$ plane for our 
   entire frequency response function $G(x,y,\omega)$: it must look something 
@@ -163,12 +172,13 @@
   Based on this argument, we can hope to obtain a good first approximation to 
   the behaviour from a single term of the form 
 
-  $$G(\omega) \approx \dfrac{A}{\omega -- \bar{\omega}_3} \tag{21}$$ 
+  \begin{equation*}G(\omega) \approx \dfrac{A}{\omega -- \bar{\omega}_3} 
+  \tag{21}\end{equation*} 
 
-  where $A$ is a (complex) constant. Assuming that the damping is small, we can 
-  see from equations (14), (18) and (20) that $A$ is approximately a real 
-  number for $\alpha = 0$ or $\alpha = 2$, whereas for $\alpha=1$ it is 
-  approximately a pure imaginary number. 
+  \noindent{}where $A$ is a (complex) constant. Assuming that the damping is 
+  small, we can see from equations (14), (18) and (20) that $A$ is 
+  approximately a real number for $\alpha = 0$ or $\alpha = 2$, whereas for 
+  $\alpha=1$ it is approximately a pure imaginary number. 
 
   For simplicity, we look first at the case where $A$ is a positive real 
   number. We also know that $\bar{\omega}_3 \approx \omega_3(1+i \zeta_3)$ from 
@@ -205,37 +215,40 @@
   If the real and imaginary parts of $G$ are $G=P+iQ$, the equation of that 
   circle would be 
 
-  $$P^2 + (Q-R)^2 = R^2. \tag{22}$$ 
+  \begin{equation*}P^2 + (Q-R)^2 = R^2. \tag{22}\end{equation*} 
 
   Well, we can easily calculate $P$ and $Q$: 
 
   
-  $$G=\dfrac{A}{\omega-\omega_3(1+i\zeta_3)}=\dfrac{A[\omega-\omega_3(1-i\zeta_3)]}{|\omega-\omega_3(1+i\zeta_3)|^2} 
-  \tag{23}$$ 
+  \begin{equation*}G=\dfrac{A}{\omega-\omega_3(1+i\zeta_3)}=\dfrac{A[\omega-\omega_3(1-i\zeta_3)]}{|\omega-\omega_3(1+i\zeta_3)|^2} 
+  \tag{23}\end{equation*} 
 
-  and so 
+  \noindent{}and so 
 
-  $$P=\dfrac{A(\omega-\omega_3)}{(\omega-\omega_3)^2 + \omega_3^2 \zeta_3^2} 
-  \tag{24}$$ 
+  \begin{equation*}P=\dfrac{A(\omega-\omega_3)}{(\omega-\omega_3)^2 + 
+  \omega_3^2 \zeta_3^2} \tag{24}\end{equation*} 
 
-  and 
+  \noindent{}and 
 
-  $$Q=\dfrac{A\omega_3\zeta_3}{(\omega-\omega_3)^2 + \omega_3^2 \zeta_3^2} . 
-  \tag{25}$$ 
+  \begin{equation*}Q=\dfrac{A\omega_3\zeta_3}{(\omega-\omega_3)^2 + \omega_3^2 
+  \zeta_3^2} . \tag{25}\end{equation*} 
 
   Substituting: 
 
-  $$P^2 + (Q-R)^2 = \dfrac{A^2(\omega-\omega_3)^2}{[(\omega-\omega_3)^2 + 
-  \omega_3^2 \zeta_3^2]^2}$$ 
+  \begin{equation*}P^2 + (Q-R)^2 = 
+  \dfrac{A^2(\omega-\omega_3)^2}{[(\omega-\omega_3)^2 + \omega_3^2 
+  \zeta_3^2]^2}\end{equation*} 
 
-  $$+ \left\lbrace \dfrac{A\omega_3\zeta_3}{(\omega-\omega_3)^2 + \omega_3^2 
-  \zeta_3^2} -- \dfrac{A}{2 \omega_3 \zeta_3} \right\rbrace^2 $$ 
+  \begin{equation*}+ \left\lbrace \dfrac{A\omega_3\zeta_3}{(\omega-\omega_3)^2 
+  + \omega_3^2 \zeta_3^2} -- \dfrac{A}{2 \omega_3 \zeta_3} \right\rbrace^2 
+  \end{equation*} 
 
-  $$=\dfrac{A^2(\omega-\omega_3)^2 + A^2 \omega_3^2 \zeta_3^2-A^2 
-  [(\omega-\omega_3)^2 + \omega_3^2 \zeta_3^2]}{[(\omega-\omega_3)^2 + 
-  \omega_3^2 \zeta_3^2]^2}+R^2$$ 
+  \begin{equation*}=\dfrac{A^2(\omega-\omega_3)^2 + A^2 \omega_3^2 
+  \zeta_3^2-A^2 [(\omega-\omega_3)^2 + \omega_3^2 
+  \zeta_3^2]}{[(\omega-\omega_3)^2 + \omega_3^2 
+  \zeta_3^2]^2}+R^2\end{equation*} 
 
-  $$=R^2. \tag{26}$$ 
+  \begin{equation*}=R^2. \tag{26}\end{equation*} 
 
   So we see that the single-pole expression for $G(\omega)$ does indeed mark 
   out a circle in the complex plane, exactly as sketched in Fig.\ 2. That 

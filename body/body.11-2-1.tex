@@ -25,56 +25,60 @@
 
   The rate of change of mass inside the volume is approximately 
 
-  $$\dfrac{\partial \rho}{\partial t} \delta V \tag{1}$$ 
+  \begin{equation*}\dfrac{\partial \rho}{\partial t} \delta V 
+  \tag{1}\end{equation*} 
 
-  where the derivative of density is evaluated at the centre of the element. 
-  Now we need to look at the rate at which mass is flowing into or out of the 
-  volume, through the various faces. For the two vertical faces perpendicular 
-  to the $x$ axis, the net mass flow into the volume is 
+  \noindent{}where the derivative of density is evaluated at the centre of the 
+  element. Now we need to look at the rate at which mass is flowing into or out 
+  of the volume, through the various faces. For the two vertical faces 
+  perpendicular to the $x$ axis, the net mass flow into the volume is 
 
-  $$\left[\rho(x,y,z,t) u_1(x,y,z,t) -- \rho (x + \delta x,y,z,t) u_1(x + 
-  \delta x,y,z,t) \right] \delta y \delta z $$ 
+  \begin{equation*}\left[\rho(x,y,z,t) u_1(x,y,z,t) -- \rho (x + \delta 
+  x,y,z,t) u_1(x + \delta x,y,z,t) \right] \delta y \delta z \end{equation*} 
 
-  $$\approx -\delta V \dfrac{\partial (\rho u_1)}{\partial x} \tag{2}$$ 
+  \begin{equation*}\approx -\delta V \dfrac{\partial (\rho u_1)}{\partial x} 
+  \tag{2}\end{equation*} 
 
-  where $(u_1,u_2,u_3)$ are the components of $\underline{u}$ so that $u_1$ is 
-  the velocity perpendicular to the faces we are thinking about. The other two 
-  pairs of faces contribute similar terms, so the net mass flow into the volume 
-  is 
+  \noindent{}where $(u_1,u_2,u_3)$ are the components of $\underline{u}$ so 
+  that $u_1$ is the velocity perpendicular to the faces we are thinking about. 
+  The other two pairs of faces contribute similar terms, so the net mass flow 
+  into the volume is 
 
-  $$-\delta V \dfrac{\partial (\rho u_1)}{\partial x} -\delta V \dfrac{\partial 
-  (\rho u_2)}{\partial y} -\delta V \dfrac{\partial (\rho u_3)}{\partial z} = 
-  -\delta V \nabla \cdot (\rho \underline{u}) . \tag{3}$$ 
+  \begin{equation*}-\delta V \dfrac{\partial (\rho u_1)}{\partial x} -\delta V 
+  \dfrac{\partial (\rho u_2)}{\partial y} -\delta V \dfrac{\partial (\rho 
+  u_3)}{\partial z} = -\delta V \nabla \cdot (\rho \underline{u}) . 
+  \tag{3}\end{equation*} 
 
   Equating this to the rate of increase of mass inside the volume from (1), we 
   obtain the equation 
 
-  $$\dfrac{\partial \rho}{\partial t} = -- \nabla \cdot (\rho \underline{u}) . 
-  \tag{4}$$ 
+  \begin{equation*}\dfrac{\partial \rho}{\partial t} = -- \nabla \cdot (\rho 
+  \underline{u}) . \tag{4}\end{equation*} 
 
   Now we can use a standard vector identity 
 
-  $$\nabla (\rho \underline{u}) = \underline{u} \cdot \nabla \rho + \rho \nabla 
-  \cdot \underline{u}\tag{5}$$ 
+  \begin{equation*}\nabla (\rho \underline{u}) = \underline{u} \cdot \nabla 
+  \rho + \rho \nabla \cdot \underline{u}\tag{5}\end{equation*} 
 
-  to rewrite equation (4) in the form 
+  \noindent{}to rewrite equation (4) in the form 
 
-  $$\dfrac{\partial \rho}{\partial t} + \underline{u} \cdot \nabla \rho = -- 
-  \rho \nabla \cdot \underline{u}\tag{6}$$ 
+  \begin{equation*}\dfrac{\partial \rho}{\partial t} + \underline{u} \cdot 
+  \nabla \rho = -- \rho \nabla \cdot \underline{u}\tag{6}\end{equation*} 
 
-  or 
+  \noindent{}or 
 
-  $$\dfrac{D \rho}{D t} = -- \rho \nabla \cdot \underline{u}\tag{7}$$ 
+  \begin{equation*}\dfrac{D \rho}{D t} = -- \rho \nabla \cdot 
+  \underline{u}\tag{7}\end{equation*} 
 
-  where $\frac{D\rho}{Dt} = \frac{\partial \rho}{\partial t} + \underline{u} 
-  \cdot \nabla \rho$ is the rate of change of density following the flow, in 
-  other words the rate of change of density of a fluid particle. 
+  \noindent{}where $\frac{D\rho}{Dt} = \frac{\partial \rho}{\partial t} + 
+  \underline{u} \cdot \nabla \rho$ is the rate of change of density following 
+  the flow, in other words the rate of change of density of a fluid particle. 
 
   Equation (7) immediately tells us that an incompressible flow, for which 
   $\frac{D\rho}{Dt} =0$, must satisfy 
 
-  $$\nabla \cdot \underline{u} = 0 \mathrm{~~~~(incompressible~flow)} . 
-  \tag{8}$$ 
+  \begin{equation*}\nabla \cdot \underline{u} = 0 
+  \mathrm{~~~~(incompressible~flow)} . \tag{8}\end{equation*} 
 
   Equation (7) also gives us an example of a physical interpretation of the 
   divergence: $\nabla \cdot \underline{u}$ must be the rate of increase of 
@@ -85,34 +89,36 @@
   neighbourhood of a chosen point, which we can define to be $\underline{r}=0$. 
   The first two terms of a Taylor expansion of the velocity field then give 
 
-  $$u_i \approx u_i^{(0)} + \sum_j{c_{ij} r_j} \mathrm{~~~for~~}i=1,2,3 
-  \tag{9}$$ 
+  \begin{equation*}u_i \approx u_i^{(0)} + \sum_j{c_{ij} r_j} 
+  \mathrm{~~~for~~}i=1,2,3 \tag{9}\end{equation*} 
 
-  where it is convenient to work in terms of components of the vectors for this 
-  particular analysis, so $\underline{u} = (u_1,u_2,u_3)$ and 
+  \noindent{}where it is convenient to work in terms of components of the 
+  vectors for this particular analysis, so $\underline{u} = (u_1,u_2,u_3)$ and 
   $\underline{r}=(r_1,r_2,r_3)$ (which are just another name for $x,y,z$). In 
   equation (9), $u_i^{(0)}$ are the components of the velocity at the reference 
   position $\underline{r}=0$, and the $3 \times 3$ matrix (or more technically 
   the second-rank tensor) 
 
-  $$c_{ij} = \dfrac{\partial u_i}{\partial r_j} \mathrm{~~~for~~}i,j=1,2,3 . 
-  \tag{10}$$ 
+  \begin{equation*}c_{ij} = \dfrac{\partial u_i}{\partial r_j} 
+  \mathrm{~~~for~~}i,j=1,2,3 . \tag{10}\end{equation*} 
 
   Now we separate $c_{ij}$ into the sum of its symmetric part and its 
   antisymmetric part: 
 
-  $$c_{ij} = \frac{1}{2}\left[c_{ij} + c_{ji} \right]+\frac{1}{2}\left[c_{ij} 
-  -- c_{ji} \right] = e_{ij} + \omega_{ij} . \tag{11}$$ 
+  \begin{equation*}c_{ij} = \frac{1}{2}\left[c_{ij} + c_{ji} 
+  \right]+\frac{1}{2}\left[c_{ij} -- c_{ji} \right] = e_{ij} + \omega_{ij} . 
+  \tag{11}\end{equation*} 
 
   The antisymmetric term has a simple interpretation. By writing everything out 
   in full and then comparing, it can be easily verified that 
 
-  $$\sum_j{\omega_{ij} r_j}=\frac{1}{2}[\underline{\omega} \times 
-  \underline{r}]_i \mathrm{~~~for~~}i=1,2,3 \tag{12}$$ 
+  \begin{equation*}\sum_j{\omega_{ij} r_j}=\frac{1}{2}[\underline{\omega} 
+  \times \underline{r}]_i \mathrm{~~~for~~}i=1,2,3 \tag{12}\end{equation*} 
 
-  where the vector 
+  \noindent{}where the vector 
 
-  $$\underline{\omega} = \nabla \times \underline{u} .\tag{13}$$ 
+  \begin{equation*}\underline{\omega} = \nabla \times \underline{u} 
+  .\tag{13}\end{equation*} 
 
   This vector is called the vorticity. Equation (12) describes rigid rotation, 
   at angular velocity $\underline{\omega}/2$. 
@@ -147,7 +153,8 @@
   perpendicular to $\underline{dA}$. If this force has components 
   $(p_1,p_2,p_3)$ per unit area, the stress tensor is defined so that 
 
-  $$p_i=\sum_j{\sigma_{ij} dA_j}\mathrm{~~~for~~}i=1,2,3 . \tag{14}$$ 
+  \begin{equation*}p_i=\sum_j{\sigma_{ij} dA_j}\mathrm{~~~for~~}i=1,2,3 . 
+  \tag{14}\end{equation*} 
 
   If the fluid is at rest, the only internal force acting is pressure. At any 
   given point, the pressure always acts normal to any surface element 
@@ -155,18 +162,18 @@
   orientation of the surface. This means that the stress tensor takes a very 
   simple form: 
 
-  $$e_{ij}=-p \delta_{ij} \tag{15}$$ 
+  \begin{equation*}e_{ij}=-p \delta_{ij} \tag{15}\end{equation*} 
 
-  where $\delta_{ij}$ is the mathematician's standard name for the identity 
-  matrix: 
+  \noindent{}where $\delta_{ij}$ is the mathematician's standard name for the 
+  identity matrix: 
 
-  $$\delta_{ij} = \left\lbrace \begin{matrix} {1 \mathrm{~~if~~} i=j}\\{0 
-  \mathrm{~~if~~} i\ne j}\end{matrix} \right. \tag{16}$$ 
+  \begin{equation*}\delta_{ij} = \left\lbrace \begin{matrix} {1 \mathrm{~~if~~} 
+  i=j}\\{0 \mathrm{~~if~~} i\ne j}\end{matrix} \right. \tag{16}\end{equation*} 
 
   When the fluid is flowing, we can generalise this result and define the 
   pressure by 
 
-  $$p=-\dfrac{1}{3} \sum_{i=1}^3{e_{ii}} \tag{17}$$ 
+  \begin{equation*}p=-\dfrac{1}{3} \sum_{i=1}^3{e_{ii}} \tag{17}\end{equation*} 
 
   Now we can think about Newton's law. The acceleration of a fluid particle is 
   given by $\frac{D\underline{u}}{Dt}$: obviously we need the rate of change of 
@@ -176,31 +183,32 @@
   the flow, with a closed surface $S$ forming its outside ``skin''. The result, 
   for the $i\mathrm{th}$ component, is 
 
-  $$\int{\int{\int_V{\rho \dfrac{Du_i}{Dt} dV}}}=\int{\int{\int_V{\rho f_i 
-  dV}}}+\int{\int_S{\sum_j{\sigma_{ij} dA_j }}} \tag{18}$$ 
+  \begin{equation*}\int{\int{\int_V{\rho \dfrac{Du_i}{Dt} 
+  dV}}}=\int{\int{\int_V{\rho f_i dV}}}+\int{\int_S{\sum_j{\sigma_{ij} dA_j }}} 
+  \tag{18}\end{equation*} 
 
-  where $f_i$ is the $i\mathrm{th}$ component of any external force (such as 
-  gravity) that may be acting throughout the body of our fluid. It is expressed 
-  here as a force per unit mass, so that if it is in fact the gravitational 
-  force we would have $\underline{f}=\underline{g}$ in terms of the usual 
-  gravitational acceleration $\underline{g}$. Now we can apply a version of the 
-  divergence theorem to the final term, to convert it from a surface integral 
-  to a volume integral: 
+  \noindent{}where $f_i$ is the $i\mathrm{th}$ component of any external force 
+  (such as gravity) that may be acting throughout the body of our fluid. It is 
+  expressed here as a force per unit mass, so that if it is in fact the 
+  gravitational force we would have $\underline{f}=\underline{g}$ in terms of 
+  the usual gravitational acceleration $\underline{g}$. Now we can apply a 
+  version of the divergence theorem to the final term, to convert it from a 
+  surface integral to a volume integral: 
 
-  $$\int{\int{\int_V{\rho \dfrac{Du_i}{Dt} dV}}}=\int{\int{\int_V{\rho f_i 
-  dV}}}+\int{\int{\int_V{\sum_j{\dfrac{\partial \sigma_{ij}}{\partial r_j} dV 
-  }}}} . \tag{19}$$ 
+  \begin{equation*}\int{\int{\int_V{\rho \dfrac{Du_i}{Dt} 
+  dV}}}=\int{\int{\int_V{\rho f_i dV}}}+\int{\int{\int_V{\sum_j{\dfrac{\partial 
+  \sigma_{ij}}{\partial r_j} dV }}}} . \tag{19}\end{equation*} 
 
   Now we have a sum of three volume integrals equal to zero, but the volume 
   over which we have integrated is entirely arbitrary. The only way this result 
   could be true for every choice of volume $V$ would be if 
 
-  $$\rho \dfrac{Du_i}{Dt}=\rho f_i+\sum_j{\dfrac{\partial \sigma_{ij}}{\partial 
-  r_j}}\mathrm{~~~for~~}i=1,2,3 \tag{20}$$ 
+  \begin{equation*}\rho \dfrac{Du_i}{Dt}=\rho f_i+\sum_j{\dfrac{\partial 
+  \sigma_{ij}}{\partial r_j}}\mathrm{~~~for~~}i=1,2,3 \tag{20}\end{equation*} 
 
-  everywhere. This is the governing equation we want, but it still remains to 
-  express $\sigma_{ij}$ in terms of $e_{ij}$, which is turn depends on 
-  $\underline{u}$. 
+  \noindent{}everywhere. This is the governing equation we want, but it still 
+  remains to express $\sigma_{ij}$ in terms of $e_{ij}$, which is turn depends 
+  on $\underline{u}$. 
 
   From here on I will only present the simplest case, when the flow is 
   incompressible so that equation (8) is satisfied. We want a relation between 
@@ -209,13 +217,14 @@
   (in other words without any preferred directions), then a standard result 
   from tensor algebra tells us what the form of the relationship must be: 
 
-  $$\sigma_{ij} = -p \delta_{ij} + 2 \mu e_{ij} \tag{21}$$ 
+  \begin{equation*}\sigma_{ij} = -p \delta_{ij} + 2 \mu e_{ij} 
+  \tag{21}\end{equation*} 
 
-  where $\mu$ is a constant, the viscosity. Substituting and tidying up leads 
-  to the equation 
+  \noindent{}where $\mu$ is a constant, the viscosity. Substituting and tidying 
+  up leads to the equation 
 
-  $$\rho \dfrac{D \underline{u}}{Dt}= -\nabla p \mathrm{~} -- \rho 
-  \underline{f}+\mu \nabla^2 \underline{u}. \tag{22}$$ 
+  \begin{equation*}\rho \dfrac{D \underline{u}}{Dt}= -\nabla p \mathrm{~} -- 
+  \rho \underline{f}+\mu \nabla^2 \underline{u}. \tag{22}\end{equation*} 
 
   This is the Navier-Stokes equation for the case of incompressible flow. 
   Notice that the only nonlinearity here is the term $\underline{u} \cdot 
@@ -227,25 +236,27 @@
   and inviscid ($\mu=0$), with density the same everywhere. Our Navier-Stokes 
   equation then reads 
 
-  $$\rho \underline{u} \cdot \nabla \underline{u}= -\nabla p \mathrm{~} -- \rho 
-  \underline{f} . \tag{23}$$ 
+  \begin{equation*}\rho \underline{u} \cdot \nabla \underline{u}= -\nabla p 
+  \mathrm{~} -- \rho \underline{f} . \tag{23}\end{equation*} 
 
   If the body force is gravitational, then it can be written as the gradient of 
   the gravitational potential $gz$ where $g$ is the usual gravitational 
   acceleration and $z$ is the vertical coordinate, measured upwards. Now note 
   that 
 
-  $$\underline{u} \cdot \nabla \underline{u} = \frac{1}{2} \nabla 
-  (\underline{u} \cdot \underline{u}) . \tag{24}$$ 
+  \begin{equation*}\underline{u} \cdot \nabla \underline{u} = \frac{1}{2} 
+  \nabla (\underline{u} \cdot \underline{u}) . \tag{24}\end{equation*} 
 
   Every term in the equation is now a gradient, and it can be rearranged into 
 
-  $$\nabla \left(\dfrac{q^2}{2}+\dfrac{p}{\rho}+gz\right) = 0 \tag{25}$$ 
+  \begin{equation*}\nabla \left(\dfrac{q^2}{2}+\dfrac{p}{\rho}+gz\right) = 0 
+  \tag{25}\end{equation*} 
 
-  where $q^2=\underline{u} \cdot \underline{u}$ is the square of the flow 
-  speed. It follows that 
+  \noindent{}where $q^2=\underline{u} \cdot \underline{u}$ is the square of the 
+  flow speed. It follows that 
 
-  $$\dfrac{q^2}{2}+\dfrac{p}{\rho}+gz\ = \mathrm{~constant.} \tag{26}$$ 
+  \begin{equation*}\dfrac{q^2}{2}+\dfrac{p}{\rho}+gz\ = \mathrm{~constant.} 
+  \tag{26}\end{equation*} 
 
   We can see explanations of more than one phenomenon in this simple equation. 
   First, it tells us about the increase in static pressure with depth, for 
@@ -265,37 +276,39 @@
   barotropic: this means that the density is an instantaneous function of the 
   pressure, $\rho(p)$. In that case, we define the enthalpy 
 
-  $$I(p)=\int{\dfrac{dp'}{\rho(p')}} \tag{27}$$ 
+  \begin{equation*}I(p)=\int{\dfrac{dp'}{\rho(p')}} \tag{27}\end{equation*} 
 
-  and then Bernoulli's principle for steady irrotational flow (i.e. $\nabla 
-  \times \underline{u}=0$) says that 
+  \noindent{}and then Bernoulli's principle for steady irrotational flow (i.e. 
+  $\nabla \times \underline{u}=0$) says that 
 
-  $$\dfrac{q^2}{2}+I(p)+gz = \mathrm{~constant.} \tag{28}$$ 
+  \begin{equation*}\dfrac{q^2}{2}+I(p)+gz = \mathrm{~constant.} 
+  \tag{28}\end{equation*} 
 
   Next, if we have steady flow with vorticity, we define the quantity 
 
-  $$H=\dfrac{q^2}{2}+I(p)+gz , \tag{29}$$ 
+  \begin{equation*}H=\dfrac{q^2}{2}+I(p)+gz , \tag{29}\end{equation*} 
 
-  and then Bernoulli's principle states that $\nabla H$ is perpendicular to 
-  both $\underline{u}$ and $\underline{\omega} = \nabla \times \underline{u}$, 
-  in other words $H$ is constant along both streamlines and vortex lines. 
+  \noindent{}and then Bernoulli's principle states that $\nabla H$ is 
+  perpendicular to both $\underline{u}$ and $\underline{\omega} = \nabla \times 
+  \underline{u}$, in other words $H$ is constant along both streamlines and 
+  vortex lines. 
 
   Finally, we can say a little about vorticity and how it evolves. If we take 
   the curl of equation (22) and then make use of some vector identities, we can 
   manipulate it into the form 
 
-  $$\dfrac{D \underline{\omega}}{Dt}=\underline{\omega} \cdot 
-  \nabla\underline{u} + \nu \nabla^2 \underline{\omega} \tag{30}$$ 
+  \begin{equation*}\dfrac{D \underline{\omega}}{Dt}=\underline{\omega} \cdot 
+  \nabla\underline{u} + \nu \nabla^2 \underline{\omega} \tag{30}\end{equation*} 
 
-  where $\nu=\mu/\rho$ is called the ``kinematic viscosity''. This equation 
-  tells us about two rather different aspects of vorticity dynamics. First, in 
-  the inviscid case ($\nu=0$), it reveals a powerful and unexpected result. If 
-  we think about a small ``thread'' of material, on a line element 
+  \noindent{}where $\nu=\mu/\rho$ is called the ``kinematic viscosity''. This 
+  equation tells us about two rather different aspects of vorticity dynamics. 
+  First, in the inviscid case ($\nu=0$), it reveals a powerful and unexpected 
+  result. If we think about a small ``thread'' of material, on a line element 
   $\underline{\delta l}$, the analysis leading to equation (9) tells us that 
   this material element evolves according to 
 
-  $$\dfrac{D \underline{\delta l}}{Dt}=\underline{\delta l} \cdot 
-  \nabla\underline{u} . \tag{31}$$ 
+  \begin{equation*}\dfrac{D \underline{\delta l}}{Dt}=\underline{\delta l} 
+  \cdot \nabla\underline{u} . \tag{31}\end{equation*} 
 
   This is exactly the same equation that governs the evolution of vorticity 
   $\underline{\omega}$ in an inviscid flow field. So if we choose a material 
@@ -313,7 +326,8 @@
   consider a closed material curve $C$, the integral of the velocity round $C$, 
   called the circulation $K$, is constant in time: 
 
-  $$K=\oint_C{\underline{u} \cdot \underline{dl}} . \tag{32}$$ 
+  \begin{equation*}K=\oint_C{\underline{u} \cdot \underline{dl}} . 
+  \tag{32}\end{equation*} 
 
   So how does circulation or vorticity ever arise in a flow? We can see one 
   route for this to happen if we restore the viscosity term of equation (30), 

@@ -12,42 +12,45 @@
   has an associated particle velocity $u(x,t)$, satisfying equation (7) from 
   section 4.1.3: 
 
-  $$-\rho_0 \dfrac{\partial u}{\partial t} = \dfrac{\partial p'}{\partial x} 
-  \tag{1}$$ 
+  \begin{equation*}-\rho_0 \dfrac{\partial u}{\partial t} = \dfrac{\partial 
+  p'}{\partial x} \tag{1}\end{equation*} 
 
-  where $\rho_0$ is the mean density of air. For a wave $e^{i(\omega t -- kx)}$ 
-  this requires 
+  \noindent{}where $\rho_0$ is the mean density of air. For a wave $e^{i(\omega 
+  t -- kx)}$ this requires 
 
-  $$u=\dfrac{1}{Z_0}e^{i(\omega t -- kx)} \tag{2}$$ 
+  \begin{equation*}u=\dfrac{1}{Z_0}e^{i(\omega t -- kx)} \tag{2}\end{equation*} 
 
-  where $Z_0=\rho_0 c$ is the characteristic impedance of sound waves in air. 
-  The corresponding result for a left-travelling wave $e^{i(\omega t + kx)}$ is 
+  \noindent{}where $Z_0=\rho_0 c$ is the characteristic impedance of sound 
+  waves in air. The corresponding result for a left-travelling wave 
+  $e^{i(\omega t + kx)}$ is 
 
-  $$u=-\dfrac{1}{Z_0}e^{i(\omega t + kx)} . \tag{3}$$ 
+  \begin{equation*}u=-\dfrac{1}{Z_0}e^{i(\omega t + kx)} . 
+  \tag{3}\end{equation*} 
 
   Now the total pressure $p'$ in the pipe is 
 
-  $$p'=Ae^{i(\omega t -- kx)}+Be^{i(\omega t + kx)} , \tag{4}$$ 
+  \begin{equation*}p'=Ae^{i(\omega t -- kx)}+Be^{i(\omega t + kx)} , 
+  \tag{4}\end{equation*} 
 
-  and the total volume flow rate is 
+  \noindent{}and the total volume flow rate is 
 
-  $$v=\dfrac{AS}{Z_0}e^{i(\omega t -- kx)}-\dfrac{BS}{Z_0}e^{i(\omega t + kx)} 
-  . \tag{5}$$ 
+  \begin{equation*}v=\dfrac{AS}{Z_0}e^{i(\omega t -- 
+  kx)}-\dfrac{BS}{Z_0}e^{i(\omega t + kx)} . \tag{5}\end{equation*} 
 
   At $x=L$ we require $p'=0$ for the open end, so 
 
-  $$Ae^{-ikL} +Be^{ikL} =0 \tag{6}$$ 
+  \begin{equation*}Ae^{-ikL} +Be^{ikL} =0 \tag{6}\end{equation*} 
 
-  or 
+  \noindent{}or 
 
-  $$B=-Ae^{-2ikL} . \tag{7}$$ 
+  \begin{equation*}B=-Ae^{-2ikL} . \tag{7}\end{equation*} 
 
   At $x=0$, the input impedance we want, $Z(\omega)$, is now given by the ratio 
   of pressure to volume flow rate: 
 
-  $$Z(\omega)=\dfrac{A+B}{(S/Z_0) 
+  \begin{equation*}Z(\omega)=\dfrac{A+B}{(S/Z_0) 
   (A-B)}=\dfrac{Z_0}{S}\dfrac{1-e^{-2ikL}}{1+e^{-2ikL}}=\dfrac{iZ_0}{S}\tan kL 
-  . \tag{8}$$ 
+  . \tag{8}\end{equation*} 
 
   So far, we have assumed that there is no dissipation in the problem. As a 
   final step, we can introduce a realistic level of damping by the simple 
@@ -85,13 +88,14 @@
   extremely wide, the loss from sound radiation can be neglected, and the other 
   two effects can be allowed for in a combined formula in which 
 
-  $$k=\omega/c+i \alpha(\omega) \tag{9}$$ 
+  \begin{equation*}k=\omega/c+i \alpha(\omega) \tag{9}\end{equation*} 
 
-  with 
+  \noindent{}with 
 
-  $$ \alpha \approx 1.2 \times 10^{-5} \sqrt{\omega}/a \tag{10}$$ 
+  \begin{equation*} \alpha \approx 1.2 \times 10^{-5} \sqrt{\omega}/a 
+  \tag{10}\end{equation*} 
 
-  where $a$ is the pipe radius. 
+  \noindent{}where $a$ is the pipe radius. 
 
   We can deduce something else from the first part of equation (8). If our pipe 
   were semi-infinite, so that no reflected wave ever came back, we would have 

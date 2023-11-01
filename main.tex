@@ -18,6 +18,18 @@
 }
 \input{sam.sty}
 
+% thanks to https://tex.stackexchange.com/questions/548365
+%\setlength{\JustifyingParindent}{0pt}
+\makeatletter
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0.5pc}%
+  \setlength{\JustifyingParindent}{0pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+
 
 \usepackage{fancyhdr}
 \newcommand{\whichsect}{} % blank (uninitialized)
@@ -41,10 +53,10 @@
 \makeatother
 
 \newcommand{\fig}[2]{%
-    \begin{marginfigure}%
+  \begin{marginfigure}%
   \includegraphics[width=\textwidth]{#1}%
   %\caption{\scriptsize{#2}}%
-  {\scriptsize{#2}}
+  \noindent{\scriptsize{#2}}
 \end{marginfigure}%
 }
 
@@ -78,12 +90,29 @@
 
 \begin{document}\samtitle{%
   EUPHONICS, by Jim Woodhouse}
+  \marginnote[+.6cm]{%
+    \par This text is an experiment and a work in progress by Jim Woodhouse
+    (\texttt{jimwoodhouse74@gmail.com}). The intention is to give a multi-level
+    description of the science of musical instruments.
+    %
+    It's available for free and with lots of audio, video, and external links
+    not present in this pdf at \texttt{euphonics.org/homepage}.
+    %
+    %Jim has worked in the Cambridge University Engineering Department in
+    %England since 1986.  His interests are in the modelling, measurement and
+    %prediction of vibration in complex structures, including musical
+    %instruments.  His interest in the violin started from a hobby interest in
+    %building instruments.
+    %
+    \par Sam Tenka (\texttt{samtenka@mit.edu}) compiled Jim's writing into a
+    pdf.
+  }
 
-  %\begin{fullwidth}
+  \emergencystretch 3em
   \input{all-contents.tex}
-  %\end{fullwidth}
 
-  \renewcommand*{\tag}[1]{\quad\quad\text{\hfill}\quad\quad(#1)}
-  %\renewcommand*{\tag}[1]{$$\marginnote{(#1)}$$}
+  \renewcommand*{\tag}[1]{%              % ams overrides for equation environs
+    \quad\quad\text{\hfill}\quad\quad(#1)% but NOT for in-line math
+  }                                      %
   \input{all-input.tex}
 \end{document}
