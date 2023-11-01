@@ -1,0 +1,70 @@
+% author:   sam tenka
+% change:   2023-10-30
+% create:   2023-10-30
+% descrp:   example of how to use sam.sty style file
+% to use:
+
+\documentclass[justified]{tufte-book}
+
+\usepackage[framemethod=tikz]{mdframed}
+\geometry{
+  left           = 0.90in, % left margin
+  textwidth      = 4.95in, % main text block
+  marginparsep   = 0.15in, % gutter between main text block and margin notes
+  marginparwidth = 2.30in, % width of margin notes
+                 % 0.20in  % width from margin to edge
+}
+\input{sam.sty}
+
+% thanks to https://tex.stackexchange.com/questions/106416
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@caption}
+  {\noindent\csname fnum@#1\endcsname: \ignorespaces}
+  {}
+  {}{}
+\makeatother
+
+
+\begin{document}\samtitle{%
+example of \texttt{sam.sty}
+}
+
+    \sampassage{Hallo!}
+
+\sampart{Rocks from the Ground Up}
+  \samsection{What are Rocks?}
+    \sampassage{energy minimization and the cold universe}
+      This is a sentence.\bovinenote{And this is a note about that sentence}
+
+    \sampassage{quantum mechanics of coulomb interactions}
+    \sampassage{atoms, molecules, minerals, rocks}
+
+  \samsection{Why are Rocks Hard?}
+    \sampassage{a closer look at bonds}
+    \sampassage{qualitative phenomena arising from pauli anti-symmetry}
+    \sampassage{sound propagation and earthquakes}
+
+  \samsection{Which Rocks Have Pretty Colors?}
+    \sampassage{transition metals and crystal field theory}
+    \sampassage{structural color}
+    \sampassage{typical oxides and pigments}
+
+  \samsection{When do Rocks Crack?}
+    \sampassage{crystal structures and dislocations}
+    \sampassage{linear and nonlinear theories}
+    \sampassage{brittleness vs stiffness}
+
+  \samsection{How do Rocks Move?}
+    \sampassage{erosion and deposition}
+    \sampassage{saltation of sand: dunes}
+    \sampassage{hoodoos of bryce canyon}
+
+  \samsection{Are Rocks Alive?}
+    \sampassage{fossil origins}
+    \sampassage{natural selection}
+    \sampassage{clay crystals and propagating mutations}
+
+\sampart{Writings of Boethius}
+
+\end{document}

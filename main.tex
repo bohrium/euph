@@ -69,8 +69,21 @@
 % thanks to tex.stackexchange.com/questions/352596
 \usepackage{marginfix} % to fix tufte margin items falling off page
 
+%% thanks to https://tex.stackexchange.com/questions/83509
+%\makeatletter
+%%\newcommand{\pushright}[1]{\ifmeasuring@#1\else\omit\hfill$\displaystyle#1$\fi\ignorespaces}
+%\newcommand{\pushright}[1]{\hfill$$\displaystyle#1$$\ignorespaces}
+%\newcommand{\pushleft}[1]{\ifmeasuring@#1\else\omit$\displaystyle#1$\hfill\fi\ignorespaces}
+%\makeatother
+
 \begin{document}\samtitle{%
   EUPHONICS, by Jim Woodhouse}
-  \renewcommand*{\tag}[1]{{}}
+
+  %\begin{fullwidth}
+  \input{all-contents.tex}
+  %\end{fullwidth}
+
+  \renewcommand*{\tag}[1]{\quad\quad\text{\hfill}\quad\quad(#1)}
+  %\renewcommand*{\tag}[1]{$$\marginnote{(#1)}$$}
   \input{all-input.tex}
 \end{document}

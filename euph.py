@@ -1,5 +1,5 @@
-# author.replace('<strong>', '\\textbf{'):   samtenka
-# change.replace('</strong>', '}'))      :   2023-10-31
+# author:   samtenka
+# change:   2023-11-01
 # create:   2023-10-28
 # descrp:   scrape [ euphonics.org ] and assemble to book
 # to use:
@@ -174,17 +174,44 @@ def make_input(b):
     sn = b['sectnum'].replace('.', '-')
     title = b['title']
     level = sn.count('-')
-    return (
-        {0:'\\sampart', 1:'\\samsection', 2:'\\sampassage'}[level]+
-        '{{{:s} \\quad {:s}}}'.format(sn, b['title']) +
-        '\\renewcommand{{\\whichsect}}{{{:s}}}'.format(sn) +
-        '\\input{{{:s}}}'.format(filenm_from_sn(sn))
+    h = hashlib.md5(title.encode('utf-8')).hexdigest()[:8]
+    return (''
+        +{0:'\\sampart', 1:'\\samsection', 2:'\\sampassage'}[level]
+        +'{{{:s} \\quad {:s}}}'.format(sn, b['title'])
+        +'\\renewcommand{{\\whichsect}}{{{:s}}}'.format(sn)
+        +'\\input{{{:s}}}'.format(filenm_from_sn(sn))
+        +r'\label{s:'+h+'}'
     )
 
-def make_all_inputs(allfilename):
+def make_contents(b):
+    sn = b['sectnum'].replace('.', '-')
+    title = b['title']
+    level = sn.count('-')
+    h = hashlib.md5(title.encode('utf-8')).hexdigest()[:8]
+    return (
+         {0:r'\item[\hspace{{-1cm}}{:s}\hspace{{+0cm}} \large\bf\sf \blu {:s}]\hfill \\ ',
+         1:r'\quad{{\gre{{}}{:s}}}~{:s}',
+         #1:r'\item[\quad\quad {:s}]\hfill {:s}',
+         2:''}[level].format(
+            r'\pageref{s:'+h+'}',
+            title,
+        )
+    )
+
+def make_all_inputs(allfilename, contentsfilename=None):
     all = '\n'.join(map(make_input, bb))
     with open(allfilename, 'w') as f:
         f.write(all)
+
+    if contentsfilename is None: return
+    contents = (
+        r'\begin{description}'
+        +'\n'.join(filter(None, map(make_contents, bb)))
+        +r'\end{description}'
+        )
+    with open(contentsfilename, 'w') as f:
+        f.write(contents)
+
 
 def make_all_bodies():
     for b in tqdm.tqdm(bb):
@@ -210,8 +237,8 @@ def correct_all(sectnum, before, after):
         #correct_typo(sn, '<a [^>]*>', r'\\tt{}')
 
 if __name__=='__main__':
-    make_all_inputs('all-input.tex')
-    make_all_bodies()
+    make_all_inputs('all-input.tex', contentsfilename='all-contents.tex')
+    #make_all_bodies()
 
     correct_typo('5.5', r'admittances are plotted in Fig.\ 15}.',
                         r'admittances are plotted in Fig.\ 15.'  )
