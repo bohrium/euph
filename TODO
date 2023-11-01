@@ -1,0 +1,57 @@
+page of main.2023-10-31.pdf
+
+001     include table of contents!
+
+004     remove <br> from caption
+
+012     no indent following $$...$$ (assume part of prev and next para)
+
+016     make AUDIOMISSING orange, not red, and also more informative
+
+016     remove <br> from caption
+
+019     remove <br> from caption
+
+020     why do figures seem not to have figure numbers?
+
+031     in displaymath: get rid of double --s (mistaken en dash?)
+
+031     chains of displaymath equalities should be ALIGNED
+
+038     "Chapter ?" --- at bottom, no chapter number
+
+041     video caption overlaps with image
+
+041     videos sampled too coarsely?
+
+065     missing text about Rayleigh's principle marimba...
+
+096     make bolded subsections into sampassages (and make header more telling)
+
+096     beautify ugly wikicommons link in caption
+
+114     captions of two videos overlap
+
+116     image too large due to aspect ratio
+
+117     video caption overlaps with image caption
+
+125     GOOD example of Wikimedia link
+
+140     make bolded subsections into sampassages (and make header more telling)
+
+143     make in-prose (what about in-caption??) citations into marginnotes based on references!
+
+145     ugly 5-4 start at bottom of page
+
+323     references overlap with image caption
+
+335     ampersands in matrices!
+
+484     ``Instruments \`a Vent'' should be spelled as such
+
+623     check that double and single quotes are non-special chars in latex (as in 12-1)
+
+641     references to equation numbers, but we made \tag{...}s invisible!
+
+
