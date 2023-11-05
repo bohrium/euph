@@ -1,7 +1,14 @@
-*.png
 *.mov
-*/*.png
+*.mp3
+*.mp4
+*.png
+*.wav
+
 */*.mov
+*/*.mp3
+*/*.mp4
+*/*.png
+*/*.wav
 
 *.out
 *.aux
