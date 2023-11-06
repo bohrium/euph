@@ -1,5 +1,5 @@
 % author:   sam tenka
-% change:   2023-10-30
+% change:   2023-11-06
 % create:   2023-10-28
 
 
@@ -57,7 +57,22 @@
   \includegraphics[width=\textwidth]{#1}%
   %\caption{\scriptsize{#2}}%
   \noindent{\scriptsize{#2}}
-\end{marginfigure}%
+  \end{marginfigure}%
+}
+
+%\newcommand{\aud}[2]{%
+%\begin{fullwidth}%
+%\includegraphics[width=\textwidth]{#1}\\%
+%\noindent{\scriptsize{#2}}%
+%\end{fullwidth}%
+%}
+\newcommand{\aud}[2]{%
+\begin{fullwidth}%
+\begin{figure}[h]\centering
+\includegraphics[width=\textwidth]{#1}%
+#2
+\end{figure}
+\end{fullwidth}%
 }
 
 \newcommand{\audio}[1]{%

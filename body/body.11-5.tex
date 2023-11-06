@@ -482,7 +482,9 @@
   circles in Fig.\ 16. The first note is indeed conspicuously flat compared to 
   the harmonic series of the other three sounds. 
 
-\audio{}
+  \aud{auds/aud-e721a385-plot.png}{\caption{Sound 1. The four synthesised 
+  sounds marked by circles in Fig. 16, and whose last few cycles were plotted 
+  in Fig. 15.}} 
 
   Figure 19 shows a different view of these playing frequencies. This time, 
   they are normalised by the lip resonance frequency, and the plot confirms 
@@ -754,7 +756,7 @@
   from a test rig using artificial lips with simulations using essentially the 
   same model used here. Their results suggest that as players increase lip 
   tension to raise the resonance frequency in order to play higher notes, the 
-  Q-factor also increases. This trend seems quite plausible, but there are as 
+  Q-factor also increases. This trend seems quite plausible, but there is as 
   yet very little in the way of direct physiological measurements to test 
   whether the actual values of Q-factor apply to real lips. 
 
@@ -824,15 +826,15 @@
   provided by Henri Boutin and reproduced by permission of the authors of 
   [6].}} 
 
-  We can draw inspiration from Boutin, Smith and Wolfe [6]: they highlighted 
-  some effects not included in the current simulation model, and suggested that 
-  these might have a big influence on the energy balance, and hence on 
-  thresholds. First, as also observed in earlier work by Copley and Strong [7], 
-  they found that the horizontal and vertical components of the lip motion are 
-  not in phase: the tips of the upper and lower lip each trace out a loop in 
-  space. Figure 35 shows these loops, for the same note shown in Fig.\ 34. They 
-  also pointed out effects associated with an additional component of the flow 
-  into the tube caused by the forwards-and-backwards motion of the lips. 
+  We can draw inspiration from Boutin et al. [6]: they highlighted some effects 
+  not included in the current simulation model, and suggested that these might 
+  have a big influence on the energy balance, and hence on thresholds. First, 
+  as also observed in earlier work by Copley and Strong [7], they found that 
+  the horizontal and vertical components of the lip motion are not in phase: 
+  the tips of the upper and lower lip each trace out a loop in space. Figure 35 
+  shows these loops, for the same note shown in Fig.\ 34. They also pointed out 
+  effects associated with an additional component of the flow into the tube 
+  caused by the forwards-and-backwards motion of the lips. 
 
   \fig{figs/fig-017e8c79.png}{\caption{Figure 35. Trajectories of the upper lip 
   (red) and lower lip (blue) as measured by Boutin, Smith and Wolfe [6] for the 
@@ -897,24 +899,249 @@
   to play. In the second row, we see that the second, third and fourth notes 
   can be played with this value of delay, but that the red stars all lie above 
   the blue lines so that the notes can only be “lipped up”, not “lipped down”. 
-  But in the third row some stars fall below the blue lines, indicating that 
-  lipping down has become possible. 
+
+  However, in the third row some stars fall below the blue lines, indicating 
+  that lipping down has become possible. The horizontal dotted lines mark 
+  semitones, so the plot shows that the second natural note can be lipped down 
+  by about a semitone in this case. The suggestion, based on the results of 
+  Boutin et al., is that a proficient trombone player can exercise some control 
+  over the effective time delay by (somehow) manipulating the details of their 
+  embouchure. For normal playing or lipping-up, they might use a modest delay 
+  like the middle row in Fig.\ 36. But when they want to lip a note down, they 
+  change embouchure so as to increase the delay to something like the bottom 
+  row in the figure. 
+
+  It is worth looking rather carefully at the behaviour revealed by Fig.\ 36. 
+  The first conclusion is an obvious one: the time delay is a critical 
+  parameter in this model. With no delay, no notes can be played within this 
+  range of blowing pressure and lip resonance frequency. But with even a small 
+  delay, notes up to the sixth (indicated by the yellow colour) become 
+  possible. Increasing the delay further moves the pattern around: there are 
+  many subtle differences between the three pressure—lip resonance diagrams 
+  which have implications for the player. (Or, at least, they would have these 
+  implications if this very crude model is really capturing enough of the 
+  underlying physics to give a good guide.) 
+
+  Increasing the delay seems to help with producing the lower notes, but makes 
+  it harder to produce the higher notes. If you look carefully at the bottom of 
+  the three diagrams, you can see that the first note (indicated by a rather 
+  dark red colour) shows as a bigger region in the lower images, and also the 
+  threshold blowing pressure for this note gets progressively lower. But at the 
+  same time the yellow colour at the top of the images progressively retreats: 
+  according to this model it would be easiest to play that sixth note with the 
+  shortest delay. 
+
+  However, this is by no means the end of the story. The time delay is not the 
+  only parameter which has a sensitive effect on the simulation results. I will 
+  illustrate the influence of four other parameters with pictures. I will take 
+  the middle row of Fig.\ 36 as my reference case, and show how the 
+  pressure—lip resonance diagram changes when a significant change is made to 
+  one parameter at a time. In each case, the reference plot will be repeated on 
+  the left-hand side, to be compared with the modified version on the right. 
+
+  The first comparison illustrates something we already know. Figure 37 shows 
+  the effect of increasing the Q-factor of the lip resonator to 2 — in other 
+  words, halving the damping. The region of coloured pixels grows, as we should 
+  expect. Every note is easier to play with the increased Q-factor. 
 
   \fig{figs/fig-fafaa502.png}{} 
 
   \fig{figs/fig-9cfd6bc0.png}{} 
 
+  The second comparison brings in a parameter we haven’t previously mentioned. 
+  It describes the initial position of the lips, before the player starts to 
+  blow. In Figure 36, it was assumed that the lips were just touching: no gap, 
+  but also not actively pressed together. In the right-hand plot of Fig.\ 38, 
+  we see the result of pressing the lips together a little. This is represented 
+  in the model by pushing the lips 0.5~mm closer together than the previous 
+  case. This amount of lip-pressing makes every note a bit harder to play: the 
+  coloured region has retreated to the right everywhere. However, more detailed 
+  investigation reveals that the original case is not quite the “best” choice 
+  for easy playing: a slightly bigger region of coloured pixels appears with 
+  0.1~mm of pressing-together of the lips. At least qualitatively, this is 
+  consistent with what trombonists report: the lips should be lightly pressed 
+  together for best embouchure. 
+
   \fig{figs/fig-8dd88816.png}{} 
 
   \fig{figs/fig-2de6cde9.png}{} 
+
+  The next case is shown in Fig.\ 39. This time, a change has been made in the 
+  scale factor that relates the vertical lip motion to the horizontal motion. 
+  In the reference case, the maximum vertical opening of the lips is 4 times 
+  the maximum horizontal motion, whereas in the modified case it is only 2 
+  times that horizontal motion. The plot shows that this change makes the 
+  coloured region retreat to the right, so all notes are harder to play. 
 
   \fig{figs/fig-287132de.png}{} 
 
   \fig{figs/fig-483c4dc0.png}{} 
 
+  The final comparison is done in order to investigate one of the effects 
+  pointed out by Boutin et al. [6]. If the effective area of the vibrating lips 
+  varies during the oscillation, this may increase the supply of energy 
+  available to drive the lip motion, and thus reduce thresholds. The reference 
+  case includes this effect of area modulation, and Fig.\ 40 shows the result 
+  of switching the effect off. At first glance you might think the two plots 
+  are very similar, but if you concentrate on the bottom part of each plot you 
+  can see that the two lowest notes are significantly affected by the change. 
+  In the right-hand plot, the lowest note doesn’t appear at all: the plot is 
+  all black, with no dark red as can be seen in left-hand plot. The region of 
+  coloured pixels for the second note is also significantly bigger on the left 
+  than on the right. So this effect can indeed influence the ease of playing of 
+  these two lowest notes on the simulated trombone. 
+
   \fig{figs/fig-b9bd3b4d.png}{} 
 
   \fig{figs/fig-60d0e720.png}{} 
+
+  \textbf{F The limitations of simple models} 
+
+  The results shown here, together with the extra detail provided in the 
+  previous link, tell us some encouraging things about the trombone model. The 
+  simulations seem to be able to match all the main trends of qualitative 
+  behaviour, and to come at least within striking range of matching some 
+  quantitative observations. However, I want to close this section by 
+  emphasising some weaknesses and limitations. There are two types of concern 
+  about the extended lip model, one based on physics and the other on the 
+  relation to what players actually do. These concerns do not just apply to the 
+  particular model discussed here, but to other models that have been proposed 
+  for more realistic lip motion, such as the pioneering study by Adachi and 
+  Sato [8]. 
+
+  The physics-based concern arises directly from the very high damping of the 
+  lips. Within the broad area of musical acoustics, it is very unusual to have 
+  an oscillator of any kind that forms a crucial part of understanding how an 
+  instrument works, and which has a Q-factor anywhere near as low as 1. For all 
+  the other problems we have looked at throughout this e-book, we have been 
+  able to get away with approximate descriptions of damping that are based on 
+  an assumption that damping is small. That is certainly not the case for the 
+  behaviour of brass-players’ lips. 
+
+  Throughout the wider subject of structural vibration, it is well accepted 
+  (but not often talked about explicitly) that physical models of highly-damped 
+  systems are intrinsically questionable. The reason goes all the way back to 
+  the underlying general theory that was outlined in Chapter 2 and its side 
+  links. There are good reasons why we can expect the standard model of 
+  linearised vibration of undamped systems to work pretty well, but damping was 
+  only ever included in an ad hoc manner, without a corresponding deep 
+  justification. There simply is no general theory of damped systems. 
+
+  The ad hoc approach is usually good enough when damping is small, but there 
+  is no convincing reason to expect any of the usual approximations to work 
+  with any level of accuracy for highly damped structures like lips. A full 
+  discussion of this issue would take us too far from the things we really want 
+  to be talking about, but as an example the options to model damping in 
+  standard computer packages for such things as Finite Element Analysis 
+  generally have no solid physical justification, and might lead to quite 
+  misleading answers for a highly-damped system. 
+
+  In the context of the particular lip model used here, it is worth noting that 
+  we are on fairly safe ground with the aspect of that model that might seem 
+  most odd, the phase difference we introduced between the horizontal and 
+  vertical displacement of the lips. For any linear vibrating system with 
+  damping that is not small, we can confidently expect that if the concept of 
+  vibration modes still has any meaning, those modes will exhibit phase 
+  differences rather like this. In the mathematical jargon of the subject, mode 
+  shapes will invariably be complex. 
+
+  The second concern to be aired about the lip model is quite different. When 
+  we built a model for the action of a clarinet reed, all the parameters that 
+  entered were directly related to physical quantities. When we used 
+  simulations based on that model to generate pressure—gap diagrams in section 
+  11.3, the variables on the two axes had direct physical interpretations that 
+  made sense to a clarinettist: blowing pressure and initial reed gap 
+  (corresponding directly to bite strength). In order to compare simulations 
+  with measurements, we could determine all the relevant parameter values from 
+  the tested instrument, and thus hope to get a direct and quantitative 
+  comparison of waveforms. The only doubt, perhaps, would have concerned the 
+  exact nature of the initial transient used to start the note, but we would 
+  hope that the final steady portion of a note should be reliably reproduced. 
+
+  Our trombone lip model is different. There is a disconnect between the 
+  parameters of the model and what the player actually does, or thinks about, 
+  when controlling their embouchure to produce a particular sound. They do not 
+  think about their lip resonance frequency or the phase lag between horizontal 
+  and vertical motions of their lips. Instead, in the process of learning to 
+  play proficiently they have used feedback from the sound they produce to 
+  learn to do particular things involving the muscles around their mouth, their 
+  blowing pressure, and so on. This means that the trombone model is not truly 
+  predictive in the same way that the clarinet model was: to achieve that, we 
+  would need some kind of neuro-muscular model of embouchure described by 
+  parameters that are directly related to player actions. 
+
+  We know from observations like those of Copley and Strong [7] that the 
+  player’s muscular actions in fact result in complicated lip motion including 
+  a phase difference between the horizontal and vertical components. We have 
+  included this phase difference in our model and found that it makes a big 
+  difference to the behaviour, but we really know rather little about how 
+  players control that phase difference, or what range of phase difference is 
+  accessible to a player, or whether the phase difference is linked to other 
+  aspects like lip tension. Indeed, we saw in Figs.\ 37—40 that phase lag and 
+  lip resonance frequency are by no means the only parameters that have a 
+  sensitive effect on the pattern of simulated response. The lip model used 
+  here, in common with other proposed lip models, contains many parameters 
+  (some 8 or 9 in our case). All these parameters may in reality be interlinked 
+  in some complicated way by what a player is actually able to do. 
+
+  But in the computer model, all the parameters can be specified independently. 
+  This is both good and bad. The good aspect is that we were able to use the 
+  model to explore the effect of each parameter in turn, and thus isolate the 
+  sensitivity to different aspects of the underlying physics. The bad thing is 
+  that it probably means that many of the parametric combinations included in 
+  the simulation results are not in fact possible for a human player. The 
+  result is a model that sheds useful light on the physics of the trombone, but 
+  that may not say anything very useful to a trombonist. 
+
+  When it comes to assessing the accuracy of the model, we noted earlier that 
+  the major source of quantitative comparison data is the set of waveforms 
+  measured by Boutin et al. [6]. We already saw one comparison with a simulated 
+  case (in Fig.\ 34), and the previous link shows comparisons with all three of 
+  the cases they measured. But there is snag with trying to use this data to 
+  discriminate between variations of the simulation model, and it is 
+  illustrated in Figs.\ 41 and 42. Here we see the same set of measured 
+  waveforms, compared with two different (carefully chosen) cases from the 
+  simulation model. Both show a match that is about as close as we could 
+  reasonably hope for — but the two simulated cases have very different 
+  parameter values. In fact, apart from the blowing pressure and the value of 
+  the time delay in the lip model, every other parameter has a significantly 
+  different value in the two cases. For example, Fig.\ 41 uses a lip Q-factor 
+  of 5, while Fig.\ 42 uses the value 1. The other parameter values are listed 
+  in the figure captions. 
+
+  \fig{figs/fig-470ea0f3.png}{\caption{Figure 41. A particular set of simulated 
+  waveforms, compared with corresponding waveforms measured by Boutin et al. 
+  [6] for their case in which the note was “lipped up”. All simulated waveforms 
+  are shown as solid lines, while measured ones are shown as dashed lines in 
+  the corresponding colour. The top plot shows the comparison for the pressure 
+  inside the mouthpiece. The middle plot shows the total volume flow rate 
+  (blue) and the sweeping flow contribution to that (green). The bottom plot 
+  shows the lip opening area. Using notation defined in section 11.5.3, the 
+  parameter values are: $Q\_r=5$, $\alpha=2$, $\lambda=0$, $H\_0=0.5 
+  \mathrm{~mm}$, $L\_{lip}=8 \mathrm{~mm}$, blowing pressure 1~kPa, lip 
+  resonance frequency 113~Hz, delay 1.5~ms.}} 
+
+  \fig{figs/fig-f1197a4e.png}{\caption{Figure 42. A different set of simulated 
+  waveform from the ones in Fig. 41, compared in the same format with 
+  corresponding waveforms measured by Boutin et al. [6] for their case in which 
+  the note was “lipped up”. All simulated waveforms are shown as solid lines, 
+  while measured ones are shown as dashed lines in the corresponding colour. 
+  The top plot shows the comparison for the pressure inside the mouthpiece. The 
+  middle plot shows the total volume flow rate (blue) and the sweeping flow 
+  contribution to that (green). The bottom plot shows the lip opening area. 
+  Using notation defined in section 11.5.3, the parameter values are: $Q\_r=1$, 
+  $\alpha=0.5$, $\lambda=2$, $H\_0=0$, $L\_{lip}=25 \mathrm{~mm}$, blowing 
+  pressure 1~kPa, lip resonance frequency 97~Hz, delay 1.5~ms.}} 
+
+  This story is repeated with the other two measured cases of Boutin et al. The 
+  simulation model is capable of moderately good matches to each of these 
+  measurements, but this can be achieved with many different combinations of 
+  parameter values. I have deliberately avoided any kind of numerical search 
+  for the “best fit” to these waveforms within the complicated space of all the 
+  model parameters. Such a search would be misleading because matching to these 
+  particular waveforms does not provide clear discrimination between the 
+  different possibilities, and in any case we noted earlier that in reality the 
+  player can probably only access certain combinations of parameter values. 
 
 
 
@@ -947,3 +1174,7 @@
   [7] D. C. Copley and W. J. Strong, “A stroboscopic study of lip vibrations in 
   a trombone”, Journal of the Acoustical Society of America \textbf{99}, 
   1219–1226, (1996). 
+
+  [8] Seiji Adachi and Masa-aki Sato, “Trumpet sound simulation using a 
+  two-dimensional lip vibration model”, Journal of the Acoustical Society of 
+  America \textbf{99}, 1200—1209 (1996). 

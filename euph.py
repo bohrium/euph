@@ -1,5 +1,5 @@
 # author:   samtenka
-# change:   2023-11-01
+# change:   2023-11-016
 # create:   2023-10-28
 # descrp:   scrape [ euphonics.org ] and assemble to book
 # to use:
@@ -151,7 +151,7 @@ def process_para(groupdict):
         videocap = re.sub('<(/)?a[^>]*>', '', videocap)
         videocap = re.sub('<a [^>]*>', r'\\tt{}', videocap)
         videocap = re.sub('</a>', r'\\rm{}', videocap)
-        videocap = videocap.replace('_','\\_') # TODO FIXME : what if mathmode subscript? 
+        videocap = videocap.replace('_','\\_') # TODO FIXME : what if mathmode subscript?
 
         return '\\moobeginvid\\begin{{tabular}}{{{:s}}} {:s} \\end{{tabular}}{:s}\\mooendvideo'.format(
             'c'*ll,
@@ -159,7 +159,24 @@ def process_para(groupdict):
             videocap
         )
     elif audiourl is not None:
-        return '\\audio{}'
+        h = hashlib.md5(audiourl.encode('utf-8')).hexdigest()[:8]
+        extn = audiourl.split('.')[-1]
+        local_name = 'auds/aud-{:s}.{:s}'.format(h, extn)
+        plot_name = 'auds/aud-{:s}-plot.png'.format(h)
+
+        if not glob.glob(local_name):
+            print('downloading {:s}'.format(audiourl))
+            os.system('curl -o {:s} {:s} -s'.format(local_name, audiourl))
+            os.system('python3 render_audio.py {:s} {:s}'.format(local_name, plot_name))
+
+        audiocap = '\\caption{{{:s}}}'.format(audiocap.strip()) if audiocap is not None else ''
+        audiocap = re.sub('<(/)?a[^>]*>', '', audiocap)
+        audiocap = re.sub('<a [^>]*>', r'\\tt{}', audiocap)
+        audiocap = re.sub('</a>', r'\\rm{}', audiocap)
+        audiocap = audiocap.replace('_','\\_') # TODO FIXME : what if mathmode subscript?
+
+        return wrap_col('\\aud{{{:s}}}{{{:s}}}'.format(plot_name, audiocap))
+
     else:
         assert False
 

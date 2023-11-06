@@ -1,14 +1,14 @@
-  The brass simulations in section 11.5 used the simplest possible model to 
-  represent the action of the player's lips; essentially the same as the model 
-  used earlier for reed instruments except with a sign change to give the ``lip 
-  reed'' the character of an opening reed rather than a closing reed. This 
-  model gave qualitatively plausible predictions, and even achieved reasonable 
-  quantitative agreement with a set of waveforms published by Boutin, Smith and 
-  Wolfe [1]. However, in that paper Boutin et al. highlighted an aspect of the 
-  observed lip vibration which is not included in the modelling so far. They 
-  suggested that this extra effect might have important consequences, and the 
-  purpose of this section is to present a preliminary investigation of that 
-  suggestion. 
+  The brass simulations in the early parts of section 11.5 used the simplest 
+  possible model to represent the action of the player's lips; essentially the 
+  same as the model used earlier for reed instruments except with a sign change 
+  to give the ``lip reed'' the character of an opening reed rather than a 
+  closing reed. This model gave qualitatively plausible predictions, and even 
+  achieved reasonable quantitative agreement with a set of waveforms published 
+  by Boutin, Smith and Wolfe [1]. However, in that paper Boutin et al. 
+  highlighted an aspect of the observed lip vibration which is not included in 
+  the modelling so far. They suggested that this extra effect might have 
+  important consequences, and the purpose of this section is to investigate 
+  that suggestion. 
 
   The first ingredient is an additional component of the volume flow rate into 
   the instrument. We already have the flow rate associated with air flow 
@@ -139,32 +139,33 @@
   physical model of lip vibration, but it will allow us to make controlled 
   investigations over a range of amplitudes and phases. 
 
-  We have three targets for this investigation. The first is to see how close 
-  we can get to reproducing the three sets of measured waveforms from Boutin et 
-  al. [1]. The second is to investigate the specific proposal that inclusion of 
-  ``swimming motion'' with an appropriate phase shift might allow successful 
-  simulations with a lower Q factor for the lip resonance. In section 11.5 we 
-  showed results using Q factors in the range suggested by Doc et al. [2], with 
-  values 7, 15 and 30. But even Q=7 seems implausibly high for a resonance of 
-  soft flesh, suggesting that there may be something important missing from the 
-  model --- perhaps swimming motion of the lips will be the answer? The third 
-  effect concerns the pitch of the played note. The initial model from section 
-  11.5 predicted that the player, by varying lip tension, could raise the pitch 
-  of the note, but never lower it below the relevant resonance of the tube --- 
-  see Fig.\ 18 of section 11.5. But in reality, a trombonist can ``lip down'' 
-  just as easily as they can ``lip up'', so this again points to a deficiency 
-  in the initial model. 
+  We have three broad targets for this investigation. The first is to see how 
+  close we can get to reproducing the three sets of measured waveforms from 
+  Boutin et al. [1]. The second is to investigate the specific proposal that 
+  inclusion of ``swimming motion'' with an appropriate phase shift might allow 
+  successful simulations with a lower Q-factor for the lip resonance. In 
+  section 11.5 we showed results using the original lip model with Q-factors in 
+  the range suggested by Doc et al. [2], with values 7, 15 and 30. But even Q=7 
+  seems implausibly high for a resonance of soft flesh, suggesting that there 
+  may be something important missing from the model --- perhaps swimming motion 
+  of the lips will be the answer? The third effect concerns the pitch of the 
+  played note. The initial model from section 11.5 predicted that the player, 
+  by varying lip tension, could raise the pitch of the note, but never lower it 
+  below the relevant resonance of the tube --- see Fig.\ 18 of section 11.5. 
+  But in reality, a trombonist can ``lip down'' just as easily as they can 
+  ``lip up'', so this again points to a deficiency in the initial model. 
 
-  With these aims in mind, we will concentrate our efforts on a small region of 
-  the pressure --- lip resonance diagram, illustrated in Fig.\ 2. This version 
-  of the diagram shows results for Q=7, and is colour-shaded to indicate the 
-  length of transient following a cold start. The chosen region, outlined with 
-  a green box, is concentrated around the ``nose'' of the feasible zone for the 
-  lowest normal note of the trombone, based on the second tube resonance. The 
-  three measured cases of Boutin et al. fall near the centre of this region, 
-  and if swimming motion can have an influence that allows lower Q factors to 
-  be used, we would expect to see the threshold pressure reduce — in other 
-  words, the ``nose'' should move to the left. 
+  With these aims in mind, we will examine the effects of the new lip model by 
+  concentrating on a small region of the pressure --- lip resonance diagram, 
+  illustrated in Fig.\ 2. This version of the diagram shows results for Q=7, 
+  and is colour-shaded to indicate the length of transient following a cold 
+  start. The chosen region, outlined with a green box, is concentrated around 
+  the ``nose'' of the feasible zone for the lowest normal note of the trombone, 
+  based on the second tube resonance. The three measured cases of Boutin et al. 
+  fall near the centre of this region, and if swimming motion can have an 
+  influence that allows lower Q-factors to be used, we would expect to see the 
+  threshold pressure reduce — in other words, the ``nose'' should move to the 
+  left. 
 
   \fig{figs/fig-62405eef.png}{\caption{Figure 2. A pressure --- lip resonance 
   diagram for a trombone for the same model as Fig. 22 of section 11.5, for the 
@@ -176,16 +177,19 @@
   range 80--130 Hz. This region has been covered by a $10 \times 10$ grid of 
   points, and sets of simulations have been run. The grid has been repeated 
   with 5 different values of the delay: one case with no delay, and four cases 
-  with progressively longer delays. The results will be shown in a plotting 
-  format illustrated in Fig.\ 3. The top left plot is the case with no delay. 
-  It corresponds to the original data as shown in Fig.\ 2, and forms our 
-  reference comparison for all the other plots. After that, the delay increases 
-  along the top row, and continues to increase on the second row. The constant 
-  $\alpha$ is set (rather arbitrarily) to the value 2 so that the elliptical 
-  path of the lips is angled at $45^\circ$. All simulations use a width $w$ of 
-  the (assumed rectangular) lip opening of 12~mm (a value recommended by Doc et 
-  al. [2]). The parameter $\lambda$ governing the area modulation effect is set 
-  to zero for this initial case so that the effective area is then given by 
+  with progressively longer delays in increments of 0.5~ms. The results will be 
+  shown in a plotting format illustrated in Fig.\ 3. The top left plot is the 
+  case with no delay. It corresponds to the original data as shown in Fig.\ 2, 
+  and forms our reference comparison for all the other plots. After that, the 
+  delay increases along the top row, and continues to increase on the second 
+  row. The constant $\alpha$ is set (rather arbitrarily) to the value 2 so that 
+  the elliptical path of the lips is angled at $45^\circ$. All simulations use 
+  a width $w$ of the (assumed rectangular) lip opening of 12~mm (a value 
+  recommended by Doc et al. [2]). The initial opening $H_0$ is set to 0.5~mm 
+  for the particular simulations shown here, to match the simulations with the 
+  old lip model shown in section 11.5. The parameter $\lambda$ governing the 
+  area modulation effect is set to zero for this initial case so that the 
+  effective area is then given by 
 
   \begin{equation*}A_r=w L_{lip} \tag{5}\end{equation*} 
 
@@ -206,10 +210,10 @@
   Figure 3 had the area modulation effect switched off, and the sweeping flow 
   term rendered negligibly small, so that only the direct effects of the phase 
   delay between $y$ and $x$ were highlighted. In Fig.\ 4 a larger value is used 
-  for $L_{lip}$, 8~mm. We will see shortly that this value gives an approximate 
-  match to the magnitude of the sweeping flow as measured by Boutin et al. In 
-  Fig.\ 5 the area modulation effect is turned on in addition, with the largest 
-  credible value $\lambda =2$. 
+  for $L_{lip}$, 8~mm. We will see shortly that this value can be used to give 
+  an approximate match to the magnitude of the sweeping flow as measured by 
+  Boutin et al. In Fig.\ 5 the area modulation effect is turned on in addition, 
+  with the largest credible value $\lambda =2$. 
 
   \fig{figs/fig-0ab6c20b.png}{\caption{Figure 4. Set of pressure --- lip 
   resonance diagrams for the same parameter values as Fig. 3, except that now 
@@ -231,25 +235,26 @@
   carefully to see them. So we see a clear hierarchy among the three effects we 
   have added in to the original model: the phase difference between $x$ and $y$ 
   (and therefore between $x$ and pressure) has a very strong effect, the 
-  sweeping flow term has a modest effect, and the area modulation has a 
-  negligible effect. This conclusion has been confirmed by computed results for 
-  other cases. 
+  sweeping flow term has a modest effect, and the area modulation has a rather 
+  small effect. This conclusion has been confirmed by computed results for 
+  other cases, although of course the details vary as other parameters in the 
+  model are changed. 
 
   In order to see whether this model addresses our three targets, we need to 
   dig into the results in more detail. Figure 4 strongly suggests that we could 
   surely get away with a lower Q-factor for the lip resonance once we have 
   included a significant phase delay, and simulation experiments confirm this. 
   For the remainder of this section we will turn to results with a modestly 
-  reduced value $Q=5$, but it seems likely that even lower values could be 
-  tolerated within a model of this general type --- an investigation that is a 
-  task for the future. 
+  reduced value $Q=5$, but even lower values could be tolerated within a model 
+  of this general type if other parameter values are adjusted suitably: 
+  examples are shown in section 11.5 for Q as low as 1. 
 
-  Figure 6 shows some results with this reduced value of Q, this time 
-  colour-shaded to show the actual phase lag, in degrees, between $y$ and $x$. 
-  The plot range has been restricted to $0-90^\circ$, because the measured 
-  phase lags from Boutin et al. fall in this range: they found a lag by 
-  $36^\circ$ for normal playing, rising to $61^\circ$ for lipping down, and 
-  falling to $31^\circ$ for lipping up. 
+  Figure 6 shows some results with $Q=5$, this time colour-shaded to show the 
+  actual phase lag, in degrees, between $y$ and $x$. The plot range has been 
+  restricted to $0-90^\circ$, because the measured phase lags from Boutin et 
+  al. fall in this range: they found a lag by $36^\circ$ for normal playing, 
+  rising to $61^\circ$ for lipping down, and falling to $31^\circ$ for lipping 
+  up. 
 
   \fig{figs/fig-175bebde.png}{\caption{Figure 6. Set of pressure --- lip 
   resonance diagrams for a model with $Q=5$, $L\_{lip}=8$mm and $\lambda=0$. 
@@ -378,33 +383,36 @@
   the three cases. These qualitative changes are well captured by the 
   simulations. 
 
-  The results from this preliminary investigation of the effect of ``swimming 
-  motion'' of a brass-player's lips are very encouraging: we have seen a 
-  reasonable qualitative match for all three targets. The rather ad hoc delay 
-  model has allowed us to probe the influence of separate ingredients of the 
-  model, which a more complete and physical model might not have allowed. The 
-  conclusion was that by far the most important effect to include in an 
-  improved model of lip vibration was the potential for a phase difference 
-  between the $x$ and $y$ motions to produce the ``swimming'' effect. By 
-  comparison, the effects of the sweeping flow term in equation (2) and of 
-  modulation of the effective lip area over which the pressure acts are very 
-  minor. 
+  The results from this investigation of the effect of ``swimming motion'' of a 
+  brass-player's lips are very encouraging: we have seen a reasonable 
+  qualitative match for all three targets. The rather ad hoc delay model has 
+  allowed us to probe the influence of separate ingredients of the model, which 
+  a more complete and physical model might not have allowed. The conclusion was 
+  that by far the most important effect to include in an improved model of lip 
+  vibration was the potential for a phase difference between the $x$ and $y$ 
+  motions to produce the ``swimming'' effect. By comparison, the effects of 
+  other variations in the model are relatively minor. We have demonstrated some 
+  of these variations here, and some different ones are presented in Figs.\ 
+  36--40 of section 11.5. 
 
-  However, there is no doubt that further development of the lip model would be 
-  desirable to give a better physical basis. There are some suggestions already 
-  in the literature, involving two or more degrees of freedom to represent 
-  additional aspects of the lip motion: see for example the discussion in 
-  section 6.4 of Campbell, Gilbert and Myers [3]. But we would need to be 
-  cautious in exploring further down that line. The problem is that 
-  progressively more complicated models introduce more and more parameters. 
-  Without a genuinely physical model in the background to inform the choice of 
-  values for these parameters, there are too many dimensions to explore 
-  comfortably by a purely computational approach. Also, there are not very many 
-  detailed measurements against which to benchmark the models: for example, 
-  there is nothing as detailed as the experimental Guettler diagrams we were 
-  able to use in chapter 9 when comparing different models for bowed-string 
-  motion. We have already seen that a credible match to the only published 
-  measurements can be obtained with the simple delay model. 
+  Further development of the lip model would obviously be desirable to give a 
+  better physical basis. There are some suggestions already in the literature, 
+  involving two or more degrees of freedom to represent additional aspects of 
+  the lip motion: see for example the discussion in section 6.4 of Campbell, 
+  Gilbert and Myers [3]. But we would need to be cautious in exploring further 
+  down that line --- the discussion at the end of section 11.5 sets out some of 
+  the issues. One particular problem is that progressively more complicated 
+  models introduce more and more parameters. Without a genuinely physical model 
+  in the background to inform the choice of values for these parameters, there 
+  are too many dimensions to explore comfortably by a purely computational 
+  approach. Also, there are not very many detailed measurements against which 
+  to benchmark the models: for example, there is nothing as detailed as the 
+  experimental Guettler diagrams we were able to use in chapter 9 when 
+  comparing different models for bowed-string motion. We have already seen that 
+  a credible match to the only published measurements can be obtained with the 
+  simple delay model. Indeed, Figs.\ 41 and 42 of section 11.5 demonstrate that 
+  it is a bit too easy to achieve a match: it can be done with many different 
+  combinations of parameter values. 
 
   \sectionreferences{}[1] Henri Boutin, John Smith and Joe Wolfe, “Trombone lip 
   mechanics with inertive and compliant loads (‘lipping up and down’)”, Journal 
